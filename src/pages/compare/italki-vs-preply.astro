@@ -161,12 +161,12 @@ const faqSchema = {
   
   <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
     <!-- Breadcrumb -->
-    <nav class="text-sm text-gray-500 mb-4">
+    <nav class="text-sm text-neutral-300 mb-4">
       <a href="/" class="hover:text-emerald-600">Home</a>
       <span class="mx-2">›</span>
       <a href="/compare" class="hover:text-emerald-600">Comparisons</a>
       <span class="mx-2">›</span>
-      <span class="text-gray-700">iTalki vs Preply</span>
+      <span class="text-neutral-300">iTalki vs Preply</span>
     </nav>
 
     <!-- Hero Section -->
@@ -181,20 +181,20 @@ const faqSchema = {
       <!-- iTalki Card -->
       <div class="bg-white rounded-xl shadow-lg border-2 border-emerald-500 p-6">
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-gray-900">iTalki</h2>
+          <h2 class="text-2xl font-bold text-white">iTalki</h2>
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-900">{italki.rating}</span>
+            <span class="text-2xl font-bold text-white">{italki.rating}</span>
             <span class="text-gray-500 text-sm ml-1">/10</span>
           </div>
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
         </div>
-        <p class="text-gray-600 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
         <div class="mb-4">
           <h3 class="font-semibold text-green-700 mb-2">Pros</h3>
-          <ul class="text-sm text-gray-700 space-y-1">
+          <ul class="text-sm text-neutral-300 space-y-1">
             {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
           </ul>
         </div>
@@ -206,20 +206,20 @@ const faqSchema = {
       <!-- Preply Card -->
       <div class="bg-white rounded-xl shadow-lg border-2 border-indigo-500 p-6">
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-gray-900">Preply</h2>
+          <h2 class="text-2xl font-bold text-white">Preply</h2>
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-900">{preply.rating}</span>
+            <span class="text-2xl font-bold text-white">{preply.rating}</span>
             <span class="text-gray-500 text-sm ml-1">/10</span>
           </div>
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-indigo-600">{preply.price}</span>
         </div>
-        <p class="text-gray-600 mb-4"><strong>Best for:</strong> {preply.bestFor}</p>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {preply.bestFor}</p>
         <div class="mb-4">
           <h3 class="font-semibold text-green-700 mb-2">Pros</h3>
-          <ul class="text-sm text-gray-700 space-y-1">
+          <ul class="text-sm text-neutral-300 space-y-1">
             {preply.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
           </ul>
         </div>
@@ -262,34 +262,34 @@ const faqSchema = {
 
     <!-- Detailed Analysis -->
     <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">Detailed Analysis</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
       
       <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Pricing and Value</h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <h3 class="text-xl font-bold text-white mb-3">Pricing and Value</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
           <strong>iTalki wins on price flexibility</strong> with community tutors starting at just $5/hour. This makes it the most accessible option for budget-conscious learners. The platform separates tutors into "Community Tutors" (cheaper, more informal) and "Professional Tutors" (higher priced, more qualified).
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-neutral-300 leading-relaxed">
           Preply takes a more standardized approach, with prices typically ranging from $10-45/hour. Their platform includes a first-lesson discount for new users, making it easy to test compatibility before committing. For learners seeking professional credentials in their tutors, Preply's vetted teachers often justify the higher investment.
         </p>
       </div>
 
       <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Tutor Quality and Selection</h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <h3 class="text-xl font-bold text-white mb-3">Tutor Quality and Selection</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
           <strong>iTalki</strong> boasts over 10,000 tutors across their platform. The sheer volume means learners have more options to find the perfect match for their schedule and learning style. However, quality can vary significantly, especially with community tutors who don't require formal teaching credentials.
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-neutral-300 leading-relaxed">
           <strong>Preply</strong> takes a curation-first approach, requiring tutors to complete an application process that includes video interviews and teaching demonstrations. This means less variety but more consistent quality. Their tutors are more likely to have formal teaching qualifications like TEFL or CELTA certificates.
         </p>
       </div>
 
       <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Learning Experience</h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
+        <h3 class="text-xl font-bold text-white mb-3">Learning Experience</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
           iTalki offers a unique <strong>lesson replay</strong> feature that allows you to record sessions and review them later. This is invaluable for learners who want to reinforce vocabulary, pronunciation, or grammar covered during their lessons. The iTalki app is also highly rated for its ease of use and scheduling flexibility.
         </p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-neutral-300 leading-relaxed">
           Preply provides a more structured learning environment with optional curriculum access. Their tutors can create personalized learning plans aligned with specific goals—whether that's business English, exam preparation, or conversation fluency. For learners who prefer guided progress over free-form conversation, Preply's approach may be more suitable.
         </p>
       </div>
@@ -297,33 +297,33 @@ const faqSchema = {
 
     <!-- FAQ Section -->
     <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
       
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Is iTalki or Preply better for beginners?</h3>
-          <p class="text-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-2">Is iTalki or Preply better for beginners?</h3>
+          <p class="text-neutral-300">
             <strong>Preply may be better</strong> for complete beginners due to its structured curriculum and vetted professional tutors who can create personalized learning plans. iTalki is better suited for intermediate learners who want flexible conversation practice.
           </p>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">How much does a lesson cost on iTalki vs Preply?</h3>
-          <p class="text-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-2">How much does a lesson cost on iTalki vs Preply?</h3>
+          <p class="text-neutral-300">
             <strong>iTalki starts at just $5/hour</strong> with community tutors, making it the budget-friendly option. Preply starts at <strong>$10/hour</strong> with tutors typically ranging from $18-30/hour for certified teachers.
           </p>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I try either platform before committing?</h3>
-          <p class="text-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-2">Can I try either platform before committing?</h3>
+          <p class="text-neutral-300">
             <strong>Both platforms offer trial lessons.</strong> Preply offers a discounted first lesson for all new users. iTalki offers community tutors at lower rates, allowing you to try multiple tutors affordably before committing to regular sessions.
           </p>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Which platform has better native English speakers?</h3>
-          <p class="text-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-2">Which platform has better native English speakers?</h3>
+          <p class="text-neutral-300">
             Both platforms have excellent selections of native English speakers. iTalki has a larger pool of community tutors, while Preply's tutors are more rigorously vetted for teaching qualifications.
           </p>
         </div>
@@ -337,11 +337,11 @@ const faqSchema = {
 
     <!-- Verdict Section -->
     <section class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Verdict</h2>
+      <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-white rounded-lg p-4 border-l-4 border-emerald-500">
-          <h3 class="font-bold text-emerald-700 mb-2">Choose iTalki if:</h3>
-          <ul class="text-gray-700 space-y-2">
+          <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3>
+          <ul class="text-neutral-300 space-y-2">
             <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Budget is your primary concern (starting at $5/hr)</li>
             <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want lesson replay capability</li>
             <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Flexible scheduling is essential</li>
@@ -350,7 +350,7 @@ const faqSchema = {
         </div>
         <div class="bg-white rounded-lg p-4 border-l-4 border-indigo-500">
           <h3 class="font-bold text-indigo-700 mb-2">Choose Preply if:</h3>
-          <ul class="text-gray-700 space-y-2">
+          <ul class="text-neutral-300 space-y-2">
             <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You want professional, certified tutors</li>
             <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>Structured curriculum is important</li>
             <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You're preparing for specific exams</li>
@@ -362,31 +362,31 @@ const faqSchema = {
 
     <!-- Related Reviews -->
     <section class="mb-8">
-      <h2 class="text-xl font-bold text-gray-900 mb-4">Related Reviews</h2>
+      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
       <div class="grid md:grid-cols-3 gap-4">
         <a href="/reviews/italki" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
           <div class="flex items-center mb-2">
             <span class="text-yellow-500 mr-1">★</span>
             <span class="font-bold">9.2/10</span>
           </div>
-          <h3 class="font-semibold text-gray-900">iTalki Review</h3>
-          <p class="text-sm text-gray-600">Full platform analysis</p>
+          <h3 class="font-semibold text-white">iTalki Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
         </a>
         <a href="/reviews/preply" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
           <div class="flex items-center mb-2">
             <span class="text-yellow-500 mr-1">★</span>
             <span class="font-bold">8.8/10</span>
           </div>
-          <h3 class="font-semibold text-gray-900">Preply Review</h3>
-          <p class="text-sm text-gray-600">Full platform analysis</p>
+          <h3 class="font-semibold text-white">Preply Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
         </a>
         <a href="/reviews/cambly" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
           <div class="flex items-center mb-2">
             <span class="text-yellow-500 mr-1">★</span>
             <span class="font-bold">8.2/10</span>
           </div>
-          <h3 class="font-semibold text-gray-900">Cambly Review</h3>
-          <p class="text-sm text-gray-600">Full platform analysis</p>
+          <h3 class="font-semibold text-white">Cambly Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
         </a>
       </div>
     </section>

@@ -35,13 +35,13 @@ const {
   <div class="overflow-x-auto">
     <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
       <thead>
-        <tr class="bg-gray-50">
+        <tr class="bg-neutral-800">
           <th class="text-left p-4 font-semibold text-gray-700">Feature</th>
-          <th class={`text-center p-4 font-semibold ${winner === 'a' ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700'}`}>
+          <th class={`text-center p-4 font-semibold ${winner === 'a' ? 'bg-emerald-900/30 text-emerald-700' : 'text-gray-700'}`}>
             {platformA.name}
             {winner === 'a' && <span class="ml-1 text-xs bg-emerald-600 text-white px-2 py-0.5 rounded">Best</span>}
           </th>
-          <th class={`text-center p-4 font-semibold ${winner === 'b' ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700'}`}>
+          <th class={`text-center p-4 font-semibold ${winner === 'b' ? 'bg-emerald-900/30 text-emerald-700' : 'text-gray-700'}`}>
             {platformB.name}
             {winner === 'b' && <span class="ml-1 text-xs bg-emerald-600 text-white px-2 py-0.5 rounded">Best</span>}
           </th>
@@ -54,9 +54,9 @@ const {
       </thead>
       <tbody class="divide-y">
         {rows.map((row, index) => (
-          <tr class="hover:bg-gray-50 transition-colors">
+          <tr class="hover:bg-neutral-800 transition-colors">
             <td class="p-4 font-medium text-gray-700">{row.feature}</td>
-            <td class={`p-4 text-center ${winner === 'a' && row.winner === 'a' ? 'bg-emerald-50 font-semibold' : ''}`}>
+            <td class={`p-4 text-center ${winner === 'a' && row.winner === 'a' ? 'bg-emerald-900/30 font-semibold' : ''}`}>
               {row.winner === 'a' ? (
                 <span class="flex items-center justify-center gap-1">
                   <span class="text-emerald-600">✓</span>
@@ -66,7 +66,7 @@ const {
                 <span>{row.a}</span>
               )}
             </td>
-            <td class={`p-4 text-center ${winner === 'b' && row.winner === 'b' ? 'bg-emerald-50 font-semibold' : ''}`}>
+            <td class={`p-4 text-center ${winner === 'b' && row.winner === 'b' ? 'bg-emerald-900/30 font-semibold' : ''}`}>
               {row.winner === 'b' ? (
                 <span class="flex items-center justify-center gap-1">
                   <span class="text-emerald-600">✓</span>
@@ -86,7 +86,7 @@ const {
   </div>
   
   <!-- CTA for winner -->
-  <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+  <div class="mt-4 bg-emerald-900/30 border border-emerald-700 rounded-xl p-4 text-center">
     <p class="text-emerald-800 mb-2">
       <strong>{winner === 'a' ? platformA.name : platformB.name}</strong> is our top pick for most learners
     </p>

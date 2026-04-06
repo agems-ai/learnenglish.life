@@ -120,14 +120,14 @@ const breadcrumbSchema = {
   <Header />
   
   <!-- Breadcrumb -->
-  <nav class="bg-gray-50 py-3">
+  <nav class="bg-neutral-800 py-3">
     <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-gray-500">
+      <ol class="flex items-center gap-2 text-neutral-300">
         <li><a href="/" class="hover:text-emerald-600">Home</a></li>
         <li>/</li>
         <li><a href="/reviews/" class="hover:text-emerald-600">Reviews</a></li>
         <li>/</li>
-        <li class="text-gray-900">iTalki</li>
+        <li class="text-white">iTalki</li>
       </ol>
     </div>
   </nav>
@@ -147,8 +147,8 @@ const breadcrumbSchema = {
   </div>
 
   <!-- Affiliate Disclosure -->
-  <div class="bg-amber-50 border-b border-amber-200 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-800">
+  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
+    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
       <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
     </div>
   </div>
@@ -175,22 +175,22 @@ const breadcrumbSchema = {
 
       <!-- Pros & Cons -->
       <section class="mb-8 grid md:grid-cols-2 gap-6">
-        <div class="bg-emerald-50 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-emerald-800 mb-4">✅ Pros</h2>
+        <div class="bg-emerald-900/30 rounded-xl p-6">
+          <h2 class="text-lg font-semibold text-white mb-4">✅ Pros</h2>
           <ul class="space-y-3">
             {review.pros.map(pro => (
-              <li class="flex items-start gap-3 text-emerald-700">
+              <li class="flex items-start gap-3 text-neutral-300">
                 <span class="text-emerald-500 font-bold">✓</span>
                 <span>{pro}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div class="bg-red-50 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-red-800 mb-4">⚠️ Cons</h2>
+        <div class="bg-red-900/30 rounded-xl p-6">
+          <h2 class="text-lg font-semibold text-white mb-4">⚠️ Cons</h2>
           <ul class="space-y-3">
             {review.cons.map(con => (
-              <li class="flex items-start gap-3 text-red-700">
+              <li class="flex items-start gap-3 text-neutral-300">
                 <span class="text-red-500 font-bold">−</span>
                 <span>{con}</span>
               </li>
@@ -214,9 +214,9 @@ const breadcrumbSchema = {
       </div>
 
       <!-- Verdict -->
-      <section class="bg-gray-100 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-gray-900 mb-3">Our Verdict</h2>
-        <p class="text-gray-700">
+      <section class="bg-neutral-800 rounded-xl p-6 mb-8">
+        <h2 class="text-xl font-bold text-white mb-3">Our Verdict</h2>
+        <p class="text-neutral-300">
           With a 9.2/10 rating and over 12,000 verified reviews, iTalki stands out as the most flexible and affordable option for personalized English tutoring. Whether you're preparing for an exam, improving business communication, or building everyday conversation skills — iTalki's massive tutor pool ensures you'll find the perfect match.
         </p>
         <p class="mt-3 text-gray-700 font-medium">
@@ -228,7 +228,7 @@ const breadcrumbSchema = {
       <section class="bg-emerald-600 rounded-xl p-8 text-center">
         <h3 class="text-2xl font-bold text-white mb-2">Ready to try iTalki?</h3>
         <p class="text-emerald-100 mb-6">Join millions of learners improving their English.</p>
-        <a href={review.ctaLink} class="inline-block px-8 py-4 bg-white text-emerald-600 font-bold rounded-lg hover:bg-gray-100 transition-colors">
+        <a href={review.ctaLink} class="inline-block px-8 py-4 bg-white text-emerald-600 font-bold rounded-lg hover:bg-neutral-800 transition-colors">
           {review.ctaSecondary}
         </a>
       </section>
