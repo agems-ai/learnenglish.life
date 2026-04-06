@@ -17,11 +17,15 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-700 font-sans antialiased;
+    @apply bg-slate-950 text-slate-200 font-sans antialiased;
+  }
+
+  p, li, span, dd, dt, td, th, label {
+    @apply text-slate-200;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold text-slate-800 tracking-tight;
+    @apply font-heading font-bold text-slate-200 tracking-tight;
   }
 
   a {
@@ -53,6 +57,6 @@
   }
 
   .btn-outline {
-    @apply btn border border-slate-300 text-slate-700 hover:bg-slate-100 hover:border-slate-400 focus:ring-slate-400;
+    @apply btn border border-slate-300 text-slate-700 hover:bg-slate-900/40 hover:border-slate-400 focus:ring-slate-400;
   }
 }

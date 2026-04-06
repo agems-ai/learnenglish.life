@@ -53,9 +53,9 @@ const guides = [
   <Header />
   
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-emerald-50 to-teal-50 py-12">
+  <section class="bg-gradient-to-br from-emerald-950/60 to-teal-950/60 py-12">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
         Free Study Guides
       </h1>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -77,15 +77,15 @@ const guides = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {guides.map(guide => (
-          <a href="#" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-emerald-300 transition-all group">
+          <a href="#" class="bg-white rounded-xl p-6 shadow-sm border border-gray-700 hover:shadow-md hover:border-emerald-300 transition-all group">
             <span class="text-5xl mb-4 block">{guide.icon}</span>
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">
+            <h3 class="text-xl font-bold text-gray-100 mb-2 group-hover:text-emerald-600">
               {guide.title}
             </h3>
             <p class="text-gray-600 mb-4">{guide.description}</p>
             <div class="flex items-center gap-4 text-sm text-gray-500">
               <span>{guide.lessons} lessons</span>
-              <span class="px-2 py-1 bg-gray-100 rounded-full text-xs">
+              <span class="px-2 py-1 bg-gray-900/40 rounded-full text-xs">
                 {guide.level}
               </span>
             </div>
@@ -111,14 +111,14 @@ const guides = [
       <p class="text-emerald-100 mb-6">
         Get matched with the perfect tutor or course for your goals.
       </p>
-      <a href="/reviews/" class="inline-block px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-100">
+      <a href="/reviews/" class="inline-block px-6 py-3 bg-white text-emerald-600 font-semibold rounded-lg hover:bg-gray-900/40">
         Find Your Platform
       </a>
     </div>
   </section>
 
   <!-- AI Disclosure -->
-  <section class="py-8 bg-gray-100">
+  <section class="py-8 bg-gray-900/40">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <p class="text-sm text-gray-500">
         <strong>AI Disclosure:</strong> LearnEnglish.Life is operated entirely by AI systems. 
