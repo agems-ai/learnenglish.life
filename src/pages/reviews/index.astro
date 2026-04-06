@@ -6,18 +6,23 @@ import ReviewCard from '../../components/ReviewCard.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 const platforms = [
-  { name: "iTalki", rating: 4.7, reviews: 12500, price: "From $10/hr", slug: "italki", category: "Tutoring" },
-  { name: "Preply", rating: 4.6, reviews: 8900, price: "From $10/hr", slug: "preply", category: "Tutoring" },
-  { name: "Cambly", rating: 4.4, reviews: 7200, price: "From $6.50/wk", slug: "cambly", category: "Conversation" },
-  { name: "Verbling", rating: 4.5, reviews: 5400, price: "From $15/hr", slug: "verbling", category: "Tutoring" },
-  { name: "iTalki", rating: 4.7, reviews: 12500, price: "From $10/hr", slug: "italki", category: "Tutoring" },
-  { name: "Preply", rating: 4.6, reviews: 8900, price: "From $10/hr", slug: "preply", category: "Tutoring" },
-  { name: "Cambly", rating: 4.4, reviews: 7200, price: "From $6.50/wk", slug: "cambly", category: "Conversation" },
-  { name: "Verbling", rating: 4.5, reviews: 5400, price: "From $15/hr", slug: "verbling", category: "Tutoring" },
+  { name: "iTalki", rating: 4.7, reviews: 12500, price: 10, priceLabel: "From $10/hr", slug: "italki", category: "Tutoring", tagline: "Affordable 1-on-1 tutoring" },
+  { name: "Preply", rating: 4.6, reviews: 8900, price: 10, priceLabel: "From $10/hr", slug: "preply", category: "Tutoring", tagline: "Flexible lesson scheduling" },
+  { name: "Cambly", rating: 4.4, reviews: 7200, price: 6.50, priceLabel: "From $6.50/wk", slug: "cambly", category: "Conversation", tagline: "Unlimited conversation practice" },
+  { name: "Verbling", rating: 4.5, reviews: 5400, price: 15, priceLabel: "From $15/hr", slug: "verbling", category: "Tutoring", tagline: "Native speaker tutors" },
+  { name: "Duolingo", rating: 4.3, reviews: 15000, price: undefined, priceLabel: "Free", slug: "duolingo", category: "Apps", tagline: "Gamified language learning" },
+  { name: "Babbel", rating: 4.4, reviews: 8500, price: 6.95, priceLabel: "From $6.95/mo", slug: "babbel", category: "Apps", tagline: "Conversational focus" },
+  { name: "Rosetta Stone", rating: 4.1, reviews: 6000, price: 11.99, priceLabel: "From $11.99/mo", slug: "rosetta-stone", category: "Apps", tagline: "Immersion method" },
+  { name: "Busuu", rating: 4.2, reviews: 4800, price: 11.99, priceLabel: "From $11.99/mo", slug: "busuu", category: "Apps", tagline: "Peer correction feature" },
+  { name: "Elsa Speak", rating: 4.3, reviews: 3200, price: undefined, priceLabel: "Free tier available", slug: "elsa-speak", category: "Apps", tagline: "AI pronunciation coach" },
+  { name: "Lingoda", rating: 4.4, reviews: 4100, price: 12, priceLabel: "From $12/hr", slug: "lingoda", category: "Courses", tagline: "Live group classes" },
+  { name: "Memrise", rating: 4.2, reviews: 5800, price: 7.49, priceLabel: "From $7.49/mo", slug: "memrise", category: "Apps", tagline: "Memory science method" },
+  { name: "Pimsleur", rating: 4.5, reviews: 4500, price: 14.95, priceLabel: "From $14.95/mo", slug: "pimsleur", category: "Courses", tagline: "Audio-based learning" },
 ];
 
 const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games"];
 ---
+
 <Base title="English Learning Platform Reviews | LearnEnglish.Life">
   <Header />
   
@@ -28,7 +33,7 @@ const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games
         English Learning Platform Reviews
       </h1>
       <p class="text-emerald-100 text-lg">
-        Honest, in-depth reviews of 50+ platforms based on real user experiences
+        Honest, in-depth reviews of {platforms.length}+ platforms based on real user experiences
       </p>
     </div>
   </section>
@@ -63,8 +68,10 @@ const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games
             rating={platform.rating}
             reviewCount={platform.reviews}
             price={platform.price}
+            priceLabel={platform.priceLabel}
             slug={platform.slug}
             category={platform.category}
+            tagline={platform.tagline}
           />
         ))}
       </div>

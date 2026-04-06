@@ -1,16 +1,16 @@
 ---
 import RatingStars from './RatingStars.astro';
-import { formatPrice } from '@/lib/utils';
 
 interface Props {
   slug: string;
   name: string;
-  tagline: string;
+  tagline?: string;
   rating: number;
   reviewCount?: number;
   price?: number;
   priceLabel?: string;
   badge?: string;
+  category?: string;
   class?: string;
 }
 
@@ -23,55 +23,63 @@ const {
   price,
   priceLabel = 'From',
   badge,
+  category,
   class: className = '',
 } = Astro.props;
 
 const href = `/reviews/${slug}`;
+const displayPrice = price !== undefined && price !== null && !isNaN(price) 
+  ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(price)
+  : null;
 ---
 
-<article class:list={['card-hover group', className]}>
+<article class:list={['group bg-white border border-neutral-200 rounded-xl overflow-hidden hover:border-emerald-500 hover:shadow-lg transition-all duration-200', className]}>
   <a href={href} class="block p-5">
     {badge && (
-      <span class="inline-block px-2 py-0.5 text-xs font-medium bg-brand-500/20 text-brand-400 rounded-full mb-3">
+      <span class="inline-block px-2 py-0.5 text-xs font-medium bg-emerald-100 text-emerald-700 rounded-full mb-3">
         {badge}
       </span>
     )}
 
     <div class="flex items-start gap-4 mb-3">
-      <div class="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-brand-500/20 group-hover:text-brand-400 transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
+      <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">
+        {name.charAt(0)}
       </div>
       
       <div class="flex-1 min-w-0">
-        <h3 class="font-heading font-semibold text-white group-hover:text-brand-400 transition-colors truncate">
+        <h3 class="font-bold text-neutral-900 group-hover:text-emerald-600 transition-colors truncate !text-neutral-900">
           {name}
         </h3>
-        <p class="text-sm text-neutral-400 truncate">{tagline}</p>
+        {tagline && <p class="text-sm text-neutral-500 truncate">{tagline}</p>}
       </div>
     </div>
 
     <div class="flex items-center gap-3 mb-4">
       <RatingStars rating={rating} size="sm" />
       {reviewCount !== undefined && (
-        <span class="text-sm text-neutral-500">({reviewCount} reviews)</span>
+        <span class="text-sm text-neutral-500">({reviewCount.toLocaleString()} reviews)</span>
       )}
     </div>
 
-    <div class="flex items-center justify-between">
-      {price !== undefined ? (
+    <div class="flex items-center justify-between pt-3 border-t border-neutral-100">
+      {displayPrice ? (
         <div class="text-sm">
           <span class="text-neutral-500">{priceLabel}</span>
-          <span class="font-semibold text-white ml-1">{formatPrice(price)}</span>
+          <span class="font-semibold text-neutral-900 ml-1">{displayPrice}</span>
         </div>
       ) : (
-        <div></div>
+        <div class="text-sm text-neutral-500">{priceLabel || 'See site'}</div>
       )}
       
-      <span class="text-sm font-medium text-brand-400 group-hover:underline">
+      <span class="text-sm font-medium text-emerald-600 group-hover:underline">
         Read Review →
       </span>
     </div>
   </a>
 </article>
+
+<style>
+  h3 {
+    color: #111827 !important;
+  }
+</style>
