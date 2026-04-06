@@ -1,6 +1,7 @@
 /**
- * GDPR-Compliant Cookie Consent Component
- * - Opt-in only (no pre-checked boxes)
+ * GDPR & CCPA-Compliant Cookie Consent Component
+ * - Opt-in only (no pre-checked boxes) for GDPR
+ * - "Do Not Sell My Personal Information" for CCPA (California)
  * - Options: Accept All, Reject All, Cookie Settings
  * - Granular consent for analytics, marketing cookies
  * - No cookies set before consent (except essential)
@@ -36,6 +37,7 @@ export default function CookieConsent({
   const [showBanner, setShowBanner] = useState(false);
   const [preferences, setPreferences] = useState<ConsentPreferences>(defaultPreferences);
   const [hasConsented, setHasConsented] = useState(false);
+  const [showCCPANotice, setShowCCPANotice] = useState(false);
 
   useEffect(() => {
     // Check if user has already made a choice
@@ -49,6 +51,14 @@ export default function CookieConsent({
     } else {
       // First visit - show banner
       setShowBanner(true);
+    }
+    
+    // Check CCPA "Do Not Sell" preference
+    const ccpaPreference = localStorage.getItem('ccpa_do_not_sell');
+    if (ccpaPreference === 'true') {
+      // User has opted out of sale of personal information
+      disableMarketing();
+      disableAnalytics();
     }
   }, []);
 
@@ -91,6 +101,7 @@ export default function CookieConsent({
     window['marketing-enabled'] = false;
     // Clear ad-related cookies
     document.cookie = '_fbp=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = '_gcl_au=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
   };
 
   const saveConsent = (prefs: ConsentPreferences, consentGiven: boolean) => {
@@ -105,10 +116,35 @@ export default function CookieConsent({
     setPreferences(prefs);
     setHasConsented(true);
     setShowBanner(false);
+    setShowCCPANotice(false);
     applyConsent(prefs);
     
     // If consent given, set a consent cookie (required by some regulations)
-    document.cookie = `cookie_consent_given=1; path=/; max-age=${365 * 24 * 60 * 60}; samesite=lax`;
+    document.cookie = 'cookie_consent_given=1; path=/; max-age=' + (365 * 24 * 60 * 60) + '; samesite=lax';
+  };
+
+  // CCPA: "Do Not Sell My Personal Information"
+  const handleDoNotSell = () => {
+    // Opt user out of sale of personal information
+    localStorage.setItem('ccpa_do_not_sell', 'true');
+    localStorage.setItem('ccpa_do_not_sell_timestamp', new Date().toISOString());
+    
+    // Disable all non-essential cookies
+    disableAnalytics();
+    disableMarketing();
+    
+    // Set global flag
+    window['doNotSell'] = true;
+    
+    // Dispatch event
+    window.dispatchEvent(new CustomEvent('ccpaOptOut', { detail: { doNotSell: true } }));
+    
+    // Hide banner but show confirmation
+    setShowBanner(false);
+    setShowCCPANotice(true);
+    
+    // Also set a visible cookie as required by CCPA
+    document.cookie = 'ccpa_opt_out=1; path=/; max-age=' + (365 * 24 * 60 * 60) + '; samesite=lax';
   };
 
   const handleAcceptAll = () => {
@@ -158,6 +194,39 @@ export default function CookieConsent({
     return () => window.removeEventListener('openCookieSettings', handleOpenConsent);
   }, []);
 
+  // CCPA: Confirm "Do Not Sell" selection
+  if (showCCPANotice) {
+    return (
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 lg:p-8" style={{ background: 'rgba(0,0,0,0.95)' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div className="flex-1">
+              <h2 className="text-lg font-semibold text-white mb-2">
+                Your Privacy Preferences Have Been Saved
+              </h2>
+              <p className="text-neutral-300 text-sm">
+                We have processed your request to opt out of the sale of your personal information. 
+                This preference has been saved on your device. You can change this at any time by 
+                clicking "Cookie Settings" in our footer.
+              </p>
+              <p className="text-neutral-400 text-xs mt-2">
+                Questions? Contact us at <a href="mailto:privacy@learnenglish.life" className="text-brand-400 hover:text-brand-300 underline">privacy@learnenglish.life</a>
+              </p>
+            </div>
+            <div className="flex gap-3 lg:shrink-0">
+              <button
+                onClick={() => setShowCCPANotice(false)}
+                className="px-4 py-2 text-sm font-medium text-white bg-brand-600 rounded-lg hover:bg-brand-500 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!showBanner && !isOpen) {
     return null;
   }
@@ -174,10 +243,10 @@ export default function CookieConsent({
           style={{ background: 'rgba(0,0,0,0.95)' }}
         >
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
               <div className="flex-1">
                 <h2 id="cookie-title" className="text-lg font-semibold text-white mb-2">
-                  🍪 We value your privacy
+                  We value your privacy
                 </h2>
                 <p className="text-neutral-300 text-sm mb-4">
                   We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
@@ -190,6 +259,19 @@ export default function CookieConsent({
                     Privacy Policy
                   </a>.
                 </p>
+                {/* CCPA Notice - California Users */}
+                <div className="mt-4 p-3 bg-neutral-800 rounded-lg border border-neutral-700">
+                  <p className="text-xs text-neutral-400">
+                    <strong className="text-white">California Residents:</strong> Under the CCPA, you have the right to 
+                    opt out of the sale of your personal information. 
+                    <button 
+                      onClick={handleDoNotSell}
+                      className="text-brand-400 hover:text-brand-300 underline ml-1"
+                    >
+                      Do Not Sell My Personal Information
+                    </button>.
+                  </p>
+                </div>
               </div>
               <div className="flex flex-wrap gap-3 lg:shrink-0">
                 <button
@@ -250,6 +332,23 @@ export default function CookieConsent({
 
             {/* Content */}
             <div className="p-6 space-y-6">
+              {/* CCPA "Do Not Sell" - Prominent placement */}
+              <div className="p-4 bg-red-900/20 border border-red-800/50 rounded-lg">
+                <h3 className="text-white font-semibold mb-2">California Residents - Your Privacy Rights</h3>
+                <p className="text-sm text-neutral-300 mb-3">
+                  Under the California Consumer Privacy Act (CCPA), you have the right to opt out of the sale of your personal information.
+                </p>
+                <button
+                  onClick={() => {
+                    handleDoNotSell();
+                    setIsOpen(false);
+                  }}
+                  className="px-4 py-2 text-sm font-medium text-white bg-red-700 hover:bg-red-600 rounded-lg transition-colors"
+                >
+                  Do Not Sell My Personal Information
+                </button>
+              </div>
+
               {/* Necessary Cookies (Always On) */}
               <div className="flex items-start gap-4 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700">
                 <div className="flex items-center h-6 mt-0.5">
@@ -377,5 +476,6 @@ declare global {
   interface Window {
     'ga-enabled': boolean;
     'marketing-enabled': boolean;
+    'doNotSell': boolean;
   }
 }
