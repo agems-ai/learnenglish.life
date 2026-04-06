@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import AdUnit from '../components/AdUnit.astro';
+import FeaturedPartnerCard from '../components/FeaturedPartnerCard.astro';
 
 const features = [
   {
@@ -40,7 +41,7 @@ const features = [
           Master English with the 
           <span class="text-emerald-400">Right Tools</span>
         </h1>
-        <p class="text-lg md:text-xl text-neutral-300 mb-8">
+        <p class="text-lg md:text-xl text-neutral-800 mb-8">
           Honest reviews, expert comparisons, and free AI-powered practice tools — 
           everything you need to find your perfect English learning path.
         </p>
@@ -56,10 +57,14 @@ const features = [
     </div>
   </section>
 
+  <!-- See Guru Featured Partner -->
+  <FeaturedPartnerCard />
+
+
   <!-- Affiliate Disclosure Banner -->
   <div class="bg-amber-900/30 border-y border-amber-700 py-4">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm text-amber-200">
-      <strong>🔗 Affiliate Disclosure:</strong> We may earn a commission at no extra cost to you when you sign up through our links. Our reviews remain 100% unbiased. <a href="/affiliate-disclosure/" class="underline hover:text-amber-100">Learn more</a>
+      <strong class="text-amber-900">🔗 Affiliate Disclosure:</strong> We may earn a commission at no extra cost to you when you sign up through our links. Our reviews remain 100% unbiased. <a href="/affiliate-disclosure/" class="underline text-amber-900 hover:text-neutral-900">Learn more</a>
     </div>
   </div>
 
