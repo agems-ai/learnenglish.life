@@ -1,0 +1,30 @@
+name: Deploy to production
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_SSH_KEY }}
+          script_stop: true
+          script: |
+            set -e
+            cd /var/www/learnenglish.life
+            git fetch --all --quiet
+            git reset --hard origin/main
+            export PATH=$HOME/.nvm/versions/node/v22*/bin:/usr/local/bin:/usr/bin:/bin
+            npm ci --no-audit --no-fund --prefer-offline 2>&1 | tail -5
+            npm run build 2>&1 | tail -10
+            echo "Deploy OK at $(date -u +%FT%TZ)"
