@@ -1,226 +1,225 @@
 ---
 import Base from "../../layouts/Base.astro";
-import ArticleSchema from "../../components/ArticleSchema.astro";
-
-// Review Schema
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "Pimsleur",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "8.1",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-01-12"
-};
-
-// Breadcrumb Schema
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://learnenglish.life"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Reviews",
-      "item": "https://learnenglish.life/reviews"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Pimsleur"
-    }
-  ]
-};
-
-// Article Schema
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Pimsleur Review 2026 — Audio-Based Learning Worth It?",
-  "description": "Complete review of Pimsleur audio-based language learning. Covers pricing, features, pros/cons, and whether it's the right choice for English learners.",
-  "datePublished": "2026-01-12",
-  "dateModified": "2026-04-06",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://learnenglish.life/logo.png"
-    }
-  }
-};
 ---
-<Base title="Pimsleur Review 2026: Best Audio-Based Learning?" description="Pimsleur Review 2026: 8.1/10 rating. Audio-based English learning for commutes. Pricing, features, pros & cons. Is Pimsleur worth it? Honest verdict inside.">
 
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  </span>
+<Base 
+  title="Pimsleur Review 2026: Does Audio-Only Learning Actually Work?"
+  description="Honest Pimsleur review for 2026. Learn about pricing, pros, cons, and how it compares to Duolingo and iTalki. Rating: 8.0/10."
+>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <span class="text-sm text-gray-400">Review · Updated April 2026</span>
+      <h1 class="text-4xl font-bold mt-1 mb-4">Pimsleur Review 2026: Does Audio-Only Learning Actually Work?</h1>
+      <p class="text-lg text-gray-500">The pioneer of audio-based language learning. Perfect for commuters and multitaskers, but is it enough for fluent English?</p>
+    </div>
 
-<article class="max-w-3xl mx-auto px-4 py-12">
-<div class="mb-8">
-<span class="text-sm text-gray-400">Review</span>
-<h1 class="text-4xl font-bold mt-1 mb-4">Pimsleur Review 2026</h1>
-<p class="text-gray-500">Last updated: April 2026 · 8 min read</p>
-</div>
-<!-- FTC Disclosure -->
-<div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8 text-sm text-gray-700">
-<strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on research, not payments.
-</div>
-<!-- Quick Verdict -->
-<div class="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6 mb-8">
-<div class="flex items-start gap-4">
-<div class="bg-primary text-white rounded-lg w-16 h-16 flex items-center justify-center text-2xl font-bold shrink-0">8.1</div>
-<div>
-<p class="font-bold text-lg">Best for Audio Learning</p>
-<p class="text-gray-600 mt-1">Pimsleur uses 30-minute audio lessons perfect for commutes. Excellent for building speaking confidence and pronunciation.</p>
-</div>
-</div>
-</div>
-<nav class="bg-gray-50 rounded-xl p-6 mb-8">
-<h2 class="font-bold mb-3">In This Review</h2>
-<ul class="space-y-2 text-sm">
-<li><a href="#overview" class="text-primary hover:underline">1. Overview</a></li>
-<li><a href="#pricing" class="text-primary hover:underline">2. Pricing</a></li>
-<li><a href="#features" class="text-primary hover:underline">3. Features</a></li>
-<li><a href="#pros-cons" class="text-primary hover:underline">4. Pros & Cons</a></li>
-<li><a href="#verdict" class="text-primary hover:underline">5. Our Verdict</a></li>
-</ul>
-</nav>
-<h2 id="overview" class="text-2xl font-bold mt-8 mb-4">What is Pimsleur?</h2>
-<p class="mb-4">Pimsleur is an audio-based language learning program founded by Dr. Paul Pimsleur in 1963. The method focuses on building speaking skills through graduated interval recall — hearing and responding to words and phrases in context.</p>
-<p class="mb-4">Unlike app-based learning with games and visuals, Pimsleur is primarily audio. Each lesson is 30 minutes of natural conversation practice with native speakers. You listen, respond, and build fluency through repetition and context.</p>
-<p class="mb-4">The method is particularly effective for auditory learners and those who want to improve pronunciation and speaking speed. It's popular among business professionals preparing for international travel or relocation.</p>
-<h2 id="pricing" class="text-2xl font-bold mt-8 mb-4">Pimsleur Pricing</h2>
-<div class="overflow-x-auto mb-6">
-<table class="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
-<thead class="bg-gray-50">
-<tr>
-<th class="border border-gray-200 px-4 py-3 text-left">Plan</th>
-<th class="border border-gray-200 px-4 py-3 text-left">Price</th>
-<th class="border border-gray-200 px-4 py-3 text-left">Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="border border-gray-200 px-4 py-3">Premium</td>
-<td class="border border-gray-200 px-4 py-3">$19.95/month</td>
-<td class="border border-gray-200 px-4 py-3">All audio lessons, reading lessons, speakeasy</td>
-</tr>
-<tr class="bg-gray-50">
-<td class="border border-gray-200 px-4 py-3">Premium Plus</td>
-<td class="border border-gray-200 px-4 py-3">$24.95/month</td>
-<td class="border border-gray-200 px-4 py-3">All Premium + extended practice, perfect pronunciation</td>
-</tr>
-<tr>
-<td class="border border-gray-200 px-4 py-3">Unlimited</td>
-<td class="border border-gray-200 px-4 py-3">$29.95/month</td>
-<td class="border border-gray-200 px-4 py-3">All languages, all levels, family sharing</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="features" class="text-2xl font-bold mt-8 mb-4">Key Features</h2>
-<h3 class="text-xl font-semibold mt-6 mb-3">1. Audio-First Methodology</h3>
-<p class="mb-4">Each lesson is 30 minutes of audio-only learning. You hear a native speaker, then respond in the pause provided. This builds natural speaking reflexes without reading or writing.</p>
-<h3 class="text-xl font-semibold mt-6 mb-3">2. Graduated Interval Recall</h3>
-<p class="mb-4">The spaced repetition system replays new vocabulary at increasing intervals, helping you remember words naturally over time.</p>
-<h3 class="text-xl font-semibold mt-6 mb-3">3. Core Conversation Skills</h3>
-<p class="mb-4">Lessons focus on practical, real-world conversations. By the end of Level 1, you'll have basic survival conversations for travel and daily life.</p>
-<h3 class="text-xl font-semibold mt-6 mb-3">4. Perfect English Pronunciation</h3>
-<p class="mb-4">Premium Plus includes the "Voice Recognition — Perfect English" feature that compares your speech to native speakers and helps eliminate accent issues.</p>
-<h3 class="text-xl font-semibold mt-6 mb-3">5. Reading Lessons</h3>
-<p class="mb-4">Premium plans include reading lessons that teach you to read and write the language using phonetic principles.</p>
-<h2 id="pros-cons" class="text-2xl font-bold mt-8 mb-4">Pros & Cons</h2>
-<div class="grid md:grid-cols-2 gap-6 mb-6">
-<div class="bg-green-50 border border-green-200 rounded-xl p-6">
-<h3 class="font-bold text-green-800 mb-3">✅ Pros</h3>
-<ul class="space-y-2 text-sm">
-<li>Excellent for commutes and multitasking</li>
-<li>Builds speaking confidence quickly</li>
-<li>Natural pronunciation development</li>
-<li>No need to look at a screen</li>
-<li>Well-structured curriculum</li>
-<li>Audio quality is excellent</li>
-<li>Good for auditory learners</li>
-<li>No translation dependency</li>
-</ul>
-</div>
-<div class="bg-red-50 border border-red-200 rounded-xl p-6">
-<h3 class="font-bold text-red-800 mb-3">❌ Cons</h3>
-<ul class="space-y-2 text-sm">
-<li>Expensive for audio-only content</li>
-<li>No visual learning elements</li>
-<li>30-minute lessons may be too long</li>
-<li>Limited vocabulary beyond lessons</li>
-<li>No grammar explanations</li>
-<li>Cannot pause/resume within lessons</li>
-<li>Requires consistent time commitment</li>
-<li>Not ideal for visual learners</li>
-</ul>
-</div>
-</div>
-<h2 id="verdict" class="text-2xl font-bold mt-8 mb-4">Our Verdict</h2>
-<p class="mb-4"><strong>Pimsleur is unmatched for audio-based speaking practice.</strong> If you commute, exercise, or do housework and want to use that time for learning English, Pimsleur is the best option.</p>
-<p class="mb-4">However, at $19.95+/month for audio-only content, it's expensive compared to comprehensive apps. It's best used as a supplement to app-based learning or as your primary audio resource.</p>
-<p class="mb-4">Pimsleur is best for:</p>
-<ul class="list-disc pl-6 mb-4 space-y-2">
-<li>Commuters who want productive drive time</li>
-<li>Auditory learners who prefer listening</li>
-<li>Business professionals preparing for travel</li>
-<li>Those focusing on pronunciation</li>
-</ul>
-<div class="bg-gray-100 rounded-xl p-6 mt-8">
-<h3 class="font-bold mb-3">Rating Summary</h3>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-<div>
-<p class="text-2xl font-bold text-primary">9.5</p>
-<p class="text-xs text-gray-500">Speaking Practice</p>
-</div>
-<div>
-<p class="text-2xl font-bold text-primary">8.5</p>
-<p class="text-xs text-gray-500">Pronunciation</p>
-</div>
-<div>
-<p class="text-2xl font-bold text-primary">6.0</p>
-<p class="text-xs text-gray-500">Value</p>
-</div>
-<div>
-<p class="text-2xl font-bold text-primary">8.0</p>
-<p class="text-xs text-gray-500">Convenience</p>
-</div>
-</div>
-</div>
-<div class="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-xl">
-<p class="font-medium">Ready to learn English during your commute?</p>
-<a href="https://www.pimsleur.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg transition">Try Free Demo →</a>
-<p class="text-xs text-gray-500 mt-2">Affiliate disclosure: We may earn a commission when you sign up through this link.</p>
-</div>
-<div class="flex gap-4 mt-8">
-<a href="/reviews" class="text-primary font-semibold hover:underline">← All Reviews</a>
-</div>
-  <ArticleSchema title="Pimsleur Review" description="Pimsleur is an audio-based language learning system focused on conversational fluency through listening and speaking." publishedTime="2026-04-01" />
-</article>
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="font-bold text-lg">Our Rating</p>
+          <p class="text-3xl font-bold text-blue-700">8.0/10</p>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-gray-500">Best for</p>
+          <p class="font-semibold">Auditory learners, busy professionals</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">The Short Version</h2>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Pimsleur is a premium audio-based language learning program that focuses on speaking and listening skills. It uses a unique spaced repetition system and real-life conversation practice. If you learn best by listening and speaking — not reading — Pimsleur could be your perfect study companion. However, it lacks reading and writing practice, which you'll need to become fully fluent.
+    </p>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+      <p class="font-semibold text-amber-800 mb-2">⚡ Bottom Line</p>
+      <p class="text-gray-700">Pimsleur is excellent for building speaking confidence and pronunciation. It's not a complete solution on its own, but it works great as part of a mixed learning approach. Best for learners who want to practice English during commutes, workouts, or housework.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">What is Pimsleur?</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Pimsleur was created in 1963 by Dr. Paul Pimsleur, a language professor who studied how people forget information. His research showed that learners forget new words quickly unless they review them at the right moments. This idea became the foundation of Pimsleur's method.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Unlike apps like Duolingo or Babbel, Pimsleur focuses almost entirely on audio. You listen to native speakers having conversations. Then you respond out loud. The app plays your voice back so you can hear your pronunciation. This "listen and speak" cycle repeats throughout each lesson.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      The program is designed for "anywhere learning" — you can use it while driving, cooking, walking, or exercising. No need to look at a screen. This makes it unique among English learning tools.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">How Does Pimsleur Work?</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Pimsleur uses a simple but effective structure. Each lesson is about 30 minutes. You listen to a short conversation between two native English speakers. The speakers cover everyday topics — ordering food, asking for directions, making appointments, small talk.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      After each phrase, you pause and repeat. Pimsleur waits for you to speak. This "recall practice" helps words stick in your memory. The app also introduces new words gradually. You'll review old vocabulary while learning new phrases.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      The core elements of Pimsleur's method include:
+    </p>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>Graduated interval recall</strong> — Words appear at increasing time intervals to help you remember them longer</li>
+      <li><strong>Core vocabulary</strong> — You learn the most useful words first, not random vocabulary</li>
+      <li><strong>Native speaker models</strong> — Every phrase is spoken by fluent, natural speakers</li>
+      <li><strong>Prompt-response learning</strong> — You speak before hearing the correct answer, building active recall</li>
+      <li><strong>Accent training</strong> — The voice comparison feature helps you sound more natural</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Pricing</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Pimsleur offers three subscription tiers:
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border border-gray-300 px-4 py-2 text-left">Plan</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Price</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Pimsleur Basic</td>
+            <td class="border border-gray-300 px-4 py-2">$14.95/month</td>
+            <td class="border border-gray-300 px-4 py-2">1 language, 30 audio lessons, audio only</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Pimsleur Premium</td>
+            <td class="border border-gray-300 px-4 py-2">$23.95/month</td>
+            <td class="border border-gray-300 px-4 py-2">1 language, all 150+ lessons, reading lessons, flashcards, quizzes</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Pimsleur Unlimited</td>
+            <td class="border border-gray-300 px-4 py-2">$26.95/month</td>
+            <td class="border border-gray-300 px-4 py-2">Unlimited languages, all Premium features, plus new lessons added monthly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      You can also purchase individual language courses for a one-time fee of around $399-$499. Annual subscriptions offer a discount — typically about 30% off the monthly price.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      There is a 7-day free trial available. This gives you access to 1 lesson per language so you can test the method before paying.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Pros</h2>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>Excellent for pronunciation</strong> — You hear native speakers and compare your voice. This builds natural-sounding English quickly.</li>
+      <li><strong>Perfect for multitasking</strong> — No screen needed. Use it while driving, exercising, cooking, or commuting. This makes it easy to practice every day.</li>
+      <li><strong>Science-backed method</strong> — The spaced repetition system is based on real research about how memory works.</li>
+      <li><strong>No fluff, no games</strong> — Unlike gamified apps, Pimsleur focuses only on learning. Lessons are efficient and focused.</li>
+      <li><strong>Builds speaking confidence</strong> — You practice responding out loud from day one. This helps you feel ready for real conversations.</li>
+      <li><strong>High-quality audio</strong> — All recordings feature professional voice actors with clear, natural American or British accents.</li>
+      <li><strong>Offline access</strong> — Download lessons to listen without internet. Great for travel or areas with poor connectivity.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Cons</h2>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>No reading or writing practice</strong> — You won't learn to read or spell English. You'll miss important skills that other apps teach.</li>
+      <li><strong>Expensive compared to competitors</strong> — At $23.95/month for one language, it's pricier than Babbel ($6.99/month) or Duolingo ($12.99/month).</li>
+      <li><strong>Only American and British English</strong> — No Australian, South African, or other English varieties available.</li>
+      <li><strong>Limited vocabulary coverage</strong> — Pimsleur teaches practical phrases, but you won't learn specialized vocabulary for business, tech, or academic English.</li>
+      <li><strong>Can feel repetitive</strong> — The method works, but some learners find 30-minute audio lessons boring after a few weeks.</li>
+      <li><strong>No grammar explanation</strong> — Grammar is taught implicitly through examples, but you won't receive clear rules or explanations.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Who Should Use Pimsleur?</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Pimsleur works best for specific types of learners:
+    </p>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>Commuters and busy professionals</strong> — If you have long drives or train rides, Pimsleur turns dead time into learning time.</li>
+      <li><strong>Auditory learners</strong> — If you learn best by listening and speaking, not reading, this method fits your style.</li>
+      <li><strong>Beginners who want speaking practice</strong> — Pimsleur starts from zero and gets you speaking basic sentences quickly.</li>
+      <li><strong>Travelers</strong> — Short, practical lessons prepare you for real travel situations like ordering food or asking for help.</li>
+    </ul>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Pimsleur may not be the best choice if:
+    </p>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li>You prefer visual or written learning materials</li>
+      <li>You need business or academic English vocabulary</li>
+      <li>You're on a tight budget</li>
+      <li>You want to learn multiple English varieties (British, Australian, etc.)</li>
+      <li>You need grammar explanations and rules</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Pimsleur vs. The Competition</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      How does Pimsleur compare to other popular English learning platforms?
+    </p>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border border-gray-300 px-4 py-2 text-left">Feature</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Pimsleur</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Duolingo</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">iTalki</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Price</td>
+            <td class="border border-gray-300 px-4 py-2">$23.95/mo</td>
+            <td class="border border-gray-300 px-4 py-2">$12.99/mo</td>
+            <td class="border border-gray-300 px-4 py-2">From $5/lesson</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Speaking practice</td>
+            <td class="border border-gray-300 px-4 py-2">✅ Audio recording</td>
+            <td class="border border-gray-300 px-4 py-2">⚠️ Limited</td>
+            <td class="border border-gray-300 px-4 py-2">✅ 1-on-1 tutor</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Reading/Writing</td>
+            <td class="border border-gray-300 px-4 py-2">❌ (Premium only)</td>
+            <td class="border border-gray-300 px-4 py-2">✅ Full</td>
+            <td class="border border-gray-300 px-4 py-2">✅ Via chat</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Grammar teaching</td>
+            <td class="border border-gray-300 px-4 py-2">⚠️ Implicit</td>
+            <td class="border border-gray-300 px-4 py-2">✅ Explicit</td>
+            <td class="border border-gray-300 px-4 py-2">✅ From tutor</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-300 px-4 py-2">Human interaction</td>
+            <td class="border border-gray-300 px-4 py-2">❌</td>
+            <td class="border border-gray-300 px-4 py-2">❌</td>
+            <td class="border border-gray-300 px-4 py-2">✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Our Verdict</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      Pimsleur is a well-designed, science-backed language learning program. Its audio-only approach is unique and effective for building speaking skills and pronunciation. If you have a long commute or want to practice English while doing other activities, Pimsleur is an excellent choice.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      However, Pimsleur is not a complete English learning solution. You'll need to supplement it with reading, writing, and grammar practice from other sources. At $23.95/month, it's also more expensive than many competitors. But for what it does — building spoken English skills efficiently — it does very well.
+    </p>
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      We recommend Pimsleur as a <strong>supplement</strong> to your main learning method, not as your only tool. Use it alongside apps like Duolingo or Babbel for vocabulary and grammar, and consider iTalki or Preply for real conversation practice with native speakers.
+    </p>
+
+    <!-- FTC Affiliate Disclosure -->
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <p class="text-sm text-gray-500">
+        <strong>Affiliate Disclosure:</strong> LearnEnglish.Life is reader-supported. If you purchase through links on this page, we may earn a commission at no extra cost to you. Our editorial content is not influenced by advertisers or affiliate partnerships. <a href="/affiliate-disclosure/" class="text-blue-600 hover:underline">Learn more</a>.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-8 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 text-center">
+      <p class="text-lg font-semibold text-green-800 mb-2">Ready to start learning?</p>
+      <p class="text-gray-600 mb-4">Try Pimsleur with their 7-day free trial</p>
+      <a href="https://www.pimsleur.com/" target="_blank" rel="noopener sponsored" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Start Free Trial →
+      </a>
+    </div>
+  </article>
 </Base>
