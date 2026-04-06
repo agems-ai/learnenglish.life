@@ -83,7 +83,7 @@ const articleSchema = {
       <div class="overflow-x-auto">
         <table class="w-full border-collapse bg-white rounded-xl shadow-sm">
           <thead>
-            <tr class="bg-gray-50">
+            <tr class="bg-neutral-800">
               <th class="text-left p-4">Platform</th>
               <th class="text-center p-4">Price Range</th>
               <th class="text-left p-4">Best For</th>
@@ -91,17 +91,17 @@ const articleSchema = {
           </thead>
           <tbody>
             <tr>
-              <td class="p-4 font-semibold text-emerald-700"><a href="/reviews/italki/">iTalki</a></td>
+              <td class="p-4 font-semibold text-emerald-400"><a href="/reviews/italki/">iTalki</a></td>
               <td class="p-4 text-center">$4-50/hr</td>
               <td class="p-4">Community tutors, casual learners, budget-friendly</td>
             </tr>
-            <tr class="bg-gray-50">
-              <td class="p-4 font-semibold text-emerald-700"><a href="/reviews/preply/">Preply</a></td>
+            <tr class="bg-neutral-800">
+              <td class="p-4 font-semibold text-emerald-400"><a href="/reviews/preply/">Preply</a></td>
               <td class="p-4 text-center">$10-45/hr</td>
               <td class="p-4">Professional tutors, structured learning</td>
             </tr>
             <tr>
-              <td class="p-4 font-semibold text-emerald-700"><a href="/reviews/cambly/">Cambly</a></td>
+              <td class="p-4 font-semibold text-emerald-400"><a href="/reviews/cambly/">Cambly</a></td>
               <td class="p-4 text-center">$6.50-80/wk</td>
               <td class="p-4">Unlimited conversation practice, subscription model</td>
             </tr>
@@ -117,7 +117,7 @@ const articleSchema = {
         <ul class="space-y-3">
           {questions.map((q, i) => (
             <li class="flex items-start gap-3">
-              <span class="bg-emerald-100 text-emerald-700 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">{i + 1}</span>
+              <span class="bg-emerald-100 text-emerald-400 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">{i + 1}</span>
               <span class="text-gray-700">{q}</span>
             </li>
           ))}
@@ -182,7 +182,7 @@ const articleSchema = {
       <h2 class="text-xl font-bold mb-3">Ready to Find Your Tutor?</h2>
       <p class="text-emerald-100 mb-4">Start with community tutors on iTalki for affordable practice, or browse professional teachers on Preply for structured lessons.</p>
       <div class="flex flex-wrap gap-3">
-        <a href="/reviews/italki/" class="bg-white text-emerald-700 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-50">Compare iTalki Tutors</a>
+        <a href="/reviews/italki/" class="bg-white text-emerald-400 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-900/30">Compare iTalki Tutors</a>
         <a href="/reviews/preply/" class="border-2 border-white text-white px-5 py-2 rounded-lg font-semibold hover:bg-white/10">Compare Preply Tutors</a>
       </div>
     </section>
@@ -192,11 +192,11 @@ const articleSchema = {
       <h2 class="text-xl font-bold mb-4">Continue Learning</h2>
       <div class="grid md:grid-cols-2 gap-4">
         <a href="/compare/best-english-learning-apps/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
-          <h3 class="font-semibold text-emerald-700">Best English Learning Apps</h3>
+          <h3 class="font-semibold text-emerald-400">Best English Learning Apps</h3>
           <p class="text-gray-500 text-sm mt-1">Top apps to supplement tutor sessions</p>
         </a>
         <a href="/guides/free-vs-paid-english-learning/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
-          <h3 class="font-semibold text-emerald-700">Free vs Paid Resources</h3>
+          <h3 class="font-semibold text-emerald-400">Free vs Paid Resources</h3>
           <p class="text-gray-500 text-sm mt-1">Get the most value from your learning budget</p>
         </a>
       </div>
