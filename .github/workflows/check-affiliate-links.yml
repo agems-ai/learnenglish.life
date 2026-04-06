@@ -1,0 +1,56 @@
+name: Check Affiliate Links
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  check-see-guru-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for untagged see.guru links
+        run: |
+          echo "🔍 Checking for untagged see.guru links..."
+          
+          # Search all src/ files for see.guru mentions
+          UNTAGGED=$(grep -rn "see\.guru" src/ 2>/dev/null || true)
+          
+          if [ -n "$UNTAGGED" ]; then
+            echo "❌ FOUND untagged see.guru links:"
+            echo "$UNTAGGED"
+            echo ""
+            echo "💡 All see.guru links must use our affiliate redirect /go/see-guru"
+            echo "   or link directly to https://see.guru/?aff=SG-SUAG151"
+            exit 1
+          fi
+          
+          echo "✅ No untagged see.guru links found"
+          
+  check-all-affiliate-links:
+    needs: check-see-guru-links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check affiliate link consistency
+        run: |
+          echo "🔍 Checking affiliate link patterns..."
+          
+          # Check that /go/ redirect pages exist for all affiliate partners
+          PARTNERS="italki preply cambly see-guru"
+          
+          for partner in $PARTNERS; do
+            if [ -f "src/pages/go/${partner}.astro" ]; then
+              echo "✅ /go/${partner} redirect exists"
+            else
+              echo "⚠️  /go/${partner}.astro not found (may not be an affiliate yet)"
+            fi
+          done
+          
+          echo "✅ Affiliate link check complete"
