@@ -1,0 +1,118 @@
+---
+// HeroCTA.astro - Conversion-optimized hero section with prominent CTA
+interface Props {
+  platform?: string; // 'italki' | 'preply' | 'cambly'
+  rating?: number;
+  reviewCount?: number;
+  price?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  platform = "italki",
+  rating = 4.7,
+  reviewCount = 12500,
+  price = "From $10/hr",
+  ctaText = "Find Your Tutor (Free)",
+  ctaLink = "/go/italki",
+  title = "Find Your Perfect English Tutor",
+  subtitle = "Join millions of learners improving their English with personalized 1-on-1 lessons"
+} = Astro.props;
+
+// Platform-specific colors and content
+const platforms = {
+  italki: { 
+    name: "iTalki",
+    color: "emerald",
+    badge: "10M+ learners"
+  },
+  preply: { 
+    name: "Preply", 
+    color: "indigo",
+    badge: "50K+ tutors"
+  },
+  cambly: { 
+    name: "Cambly",
+    color: "teal",
+    badge: "Native speakers"
+  }
+};
+
+const p = platforms[platform as keyof typeof platforms] || platforms.italki;
+const colorClass = `text-${p.color}-600`;
+const bgClass = `bg-${p.color}-50`;
+const borderClass = `border-${p.color}-200`;
+---
+
+<section class={`
+  ${bgClass} border ${borderClass} rounded-2xl 
+  p-6 md:p-8 mb-8
+`}>
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <!-- Left: Info -->
+    <div class="flex-1">
+      <!-- Platform badge -->
+      <span class={`
+        inline-block 
+        ${bgClass} border ${borderClass}
+        ${colorClass}
+        text-xs font-semibold px-3 py-1 rounded-full mb-3
+      `}>
+        {p.badge}
+      </span>
+      
+      <!-- Title -->
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+        {title}
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-gray-600 mb-4 max-w-xl">
+        {subtitle}
+      </p>
+      
+      <!-- Trust indicators -->
+      <div class="flex flex-wrap items-center gap-4 text-sm">
+        <!-- Rating -->
+        <div class="flex items-center gap-1.5">
+          <span class="text-yellow-500">★</span>
+          <span class="font-semibold">{rating}/5</span>
+          <span class="text-gray-500">({reviewCount.toLocaleString()} reviews)</span>
+        </div>
+        
+        <!-- Price -->
+        <div class="flex items-center gap-1.5">
+          <span class="text-green-600 font-semibold">{price}</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right: CTA -->
+    <div class="flex-shrink-0">
+      <a 
+        href={ctaLink}
+        class="
+          block
+          ${p.color === 'emerald' ? 'bg-emerald-600 hover:bg-emerald-700' : ''}
+          ${p.color === 'indigo' ? 'bg-indigo-600 hover:bg-indigo-700' : ''}
+          ${p.color === 'teal' ? 'bg-teal-600 hover:bg-teal-700' : ''}
+          text-white text-center
+          px-8 py-4 rounded-xl
+          font-bold text-lg
+          shadow-lg
+          transform hover:scale-105
+          active:scale-95
+          transition-all
+        "
+      >
+        {ctaText} →
+      </a>
+      <p class="text-center text-xs text-gray-500 mt-2">
+        Free community access available
+      </p>
+    </div>
+  </div>
+</section>

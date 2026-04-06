@@ -1,0 +1,43 @@
+---
+// BenefitCards.astro - Benefit-focused cards with icons
+interface Benefit {
+  icon: string; // emoji or icon class
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  benefits: Benefit[];
+}
+
+const { 
+  title = "Why Learners Choose Us",
+  benefits = [
+    { icon: "🎯", title: "Personalized Learning", description: "Lessons tailored to your goals and schedule" },
+    { icon: "💰", title: "Affordable Options", description: "Quality tutors starting from $10/hour" },
+    { icon: "🌍", title: "Native Speakers", description: "Learn from certified native English teachers" },
+    { icon: "⏰", title: "Flexible Schedule", description: "Book lessons that fit your calendar" }
+  ]
+} = Astro.props;
+---
+
+<section class="mb-8">
+  {title && (
+    <h2 class="text-xl font-bold text-gray-900 mb-4">{title}</h2>
+  )}
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {benefits.map((benefit, index) => (
+      <div class="flex gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all">
+        <div class="flex-shrink-0 w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center text-2xl">
+          {benefit.icon}
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-1">{benefit.title}</h3>
+          <p class="text-sm text-gray-600">{benefit.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

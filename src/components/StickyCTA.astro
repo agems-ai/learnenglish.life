@@ -1,0 +1,87 @@
+---
+// StickyCTA.astro - Mobile-friendly sticky bottom CTA bar
+interface Props {
+  ctaText?: string;
+  ctaLink?: string;
+  platform?: string; // 'italki' | 'preply' | 'cambly'
+}
+
+const { 
+  ctaText = "Find Your Tutor (Free)", 
+  ctaLink = "/go/italki",
+  platform = "italki"
+} = Astro.props;
+
+// Platform-specific colors
+const colors = {
+  italki: { bg: "bg-emerald-600", hover: "hover:bg-emerald-700" },
+  preply: { bg: "bg-indigo-600", hover: "hover:bg-indigo-700" },
+  cambly: { bg: "bg-teal-600", hover: "hover:bg-teal-700" }
+};
+
+const color = colors[platform as keyof typeof colors] || colors.italki;
+---
+
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full transition-transform duration-300 md:hidden">
+  <div class={`
+    ${color.bg} ${color.hover}
+    text-white shadow-[0_-4px_20px_rgba(0,0,0,0.15)]
+    px-4 py-3
+  `}>
+    <div class="max-w-lg mx-auto flex items-center justify-between gap-3">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium truncate">{ctaText}</p>
+        <p class="text-xs text-white/80">Join millions of learners</p>
+      </div>
+      <a 
+        href={ctaLink}
+        class="
+          flex-shrink-0 
+          bg-white text-gray-900 
+          px-5 py-2.5 rounded-lg 
+          font-bold text-sm
+          shadow-md
+          active:scale-95
+          transition-transform
+        "
+      >
+        Try Now →
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Show sticky CTA after scrolling past hero section
+  const stickyCTA = document.getElementById('sticky-cta');
+  const heroSection = document.querySelector('header') || document.querySelector('nav');
+  
+  if (stickyCTA && heroSection) {
+    const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
+    
+    const toggleSticky = () => {
+      if (window.scrollY > heroBottom) {
+        stickyCTA.classList.remove('translate-y-full');
+        stickyCTA.classList.add('translate-y-0');
+      } else {
+        stickyCTA.classList.add('translate-y-full');
+        stickyCTA.classList.remove('translate-y-0');
+      }
+    };
+    
+    // Initial check
+    toggleSticky();
+    
+    // Listen for scroll
+    window.addEventListener('scroll', toggleSticky, { passive: true });
+  }
+</script>
+
+<style>
+  /* Ensure sticky bar doesn't overlap on devices with home indicator */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    #sticky-cta {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+</style>
