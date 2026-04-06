@@ -1,4 +1,33 @@
 ---
-// See Guru Affiliate Redirect
-return Astro.redirect('https://see.guru/?aff=SG-SUAG151', 302);
+// See Guru affiliate redirect page
 ---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Redirecting to See Guru...</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: linear-gradient(135deg, #10b981 0%, #059669 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .container { text-align: center; color: white; }
+    .logo { font-size: 48px; margin-bottom: 20px; }
+    h1 { font-size: 24px; margin-bottom: 10px; }
+    p { font-size: 16px; opacity: 0.9; }
+    .loader { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🎓</div>
+    <h1>Redirecting to See Guru</h1>
+    <p>You're being redirected to find your perfect tutor...</p>
+    <div class="loader"></div>
+    <p style="font-size: 12px; margin-top: 20px;">Affiliate link — we may earn a commission at no extra cost to you.</p>
+  </div>
+  <script>
+    const AFFILIATE_URL = "https://see.guru/?aff=SG-SUAG151";
+    setTimeout(() => { window.location.href = AFFILIATE_URL; }, 1000);
+  </script>
+</body>
+</html>
