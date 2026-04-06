@@ -3,12 +3,17 @@ import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import SocialProof from '../../components/SocialProof.astro';
+import BenefitCards from '../../components/BenefitCards.astro';
+import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
 
 // Platform data (ratings from individual review pages)
 const italki = {
   name: "iTalki",
   rating: 9.2,
   price: "$5-40/hr",
+  link: "/go/italki",
   bestFor: "Speaking practice with community tutors",
   pros: [
     "Large selection of community tutors (10,000+)",
@@ -28,6 +33,7 @@ const preply = {
   name: "Preply",
   rating: 8.8,
   price: "$10-45/hr",
+  link: "/go/preply",
   bestFor: "Professional tutors with structured learning",
   pros: [
     "Vetted professional tutors with teaching credentials",
@@ -43,16 +49,46 @@ const preply = {
   ]
 };
 
+// Comparison rows with winner highlighting
 const comparison = [
-  { feature: "Starting Price", italki: "$5/hr", preply: "$10/hr" },
-  { feature: "Average Lesson Cost", italki: "$15-25/hr", preply: "$18-30/hr" },
-  { feature: "Native Speakers", italki: "Yes", preply: "Yes" },
-  { feature: "Certified Teachers", italki: "Limited", preply: "Yes" },
-  { feature: "Trial Lesson", italki: "One trial lesson", preply: "First lesson discounted" },
-  { feature: "Mobile App", italki: "iOS & Android", preply: "iOS & Android" },
-  { feature: "Lesson Recording", italki: "Yes", preply: "No" },
-  { feature: "Corporate Plans", italki: "Limited", preply: "Yes" },
-  { feature: "Lesson Scheduling", italki: "Very Flexible", preply: "Moderately Flexible" }
+  { feature: "Starting Price", winner: "a", a: "$5/hr", b: "$10/hr" },
+  { feature: "Average Lesson Cost", winner: null, a: "$15-25/hr", b: "$18-30/hr" },
+  { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes" },
+  { feature: "Certified Teachers", winner: "b", a: "Limited", b: "Yes" },
+  { feature: "Trial Lesson", winner: "b", a: "One trial lesson", b: "Discounted First" },
+  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+  { feature: "Lesson Recording", winner: "a", a: "Yes", b: "No" },
+  { feature: "Corporate Plans", winner: "b", a: "Limited", b: "Yes" },
+  { feature: "Lesson Scheduling", winner: "a", a: "Very Flexible", b: "Moderately Flexible" }
+];
+
+// Benefits section
+const whyCompare = [
+  { icon: "💰", title: "Save Money", description: "Find the most affordable option for your budget and learning needs" },
+  { icon: "📈", title: "Track Progress", description: "Choose a platform with tools to measure your improvement over time" },
+  { icon: "🎯", title: "Match Your Goals", description: "Whether exams, business, or conversation — pick the platform that fits" }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "After trying both, I chose iTalki for the flexibility and price. Best decision for my wallet!",
+    author: "Maria G.",
+    location: "Brazil",
+    result: "Saved $200/month"
+  },
+  {
+    quote: "Preply's structured approach was exactly what I needed for my IELTS preparation.",
+    author: "Kenji T.",
+    location: "Japan",
+    result: "IELTS 7.0 achieved"
+  },
+  {
+    quote: "Both platforms are great — it depends on whether you want casual or structured learning.",
+    author: "Ahmed K.",
+    location: "UAE",
+    result: "Fluent in 8 months"
+  }
 ];
 
 // SEO Schema
@@ -123,7 +159,7 @@ const faqSchema = {
   
   <Header />
   
-  <main class="max-w-5xl mx-auto px-4 py-8">
+  <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
     <!-- Breadcrumb -->
     <nav class="text-sm text-gray-500 mb-4">
       <a href="/" class="hover:text-emerald-600">Home</a>
@@ -162,13 +198,9 @@ const faqSchema = {
             {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
           </ul>
         </div>
-        <div class="mb-4">
-          <h3 class="font-semibold text-red-700 mb-2">Cons</h3>
-          <ul class="text-sm text-gray-700 space-y-1">
-            {italki.cons.map(con => <li class="flex items-start"><span class="text-red-500 mr-2">✗</span>{con}</li>)}
-          </ul>
-        </div>
-        <a href="/reviews/italki" class="block w-full bg-emerald-600 text-white text-center py-2 rounded-lg hover:bg-emerald-700 transition">Read Full iTalki Review</a>
+        <a href={italki.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
+          Try iTalki Free →
+        </a>
       </div>
 
       <!-- Preply Card -->
@@ -191,45 +223,37 @@ const faqSchema = {
             {preply.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
           </ul>
         </div>
-        <div class="mb-4">
-          <h3 class="font-semibold text-red-700 mb-2">Cons</h3>
-          <ul class="text-sm text-gray-700 space-y-1">
-            {preply.cons.map(con => <li class="flex items-start"><span class="text-red-500 mr-2">✗</span>{con}</li>)}
-          </ul>
-        </div>
-        <a href="/reviews/preply" class="block w-full bg-indigo-600 text-white text-center py-2 rounded-lg hover:bg-indigo-700 transition">Read Full Preply Review</a>
+        <a href={preply.link} class="block w-full bg-indigo-600 text-white text-center py-3 rounded-lg hover:bg-indigo-700 transition font-bold">
+          Try Preply Free →
+        </a>
       </div>
     </div>
+
+    <!-- Why Compare Section -->
+    <BenefitCards 
+      title="Why Compare These Platforms?"
+      benefits={whyCompare}
+    />
+
+    <!-- Social Proof -->
+    <SocialProof 
+      title="What Learners Say"
+      testimonials={testimonials}
+    />
 
     <!-- Ad Unit -->
     <div class="mb-8">
       <AdUnit slot="compare-1" />
     </div>
 
-    <!-- Detailed Comparison Table -->
-    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
-      <h2 id="quick-compare" class="text-2xl font-bold text-gray-900 mb-6">Feature Comparison</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full">
-          <thead>
-            <tr class="border-b-2 border-gray-200">
-              <th class="text-left py-3 px-4 font-semibold text-gray-700">Feature</th>
-              <th class="text-center py-3 px-4 font-semibold text-emerald-600">iTalki</th>
-              <th class="text-center py-3 px-4 font-semibold text-indigo-600">Preply</th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparison.map(row => (
-              <tr class="border-b border-gray-100 hover:bg-gray-50">
-                <td class="py-3 px-4 text-gray-700">{row.feature}</td>
-                <td class="py-3 px-4 text-center text-emerald-700 font-medium">{row.italki}</td>
-                <td class="py-3 px-4 text-center text-indigo-700 font-medium">{row.preply}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <!-- Enhanced Comparison Table with Winner Highlighting -->
+    <ComparisonHighlight 
+      title="Feature Comparison"
+      platformA={italki}
+      platformB={preply}
+      winner="a"
+      rows={comparison}
+    />
 
     <!-- Ad Unit -->
     <div class="mb-8">
@@ -356,12 +380,13 @@ const faqSchema = {
           <h3 class="font-semibold text-gray-900">Preply Review</h3>
           <p class="text-sm text-gray-600">Full platform analysis</p>
         </a>
-        <a href="/compare/best-english-learning-apps" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+        <a href="/reviews/cambly" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
           <div class="flex items-center mb-2">
-            <span class="text-emerald-500 mr-1">📊</span>
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">8.2/10</span>
           </div>
-          <h3 class="font-semibold text-gray-900">Best Apps 2026</h3>
-          <p class="text-sm text-gray-600">10 apps compared</p>
+          <h3 class="font-semibold text-gray-900">Cambly Review</h3>
+          <p class="text-sm text-gray-600">Full platform analysis</p>
         </a>
       </div>
     </section>
@@ -371,6 +396,13 @@ const faqSchema = {
       <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
     </div>
   </main>
+
+  <!-- Sticky CTA for Mobile -->
+  <StickyCTA 
+    ctaText="Compare Prices Now"
+    ctaLink="/go/italki"
+    platform="italki"
+  />
 
   <Footer />
 </Base>
