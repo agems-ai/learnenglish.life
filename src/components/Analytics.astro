@@ -1,0 +1,241 @@
+---
+/**
+ * Analytics.astro - Google Analytics 4 Integration
+ * 
+ * IMPORTANT: GA4 only loads AFTER user consent is granted.
+ * The consent flag is set by CookieConsent component.
+ * Non-essential cookies are blocked until explicit consent.
+ */
+
+// GA4 Measurement ID from environment variable
+const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
+---
+
+<!-- Google Analytics - Only loads when analytics consent is granted -->
+<script define:vars={{ ga4Id }}>
+  // Wait for consent before loading GA4
+  function loadAnalytics() {
+    // Check if consent was already given
+    if (window['ga-enabled']) {
+      initGA4();
+      return;
+    }
+    
+    // Listen for consent update event
+    window.addEventListener('consentUpdated', (event) => {
+      if (event.detail && event.detail.analytics) {
+        window['ga-enabled'] = true;
+        initGA4();
+      }
+    });
+  }
+
+  function initGA4() {
+    // Only load GA4 script if not already loaded
+    if (window.dataLayer) return;
+    
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', ga4Id, {
+      send_page_view: true,
+      page_title: document.title,
+      page_location: window.location.href,
+    });
+
+    // Custom event tracking functions
+    window.analytics = {
+      // Track affiliate link clicks
+      trackAffiliateClick: (platform, url) => {
+        gtag('event', 'affiliate_click', {
+          event_category: 'Affiliate',
+          event_label: platform,
+          destination_url: url,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Affiliate click: ${platform}`);
+      },
+
+      // Track ad impressions (viewability)
+      trackAdImpression: (slot, format, adClient) => {
+        gtag('event', 'ad_impression', {
+          event_category: 'Advertising',
+          event_label: slot,
+          ad_format: format,
+          ad_client: adClient,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Ad impression: ${slot}`);
+      },
+
+      // Track ad clicks
+      trackAdClick: (slot, format) => {
+        gtag('event', 'ad_click', {
+          event_category: 'Advertising',
+          event_label: slot,
+          ad_format: format,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Ad click: ${slot}`);
+      },
+
+      // Track quiz interactions
+      trackQuizStart: (quizId, quizTitle) => {
+        gtag('event', 'quiz_start', {
+          event_category: 'Engagement',
+          event_label: quizId,
+          quiz_title: quizTitle,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Quiz start: ${quizId}`);
+      },
+
+      trackQuizComplete: (quizId, quizTitle, score, totalQuestions) => {
+        gtag('event', 'quiz_complete', {
+          event_category: 'Engagement',
+          event_label: quizId,
+          quiz_title: quizTitle,
+          score: score,
+          total_questions: totalQuestions,
+          completion_rate: (score / totalQuestions) * 100,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Quiz complete: ${quizId} - Score: ${score}/${totalQuestions}`);
+      },
+
+      trackQuizQuestionAnswer: (quizId, questionNumber, correct, timeSpent) => {
+        gtag('event', 'quiz_answer', {
+          event_category: 'Engagement',
+          event_label: quizId,
+          question_number: questionNumber,
+          correct: correct,
+          time_spent_ms: timeSpent,
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track game interactions
+      trackGameStart: (gameId, gameName) => {
+        gtag('event', 'game_start', {
+          event_category: 'Game',
+          event_label: gameId,
+          game_name: gameName,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Game start: ${gameId}`);
+      },
+
+      trackGameComplete: (gameId, gameName, score, timeSpent) => {
+        gtag('event', 'game_complete', {
+          event_category: 'Game',
+          event_label: gameId,
+          game_name: gameName,
+          score: score,
+          time_spent_ms: timeSpent,
+          transport_type: 'beacon',
+        });
+        console.log(`[Analytics] Game complete: ${gameId} - Score: ${score}`);
+      },
+
+      trackGameAction: (gameId, action, value) => {
+        gtag('event', 'game_action', {
+          event_category: 'Game',
+          event_label: gameId,
+          action: action,
+          value: value,
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track search
+      trackSearch: (searchTerm, resultCount) => {
+        gtag('event', 'search', {
+          search_term: searchTerm,
+          result_count: resultCount,
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track outbound links
+      trackOutboundClick: (url, linkText) => {
+        gtag('event', 'outbound_click', {
+          event_category: 'Navigation',
+          event_label: linkText || url,
+          destination_url: url,
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track form submissions
+      trackFormSubmit: (formName, success) => {
+        gtag('event', 'form_submit', {
+          event_category: 'Conversion',
+          event_label: formName,
+          success: success,
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track newsletter signups
+      trackNewsletterSignup: (source) => {
+        gtag('event', 'newsletter_signup', {
+          event_category: 'Conversion',
+          event_label: source || 'unknown',
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track page scroll depth
+      trackScrollDepth: (percent) => {
+        gtag('event', 'scroll_depth', {
+          percent_scrolled: percent,
+          transport_type: 'beacon',
+        });
+      },
+
+      // Track video engagement (if applicable)
+      trackVideoEvent: (event, videoId, percentWatched) => {
+        gtag('event', 'video_engagement', {
+          event_category: 'Media',
+          event_label: videoId,
+          video_event: event,
+          percent_watched: percentWatched,
+          transport_type: 'beacon',
+        });
+      },
+    };
+
+    // Auto-track affiliate links with /go/ prefix
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track affiliate link clicks
+      document.querySelectorAll('a[href^="/go/"], a[data-affiliate]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href') || link.getAttribute('data-affiliate') || '';
+          const platform = href.replace('/go/', '').replace(/^\//, '');
+          if (window.analytics && href.includes('/go/')) {
+            window.analytics.trackAffiliateClick(platform, link.href);
+          }
+        });
+      });
+
+      // Track scroll depth (25%, 50%, 75%, 100%)
+      let scrollDepthTracked = { 25: false, 50: false, 75: false, 100: false };
+      window.addEventListener('scroll', () => {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100);
+        
+        [25, 50, 75, 100].forEach(depth => {
+          if (scrollPercent >= depth && !scrollDepthTracked[depth] && window.analytics) {
+            window.analytics.trackScrollDepth(depth);
+            scrollDepthTracked[depth] = true;
+          }
+        });
+      });
+    });
+    
+    console.log('[Analytics] GA4 initialized with user consent');
+  }
+
+  // Start the consent-aware initialization
+  loadAnalytics();
+</script>

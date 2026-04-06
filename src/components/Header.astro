@@ -1,0 +1,159 @@
+---
+const navItems = [
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/comparisons', label: 'Comparisons' },
+  { href: '/study', label: 'Study' },
+  { href: '/games', label: 'Games' },
+  { href: '/blog', label: 'Blog' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+  <div class="container-site">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 focus-ring rounded">
+        <svg class="w-8 h-8 text-primary-600" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="currentColor"/>
+          <path d="M8 12C8 9.79086 9.79086 8 12 8H14C16.2091 8 18 9.79086 18 12V14C18 16.2091 16.2091 18 14 18H12C9.79086 18 8 16.2091 8 14V12Z" fill="white"/>
+          <path d="M14 20C14 17.7909 15.7909 16 18 16H20C22.2091 16 24 17.7909 24 20V22C24 24.2091 22.2091 26 20 26H18C15.7909 26 14 24.2091 14 22V20Z" fill="white"/>
+          <circle cx="22" cy="12" r="2" fill="white"/>
+        </svg>
+        <span class="text-xl font-bold text-slate-800">LearnEnglish<span class="text-primary-600">.life</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class:list={[
+              "px-4 py-2 rounded-lg font-medium transition-colors",
+              currentPath.startsWith(item.href)
+                ? "bg-primary-50 text-primary-700"
+                : "text-slate-600 hover:bg-slate-100 hover:text-slate-800"
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Right side: Search + CTA -->
+      <div class="flex items-center gap-3">
+        <!-- Search button -->
+        <button
+          type="button"
+          class="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors focus-ring"
+          aria-label="Search"
+          id="search-toggle"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#newsletter" class="btn-primary hidden sm:inline-flex">
+          Start Learning
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+          type="button"
+          class="md:hidden p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors focus-ring"
+          aria-label="Menu"
+          id="mobile-menu-toggle"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="md:hidden hidden pb-4" id="mobile-menu">
+      <div class="flex flex-col gap-1">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class:list={[
+              "px-4 py-2 rounded-lg font-medium transition-colors",
+              currentPath.startsWith(item.href)
+                ? "bg-primary-50 text-primary-700"
+                : "text-slate-600 hover:bg-slate-100 hover:text-slate-800"
+            ]}
+          >
+            {item.label}
+          </a>
+        ))}
+        <a href="#newsletter" class="btn-primary mt-2 text-center">
+          Start Learning
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Search overlay -->
+  <div id="search-overlay" class="hidden absolute left-0 right-0 top-full bg-white border-b border-slate-200 shadow-lg">
+    <div class="container-site py-4">
+      <div class="relative max-w-2xl mx-auto">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input
+          type="search"
+          id="search-input"
+          class="input pl-12"
+          placeholder="Search reviews, comparisons, guides..."
+          autofocus
+        />
+        <kbd class="absolute right-4 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center px-2 py-0.5 text-xs text-slate-400 bg-slate-100 rounded">
+          ESC
+        </kbd>
+      </div>
+      <div id="search-results" class="max-w-2xl mx-auto mt-4 hidden">
+        <!-- Search results will be populated by Pagefind -->
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Search toggle
+  const searchToggle = document.getElementById('search-toggle');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+
+  searchToggle?.addEventListener('click', () => {
+    searchOverlay?.classList.toggle('hidden');
+    if (!searchOverlay?.classList.contains('hidden')) {
+      searchInput?.focus();
+    }
+  });
+
+  // Close search on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !searchOverlay?.classList.contains('hidden')) {
+      searchOverlay?.classList.add('hidden');
+    }
+  });
+
+  // Close search on click outside
+  document.addEventListener('click', (e) => {
+    if (!searchOverlay?.contains(e.target as Node) && e.target !== searchToggle) {
+      searchOverlay?.classList.add('hidden');
+    }
+  });
+</script>

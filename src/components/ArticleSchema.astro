@@ -1,0 +1,53 @@
+---
+/**
+ * Article Schema Component
+ * Adds Article structured data to review and guide pages
+ */
+interface Props {
+  title: string;
+  description: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  publishedTime = new Date().toISOString(),
+  modifiedTime,
+  author = 'LearnEnglish.Life',
+  image = '/og-default.png'
+} = Astro.props;
+
+const siteUrl = 'https://learnenglish.life';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": `${siteUrl}${image}`,
+  "datePublished": publishedTime,
+  "dateModified": modifiedTime || publishedTime,
+  "author": {
+    "@type": "Organization",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/favicon.svg`
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}${Astro.url.pathname}`
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

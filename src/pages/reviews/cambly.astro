@@ -1,0 +1,186 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+
+const review = {
+  title: "Cambly Review",
+  rating: 4.4,
+  reviewCount: 7800,
+  price: "From $6.50/wk",
+  description: "Cambly offers unlimited conversation practice with native English speakers. Perfect for learners who want spontaneous speaking practice without scheduling lessons.",
+  publishedTime: "2026-01-10",
+  pros: ["Unlimited conversation practice", "Native speakers available 24/7", "Wide variety of tutors", "No appointment needed", "Great for casual conversation"],
+  cons: ["No structured curriculum", "Quality varies by tutor", "Limited grammar focus", "Internet-dependent"]
+};
+
+const comparison = [
+  { feature: "Price Range", italki: "$10-50/hr", preply: "$10-45/hr", cambly: "$6.50-80/wk" },
+  { feature: "Tutors", italki: "10,000+", preply: "5,000+", cambly: "10,000+" },
+  { feature: "Native Speakers", italki: "Yes", preply: "Yes", cambly: "Yes" },
+  { feature: "Free Trial", italki: "Community", preply: "Limited", cambly: "7 min free" },
+  { feature: "Mobile App", italki: "iOS/Android", preply: "iOS/Android", cambly: "iOS/Android" },
+];
+
+const fullStars = Math.floor(review.rating);
+
+// Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": { "@type": "SoftwareApplication", "name": "Cambly", "applicationCategory": "EducationApplication" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.4", "bestRating": "10", "worstRating": "1" },
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "datePublished": review.publishedTime
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
+    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
+    { "@type": "ListItem", "position": 3, "name": "Cambly" }
+  ]
+};
+---
+<Base title="Cambly Review 2026 | LearnEnglish.Life" description={review.description} type="article" publishedTime={review.publishedTime}>
+
+  <span slot="structured-data">
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
+  </span>
+
+  <Header />
+  
+  <nav class="bg-gray-50 py-3">
+    <div class="max-w-4xl mx-auto px-4 text-sm">
+      <ol class="flex items-center gap-2 text-gray-500">
+        <li><a href="/" class="hover:text-teal-600">Home</a></li>
+        <li>/</li>
+        <li><a href="/reviews/" class="hover:text-teal-600">Reviews</a></li>
+        <li>/</li>
+        <li class="text-gray-900">Cambly</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="bg-teal-600 py-8">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Cambly Review</h1>
+          <div class="flex items-center gap-2">
+            <div class="flex">
+              {Array.from({length: 5}).map((_, i) => (
+                <svg class={`w-6 h-6 ${i < fullStars ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span class="text-xl text-white font-semibold">{review.rating}/5</span>
+          </div>
+          <p class="text-teal-100 mt-2">Based on {review.reviewCount.toLocaleString()} reviews</p>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-sm text-teal-200">Starting from</p>
+          <p class="text-3xl font-bold text-white">{review.price}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-b border-amber-200 py-3">
+    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-800">
+      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you.
+    </div>
+  </div>
+
+  <article class="py-8">
+    <div class="max-w-4xl mx-auto px-4">
+      <section class="mb-8">
+        <p class="text-lg text-gray-700 leading-relaxed">{review.description}</p>
+      </section>
+
+      <div class="bg-teal-50 border border-teal-200 rounded-xl p-6 mb-8 text-center">
+        <a href="/go/cambly" class="inline-block px-8 py-4 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-700">Visit Cambly →</a>
+      </div>
+
+      <div class="mb-8"><AdUnit slot="in-article" format="horizontal" /></div>
+
+      <section class="mb-8 grid md:grid-cols-2 gap-6">
+        <div class="bg-emerald-50 rounded-xl p-6">
+          <h2 class="text-lg font-semibold text-emerald-800 mb-4">✅ Pros</h2>
+          <ul class="space-y-3">
+            {review.pros.map(pro => (
+              <li class="flex items-start gap-3 text-emerald-700">
+                <span class="text-emerald-500 font-bold">✓</span>
+                <span>{pro}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-6">
+          <h2 class="text-lg font-semibold text-red-800 mb-4">⚠️ Cons</h2>
+          <ul class="space-y-3">
+            {review.cons.map(con => (
+              <li class="flex items-start gap-3 text-red-700">
+                <span class="text-red-500 font-bold">−</span>
+                <span>{con}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">How Cambly Compares</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="text-left p-4 font-semibold">Feature</th>
+                <th class="text-center p-4 font-semibold">iTalki</th>
+                <th class="text-center p-4 font-semibold">Preply</th>
+                <th class="text-center p-4 font-semibold text-teal-600">Cambly</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              {comparison.map(row => (
+                <tr class="hover:bg-gray-50">
+                  <td class="p-4 font-medium">{row.feature}</td>
+                  <td class="p-4 text-center">{row.italki}</td>
+                  <td class="p-4 text-center">{row.preply}</td>
+                  <td class="p-4 text-center">{row.cambly}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="mb-8"><AdUnit slot="in-article" format="fluid" /></div>
+
+      <section class="bg-gray-100 rounded-xl p-6 mb-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-3">Our Verdict</h2>
+        <p class="text-gray-700">Cambly is ideal for learners who want flexibility and spontaneous conversation practice. It's perfect for casual chat and building confidence in speaking without the commitment of scheduled lessons.</p>
+      </section>
+
+      <section class="bg-teal-600 rounded-xl p-8 text-center">
+        <h3 class="text-2xl font-bold text-white mb-2">Ready to try Cambly?</h3>
+        <p class="text-teal-100 mb-6">Start speaking English today.</p>
+        <a href="/go/cambly" class="inline-block px-8 py-4 bg-white text-teal-600 font-bold rounded-lg hover:bg-gray-100">Get Started →</a>
+      </section>
+
+      <p class="text-sm text-gray-500 text-center mt-6">
+        <a href="/affiliate-disclosure/" class="text-teal-600 hover:underline">Affiliate disclosure</a>
+      </p>
+    </div>
+  </article>
+
+  <Footer />
+</Base>

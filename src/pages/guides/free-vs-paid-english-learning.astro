@@ -1,0 +1,199 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const freeResources = [
+  { name: "YouTube Channels", desc: "English with Lucy, BBC Learning English, Rachel's English", icon: "🎬" },
+  { name: "Apps", desc: "Duolingo, Memrise, HelloEnglish (free tiers)", icon: "📱" },
+  { name: "Podcasts", desc: "6 Minute English, All Ears English, ESL Pod", icon: "🎧" },
+  { name: "Language Exchanges", desc: "HelloTalk, Tandem, Reddit r/EnglishLearning", icon: "🤝" },
+  { name: "News Sites", desc: "BBC Learning English, VOA Learning English", icon: "📰" }
+];
+
+const paidResources = [
+  { name: "Online Tutors", price: "$4-50/hr", desc: "iTalki, Preply, Cambly", icon: "👨‍🏫" },
+  { name: "Premium Apps", price: "$10-20/mo", desc: "Pimsleur, Rosetta Stone Premium", icon: "💎" },
+  { name: "Structured Courses", price: "$20-100", desc: "Coursera, Udemy English courses", icon: "📚" }
+];
+
+const comparison = [
+  { feature: "Cost", free: "$0", paid: "$10-100/mo" },
+  { feature: "Speaking Practice", free: "Limited (AI/community)", paid: "Live native speakers" },
+  { feature: "Structured Learning", free: "Inconsistent", paid: "Curriculum-based" },
+  { feature: "Accountability", free: "Self-directed", paid: "Tutor deadlines" },
+  { feature: "Personalized Feedback", free: "No", paid: "Yes" },
+  { feature: "Time to Fluency", free: "2-3 years", paid: "6-18 months" }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Free vs Paid English Learning: Which Is Worth Your Money?",
+  "description": "Should you spend money on English courses and tutors, or stick with free resources? We compare costs, benefits, and ROI.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2025-06-01"
+};
+---
+
+<Base title="Free vs Paid English Learning: Which Is Worth Your Money? (2025)" description="Should you spend money on English courses and tutors, or stick with free resources? We compare costs, benefits, and ROI.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/guides" class="hover:text-emerald-600">Study Guides</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-700">Free vs Paid English Learning</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white mb-8">
+      <span class="text-purple-200 text-sm font-medium">Budget Guide</span>
+      <h1 class="text-4xl font-bold mt-2 mb-4">Free vs Paid English Learning</h1>
+      <p class="text-purple-100 text-lg mb-6">Get the most from your learning budget. We break down what free and paid resources offer, and how to combine them effectively.</p>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg mb-8">
+      <h2 class="font-semibold text-amber-800">TL;DR</h2>
+      <p class="text-amber-700">Free resources are great for vocabulary and grammar basics. Paid tutors/subscriptions are worth it for speaking practice and faster progress. The sweet spot: free apps + 1-2 tutor sessions per week.</p>
+    </div>
+
+    <AdUnit slot="guide-header" />
+
+    <!-- Comparison Table -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">Side-by-Side Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse bg-white rounded-xl shadow-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="text-left p-4">Feature</th>
+              <th class="text-center p-4 bg-green-50">Free</th>
+              <th class="text-center p-4 bg-purple-50">Paid</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="p-4 font-medium">{row.feature}</td>
+                <td class="p-4 text-center text-green-700">{row.free}</td>
+                <td class="p-4 text-center text-purple-700">{row.paid}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Free Resources -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">Best Free Resources</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {freeResources.map(resource => (
+          <div class="bg-white rounded-xl shadow-sm p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-2xl">{resource.icon}</span>
+              <h3 class="font-semibold">{resource.name}</h3>
+            </div>
+            <p class="text-gray-600 text-sm">{resource.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Paid Resources -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">Best Paid Resources</h2>
+      <div class="space-y-4">
+        {paidResources.map(resource => (
+          <div class="bg-purple-50 rounded-xl p-5">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">{resource.icon}</span>
+                <h3 class="font-semibold">{resource.name}</h3>
+              </div>
+              <span class="bg-purple-200 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">{resource.price}</span>
+            </div>
+            <p class="text-purple-700 text-sm">{resource.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <AdUnit slot="guide-mid" />
+
+    <!-- Hybrid Approach -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">The Best Approach: Hybrid Strategy</h2>
+      <div class="bg-gradient-to-r from-green-50 to-purple-50 rounded-xl p-6">
+        <h3 class="font-bold text-lg mb-4">Recommended Daily/Weekly Schedule</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-green-700 mb-2">Daily (Free)</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>15 min Duolingo (vocabulary)</li>
+              <li>10 min pronunciation practice</li>
+              <li>20 min YouTube/Podcast</li>
+              <li>10 min reading (news/blogs)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-purple-700 mb-2">Weekly (Paid)</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li>2x 30-min tutor sessions ($10-20)</li>
+              <li>1x structured lesson on premium app</li>
+              <li>Weekly review of mistakes</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-4 text-center font-semibold">Total weekly cost: $10-20 | Estimated progress: 6-12 months to conversational</p>
+      </div>
+    </section>
+
+    <!-- Budget Tiers -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-6">Budget Tiers</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-gray-100 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">$0/month</h3>
+          <p class="text-gray-600 text-sm mb-3">Free apps + YouTube + Podcasts</p>
+          <p class="text-gray-500 text-xs">Realistic: Basic conversation in 2-3 years</p>
+        </div>
+        <div class="bg-green-100 rounded-xl p-5 border-2 border-green-400">
+          <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">RECOMMENDED</span>
+          <h3 class="font-bold text-lg mt-2 mb-2">$10-25/month</h3>
+          <p class="text-gray-600 text-sm mb-3">Free apps + community tutor sessions</p>
+          <p class="text-gray-500 text-xs">Realistic: Conversational in 6-12 months</p>
+        </div>
+        <div class="bg-purple-100 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">$50-100/month</h3>
+          <p class="text-gray-600 text-sm mb-3">Premium apps + professional tutors</p>
+          <p class="text-gray-500 text-xs">Realistic: Business English in 3-6 months</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-r from-green-500 to-teal-500 rounded-xl p-6 text-white mb-8">
+      <h2 class="text-xl font-bold mb-3">Start Your Learning Journey</h2>
+      <p class="text-green-100 mb-4">Find affordable community tutors on iTalki starting at $4/session, or browse premium options for structured learning.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/reviews/italki/" class="bg-white text-green-700 px-5 py-2 rounded-lg font-semibold hover:bg-green-50">Explore iTalki Tutors</a>
+        <a href="/compare/best-english-learning-apps/" class="border-2 border-white text-white px-5 py-2 rounded-lg font-semibold hover:bg-white/10">Compare Apps</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Base>

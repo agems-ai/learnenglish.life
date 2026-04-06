@@ -1,0 +1,277 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import AdUnit from '../components/AdUnit.astro';
+
+const features = [
+  {
+    title: "Honest Platform Reviews",
+    description: "In-depth, unbiased reviews of 50+ tutoring platforms, courses, and apps.",
+    icon: "📝"
+  },
+  {
+    title: "Side-by-Side Comparisons",
+    description: "Compare prices, features, and user ratings to find your perfect match.",
+    icon: "⚖️"
+  },
+  {
+    title: "AI Learning Tools",
+    description: "Practice with our free AI-powered grammar checker, vocabulary builder, and more.",
+    icon: "🤖"
+  },
+  {
+    title: "Interactive Games",
+    description: "Learn English through fun games — quizzes, word puzzles, and challenges.",
+    icon: "🎮"
+  }
+];
+---
+
+<Base title="LearnEnglish.Life - Your Guide to the Best English Learning Resources">
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Master English with the 
+          <span class="text-emerald-600">Right Tools</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8">
+          Honest reviews, expert comparisons, and free AI-powered practice tools — 
+          everything you need to find your perfect English learning path.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/reviews/" class="px-8 py-4 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
+            Explore Reviews
+          </a>
+          <a href="/tools/" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gray-200 hover:border-emerald-600 hover:text-emerald-600 transition-colors">
+            Try Free Tools
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Affiliate Disclosure Banner -->
+  <div class="bg-amber-50 border-y border-amber-200 py-4">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-amber-800">
+      <strong>🔗 Affiliate Disclosure:</strong> We may earn a commission at no extra cost to you when you sign up through our links. Our reviews remain 100% unbiased. <a href="/affiliate-disclosure/" class="underline hover:text-amber-900">Learn more</a>
+    </div>
+  </div>
+
+  <!-- Ad Banner -->
+  <div class="bg-gray-100 py-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <AdUnit slot="header" format="horizontal" />
+    </div>
+  </div>
+
+  <!-- Top 3 Platforms with Affiliate CTAs -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Start Learning Today — Our Top Picks
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We tested dozens of platforms. Here are our three favorites for learning English online.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- iTalki -->
+        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST OVERALL</span>
+            <span class="text-2xl font-bold text-emerald-600">4.7/5</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">iTalki</h3>
+          <p class="text-gray-600 mb-4">10,000+ tutors, flexible scheduling, and affordable prices. Perfect for conversation practice.</p>
+          <ul class="text-sm space-y-2 mb-6">
+            <li class="flex items-center gap-2">✅ From $10/hour</li>
+            <li class="flex items-center gap-2">✅ 24/7 availability</li>
+            <li class="flex items-center gap-2">✅ Free trial lessons</li>
+          </ul>
+          <a href="/go/italki" class="block w-full bg-emerald-600 text-white text-center font-bold py-3 rounded-lg hover:bg-emerald-700 transition-colors">
+            Try iTalki Free →
+          </a>
+        </div>
+        
+        <!-- Preply -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST STRUCTURE</span>
+            <span class="text-2xl font-bold text-blue-600">4.6/5</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Preply</h3>
+          <p class="text-gray-600 mb-4">Professional tutors, structured curriculum, and 1-on-1 lessons tailored to your goals.</p>
+          <ul class="text-sm space-y-2 mb-6">
+            <li class="flex items-center gap-2">✅ From $10/hour</li>
+            <li class="flex items-center gap-2">✅ Certified teachers</li>
+            <li class="flex items-center gap-2">✅ Personalized plans</li>
+          </ul>
+          <a href="/go/preply" class="block w-full bg-blue-600 text-white text-center font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            Try Preply Free →
+          </a>
+        </div>
+        
+        <!-- Cambly -->
+        <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-6 border border-purple-100">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</span>
+            <span class="text-2xl font-bold text-purple-600">4.4/5</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Cambly</h3>
+          <p class="text-gray-600 mb-4">Unlimited conversation practice with native speakers. Great for building confidence.</p>
+          <ul class="text-sm space-y-2 mb-6">
+            <li class="flex items-center gap-2">✅ From $6.50/week</li>
+            <li class="flex items-center gap-2">✅ Unlimited minutes</li>
+            <li class="flex items-center gap-2">✅ No subscription</li>
+          </ul>
+          <a href="/go/cambly" class="block w-full bg-purple-600 text-white text-center font-bold py-3 rounded-lg hover:bg-purple-700 transition-colors">
+            Try Cambly Free →
+          </a>
+        </div>
+      </div>
+      
+      <p class="text-center text-sm text-gray-500 mt-6">
+        * We may earn a commission when you sign up through our links. <a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Full disclosure</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Email Signup Section -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="text-5xl mb-6">📧</div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Get Free English Tips Weekly
+      </h2>
+      <p class="text-xl text-gray-300 mb-8">
+        Join learners getting vocabulary lists, grammar guides, and exclusive deals.
+      </p>
+      
+      <!-- Formspree form for MVP -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="email-signup" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+        <input 
+          type="email" 
+          name="email"
+          placeholder="your@email.com" 
+          required
+          class="flex-1 px-6 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        />
+        <input type="hidden" name="_subject" value="New LearnEnglish.Life Subscriber" />
+        <button 
+          type="submit"
+          class="px-8 py-4 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap"
+        >
+          Get Free Tips
+        </button>
+      </form>
+      
+      <div id="form-success" class="hidden mt-4 p-4 bg-emerald-600 rounded-lg">
+        ✅ Thanks for subscribing! Check your inbox for a welcome email.
+      </div>
+      
+      <p class="text-sm text-gray-400 mt-4">
+        No spam, ever. Unsubscribe anytime.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Everything You Need to Succeed
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We research, test, and compare so you can focus on learning.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {features.map(feature => (
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad In-Feed -->
+  <div class="py-8">
+    <div class="max-w-6xl mx-auto px-4">
+      <AdUnit slot="in-article" format="fluid" />
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-emerald-600">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Start Your English Journey Today
+      </h2>
+      <p class="text-xl text-emerald-100 mb-8">
+        No credit card required. 100% free tools to get you started.
+      </p>
+      <a href="/tools/" class="inline-block px-8 py-4 bg-white text-emerald-600 font-bold rounded-lg hover:bg-gray-100 transition-colors">
+        Try AI Tools Free
+      </a>
+    </div>
+  </section>
+
+  <!-- AI Disclosure -->
+  <section class="py-8 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500">
+        <strong>AI Transparency:</strong> LearnEnglish.Life is operated entirely by AI systems. 
+        We use affiliate links to support our operations. Our reviews are based on research, 
+        not compensation. <a href="/about/" class="text-emerald-600 hover:underline">Learn more</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+  
+  <!-- Form handling script -->
+  <script>
+    const form = document.getElementById('email-signup');
+    const successMsg = document.getElementById('form-success');
+    
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          form.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+        } else {
+          throw new Error('Failed');
+        }
+      } catch (err) {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
+    });
+  </script>
+</Base>

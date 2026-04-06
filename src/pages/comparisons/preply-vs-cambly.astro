@@ -1,0 +1,429 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+// Platform data
+const preply = {
+  name: "Preply",
+  rating: 4.6,
+  price: "$10-45/hr",
+  bestFor: "Structured learning with professional tutors",
+  pros: [
+    "Vetted professional tutors with teaching credentials",
+    "Trial lesson included (first lesson discounted)",
+    "Structured curriculum available",
+    "Personalized learning plans",
+    "Corporate training options"
+  ],
+  cons: [
+    "Higher prices for certified tutors",
+    "Limited tutor availability in some time zones",
+    "Booking system less flexible than competitors"
+  ]
+};
+
+const cambly = {
+  name: "Cambly",
+  rating: 4.4,
+  price: "$9.99/mo",
+  bestFor: "Budget-friendly unlimited conversation practice",
+  pros: [
+    "Unlimited conversation practice for one flat fee",
+    "Access to native speakers worldwide",
+    "No scheduling required — on-demand availability",
+    "Most affordable for heavy users",
+    "Great for intermediate+ learners"
+  ],
+  cons: [
+    "No curriculum or structured lessons",
+    "No homework or progress tracking",
+    "Random tutors — no consistent teacher",
+    "Not ideal for complete beginners",
+    "Limited teaching methodology"
+  ]
+};
+
+const comparison = [
+  { feature: "Pricing Model", preply: "Pay per hour", cambly: "Monthly subscription" },
+  { feature: "Starting Price", preply: "$10/hour", cambly: "$9.99/month" },
+  { feature: "Lesson Structure", preply: "Curriculum-based", cambly: "Conversation only" },
+  { feature: "Homework Included", preply: "Yes", cambly: "No" },
+  { feature: "Progress Tracking", preply: "Yes", cambly: "Limited" },
+  { feature: "Native Speakers", preply: "Yes", cambly: "Yes" },
+  { feature: "Certified Teachers", preply: "Yes", cambly: "Limited" },
+  { feature: "Scheduling Flexibility", preply: "Moderate", cambly: "On-demand" },
+  { feature: "Corporate Plans", preply: "Yes", cambly: "Limited" }
+];
+
+// SEO Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Preply vs Cambly: Which Is Better for Learning English?",
+  "description": "Comprehensive comparison of Preply and Cambly online tutoring platforms. Compare pricing, features, and learning styles to find your perfect match.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-06",
+  "dateModified": "2026-04-06"
+};
+
+const comparisonSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Preply vs Cambly Comparison",
+  "description": "Comparison between Preply and Cambly for English language learning"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Preply or Cambly better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preply is better for beginners due to its structured curriculum, vetted professional tutors, and personalized learning plans. Cambly is ideal for intermediate+ learners who want conversation practice without formal lessons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does each platform cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambly costs $9.99/month for unlimited conversation practice. Preply charges $10-45 per hour depending on tutor experience and credentials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get homework and track progress on Cambly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, Cambly offers conversation practice only with no curriculum, homework, or formal progress tracking. Preply provides structured lessons with homework and progress reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better for budget learners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambly is significantly better for budget learners. At $9.99/month for unlimited practice, it costs less than $2/hour equivalent if you practice 5+ hours monthly. Preply charges $10+ per session."
+      }
+    }
+  ]
+};
+---
+
+<Base title="Preply vs Cambly: Which Is Better for Learning English?" description="Compare Preply and Cambly tutoring platforms. Preply offers structured lessons with professional tutors; Cambly provides unlimited conversation practice for just $9.99/month. Find the best fit for your learning style and budget.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/compare" class="hover:text-emerald-600">Comparisons</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-700">Preply vs Cambly</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white mb-8">
+      <span class="text-indigo-200 text-sm font-medium">Comparison · Updated April 2026</span>
+      <h1 class="text-4xl font-bold mt-2 mb-4">Preply vs Cambly: Which Is Better for Learning English?</h1>
+      <p class="text-indigo-100 text-lg">Two popular platforms with very different approaches. Compare pricing, features, and learning styles to find your perfect match.</p>
+    </div>
+
+    <!-- Quick Verdict Banner -->
+    <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6 mb-8">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="font-bold text-lg text-gray-800">Quick Verdict</p>
+          <p class="text-2xl font-bold text-green-700">Cambly wins for budget speaking practice</p>
+          <p class="text-sm text-gray-600">Preply wins for structured learning</p>
+        </div>
+        <div class="text-right bg-white rounded-lg p-4">
+          <p class="text-sm text-gray-500">Cambly: $9.99/mo unlimited</p>
+          <p class="text-sm text-gray-500">Preply: $10+/hr</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Overview Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Preply Card -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-indigo-500 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-gray-900">Preply</h2>
+          <div class="flex items-center">
+            <span class="text-yellow-500 text-xl mr-1">★</span>
+            <span class="text-2xl font-bold text-gray-900">{preply.rating}</span>
+            <span class="text-gray-500 text-sm ml-1">/10</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-indigo-600">{preply.price}</span>
+        </div>
+        <p class="text-gray-600 mb-4"><strong>Best for:</strong> {preply.bestFor}</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-700 mb-2">Pros</h3>
+          <ul class="text-sm text-gray-700 space-y-1">
+            {preply.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <div class="mb-4">
+          <h3 class="font-semibold text-red-700 mb-2">Cons</h3>
+          <ul class="text-sm text-gray-700 space-y-1">
+            {preply.cons.map(con => <li class="flex items-start"><span class="text-red-500 mr-2">✗</span>{con}</li>)}
+          </ul>
+        </div>
+        <a href="/reviews/preply" class="block w-full bg-indigo-600 text-white text-center py-2 rounded-lg hover:bg-indigo-700 transition">Read Full Preply Review</a>
+      </div>
+
+      <!-- Cambly Card -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-emerald-500 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-gray-900">Cambly</h2>
+          <div class="flex items-center">
+            <span class="text-yellow-500 text-xl mr-1">★</span>
+            <span class="text-2xl font-bold text-gray-900">{cambly.rating}</span>
+            <span class="text-gray-500 text-sm ml-1">/10</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-emerald-600">{cambly.price}</span>
+        </div>
+        <p class="text-gray-600 mb-4"><strong>Best for:</strong> {cambly.bestFor}</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-700 mb-2">Pros</h3>
+          <ul class="text-sm text-gray-700 space-y-1">
+            {cambly.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <div class="mb-4">
+          <h3 class="font-semibold text-red-700 mb-2">Cons</h3>
+          <ul class="text-sm text-gray-700 space-y-1">
+            {cambly.cons.map(con => <li class="flex items-start"><span class="text-red-500 mr-2">✗</span>{con}</li>)}
+          </ul>
+        </div>
+        <a href="/reviews/cambly" class="block w-full bg-emerald-600 text-white text-center py-2 rounded-lg hover:bg-emerald-700 transition">Read Full Cambly Review</a>
+      </div>
+    </div>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-1" />
+    </div>
+
+    <!-- Detailed Comparison Table -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 id="quick-compare" class="text-2xl font-bold text-gray-900 mb-6">Feature Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-gray-200">
+              <th class="text-left py-3 px-4 font-semibold text-gray-700">Feature</th>
+              <th class="text-center py-3 px-4 font-semibold text-indigo-600">Preply</th>
+              <th class="text-center py-3 px-4 font-semibold text-emerald-600">Cambly</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map(row => (
+              <tr class="border-b border-gray-100 hover:bg-gray-50">
+                <td class="py-3 px-4 text-gray-700">{row.feature}</td>
+                <td class="py-3 px-4 text-center text-indigo-700 font-medium">{row.preply}</td>
+                <td class="py-3 px-4 text-center text-emerald-700 font-medium">{row.cambly}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-2" />
+    </div>
+
+    <!-- Detailed Analysis -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Detailed Analysis</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Preply Overview</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Preply emphasizes <strong>structured learning</strong> with a curriculum-based approach. Each tutor provides lesson plans, homework, and progress reports. This makes it ideal for learners who need clear goals and accountability in their English journey.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Preply tutors typically teach specific skills: conversation, grammar, business English, or exam preparation (IELTS, TOEFL). Lessons are scheduled in advance and require commitment, but you get professional instruction rather than casual chat.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          All Preply tutors go through an application process including video interviews and teaching demonstrations, ensuring consistent quality and professional qualifications like TEFL or CELTA certificates.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Cambly Overview</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Cambly offers <strong>unlimited conversation practice</strong> with native English speakers through a simple subscription model. There's no curriculum, no homework, and no pressure. You talk when you want, about what you want.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          At just $9.99/month, Cambly provides exceptional value for learners who want maximum speaking practice without the commitment of formal lessons. Connect instantly with tutors from around the world—no advance booking required.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          This makes Cambly perfect for <strong>intermediate+ learners</strong> who want to practice speaking without the structure of formal lessons. It's also the most budget-friendly option for heavy practice sessions.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Pricing Comparison</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-green-50 rounded-lg p-4">
+            <h4 class="font-bold text-green-700 mb-2">Cambly Value</h4>
+            <p class="text-gray-700 text-sm mb-2"><strong>$9.99/month</strong> for unlimited conversation practice.</p>
+            <p class="text-gray-700 text-sm">If you have 5+ hours of practice monthly, Cambly costs less than <strong>$2/hour equivalent</strong>.</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <h4 class="font-bold text-indigo-700 mb-2">Preply Value</h4>
+            <p class="text-gray-700 text-sm mb-2"><strong>$10-45/hour</strong> depending on tutor experience.</p>
+            <p class="text-gray-700 text-sm">A single hour of Preply costs more than a full month of Cambly. However, you get <strong>professional instruction</strong> rather than conversation practice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Is Preply or Cambly better for beginners?</h3>
+          <p class="text-gray-700">
+            <strong>Preply is better for beginners</strong> due to its structured curriculum, vetted professional tutors, and personalized learning plans. Cambly is ideal for intermediate+ learners who want conversation practice without formal lessons.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">How much does each platform cost?</h3>
+          <p class="text-gray-700">
+            <strong>Cambly costs $9.99/month</strong> for unlimited conversation practice. <strong>Preply charges $10-45 per hour</strong> depending on tutor experience and credentials.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I get homework and track progress on Cambly?</h3>
+          <p class="text-gray-700">
+            <strong>No</strong>, Cambly offers conversation practice only with no curriculum, homework, or formal progress tracking. Preply provides structured lessons with homework and progress reports.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Which is better for budget learners?</h3>
+          <p class="text-gray-700">
+            <strong>Cambly is significantly better for budget learners.</strong> At $9.99/month for unlimited practice, it costs less than $2/hour equivalent if you practice 5+ hours monthly. Preply charges $10+ per session.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-3" />
+    </div>
+
+    <!-- Verdict Section -->
+    <section class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Verdict</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg p-4 border-l-4 border-indigo-500">
+          <h3 class="font-bold text-indigo-700 mb-2">Choose Preply if:</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You need structured lessons with clear goals</li>
+            <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You want homework to reinforce learning</li>
+            <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You're a complete beginner who needs guidance</li>
+            <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You're preparing for an English exam (IELTS, TOEFL)</li>
+            <li class="flex items-start"><span class="text-indigo-500 mr-2">→</span>You prefer consistent teachers</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-lg p-4 border-l-4 border-emerald-500">
+          <h3 class="font-bold text-emerald-700 mb-2">Choose Cambly if:</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want unlimited speaking practice on a budget</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You're intermediate+ level and can carry conversations</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want to chat casually with native speakers</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You prefer on-demand availability</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You practice frequently (5+ hours/month)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Try Preply CTA -->
+    <div class="bg-indigo-50 border-2 border-indigo-200 rounded-xl p-6 mb-4">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="font-bold text-xl text-indigo-800 mb-1">Try Preply</p>
+          <p class="text-indigo-600">Find your perfect tutor and start structured lessons.</p>
+        </div>
+        <a href="/reviews/preply/" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">Read Full Preply Review</a>
+      </div>
+    </div>
+
+    <!-- Try Cambly CTA -->
+    <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 mb-8">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="font-bold text-xl text-blue-800 mb-1">Try Cambly</p>
+          <p class="text-blue-600">Unlimited speaking practice for just $9.99/month.</p>
+        </div>
+        <a href="/reviews/cambly/" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Read Full Cambly Review</a>
+      </div>
+    </div>
+
+    <!-- Related Reviews -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">Related Reviews</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/reviews/preply" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">4.6/10</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Preply Review</h3>
+          <p class="text-sm text-gray-600">Full platform analysis</p>
+        </a>
+        <a href="/reviews/cambly" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">4.4/10</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Cambly Review</h3>
+          <p class="text-sm text-gray-600">Full platform analysis</p>
+        </a>
+        <a href="/compare/best-english-learning-apps" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-emerald-500 mr-1">📊</span>
+          </div>
+          <h3 class="font-semibold text-gray-900">Best Apps 2026</h3>
+          <p class="text-sm text-gray-600">10 apps compared</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Affiliate Disclosure -->
+    <div class="text-xs text-gray-500 mt-8 pt-4 border-t">
+      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

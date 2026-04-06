@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const comparisons = [
+  {
+    title: "Best English Learning Apps 2026",
+    description: "Compare the top 10 English learning apps including Duolingo, iTalki, Babbel, Cambly, and more. Find the perfect app for your learning style and budget.",
+    href: "/compare/best-english-learning-apps/",
+    category: "App Comparisons"
+  }
+];
+---
+
+<Base title="Compare English Learning Tools | LearnEnglish.Life" description="Compare the best English learning apps, tutoring platforms, and courses. Find the perfect fit for your budget, goals, and learning style.">
+  <Header />
+  
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Compare English Learning Tools</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Find the perfect English learning solution for your needs. We compare apps, platforms, and courses side-by-side.</p>
+    </div>
+
+    <AdUnit slot="compare-index-1" />
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {comparisons.map((item) => (
+        <a href={item.href} class="block bg-white rounded-xl shadow-sm p-6 hover:shadow-lg transition-shadow">
+          <span class="text-sm text-emerald-600 font-semibold">{item.category}</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-2 mb-3">{item.title}</h2>
+          <p class="text-gray-600 text-sm">{item.description}</p>
+          <span class="inline-block mt-4 text-emerald-600 font-semibold">View Comparison →</span>
+        </a>
+      ))}
+    </div>
+
+    <AdUnit slot="compare-index-2" />
+
+    <div class="mt-16 bg-blue-50 rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Looking for Platform Reviews?</h2>
+      <p class="text-gray-600 mb-4">We also have in-depth reviews of individual platforms:</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/reviews/italki/" class="bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 transition-colors">iTalki Review</a>
+        <a href="/reviews/preply/" class="bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 transition-colors">Preply Review</a>
+        <a href="/reviews/cambly/" class="bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 transition-colors">Cambly Review</a>
+        <a href="/reviews/duolingo/" class="bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 transition-colors">Duolingo Review</a>
+        <a href="/reviews/babbel/" class="bg-white px-4 py-2 rounded-lg text-gray-700 hover:bg-emerald-50 transition-colors">Babbel Review</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

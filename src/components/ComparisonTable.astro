@@ -1,0 +1,79 @@
+---
+interface ComparisonItem {
+  name: string;
+  slug: string;
+  rating?: number;
+  price?: string;
+  features: Record<string, string | boolean>;
+}
+
+interface Props {
+  items: ComparisonItem[];
+  criteria: { key: string; label: string }[];
+  title?: string;
+  class?: string;
+}
+
+const { items, criteria, title, class: className = '' } = Astro.props;
+---
+
+<div class:list={['overflow-x-auto', className]}>
+  <table class="w-full min-w-[640px]">
+    <thead>
+      <tr class="border-b border-neutral-800">
+        <th class="text-left py-4 px-4 font-semibold text-neutral-400 w-1/4">Feature</th>
+        {items.map(item => (
+          <th class="text-center py-4 px-4 min-w-[160px]">
+            <a href={`/reviews/${item.slug}`} class="font-heading font-semibold text-white hover:text-brand-400 transition-colors">
+              {item.name}
+            </a>
+            {item.rating !== undefined && (
+              <div class="text-sm text-neutral-500 mt-1">
+                Rating: {item.rating.toFixed(1)}/5
+              </div>
+            )}
+            {item.price && (
+              <div class="text-sm text-brand-400 mt-1">{item.price}</div>
+            )}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {criteria.map(criterion => (
+        <tr class="border-b border-neutral-800/50 hover:bg-neutral-900/50 transition-colors">
+          <td class="py-4 px-4 font-medium text-neutral-300">{criterion.label}</td>
+          {items.map(item => {
+            const value = item.features[criterion.key];
+            const isPositive = value === true || value === 'Yes' || value === 'yes';
+            const isNegative = value === false || value === 'No' || value === 'no';
+            
+            return (
+              <td class="py-4 px-4 text-center">
+                {typeof value === 'boolean' ? (
+                  isPositive ? (
+                    <span class="inline-flex items-center justify-center w-6 h-6 bg-green-500/20 text-green-400 rounded-full">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                  ) : (
+                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-500/20 text-red-400 rounded-full">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </span>
+                  )
+                ) : (
+                  <span class={`text-sm ${isPositive ? 'text-green-400' : isNegative ? 'text-red-400' : 'text-neutral-300'}`}>
+                    {value}
+                  </span>
+                )}
+              </td>
+            );
+          })}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

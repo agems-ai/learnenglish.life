@@ -1,0 +1,61 @@
+---
+import Base from "../../layouts/Base.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+
+// Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Memrise",
+    "applicationCategory": "EducationApplication"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.1",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-01-25"
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://learnenglish.life"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Reviews",
+      "item": "https://learnenglish.life/reviews"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Memrise"
+    }
+  ]
+};
+---
+<Base title="Memrise Review 2026" description="Honest memrise review with pricing, features, pros and cons.">
+
+  <span slot="structured-data">
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </span>
+
+<article class="max-w-3xl mx-auto px-4 py-12"> <div class="mb-8"> <span class="text-sm text-gray-400">Review</span> <h1 class="text-4xl font-bold mt-1 mb-4">Memrise Review 2026</h1> <p class="text-gray-500">Last updated: April 2026 · 8 min read</p> </div> <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8"> <p class="font-semibold text-primary">This review is coming soon!</p> <p class="text-sm text-gray-600 mt-1">Our team is currently testing and writing a comprehensive review of Memrise. Check back soon for the full analysis including pricing, features, pros, cons, and our verdict.</p> </div> <div class="flex gap-4"> <a href="/reviews" class="text-primary font-semibold hover:underline">← All Reviews</a> </div>   <ArticleSchema title="Memrise Review" description="Memrise is a memory-based language learning app that uses spaced repetition and multimedia content to help learners build vocabulary." publishedTime="2026-02-20" />
+</article>
+</Base>

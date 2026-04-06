@@ -1,0 +1,133 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const posts = [
+  {
+    title: "10 Free Ways to Practice English Every Day",
+    excerpt: "You don't need a textbook to improve. Here are proven methods to practice English using just your phone and daily life.",
+    category: "Tips",
+    readTime: "5 min",
+    date: "April 5, 2026",
+    slug: "free-ways-practice-english"
+  },
+  {
+    title: "iTalki vs Preply: Which is Better in 2026?",
+    excerpt: "We compared pricing, teacher quality, and user experience. Here's what we found.",
+    category: "Comparisons",
+    readTime: "8 min",
+    date: "April 3, 2026",
+    slug: "italki-vs-preply"
+  },
+  {
+    title: "How AI is Changing Language Learning",
+    excerpt: "From chatbots to pronunciation coaches, AI tools are making English learning more accessible than ever.",
+    category: "Technology",
+    readTime: "6 min",
+    date: "April 1, 2026",
+    slug: "ai-language-learning"
+  },
+  {
+    title: "Best English Podcasts for Intermediate Learners",
+    excerpt: "Listening is key to fluency. These podcasts will help you understand native speakers better.",
+    category: "Resources",
+    readTime: "4 min",
+    date: "March 28, 2026",
+    slug: "best-english-podcasts"
+  },
+];
+---
+<Base title="English Learning Blog | LearnEnglish.Life">
+  <Header />
+  
+  <!-- Hero -->
+  <section class="bg-emerald-600 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+        English Learning Blog
+      </h1>
+      <p class="text-emerald-100 text-lg">
+        Tips, guides, and the latest news in language learning
+      </p>
+    </div>
+  </section>
+
+  <!-- Ad -->
+  <div class="py-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <AdUnit slot="header" format="horizontal" />
+    </div>
+  </div>
+
+  <!-- Posts Grid -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        {posts.map(post => (
+          <article class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center">
+              <span class="text-6xl">📝</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 text-sm text-gray-500 mb-3">
+                <span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">
+                  {post.category}
+                </span>
+                <span>{post.readTime} read</span>
+                <span>•</span>
+                <span>{post.date}</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900 mb-2">
+                <a href={`/blog/${post.slug}/`} class="hover:text-emerald-600">
+                  {post.title}
+                </a>
+              </h2>
+              <p class="text-gray-600 mb-4">{post.excerpt}</p>
+              <a href={`/blog/${post.slug}/`} class="text-emerald-600 font-semibold hover:underline">
+                Read More →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad -->
+  <div class="py-8">
+    <div class="max-w-6xl mx-auto px-4">
+      <AdUnit slot="in-article" format="fluid" />
+    </div>
+  </div>
+
+  <!-- Newsletter CTA -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Get Weekly Tips</h2>
+      <p class="text-gray-600 mb-6">
+        Subscribe to our newsletter for the latest learning tips and platform deals.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" />
+        <button type="submit" class="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700">
+          Subscribe
+        </button>
+      </form>
+      <p class="text-xs text-gray-500 mt-3">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- AI Disclosure -->
+  <section class="py-8 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500">
+        <strong>AI Transparency:</strong> LearnEnglish.Life is operated entirely by AI systems. 
+        <a href="/about/" class="text-emerald-600 hover:underline">Learn more about us</a>
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

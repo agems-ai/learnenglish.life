@@ -1,0 +1,201 @@
+---
+import Base from "../../layouts/Base.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+
+// Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Verbling",
+    "applicationCategory": "EducationApplication"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.3",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-01-22"
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://learnenglish.life"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Reviews",
+      "item": "https://learnenglish.life/reviews"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Verbling"
+    }
+  ]
+};
+---
+<Base title="Verbling Review 2026" description="Honest verbling review with pricing, features, pros and cons.">
+
+  <span slot="structured-data">
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </span>
+
+<article class="max-w-3xl mx-auto px-4 py-12">
+<div class="mb-8">
+<span class="text-sm text-gray-400">Review</span>
+<h1 class="text-4xl font-bold mt-1 mb-4">Verbling Review 2026</h1>
+<p class="text-gray-500">Last updated: April 2026 · 8 min read</p>
+</div>
+<!-- Quick Verdict -->
+<div class="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6 mb-8">
+<div class="flex items-start gap-4">
+<div class="bg-primary text-white rounded-lg w-16 h-16 flex items-center justify-center text-2xl font-bold shrink-0">7.5</div>
+<div>
+<p class="font-bold text-lg">Specialized Language Exchange</p>
+<p class="text-gray-600 mt-1">Verbling connects learners with native speakers for one-on-one lessons. Originally focused on Spanish, now covers multiple languages.</p>
+</div>
+</div>
+</div>
+<nav class="bg-gray-50 rounded-xl p-6 mb-8">
+<h2 class="font-bold mb-3">In This Review</h2>
+<ul class="space-y-2 text-sm">
+<li><a href="#overview" class="text-primary hover:underline">1. Overview</a></li>
+<li><a href="#pricing" class="text-primary hover:underline">2. Pricing</a></li>
+<li><a href="#features" class="text-primary hover:underline">3. Features</a></li>
+<li><a href="#pros-cons" class="text-primary hover:underline">4. Pros & Cons</a></li>
+<li><a href="#verdict" class="text-primary hover:underline">5. Our Verdict</a></li>
+</ul>
+</nav>
+<h2 id="overview" class="text-2xl font-bold mt-8 mb-4">What is Verbling?</h2>
+<p class="mb-4">Verbling is an online tutoring marketplace that connects language learners with native speakers for live video lessons. Originally founded in 2011 with a focus on Spanish-English exchange, the platform has expanded to cover multiple languages including French, German, Italian, Portuguese, Chinese, and more.</p>
+<p class="mb-4">Unlike platforms that bundle lessons into packages, Verbling allows you to book individual lessons or multi-lesson packages directly with tutors. This gives you flexibility to try different teachers without committing to a subscription.</p>
+<p class="mb-4">The platform emphasizes direct connection between learners and teachers, with a simple interface that focuses on the video lesson experience rather than extra features.</p>
+<h2 id="pricing" class="text-2xl font-bold mt-8 mb-4">Verbling Pricing</h2>
+<div class="overflow-x-auto mb-6">
+<table class="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
+<thead class="bg-gray-50">
+<tr>
+<th class="border border-gray-200 px-4 py-3 text-left">Teacher Type</th>
+<th class="border border-gray-200 px-4 py-3 text-left">Price Range</th>
+<th class="border border-gray-200 px-4 py-3 text-left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="border border-gray-200 px-4 py-3">Community Tutors</td>
+<td class="border border-gray-200 px-4 py-3">$5-15/hour</td>
+<td class="border border-gray-200 px-4 py-3">Native speakers, informal teaching</td>
+</tr>
+<tr class="bg-gray-50">
+<td class="border border-gray-200 px-4 py-3">Professional Teachers</td>
+<td class="border border-gray-200 px-4 py-3">$15-40/hour</td>
+<td class="border border-gray-200 px-4 py-3">Certified, structured lessons</td>
+</tr>
+<tr>
+<td class="border border-gray-200 px-4 py-3">Trial Lessons</td>
+<td class="border border-gray-200 px-4 py-3">$1-5</td>
+<td class="border border-gray-200 px-4 py-3">15-25 minute intro sessions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+<p class="text-sm text-yellow-800"><strong>💡 Tip:</strong> Book a trial lesson with 2-3 different teachers before committing. Prices vary significantly, so shop around.</p>
+</div>
+<h2 id="features" class="text-2xl font-bold mt-8 mb-4">Key Features</h2>
+<h3 class="text-xl font-semibold mt-6 mb-3">1. Direct Teacher Connection</h3>
+<p class="mb-4">Verbling emphasizes direct relationships with teachers. You browse profiles, watch intro videos, read reviews, and book directly — no middleman between you and your tutor.</p>
+<h3 class="text-xl font-semibold mt-6 mb-3">2. Flexible Booking</h3>
+<p class="mb-4">Book individual lessons without a subscription. This gives you maximum flexibility — take lessons when you want, pause when you need to, and never lose money on unused packages.</p>
+<h3 class="text-xl font-semibold mt-6 mb-3">3. Verbling Words Flashcards</h3>
+<p class="mb-4">Built-in flashcard system helps you review vocabulary between lessons. Teachers can add words to your deck during lessons for practice later.</p>
+<h3 class="text-xl font-semibold mt-6 mb-3">4. Lesson Resources</h3>
+<p class="mb-4">Teachers can share lesson materials, homework, and resources through the platform. Some teachers have prepared curricula, while others teach more conversationally.</p>
+<h3 class="text-xl font-semibold mt-6 mb-3">5. Language Exchange Feature</h3>
+<p class="mb-4">The unique "Verbling Exchange" feature allows you to swap language lessons — you help someone learn your native language while they help you learn theirs.</p>
+<h2 id="pros-cons" class="text-2xl font-bold mt-8 mb-4">Pros & Cons</h2>
+<div class="grid md:grid-cols-2 gap-6 mb-6">
+<div class="bg-green-50 border border-green-200 rounded-xl p-6">
+<h3 class="font-bold text-green-800 mb-3">✅ Pros</h3>
+<ul class="space-y-2 text-sm">
+<li>No subscription required</li>
+<li>Direct connection with teachers</li>
+<li>Wide variety of teachers</li>
+<li>Language exchange feature</li>
+<li>Flashcard system included</li>
+<li>Easy to switch teachers</li>
+<li>Trial lessons available</li>
+<li>Multiple languages covered</li>
+</ul>
+</div>
+<div class="bg-red-50 border border-red-200 rounded-xl p-6">
+<h3 class="font-bold text-red-800 mb-3">❌ Cons</h3>
+<ul class="space-y-2 text-sm">
+<li>Less structured than formal schools</li>
+<li>Quality varies significantly</li>
+<li>No guarantee of teacher availability</li>
+<li>Interface feels dated</li>
+<li>Less features than competitors</li>
+<li>No lesson playback</li>
+<li>Platform fees add to cost</li>
+<li>Limited advanced courses</li>
+</ul>
+</div>
+</div>
+<h2 id="verdict" class="text-2xl font-bold mt-8 mb-4">Our Verdict</h2>
+<p class="mb-4"><strong>Verbling is a straightforward tutoring marketplace.</strong> It does one thing well: connecting you with native speakers for lessons. There's less structure than platforms like iTalki, but more flexibility than formal schools like Lingoda.</p>
+<p class="mb-4">The lack of subscription requirement is refreshing if you want to learn casually without committing to monthly payments. However, the varying quality and dated interface may frustrate some users.</p>
+<p class="mb-4">Verbling is best for:</p>
+<ul class="list-disc pl-6 mb-4 space-y-2">
+<li>Casual learners wanting flexibility</li>
+<li>Those who prefer direct teacher relationships</li>
+<li>Language exchange enthusiasts</li>
+<li>Spanish learners specifically</li>
+</ul>
+<div class="bg-gray-100 rounded-xl p-6 mt-8">
+<h3 class="font-bold mb-3">Rating Summary</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+<div>
+<p class="text-2xl font-bold text-primary">7.5</p>
+<p class="text-xs text-gray-500">Flexibility</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-primary">7.0</p>
+<p class="text-xs text-gray-500">Teacher Selection</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-primary">6.5</p>
+<p class="text-xs text-gray-500">Interface</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-primary">7.5</p>
+<p class="text-xs text-gray-500">Value</p>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-xl">
+<p class="font-medium">Ready to book a lesson with a native speaker?</p>
+<a href="https://www.verbling.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg transition">Find a Tutor →</a>
+</div>
+<div class="flex gap-4 mt-8">
+<a href="/reviews" class="text-primary font-semibold hover:underline">← All Reviews</a>
+</div>
+  <ArticleSchema title="Verbling Review" description="Verbling is a marketplace for live language lessons with professional tutors, offering flexible scheduling and a focus on conversation." publishedTime="2026-03-01" />
+</article>
+</Base>
