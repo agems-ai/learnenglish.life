@@ -9,6 +9,7 @@ const guides = [
     title: "English Grammar Basics",
     description: "The core rules every learner needs in their first 90 days. Tenses, articles, prepositions explained simply.",
     icon: "📖",
+    image: "/guides/grammar-basics.jpg",
     href: "/guides/english-grammar-basics/",
     readTime: "12 min",
     level: "Beginner"
@@ -17,6 +18,7 @@ const guides = [
     title: "Common English Mistakes",
     description: "The 30 errors most non-native speakers make. Spot them in your own writing and fix them for good.",
     icon: "⚠️",
+    image: "/guides/common-mistakes.jpg",
     href: "/guides/common-english-mistakes/",
     readTime: "9 min",
     level: "Intermediate"
@@ -49,6 +51,7 @@ const guides = [
     title: "Best English Apps for Kids",
     description: "Game-based learning that actually keeps young learners engaged. Tested with real kids ages 5–12.",
     icon: "🎮",
+    image: "/guides/apps-for-kids.jpg",
     href: "/guides/best-english-apps-for-kids/",
     readTime: "6 min",
     level: "Parents"
@@ -99,17 +102,27 @@ const guides = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {guides.map(guide => (
-          <a href={guide.href} class="block bg-slate-900/60 rounded-xl p-6 border border-slate-700 hover:border-emerald-500 transition-colors group">
-            <span class="text-5xl mb-4 block">{guide.icon}</span>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
-              {guide.title}
-            </h3>
-            <p class="text-slate-300 mb-4">{guide.description}</p>
-            <div class="flex items-center gap-4 text-sm text-slate-400">
-              <span>{guide.readTime}</span>
-              <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs">
-                {guide.level}
-              </span>
+          <a href={guide.href} class="block bg-slate-900/60 rounded-xl border border-slate-700 hover:border-emerald-500 transition-colors group overflow-hidden">
+            {guide.image ? (
+              <div class="h-40 overflow-hidden">
+                <img src={guide.image} alt={guide.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+            ) : (
+              <div class="h-40 bg-gradient-to-br from-emerald-900/40 to-teal-900/40 flex items-center justify-center">
+                <span class="text-5xl">{guide.icon}</span>
+              </div>
+            )}
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                {guide.title}
+              </h3>
+              <p class="text-slate-300 mb-4">{guide.description}</p>
+              <div class="flex items-center gap-4 text-sm text-slate-400">
+                <span>{guide.readTime}</span>
+                <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded-full text-xs">
+                  {guide.level}
+                </span>
+              </div>
             </div>
           </a>
         ))}
