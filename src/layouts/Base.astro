@@ -43,6 +43,15 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     })(window,document,'script','dataLayer','GTM-W42NG9QB');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google Analytics 4 (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1D36CSBCC"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q1D36CSBCC');
+    </script>
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
