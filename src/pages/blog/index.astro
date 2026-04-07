@@ -66,7 +66,7 @@ const posts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8">
         {posts.map(post => (
-          <article class="bg-slate-900/60 rounded-xl shadow-sm border border-gray-700 overflow-hidden hover:shadow-md transition-shadow">
+          <article class="bg-slate-900/60 rounded-xl border border-slate-700 overflow-hidden hover:border-emerald-500 transition-colors">
             <div class="h-48 bg-gradient-to-br from-emerald-900/40 to-teal-900/40 flex items-center justify-center">
               <span class="text-6xl">📝</span>
             </div>
@@ -80,12 +80,12 @@ const posts = [
                 <span>{post.date}</span>
               </div>
               <h2 class="text-xl font-bold text-gray-100 mb-2">
-                <a href={`/blog/${post.slug}/`} class="hover:text-emerald-600">
+                <a href={post.href} class="hover:text-emerald-600">
                   {post.title}
                 </a>
               </h2>
               <p class="text-slate-300 mb-4">{post.excerpt}</p>
-              <a href={`/blog/${post.slug}/`} class="text-emerald-600 font-semibold hover:underline">
+              <a href={post.href} class="text-emerald-600 font-semibold hover:underline">
                 Read More →
               </a>
             </div>
