@@ -1,145 +1,37 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import AdUnit from '../../components/AdUnit.astro';
-import StickyCTA from '../../components/StickyCTA.astro';
-import SocialProof from '../../components/SocialProof.astro';
-import BenefitCards from '../../components/BenefitCards.astro';
-import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+const pageTitle = "See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?";
+const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.";
+---
 
-// Platform data
-const seeGuru = {
-  name: "See Guru",
-  rating: 7.8,
-  price: "$5-40/hr",
-  link: "/go/see-guru",
-  bestFor: "Affordable tutors with strong Asian selection",
-  pros: [
-    "Affordable lessons starting at $5/hour",
-    "Strong Asian tutor selection (Chinese, Japanese, Korean)",
-    "Pay-per-lesson model with no subscription required",
-    "Trial lessons available for $1-5",
-    "Good availability across time zones"
-  ],
-  cons: [
-    "Smaller tutor pool than major platforms",
-    "Basic vetting process",
-    "Limited built-in curriculum",
-    "Customer support can be slow"
-  ]
-};
-
-const verbling = {
-  name: "Verbling",
-  rating: 7.5,
-  price: "$15-40/hr",
-  link: "/go/verbling",
-  bestFor: "Professional tutors with marketplace flexibility",
-  pros: [
-    "Wide selection of professional tutors globally",
-    "All tutors verified with teaching credentials",
-    "Flexible scheduling with instant booking",
-    "Specialized tutors for business English and exam prep",
-    "Direct communication with tutors before booking"
-  ],
-  cons: [
-    "Higher price point than See Guru",
-    "Marketplace model means varying tutor quality",
-    "No subscription option for unlimited practice",
-    "Less focus on Asian language background tutors"
-  ]
-};
-
-// Comparison rows
-const comparison = [
-  { feature: "Starting Price", winner: "a", a: "$5/hr", b: "$15/hr" },
-  { feature: "Pricing Model", winner: null, a: "Pay per lesson", b: "Pay per lesson" },
-  { feature: "Tutor Pool", winner: "b", a: "Moderate", b: "Large (global)" },
-  { feature: "Native English Speakers", winner: "b", a: "Limited selection", b: "Good selection" },
-  { feature: "Asian Tutor Focus", winner: "a", a: "Excellent", b: "Limited" },
-  { feature: "Trial Available", winner: "a", a: "Yes ($1-5)", b: "Direct lesson credit" },
-  { feature: "Professional Credentials", winner: "b", a: "Basic vetting", b: "Verified teachers" },
-  { feature: "Business English", winner: "b", a: "Available", b: "Specialized tutors" },
-  { feature: "Exam Prep Focus", winner: "b", a: "Limited", b: "IELTS, TOEFL, GRE specialists" },
-  { feature: "Scheduling Flexibility", winner: null, a: "High", b: "High" }
-];
-
-// Benefits section
-const whyCompare = [
-  { icon: "💰", title: "Significant Price Difference", description: "See Guru starts at $5/hr while Verbling begins at $15/hr. Discover which offers better value for your needs" },
-  { icon: "🎯", title: "Match Your Learning Goals", description: "Whether you need casual conversation or professional business English, choose the platform that fits" },
-  { icon: "🌏", title: "Tutor Specialization", description: "See Guru excels in Asian tutors while Verbling focuses on professionally credentialed teachers" }
-];
-
-// Testimonials
-const testimonials = [
-  {
-    quote: "See Guru connected me with a Korean tutor who understood exactly what I needed for my TOPIK exam preparation.",
-    author: "Min-Ji L.",
-    location: "South Korea",
-    result: "TOPIK Level 5 achieved"
-  },
-  {
-    quote: "Verbling's business English tutors helped me nail my presentations. Worth every penny for my career.",
-    author: "Carlos R.",
-    location: "Mexico",
-    result: "Promotion at multinational firm"
-  },
-  {
-    quote: "I started with See Guru for budget practice, then moved to Verbling when I needed certified tutors for my MBA.",
-    author: "Aisha K.",
-    location: "Nigeria",
-    result: "IELTS 8.0 achieved"
-  }
-];
-
-// SEO Schema
-const articleSchema = {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{pageTitle}</title>
+<meta name="description" content={pageDesc}>
+<link rel="canonical" href="https://learnenglish.life/compare/see-guru-vs-verbling/">
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?",
   "description": "Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
+  "author": {"@type": "Organization", "name": "LearnEnglish.Life"},
   "datePublished": "2026-04-07",
   "dateModified": "2026-04-07"
-};
-
-const comparisonSchema = {
+}
+</script>
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Online Language Tutoring Platforms Comparison",
   "description": "Comparison between See Guru and Verbling for English language learning"
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://learnenglish.life/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Comparisons",
-      "item": "https://learnenglish.life/compare/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "See Guru vs Verbling"
-    }
-  ]
-};
-
-const faqSchema = {
+}
+</script>
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -148,359 +40,288 @@ const faqSchema = {
       "name": "Is See Guru or Verbling better for budget learners?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "See Guru is significantly better for budget learners with prices starting at $5/hour compared to Verbling's $15/hour starting point. If cost is your primary concern, See Guru offers the most affordable path to regular practice."
+        "text": "See Guru is significantly better for budget learners. Prices start at $5/hour compared to Verbling's higher starting rates. See Guru's pay-per-lesson model means you only pay for what you use, with no subscription pressure."
       }
     },
     {
       "@type": "Question",
-      "name": "Which platform has better tutors for business English?",
+      "name": "Which platform has more native English speakers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Verbling has an edge for business English thanks to its specialized tutors with corporate backgrounds and verified teaching credentials. See Guru offers business English tutors but without the same level of specialization or credential verification."
+        "text": "Verbling has a stronger selection of native English speakers from the US, UK, and other English-speaking countries. See Guru does have native speakers available but focuses more on Asian tutors. If native speaker access is your priority, Verbling has the edge."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I find Asian tutors on Verbling like on See Guru?",
+      "name": "Do both platforms offer free trials?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "See Guru is specifically strong for Asian tutors (Chinese, Japanese, Korean, Vietnamese) with cultural understanding. Verbling has some Asian tutors but the platform's focus is more on global professional tutors rather than Asian market specialization."
+        "text": "Both platforms offer trial lessons. See Guru typically offers trial lessons between $1-5, making it very affordable to test multiple tutors. Verbling also provides trial sessions, though at slightly higher price points. Both allow you to experience the platform before committing."
       }
     },
     {
       "@type": "Question",
-      "name": "Which platform is better for exam preparation (IELTS, TOEFL)?",
+      "name": "Can I use both platforms simultaneously?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Verbling is better for structured exam prep with specialized IELTS, TOEFL, and GRE tutors who have proven track records. See Guru has exam prep tutors available but Verbling's verification system helps you find more consistently qualified instructors for high-stakes testing."
+        "text": "Yes, many learners use both platforms for different purposes. See Guru works well for regular practice with affordable Asian tutors, while Verbling can be used for accent coaching and conversation with native speakers. Both operate independently with no exclusive commitments."
       }
     }
   ]
-};
----
+}
+</script>
+</head>
+<body class="min-h-screen flex flex-col">
+<main id="main-content" class="flex-1">
 
-<Base title="See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?" description="Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  
-  <Header />
-  
-  <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-neutral-300 mb-4" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" class="hover:text-emerald-600" itemprop="item"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1" />
-      </span>
-      <span class="mx-2">›</span>
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/compare/" class="hover:text-emerald-600" itemprop="item"><span itemprop="name">Comparisons</span></a>
-        <meta itemprop="position" content="2" />
-      </span>
-      <span class="mx-2">›</span>
-      <span class="text-neutral-300" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">See Guru vs Verbling</span>
-        <meta itemprop="position" content="3" />
-      </span>
-    </nav>
+<!-- Breadcrumb -->
+<nav class="max-w-5xl mx-auto px-4 pt-6 text-sm text-neutral-300">
+  <a href="/" class="hover:text-emerald-600">Home</a>
+  <span class="mx-2">›</span>
+  <a href="/compare/" class="hover:text-emerald-600">Comparisons</a>
+  <span class="mx-2">›</span>
+  <span class="text-neutral-300">See Guru vs Verbling</span>
+</nav>
 
-    <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
-      <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">See Guru vs Verbling: Which Online Tutoring Platform Is Better?</h1>
-      <p class="text-emerald-100 text-lg">Budget-friendly tutoring meets professional credentials. We compare pricing, tutor quality, specializations, and features to help you choose the right platform.</p>
+<!-- Hero Section -->
+<div class="max-w-5xl mx-auto px-4 py-8">
+  <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+    <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
+    <h1 class="text-4xl font-bold mt-2 mb-4">See Guru vs Verbling: Which Online Tutoring Platform Is Better?</h1>
+    <p class="text-emerald-100 text-lg">Two distinct 1-on-1 tutor marketplaces face off. We compare pricing, tutor selection, native speaker access, and value to help you choose the right platform.</p>
+  </div>
+</div>
+
+<!-- Quick Overview Cards -->
+<div class="max-w-5xl mx-auto px-4 pb-8">
+  <div class="grid md:grid-cols-2 gap-6 mb-8">
+    <!-- See Guru Card -->
+    <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
+        <div class="flex items-center">
+          <span class="text-yellow-500 text-xl mr-1">★</span>
+          <span class="text-2xl font-bold text-gray-100">7.8</span>
+          <span class="text-slate-400 text-sm ml-1">/10</span>
+        </div>
+      </div>
+      <div class="mb-4">
+        <span class="text-3xl font-bold text-emerald-600">From $5/hour</span>
+      </div>
+      <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Budget learners seeking affordable Asian tutors</p>
+      <div class="mb-4">
+        <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+        <ul class="text-sm text-neutral-300 space-y-1">
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Lowest entry price ($5/hour starting)</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Strong Asian tutor selection</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Pay-per-lesson with no subscription</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Affordable trial lessons ($1-5)</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Book anytime, high flexibility</li>
+        </ul>
+      </div>
+      <a href="/go/see-guru" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">Start Your See Guru Journey</a>
     </div>
-
-    <!-- Verdict Box -->
-    <div class="bg-gradient-to-r from-amber-900/40 to-orange-900/40 rounded-xl p-6 mb-8 border border-amber-500/30">
-      <div class="flex items-start gap-4">
-        <div class="text-4xl">⚖️</div>
-        <div>
-          <h2 class="text-xl font-bold text-white mb-2">Quick Verdict</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="bg-slate-900/60 rounded-lg p-4">
-              <p class="text-emerald-400 font-bold mb-1">Choose See Guru for:</p>
-              <p class="text-neutral-300 text-sm">Budget learners who want affordable Asian tutors and pay-per-lesson flexibility</p>
-            </div>
-            <div class="bg-slate-900/60 rounded-lg p-4">
-              <p class="text-blue-400 font-bold mb-1">Choose Verbling for:</p>
-              <p class="text-neutral-300 text-sm">Professional tutors with verified credentials for business English and exam prep</p>
-            </div>
-          </div>
+    
+    <!-- Verbling Card -->
+    <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold text-gray-100">Verbling</h2>
+        <div class="flex items-center">
+          <span class="text-yellow-500 text-xl mr-1">★</span>
+          <span class="text-2xl font-bold text-gray-100">8.0</span>
+          <span class="text-slate-400 text-sm ml-1">/10</span>
         </div>
+      </div>
+      <div class="mb-4">
+        <span class="text-3xl font-bold text-blue-600">From $15/hour</span>
+      </div>
+      <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Native English speaker access and accent coaching</p>
+      <div class="mb-4">
+        <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+        <ul class="text-sm text-neutral-300 space-y-1">
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Strong native English speaker selection</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Tutors from US, UK, Australia, Canada</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Accent coaching and pronunciation</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Trial sessions available</li>
+          <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>Pay-per-lesson model</li>
+        </ul>
+      </div>
+      <a href="/go/verbling" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-bold">Explore Verbling</a>
+    </div>
+  </div>
+</div>
+
+<!-- Feature Comparison Table -->
+<div class="max-w-5xl mx-auto px-4 pb-8">
+  <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold text-gray-100 mb-6">Feature Comparison</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-neutral-800">
+            <th class="text-left p-4 font-semibold text-gray-300">Feature</th>
+            <th class="text-center p-4 font-semibold text-emerald-400">See Guru</th>
+            <th class="text-center p-4 font-semibold text-blue-400">Verbling</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Starting Price</td>
+            <td class="p-4 text-center"><span class="text-emerald-400 font-bold">$5/hour</span></td>
+            <td class="p-4 text-center"><span class="text-blue-400 font-bold">$15/hour</span></td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Pricing Model</td>
+            <td class="p-4 text-center">Pay per lesson</td>
+            <td class="p-4 text-center">Pay per lesson</td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Native Speakers</td>
+            <td class="p-4 text-center text-slate-400">Available but limited</td>
+            <td class="p-4 text-center"><span class="text-emerald-400">Strong selection ✓</span></td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Asian Tutors</td>
+            <td class="p-4 text-center"><span class="text-emerald-400">Primary focus ✓</span></td>
+            <td class="p-4 text-center text-slate-400">Limited</td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Free Trial</td>
+            <td class="p-4 text-center"><span class="text-emerald-400">$1-5 trial lessons ✓</span></td>
+            <td class="p-4 text-center"><span class="text-emerald-400">Trial sessions ✓</span></td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Schedule Flexibility</td>
+            <td class="p-4 text-center"><span class="text-emerald-400">High - book anytime ✓</span></td>
+            <td class="p-4 text-center"><span class="text-emerald-400">High - book anytime ✓</span></td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Lesson Format</td>
+            <td class="p-4 text-center">Video calls, pay-per-lesson</td>
+            <td class="p-4 text-center">Video calls, pay-per-lesson</td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Certification</td>
+            <td class="p-4 text-center text-slate-400">No formal certification</td>
+            <td class="p-4 text-center text-slate-400">No formal certification</td>
+          </tr>
+          <tr class="hover:bg-neutral-800/50 transition-colors">
+            <td class="p-4 font-medium text-gray-300">Best For</td>
+            <td class="p-4 text-center text-emerald-400">Budget learners, Asian tutors</td>
+            <td class="p-4 text-center text-blue-400">Native speakers, accent practice</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Verdict Box -->
+  <div class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+    <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
+        <h3 class="font-bold text-gray-100 mb-2">Choose See Guru if:</h3>
+        <ul class="text-neutral-300 space-y-2">
+          <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want the lowest possible entry price ($5/hour starting)</li>
+          <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You prefer learning from Asian tutors who understand your language background</li>
+          <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You plan to take multiple lessons per week and need affordable rates</li>
+          <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want pay-per-lesson flexibility with no subscription pressure</li>
+          <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You are an intermediate learner looking for consistent practice partners</li>
+        </ul>
+      </div>
+      <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
+        <h3 class="font-bold text-blue-300 mb-2">Choose Verbling if:</h3>
+        <ul class="text-neutral-300 space-y-2">
+          <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You specifically want to practice with native English speakers from the US or UK</li>
+          <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You are focused on accent reduction and pronunciation coaching</li>
+          <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You can budget for higher per-lesson rates</li>
+          <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want a wider selection of tutors from English-speaking countries</li>
+          <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You are preparing for exams or job interviews and need native speaker feedback</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <!-- Quick Overview Cards -->
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <!-- See Guru Card -->
-      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">{seeGuru.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-emerald-600">{seeGuru.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {seeGuru.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {seeGuru.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={seeGuru.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
-          Try See Guru Free →
-        </a>
+  <!-- Price Breakdown -->
+  <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold text-gray-100 mb-6">Price Breakdown</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-bold text-emerald-400 mb-3">See Guru</h3>
+        <p class="text-neutral-300 mb-3">From <strong>$5/hour</strong>, $1-5 per trial lesson. Pay-per-lesson model with no subscription required. Volume discounts available with some tutors.</p>
+        <p class="text-sm text-slate-400">Best for: Occasional or budget-conscious learners who want maximum flexibility.</p>
       </div>
-
-      <!-- Verbling Card -->
-      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-gray-100">Verbling</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">{verbling.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-blue-600">{verbling.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {verbling.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {verbling.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={verbling.link} class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-bold">
-          Try Verbling Free →
-        </a>
+      <div>
+        <h3 class="text-xl font-bold text-blue-400 mb-3">Verbling</h3>
+        <p class="text-neutral-300 mb-3">From <strong>$15/hour</strong>, trial sessions available. Pay-per-lesson model with higher baseline rates reflecting native speaker availability.</p>
+        <p class="text-sm text-slate-400">Best for: Learners specifically seeking native English speaker interaction.</p>
       </div>
     </div>
-
-    <!-- Why Compare Section -->
-    <BenefitCards 
-      title="Why Compare These Platforms?"
-      benefits={whyCompare}
-    />
-
-    <!-- Social Proof -->
-    <SocialProof 
-      title="What Learners Say"
-      testimonials={testimonials}
-    />
-
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-1" />
+    <div class="mt-6 bg-emerald-900/20 border border-emerald-700 rounded-xl p-4 text-center">
+      <p class="text-emerald-200 mb-2"><strong>Recommendation:</strong> See Guru offers the best value for most learners. Starting at $5/hour compared to Verbling's $15/hour means you can take four times as many lessons for the same budget. Only choose Verbling if native speaker access is specifically worth the premium to you.</p>
+      <a href="/go/see-guru" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2 rounded-lg transition-colors mt-2">Try See Guru Today</a>
     </div>
+  </section>
 
-    <!-- Enhanced Comparison Table -->
-    <ComparisonHighlight 
-      title="Feature Comparison"
-      platformA={seeGuru}
-      platformB={verbling}
-      winner="mixed"
-      rows={comparison}
-    />
-
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-2" />
+  <!-- FAQ Section -->
+  <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold text-gray-100 mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Verbling better for budget learners?</h3>
+        <p class="text-neutral-300"><strong>See Guru is significantly better for budget learners.</strong> Prices start at $5/hour compared to Verbling's higher starting rates. See Guru's pay-per-lesson model means you only pay for what you use, with no subscription pressure.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has more native English speakers?</h3>
+        <p class="text-neutral-300"><strong>Verbling has a stronger selection of native English speakers</strong> from the US, UK, and other English-speaking countries. See Guru does have native speakers available but focuses more on Asian tutors. If native speaker access is your priority, Verbling has the edge.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-100 mb-2">Do both platforms offer free trials?</h3>
+        <p class="text-neutral-300"><strong>Both platforms offer trial lessons.</strong> See Guru typically offers trial lessons between $1-5, making it very affordable to test multiple tutors. Verbling also provides trial sessions, though at slightly higher price points. Both allow you to experience the platform before committing.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I use both platforms simultaneously?</h3>
+        <p class="text-neutral-300"><strong>Yes, many learners use both platforms for different purposes.</strong> See Guru works well for regular practice with affordable Asian tutors, while Verbling can be used for accent coaching and conversation with native speakers. Both operate independently with no exclusive commitments.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Detailed Analysis -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-100 mb-6">Detailed Analysis</h2>
-      
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Pricing and Value</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>See Guru</strong> offers the most affordable entry point at just $5/hour with pay-per-lesson pricing. This makes it ideal for learners on tight budgets who still want regular conversation practice. Trial lessons between $1-5 let you test tutors without significant investment.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>Verbling</strong> operates at a higher price point starting at $15/hour, reflecting its focus on professionally credentialed tutors. While more expensive, the verification process means you're paying for quality assurance and specialized expertise in business English and exam preparation.
-        </p>
-      </div>
+  <!-- CTA Section -->
+  <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-6 text-center mb-8">
+    <h2 class="text-2xl font-bold text-white mb-2">Start Your See Guru Journey</h2>
+    <p class="text-emerald-100 mb-4">Sign up through our link and get access to affordable 1-on-1 tutoring starting at just $5/hour.</p>
+    <a href="/go/see-guru" class="inline-block bg-white text-emerald-700 font-bold px-8 py-3 rounded-lg hover:bg-emerald-50 transition-colors">Get Started with See Guru</a>
+  </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Tutor Quality and Selection</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>See Guru</strong> specializes in Asian tutors from China, Japan, Korea, Vietnam, and other countries. This focus means tutors often share cultural backgrounds with learners from these regions, providing better understanding of specific learning challenges and goals. Vetting is basic but sufficient for conversation practice.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>Verbling</strong> verifies all tutors' teaching credentials and professional backgrounds. The platform attracts educators with formal qualifications, making it stronger for structured learning. Business professionals and exam prep specialists are more readily available through Verbling's verified tutor marketplace.
-        </p>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Specialization and Use Cases</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>See Guru</strong> excels when you need affordable conversation practice with tutors who understand Asian cultural contexts. Great for casual learners, TOPIK preparation, JLPT English sections, or general conversation improvement without breaking the bank.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>Verbling</strong> is the better choice for corporate professionals preparing for business presentations, executives needing executive English coaching, or students preparing for IELTS, TOEFL, GRE, or GMAT exams. The credential verification system helps match you with tutors who have proven track records in these specializations.
-        </p>
-      </div>
-    </section>
-
-    <!-- Price Breakdown -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-100 mb-6">Price Breakdown Comparison</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b border-slate-700">
-              <th class="text-left py-3 px-4 text-gray-300">Factor</th>
-              <th class="text-center py-3 px-4 text-emerald-400 font-bold">See Guru</th>
-              <th class="text-center py-3 px-4 text-blue-400 font-bold">Verbling</th>
-            </tr>
-          </thead>
-          <tbody class="text-neutral-300">
-            <tr class="border-b border-slate-800">
-              <td class="py-3 px-4">Starting Price</td>
-              <td class="text-center py-3 px-4 text-emerald-400 font-bold">$5/hr</td>
-              <td class="text-center py-3 px-4 text-blue-400 font-bold">$15/hr</td>
-            </tr>
-            <tr class="border-b border-slate-800">
-              <td class="py-3 px-4">Trial Lesson</td>
-              <td class="text-center py-3 px-4">$1-5</td>
-              <td class="text-center py-3 px-4">Lesson credit</td>
-            </tr>
-            <tr class="border-b border-slate-800">
-              <td class="py-3 px-4">Average Lesson</td>
-              <td class="text-center py-3 px-4">$10-20</td>
-              <td class="text-center py-3 px-4">$20-35</td>
-            </tr>
-            <tr class="border-b border-slate-800">
-              <td class="py-3 px-4">Monthly (4 lessons)</td>
-              <td class="text-center py-3 px-4">$40-80</td>
-              <td class="text-center py-3 px-4">$80-140</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4">Subscription Option</td>
-              <td class="text-center py-3 px-4 text-red-400">No</td>
-              <td class="text-center py-3 px-4 text-red-400">No</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-100 mb-6">Frequently Asked Questions</h2>
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Verbling better for budget learners?</h3>
-          <p class="text-neutral-300">
-            <strong>See Guru is significantly better for budget learners</strong> with prices starting at $5/hour compared to Verbling's $15/hour starting point. If cost is your primary concern, See Guru offers the most affordable path to regular practice.
-          </p>
+  <!-- Related Reviews -->
+  <section class="mb-8">
+    <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <a href="/reviews/see-guru/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-500 mr-1">★</span>
+          <span class="font-bold">7.8/10</span>
         </div>
-
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better tutors for business English?</h3>
-          <p class="text-neutral-300">
-            <strong>Verbling has an edge for business English</strong> thanks to its specialized tutors with corporate backgrounds and verified teaching credentials. See Guru offers business English tutors but without the same level of specialization or credential verification.
-          </p>
+        <h3 class="font-semibold text-gray-100">See Guru Review</h3>
+        <p class="text-sm text-neutral-400">Full platform analysis</p>
+      </a>
+      <a href="/reviews/verbling/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+        <div class="flex items-center mb-2">
+          <span class="text-yellow-500 mr-1">★</span>
+          <span class="font-bold">8.0/10</span>
         </div>
-
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I find Asian tutors on Verbling like on See Guru?</h3>
-          <p class="text-neutral-300">
-            <strong>See Guru is specifically strong for Asian tutors</strong> (Chinese, Japanese, Korean, Vietnamese) with cultural understanding. Verbling has some Asian tutors but the platform's focus is more on global professional tutors rather than Asian market specialization.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform is better for exam preparation (IELTS, TOEFL)?</h3>
-          <p class="text-neutral-300">
-            <strong>Verbling is better for structured exam prep</strong> with specialized IELTS, TOEFL, and GRE tutors who have proven track records. See Guru has exam prep tutors available but Verbling's verification system helps you find more consistently qualified instructors for high-stakes testing.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-3" />
+        <h3 class="font-semibold text-gray-100">Verbling Review</h3>
+        <p class="text-sm text-neutral-400">Full platform analysis</p>
+      </a>
     </div>
+  </section>
 
-    <!-- Verdict Section -->
-    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
-          <h3 class="font-bold text-gray-100 mb-2">Choose See Guru if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Budget is your primary constraint</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You need Asian tutors who understand your culture</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Pay-per-lesson flexibility is important</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You practice conversation casually</li>
-          </ul>
-          <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block mt-4 bg-emerald-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">
-            Get Started with See Guru →
-          </a>
-        </div>
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
-          <h3 class="font-bold text-blue-300 mb-2">Choose Verbling if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You need verified professional tutors</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>Business English is your priority</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You're preparing for IELTS, TOEFL, or GRE</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>Quality credentials matter more than cost</li>
-          </ul>
-          <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition">
-            Compare on See Guru →
-          </a>
-        </div>
-      </div>
-    </section>
+  <!-- Affiliate Disclosure -->
+  <div class="text-xs text-slate-400 mt-8 pt-4 border-t">
+    <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
+  </div>
+</div>
 
-    <!-- Related Reviews -->
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/reviews/see-guru/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold">7.8/10</span>
-          </div>
-          <h3 class="font-semibold text-gray-100">See Guru Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-        <a href="/reviews/verbling/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold">7.5/10</span>
-          </div>
-          <h3 class="font-semibold text-gray-100">Verbling Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Affiliate Disclosure -->
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t">
-      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up for platforms recommended on this page at no extra cost to you. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
-    </div>
-  </main>
-
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText="Compare Prices Now"
-    ctaLink="https://see.guru/?aff=SG-SUAG151"
-    platform="see-guru"
-  />
-
-  <Footer />
-</Base>
+</main>
+</body>
+</html>
