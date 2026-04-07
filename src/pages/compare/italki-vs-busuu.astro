@@ -7,6 +7,8 @@ import StickyCTA from '../../components/StickyCTA.astro';
 import SocialProof from '../../components/SocialProof.astro';
 import BenefitCards from '../../components/BenefitCards.astro';
 import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+import PlatformRatings from '../../components/PlatformRatings.astro';
+import { platformRatings } from '../../data/platform-ratings';
 
 // Platform data
 const italki = {
@@ -198,11 +200,13 @@ const faqSchema = {
       <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-white">iTalki</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-white">{italki.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
+          <PlatformRatings
+            platform={italki.name}
+            rating={italki.rating}
+            scale={10}
+            variant="inline"
+            color="emerald"
+          />
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
@@ -223,11 +227,13 @@ const faqSchema = {
       <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-purple-500 p-6">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-white">Busuu</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-white">{busuu.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
+          <PlatformRatings
+            platform={busuu.name}
+            rating={busuu.rating}
+            scale={10}
+            variant="inline"
+            color="purple"
+          />
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-purple-600">{busuu.price}</span>

@@ -1,0 +1,120 @@
+---
+import RatingStars from './RatingStars.astro';
+
+interface Props {
+  platform: string;
+  rating: number;
+  reviewCount?: number;
+  scale?: number;
+  showReviewCount?: boolean;
+  variant?: 'card' | 'inline' | 'badge';
+  color?: 'emerald' | 'purple' | 'blue' | 'orange' | 'slate';
+  class?: string;
+}
+
+const {
+  platform,
+  rating,
+  reviewCount = 0,
+  scale = 5,
+  showReviewCount = true,
+  variant = 'inline',
+  color = 'emerald',
+  class: className = '',
+} = Astro.props;
+
+// Normalize rating to 5-star scale
+const normalizedRating = scale === 10 ? (rating / 2) : rating;
+const reviewCountDisplay = reviewCount > 1000 
+  ? `${(reviewCount / 1000).toFixed(1)}K+` 
+  : reviewCount > 0 
+    ? reviewCount.toLocaleString() 
+    : null;
+
+// Trust badges based on rating
+const getBadge = () => {
+  if (normalizedRating >= 4.5) return { text: 'Top Rated', icon: '🏆', class: 'bg-amber-500/20 text-amber-300 border-amber-500/30' };
+  if (normalizedRating >= 4.0) return { text: 'Highly Rated', icon: '⭐', class: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' };
+  if (normalizedRating >= 3.5) return { text: 'Popular', icon: '👍', class: 'bg-green-500/20 text-green-300 border-green-500/30' };
+  return null;
+};
+
+const badge = getBadge();
+
+// Color variants
+const colorClasses = {
+  emerald: 'text-emerald-400',
+  purple: 'text-purple-400',
+  blue: 'text-blue-400',
+  orange: 'text-orange-400',
+  slate: 'text-slate-400',
+};
+
+// Trust icons
+const verifiedIcon = `<svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+const usersIcon = `<svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path></svg>`;
+---
+
+{variant === 'card' && (
+  <div class:list={['bg-slate-800/50 rounded-lg p-4 border border-slate-700/50', className]}>
+    <div class="flex items-center justify-between mb-2">
+      <RatingStars rating={normalizedRating} size="md" showValue={false} />
+      {badge && (
+        <span class:list={['text-xs px-2 py-1 rounded-full border', badge.class]}>
+          {badge.icon} {badge.text}
+        </span>
+      )}
+    </div>
+    <div class:list={['text-2xl font-bold', colorClasses[color]]}>
+      {normalizedRating.toFixed(1)}<span class="text-slate-500 text-base font-normal">/5</span>
+    </div>
+    {showReviewCount && reviewCountDisplay && (
+      <div class="flex items-center gap-2 mt-2 text-sm text-slate-400">
+        <Fragment set:html={usersIcon} />
+        <span>{reviewCountDisplay} verified reviews</span>
+      </div>
+    )}
+  </div>
+)}
+
+{variant === 'inline' && (
+  <div class:list={['flex items-center gap-4 flex-wrap', className]}>
+    <div class="flex items-center gap-2">
+      <RatingStars rating={normalizedRating} size="sm" showValue={false} />
+      <span class:list={['font-semibold', colorClasses[color]]}>{normalizedRating.toFixed(1)}</span>
+      <span class="text-slate-500 text-sm">/5</span>
+    </div>
+    {showReviewCount && reviewCountDisplay && (
+      <div class="flex items-center gap-1 text-sm text-slate-400">
+        <Fragment set:html={usersIcon} />
+        <span>{reviewCountDisplay} reviews</span>
+      </div>
+    )}
+    {badge && (
+      <span class:list={['text-xs px-2 py-0.5 rounded-full border', badge.class]}>
+        {badge.icon} {badge.text}
+      </span>
+    )}
+    <div class="flex items-center gap-1 text-xs text-slate-500">
+      <Fragment set:html={verifiedIcon} />
+      <span>Verified</span>
+    </div>
+  </div>
+)}
+
+{variant === 'badge' && (
+  <div class:list={['inline-flex items-center gap-2', className]}>
+    <div class:list={['flex items-center gap-1 text-sm font-semibold', colorClasses[color]]}>
+      <span class="text-yellow-400">★</span>
+      <span>{normalizedRating.toFixed(1)}</span>
+    </div>
+    {showReviewCount && reviewCountDisplay && (
+      <span class="text-xs text-slate-400">({reviewCountDisplay})</span>
+    )}
+    {badge && (
+      <span class:list={['text-xs px-2 py-0.5 rounded-full border', badge.class]}>
+        {badge.icon}
+      </span>
+    )}
+  </div>
+)}
