@@ -11,7 +11,8 @@ const posts = [
     category: "Tips",
     readTime: "5 min",
     date: "April 5, 2026",
-    href: "/study-guide/how-to-practice-english-speaking-alone/"
+    href: "/study-guide/how-to-practice-english-speaking-alone/",
+    image: "/blog/speaking-alone.jpg"
   },
   {
     title: "iTalki vs Preply: Which is Better in 2026?",
@@ -19,7 +20,8 @@ const posts = [
     category: "Comparisons",
     readTime: "8 min",
     date: "April 3, 2026",
-    href: "/comparisons/italki-vs-preply/"
+    href: "/comparisons/italki-vs-preply/",
+    image: "/blog/italki-vs-preply.jpg"
   },
   {
     title: "How to Choose the Right English Tutor",
@@ -27,7 +29,8 @@ const posts = [
     category: "Tutoring",
     readTime: "6 min",
     date: "April 1, 2026",
-    href: "/study-guide/how-to-choose-english-tutor/"
+    href: "/study-guide/how-to-choose-english-tutor/",
+    image: "/blog/choose-tutor.jpg"
   },
   {
     title: "Best English Apps for Beginners",
@@ -35,7 +38,8 @@ const posts = [
     category: "Resources",
     readTime: "4 min",
     date: "March 28, 2026",
-    href: "/guides/best-english-apps-for-beginners/"
+    href: "/guides/best-english-apps-for-beginners/",
+    image: "/blog/apps-beginners.jpg"
   },
 ];
 ---
@@ -66,9 +70,9 @@ const posts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8">
         {posts.map(post => (
-          <article class="bg-slate-900/60 rounded-xl border border-slate-700 overflow-hidden hover:border-emerald-500 transition-colors">
-            <div class="h-48 bg-gradient-to-br from-emerald-900/40 to-teal-900/40 flex items-center justify-center">
-              <span class="text-6xl">📝</span>
+          <a href={post.href} class="block group bg-slate-900/60 rounded-xl border border-slate-700 overflow-hidden hover:border-emerald-500 transition-colors">
+            <div class="h-48 overflow-hidden">
+              <img src={post.image} alt={post.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div class="p-6">
               <div class="flex items-center gap-3 text-sm text-slate-400 mb-3">
@@ -79,17 +83,15 @@ const posts = [
                 <span>•</span>
                 <span>{post.date}</span>
               </div>
-              <h2 class="text-xl font-bold text-gray-100 mb-2">
-                <a href={post.href} class="hover:text-emerald-600">
-                  {post.title}
-                </a>
+              <h2 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                {post.title}
               </h2>
               <p class="text-slate-300 mb-4">{post.excerpt}</p>
-              <a href={post.href} class="text-emerald-600 font-semibold hover:underline">
+              <span class="text-emerald-400 font-semibold group-hover:text-emerald-300">
                 Read More →
-              </a>
+              </span>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
