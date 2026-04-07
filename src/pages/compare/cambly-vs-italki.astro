@@ -157,11 +157,13 @@ const articleSchema = {
       <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-teal-400">Cambly</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-white">{cambly.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
+          <PlatformRatings 
+            platform="Cambly" 
+            rating={platformRatings['Cambly']?.rating || 4.5} 
+            reviewCount={platformRatings['Cambly']?.reviewCount || 0}
+            variant="badge"
+            color="teal"
+          />
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-teal-600">{cambly.price}</span>
@@ -182,11 +184,13 @@ const articleSchema = {
       <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-emerald-400">iTalki</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-white">{italki.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
+          <PlatformRatings 
+            platform="iTalki" 
+            rating={platformRatings['iTalki']?.rating || 4.5} 
+            reviewCount={platformRatings['iTalki']?.reviewCount || 0}
+            variant="badge"
+            color="emerald"
+          />
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>

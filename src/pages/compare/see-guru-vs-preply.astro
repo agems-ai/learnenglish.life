@@ -210,11 +210,13 @@ const faqSchema = {
       <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-indigo-500 p-6">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-white">Preply</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-white">{preply.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
+          <PlatformRatings 
+            platform="Preply" 
+            rating={platformRatings['Preply']?.rating || 4.5} 
+            reviewCount={platformRatings['Preply']?.reviewCount || 0}
+            variant="badge"
+            color="purple"
+          />
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-indigo-600">{preply.price}</span>
