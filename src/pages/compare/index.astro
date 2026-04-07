@@ -4,14 +4,31 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
-const comparisons = [
-  {
-    title: "Best English Tutoring Platforms 2026",
-    description: "Compare the top 10 English learning apps including Duolingo, iTalki, Babbel, Cambly, and more. Find the perfect app for your learning style and budget.",
-    href: "/compare/best-english-tutoring-platforms-2026/",
-    category: "App Comparisons"
-  }
-];
+// Auto-discover every comparison page so we never have to maintain a hand-written list
+const modules = import.meta.glob('./*.astro', { eager: true }) as Record<string, any>;
+
+const seeGuruFirst = (slug: string) => slug.startsWith('see-guru') ? 0 : 1;
+
+const comparisons = Object.entries(modules)
+  .filter(([path]) => !path.endsWith('/index.astro'))
+  .map(([path, mod]) => {
+    const slug = path.replace('./', '').replace('.astro', '');
+    const fallbackTitle = slug
+      .replace(/-/g, ' ')
+      .replace(/\bvs\b/gi, 'vs')
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    const title: string = mod?.frontmatter?.title || fallbackTitle;
+    const description: string =
+      mod?.frontmatter?.description ||
+      `Side-by-side comparison: ${fallbackTitle}. Pricing, features and who each one is best for.`;
+    const isVs = slug.includes('-vs-');
+    const category = isVs ? 'Head to Head' : 'Roundup';
+    return { title, description, href: `/compare/${slug}/`, category, slug };
+  })
+  .sort((a, b) => {
+    const sg = seeGuruFirst(a.slug) - seeGuruFirst(b.slug);
+    return sg !== 0 ? sg : a.title.localeCompare(b.title);
+  });
 ---
 
 <Base title="Compare English Learning Tools | LearnEnglish.Life" description="Compare the best English learning apps, tutoring platforms, and courses. Find the perfect fit for your budget, goals, and learning style.">
