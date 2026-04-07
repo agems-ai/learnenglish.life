@@ -6,6 +6,7 @@ import ReviewCard from '../../components/ReviewCard.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 const platforms = [
+  { name: "See Guru", rating: 4.8, reviews: 6257, price: 5, priceLabel: "From $5/lesson", slug: "see-guru", category: "Tutoring", categories: ["Tutoring", "Conversation", "Courses"], tagline: "1-on-1 lessons with certified diploma-holding tutors", featured: true },
   { name: "iTalki", rating: 4.7, reviews: 12500, price: 10, priceLabel: "From $10/hr", slug: "italki", category: "Tutoring", tagline: "Affordable 1-on-1 tutoring" },
   { name: "Preply", rating: 4.6, reviews: 8900, price: 10, priceLabel: "From $10/hr", slug: "preply", category: "Tutoring", tagline: "Flexible lesson scheduling" },
   { name: "Cambly", rating: 4.4, reviews: 7200, price: 6.50, priceLabel: "From $6.50/wk", slug: "cambly", category: "Conversation", tagline: "Unlimited conversation practice" },
@@ -27,23 +28,23 @@ const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games
   <Header />
   
   <!-- Hero -->
-  <section class="bg-emerald-600 py-12">
+  <section class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-12 border-b border-slate-800">
     <div class="max-w-6xl mx-auto px-4">
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
         English Learning Platform Reviews
       </h1>
-      <p class="text-emerald-100 text-lg">
+      <p class="text-slate-300 text-lg">
         Honest, in-depth reviews of {platforms.length}+ platforms based on real user experiences
       </p>
     </div>
   </section>
 
   <!-- Filters -->
-  <section class="bg-white border-b py-4 sticky top-0 z-10">
+  <section class="bg-slate-950 border-b border-slate-800 py-4 sticky top-16 z-10">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2" id="category-filters">
         {categories.map(cat => (
-          <button class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${cat === 'All' ? 'bg-emerald-600 text-white' : 'bg-neutral-800 text-gray-300 hover:bg-gray-200'}`}>
+          <button data-category={cat} class={`filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors ${cat === 'All' ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'}`}>
             {cat}
           </button>
         ))}
@@ -61,22 +62,47 @@ const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games
   <!-- Reviews Grid -->
   <section class="py-12">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="reviews-grid">
         {platforms.map(platform => (
-          <ReviewCard 
-            name={platform.name}
-            rating={platform.rating}
-            reviewCount={platform.reviews}
-            price={platform.price}
-            priceLabel={platform.priceLabel}
-            slug={platform.slug}
-            category={platform.category}
-            tagline={platform.tagline}
-          />
+          <div class="review-item" data-categories={(platform.categories || [platform.category]).join(',')}>
+            <ReviewCard
+              name={platform.name}
+              rating={platform.rating}
+              reviewCount={platform.reviews}
+              price={platform.price}
+              priceLabel={platform.priceLabel}
+              slug={platform.slug}
+              category={platform.category}
+              tagline={platform.tagline}
+            />
+          </div>
         ))}
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.review-item');
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category');
+          buttons.forEach((b) => {
+            b.classList.remove('bg-emerald-600', 'text-white');
+            b.classList.add('bg-slate-800', 'text-slate-300');
+          });
+          btn.classList.remove('bg-slate-800', 'text-slate-300');
+          btn.classList.add('bg-emerald-600', 'text-white');
+          items.forEach((item) => {
+            const cats = (item.getAttribute('data-categories') || '').split(',');
+            const match = cat === 'All' || cats.includes(cat);
+            item.style.display = match ? '' : 'none';
+          });
+        });
+      });
+    })();
+  </script>
 
   <!-- Ad In-Feed -->
   <div class="py-8">
