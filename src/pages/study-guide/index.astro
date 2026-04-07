@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { getCollection } from "astro:content";
 
 const guides = await getCollection('guides');
 ---
 
 <Base title="Study Guides | LearnEnglish.Life" description="Free English study guides covering grammar, vocabulary, speaking practice, and more.">
+  <Header />
   <div class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold text-slate-200 mb-4">Study Guides</h1>
     <p class="text-lg text-slate-300 mb-8">Free guides to help you master English. from grammar basics to conversation confidence.</p>
@@ -19,4 +22,5 @@ const guides = await getCollection('guides');
       ))}
     </div>
   </div>
+  <Footer />
 </Base>
