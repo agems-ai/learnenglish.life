@@ -1,20 +1,110 @@
 ---
 // See Guru affiliate redirect page
+// See Guru uses first-party server-side tracking via ?aff= parameter
+// No external JS pixel needed — See Guru tracks clicks through their own system
 ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Redirecting to See Guru...</title>
+  <link rel="canonical" href="https://learnenglish.life/go/see-guru/">
   <style>
-    body { margin: 0; font-family: system-ui, sans-serif; background: linear-gradient(135deg, #10b981 0%, #059669 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-    .container { text-align: center; color: white; }
-    .logo { font-size: 48px; margin-bottom: 20px; }
-    h1 { font-size: 24px; margin-bottom: 10px; }
-    p { font-size: 16px; opacity: 0.9; }
-    .loader { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      text-align: center;
+      color: white;
+      max-width: 480px;
+      padding: 32px 24px;
+    }
+    .logo {
+      font-size: 64px;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: -0.5px;
+    }
+    p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin: 0 0 8px;
+      line-height: 1.5;
+    }
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 28px auto 16px;
+    }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    .progress-bar {
+      width: 200px;
+      height: 4px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: white;
+      border-radius: 2px;
+      animation: countdown 3s linear forwards;
+      width: 100%;
+    }
+    @keyframes countdown {
+      from { width: 100%; }
+      to { width: 0%; }
+    }
+
+    .disclosure {
+      margin-top: 24px;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      font-size: 12px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+    .disclosure strong { opacity: 1; }
+
+    .skip-btn {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .skip-btn:hover {
+      background: rgba(255,255,255,0.3);
+      border-color: white;
+    }
   </style>
 </head>
 <body>
@@ -22,12 +112,62 @@
     <div class="logo">🎓</div>
     <h1>Redirecting to See Guru</h1>
     <p>You're being redirected to find your perfect tutor...</p>
+
     <div class="loader"></div>
-    <p style="font-size: 12px; margin-top: 20px;">Affiliate link. we may earn a commission at no extra cost to you.</p>
+    <div class="progress-bar"><div class="progress-bar-fill" id="progress"></div></div>
+
+    <a href="#" id="skipBtn" class="skip-btn">Take me to See Guru →</a>
+
+    <div class="disclosure">
+      <strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up through this link, at no extra cost to you. This does not affect our editorial integrity.
+    </div>
   </div>
+
   <script>
-    const AFFILIATE_URL = "https://see.guru/?aff=SG-SUAG151";
-    setTimeout(() => { window.location.href = AFFILIATE_URL; }, 1000);
+    // Configuration
+    var AFFILIATE_URL = "https://see.guru/?aff=SG-SUAG151";
+    var REDIRECT_DELAY = 3000; // 3 seconds
+
+    // Track the click immediately (before redirect)
+    function trackSeeGuruClick() {
+      // Fire GA4 event if available
+      if (typeof window.dataLayer !== 'undefined') {
+        window.dataLayer.push({
+          event: 'see_guru_click',
+          event_category: 'Affiliate',
+          event_label: 'See Guru',
+          destination_url: AFFILIATE_URL,
+          affiliate_id: 'SG-SUAG151',
+          source: 'redirect_page',
+          transport_type: 'beacon'
+        });
+      }
+
+      // Also fire legacy analytics event if available
+      if (window.analytics && typeof window.analytics.trackAffiliateClick === 'function') {
+        window.analytics.trackAffiliateClick('see-guru', AFFILIATE_URL);
+      }
+
+      console.log('[See Guru Tracking] Click tracked: ' + AFFILIATE_URL);
+    }
+
+    // Redirect function
+    function redirectToSeeGuru() {
+      trackSeeGuruClick();
+      window.location.href = AFFILIATE_URL;
+    }
+
+    // Set up skip button
+    var skipBtn = document.getElementById('skipBtn');
+    skipBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      redirectToSeeGuru();
+    });
+
+    // Auto-redirect after delay
+    setTimeout(function() {
+      redirectToSeeGuru();
+    }, REDIRECT_DELAY);
   </script>
 </body>
 </html>
