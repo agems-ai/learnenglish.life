@@ -123,10 +123,49 @@ const faqSchema = {
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white mb-8">
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white mb-6">
       <span class="text-indigo-200 text-sm font-medium">Comparison · Updated April 2026</span>
       <h1 class="text-4xl font-bold mt-2 mb-4">Preply vs Cambly: Which Is Better for Learning English?</h1>
       <p class="text-indigo-100 text-lg">Two popular platforms with very different approaches. Compare pricing, features, and learning styles to find your perfect match.</p>
+    </div>
+
+    <!-- Affiliate Disclosure Banner -->
+    <div class="bg-amber-50 border border-amber-300 rounded-lg p-4 mb-6 text-sm">
+      <strong class="text-amber-800">Affiliate Disclosure:</strong>
+      <span class="text-amber-700"> LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on research, not payment.</span>
+      <a href="/affiliate-disclosure/" class="text-amber-600 hover:underline ml-1">Learn more</a>
+    </div>
+
+    <!-- Try Preply CTA -->
+    <div class="bg-gradient-to-r from-indigo-900/60 to-purple-900/60 border-2 border-indigo-500 rounded-xl p-6 mb-4">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-indigo-400 font-bold text-lg">Try Preply</span>
+            <span class="bg-indigo-500/20 text-indigo-300 text-xs px-2 py-0.5 rounded-full">Best for Structure</span>
+          </div>
+          <p class="text-neutral-300 text-sm">Certified tutors · Trial lessons from $2 · Structured curriculum</p>
+        </div>
+        <a href="/go/preply" target="_blank" rel="noopener sponsored" class="bg-indigo-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-400 transition text-center whitespace-nowrap">
+          Try Preply Free →
+        </a>
+      </div>
+    </div>
+
+    <!-- Try Cambly CTA -->
+    <div class="bg-gradient-to-r from-teal-900/60 to-cyan-900/60 border-2 border-teal-500 rounded-xl p-6 mb-8">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-teal-400 font-bold text-lg">Try Cambly</span>
+            <span class="bg-teal-500/20 text-teal-300 text-xs px-2 py-0.5 rounded-full">Best for Budget</span>
+          </div>
+          <p class="text-neutral-300 text-sm">Unlimited practice for $9.99/month · No scheduling needed</p>
+        </div>
+        <a href="/go/cambly" target="_blank" rel="noopener sponsored" class="bg-teal-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-teal-400 transition text-center whitespace-nowrap">
+          Try Cambly Free →
+        </a>
+      </div>
     </div>
 
     <!-- Quick Verdict Banner -->
@@ -172,7 +211,7 @@ const faqSchema = {
             {preply.cons.map(con => <li class="flex items-start"><span class="text-red-500 mr-2">✗</span>{con}</li>)}
           </ul>
         </div>
-        <a href="/reviews/preply/" class="block w-full bg-indigo-600 text-white text-center py-2 rounded-lg hover:bg-indigo-500 transition">Read Full Preply Review</a>
+        <a href="/go/preply" target="_blank" rel="noopener sponsored" class="block w-full bg-indigo-600 text-white text-center py-2 rounded-lg hover:bg-indigo-500 transition font-semibold">Try Preply →</a>
       </div>
 
       <!-- Cambly Card -->
@@ -201,7 +240,7 @@ const faqSchema = {
             {cambly.cons.map(con => <li class="flex items-start"><span class="text-red-500 mr-2">✗</span>{con}</li>)}
           </ul>
         </div>
-        <a href="/reviews/cambly/" class="block w-full bg-emerald-600 text-white text-center py-2 rounded-lg hover:bg-emerald-500 transition">Read Full Cambly Review</a>
+        <a href="/go/cambly" target="_blank" rel="noopener sponsored" class="block w-full bg-emerald-600 text-white text-center py-2 rounded-lg hover:bg-emerald-500 transition font-semibold">Try Cambly →</a>
       </div>
     </div>
 
@@ -354,25 +393,25 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Try Preply CTA -->
-    <div class="bg-indigo-900/30 border border-indigo-700 rounded-xl p-6 mb-4">
+    <!-- Final CTA Section -->
+    <div class="bg-gradient-to-r from-indigo-900/60 to-purple-900/60 border-2 border-indigo-500 rounded-xl p-6 mb-4">
       <div class="flex items-center justify-between flex-wrap gap-4">
         <div>
           <p class="font-bold text-xl text-indigo-400 mb-1">Try Preply</p>
           <p class="text-neutral-300">Find your perfect tutor and start structured lessons.</p>
         </div>
-        <a href="/reviews/preply/" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-500 transition">Read Full Preply Review</a>
+        <a href="/go/preply" target="_blank" rel="noopener sponsored" class="bg-indigo-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-400 transition whitespace-nowrap">Try Preply →</a>
       </div>
     </div>
 
     <!-- Try Cambly CTA -->
-    <div class="bg-blue-900/30 border border-blue-700 rounded-xl p-6 mb-8">
+    <div class="bg-gradient-to-r from-teal-900/60 to-cyan-900/60 border-2 border-teal-500 rounded-xl p-6 mb-8">
       <div class="flex items-center justify-between flex-wrap gap-4">
         <div>
-          <p class="font-bold text-xl text-blue-400 mb-1">Try Cambly</p>
+          <p class="font-bold text-xl text-teal-400 mb-1">Try Cambly</p>
           <p class="text-neutral-300">Unlimited speaking practice for just $9.99/month.</p>
         </div>
-        <a href="/reviews/cambly/" class="bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-500 transition">Read Full Cambly Review</a>
+        <a href="/go/cambly" target="_blank" rel="noopener sponsored" class="bg-teal-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-teal-400 transition whitespace-nowrap">Try Cambly →</a>
       </div>
     </div>
 

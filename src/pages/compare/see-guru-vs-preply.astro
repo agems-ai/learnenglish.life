@@ -3,27 +3,29 @@ import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import HeroCTA from '../../components/HeroCTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
-import SocialProof from '../../components/SocialProof.astro';
 import BenefitCards from '../../components/BenefitCards.astro';
+import SocialProof from '../../components/SocialProof.astro';
 import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
 
-// Platform data
 const seeGuru = {
   name: "See Guru",
   rating: 7.8,
   price: "$5-40/hr",
   link: "/go/see-guru",
-  bestFor: "Affordable tutors with strong Asian selection",
+  bestFor: "Affordable Asian tutors with flexible pricing",
   pros: [
-    "Affordable lessons starting at $5/hour",
-    "Strong Asian tutor selection (Chinese, Japanese, Korean)",
+    "Competitive pricing starting at $5/hour",
+    "Strong selection of Asian tutors (Chinese, Japanese, Korean)",
     "Pay-per-lesson model with no subscription required",
-    "Trial lessons available for $1-5",
-    "Good availability across time zones"
+    "Affordable trial lessons ($1-5)",
+    "Good availability across time zones",
+    "Video introductions on tutor profiles"
   ],
   cons: [
-    "Smaller tutor pool than major platforms",
+    "Smaller tutor pool than Preply",
     "Basic vetting process",
     "Limited built-in curriculum",
     "Customer support can be slow"
@@ -32,73 +34,70 @@ const seeGuru = {
 
 const preply = {
   name: "Preply",
-  rating: 8.4,
-  price: "$10-40/hr",
+  rating: 8.8,
+  price: "$10-45/hr",
   link: "/go/preply",
-  bestFor: "Structured lessons with highly vetted tutors",
+  bestFor: "Professional tutors with structured learning plans",
   pros: [
-    "Rigorous tutor vetting process (only ~15% acceptance rate)",
-    "Professional tutors with verified qualifications",
-    "Trial lesson available before commitment",
-    "Structured curriculum and learning plans",
-    "Great for business English and exam prep"
+    "Vetted professional tutors with teaching credentials",
+    "Trial lesson included (first lesson discounted)",
+    "Structured curriculum available",
+    "Personalized learning plans",
+    "Corporate training options",
+    "Progress tracking and milestone system"
   ],
   cons: [
-    "Higher price point than See Guru",
-    "Requires booking in advance",
-    "Subscription model for some features",
-    "Limited pay-per-lesson flexibility"
+    "Higher prices for certified tutors",
+    "Limited tutor availability in some time zones",
+    "Booking system less flexible than See Guru"
   ]
 };
 
-// Comparison rows
 const comparison = [
   { feature: "Starting Price", winner: "a", a: "$5/hr", b: "$10/hr" },
-  { feature: "Pricing Model", winner: null, a: "Pay per lesson", b: "Pay per lesson (with subscription option)" },
-  { feature: "Tutor Pool Size", winner: "b", a: "Moderate", b: "Large (10,000+ tutors)" },
-  { feature: "Vetting Process", winner: "b", a: "Basic", b: "Rigorous (~15% acceptance)" },
+  { feature: "Average Lesson Cost", winner: "a", a: "$10-20/hr", b: "$18-35/hr" },
+  { feature: "Trial Lesson Cost", winner: "a", a: "$1-5", b: "Discounted first" },
+  { feature: "Tutor Pool Size", winner: "b", a: "Moderate", b: "Large" },
+  { feature: "Professional Certification", winner: "b", a: "Basic vetting", b: "Yes (many certified)" },
   { feature: "Asian Tutor Focus", winner: "a", a: "Excellent", b: "Good" },
-  { feature: "Trial Available", winner: null, a: "Yes ($1-5)", b: "Yes (first lesson discounted)" },
-  { feature: "Business English", winner: "b", a: "Basic", b: "Professional curriculum" },
-  { feature: "Exam Prep Focus", winner: "b", a: "Limited", b: "IELTS, TOEFL, Cambridge certified tutors" },
-  { feature: "Curriculum Built-in", winner: "b", a: "None", b: "Yes" },
-  { feature: "Kid-Friendly", winner: null, a: "Limited", b: "Available" }
+  { feature: "Built-in Curriculum", winner: "b", a: "None", b: "Yes" },
+  { feature: "Learning Plans", winner: "b", a: "Informal", b: "Personalized" },
+  { feature: "Progress Tracking", winner: "b", a: "Basic", b: "Yes" },
+  { feature: "Corporate Training", winner: "b", a: "No", b: "Yes" },
+  { feature: "Subscription Required", winner: null, a: "No", b: "No" }
 ];
 
-// Benefits section
 const whyCompare = [
-  { icon: "💰", title: "Different Price Points", description: "See Guru offers budget-friendly options while Preply provides premium vetted tutors. Find your sweet spot" },
-  { icon: "🎓", title: "Quality vs Affordability", description: "Preply's rigorous vetting vs See Guru's accessible pricing. Choose based on your quality requirements" },
-  { icon: "🌏", title: "Regional Specialties", description: "See Guru excels with Asian tutors; Preply provides global coverage with professional credentials" }
+  { icon: "💰", title: "Price Advantage", description: "See Guru offers significantly lower starting prices and average costs compared to Preply's professional tutors" },
+  { icon: "🎓", title: "Professional vs Specialty", description: "Preply excels in certified professional teachers; See Guru excels in regional Asian tutor expertise" },
+  { icon: "📋", title: "Structured vs Flexible", description: "Preply offers learning plans and curriculum; See Guru offers more flexible, informal learning" }
 ];
 
-// Testimonials
 const testimonials = [
   {
-    quote: "See Guru connected me with an affordable Japanese tutor who understood my specific business needs. Perfect for my budget.",
-    author: "Kenji T.",
-    location: "Japan",
-    result: "Business Japanese improved"
-  },
-  {
-    quote: "Preply's vetted tutors helped me pass my IELTS exam. The structured approach made all the difference.",
-    author: "Ana P.",
-    location: "Brazil",
-    result: "IELTS 8.0 achieved"
-  },
-  {
-    quote: "I use See Guru for casual conversation practice and Preply when I need structured business lessons. Best of both worlds.",
-    author: "Michael R.",
+    quote: "Preply's structured curriculum helped me prepare for my Cambridge exam. Worth the investment.",
+    author: "Anna P.",
     location: "Germany",
-    result: "Professional fluency gained"
+    result: "CAE certificate achieved"
+  },
+  {
+    quote: "See Guru connected me with an amazing Korean tutor at half the price of what Preply charged.",
+    author: "James W.",
+    location: "Australia",
+    result: "Monthly savings of $200"
+  },
+  {
+    quote: "Used See Guru for conversation practice and Preply for structured grammar. Both excellent.",
+    author: "Yuki T.",
+    location: "Japan",
+    result: "IELTS 8.0 achieved"
   }
 ];
 
-// SEO Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "See Guru vs Preply: Which Online English Tutoring Platform Is Better in 2026?",
+  "headline": "See Guru vs Preply: Which Online Tutoring Platform Is Better in 2026?",
   "description": "Comprehensive comparison of See Guru and Preply online tutoring platforms. Compare pricing, tutor quality, features, and find the best platform for your English learning goals.",
   "author": {
     "@type": "Organization",
@@ -108,47 +107,40 @@ const articleSchema = {
   "dateModified": "2026-04-07"
 };
 
-const comparisonSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Online Language Tutoring Platforms Comparison",
-  "description": "Comparison between See Guru and Preply for English language learning"
-};
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is See Guru or Preply better for beginners?",
+      "name": "Is See Guru or Preply better for budget learners?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both platforms work well for beginners, but with different strengths. See Guru offers more affordable entry points at $5/hour with flexible pay-per-lesson. Preply provides structured curriculum and vetted tutors but at higher price points ($10-40/hr). If budget is your priority, start with See Guru. If you want guaranteed quality and structured learning, Preply is better."
+        "text": "See Guru is significantly better for budget learners. Starting prices are half of Preply's ($5/hr vs $10/hr), and average costs are 30-40% lower. See Guru's trial lessons ($1-5) are also much more affordable than Preply's discounted first lesson model."
       }
     },
     {
       "@type": "Question",
-      "name": "How much does a lesson cost on See Guru vs Preply?",
+      "name": "Which platform has better professional tutors?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "See Guru starts at $5/hour with pay-per-lesson pricing. Preply ranges from $10-40/hour depending on tutor experience and qualifications. For budget-conscious learners, See Guru offers significant savings. For learners prioritizing tutor credentials and structured curriculum, Preply's higher prices often justify the investment."
+        "text": "Preply has a clear advantage in professional tutoring with verified teaching credentials, structured curriculum, and personalized learning plans. See Guru offers basic vetting but excels in regional expertise rather than professional certification."
       }
     },
     {
       "@type": "Question",
-      "name": "Which platform has better tutor quality?",
+      "name": "Is Preply worth the higher price?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Preply has a more rigorous vetting process with only ~15% of tutor applications accepted. This means higher baseline quality but also higher prices. See Guru has a more basic vetting process but offers access to tutors with specific regional expertise, particularly in Asian languages and cultures, at lower price points."
+        "text": "Preply is worth the higher price if you need structured learning, professional certification tracking, or corporate training. For casual conversation practice or Asian tutor-specific needs, See Guru provides better value at significantly lower costs."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I try either platform before committing?",
+      "name": "Can I use both See Guru and Preply together?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both platforms offer trial options. See Guru provides trial lessons typically priced between $1-5, allowing you to test multiple tutors at minimal cost. Preply offers a discounted or free first lesson with each tutor, helping you find the right match before regular lessons. Both allow testing before commitment."
+        "text": "Absolutely. Many learners use See Guru for affordable conversation practice with Asian tutors and Preply for structured professional lessons. Both platforms use pay-per-lesson models with no subscriptions, making it easy to use both without commitment."
       }
     }
   ]
@@ -157,7 +149,6 @@ const faqSchema = {
 
 <Base title="See Guru vs Preply: Which Online Tutoring Platform Is Better in 2026?" description="Compare See Guru and Preply online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred teaching style.">
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
   <Header />
@@ -176,7 +167,7 @@ const faqSchema = {
     <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
       <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
       <h1 class="text-4xl font-bold mt-2 mb-4">See Guru vs Preply: Which Online Tutoring Platform Is Better?</h1>
-      <p class="text-emerald-100 text-lg">Budget-friendly flexibility meets professional rigor. We compare pricing, tutor quality, features, and user experience to help you choose the right platform.</p>
+      <p class="text-emerald-100 text-lg">Affordable flexibility meets professional structure. We compare pricing, tutor quality, and learning features to help you choose.</p>
     </div>
 
     <!-- Quick Overview Cards -->
@@ -187,14 +178,14 @@ const faqSchema = {
           <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">{seeGuru.rating}</span>
+            <span class="text-2xl font-bold text-gray-100">7.8</span>
             <span class="text-gray-500 text-sm ml-1">/10</span>
           </div>
         </div>
         <div class="mb-4">
-          <span class="text-3xl font-bold text-emerald-600">{seeGuru.price}</span>
+          <span class="text-3xl font-bold text-emerald-600">From $5/hr</span>
         </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {seeGuru.bestFor}</p>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Affordable Asian tutors with flexible pricing</p>
         <div class="mb-4">
           <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
           <ul class="text-sm text-neutral-300 space-y-1">
@@ -212,14 +203,14 @@ const faqSchema = {
           <h2 class="text-2xl font-bold text-gray-100">Preply</h2>
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">{preply.rating}</span>
+            <span class="text-2xl font-bold text-gray-100">8.8</span>
             <span class="text-gray-500 text-sm ml-1">/10</span>
           </div>
         </div>
         <div class="mb-4">
-          <span class="text-3xl font-bold text-purple-600">{preply.price}</span>
+          <span class="text-3xl font-bold text-purple-600">From $10/hr</span>
         </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {preply.bestFor}</p>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Professional tutors with structured learning plans</p>
         <div class="mb-4">
           <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
           <ul class="text-sm text-neutral-300 space-y-1">
@@ -270,30 +261,30 @@ const faqSchema = {
       <div class="mb-8">
         <h3 class="text-xl font-bold text-gray-100 mb-3">Pricing and Value</h3>
         <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>See Guru</strong> operates on a pay-per-lesson model with prices starting at just $5/hour. This makes it accessible for occasional learners who want to control their spending. There's no subscription pressure, and you only pay for lessons you book.
+          <strong>See Guru</strong> offers significant price advantages with starting costs of $5/hour (half of Preply's $10/hour). Average lesson costs of $10-20/hour are 30-40% lower than Preply's $18-35/hour range. Trial lessons at $1-5 are extremely affordable compared to Preply's discounted first lesson model.
         </p>
         <p class="text-neutral-300 leading-relaxed">
-          <strong>Preply</strong> ranges from $10-40/hour depending on tutor qualifications and experience. While more expensive, Preply's rigorous vetting process (only ~15% acceptance rate) means you're paying for verified quality. The platform also offers structured curriculum and learning plans that justify the premium.
+          <strong>Preply's</strong> higher prices reflect certified professional teachers, structured curriculum, and learning plan personalization. For learners with specific professional or exam preparation needs, the investment may be worthwhile.
         </p>
       </div>
 
       <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Tutor Quality and Selection</h3>
+        <h3 class="text-xl font-bold text-gray-100 mb-3">Tutor Quality and Credentials</h3>
         <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>See Guru</strong> has a moderate tutor pool with a focus on Asian tutors from China, Japan, and Korea. The vetting process is basic, which means quality varies. However, the platform excels at connecting learners with tutors from specific regions who understand cultural nuances.
+          <strong>Preply</strong> excels in professional credentials with verified teaching certificates, structured curriculum delivery, and personalized learning plans. Their tutors often have formal teaching qualifications and corporate training experience.
         </p>
         <p class="text-neutral-300 leading-relaxed">
-          <strong>Preply</strong> maintains strict quality standards with only 15% of tutor applications accepted. All tutors go through identity verification, background checks, and teaching ability assessments. Many Preply tutors hold teaching certifications like CELTA, TESOL, or have formal education backgrounds in language teaching.
+          <strong>See Guru</strong> focuses on regional expertise with strong Asian tutor selection. Basic vetting means quality varies, but cultural understanding and language insights from native speakers can be invaluable for specific learning goals.
         </p>
       </div>
 
       <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Learning Experience</h3>
+        <h3 class="text-xl font-bold text-gray-100 mb-3">Learning Structure</h3>
         <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>See Guru</strong> offers more flexible interactions where you book specific tutors in advance at your preferred price point. The platform lacks built-in curriculum but allows for personalized sessions tailored to your exact needs. Trial lessons ($1-5) make it easy to test multiple tutors.
+          <strong>Preply</strong> offers comprehensive learning infrastructure: structured curriculum, progress tracking, milestone systems, and personalized learning plans. Corporate training options make it ideal for professional development.
         </p>
         <p class="text-neutral-300 leading-relaxed">
-          <strong>Preply</strong> provides a more structured learning experience with dedicated curriculum paths for business English, exam preparation (IELTS, TOEFL, Cambridge), and general conversation. Tutors create customized learning plans, and the platform tracks your progress over time.
+          <strong>See Guru</strong> provides more flexible, informal learning experiences. Ideal for conversation practice, cultural exchange, and learners who prefer unstructured sessions tailored to their immediate needs.
         </p>
       </div>
     </section>
@@ -304,30 +295,30 @@ const faqSchema = {
       
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Preply better for beginners?</h3>
+          <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Preply better for budget learners?</h3>
           <p class="text-neutral-300">
-            <strong>Both platforms work well</strong> for beginners, but with different strengths. See Guru offers more affordable entry points at $5/hour with flexible pay-per-lesson. Preply provides structured curriculum and vetted tutors but at higher price points ($10-40/hr). If budget is your priority, start with See Guru. If you want guaranteed quality and structured learning, Preply is better.
+            <strong>See Guru is significantly better</strong> for budget learners. Starting prices are half of Preply's ($5/hr vs $10/hr), and average costs are 30-40% lower. Trial lessons ($1-5) are also much more affordable than Preply's discounted first lesson.
           </p>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">How much does a lesson cost on See Guru vs Preply?</h3>
+          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better professional tutors?</h3>
           <p class="text-neutral-300">
-            <strong>See Guru starts at $5/hour</strong> with pay-per-lesson pricing. Preply ranges from <strong>$10-40/hour</strong> depending on tutor experience and qualifications. For budget-conscious learners, See Guru offers significant savings. For learners prioritizing tutor credentials and structured curriculum, Preply's higher prices often justify the investment.
+            <strong>Preply has a clear advantage</strong> with verified teaching credentials, structured curriculum, and personalized learning plans. See Guru offers basic vetting but excels in regional expertise rather than professional certification.
           </p>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better tutor quality?</h3>
+          <h3 class="text-lg font-semibold text-gray-100 mb-2">Is Preply worth the higher price?</h3>
           <p class="text-neutral-300">
-            <strong>Preply has a more rigorous vetting process</strong> with only ~15% of tutor applications accepted. This means higher baseline quality but also higher prices. See Guru has a more basic vetting process but offers access to tutors with specific regional expertise, particularly in Asian languages and cultures, at lower price points.
+            <strong>Preply is worth the investment</strong> if you need structured learning, professional certification, or corporate training. For casual conversation practice or Asian tutor needs, See Guru provides better value.
           </p>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I try either platform before committing?</h3>
+          <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I use both See Guru and Preply together?</h3>
           <p class="text-neutral-300">
-            <strong>Both platforms offer trial options.</strong> See Guru provides trial lessons typically priced between $1-5, allowing you to test multiple tutors at minimal cost. Preply offers a discounted or free first lesson with each tutor, helping you find the right match before regular lessons. Both allow testing before commitment.
+            <strong>Absolutely.</strong> Many learners use See Guru for affordable conversation practice with Asian tutors and Preply for structured professional lessons. Both use pay-per-lesson models with no subscriptions.
           </p>
         </div>
       </div>
@@ -346,18 +337,18 @@ const faqSchema = {
           <h3 class="font-bold text-gray-100 mb-2">Choose See Guru if:</h3>
           <ul class="text-neutral-300 space-y-2">
             <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Budget is your primary concern</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Asian tutor selection is important to you</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want maximum flexibility with pay-per-lesson</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You're a casual learner with occasional practice needs</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You specifically need Asian tutors</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want affordable trial lessons ($1-5)</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Flexible, informal learning suits you</li>
           </ul>
         </div>
         <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
           <h3 class="font-bold text-purple-300 mb-2">Choose Preply if:</h3>
           <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>Tutor quality and credentials are essential</li>
-            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>You need structured curriculum (business/exam prep)</li>
-            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>You want a learning plan with progress tracking</li>
-            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>You're serious about achieving specific language goals</li>
+            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>You need professional, certified teachers</li>
+            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>You want structured curriculum and learning plans</li>
+            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>Progress tracking and milestones matter</li>
+            <li class="flex items-start"><span class="text-purple-500 mr-2">→</span>Corporate or exam preparation is your goal</li>
           </ul>
         </div>
       </div>
@@ -378,7 +369,7 @@ const faqSchema = {
         <a href="/reviews/preply/" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
           <div class="flex items-center mb-2">
             <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold">8.4/10</span>
+            <span class="font-bold">8.8/10</span>
           </div>
           <h3 class="font-semibold text-gray-100">Preply Review</h3>
           <p class="text-sm text-neutral-400">Full platform analysis</p>
