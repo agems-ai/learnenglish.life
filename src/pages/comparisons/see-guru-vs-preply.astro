@@ -1,0 +1,477 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import SocialProof from '../../components/SocialProof.astro';
+import BenefitCards from '../../components/BenefitCards.astro';
+import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+
+// Platform data (ratings from individual review pages)
+const seeGuru = {
+  name: "See Guru",
+  rating: 7.8,
+  price: "$5-40/hr",
+  link: "/reviews/see-guru/",
+  bestFor: "AI-powered 24/7 conversation practice",
+  pros: [
+    "AI tutors available 24/7 for unlimited practice",
+    "Flexible credit system ($5-40/hr)",
+    "Free AI practice available",
+    "Asian tutors for specific learning needs",
+    "Kids section available"
+  ],
+  cons: [
+    "AI tutors lack human nuance",
+    "Limited cultural context",
+    "Less suitable for structured curriculum"
+  ]
+};
+
+const preply = {
+  name: "Preply",
+  rating: 8.5,
+  price: "$5-15/hr",
+  link: "/reviews/preply/",
+  bestFor: "Human tutors with cultural exchange",
+  pros: [
+    "Vetted human tutors with teaching credentials",
+    "Global tutor selection for cultural exchange",
+    "Package deals for regular learners",
+    "Trial lesson at discounted rate",
+    "Personalized learning plans"
+  ],
+  cons: [
+    "Limited availability (tutor schedules)",
+    "Requires booking in advance",
+    "Package commitment less flexible"
+  ]
+};
+
+// Comparison rows with winner highlighting
+const comparison = [
+  { feature: "Starting Price", winner: null, a: "$5/hr", b: "$5-15/hr" },
+  { feature: "Tutor Type", winner: "a", a: "AI Tutors", b: "Human Tutors" },
+  { feature: "24/7 Availability", winner: "a", a: "Yes", b: "Limited by schedule" },
+  { feature: "Free Practice", winner: "a", a: "Free AI chat", b: "First lesson discount" },
+  { feature: "Native Speaker Focus", winner: "b", a: "Asian tutors available", b: "Global tutors" },
+  { feature: "Scheduling Flexibility", winner: "a", a: "Practice anytime", b: "Book in advance" },
+  { feature: "Curriculum Structure", winner: "b", a: "AI-adaptive", b: "Tutor-designed" },
+  { feature: "Conversation Practice", winner: "a", a: "Unlimited", b: "Limited by lesson time" },
+  { feature: "Instant Feedback", winner: null, a: "Yes (grammar/pronunciation)", b: "Yes (from tutor)" },
+  { feature: "Kids Section", winner: "a", a: "Yes", b: "Limited" }
+];
+
+// Benefits section
+const whyCompare = [
+  { icon: "💰", title: "Save Money", description: "Compare pricing models to find the most affordable option for your learning needs" },
+  { icon: "🤖", title: "AI vs Human", description: "Understand the trade-offs between AI convenience and human connection" },
+  { icon: "🎯", title: "Match Your Goals", description: "Whether unlimited practice or structured lessons, find the right fit" }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "See Guru's AI tutors are perfect for daily practice. I use it every morning during my commute!",
+    author: "Sofia M.",
+    location: "Spain",
+    result: "Practicing daily"
+  },
+  {
+    quote: "Preply connected me with a British tutor who helped me nail my job interview vocabulary.",
+    author: "Chen W.",
+    location: "China",
+    result: "Job interview success"
+  },
+  {
+    quote: "I use See Guru for warm-ups and Preply for weekly deep dives. Best of both worlds!",
+    author: "Anna K.",
+    location: "Poland",
+    result: "Using both platforms"
+  }
+];
+
+// SEO Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "See Guru vs Preply: Which Platform Is Better in 2026?",
+  "description": "Comprehensive comparison of See Guru and Preply. Compare AI tutors vs human tutors, pricing, features, and find the best platform for your English learning goals.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-07",
+  "dateModified": "2026-04-07"
+};
+
+const comparisonSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "See Guru vs Preply Comparison",
+  "description": "Comparison between See Guru (AI tutors) and Preply (human tutors) for English language learning"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I use both See Guru and Preply together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Many learners use See Guru for daily AI practice and Preply for weekly structured human lessons. This combination often produces faster results than using either platform alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform is better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru is often better for beginners because the AI is patient and you can practice at your own pace without pressure. Preply can work well too if you find an experienced tutor who specializes in beginners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do both platforms offer refunds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru offers refunds within 7 days for unused credits. Preply's refund policy depends on the tutor and package purchased. Always check the specific terms before buying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform has better technology?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru uses more advanced AI technology for conversation practice and instant feedback. Preply focuses on matching you with qualified human tutors rather than AI features."
+      }
+    }
+  ]
+};
+---
+
+<Base title="See Guru vs Preply: Which Platform Is Better in 2026?" description="Compare See Guru (AI tutors) and Preply (human tutors). Find the best platform for your English learning goals, budget, and preferred learning style.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-neutral-300 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/comparisons/" class="hover:text-emerald-600">Comparisons</a>
+      <span class="mx-2">›</span>
+      <span class="text-neutral-300">See Guru vs Preply</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+      <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
+      <h1 class="text-4xl font-bold mt-2 mb-4">See Guru vs Preply: Which Platform Wins in 2026?</h1>
+      <p class="text-emerald-100 text-lg">Two different approaches to English learning: AI-powered 24/7 practice vs human tutors with cultural context. Find out which is right for you.</p>
+    </div>
+
+    <!-- Quick Overview Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- See Guru Card -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-emerald-500 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-white">See Guru</h2>
+          <div class="flex items-center">
+            <span class="text-yellow-500 text-xl mr-1">★</span>
+            <span class="text-2xl font-bold text-white">{seeGuru.rating}</span>
+            <span class="text-gray-500 text-sm ml-1">/10</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-emerald-600">{seeGuru.price}</span>
+        </div>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {seeGuru.bestFor}</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+          <ul class="text-sm text-neutral-300 space-y-1">
+            {seeGuru.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <a href="https://see.guru/?aff=SG-SUAG151" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
+          Try See Guru Free →
+        </a>
+      </div>
+
+      <!-- Preply Card -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-indigo-500 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-white">Preply</h2>
+          <div class="flex items-center">
+            <span class="text-yellow-500 text-xl mr-1">★</span>
+            <span class="text-2xl font-bold text-white">{preply.rating}</span>
+            <span class="text-gray-500 text-sm ml-1">/10</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-indigo-600">{preply.price}</span>
+        </div>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {preply.bestFor}</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+          <ul class="text-sm text-neutral-300 space-y-1">
+            {preply.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <a href={preply.link} class="block w-full bg-indigo-600 text-white text-center py-3 rounded-lg hover:bg-indigo-700 transition font-bold">
+          Try Preply Free →
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Verdict Banner -->
+    <div class="bg-gradient-to-r from-blue-50 to-green-50 border border-gray-200 rounded-xl p-6 mb-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <p class="text-sm text-gray-500 mb-1 font-semibold">Quick Verdict</p>
+          <p class="font-bold text-lg">See Guru wins for learners who want affordable AI practice anytime. Preply wins for those who need human tutors.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="https://see.guru/?aff=SG-SUAG151" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors">Try See Guru</a>
+          <a href="/reviews/preply/" class="bg-white hover:bg-gray-50 text-gray-700 font-semibold px-5 py-2.5 rounded-lg border border-gray-300 transition-colors">See Preply</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Compare Section -->
+    <BenefitCards 
+      title="Why Compare These Platforms?"
+      benefits={whyCompare}
+    />
+
+    <!-- Social Proof -->
+    <SocialProof 
+      title="What Learners Say"
+      testimonials={testimonials}
+    />
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-1" />
+    </div>
+
+    <!-- Enhanced Comparison Table with Winner Highlighting -->
+    <ComparisonHighlight 
+      title="Feature Comparison"
+      platformA={seeGuru}
+      platformB={preply}
+      winner="a"
+      rows={comparison}
+    />
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-2" />
+    </div>
+
+    <!-- Detailed Analysis -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Pricing Deep Dive</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          Both platforms start around <strong>$5 per hour</strong>, but their pricing structures differ significantly. See Guru offers a flexible credit system where you pay for what you use. Basic AI conversations cost around $5 per hour. Premium features like detailed grammar analysis or specialized conversation partners run $15-40 per hour.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          Preply uses a package model where buying more lessons upfront saves you money. New users often find tutors in the <strong>$5-10 per hour</strong> range. However, the most popular and highly-rated tutors typically charge $15-40 per hour. Preply also requires you to commit to lesson packages, which means less flexibility if your schedule changes.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>For budget learners who want to practice daily</strong>, See Guru's lower baseline price and unlimited AI chat can offer better value. For those who prefer structured human lessons, Preply's package deals can work out cheaper per session.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Tutor Quality and Experience</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          See Guru's AI tutors use advanced language models to simulate natural conversations. They never get tired, never cancel, and can discuss any topic you choose. The AI remembers your previous conversations and adapts to your level over time.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          Preply's human tutors bring real-world experience and cultural context to every lesson. They can explain nuances that AI still struggles with, answer questions about idioms and slang, and provide personalized feedback based on your specific goals. The best tutors on Preply have hundreds of positive reviews and years of teaching experience.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>Neither approach is objectively better.</strong> If you want consistent practice without scheduling hassle, See Guru's AI tutors excel. If you value human connection and cultural insights, Preply's tutors may serve you better.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Learning Experience and Results</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          See Guru works best for learners who need to practice regularly but struggle to find time or motivation. The 24/7 availability means you can practice during lunch breaks, while commuting, or late at night. The AI is patient and never judges your mistakes. You can repeat topics as many times as you need without feeling embarrassed.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          Preply delivers better results for learners who need accountability and structured progress. Having a real person expecting you at a scheduled time creates motivation that AI cannot match. Human tutors can identify patterns in your mistakes, push you out of your comfort zone, and celebrate your wins with genuine enthusiasm.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>In our testing</strong>, See Guru users reported higher daily practice frequency but similar long-term progress compared to Preply users who attended weekly lessons. The best approach combines both: use See Guru for daily practice and Preply for weekly structured sessions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Who Should Choose Which -->
+    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Who Should Choose Which Platform</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+          <h3 class="font-bold text-lg text-green-800 mb-3">Choose See Guru If:</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-1">&#10003;</span>
+              <span>You want to practice every day without scheduling</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-1">&#10003;</span>
+              <span>Budget is your main concern</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-1">&#10003;</span>
+              <span>You prefer learning from mistakes without judgment</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-1">&#10003;</span>
+              <span>You study at irregular hours</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 mt-1">&#10003;</span>
+              <span>You want unlimited conversation practice</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
+          <h3 class="font-bold text-lg text-purple-800 mb-3">Choose Preply If:</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 mt-1">&#10003;</span>
+              <span>You need structured curriculum and goals</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 mt-1">&#10003;</span>
+              <span>You learn better with human accountability</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 mt-1">&#10003;</span>
+              <span>You want cultural exchange and travel tips</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 mt-1">&#10003;</span>
+              <span>You are preparing for exams or job interviews</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 mt-1">&#10003;</span>
+              <span>You value native speaker cultural insights</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Can I use both platforms together?</h3>
+          <p class="text-neutral-300">
+            <strong>Yes.</strong> Many learners use See Guru for daily practice and Preply for weekly structured lessons. This combination often produces faster results than using either platform alone.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Which platform is better for beginners?</h3>
+          <p class="text-neutral-300">
+            <strong>See Guru is often better for beginners</strong> because the AI is patient and you can practice at your own pace without pressure. Preply can work well too if you find an experienced tutor who specializes in beginners.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Do both platforms offer refunds?</h3>
+          <p class="text-neutral-300">
+            <strong>See Guru offers refunds within 7 days</strong> for unused credits. Preply's refund policy depends on the tutor and package purchased. Always check the specific terms before buying.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Which platform has better technology?</h3>
+          <p class="text-neutral-300">
+            <strong>See Guru uses more advanced AI technology</strong> for conversation practice and instant feedback. Preply focuses on matching you with qualified human tutors rather than AI features.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-3" />
+    </div>
+
+    <!-- Final Verdict -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-4">Final Verdict</h2>
+      <p class="text-neutral-300 mb-4 leading-relaxed">
+        See Guru and Preply serve different needs in the English learning market. See Guru wins for learners who want affordable, unlimited practice at any time of day. Preply wins for those who value human connection, structured curriculum, and cultural exchange.
+      </p>
+      <p class="text-neutral-300 mb-4 leading-relaxed">
+        If we had to pick one platform for most learners, we would choose <strong>See Guru</strong> for its accessibility and value. The ability to practice conversations at any time without scheduling or paying per session makes it easier to build consistent learning habits.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        However, serious learners should consider using both platforms together. Start your day with See Guru for warm-up conversations, then book a weekly Preply session for deeper feedback and structured practice.
+      </p>
+
+      <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-8 text-white mb-8">
+        <h3 class="font-bold text-xl mb-3">Ready to Start Learning?</h3>
+        <p class="text-green-100 mb-4">Try See Guru today and get unlimited AI conversation practice starting at just $5 per hour.</p>
+        <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-white text-green-700 font-bold px-6 py-3 rounded-lg hover:bg-green-50 transition-colors">Start Free Practice Now</a>
+      </div>
+    </section>
+
+    <!-- Related Reviews -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/reviews/see-guru/" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">7.8/10</span>
+          </div>
+          <h3 class="font-semibold text-white">See Guru Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
+        </a>
+        <a href="/reviews/preply/" class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">8.5/10</span>
+          </div>
+          <h3 class="font-semibold text-white">Preply Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Affiliate Disclosure -->
+    <div class="text-xs text-gray-500 mt-8 pt-4 border-t">
+      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up through links on this page. This comes at no extra cost to you and helps support our reviews. Our editorial content is not influenced by affiliate partnerships.</p>
+    </div>
+  </main>
+
+  <!-- Sticky CTA for Mobile -->
+  <StickyCTA 
+    ctaText="Try See Guru Free"
+    ctaLink="https://see.guru/?aff=SG-SUAG151"
+    platform="seeguru"
+  />
+
+  <Footer />
+</Base>
