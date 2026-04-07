@@ -10,7 +10,7 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-white border-b border-slate-700 shadow-sm">
+<header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800 shadow-sm">
   <div class="container-site">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
@@ -32,8 +32,8 @@ const currentPath = Astro.url.pathname;
             class:list={[
               "px-4 py-2 rounded-lg font-medium transition-colors",
               currentPath.startsWith(item.href)
-                ? "bg-primary-50 text-primary-700"
-                : "text-slate-600 hover:bg-slate-900/40 hover:text-slate-200"
+                ? "bg-emerald-900/40 text-emerald-300"
+                : "text-slate-300 hover:bg-slate-800 hover:text-white"
             ]}
           >
             {item.label}
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
         <!-- Search button -->
         <button
           type="button"
-          class="p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-900/40 rounded-lg transition-colors focus-ring"
+          class="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors focus-ring"
           aria-label="Search"
           id="search-toggle"
         >
@@ -63,7 +63,7 @@ const currentPath = Astro.url.pathname;
         <!-- Mobile menu button -->
         <button
           type="button"
-          class="md:hidden p-2 text-slate-500 hover:text-slate-700 hover:bg-slate-900/40 rounded-lg transition-colors focus-ring"
+          class="md:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition-colors focus-ring"
           aria-label="Menu"
           id="mobile-menu-toggle"
         >
@@ -83,8 +83,8 @@ const currentPath = Astro.url.pathname;
             class:list={[
               "px-4 py-2 rounded-lg font-medium transition-colors",
               currentPath.startsWith(item.href)
-                ? "bg-primary-50 text-primary-700"
-                : "text-slate-600 hover:bg-slate-900/40 hover:text-slate-200"
+                ? "bg-emerald-900/40 text-emerald-300"
+                : "text-slate-300 hover:bg-slate-800 hover:text-white"
             ]}
           >
             {item.label}
@@ -98,7 +98,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Search overlay -->
-  <div id="search-overlay" class="hidden absolute left-0 right-0 top-full bg-white border-b border-slate-700 shadow-lg">
+  <div id="search-overlay" class="hidden absolute left-0 right-0 top-full bg-slate-950 border-b border-slate-800 shadow-lg">
     <div class="container-site py-4">
       <div class="relative max-w-2xl mx-auto">
         <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
