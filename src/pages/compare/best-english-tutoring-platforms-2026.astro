@@ -1,0 +1,324 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const platforms = [
+  {
+    name: "See Guru",
+    rating: 7.8,
+    stars: 4,
+    price: "From $5/hr",
+    badge: "BEST VALUE",
+    badgeColor: "bg-emerald-600",
+    href: "/go/see-guru",
+    affiliate: true,
+    bestFor: "Affordable Asian tutors, flexible pay-per-lesson",
+    highlight: true,
+    color: "from-emerald-900/60 to-teal-900/60",
+    borderColor: "border-emerald-600",
+    logo: "see-guru",
+    pros: ["Starting at just $5/hr", "Strong Asian tutor selection", "Pay per lesson, no subscription", "Trial lessons from $1"],
+    cons: ["Smaller tutor pool than iTalki", "Basic website UX"]
+  },
+  {
+    name: "iTalki",
+    rating: 9.2,
+    stars: 5,
+    price: "From $5/hr",
+    badge: "TOP RATED",
+    badgeColor: "bg-blue-600",
+    href: "/go/italki",
+    affiliate: true,
+    bestFor: "Largest tutor network, professional teachers",
+    highlight: false,
+    color: "from-slate-800/60 to-slate-900/60",
+    borderColor: "border-slate-600",
+    logo: "italki",
+    pros: ["10,000+ tutors available", "Instant booking flexibility", "Lesson replay feature", "Professional teacher options"],
+    cons: ["Community tutors lack formal training", "Inconsistent quality at lower prices"]
+  },
+  {
+    name: "Preply",
+    rating: 9.0,
+    stars: 5,
+    price: "From $10/hr",
+    badge: "PRO PICK",
+    badgeColor: "bg-indigo-600",
+    href: "/go/preply",
+    affiliate: true,
+    bestFor: "Corporate training, professional tutors",
+    highlight: false,
+    color: "from-slate-800/60 to-slate-900/60",
+    borderColor: "border-slate-600",
+    logo: "preply",
+    pros: ["Certified professional tutors", "Corporate training available", "Trial lesson included", "Dedicated tutors"],
+    cons: ["Higher starting price", "Subscription model preferred by some"]
+  },
+  {
+    name: "Cambly",
+    rating: 8.5,
+    stars: 4,
+    price: "From $6.50/wk",
+    badge: "CONVERSATION",
+    badgeColor: "bg-teal-600",
+    href: "/go/cambly",
+    affiliate: true,
+    bestFor: "Unlimited conversation practice",
+    highlight: false,
+    color: "from-slate-800/60 to-slate-900/60",
+    borderColor: "border-slate-600",
+    logo: "cambly",
+    pros: ["Unlimited minutes with subscription", "Native English speakers", "Easy reservation system", "Shortcut feature for quick talks"],
+    cons: ["No structured curriculum", "Occasional tutor availability gaps"]
+  },
+  {
+    name: "Verbling",
+    rating: 8.0,
+    stars: 4,
+    price: "From $15/hr",
+    badge: "QUALITY",
+    badgeColor: "bg-purple-600",
+    href: "/go/verbling",
+    affiliate: true,
+    bestFor: "Quality-focused learners, flexible scheduling",
+    highlight: false,
+    color: "from-slate-800/60 to-slate-900/60",
+    borderColor: "border-slate-600",
+    logo: "verbling",
+    pros: ["High-quality vetted tutors", "Flexible scheduling", "Built-in video classroom", "Conversational focus"],
+    cons: ["Higher price point", "Smaller selection than competitors"]
+  }
+];
+
+const comparisonTable = [
+  { feature: "Starting Price", seeGuru: "$5/hr", italki: "$5/hr", preply: "$10/hr", cambly: "$6.50/wk*", verbling: "$15/hr" },
+  { feature: "Tutor Pool Size", seeGuru: "Moderate", italki: "10,000+", preply: "1,000+", cambly: "Many", verbling: "Moderate" },
+  { feature: "Asian Tutor Focus", seeGuru: "Excellent", italki: "Good", preply: "Good", cambly: "Limited", verbling: "Limited" },
+  { feature: "Pay Per Lesson", seeGuru: "Yes", italki: "Yes", preply: "Yes", cambly: "No (sub)", verbling: "Yes" },
+  { feature: "Trial Lesson", seeGuru: "$1-5", italki: "$5-15", preply: "Free", cambly: "7 min free", verbling: "Free (60min)" },
+  { feature: "Mobile App", seeGuru: "Basic", italki: "iOS/Android", preply: "iOS/Android", cambly: "iOS/Android", verbling: "Web only" },
+  { feature: "Lesson Replay", seeGuru: "No", italki: "Yes", preply: "Yes", cambly: "No", verbling: "No" }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best English Tutoring Platforms 2026: Top 5 Compared",
+  "description": "Compare the best English tutoring platforms of 2026. See Guru, iTalki, Preply, Cambly, and Verbling rated on price, tutors, and value.",
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "datePublished": "2026-04-07",
+  "dateModified": "2026-04-07"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best English tutoring platform for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru offers the most affordable entry point at $5/hr with low-cost trial lessons. iTalki provides the largest tutor selection for finding the right match. Cambly suits those who want unlimited conversation practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform has the cheapest tutoring rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru has the most competitive starting prices, often at $5/hr for community tutors. iTalki matches this starting rate but See Guru generally offers lower average prices, especially for Asian tutors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a subscription for online tutoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. See Guru, iTalki, and Verbling let you pay per lesson without a subscription. Cambly and some Preply plans use subscription models for unlimited or frequent learners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform is best for learning business English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preply excels at professional and business English with certified tutors and corporate training options. iTalki and Cambly also offer business English specialists."
+      }
+    }
+  ]
+};
+---
+
+<Base title="Best English Tutoring Platforms 2026: Top 5 Compared" description="Compare the best English tutoring platforms of 2026. See Guru, iTalki, Preply, Cambly, and Verbling rated on price, tutor quality, and value for money.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="inline-block px-3 py-1 bg-emerald-900/60 text-emerald-400 text-sm font-semibold rounded-full mb-4">Updated April 2026</span>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">
+          Best English Tutoring Platforms
+          <span class="text-emerald-400"> 2026</span>
+        </h1>
+        <p class="text-lg text-neutral-300">We compared the top 5 platforms so you can find your perfect tutor. All platforms reviewed honestly — affiliate links help us keep this site free.</p>
+      </div>
+      
+      <!-- TL;DR Quick Pick -->
+      <div class="bg-amber-900/30 border border-amber-700 rounded-xl p-5 max-w-2xl mx-auto text-center">
+        <p class="text-amber-300 text-sm font-semibold mb-1">QUICK PICK</p>
+        <p class="text-white text-lg"><strong>See Guru</strong> — Best value at $5/hr with no subscription required. Strong Asian tutor selection and cheap trial lessons.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    
+    <!-- Platform Cards -->
+    <div class="space-y-4 mb-8">
+      {platforms.map((platform) => (
+        <div class={`relative rounded-xl border p-6 md:p-8 bg-gradient-to-r ${platform.color} ${platform.borderColor} ${platform.highlight ? 'border-2' : 'border'}`}>
+          {platform.highlight && (
+            <div class="absolute -top-3 left-6">
+              <span class={`${platform.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide`}>
+                {platform.badge}
+              </span>
+            </div>
+          )}
+          
+          <div class="flex flex-col md:flex-row md:items-center gap-6">
+            <!-- Platform Info -->
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <h2 class="text-2xl font-bold text-white">{platform.name}</h2>
+                {!platform.highlight && (
+                  <span class={`${platform.badgeColor} text-white text-xs font-bold px-2 py-0.5 rounded uppercase`}>{platform.badge}</span>
+                )}
+              </div>
+              <p class="text-neutral-300 text-sm mb-3"><strong>Best for:</strong> {platform.bestFor}</p>
+              
+              <!-- Stars -->
+              <div class="flex items-center gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} class={`text-lg ${i < platform.stars ? 'text-amber-400' : 'text-neutral-600'}`}>★</span>
+                ))}
+                <span class="ml-2 text-white font-semibold">{platform.rating}/10</span>
+              </div>
+              
+              <p class="text-emerald-400 font-bold text-xl">{platform.price}</p>
+            </div>
+            
+            <!-- Pros/Cons -->
+            <div class="flex-1 grid grid-cols-2 gap-4">
+              <div>
+                <p class="text-xs text-emerald-400 font-semibold uppercase mb-2">Pros</p>
+                <ul class="space-y-1">
+                  {platform.pros.slice(0,3).map(pro => (
+                    <li class="text-sm text-neutral-300 flex items-start gap-1">
+                      <span class="text-emerald-400 mt-0.5">✓</span>{pro}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs text-red-400 font-semibold uppercase mb-2">Cons</p>
+                <ul class="space-y-1">
+                  {platform.cons.map(con => (
+                    <li class="text-sm text-neutral-400 flex items-start gap-1">
+                      <span class="text-red-400 mt-0.5">−</span>{con}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="md:w-48 text-center md:text-right">
+              <a href={platform.href} class={`inline-block w-full md:w-auto px-6 py-3 font-bold rounded-lg transition-colors ${platform.highlight ? 'bg-emerald-600 text-white hover:bg-emerald-500' : 'bg-white text-neutral-900 hover:bg-neutral-200'}`}>
+                {platform.highlight ? 'Get Started →' : 'View Platform →'}
+              </a>
+              {platform.affiliate && <p class="text-xs text-neutral-500 mt-2">Affiliate link</p>}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <AdUnit slot="tutoring-platforms-1" />
+
+    <!-- Comparison Table -->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold text-white mb-6">Side-by-Side Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-center">
+          <thead>
+            <tr class="border-b border-neutral-700">
+              <th class="text-left py-3 px-4 text-neutral-400 font-semibold">Feature</th>
+              <th class="py-3 px-4 text-emerald-400 font-bold">See Guru</th>
+              <th class="py-3 px-4 text-neutral-300">iTalki</th>
+              <th class="py-3 px-4 text-neutral-300">Preply</th>
+              <th class="py-3 px-4 text-neutral-300">Cambly</th>
+              <th class="py-3 px-4 text-neutral-300">Verbling</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonTable.map((row, i) => (
+              <tr key={i} class={i % 2 === 0 ? 'bg-white/5' : ''}>
+                <td class="py-3 px-4 text-left text-neutral-400">{row.feature}</td>
+                <td class="py-3 px-4 text-emerald-400 font-semibold">{row.seeGuru}</td>
+                <td class="py-3 px-4 text-neutral-300">{row.italki}</td>
+                <td class="py-3 px-4 text-neutral-300">{row.preply}</td>
+                <td class="py-3 px-4 text-neutral-300">{row.cambly}</td>
+                <td class="py-3 px-4 text-neutral-300">{row.verbling}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-neutral-500 mt-2">* Cambly price is per week subscription with unlimited minutes</p>
+    </div>
+
+    <AdUnit slot="tutoring-platforms-2" />
+
+    <!-- FAQ Section -->
+    <div class="mt-12 bg-neutral-900/50 rounded-xl p-6 md:p-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-white font-semibold mb-2">What is the best English tutoring platform for beginners?</h3>
+          <p class="text-neutral-400">See Guru offers the most affordable entry point at $5/hr with low-cost trial lessons. iTalki provides the largest tutor selection for finding the right match. Cambly suits those who want unlimited conversation practice.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-2">Which platform has the cheapest tutoring rates?</h3>
+          <p class="text-neutral-400">See Guru has the most competitive starting prices, often at $5/hr for community tutors. iTalki matches this starting rate but See Guru generally offers lower average prices, especially for Asian tutors.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-2">Do I need a subscription for online tutoring?</h3>
+          <p class="text-neutral-400">Not always. See Guru, iTalki, and Verbling let you pay per lesson without a subscription. Cambly and some Preply plans use subscription models for unlimited or frequent learners.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-2">Which platform is best for learning business English?</h3>
+          <p class="text-neutral-400">Preply excels at professional and business English with certified tutors and corporate training options. iTalki and Cambly also offer business English specialists.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="mt-10 bg-emerald-900/30 border border-emerald-700 rounded-xl p-6 md:p-8 text-center">
+      <h2 class="text-2xl font-bold text-white mb-2">Ready to Start Learning English?</h2>
+      <p class="text-neutral-300 mb-6">See Guru offers the best value for learners seeking affordable, flexible 1-on-1 tutoring with Asian tutors.</p>
+      <a href="/go/see-guru/" class="inline-block px-8 py-4 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">
+        Start Learning on See Guru →
+      </a>
+      <p class="text-xs text-neutral-500 mt-3">We may earn a commission at no extra cost to you. Our reviews are always honest.</p>
+    </div>
+  </main>
+
+  <Footer />
+</Base>
