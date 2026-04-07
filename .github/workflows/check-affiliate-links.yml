@@ -18,7 +18,8 @@ jobs:
           echo "🔍 Checking for untagged see.guru links..."
           
           # Search all src/ files for see.guru mentions
-          UNTAGGED=$(grep -rn "see\.guru" src/ 2>/dev/null || true)
+          # Flag any see.guru reference that does NOT carry our affiliate tag (?aff=SG-SUAG151) and is NOT the /go/see-guru redirect link
+          UNTAGGED=$(grep -rn "see\.guru" src/ 2>/dev/null | grep -v "aff=SG-SUAG151" | grep -v "/go/see-guru" || true)
           
           if [ -n "$UNTAGGED" ]; then
             echo "❌ FOUND untagged see.guru links:"
