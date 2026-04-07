@@ -1,0 +1,260 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Much Do Online English Tutors Cost in 2026?",
+  "description": "A complete breakdown of online English tutor prices across all major platforms. From $5 community tutors to $100/hour professionals, find the right budget for your goals.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-07",
+  "dateModified": "2026-04-07"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does an online English tutor cost per hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Online English tutors range from $5 to $100+ per hour. Community tutors on platforms like iTalki start at $5-10/hour. Professional certified teachers typically charge $15-50/hour. Elite tutors with specialized credentials can cost $60-100+/hour."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cheapest way to get English tutoring online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cheapest options are: iTalki community tutors ($5-10/hour), Cambly's monthly subscription ($8.33/month for Pay Monthly), and free community language exchanges. See Guru also offers a free trial that gives you access to real tutors without paying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is See Guru more expensive than iTalki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru and iTalki have comparable pricing ranges, but See Guru often has promotional offers that reduce the initial cost. Both platforms offer tutors from $10/hour up to $60+/hour depending on experience and qualifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many tutoring hours per week should I budget for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For steady progress, budget for 2-4 hours per week. At $15/hour average, that is $120-240/month. Casual learners can manage with 1-2 hours weekly ($60-120/month). Test-takers and fast-track learners may need 5+ hours weekly."
+      }
+    }
+  ]
+};
+---
+
+<Base title="How Much Do Online English Tutors Cost in 2026?" description="A complete breakdown of online English tutor prices across all major platforms. From $5 community tutors to $100/hour professionals, find the right budget for your goals.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-slate-400 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-300">Online English Tutor Costs 2026</span>
+    </nav>
+
+    <article class="max-w-3xl mx-auto">
+      <div class="mb-8">
+        <span class="text-sm text-gray-400">Guide · Updated April 2026</span>
+        <h1 class="text-4xl font-bold mt-1 mb-4">How Much Do Online English Tutors Cost in 2026?</h1>
+        <p class="text-lg text-gray-500">A complete breakdown of pricing across every major platform. No surprises, no hidden fees.</p>
+      </div>
+
+      <div class="bg-emerald-900/50 border border-emerald-700 rounded-xl p-6 mb-8">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <p class="font-bold text-lg">Quick Recommendation</p>
+            <p class="text-sm text-gray-400 mt-1">Best value for most learners</p>
+          </div>
+          <div>
+            <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+              Try See Guru Free
+            </a>
+            <p class="text-xs text-gray-400 text-center mt-1">No credit card required</p>
+          </div>
+        </div>
+      </div>
+
+      <AdUnit />
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The Real Price Range: What to Expect</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">Online English tutoring spans a massive price range. Understanding where you fall on this spectrum helps you set realistic expectations and avoid platforms that do not match your budget.</p>
+      
+      <div class="bg-gray-900 rounded-xl p-6 mb-8 border border-gray-700">
+        <h3 class="text-lg font-bold mb-4 text-white">2026 Tutor Pricing Tiers</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center border-b border-gray-700 pb-3">
+            <span class="text-gray-300">Budget / Community Tutors</span>
+            <span class="text-emerald-400 font-bold">$5 - $15 / hour</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-gray-700 pb-3">
+            <span class="text-gray-300">Mid-Range / Professional Teachers</span>
+            <span class="text-emerald-400 font-bold">$15 - $35 / hour</span>
+          </div>
+          <div class="flex justify-between items-center border-b border-gray-700 pb-3">
+            <span class="text-gray-300">Premium / Expert Instructors</span>
+            <span class="text-emerald-400 font-bold">$35 - $60 / hour</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-gray-300">Elite / Specialized Tutors</span>
+            <span class="text-emerald-400 font-bold">$60 - $100+ / hour</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Platform-by-Platform Breakdown</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">Each platform has its own pricing structure. Some charge per lesson, others require monthly subscriptions. Here is what you will actually pay on the most popular sites:</p>
+
+      <div class="space-y-4 mb-8">
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-lg">iTalki</h3>
+              <p class="text-sm text-gray-500">Community Tutors + Professional Teachers</p>
+            </div>
+            <span class="bg-emerald-100 text-emerald-700 font-bold px-3 py-1 rounded-full text-sm">$5 - $60 / hour</span>
+          </div>
+          <p class="text-gray-600 mt-3 text-sm">Community tutors start around $5/hour. Professional teachers with certifications typically charge $15-30/hour. No subscription required pay-per-lesson model.</p>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-lg">See Guru</h3>
+              <p class="text-sm text-gray-500">Structured Learning with Native Speakers</p>
+            </div>
+            <span class="bg-emerald-100 text-emerald-700 font-bold px-3 py-1 rounded-full text-sm">$10 - $50 / hour</span>
+          </div>
+          <p class="text-gray-600 mt-3 text-sm">Flexible pricing based on tutor experience. Regular promotions available. No monthly commitment required. Free trial for new users.</p>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-lg">Preply</h3>
+              <p class="text-sm text-gray-500">1-on-1 Lessons with Instant Booking</p>
+            </div>
+            <span class="bg-emerald-100 text-emerald-700 font-bold px-3 py-1 rounded-full text-sm">$10 - $80 / hour</span>
+          </div>
+          <p class="text-gray-600 mt-3 text-sm">Wide tutor range from $10/hour for newer tutors to $80+ for top-rated instructors. Package discounts available for 10+ lessons.</p>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-lg">Cambly</h3>
+              <p class="text-sm text-gray-500">Subscription-Based Speaking Practice</p>
+            </div>
+            <span class="bg-emerald-100 text-emerald-700 font-bold px-3 py-1 rounded-full text-sm">$8.33 - $99 / month</span>
+          </div>
+          <p class="text-gray-600 mt-3 text-sm">No per-hour pricing. Monthly or annual subscriptions give unlimited access to native English tutors. Great value for heavy speakers but less structured curriculum.</p>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-lg">Verbling</h3>
+              <p class="text-sm text-gray-500">Flexible Tutoring Marketplace</p>
+            </div>
+            <span class="bg-emerald-100 text-emerald-700 font-bold px-3 py-1 rounded-full text-sm">$15 - $60 / hour</span>
+          </div>
+          <p class="text-gray-600 mt-3 text-sm">Tutors set their own rates. Most fall in the $15-40 range. 5% platform fee added to bookings. Flexible scheduling with instant booking available.</p>
+        </div>
+      </div>
+
+      <AdUnit />
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What Affects Tutor Pricing?</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">Understanding what drives tutor prices helps you decide where to invest your budget and where to save money.</p>
+      
+      <ul class="list-disc list-inside space-y-3 text-gray-600 mb-6">
+        <li><strong>Teaching credentials:</strong> Tutors with CELTA, TESOL, or native-speaker teaching certifications charge 30-50% more than uncertified tutors.</li>
+        <li><strong>Specialization:</strong> Business English, exam prep (IELTS, TOEFL), and medical English command premium rates due to specialized knowledge.</li>
+        <li><strong>Native speaker status:</strong> Native English speakers typically charge 20-40% more than fluent non-native speakers for conversational practice.</li>
+        <li><strong>Demand and ratings:</strong> Highly-rated tutors with many reviews can charge premium prices. New tutors often offer discounts to build their reputation.</li>
+        <li><strong>Lesson length:</strong> Most tutors offer 25, 30, 45, or 60-minute sessions. Longer sessions sometimes come with slight per-hour discounts.</li>
+        <li><strong>Package deals:</strong> Buying 5, 10, or 20 lessons at once typically unlocks 10-20% discounts compared to single lessons.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Monthly Budget Estimates</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">How much should you actually budget per month? Here are realistic scenarios based on different learning intensities:</p>
+
+      <div class="bg-gray-900 rounded-xl p-6 mb-8 border border-gray-700">
+        <div class="space-y-4">
+          <div class="border-b border-gray-700 pb-4">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-white font-semibold">Casual Practice</span>
+              <span class="text-emerald-400 font-bold">1 hour / week</span>
+            </div>
+            <p class="text-gray-400 text-sm">Good for: maintaining existing skills, supplemental practice alongside other study methods.</p>
+            <p class="text-gray-300 text-sm mt-1">Monthly cost: $20 - $60 (at $5-15/hour community tutors)</p>
+          </div>
+          <div class="border-b border-gray-700 pb-4">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-white font-semibold">Regular Learning</span>
+              <span class="text-emerald-400 font-bold">2-3 hours / week</span>
+            </div>
+            <p class="text-gray-400 text-sm">Good for: steady progress, intermediate learners building fluency and confidence.</p>
+            <p class="text-gray-300 text-sm mt-1">Monthly cost: $80 - $270 (at $10-45/hour)</p>
+          </div>
+          <div class="border-b border-gray-700 pb-4">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-white font-semibold">Intensive Progress</span>
+              <span class="text-emerald-400 font-bold">5+ hours / week</span>
+            </div>
+            <p class="text-gray-400 text-sm">Good for: exam prep, business professionals, fast-tracking to fluency.</p>
+            <p class="text-gray-300 text-sm mt-1">Monthly cost: $200 - $750 (at $10-50/hour with package discounts)</p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-white font-semibold">Cambly Unlimited</span>
+              <span class="text-emerald-400 font-bold">Unlimited hours</span>
+            </div>
+            <p class="text-gray-400 text-sm">Good for: heavy speakers who want practice without watching the clock.</p>
+            <p class="text-gray-300 text-sm mt-1">Monthly cost: $99/year plan breaks down to ~$8.33/month</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Where to Start: Our Recommendation</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">If you are new to online tutoring or want a simple starting point, See Guru offers the best combination of quality tutors, transparent pricing, and no-commitment trial. You can explore the platform, meet tutors, and understand your budget needs before committing.</p>
+
+      <div class="bg-emerald-900/50 border border-emerald-700 rounded-xl p-6 mb-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <p class="font-bold text-lg text-white">Ready to Find Your Tutor?</p>
+            <p class="text-gray-400 text-sm mt-1">Compare prices and meet tutors from home.</p>
+          </div>
+          <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors whitespace-nowrap">
+            Try See Guru Free
+          </a>
+        </div>
+      </div>
+
+      <AdUnit />
+
+    </article>
+  </main>
+
+  <Footer />
+</Base>
