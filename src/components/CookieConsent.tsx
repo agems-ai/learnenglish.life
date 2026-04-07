@@ -389,7 +389,7 @@ export default function CookieConsent({
                   <p className="text-sm text-neutral-400 mt-1">
                     These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our content and user experience.
                   </p>
-                  <p className="text-xs text-neutral-500 mt-2">
+                  <p className="text-xs text-slate-400 mt-2">
                     <strong>Cookies used:</strong> _ga, _gid, _gat (Google Analytics)
                   </p>
                 </div>
@@ -413,7 +413,7 @@ export default function CookieConsent({
                   <p className="text-sm text-neutral-400 mt-1">
                     These cookies are used to track visitors across websites to display relevant advertisements. They help us measure the effectiveness of our marketing campaigns and display ads that are more relevant to you.
                   </p>
-                  <p className="text-xs text-neutral-500 mt-2">
+                  <p className="text-xs text-slate-400 mt-2">
                     <strong>Cookies used:</strong> _fbp (Facebook Pixel), Google Ads tracking
                   </p>
                 </div>

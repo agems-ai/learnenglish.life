@@ -443,7 +443,7 @@ export default function WordSearch({ difficulty = 'medium' }: WordSearchProps) {
           </div>
           
           {/* Instructions */}
-          <div className="mt-4 text-center text-neutral-500 text-sm">
+          <div className="mt-4 text-center text-slate-400 text-sm">
             {isSelecting ? 'Drag to select word' : 'Click and drag to select words'}
           </div>
         </div>

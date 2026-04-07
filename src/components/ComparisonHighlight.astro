@@ -33,7 +33,7 @@ const {
   )}
   
   <div class="overflow-x-auto">
-    <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+    <table class="w-full border-collapse bg-slate-900/60 rounded-xl overflow-hidden shadow-sm">
       <thead>
         <tr class="bg-neutral-800">
           <th class="text-left p-4 font-semibold text-gray-300">Feature</th>
@@ -77,7 +77,7 @@ const {
               )}
             </td>
             {platformC && row.c && (
-              <td class="p-4 text-center text-gray-600">{row.c}</td>
+              <td class="p-4 text-center text-slate-300">{row.c}</td>
             )}
           </tr>
         ))}
@@ -92,7 +92,7 @@ const {
     </p>
     <a 
       href={winner === 'a' ? platformA.link : platformB.link}
-      class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2 rounded-lg transition-colors"
+      class="inline-block bg-emerald-700 hover:bg-emerald-700 text-white font-bold px-6 py-2 rounded-lg transition-colors"
     >
       Try {winner === 'a' ? platformA.name : platformB.name} Free →
     </a>

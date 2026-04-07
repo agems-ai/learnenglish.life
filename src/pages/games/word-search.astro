@@ -18,7 +18,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
   <section class="bg-gradient-to-r from-green-600 to-emerald-600 py-8">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center text-white">
-        <div class="inline-flex items-center gap-2 px-4 py-1 bg-white/20 rounded-full text-sm mb-4">
+        <div class="inline-flex items-center gap-2 px-4 py-1 bg-slate-900/60/20 rounded-full text-sm mb-4">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
@@ -42,7 +42,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             "px-4 py-2 rounded-full font-medium transition-all",
             difficulty === 'easy' 
               ? "bg-green-600 text-white shadow-md" 
-              : "bg-white text-neutral-600 hover:bg-green-950/60 hover:text-green-600"
+              : "bg-slate-900/60 text-slate-300 hover:bg-green-950/60 hover:text-green-600"
           ]}
         >
           Easy (10×10)
@@ -53,7 +53,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             "px-4 py-2 rounded-full font-medium transition-all",
             difficulty === 'medium' 
               ? "bg-green-600 text-white shadow-md" 
-              : "bg-white text-neutral-600 hover:bg-green-950/60 hover:text-green-600"
+              : "bg-slate-900/60 text-slate-300 hover:bg-green-950/60 hover:text-green-600"
           ]}
         >
           Medium (12×12)
@@ -64,7 +64,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             "px-4 py-2 rounded-full font-medium transition-all",
             difficulty === 'hard' 
               ? "bg-green-600 text-white shadow-md" 
-              : "bg-white text-neutral-600 hover:bg-green-950/60 hover:text-green-600"
+              : "bg-slate-900/60 text-slate-300 hover:bg-green-950/60 hover:text-green-600"
           ]}
         >
           Hard (15×15)
@@ -88,7 +88,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
   </div>
 
   <!-- How to Play -->
-  <section class="py-12 bg-white">
+  <section class="py-12 bg-slate-900/60">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center text-gray-100 mb-8">How to Play</h2>
       <div class="grid md:grid-cols-3 gap-8">
@@ -97,21 +97,21 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             <span class="text-2xl">1️⃣</span>
           </div>
           <h3 class="font-semibold text-gray-100 mb-2">Look at the Word List</h3>
-          <p class="text-gray-600 text-sm">Check which words you need to find in the puzzle.</p>
+          <p class="text-slate-300 text-sm">Check which words you need to find in the puzzle.</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">2️⃣</span>
           </div>
           <h3 class="font-semibold text-gray-100 mb-2">Click and Drag</h3>
-          <p class="text-gray-600 text-sm">Click on a letter and drag to select a word in any direction.</p>
+          <p class="text-slate-300 text-sm">Click on a letter and drag to select a word in any direction.</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
             <span class="text-2xl">3️⃣</span>
           </div>
           <h3 class="font-semibold text-gray-100 mb-2">Score Points</h3>
-          <p class="text-gray-600 text-sm">Find all words as fast as you can for a higher score!</p>
+          <p class="text-slate-300 text-sm">Find all words as fast as you can for a higher score!</p>
         </div>
       </div>
     </div>
@@ -122,16 +122,16 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center text-gray-100 mb-8">English Learning Tips</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-xl p-6 shadow-sm">
+        <div class="bg-slate-900/60 rounded-xl p-6 shadow-sm">
           <h3 class="font-semibold text-green-300 mb-3">📚 Build Your Vocabulary</h3>
-          <p class="text-gray-600 text-sm">Each puzzle uses real English words. Try to learn the meaning of words you don't know!</p>
+          <p class="text-slate-300 text-sm">Each puzzle uses real English words. Try to learn the meaning of words you don't know!</p>
           <a href="/guides/" class="inline-block mt-3 text-green-600 hover:text-green-300 font-medium text-sm">
             Browse Study Guides →
           </a>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm">
+        <div class="bg-slate-900/60 rounded-xl p-6 shadow-sm">
           <h3 class="font-semibold text-green-300 mb-3">⏱️ Practice Regularly</h3>
-          <p class="text-gray-600 text-sm">Short practice sessions every day are more effective than long study marathons.</p>
+          <p class="text-slate-300 text-sm">Short practice sessions every day are more effective than long study marathons.</p>
           <a href="/tools/" class="inline-block mt-3 text-green-600 hover:text-green-300 font-medium text-sm">
             Explore More Tools →
           </a>
@@ -141,7 +141,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
   </section>
 
   <!-- Related Games -->
-  <section class="py-12 bg-white">
+  <section class="py-12 bg-slate-900/60">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center text-gray-100 mb-8">More Games to Try</h2>
       <div class="grid md:grid-cols-3 gap-6">
@@ -152,7 +152,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             </svg>
           </div>
           <h3 class="font-semibold text-gray-100 mb-1">Vocabulary Quiz</h3>
-          <p class="text-gray-600 text-sm">Test your English knowledge with multiple choice questions.</p>
+          <p class="text-slate-300 text-sm">Test your English knowledge with multiple choice questions.</p>
         </a>
         <a href="/games/grammar-challenge/" class="group block bg-neutral-950/60 rounded-xl p-6 hover:bg-green-950/60 transition-colors">
           <div class="w-12 h-12 bg-purple-900/40 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
@@ -161,7 +161,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             </svg>
           </div>
           <h3 class="font-semibold text-gray-100 mb-1">Grammar Challenge</h3>
-          <p class="text-gray-600 text-sm">Practice grammar with fill-in-the-blank sentences.</p>
+          <p class="text-slate-300 text-sm">Practice grammar with fill-in-the-blank sentences.</p>
         </a>
         <a href="/games/" class="group block bg-neutral-950/60 rounded-xl p-6 hover:bg-green-950/60 transition-colors">
           <div class="w-12 h-12 bg-orange-900/40 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
@@ -170,7 +170,7 @@ const difficulty = Astro.url.searchParams.get('difficulty') as 'easy' | 'medium'
             </svg>
           </div>
           <h3 class="font-semibold text-gray-100 mb-1">All Games</h3>
-          <p class="text-gray-600 text-sm">Explore our full collection of English learning games.</p>
+          <p class="text-slate-300 text-sm">Explore our full collection of English learning games.</p>
         </a>
       </div>
     </div>

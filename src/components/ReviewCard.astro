@@ -52,7 +52,7 @@ const platformLogos: Record<string, string> = {
 const logoSrc = platformLogos[slug];
 ---
 
-<article class:list={['group bg-white border border-neutral-700 rounded-xl overflow-hidden hover:border-emerald-500 hover:shadow-lg transition-all duration-200', className]}>
+<article class:list={['group bg-slate-900/60 border border-neutral-700 rounded-xl overflow-hidden hover:border-emerald-500 hover:shadow-lg transition-all duration-200', className]}>
   <a href={href} class="block p-5">
     {badge && (
       <span class="inline-block px-2 py-0.5 text-xs font-medium bg-emerald-900/40 text-emerald-300 rounded-full mb-3">
@@ -80,25 +80,25 @@ const logoSrc = platformLogos[slug];
         <h3 class="font-bold text-neutral-100 group-hover:text-emerald-600 transition-colors truncate !text-neutral-100">
           {name}
         </h3>
-        {tagline && <p class="text-sm text-neutral-500 truncate">{tagline}</p>}
+        {tagline && <p class="text-sm text-slate-400 truncate">{tagline}</p>}
       </div>
     </div>
 
     <div class="flex items-center gap-3 mb-4">
       <RatingStars rating={rating} size="sm" />
       {reviewCount !== undefined && (
-        <span class="text-sm text-neutral-500">({reviewCount.toLocaleString()} reviews)</span>
+        <span class="text-sm text-slate-400">({reviewCount.toLocaleString()} reviews)</span>
       )}
     </div>
 
     <div class="flex items-center justify-between pt-3 border-t border-neutral-700">
       {displayPrice ? (
         <div class="text-sm">
-          <span class="text-neutral-500">{priceLabel}</span>
+          <span class="text-slate-400">{priceLabel}</span>
           <span class="font-semibold text-neutral-100 ml-1">{displayPrice}</span>
         </div>
       ) : (
-        <div class="text-sm text-neutral-500">{priceLabel || 'See site'}</div>
+        <div class="text-sm text-slate-400">{priceLabel || 'See site'}</div>
       )}
       
       <span class="text-sm font-medium text-emerald-600 group-hover:underline">

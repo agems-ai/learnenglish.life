@@ -23,7 +23,7 @@ const categories: Category[] = [
   { id: 'fill-blank', name: 'Fill in the Blank', icon: '📝', description: 'Complete sentences with correct words', color: 'bg-blue-600' },
   { id: 'tense', name: 'Verb Tenses', icon: '⏰', description: 'Present, past, and future tenses', color: 'bg-purple-600' },
   { id: 'article', name: 'Articles', icon: '📰', description: 'a, an, and the usage', color: 'bg-amber-600' },
-  { id: 'preposition', name: 'Prepositions', icon: '🗺️', description: 'in, on, at, for, to, and more', color: 'bg-emerald-600' },
+  { id: 'preposition', name: 'Prepositions', icon: '🗺️', description: 'in, on, at, for, to, and more', color: 'bg-emerald-700' },
 ];
 
 // Grammar questions database
@@ -389,7 +389,7 @@ export default function GrammarChallenge() {
 
           {/* Level Filter */}
           <div className="mb-8">
-            <p className="text-sm text-neutral-500 mb-3 text-center">Filter by difficulty</p>
+            <p className="text-sm text-slate-400 mb-3 text-center">Filter by difficulty</p>
             <div className="flex flex-wrap justify-center gap-2">
               <button
                 onClick={() => setSelectedLevel('all')}
@@ -433,7 +433,7 @@ export default function GrammarChallenge() {
                   <span className="text-4xl mb-3 block">{category.icon}</span>
                   <h3 className="text-xl font-bold text-white mb-1">{category.name}</h3>
                   <p className="text-white/80 text-sm mb-3">{category.description}</p>
-                  <span className="inline-block bg-white/20 text-white text-xs px-2 py-1 rounded">
+                  <span className="inline-block bg-slate-900/60/20 text-white text-xs px-2 py-1 rounded">
                     {categoryQuestions.length} questions
                   </span>
                 </button>
@@ -505,7 +505,7 @@ export default function GrammarChallenge() {
                   style={{ width: `${percentage}%` }}
                 />
               </div>
-              <div className="flex justify-between text-xs text-neutral-500 mt-2">
+              <div className="flex justify-between text-xs text-slate-400 mt-2">
                 <span>0%</span>
                 <span>50%</span>
                 <span>100%</span>
@@ -530,7 +530,7 @@ export default function GrammarChallenge() {
 
             {/* Share Section */}
             <div className="mt-8 pt-6 border-t border-neutral-800">
-              <p className="text-sm text-neutral-500 mb-3">Share your results</p>
+              <p className="text-sm text-slate-400 mb-3">Share your results</p>
               <div className="flex justify-center gap-3">
                 <a
                   href={`https://twitter.com/intent/tweet?text=I%20scored%20${percentage}%25%20on%20the%20Grammar%20Challenge%20at%20LearnEnglish.Life!%20📚&url=https://learnenglish.life/games/grammar/`}
@@ -575,7 +575,7 @@ export default function GrammarChallenge() {
           <div className="flex justify-between items-center mb-3">
             <button
               onClick={handleRestart}
-              className="text-neutral-500 hover:text-white transition-colors flex items-center gap-2"
+              className="text-slate-400 hover:text-white transition-colors flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -583,7 +583,7 @@ export default function GrammarChallenge() {
               Back
             </button>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-neutral-500">
+              <span className="text-sm text-slate-400">
                 Question {currentQuestion + 1}/{questions.length}
               </span>
               {streak >= 2 && (
@@ -606,7 +606,7 @@ export default function GrammarChallenge() {
           <div className="flex items-center gap-2">
             <span className="text-2xl">✅</span>
             <span className="text-xl font-bold text-green-500">{score}</span>
-            <span className="text-neutral-600">correct</span>
+            <span className="text-slate-300">correct</span>
           </div>
           <div className="bg-neutral-800 px-4 py-2 rounded-lg">
             <span className="text-sm text-neutral-400">
@@ -669,7 +669,7 @@ export default function GrammarChallenge() {
 
           {/* Multiple Choice Options */}
           <div className="mb-6">
-            <p className="text-sm text-neutral-500 mb-3">Or select an answer:</p>
+            <p className="text-sm text-slate-400 mb-3">Or select an answer:</p>
             <div className="grid grid-cols-2 gap-3">
               {question.options.map((option) => {
                 const isSelected = userAnswer === option;
@@ -682,7 +682,7 @@ export default function GrammarChallenge() {
                   } else if (isSelected && !isCorrect) {
                     buttonClass += ' border-red-500 bg-red-500/20 text-red-400';
                   } else {
-                    buttonClass += ' border-neutral-800 text-neutral-600';
+                    buttonClass += ' border-neutral-800 text-slate-300';
                   }
                 } else {
                   buttonClass += isSelected
@@ -732,7 +732,7 @@ export default function GrammarChallenge() {
 
           {/* Time Spent */}
           {showExplanation && (
-            <div className="mt-4 text-center text-sm text-neutral-500">
+            <div className="mt-4 text-center text-sm text-slate-400">
               Time: {timeSpent}s
             </div>
           )}
@@ -747,7 +747,7 @@ export default function GrammarChallenge() {
               className={`flex-1 py-4 px-6 rounded-xl font-semibold text-lg transition-all ${
                 userAnswer
                   ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'bg-neutral-800 text-neutral-600 cursor-not-allowed'
+                  : 'bg-neutral-800 text-slate-300 cursor-not-allowed'
               }`}
             >
               Check Answer

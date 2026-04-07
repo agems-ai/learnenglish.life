@@ -44,7 +44,7 @@ const {
   
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
     {testimonials.map((testimonial, index) => (
-      <div class="bg-white rounded-xl p-5 shadow-sm">
+      <div class="bg-slate-900/60 rounded-xl p-5 shadow-sm">
         <!-- Quote -->
         <p class="text-gray-300 mb-4 italic">"{testimonial.quote}"</p>
         
@@ -52,7 +52,7 @@ const {
         <div class="flex items-center justify-between">
           <div>
             <p class="font-semibold text-gray-100">{testimonial.author}</p>
-            <p class="text-sm text-gray-500">{testimonial.location}</p>
+            <p class="text-sm text-slate-400">{testimonial.location}</p>
           </div>
           {testimonial.result && (
             <span class="text-xs bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded-full font-medium">
@@ -65,7 +65,7 @@ const {
   </div>
   
   <!-- Trust badges -->
-  <div class="mt-6 flex flex-wrap justify-center gap-6 text-center text-sm text-gray-600">
+  <div class="mt-6 flex flex-wrap justify-center gap-6 text-center text-sm text-slate-300">
     <div class="flex items-center gap-2">
       <span class="text-emerald-600">✓</span>
       <span>Verified Reviews</span>

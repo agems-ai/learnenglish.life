@@ -29,13 +29,13 @@ const {
   
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {benefits.map((benefit, index) => (
-      <div class="flex gap-4 p-4 bg-white rounded-xl border border-neutral-700 hover:border-emerald-700 hover:shadow-md transition-all">
+      <div class="flex gap-4 p-4 bg-slate-900/60 rounded-xl border border-neutral-700 hover:border-emerald-700 hover:shadow-md transition-all">
         <div class="flex-shrink-0 w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center text-2xl">
           {benefit.icon}
         </div>
         <div>
           <h3 class="font-semibold text-gray-100 mb-1">{benefit.title}</h3>
-          <p class="text-sm text-gray-600">{benefit.description}</p>
+          <p class="text-sm text-slate-300">{benefit.description}</p>
         </div>
       </div>
     ))}

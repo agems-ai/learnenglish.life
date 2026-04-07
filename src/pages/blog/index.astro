@@ -6,12 +6,12 @@ import AdUnit from '../../components/AdUnit.astro';
 
 const posts = [
   {
-    title: "10 Free Ways to Practice English Every Day",
-    excerpt: "You don't need a textbook to improve. Here are proven methods to practice English using just your phone and daily life.",
+    title: "How to Practice English Speaking Alone",
+    excerpt: "You don't need a textbook or a partner. Here are proven methods to practice English using just your phone and daily life.",
     category: "Tips",
     readTime: "5 min",
     date: "April 5, 2026",
-    slug: "free-ways-practice-english"
+    href: "/study-guide/how-to-practice-english-speaking-alone/"
   },
   {
     title: "iTalki vs Preply: Which is Better in 2026?",
@@ -19,23 +19,23 @@ const posts = [
     category: "Comparisons",
     readTime: "8 min",
     date: "April 3, 2026",
-    slug: "italki-vs-preply"
+    href: "/comparisons/italki-vs-preply/"
   },
   {
-    title: "How AI is Changing Language Learning",
-    excerpt: "From chatbots to pronunciation coaches, AI tools are making English learning more accessible than ever.",
-    category: "Technology",
+    title: "How to Choose the Right English Tutor",
+    excerpt: "Picking the right tutor changes everything. Our guide walks through the questions to ask and the red flags to watch.",
+    category: "Tutoring",
     readTime: "6 min",
     date: "April 1, 2026",
-    slug: "ai-language-learning"
+    href: "/study-guide/how-to-choose-english-tutor/"
   },
   {
-    title: "Best English Podcasts for Intermediate Learners",
-    excerpt: "Listening is key to fluency. These podcasts will help you understand native speakers better.",
+    title: "Best English Apps for Beginners",
+    excerpt: "Starting from zero. These apps give the smoothest path from your first word to your first conversation.",
     category: "Resources",
     readTime: "4 min",
     date: "March 28, 2026",
-    slug: "best-english-podcasts"
+    href: "/guides/best-english-apps-for-beginners/"
   },
 ];
 ---
@@ -43,12 +43,12 @@ const posts = [
   <Header />
   
   <!-- Hero -->
-  <section class="bg-emerald-600 py-12">
+  <section class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-12 border-b border-slate-800">
     <div class="max-w-6xl mx-auto px-4">
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
         English Learning Blog
       </h1>
-      <p class="text-emerald-100 text-lg">
+      <p class="text-slate-300 text-lg">
         Tips, guides, and the latest news in language learning
       </p>
     </div>
@@ -66,12 +66,12 @@ const posts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8">
         {posts.map(post => (
-          <article class="bg-white rounded-xl shadow-sm border border-gray-700 overflow-hidden hover:shadow-md transition-shadow">
+          <article class="bg-slate-900/60 rounded-xl shadow-sm border border-gray-700 overflow-hidden hover:shadow-md transition-shadow">
             <div class="h-48 bg-gradient-to-br from-emerald-900/40 to-teal-900/40 flex items-center justify-center">
               <span class="text-6xl">📝</span>
             </div>
             <div class="p-6">
-              <div class="flex items-center gap-3 text-sm text-gray-500 mb-3">
+              <div class="flex items-center gap-3 text-sm text-slate-400 mb-3">
                 <span class="px-2 py-1 bg-emerald-900/40 text-emerald-400 rounded-full text-xs font-medium">
                   {post.category}
                 </span>
@@ -84,7 +84,7 @@ const posts = [
                   {post.title}
                 </a>
               </h2>
-              <p class="text-gray-600 mb-4">{post.excerpt}</p>
+              <p class="text-slate-300 mb-4">{post.excerpt}</p>
               <a href={`/blog/${post.slug}/`} class="text-emerald-600 font-semibold hover:underline">
                 Read More →
               </a>
@@ -103,26 +103,26 @@ const posts = [
   </div>
 
   <!-- Newsletter CTA -->
-  <section class="py-12 bg-neutral-800">
+  <section class="py-12 bg-slate-950 border-y border-slate-800">
     <div class="max-w-2xl mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold text-gray-100 mb-4">Get Weekly Tips</h2>
-      <p class="text-gray-600 mb-6">
+      <h2 class="text-2xl font-bold text-white mb-4">Get Weekly Tips</h2>
+      <p class="text-slate-200 mb-6">
         Subscribe to our newsletter for the latest learning tips and platform deals.
       </p>
       <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" />
-        <button type="submit" class="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700">
+        <input type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 bg-slate-900 border border-slate-700 text-white rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" />
+        <button type="submit" class="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500">
           Subscribe
         </button>
       </form>
-      <p class="text-xs text-gray-500 mt-3">No spam. Unsubscribe anytime.</p>
+      <p class="text-xs text-slate-300 mt-3">No spam. Unsubscribe anytime.</p>
     </div>
   </section>
 
   <!-- AI Disclosure -->
   <section class="py-8 bg-gray-900/40">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-slate-400">
         <strong>AI Transparency:</strong> LearnEnglish.Life is operated entirely by AI systems. 
         <a href="/about/" class="text-emerald-600 hover:underline">Learn more about us</a>
       </p>

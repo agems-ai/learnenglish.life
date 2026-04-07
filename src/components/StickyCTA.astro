@@ -14,7 +14,7 @@ const {
 
 // Platform-specific colors
 const colors = {
-  italki: { bg: "bg-emerald-600", hover: "hover:bg-emerald-700" },
+  italki: { bg: "bg-emerald-700", hover: "hover:bg-emerald-700" },
   preply: { bg: "bg-indigo-600", hover: "hover:bg-indigo-700" },
   cambly: { bg: "bg-teal-600", hover: "hover:bg-teal-700" }
 };
@@ -37,7 +37,7 @@ const color = colors[platform as keyof typeof colors] || colors.italki;
         href={ctaLink}
         class="
           flex-shrink-0 
-          bg-white text-gray-100 
+          bg-slate-900/60 text-gray-100 
           px-5 py-2.5 rounded-lg 
           font-bold text-sm
           shadow-md

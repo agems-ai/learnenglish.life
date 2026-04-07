@@ -40,7 +40,7 @@ const articleSchema = {
   
   <main class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm text-gray-500 mb-4">
+    <nav class="text-sm text-slate-400 mb-4">
       <a href="/" class="hover:text-emerald-600">Home</a>
       <span class="mx-2">›</span>
       <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
@@ -68,10 +68,10 @@ const articleSchema = {
       <h2 class="text-2xl font-bold mb-6">Key Factors to Consider</h2>
       <div class="grid md:grid-cols-2 gap-4">
         {factors.map(factor => (
-          <div class="bg-white rounded-xl shadow-sm p-6">
+          <div class="bg-slate-900/60 rounded-xl shadow-sm p-6">
             <div class="text-3xl mb-3">{factor.icon}</div>
             <h3 class="font-bold text-lg mb-2">{factor.title}</h3>
-            <p class="text-gray-600">{factor.desc}</p>
+            <p class="text-slate-300">{factor.desc}</p>
           </div>
         ))}
       </div>
@@ -81,7 +81,7 @@ const articleSchema = {
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">Where to Find Tutors</h2>
       <div class="overflow-x-auto">
-        <table class="w-full border-collapse bg-white rounded-xl shadow-sm">
+        <table class="w-full border-collapse bg-slate-900/60 rounded-xl shadow-sm">
           <thead>
             <tr class="bg-neutral-800">
               <th class="text-left p-4">Platform</th>
@@ -113,7 +113,7 @@ const articleSchema = {
     <!-- Self-Assessment -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">Questions to Ask Yourself First</h2>
-      <div class="bg-white rounded-xl shadow-sm p-6">
+      <div class="bg-slate-900/60 rounded-xl shadow-sm p-6">
         <ul class="space-y-3">
           {questions.map((q, i) => (
             <li class="flex items-start gap-3">
@@ -182,8 +182,8 @@ const articleSchema = {
       <h2 class="text-xl font-bold mb-3">Ready to Find Your Tutor?</h2>
       <p class="text-emerald-100 mb-4">Start with community tutors on iTalki for affordable practice, or browse professional teachers on Preply for structured lessons.</p>
       <div class="flex flex-wrap gap-3">
-        <a href="/reviews/italki/" class="bg-white text-emerald-400 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-900/30">Compare iTalki Tutors</a>
-        <a href="/reviews/preply/" class="border-2 border-white text-white px-5 py-2 rounded-lg font-semibold hover:bg-white/10">Compare Preply Tutors</a>
+        <a href="/reviews/italki/" class="bg-slate-900/60 text-emerald-400 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-900/30">Compare iTalki Tutors</a>
+        <a href="/reviews/preply/" class="border-2 border-white text-white px-5 py-2 rounded-lg font-semibold hover:bg-slate-900/60/10">Compare Preply Tutors</a>
       </div>
     </section>
 
@@ -191,13 +191,13 @@ const articleSchema = {
     <section>
       <h2 class="text-xl font-bold mb-4">Continue Learning</h2>
       <div class="grid md:grid-cols-2 gap-4">
-        <a href="/compare/best-english-learning-apps/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
+        <a href="/compare/best-english-learning-apps/" class="bg-slate-900/60 rounded-xl shadow-sm p-4 hover:shadow-md transition">
           <h3 class="font-semibold text-emerald-400">Best English Learning Apps</h3>
-          <p class="text-gray-500 text-sm mt-1">Top apps to supplement tutor sessions</p>
+          <p class="text-slate-400 text-sm mt-1">Top apps to supplement tutor sessions</p>
         </a>
-        <a href="/guides/free-vs-paid-english-learning/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
+        <a href="/guides/free-vs-paid-english-learning/" class="bg-slate-900/60 rounded-xl shadow-sm p-4 hover:shadow-md transition">
           <h3 class="font-semibold text-emerald-400">Free vs Paid Resources</h3>
-          <p class="text-gray-500 text-sm mt-1">Get the most value from your learning budget</p>
+          <p class="text-slate-400 text-sm mt-1">Get the most value from your learning budget</p>
         </a>
       </div>
     </section>

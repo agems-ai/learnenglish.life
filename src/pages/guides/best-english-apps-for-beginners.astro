@@ -32,7 +32,7 @@ const articleSchema = {
   
   <main class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm text-gray-500 mb-4">
+    <nav class="text-sm text-slate-400 mb-4">
       <a href="/" class="hover:text-emerald-600">Home</a>
       <span class="mx-2">›</span>
       <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
@@ -45,7 +45,7 @@ const articleSchema = {
       <span class="text-blue-200 text-sm font-medium">Beginner's Guide</span>
       <h1 class="text-4xl font-bold mt-2 mb-4">Best English Apps for Beginners</h1>
       <p class="text-blue-100 text-lg mb-6">Starting from zero? These apps will help you build a solid foundation with daily practice that fits your schedule.</p>
-      <div class="bg-white/10 rounded-lg p-4">
+      <div class="bg-slate-900/60/10 rounded-lg p-4">
         <p class="text-sm">All apps listed have free versions. No credit card required.</p>
       </div>
     </div>
@@ -63,7 +63,7 @@ const articleSchema = {
       <h2 class="text-2xl font-bold mb-6">Top 5 Apps for English Beginners</h2>
       
       {apps.map((app, i) => (
-        <div class="bg-white rounded-xl shadow-sm p-6 mb-4">
+        <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-4">
           <div class="flex items-start justify-between mb-4">
             <div>
               <span class="text-gray-400 text-sm">#{i + 1}</span>
@@ -73,11 +73,11 @@ const articleSchema = {
           </div>
           <div class="grid md:grid-cols-3 gap-4 text-sm">
             <div>
-              <span class="text-gray-500">Price:</span>
+              <span class="text-slate-400">Price:</span>
               <span class="font-semibold ml-1">{app.price}</span>
             </div>
             <div>
-              <span class="text-gray-500">Best for:</span>
+              <span class="text-slate-400">Best for:</span>
               <span class="font-semibold ml-1">{app.best}</span>
             </div>
           </div>
@@ -104,27 +104,27 @@ const articleSchema = {
     <!-- Daily Routine -->
     <section class="mb-10">
       <h2 class="text-2xl font-bold mb-6">Sample Beginner Daily Routine</h2>
-      <div class="bg-white rounded-xl shadow-sm p-6">
+      <div class="bg-slate-900/60 rounded-xl shadow-sm p-6">
         <div class="space-y-4">
           <div class="flex gap-4">
             <span class="bg-emerald-900/40 text-emerald-400 px-3 py-1 rounded font-semibold text-sm">Morning</span>
             <div>
               <p class="font-semibold">15 min Duolingo lesson</p>
-              <p class="text-gray-500 text-sm">Start your day with vocabulary and grammar</p>
+              <p class="text-slate-400 text-sm">Start your day with vocabulary and grammar</p>
             </div>
           </div>
           <div class="flex gap-4">
             <span class="bg-blue-900/40 text-blue-400 px-3 py-1 rounded font-semibold text-sm">Lunch</span>
             <div>
               <p class="font-semibold">10 min ELSA Speak pronunciation</p>
-              <p class="text-gray-500 text-sm">Practice difficult sounds while walking</p>
+              <p class="text-slate-400 text-sm">Practice difficult sounds while walking</p>
             </div>
           </div>
           <div class="flex gap-4">
             <span class="bg-purple-900/40 text-purple-400 px-3 py-1 rounded font-semibold text-sm">Evening</span>
             <div>
               <p class="font-semibold">20 min BBC Learning English</p>
-              <p class="text-gray-500 text-sm">Watch videos and read articles</p>
+              <p class="text-slate-400 text-sm">Watch videos and read articles</p>
             </div>
           </div>
         </div>
@@ -135,24 +135,24 @@ const articleSchema = {
     <section class="bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl p-6 text-white mb-8">
       <h2 class="text-xl font-bold mb-3">Ready for Live Practice?</h2>
       <p class="text-blue-100 mb-4">Apps build your foundation, but tutors accelerate your speaking. Try a community tutor for as little as $4.</p>
-      <a href="/reviews/italki/" class="bg-white text-blue-400 px-5 py-2 rounded-lg font-semibold hover:bg-blue-900/30">Find Affordable Tutors</a>
+      <a href="/reviews/italki/" class="bg-slate-900/60 text-blue-400 px-5 py-2 rounded-lg font-semibold hover:bg-blue-900/30">Find Affordable Tutors</a>
     </section>
 
     <!-- Related -->
     <section>
       <h2 class="text-xl font-bold mb-4">Continue Learning</h2>
       <div class="grid md:grid-cols-3 gap-4">
-        <a href="/compare/best-english-learning-apps/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
+        <a href="/compare/best-english-learning-apps/" class="bg-slate-900/60 rounded-xl shadow-sm p-4 hover:shadow-md transition">
           <h3 class="font-semibold text-emerald-400">Compare All Apps</h3>
-          <p class="text-gray-500 text-sm mt-1">10+ apps reviewed</p>
+          <p class="text-slate-400 text-sm mt-1">10+ apps reviewed</p>
         </a>
-        <a href="/guides/how-to-choose-english-tutor/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
+        <a href="/guides/how-to-choose-english-tutor/" class="bg-slate-900/60 rounded-xl shadow-sm p-4 hover:shadow-md transition">
           <h3 class="font-semibold text-emerald-400">How to Choose a Tutor</h3>
-          <p class="text-gray-500 text-sm mt-1">Find the right match</p>
+          <p class="text-slate-400 text-sm mt-1">Find the right match</p>
         </a>
-        <a href="/guides/free-vs-paid-english-learning/" class="bg-white rounded-xl shadow-sm p-4 hover:shadow-md transition">
+        <a href="/guides/free-vs-paid-english-learning/" class="bg-slate-900/60 rounded-xl shadow-sm p-4 hover:shadow-md transition">
           <h3 class="font-semibold text-emerald-400">Free vs Paid</h3>
-          <p class="text-gray-500 text-sm mt-1">Optimize your budget</p>
+          <p class="text-slate-400 text-sm mt-1">Optimize your budget</p>
         </a>
       </div>
     </section>

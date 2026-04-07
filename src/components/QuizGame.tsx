@@ -96,7 +96,7 @@ export default function QuizGame({ quizId, quizTitle, questions }: QuizGameProps
           </p>
         </div>
         <div className="mb-6">
-          <div className="flex justify-between text-sm text-neutral-500 mb-1">
+          <div className="flex justify-between text-sm text-slate-400 mb-1">
             <span>Score</span>
             <span>{score}/{questions.length}</span>
           </div>
@@ -123,7 +123,7 @@ export default function QuizGame({ quizId, quizTitle, questions }: QuizGameProps
     <div className="quiz-container bg-neutral-900 rounded-xl p-8 max-w-2xl mx-auto">
       {/* Progress bar */}
       <div className="mb-6">
-        <div className="flex justify-between text-sm text-neutral-500 mb-1">
+        <div className="flex justify-between text-sm text-slate-400 mb-1">
           <span>Question {currentQuestion + 1} of {questions.length}</span>
           <span>Score: {score}</span>
         </div>
@@ -150,7 +150,7 @@ export default function QuizGame({ quizId, quizTitle, questions }: QuizGameProps
           } else if (index === selectedAnswer) {
             buttonClass += ' border-red-500 bg-red-500/20 text-red-400';
           } else {
-            buttonClass += ' border-neutral-800 text-neutral-600';
+            buttonClass += ' border-neutral-800 text-slate-300';
           }
 
           return (

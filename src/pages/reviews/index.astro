@@ -89,11 +89,11 @@ const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games
         btn.addEventListener('click', () => {
           const cat = btn.getAttribute('data-category');
           buttons.forEach((b) => {
-            b.classList.remove('bg-emerald-600', 'text-white');
+            b.classList.remove('bg-emerald-700', 'text-white');
             b.classList.add('bg-slate-800', 'text-slate-300');
           });
           btn.classList.remove('bg-slate-800', 'text-slate-300');
-          btn.classList.add('bg-emerald-600', 'text-white');
+          btn.classList.add('bg-emerald-700', 'text-white');
           items.forEach((item) => {
             const cats = (item.getAttribute('data-categories') || '').split(',');
             const match = cat === 'All' || cats.includes(cat);
@@ -127,7 +127,7 @@ const categories = ["All", "Tutoring", "Conversation", "Courses", "Apps", "Games
   <!-- AI Disclosure -->
   <section class="py-8 bg-neutral-800">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-slate-400">
         <strong>Editorial Integrity:</strong> Our reviews are based on thorough research and user feedback. 
         We may earn affiliate commissions from some links, but this never influences our ratings. 
         <a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Learn more</a>

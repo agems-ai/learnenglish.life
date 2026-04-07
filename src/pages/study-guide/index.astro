@@ -12,7 +12,7 @@ const guides = await getCollection('guides');
     
     <div class="grid gap-6">
       {guides.map(guide => (
-        <a href={`/study-guide/${guide.slug}/`} class="block bg-white rounded-xl border border-slate-700 p-6 hover:shadow-lg transition-shadow">
+        <a href={`/study-guide/${guide.slug}/`} class="block bg-slate-900/60 rounded-xl border border-slate-700 p-6 hover:shadow-lg transition-shadow">
           <h2 class="text-2xl font-bold text-slate-200 mb-2">{guide.data.title}</h2>
           <p class="text-slate-600">{guide.data.description}</p>
         </a>
