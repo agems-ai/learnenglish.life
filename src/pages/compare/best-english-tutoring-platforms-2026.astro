@@ -167,7 +167,7 @@ const faqSchema = {
           Best English Tutoring Platforms
           <span class="text-emerald-400"> 2026</span>
         </h1>
-        <p class="text-lg text-neutral-300">We compared the top 5 platforms so you can find your perfect tutor. All platforms reviewed honestly — affiliate links help us keep this site free.</p>
+        <p class="text-lg text-neutral-300">We compared the top 5 platforms so you can find your perfect tutor. LearnEnglish.Life may earn a commission when you sign up for platforms recommended on this page, at no extra cost to you. Our recommendations are based on research, not payments.</p>
       </div>
       
       <!-- TL;DR Quick Pick -->
@@ -241,7 +241,7 @@ const faqSchema = {
             <!-- CTA -->
             <div class="md:w-48 text-center md:text-right">
               <a href={platform.href} class={`inline-block w-full md:w-auto px-6 py-3 font-bold rounded-lg transition-colors ${platform.highlight ? 'bg-emerald-600 text-white hover:bg-emerald-500' : 'bg-slate-800 text-white hover:bg-slate-700'}`}>
-                {platform.highlight ? 'Get Started →' : 'View Platform →'}
+                platform.highlight ? 'Try See Guru →' : 'View Platform →'
               </a>
               {platform.affiliate && <p class="text-xs text-slate-400 mt-2">Affiliate link</p>}
             </div>
