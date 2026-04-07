@@ -1,0 +1,264 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best English Tutors for Business in 2026",
+  "description": "From executive coaching to meeting prep. These 7 platforms help working professionals master business English.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-04-07"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do business English tutors cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Business English tutors typically charge $15 to $100 per hour. Community tutors on iTalki start around $10/hour for business topics. Professional business English coaches with corporate experience often charge $40 to $100/hour. Platforms like See Guru and Preply offer dedicated business tutors at various price points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between general English and business English tutoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "General English focuses on everyday conversation, travel, and casual communication. Business English covers meetings, presentations, negotiations, emails, reports, and industry-specific vocabulary. Business tutors also teach professional etiquette, cultural nuance in international business, and formal writing styles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a native English speaker for business English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For business English, a native speaker is often preferred because they model authentic professional language, correct idioms, and natural corporate communication styles. However, non-native speakers who are fluent and have business experience can be excellent teachers, especially if they share your native language and understand your specific challenges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to become proficient in business English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With consistent tutoring (2-3 sessions per week), most professionals reach meeting-ready business English in 3 to 6 months. Reaching full executive-level fluency typically takes 12 to 18 months. Your starting level, learning goals, and practice time between sessions all affect the timeline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I learn business English through group classes instead of one-on-one tutoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Group classes on Lingoda and Cambly cover business English topics and let you practice with multiple learners. However, one-on-one tutoring is more effective for personalized feedback on your specific professional needs, industry vocabulary, and individual communication challenges."
+      }
+    }
+  ]
+};
+---
+
+<Base title="Best English Tutors for Business in 2026" description="From executive coaching to meeting prep. These 7 platforms help working professionals master business English.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-slate-400 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">></span>
+      <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
+      <span class="mx-2">></span>
+      <span class="text-gray-300">Best English Tutors for Business</span>
+    </nav>
+
+    <article class="max-w-3xl mx-auto">
+      <div class="mb-8">
+        <span class="text-sm text-gray-400">Guide - Updated April 2026</span>
+        <h1 class="text-4xl font-bold mt-1 mb-4">Best English Tutors for Business in 2026</h1>
+        <p class="text-lg text-gray-500">From executive coaching to meeting prep. These 7 platforms help working professionals master business English.</p>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <p class="font-bold text-lg">Quick Recommendation</p>
+            <p class="text-sm text-gray-500 mt-1">Need business English fast?</p>
+          </div>
+          <div>
+            <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+              Try See Guru Free
+            </a>
+            <p class="text-xs text-gray-400 text-center mt-1">Business tutors available - No credit card needed</p>
+          </div>
+        </div>
+      </div>
+
+      <AdUnit />
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why Business English Is Different From General English</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">General English lessons teach you to order food, ask for directions, and chat with friends. Business English teaches you to lead a meeting in English, write professional emails, and present ideas to international clients. These are very different skill sets.</p>
+      <p class="text-gray-600 mb-4 leading-relaxed">A good business English tutor understands:</p>
+      <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+        <li>Corporate vocabulary and industry-specific terminology</li>
+        <li>Formal versus informal language register</li>
+        <li>Cross-cultural business communication styles</li>
+        <li>Meeting and presentation language</li>
+        <li>Professional email and report writing conventions</li>
+        <li>Negotiation and persuasion techniques in English</li>
+      </ul>
+      <p class="text-gray-600 mb-4 leading-relaxed">Whether you are preparing for an international job interview, getting ready to lead global team calls, or writing reports for English-speaking colleagues, the right business tutor makes all the difference.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">What to Look for in a Business English Tutor</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">Not every English tutor understands business contexts. Before you commit, check for these essential qualities:</p>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start gap-3">
+            <span class="text-green-600 font-bold mt-0.5">1.</span>
+            <span><strong>Business background or teaching experience.</strong> Look for tutors who have worked in corporate environments or specialize in business English instruction.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-600 font-bold mt-0.5">2.</span>
+            <span><strong>Industry-specific knowledge.</strong> If you work in finance, tech, healthcare, or law, find a tutor familiar with your sector vocabulary and norms.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-600 font-bold mt-0.5">3.</span>
+            <span><strong>Flexibility in lesson topics.</strong> Business needs change fast. Your tutor should adapt lessons to your current projects, upcoming meetings, or career goals.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-600 font-bold mt-0.5">4.</span>
+            <span><strong>Professional communication style.</strong> They should model formal business English, not casual conversational English during your sessions.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-600 font-bold mt-0.5">5.</span>
+            <span><strong>Availability for urgent prep.</strong> If you have a presentation tomorrow, you need a tutor who can fit you in.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-600 font-bold mt-0.5">6.</span>
+            <span><strong>Feedback on your specific goals.</strong> They should review your draft emails, listen to your practice presentations, and give detailed correction.</span>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">The 7 Best Platforms for Business English Tutoring</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">We tested and reviewed business English tutoring across major platforms. These seven deliver the best results for working professionals:</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">1. See Guru</h3>
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl font-bold text-blue-700">Best Overall for Business Professionals</span>
+        </div>
+        <p class="text-gray-600 mb-3 leading-relaxed">See Guru matches you with tutors who specialize in business English instruction. The platform offers dedicated tracks for professionals preparing for job interviews, client presentations, and executive communication.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">Lessons cover real business scenarios: leading meetings, handling Q&A sessions, writing professional emails, and networking at conferences. New users get a free trial to explore the platform and meet potential tutors.</p>
+        <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-blue-600 text-white font-bold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+          Start with See Guru
+        </a>
+        <p class="text-xs text-gray-400 mt-2"><a href="/reviews/see-guru/" class="underline hover:text-gray-600">Read our full See Guru review</a></p>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">2. iTalki</h3>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-600 mb-3 leading-relaxed">iTalki has a large selection of tutors who specialize in business English. You can filter by teaching experience, student ratings, and professional background. Community tutors offer affordable sessions, while professional teachers provide structured business curricula.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">The Trial Lesson feature lets you meet several business tutors before committing. Prices for business English tutors start around $10 to $15 per hour, depending on the tutor level and experience.</p>
+        <p class="text-xs text-gray-400"><a href="/reviews/italki/" class="underline hover:text-gray-600">Read our full iTalki review</a> - <a href="/compare/italki-vs-preply/" class="underline hover:text-gray-600">iTalki vs Preply comparison</a></p>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">3. Preply</h3>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-600 mb-3 leading-relaxed">Preply uses a smart matching system that considers your industry, proficiency level, and specific business goals. The platform includes a trial lesson option so you can assess the tutor before purchasing a package.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">Business tutors on Preply often have corporate backgrounds in fields like finance, marketing, and international business. This means they understand the specific vocabulary and communication norms of your industry.</p>
+        <p class="text-xs text-gray-400"><a href="/reviews/preply/" class="underline hover:text-gray-600">Read our full Preply review</a></p>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">4. Cambly for Business</h3>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-600 mb-3 leading-relaxed">Cambly offers dedicated business plans with professional tutors who focus on corporate communication. The on-demand model means you can practice business English anytime without scheduling conflicts.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">Business topics include interview preparation, presentation practice, meeting language, and professional email writing. Cambly also offers team plans for companies training multiple employees.</p>
+        <p class="text-xs text-gray-400"><a href="/reviews/cambly/" class="underline hover:text-gray-600">Read our full Cambly review</a></p>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">5. Lingoda Business</h3>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-600 mb-3 leading-relaxed">Lingoda offers live group and individual business English classes on a fixed schedule. The structured curriculum covers all business scenarios from introductory meetings to executive-level negotiations.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">Group classes let you learn alongside other professionals and hear diverse English accents. Individual classes provide focused attention on your specific business needs and immediate feedback.</p>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">6. Verbling</h3>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-600 mb-3 leading-relaxed">Verbling connects you with professional tutors who set their own schedules and specialize in business English instruction. You can filter by professional background, teaching focus, and availability.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">The platform is particularly strong for executives and senior professionals who need tutors who understand high-level business communication. Tutors can help with presentation rehearsals, speech coaching, and executive correspondence.</p>
+        <p class="text-xs text-gray-400"><a href="/reviews/verbling/" class="underline hover:text-gray-600">Read our full Verbling review</a></p>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">7. Tutoring with Industry Specialists</h3>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+        <p class="text-gray-600 mb-3 leading-relaxed">Beyond dedicated platforms, consider tutors who have actual industry experience in your field. Many iTalki and Preply tutors are former business professionals who teach English using their real-world experience.</p>
+        <p class="text-gray-600 mb-3 leading-relaxed">For specialized needs like legal English, medical English, or financial English, look for tutors with credentials or experience in those specific fields. This specialized knowledge cannot be replaced by generic business English courses.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">How We Chose These Platforms</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">Our business English recommendations are based on:</p>
+      <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+        <li>Testing by professionals who regularly use business English in their work</li>
+        <li>Analysis of tutor qualifications and business teaching specialization</li>
+        <li>Evaluation of business-specific curriculum and materials</li>
+        <li>Real student reviews from working professionals</li>
+        <li>Price transparency and value for business learners</li>
+      </ul>
+      <p class="text-gray-600 mb-6 leading-relaxed">We update this guide quarterly to reflect changes in tutor availability, pricing, and platform features. Last updated April 2026.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-bold text-lg mb-2">How much do business English tutors cost?</h3>
+          <p class="text-gray-600 leading-relaxed">Business English tutors typically charge $15 to $100 per hour. Community tutors on iTalki start around $10/hour for business topics. Professional business English coaches with corporate experience often charge $40 to $100/hour. Platforms like See Guru and Preply offer dedicated business tutors at various price points.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-2">What is the difference between general English and business English tutoring?</h3>
+          <p class="text-gray-600 leading-relaxed">General English focuses on everyday conversation, travel, and casual communication. Business English covers meetings, presentations, negotiations, emails, reports, and industry-specific vocabulary. Business tutors also teach professional etiquette, cultural nuance in international business, and formal writing styles.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-2">Do I need a native English speaker for business English?</h3>
+          <p class="text-gray-600 leading-relaxed">For business English, a native speaker is often preferred because they model authentic professional language, correct idioms, and natural corporate communication styles. However, non-native speakers who are fluent and have business experience can be excellent teachers, especially if they share your native language and understand your specific challenges.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-2">How long does it take to become proficient in business English?</h3>
+          <p class="text-gray-600 leading-relaxed">With consistent tutoring (2-3 sessions per week), most professionals reach meeting-ready business English in 3 to 6 months. Reaching full executive-level fluency typically takes 12 to 18 months. Your starting level, learning goals, and practice time between sessions all affect the timeline.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-2">Can I learn business English through group classes instead of one-on-one tutoring?</h3>
+          <p class="text-gray-600 leading-relaxed">Yes. Group classes on Lingoda and Cambly cover business English topics and let you practice with multiple learners. However, one-on-one tutoring is more effective for personalized feedback on your specific professional needs, industry vocabulary, and individual communication challenges.</p>
+        </div>
+      </div>
+
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6 mt-10">
+        <p class="font-bold text-lg mb-2">Ready to improve your business English?</p>
+        <p class="text-gray-600 mb-4">See Guru connects you with experienced business English tutors who understand professional communication. Start with a free trial today.</p>
+        <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+          Try See Guru Free Today
+        </a>
+      </div>
+
+      <p class="text-xs text-gray-400 mt-8"><em>Affiliate disclosure: We earn a commission when you sign up through links marked with an asterisk. This does not affect our editorial reviews. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure.</a></em></p>
+    </article>
+
+    <AdUnit />
+  </main>
+
+  <Footer />
+</Base>
