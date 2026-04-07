@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.PROD_SSH_KEY }}
           script_stop: true
           script: |
-            set -e
+            set -eo pipefail
             cd /var/www/learnenglish.life
             git fetch --all --quiet
             git reset --hard origin/main
