@@ -1,5 +1,7 @@
 ---
 const pageTitle = "See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?";
+import PlatformRatings from '../../components/PlatformRatings.astro';
+import { platformRatings } from '../../data/platform-ratings';
 const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.";
 ---
 
@@ -99,11 +101,13 @@ const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find 
     <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
-        <div class="flex items-center">
-          <span class="text-yellow-500 text-xl mr-1">★</span>
-          <span class="text-2xl font-bold text-gray-100">7.8</span>
-          <span class="text-slate-400 text-sm ml-1">/10</span>
-        </div>
+        <PlatformRatings 
+            platform="See Guru" 
+            rating={platformRatings['See Guru']?.rating || 4.1} 
+            reviewCount={platformRatings['See Guru']?.reviewCount || 0}
+            variant="badge"
+            color="teal"
+          />
       </div>
       <div class="mb-4">
         <span class="text-3xl font-bold text-emerald-600">From $5/hour</span>
@@ -126,11 +130,13 @@ const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find 
     <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-2xl font-bold text-gray-100">Verbling</h2>
-        <div class="flex items-center">
-          <span class="text-yellow-500 text-xl mr-1">★</span>
-          <span class="text-2xl font-bold text-gray-100">8.0</span>
-          <span class="text-slate-400 text-sm ml-1">/10</span>
-        </div>
+        <PlatformRatings 
+            platform="Verbling" 
+            rating={platformRatings['Verbling']?.rating || 4.3} 
+            reviewCount={platformRatings['Verbling']?.reviewCount || 0}
+            variant="badge"
+            color="emerald"
+          />
       </div>
       <div class="mb-4">
         <span class="text-3xl font-bold text-blue-600">From $15/hour</span>

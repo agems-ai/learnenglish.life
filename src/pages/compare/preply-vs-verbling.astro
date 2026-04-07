@@ -1,4 +1,7 @@
 ---
+import PlatformRatings from "../../components/PlatformRatings.astro";
+import { platformRatings } from "../../data/platform-ratings";
+
 const pageTitle = "Preply vs Verbling: European Tutor Comparison";
 const pageDesc = "Preply vs Verbling comparison focusing on European tutors, pricing, lesson structure, and platform features. Which one suits your learning style?";
 ---
@@ -99,11 +102,7 @@ const pageDesc = "Preply vs Verbling comparison focusing on European tutors, pri
     <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-2xl font-bold text-gray-100">Preply</h2>
-        <div class="flex items-center">
-          <span class="text-yellow-500 text-xl mr-1">&#9733;</span>
-          <span class="text-2xl font-bold text-gray-100">8.2</span>
-          <span class="text-slate-400 text-sm ml-1">/10</span>
-        </div>
+        <PlatformRatings platform="Preply" rating={platformRatings['Preply']?.rating || 4.4} reviewCount={platformRatings['Preply']?.reviewCount || 0} variant="badge" color="teal" />
       </div>
       <div class="mb-4">
         <span class="text-3xl font-bold text-emerald-600">From $5/hour</span>
@@ -126,11 +125,7 @@ const pageDesc = "Preply vs Verbling comparison focusing on European tutors, pri
     <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-2xl font-bold text-gray-100">Verbling</h2>
-        <div class="flex items-center">
-          <span class="text-yellow-500 text-xl mr-1">&#9733;</span>
-          <span class="text-2xl font-bold text-gray-100">8.0</span>
-          <span class="text-slate-400 text-sm ml-1">/10</span>
-        </div>
+        <PlatformRatings platform="Verbling" rating={platformRatings['Verbling']?.rating || 4.3} reviewCount={platformRatings['Verbling']?.reviewCount || 0} variant="badge" color="emerald" />
       </div>
       <div class="mb-4">
         <span class="text-3xl font-bold text-blue-600">From $12/hour</span>

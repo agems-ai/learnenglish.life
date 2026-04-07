@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { platformRatings } from '../../data/platform-ratings';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
@@ -141,7 +142,7 @@ const faqSchema = {
             <h3 class="text-xl font-bold">Duolingo</h3>
             <p class="text-slate-400">The gamified learning pioneer</p>
           </div>
-          <span class="bg-green-900/40 text-green-300 px-3 py-1 rounded-full font-semibold">4.5/5</span>
+          <span class="bg-green-900/40 text-green-300 px-3 py-1 rounded-full font-semibold">⭐ {platformRatings['Duolingo']?.rating || 4.5} / 5 ({platformRatings['Duolingo']?.reviewCount?.toLocaleString() || 256847} reviews)</span>
         </div>
         <p class="text-neutral-400 mb-4">Duolingo makes learning English feel like a game. With daily streaks, XP points, and bite-sized lessons, it's perfect for beginners who struggle with motivation. The app uses gamification brilliantly to keep you coming back.</p>
         <div class="grid md:grid-cols-2 gap-4 mb-4">
