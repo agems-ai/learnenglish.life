@@ -30,6 +30,33 @@ const faqs = [
   }
 ];
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Text to Speech English: Best TTS Tools for Learners (2026)",
+  "description": "Compare the best text to speech English tools for language learners. Try free TTS for pronunciation practice, listening comprehension, and accent training.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life Editorial Team",
+    "url": "https://learnenglish.life"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life",
+    "url": "https://learnenglish.life",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://learnenglish.life/favicon.svg"
+    }
+  },
+  "datePublished": "2026-04-08",
+  "dateModified": "2026-04-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://learnenglish.life/tools/text-to-speech-english/"
+  }
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -239,5 +266,6 @@ const faqSchema = {
     </div>
   </article>
 
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Base>
