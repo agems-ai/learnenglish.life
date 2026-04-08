@@ -74,6 +74,7 @@ const staticPages = [
   { url: '/guides/english-tutors-business-professionals', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/free-trial-english-lessons-no-credit-card', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/free-vs-paid-english-learning', priority: '0.8', changefreq: 'monthly' },
+  { url: '/guides/free-online-english-courses', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/how-to-choose-english-tutor', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/how-to-practice-speaking-alone', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/online-english-tutors-cost-2026', priority: '0.8', changefreq: 'monthly' },
