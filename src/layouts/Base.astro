@@ -157,8 +157,8 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
         'use strict';
         
         function initSeeGuruTracker() {
-          // Select all See Guru affiliate links
-          var affiliateLinks = document.querySelectorAll('a[href*="see.guru/?aff="], a[href*="see.guru%3Faff="]');
+          // Select all See Guru affiliate links (matches our aff=SG-SUAG151 pattern)
+          var affiliateLinks = document.querySelectorAll('a[href*="see.guru/?aff=SG-SUAG151"], a[href*="see.guru%3Faff=SG-SUAG151"]');
           var redirectLinks = document.querySelectorAll('a[href*="/go/see-guru"]');
           
           // Determine link type based on context
