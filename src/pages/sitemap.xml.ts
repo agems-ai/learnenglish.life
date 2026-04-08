@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 const SITE_URL = 'https://learnenglish.life';
 
 // All pages that should be in the sitemap
-// Updated: 2026-04-08 — Added missing comparison, review, and guide pages
+// Updated: 2026-04-08 — Added elsaspeak-vs-italki and pimsleur-vs-italki
 const staticPages = [
   // Main pages
   { url: '', priority: '1.0', changefreq: 'daily' },
@@ -27,8 +27,9 @@ const staticPages = [
   { url: '/reviews/busuu', priority: '0.8', changefreq: 'monthly' },
   { url: '/reviews/memrise', priority: '0.8', changefreq: 'monthly' },
   { url: '/reviews/pimsleur', priority: '0.8', changefreq: 'monthly' },
+  { url: '/reviews/elsa-speak', priority: '0.8', changefreq: 'monthly' },
 
-  // Comparison listing + pages (all 27 live comparisons)
+  // Comparison listing + pages (all 29 live comparisons)
   { url: '/compare', priority: '0.9', changefreq: 'weekly' },
   { url: '/compare/italki-vs-preply', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/cambly-vs-italki', priority: '0.8', changefreq: 'monthly' },
@@ -54,6 +55,8 @@ const staticPages = [
   { url: '/compare/duolingo-vs-italki', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/verbling-vs-italki', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/verbling-vs-preply', priority: '0.8', changefreq: 'monthly' },
+  { url: '/compare/elsa-speak-vs-italki', priority: '0.8', changefreq: 'monthly' },
+  { url: '/compare/pimsleur-vs-italki', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/best-english-learning-apps', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/best-english-tutoring-platforms-2026', priority: '0.8', changefreq: 'monthly' },
 
