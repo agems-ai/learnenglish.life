@@ -1,0 +1,268 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "IELTS Preparation: Complete Guide for 2026",
+  "description": "Expert IELTS preparation guide with proven strategies for all four modules. Step-by-step plan, tips, and the best resources for your target band score.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-08",
+  "dateModified": "2026-04-08"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does IELTS preparation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most learners need 2-3 months of dedicated IELTS preparation to move up half a band score. If you are starting at Band 5.5 and need Band 7.0, plan for at least 8-12 weeks of consistent study. Those needing to move from Band 6.0 to 7.5 typically require 12-16 weeks. The exact timeline depends on your current level, target score, and how much time you can commit daily."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the hardest part of IELTS to prepare for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Writing Task 2 and the Speaking module are generally the hardest to improve without expert guidance. Writing requires mastering specific essay structures, argument development, and examiner criteria that are difficult to self-assess. Speaking needs real-time interaction with native speakers who can give honest feedback on pronunciation, fluency, and vocabulary range. Both benefit enormously from 1-on-1 tutoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is self-study enough for IELTS preparation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Self-study can work for Band 5.5-6.5 targets, especially for Reading and Listening which respond well to practice tests. However, self-study alone rarely pushes scores above Band 7.0 because you need expert feedback on Writing and Speaking. The best approach combines self-study materials with regular 1-on-1 sessions from a qualified IELTS tutor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which IELTS modules should I focus on most?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Focus most on the modules that are furthest from your target. If your Writing is consistently 1.0 band below your other scores, that should be your priority. Generally, Reading and Listening are easier to self-improve through practice tests. Writing and Speaking require more guided attention. Track your progress with practice tests every two weeks to identify which modules need the most work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do IELTS preparation tutors cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IELTS tutors range from $5 per session with community tutors on See Guru to $80+ per hour for premium certified IELTS coaches. On iTalki, certified IELTS teachers typically charge $15-30 per hour. See Guru offers sessions starting from $5-12 with AI-matched tutors who specialize in IELTS modules. Investing in tutoring for Writing and Speaking is usually the highest-ROI preparation expense."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the best free IELTS preparation resources?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The British Council offers free practice tests and preparation materials. IELTS Liz provides hundreds of free video lessons on YouTube. The official IELTS.org website has free sample papers and examiner videos. Cambridge also offers free practice materials. However, free resources cannot replace feedback on your writing and speaking from qualified instructors."
+      }
+    }
+  ]
+};
+---
+
+<Base title="IELTS Preparation: Complete Guide for 2026" description="Expert IELTS preparation guide with proven strategies for all four modules. Step-by-step plan, tips, and the best resources for your target band score.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-slate-400 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-300">IELTS Preparation Guide</span>
+    </nav>
+
+    <article class="max-w-3xl mx-auto">
+      <div class="mb-8">
+        <span class="text-sm text-gray-400">Guide · Updated April 2026</span>
+        <h1 class="text-4xl font-bold mt-1 mb-4">IELTS Preparation: Complete Guide for 2026</h1>
+        <p class="text-lg text-gray-500">Expert IELTS preparation guide with proven strategies for all four modules. Step-by-step plan, tips, and the best resources for your target band score.</p>
+      </div>
+
+      <!-- Top Pick Box -->
+      <div class="bg-green-50 border-2 border-green-400 rounded-2xl p-6 mb-8">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">TOP PICK</span>
+          <span class="text-sm text-gray-500">Best for 1-on-1 IELTS coaching on a budget</span>
+        </div>
+        <h2 class="text-2xl font-bold text-green-800 mb-2">See Guru</h2>
+        <div class="flex items-center gap-4 flex-wrap">
+          <div class="text-4xl font-bold text-green-700">$5<span class="text-lg text-gray-500 font-normal">/hour</span></div>
+          <div class="flex gap-3">
+            <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+              Try See Guru
+            </a>
+            <a href="/reviews/see-guru/" class="inline-block bg-slate-900/40 text-slate-300 font-bold px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors">
+              Read Review
+            </a>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">IELTS-specialized tutors · Progress tracking · AI-matched</p>
+      </div>
+
+      <AdUnit />
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Understanding the IELTS Test Format</h2>
+      <p class="text-slate-400 mb-4 leading-relaxed">The International English Language Testing System (IELTS) measures your ability to communicate in English across four modules: Listening, Reading, Writing, and Speaking. The test is accepted by over 11,000 organizations worldwide including universities, employers, and immigration authorities.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">There are two versions: IELTS Academic for those applying to higher education, and IELTS General Training for work or immigration purposes. Both versions test the same four modules, though the Reading and Writing prompts differ in subject matter.</p>
+
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-4">
+          <h3 class="font-bold text-emerald-600 mb-2">Listening</h3>
+          <p class="text-sm text-slate-400">40 questions · 30 minutes</p>
+          <p class="text-sm text-slate-400">Four recorded monologues and conversations</p>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-4">
+          <h3 class="font-bold text-emerald-600 mb-2">Reading</h3>
+          <p class="text-sm text-slate-400">40 questions · 60 minutes</p>
+          <p class="text-sm text-slate-400">Three long passages with questions</p>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-4">
+          <h3 class="font-bold text-emerald-600 mb-2">Writing</h3>
+          <p class="text-sm text-slate-400">Two tasks · 60 minutes</p>
+          <p class="text-sm text-slate-400">Task 1 (150 words) + Task 2 (250 words)</p>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-4">
+          <h3 class="font-bold text-emerald-600 mb-2">Speaking</h3>
+          <p class="text-sm text-slate-400">Three parts · 11-14 minutes</p>
+          <p class="text-sm text-slate-400">Interview, short speech, and discussion</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Your IELTS Preparation Timeline</h2>
+      <p class="text-slate-400 mb-4 leading-relaxed">Effective IELTS preparation requires structured study over time. Rushing through materials rarely produces the band scores needed for your goals. Here is a recommended timeline based on your starting level:</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Weeks 1-2: Baseline Assessment</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">Take a full practice IELTS test under timed conditions to establish your current band score. Focus on identifying which modules are your weakest. Pay particular attention to the Writing and Speaking sections where self-assessment is most difficult. Consider booking a diagnostic session with an <a href="/reviews/italki/" class="text-emerald-600 hover:underline">iTalki tutor</a> or See Guru coach for expert feedback.</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Weeks 3-6: Focused Skill Building</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">Dedicate each week to specific skills within each module. In Listening, practice with diverse accents (British, Australian, American, Canadian). For Reading, build your vocabulary around academic and general topics. Writing requires studying model essays and understanding examiner marking criteria. Speaking needs regular conversation practice with native or fluent speakers.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">This phase is where <a href="/reviews/italki/" class="text-emerald-600 hover:underline">1-on-1 tutoring</a> delivers the highest value. A qualified IELTS tutor can identify your specific weak points and provide targeted correction.</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Weeks 7-10: Intensive Practice</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">Take full practice tests every 3-4 days. Review every answer you get wrong and understand why. Build your writing speed so you can complete both tasks with time to spare. Practice Speaking with recorded mock tests to reduce anxiety. Consider joining a structured course for access to official practice materials.</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Weeks 11-12: Test Readiness</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">In the final two weeks, focus on maintaining your skills through light practice. Avoid learning new material that might confuse you. Get plenty of rest before the test. Ensure you have your test day materials ready. If you are booking a test soon, consider an intensive final session with your tutor to polish your approach.</p>
+
+      <AdUnit />
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">IELTS Preparation Strategies by Module</h2>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Listening Preparation</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">The IELTS Listening test plays recorded audio once. You write answers while listening and have 10 minutes to transfer them to the answer sheet at the end. Key strategies include reading questions before the audio plays, anticipating the type of answer needed (name, number, date), and practicing with diverse English accents.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">Common pitfalls include misspelling answers and running out of time to transfer responses. Practice transferring answers cleanly and double-check your spelling of names and technical terms.</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Reading Preparation</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">The IELTS Reading test requires reading three long passages and answering 40 questions in 60 minutes. There is no time to read every word. Skimming for main ideas and scanning for specific details are essential skills. Learn to identify question types (True/False/Not Given, Multiple Choice, Matching, Summary completion) and their specific strategies.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">Vocabulary building is crucial. Focus on academic words commonly tested in IELTS Reading. Resources like <a href="/resources/free-online-english-courses/" class="text-emerald-600 hover:underline">free online English courses</a> can help build the vocabulary foundation you need.</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Writing Preparation</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">Task 1 requires describing visual information (graph, chart, diagram) in at least 150 words. Task 2 is an essay responding to an argument or problem in at least 250 words. Task 2 carries more weight and should receive more attention.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">The four marking criteria are Task Achievement, Coherence and Cohesion, Lexical Resource, and Grammatical Range and Accuracy. Each is worth 25% of your score. You need structured feedback to improve on these criteria. Self-study alone cannot identify patterns in your writing that hold your score back.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">Work with an <a href="/reviews/italki/" class="text-emerald-600 hover:underline">IELTS tutor on iTalki</a> or See Guru to submit writing tasks for detailed feedback on all four criteria.</p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3">Speaking Preparation</h3>
+      <p class="text-slate-400 mb-4 leading-relaxed">The Speaking test has three parts: a warm-up interview (4-5 minutes), a 1-2 minute short speech on a topic you receive on a card (2 minutes to prepare), and a two-way discussion (4-5 minutes). The examiner scores Fluency and Coherence, Lexical Resource, Grammatical Range and Accuracy, and Pronunciation.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">Practice speaking on diverse topics. Prepare ideas for common Part 2 themes (people, places, experiences, objects, activities). Record yourself speaking and listen back for filler words ("um," "uh," "like"), hesitation patterns, and pronunciation issues.</p>
+      <p class="text-slate-400 mb-4 leading-relaxed">Nothing replaces real conversation practice. See Guru offers unlimited speaking sessions with tutors who specialize in IELTS preparation, giving you the real-time feedback you need to improve your fluency and confidence.</p>
+
+      <AdUnit />
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Choosing the Right IELTS Tutor</h2>
+      <p class="text-slate-400 mb-4 leading-relaxed">The quality of your IELTS tutor directly impacts how quickly you improve. Look for tutors who:</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-400 mb-6">
+        <li>Have certified IELTS teaching qualifications (CELTA, TYLEC, or equivalent)</li>
+        <li>Specialize specifically in IELTS preparation, not general English</li>
+        <li>Can explain examiner criteria and how to meet them</li>
+        <li>Provide written feedback on your work with specific improvement points</li>
+        <li>Have positive reviews from students who achieved their target band scores</li>
+      </ul>
+
+      <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-6 mb-8">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <p class="font-bold text-lg text-emerald-600">See Guru IELTS Tutors</p>
+            <p class="text-sm text-slate-400">Starting from $5/hour with AI-matched tutors</p>
+          </div>
+          <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-green-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+            Find Your IELTS Tutor
+          </a>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mb-4">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+
+      <p class="text-slate-400 mb-4 leading-relaxed">On <a href="/reviews/italki/" class="text-emerald-600 hover:underline">iTalki</a>, you can filter specifically for IELTS-certified tutors at various price points. The platform hosts thousands of tutors across all time zones, making it easy to find availability that fits your schedule.</p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
+      <div class="space-y-6 mb-10">
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">How long does IELTS preparation take?</h3>
+          <p class="text-slate-400 leading-relaxed">Most learners need 2-3 months of dedicated IELTS preparation to move up half a band score. If you are starting at Band 5.5 and need Band 7.0, plan for at least 8-12 weeks of consistent study. Those needing to move from Band 6.0 to 7.5 typically require 12-16 weeks. The exact timeline depends on your current level, target score, and how much time you can commit daily.</p>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">What is the hardest part of IELTS to prepare for?</h3>
+          <p class="text-slate-400 leading-relaxed">Writing Task 2 and the Speaking module are generally the hardest to improve without expert guidance. Writing requires mastering specific essay structures, argument development, and examiner criteria that are difficult to self-assess. Speaking needs real-time interaction with native speakers who can give honest feedback on pronunciation, fluency, and vocabulary range. Both benefit enormously from 1-on-1 tutoring.</p>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">Is self-study enough for IELTS preparation?</h3>
+          <p class="text-slate-400 leading-relaxed">Self-study can work for Band 5.5-6.5 targets, especially for Reading and Listening which respond well to practice tests. However, self-study alone rarely pushes scores above Band 7.0 because you need expert feedback on Writing and Speaking. The best approach combines self-study materials with regular 1-on-1 sessions from a qualified IELTS tutor.</p>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">Which IELTS modules should I focus on most?</h3>
+          <p class="text-slate-400 leading-relaxed">Focus most on the modules that are furthest from your target. If your Writing is consistently 1.0 band below your other scores, that should be your priority. Generally, Reading and Listening are easier to self-improve through practice tests. Writing and Speaking require more guided attention. Track your progress with practice tests every two weeks to identify which modules need the most work.</p>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">How much do IELTS preparation tutors cost?</h3>
+          <p class="text-slate-400 leading-relaxed">IELTS tutors range from $5 per session with community tutors on See Guru to $80+ per hour for premium certified IELTS coaches. On iTalki, certified IELTS teachers typically charge $15-30 per hour. See Guru offers sessions starting from $5-12 with AI-matched tutors who specialize in IELTS modules. Investing in tutoring for Writing and Speaking is usually the highest-ROI preparation expense.</p>
+        </div>
+
+        <div class="bg-slate-900/40 border border-slate-700 rounded-xl p-5">
+          <h3 class="font-bold text-lg mb-2">What are the best free IELTS preparation resources?</h3>
+          <p class="text-slate-400 leading-relaxed">The British Council offers free practice tests and preparation materials. IELTS Liz provides hundreds of free video lessons on YouTube. The official IELTS.org website has free sample papers and examiner videos. Cambridge also offers free practice materials. However, free resources cannot replace feedback on your writing and speaking from qualified instructors.</p>
+        </div>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="bg-gradient-to-r from-green-700 to-emerald-700 rounded-2xl p-8 mb-10 text-white text-center">
+        <h2 class="text-2xl font-bold mb-3">Start Your IELTS Preparation Today</h2>
+        <p class="mb-6 text-green-100">Find the right IELTS tutor for your goals and budget. See Guru offers sessions starting from $5/hour with AI-matched tutors who specialize in IELTS preparation.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-slate-900/60 text-white font-bold px-8 py-4 rounded-xl hover:bg-slate-900/40 transition-colors text-lg">
+            Try See Guru — $5/hr
+          </a>
+          <a href="/reviews/italki/" class="inline-block border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-slate-900/60/10 transition-colors text-lg">
+            Explore iTalki Tutors
+          </a>
+        </div>
+      </div>
+      <p class="text-xs text-white/80 mt-4">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+
+      <!-- Affiliate Disclosure -->
+      <p class="text-xs text-gray-400 mt-8"><em>Affiliate disclosure: We earn a commission when you sign up through links marked with an asterisk. This does not affect our editorial reviews. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure.</a></em></p>
+    </article>
+  </main>
+
+  <Footer />
+</Base>
