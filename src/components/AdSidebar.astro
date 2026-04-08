@@ -1,0 +1,27 @@
+---
+// Google AdSense — Sidebar 300x250 Rectangle Ad Unit
+// Publisher ID: ca-pub-7792548915836467
+// Usage: <AdSidebar slot="1234567893" />
+// After AdSense approval: replace slot prop with real ad unit ID from AdSense dashboard
+
+interface Props {
+  slot?: string;
+}
+
+const { slot = "SIDEBAR_AD_SLOT" } = Astro.props;
+---
+
+<div class="ad-container ad-sidebar my-4 text-center">
+  <ins class="adsbygoogle"
+       style="display:inline-block; width:300px; height:250px;"
+       data-ad-client="ca-pub-7792548915836467"
+       data-ad-slot={slot}
+       data-ad-format="auto"
+       data-full-width-responsive="false">
+  </ins>
+  <p class="ad-label text-xs text-gray-400 mt-1">Advertisement</p>
+</div>
+
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
