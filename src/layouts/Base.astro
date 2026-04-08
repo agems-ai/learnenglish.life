@@ -150,5 +150,166 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
         document.head.appendChild(script);
       });
     </script>
+
+    <!-- See Guru Affiliate Click Tracker -->
+    <script>
+      (function() {
+        'use strict';
+        
+        // Wait for DOM and gtag to be ready
+        function initTracker() {
+          // Pattern 1: Direct See Guru affiliate links
+          var affiliateLinks = document.querySelectorAll('a[href*="see.guru/?aff="], a[href*="see.guru%3Faff="]');
+          
+          // Pattern 2: Redirect page links
+          var redirectLinks = document.querySelectorAll('a[href*="/go/see-guru"]');
+          
+          // Determine link type based on context
+          function getLinkType(link) {
+            var parent = link.closest('section, article, div');
+            var id = parent ? (parent.id || '') : '';
+            var classes = parent ? (parent.className || '') : '';
+            
+            // Hero sections
+            if (id.includes('hero') || classes.includes('hero') || classes.includes('HeroCTA')) {
+              return 'hero';
+            }
+            // Sticky CTAs
+            if (id.includes('sticky') || classes.includes('sticky')) {
+              return 'sticky';
+            }
+            // Comparison/table contexts
+            if (id.includes('comparison') || classes.includes('comparison') || 
+                classes.includes('table') || classes.includes('Table')) {
+              return 'comparison';
+            }
+            // Inline text links
+            if (link.parentElement && link.parentElement.tagName === 'P') {
+              return 'inline';
+            }
+            // Default to CTA
+            return 'cta';
+          }
+          
+          // Track click and navigate
+          function trackAndNavigate(link, e) {
+            var linkType = getLinkType(link);
+            var href = link.getAttribute('href');
+            
+            // Fire GA4 affiliate_click event
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'affiliate_click', {
+                partner: 'See Guru',
+                link_type: linkType,
+                destination_url: href,
+                affiliate_id: 'SG-SUAG151'
+              });
+            }
+            
+            // Also push to dataLayer for GTM
+            if (typeof window.dataLayer !== 'undefined') {
+              window.dataLayer.push({
+                event: 'affiliate_click',
+                affiliate_partner: 'See Guru',
+                link_type: linkType,
+                destination_url: href
+              });
+            }
+          }
+          
+          // Attach to direct affiliate links
+          affiliateLinks.forEach(function(link) {
+            if (!link.hasAttribute('data-see-guru-tracked')) {
+              link.setAttribute('data-see-guru-tracked', 'true');
+              link.addEventListener('click', function(e) {
+                trackAndNavigate(link, e);
+              }, { passive: true });
+            }
+          });
+          
+          // Attach to redirect page links
+          redirectLinks.forEach(function(link) {
+            if (!link.hasAttribute('data-see-guru-tracked')) {
+              link.setAttribute('data-see-guru-tracked', 'true');
+              link.addEventListener('click', function(e) {
+                trackAndNavigate(link, e);
+              }, { passive: true });
+            }
+          });
+        }
+        
+        // Run on DOM ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initTracker);
+        } else {
+          initTracker();
+        }
+      })();
+    </script>
+
+  </body>
+</html>
+
+    <!-- Affiliate Click Tracking for GA4 -->
+    <script is:inline>
+      function trackAffiliateClick(partner, linkType, destination) {
+        if (typeof window.gtag !== 'function') return;
+        
+        var affiliateUrl = destination || 'https://see.guru/?aff=SG-SUAG151';
+        var pageLocation = window.location.pathname || 'unknown';
+        
+        // Fire GA4 custom event
+        window.gtag('event', 'affiliate_click', {
+          partner: partner,
+          link_type: linkType,
+          destination_url: affiliateUrl,
+          affiliate_id: 'SG-SUAG151',
+          source_page: pageLocation,
+          transport_type: 'beacon'
+        });
+        
+        // Also push to dataLayer for GA4 standard tracking
+        if (typeof window.dataLayer !== 'undefined') {
+          window.dataLayer.push({
+            event: 'affiliate_click',
+            affiliate_partner: partner,
+            affiliate_link_type: linkType,
+            affiliate_destination: affiliateUrl,
+            affiliate_source: pageLocation
+          });
+        }
+        
+        console.log('[Affiliate Tracking] ' + partner + ' - ' + linkType + ' - ' + pageLocation);
+      }
+      
+      // Auto-attach tracking to See Guru CTA links
+      document.addEventListener('DOMContentLoaded', function() {
+        var seeGuruLinks = document.querySelectorAll('a[href*="see.guru"]');
+        seeGuruLinks.forEach(function(link) {
+          // Skip internal links and redirect pages
+          if (link.href.includes('/go/') || link.href.includes('/reviews/see-guru') || link.href.includes('/compare/see-guru')) {
+            return;
+          }
+          
+          // Determine link type from surrounding context
+          var linkType = 'cta_button';
+          var parent = link.closest('section') || link.closest('div');
+          if (parent) {
+            var parentClass = parent.className || '';
+            if (parentClass.includes('verdict')) linkType = 'verdict_cta';
+            else if (parentClass.includes('sidebar')) linkType = 'sidebar_cta';
+            else if (parentClass.includes('hero')) linkType = 'hero_cta';
+            else if (parentClass.includes('top-pick')) linkType = 'top_pick_cta';
+          }
+          
+          // Add onclick if not already present
+          if (!link.hasAttribute('onclick')) {
+            link.addEventListener('click', function() {
+              trackAffiliateClick('See Guru', linkType, link.href);
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
