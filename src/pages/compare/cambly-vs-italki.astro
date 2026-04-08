@@ -107,10 +107,51 @@ const articleSchema = {
   "datePublished": "2026-01-15",
   "dateModified": "2026-01-15"
 };
+// FAQPage JSON-LD Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Cambly or iTalki better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iTalki may be better for beginners who want structured guidance. Look for tutors with TEFL/CELTA certifications who specialize in teaching beginners. Cambly is better suited for intermediate learners who want to practice existing skills."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use both Cambly and iTalki together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Many learners use both strategically. Cambly for daily casual practice and iTalki for focused lessons on specific skills or exam prep. This combination often produces the best results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Cambly cost compared to iTalki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambly costs $6.50-80 per week for unlimited access. iTalki starts at $5 per lesson (30-60 min), roughly $5-40/hour. For heavy users, Cambly's unlimited model often works out cheaper per hour of practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform has better native speakers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both platforms have excellent native speaker selections. Cambly tutors are primarily from the US, UK, and Australia. iTalki offers more variety including tutors from Canada, Ireland, and other English-speaking regions."
+      }
+    }
+  ]
+};
+
 ---
 
 <Base title="Cambly vs iTalki: Which Online Tutoring Platform Is Better in 2026?" description="Comprehensive comparison of Cambly and iTalki. Compare pricing, features, tutor quality, and find the best platform for your English learning goals.">
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
   <Header />
   

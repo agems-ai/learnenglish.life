@@ -27,9 +27,32 @@ const features = [
     icon: "🎮"
   }
 ];
+
+// WebSite JSON-LD Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LearnEnglish.Life",
+  "url": "https://learnenglish.life",
+  "description": "Honest reviews, side-by-side comparisons and free practice tools to help you find the best way to learn English online.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://learnenglish.life/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life",
+    "url": "https://learnenglish.life"
+  }
+};
 ---
 
 <Base title="LearnEnglish.Life - Your Guide to the Best English Learning Resources" description="Honest reviews, side-by-side comparisons and free practice tools to help you find the best way to learn English online - tutors, courses and apps tested for you.">
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <Header />
   
   <!-- Hero Section -->

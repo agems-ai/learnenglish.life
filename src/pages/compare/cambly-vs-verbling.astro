@@ -1,9 +1,66 @@
 ---
+
+// SEO Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cambly vs Verbling: Which Tutoring Platform Is Better?",
+  "description": "Compare Cambly and Verbling on price, features, tutor quality, and learning experience. Find out which platform is better for your English learning goals.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-01-20",
+  "dateModified": "2026-01-20"
+};
+
+// FAQPage JSON-LD Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Cambly or Verbling better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambly may be better for complete beginners who want low-pressure, casual conversation practice. Verbling suits learners who prefer structured lessons from the start with professional teachers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Cambly cost vs Verbling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambly costs approximately $15 per month on an annual plan for unlimited conversations. Verbling charges $15-40 per individual lesson. Cambly offers significantly better value for frequent practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do both platforms offer free trials?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambly offers a free trial with limited minutes. Verbling varies by tutor — some offer discounted first lessons. Both allow you to test the platform before committing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform has more qualified teachers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verbling generally attracts more experienced, certified teachers. Cambly tutors are primarily native speakers who are good conversationalists but may lack formal teaching qualifications."
+      }
+    }
+  ]
+};
+
 import Base from "../../layouts/Base.astro"
 import PlatformRatings from '../../components/PlatformRatings.astro';
 import { platformRatings } from '../../data/platform-ratings';
 ---
 <Base title="Cambly vs Verbling: Which Tutoring Platform Is Better?" description="Compare Cambly and Verbling on price, features, tutor quality, and learning experience. Find out which platform is better for your English learning goals.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <article class="max-w-3xl mx-auto px-4 py-12">
 
     <div class="mb-8">
