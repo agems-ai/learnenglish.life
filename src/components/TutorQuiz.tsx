@@ -64,7 +64,7 @@ const quizQuestions = [
   {
     id: 'level',
     question: 'What is your current English level?',
-    subtitle: 'Be honest — this helps us recommend the right fit.',
+    subtitle: 'Be honest, this helps us recommend the right fit.',
     type: 'single',
     options: [
       { label: "I'm a complete beginner", value: 'beginner', score: { babbel: 2, cambly: 1, italki: 2, seeGuru: 1, preply: 1 } },
@@ -103,7 +103,7 @@ const quizQuestions = [
     options: [
       { label: 'Just 15-30 minutes a few times a week', value: 'casual', score: { babbel: 3, cambly: 2, italki: 1, seeGuru: 0, preply: 0 } },
       { label: 'About 1-3 hours per week', value: 'moderate', score: { italki: 3, seeGuru: 2, preply: 2, cambly: 1, babbel: 1 } },
-      { label: '3+ hours — I am serious about progress', value: 'serious', score: { seeGuru: 3, preply: 3, italki: 2, cambly: 1, babbel: 0 } }
+      { label: '3+ hours, I am serious about progress', value: 'serious', score: { seeGuru: 3, preply: 3, italki: 2, cambly: 1, babbel: 0 } }
     ]
   },
   {

@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 const SITE_URL = 'https://learnenglish.life';
 
-// Sitemap — Updated: 2026-04-09
+// Sitemap, Updated: 2026-04-09
 const staticPages = [
   // Main pages
   { url: '', priority: '1.0', changefreq: 'daily' },
