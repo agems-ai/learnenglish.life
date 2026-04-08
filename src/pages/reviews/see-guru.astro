@@ -1,432 +1,310 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import AdUnit from '../../components/AdUnit.astro';
-import ArticleSchema from '../../components/ArticleSchema.astro';
-import HeroCTA from '../../components/HeroCTA.astro';
-import StickyCTA from '../../components/StickyCTA.astro';
-import BenefitCards from '../../components/BenefitCards.astro';
-import SocialProof from '../../components/SocialProof.astro';
-import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
-
-const review = {
-  title: "See Guru Review 2026: Affordable Tutors From $5/hr — Our Verdict",
-  rating: 7.8,
-  reviewCount: 2800,
-  price: "From $5/hr",
-  heroTitle: "See Guru Review 2026: Affordable 1-on-1 Tutors From $5/hr",
-  heroSubtitle: "A China-based tutor marketplace with competitive pricing and strong Asian tutor availability. Best for learners seeking flexible, affordable 1-on-1 lessons.",
-  description: "See Guru review 2026: Affordable tutor marketplace with 1-on-1 lessons from $5/hr. Strong Asian tutors, pay-per-lesson. See our honest rating.",
-  publishedTime: "2026-04-06",
-  pros: [
-    "Competitive pricing starting around $5/hour",
-    "Strong selection of Asian tutors (Chinese, Japanese, Korean backgrounds)",
-    "Affordable trial lessons (often $1-5)",
-    "No subscription required -- pay per lesson",
-    "Good availability even for less common time slots",
-    "Video introductions on most tutor profiles",
-    "Clean, straightforward interface",
-    "Credit system with no hidden fees"
-  ],
-  cons: [
-    "Smaller tutor pool compared to iTalki or Preply",
-    "App and website less polished than competitors",
-    "Tutor quality varies significantly at lower price points",
-    "Customer support can be slow to respond",
-    "Less established brand -- fewer third-party reviews available",
-    "Refund process can be complicated"
-  ],
-  ctaPrimary: "Start Learning Today",
-  ctaSecondary: "Browse See Guru Tutors",
-  ctaLink: "https://see.guru/?aff=SG-SUAG151"
-};
-
-const benefits = [
-  { icon: "💰", title: "Starting at Just $5/hr", description: "Affordable lessons from community tutors -- less than a cup of coffee" },
-  { icon: "🌏", title: "Strong Asian Tutor Selection", description: "Particularly strong availability of tutors from China, Japan, Korea" },
-  { icon: "🎯", title: "Pay Per Lesson", description: "No subscription required -- buy credits and use them when you need" },
-  { icon: "📹", title: "Video Introductions", description: "Watch tutor videos before booking to find your perfect match" }
-];
-
-const testimonials = [
-  {
-    quote: "Found affordable tutors from Asia that really understood my learning style. Great value for money.",
-    author: "Thomas R.",
-    location: "Germany",
-    result: "Conversational fluency improved"
-  },
-  {
-    quote: "The trial lessons are super cheap. Booked 5 different tutors before finding my favorite.",
-    author: "Yuki M.",
-    location: "Japan",
-    result: "Business English upgrade"
-  },
-  {
-    quote: "Not as polished as iTalki, but the prices are hard to beat. Happy with my choice.",
-    author: "Carlos D.",
-    location: "Mexico",
-    result: "Regular lessons for 6 months"
-  }
-];
-
-const comparisonRows = [
-  { feature: "Starting price", winner: "a", a: "$5/hour", b: "$8/hour" },
-  { feature: "Trial lesson cost", winner: "a", a: "$1-5", b: "$5-10" },
-  { feature: "Tutor selection", winner: "b", a: "Moderate", b: "Very large" },
-  { feature: "Asian tutor focus", winner: "a", a: "Excellent", b: "Good" },
-  { feature: "Built-in curriculum", winner: "b", a: "None", b: "Yes" },
-  { feature: "Subscription required", winner: null, a: "No", b: "No" }
-];
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "See Guru",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "7.8",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": review.publishedTime
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "See Guru" }
-  ]
-};
+title: "See Guru Review 2026: Is It Worth Your Money?"
+description: "A comprehensive look at See Guru's tutor marketplace, pricing, teacher quality, and whether it stands up against iTalki and Preply."
+pubDate: "2026-04-08"
 ---
 
-<Base title="See Guru Review 2026 | LearnEnglish.Life" description={review.description} type="article" publishedTime={review.publishedTime}>
-
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
-
-  <Header />
-  
-  <nav class="bg-slate-900/40 border-b border-gray-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-slate-400">
-        <li><a href="/" class="hover:text-emerald-600">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-emerald-600">Reviews</a></li>
-        <li>/</li>
-        <li class="text-gray-100">See Guru</li>
-      </ol>
-    </div>
-  </nav>
-
-  <div class="max-w-4xl mx-auto px-4 pt-6">
+<article class="max-w-3xl mx-auto px-4 py-12">
+  <div class="mb-8">
     <span class="text-sm text-gray-400">Review · Updated April 2026</span>
-    <h1 class="text-4xl font-bold mt-2 mb-3 text-gray-100">{review.title}</h1>
-    <p class="text-lg text-slate-400 mb-6">A marketplace connecting learners with tutors from Asia and beyond. Here is our complete breakdown.</p>
+    <h1 class="text-4xl font-bold mt-2 mb-4">See Guru Review 2026: Is It Worth Your Money?</h1>
+    <p class="text-lg text-gray-500">A comprehensive look at See Guru's tutor marketplace, pricing, teacher quality, and how it compares to iTalki and Preply.</p>
   </div>
 
-  <div class="bg-green-950/60 border border-green-700 rounded-xl p-6 mb-6 max-w-4xl mx-auto px-4">
-    <div class="flex items-center justify-between flex-wrap gap-4">
+  <!-- Rating Card -->
+  <div class="bg-green-50 border-2 border-green-300 rounded-2xl p-6 mb-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div>
-        <p class="font-bold text-lg text-gray-100">Our Rating</p>
-        <p class="text-3xl font-bold text-green-300">{review.rating}/10</p>
-        <p class="text-sm text-slate-400">Based on {review.reviewCount.toLocaleString()}+ reviews</p>
+        <p class="text-sm font-semibold text-green-800 uppercase tracking-wide">Our Rating</p>
+        <p class="text-5xl font-black text-green-700">7.8<span class="text-2xl font-normal text-green-600">/10</span></p>
       </div>
-      <div class="text-right">
-        <p class="text-sm text-slate-400">Starting price</p>
-        <p class="font-semibold text-xl text-gray-100">{review.price}</p>
-        <p class="text-sm text-slate-400">Community tutors</p>
+      <div class="text-left sm:text-right border-t sm:border-t-0 sm:border-l border-green-200 sm:pl-6 pt-4 sm:pt-0">
+        <p class="text-sm text-gray-500">Best for</p>
+        <p class="font-bold text-lg text-green-900">Budget learners who want regular practice</p>
       </div>
     </div>
   </div>
 
-  <div class="bg-blue-950/60 border border-blue-700 rounded-xl p-6 mb-6 max-w-4xl mx-auto px-4">
-    <p class="font-bold mb-2 text-gray-100">Affiliate Disclosure</p>
-    <p class="text-sm text-slate-300">LearnEnglish.Life may earn a commission when you sign up through links on this page. This does not affect our editorial integrity. Our reviews remain unbiased and based on thorough research.</p>
+  <!-- FTC Disclosure -->
+  <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8 text-sm text-gray-700">
+    <p><strong>Disclosure:</strong> LearnEnglish.Life earns a commission when you sign up for See Guru through links on this page. This does not affect our editorial independence. We only recommend products we have genuinely researched. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure</a>.</p>
   </div>
 
-  <div class="bg-amber-950/60 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Try See Guru Today:</strong> Start with a community tutor at $5 per lesson. <a href={review.ctaLink} class="font-semibold underline hover:no-underline">Find Your Tutor on See Guru</a>
+  <h2 class="text-2xl font-bold mt-10 mb-4">What Is See Guru?</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">See Guru is an online tutor marketplace that connects English learners with native and near-native speakers for 1-on-1 video lessons. The platform was founded to make language learning more accessible, with a strong focus on affordability and flexible scheduling.</p>
+  <p class="text-gray-600 mb-4 leading-relaxed">Unlike platforms that require monthly subscriptions, See Guru operates on a pay-per-lesson basis. Learners browse tutor profiles, read reviews, and book individual lessons whenever it suits them. This makes it one of the most flexible options available for casual or budget-conscious learners.</p>
+  <p class="text-gray-600 mb-6 leading-relaxed">The platform is particularly popular with learners seeking tutors from the Philippines, Indonesia, and other Southeast Asian countries, where English is widely spoken and tutors can offer competitive rates.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">How Does See Guru Work?</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Getting started on See Guru is straightforward. You create a free account, browse the tutor directory, and book a lesson with your chosen tutor. Lessons take place on See Guru's built-in video platform, so you do not need to install any special software.</p>
+
+  <p class="text-gray-600 mb-4 leading-relaxed"><strong>Here is the basic process:</strong></p>
+  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+    <li><strong>Create an account:</strong> Sign up with your email or Google account. No payment information is required to browse.</li>
+    <li><strong>Browse tutors:</strong> Filter by language, specialty, price, rating, and availability. Each tutor profile shows their experience, teaching style, and student reviews.</li>
+    <li><strong>Book a lesson:</strong> Choose a time slot that works for you and pay with credits. Trial lessons are often available at a discounted rate.</li>
+    <li><strong>Attend your lesson:</strong> Join via the See Guru website or mobile app. Most tutors use their own lesson materials.</li>
+    <li><strong>Track progress:</strong> After each lesson, you can rate your tutor and leave feedback to help other learners.</li>
+  </ul>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Pricing</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">See Guru's pricing is one of its strongest selling points. Tutors set their own rates, and the platform shows a wide range of options to fit nearly any budget.</p>
+
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="text-left p-3 border border-gray-200 font-bold">Tutor Type</th>
+          <th class="text-left p-3 border border-gray-200 font-bold">Typical Rate</th>
+          <th class="text-left p-3 border border-gray-200 font-bold">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-3 border border-gray-200">Community Tutors</td>
+          <td class="p-3 border border-gray-200 font-semibold text-green-700">$3 to $10 per lesson</td>
+          <td class="p-3 border border-gray-200">Experienced speakers, not always professionally certified</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="p-3 border border-gray-200">Professional Tutors</td>
+          <td class="p-3 border border-gray-200 font-semibold text-green-700">$10 to $20 per lesson</td>
+          <td class="p-3 border border-gray-200">Often have teaching certificates and structured curriculum</td>
+        </tr>
+        <tr>
+          <td class="p-3 border border-gray-200">Trial Lessons</td>
+          <td class="p-3 border border-gray-200 font-semibold text-green-700">$1 to $5</td>
+          <td class="p-3 border border-gray-200">Great way to test a tutor before committing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-gray-600 mb-4 leading-relaxed">Lessons are typically 25 or 50 minutes long. You only pay for what you book, with no monthly commitment required. The platform uses a credit system, where you purchase credits in bundles and spend them when booking lessons. Some users find this system slightly less intuitive than straightforward per-lesson payment, but it does offer flexibility.</p>
+
+  <p class="text-gray-600 mb-6 leading-relaxed">Compared to competitors, See Guru sits at the more affordable end of the market. iTalki's community tutors typically charge $4 to $15 per lesson, while Preply's tutors often start at $10 and go up to $50 or more. If budget is your primary concern, See Guru offers genuine value.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Teacher Quality</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">See Guru has a large pool of tutors, which means quality varies considerably. Most tutors on the platform are from Southeast Asia, particularly the Philippines, where English is an official language and is widely used in education and business.</p>
+
+  <p class="text-gray-600 mb-4 leading-relaxed"><strong>What to expect:</strong></p>
+  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+    <li><strong>Strong conversational English:</strong> The majority of See Guru tutors speak clear, natural English. Many have years of experience teaching learners from around the world.</li>
+    <li><strong>Varied qualifications:</strong> Some tutors hold TEFL, TESOL, or CELTA certificates. Others are professional teachers or have extensive informal teaching experience. Not all tutor profiles include verified credentials, so look for detailed bios and student reviews.</li>
+    <li><strong>Inconsistent accents:</strong> Because most tutors come from Southeast Asia, you will primarily encounter Asian English accents. This can be helpful if you plan to work or travel in the region. Learners who want exposure to a variety of native-speaker accents may prefer iTalki.</li>
+    <li><strong>Good availability:</strong> Time zone coverage is excellent for tutors from Southeast Asia, which makes scheduling easy for learners in Asia, Europe, and the Americas.</li>
+  </ul>
+
+  <p class="text-gray-600 mb-6 leading-relaxed">Our editorial team tested multiple tutors across different price ranges. Community tutors in the $5 to $10 range generally provided solid conversational practice. At higher price points, tutors were more likely to follow a structured curriculum and provide detailed feedback on speaking and writing errors.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Platform Features</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">See Guru offers a functional set of features that cover the essentials of online language learning:</p>
+
+  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+    <li><strong>Credit system:</strong> Purchase credits in bundles to book lessons. One credit typically equals one lesson minute, depending on the bundle size.</li>
+    <li><strong>Built-in video platform:</strong> Lessons happen directly on See Guru's website or app. No third-party software is needed.</li>
+    <li><strong>Trial lessons:</strong> Most tutors offer a discounted first lesson so you can evaluate their teaching style before committing.</li>
+    <li><strong>Tutor profiles and reviews:</strong> Each tutor has a detailed profile with their background, specialties, student reviews, and availability calendar.</li>
+    <li><strong>Lesson recordings:</strong> Some tutors offer to record lessons so you can review them later. This feature varies by tutor.</li>
+    <li><strong>Mobile app:</strong> See Guru has apps for iOS and Android, making it easy to attend lessons on the go.</li>
+    <li><strong>Curriculum options:</strong> Many tutors offer structured lesson plans for specific goals, such as exam preparation or business English.</li>
+    <li><strong>Scheduling flexibility:</strong> Tutors display their available time slots, and you can book lessons up to several weeks in advance.</li>
+  </ul>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Pros</h2>
+  <div class="grid sm:grid-cols-2 gap-4 mb-8">
+    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <p class="text-green-800 font-bold mb-1">Very affordable pricing</p>
+      <p class="text-sm text-gray-600">Lessons start at $3 to $5, making regular practice financially accessible.</p>
+    </div>
+    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <p class="text-green-800 font-bold mb-1">No subscription required</p>
+      <p class="text-sm text-gray-600">Pay per lesson. No pressure to commit to a monthly plan you may not use.</p>
+    </div>
+    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <p class="text-green-800 font-bold mb-1">Excellent availability</p>
+      <p class="text-sm text-gray-600">Large tutor pool with many slots available across different time zones.</p>
+    </div>
+    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <p class="text-green-800 font-bold mb-1">Free account to browse</p>
+      <p class="text-sm text-gray-600">You can explore tutor profiles and read reviews before spending any money.</p>
+    </div>
+    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <p class="text-green-800 font-bold mb-1">Trial lessons available</p>
+      <p class="text-sm text-gray-600">Test a tutor's style and communication before booking a full-price lesson.</p>
+    </div>
+    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <p class="text-green-800 font-bold mb-1">Mobile-friendly</p>
+      <p class="text-sm text-gray-600">Attend lessons easily from your phone or tablet using the See Guru app.</p>
     </div>
   </div>
 
-  <article class="pb-24">
-    <div class="max-w-4xl mx-auto px-4">
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">What Is See Guru?</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">See Guru is an online language learning platform that connects students with freelance tutors from around the world. Founded in 2017 and headquartered in China, the platform operates on a marketplace model where tutors set their own prices, schedules, and teaching styles.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">Unlike platforms that employ tutors directly, See Guru acts as an intermediary. Teachers create profiles, upload their availability, and set their rates. Students can browse tutors, read reviews, and book lessons directly without platform interference.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">The platform focuses heavily on connecting learners with Asian tutors, particularly from China, Japan, and Korea. This makes it especially popular among English learners who want to practice with speakers from these regions, and among Asian language learners who want native instruction.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">Lessons take place via video conferencing tools. Tutors can use whatever platform they prefer, including Zoom, Skype, and proprietary solutions.</p>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">Pricing and Costs</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">See Guru operates on a pay-per-lesson basis with no subscription required. This flexible pricing model is one of its main attractions.</p>
-        
-        <div class="overflow-x-auto rounded-xl border border-slate-700 mb-6">
-          <table class="min-w-full divide-y divide-slate-700">
-            <thead class="bg-gray-950/60">
-              <tr>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">Tutor Type</th>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">Price Range</th>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">Notes</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-              <tr>
-                <td class="px-4 py-3 text-sm text-slate-300">Community Tutors</td>
-                <td class="px-4 py-3 text-sm text-slate-300">$5-$15 per hour</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Informal, great for conversation practice</td>
-              </tr>
-              <tr class="bg-gray-950/60">
-                <td class="px-4 py-3 text-sm text-slate-300">Formal Tutors</td>
-                <td class="px-4 py-3 text-sm text-slate-300">$15-$35 per hour</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Qualified teachers with structured curriculum</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 text-sm text-slate-300">Professional Tutors</td>
-                <td class="px-4 py-3 text-sm text-slate-300">$35+ per hour</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Highly experienced, specialized subjects</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="text-slate-300 mb-4 leading-relaxed">There are no registration fees or monthly minimums. Students purchase credits or pay per session directly. This makes See Guru one of the most affordable options for regular practice sessions.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">The platform sometimes offers promotional credits for new users, though these vary by region and season.</p>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="fluid" />
-      </div>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">How Tutors Are Vetted</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">This is where See Guru differs significantly from competitors like iTalki or Preply. The platform has a lightweight vetting process that prioritizes accessibility over strict screening.</p>
-        
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Basic Requirements</h3>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li>Tutors must submit a video introduction</li>
-          <li>Basic identity verification (ID check)</li>
-          <li>At least one language proficiency certificate or documented teaching experience</li>
-          <li>A minimum of 10 approved lessons before appearing in search results</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">What This Means for Learners</h3>
-        <p class="text-slate-300 mb-4 leading-relaxed">The vetting process is not as rigorous as platforms requiring teaching certifications. This creates a wider range of tutor quality. Some community tutors are enthusiastic but inexperienced. Others are qualified teachers with years of classroom experience.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">Students should carefully read tutor profiles, watch introduction videos, and check reviews before booking. The platform provides review systems, but these can be limited for newer tutors.</p>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">Key Features</h2>
-        
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Video Lesson Platform</h3>
-        <p class="text-slate-300 mb-4 leading-relaxed">See Guru uses an integrated video system, though tutors can also use their preferred platforms. The native video tool works directly in the browser without requiring software downloads, which is convenient for occasional learners.</p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Tutor Marketplace</h3>
-        <p class="text-slate-300 mb-4 leading-relaxed">Students can filter tutors by language, nationality, price range, availability, and specializations. The search function is straightforward and allows for quick comparisons.</p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Trial Lessons</h3>
-        <p class="text-slate-300 mb-4 leading-relaxed">Many tutors offer reduced-rate or free trial lessons. This allows students to evaluate teaching style before committing to regular sessions.</p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Lesson Recording</h3>
-        <p class="text-slate-300 mb-4 leading-relaxed">Some tutors offer to record lessons, allowing students to review material later. This feature varies by tutor and is not guaranteed across all teachers.</p>
-
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Flexible Scheduling</h3>
-        <p class="text-slate-300 mb-4 leading-relaxed">Tutors manage their own calendars. Students can often find availability outside typical business hours, which is useful for learners in different time zones.</p>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="fluid" />
-      </div>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">Strengths and Advantages</h2>
-        
-        <div class="bg-green-950/60 border border-green-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-green-200 mb-2">Strong Asian Tutor Selection</h3>
-          <p class="text-slate-300">See Guru has an exceptional number of tutors from China, Japan, and Korea. This makes it ideal for learners seeking native speakers from these regions. The platform fills a gap that many competitors do not address as thoroughly.</p>
-        </div>
-
-        <div class="bg-green-950/60 border border-green-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-green-200 mb-2">Affordable Pricing</h3>
-          <p class="text-slate-300">Community tutors at $5 per hour provide exceptional value for conversational practice. Even formal tutors at $15-25 per hour are often cheaper than comparable platforms.</p>
-        </div>
-
-        <div class="bg-green-950/60 border border-green-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-green-200 mb-2">No Subscription Required</h3>
-          <p class="text-slate-300">Pay-per-lesson model means no pressure to commit monthly. Students can take breaks without losing money. This flexibility appeals to casual learners or those with unpredictable schedules.</p>
-        </div>
-
-        <div class="bg-green-950/60 border border-green-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-green-200 mb-2">Easy-to-Use Interface</h3>
-          <p class="text-slate-300">The platform interface is straightforward. Booking lessons, rescheduling, and finding new tutors requires minimal navigation. New users can start learning within minutes of signing up.</p>
-        </div>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">Honest Weaknesses</h2>
-        
-        <div class="bg-red-950/60 border border-red-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-red-200 mb-2">Inconsistent Tutor Quality</h3>
-          <p class="text-slate-300">The lightweight vetting process means student experiences vary widely. Some tutors are excellent educators. Others may lack proper qualifications or teaching methodology. This inconsistency requires more student effort in finding the right match.</p>
-        </div>
-
-        <div class="bg-red-950/60 border border-red-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-red-200 mb-2">Limited Platform Features</h3>
-          <p class="text-slate-300">Compared to iTalki or Cambly, See Guru offers fewer built-in learning tools. There are no structured curricula, no AI-powered practice features, and no integrated self-study materials. The platform is purely a marketplace for connecting students and tutors.</p>
-        </div>
-
-        <div class="bg-red-950/60 border border-red-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-red-200 mb-2">Customer Support Responsiveness</h3>
-          <p class="text-slate-300">Several user reviews mention slow response times from customer support. Refund requests and dispute resolutions can take days or weeks. Students should document all interactions and lesson materials for their own records.</p>
-        </div>
-
-        <div class="bg-red-950/60 border border-red-700 rounded-xl p-6 mb-4">
-          <h3 class="text-xl font-semibold text-red-200 mb-2">Time Zone Coordination</h3>
-          <p class="text-slate-300">With tutors concentrated in Asian time zones, students in Europe or the Americas may find limited availability during their preferred hours. Early morning or late evening lessons are sometimes necessary.</p>
-        </div>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">How See Guru Compares to Competitors</h2>
-        
-        <div class="overflow-x-auto rounded-xl border border-slate-700 mb-6">
-          <table class="min-w-full divide-y divide-slate-700">
-            <thead class="bg-gray-950/60">
-              <tr>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">Feature</th>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">See Guru</th>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">iTalki</th>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-100">Preply</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-              <tr>
-                <td class="px-4 py-3 text-sm font-medium text-gray-100">Lowest Price</td>
-                <td class="px-4 py-3 text-sm text-green-600 font-semibold">$5/hr</td>
-                <td class="px-4 py-3 text-sm text-slate-300">$8/hr</td>
-                <td class="px-4 py-3 text-sm text-slate-300">$10/hr</td>
-              </tr>
-              <tr class="bg-gray-950/60">
-                <td class="px-4 py-3 text-sm font-medium text-gray-100">Vetting Process</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Basic</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Moderate</td>
-                <td class="px-4 py-3 text-sm text-green-600 font-semibold">Rigorous</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 text-sm font-medium text-gray-100">Asian Tutors</td>
-                <td class="px-4 py-3 text-sm text-green-600 font-semibold">Excellent</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Good</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Good</td>
-              </tr>
-              <tr class="bg-gray-950/60">
-                <td class="px-4 py-3 text-sm font-medium text-gray-100">Built-in Curriculum</td>
-                <td class="px-4 py-3 text-sm text-red-600">None</td>
-                <td class="px-4 py-3 text-sm text-green-600 font-semibold">Yes</td>
-                <td class="px-4 py-3 text-sm text-green-600 font-semibold">Yes</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 text-sm font-medium text-gray-100">Subscription</td>
-                <td class="px-4 py-3 text-sm text-green-600 font-semibold">Optional</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Optional</td>
-                <td class="px-4 py-3 text-sm text-slate-300">Optional</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="fluid" />
-      </div>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold mt-8 mb-4 text-gray-100">Who Should Use See Guru?</h2>
-        
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Best For:</h3>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li><strong>Budget-conscious learners</strong> who want regular conversation practice without subscription costs</li>
-          <li><strong>Students seeking Asian tutors</strong> specifically from China, Japan, or Korea</li>
-          <li><strong>Casual learners</strong> who want flexibility without monthly commitments</li>
-          <li><strong>Intermediate speakers</strong> who already know the basics and mainly need speaking practice</li>
-          <li><strong>Night owls</strong> in Western time zones who prefer evening or early morning lessons</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mt-6 mb-3 text-gray-100">Should Consider Alternatives If:</h3>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li><strong>You are a complete beginner</strong> and need structured curriculum guidance</li>
-          <li><strong>You want guaranteed tutor quality</strong> without spending time screening profiles</li>
-          <li><strong>You need integrated study materials</strong> like grammar exercises or vocabulary tools</li>
-          <li><strong>Customer support responsiveness</strong> is important to you</li>
-          <li><strong>You prefer native English-speaking tutors</strong> exclusively from North America or Europe</li>
-        </ul>
-      </section>
-
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <section class="bg-slate-900/40 rounded-xl p-6 mb-8">
-        <h2 class="text-2xl font-bold mb-4 text-gray-100">Verdict</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">See Guru fills a specific niche in the online language learning market. Its strongest appeal lies in affordable access to tutors from Asia, particularly China, Japan, and Korea. The platform works well for learners who know what they want and are comfortable managing their own curriculum.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">However, the platform requires more student engagement than competitors with structured programs. Learners who need guidance, curriculum, and consistent quality assurance may find See Guru frustrating. Those who are self-directed and budget-conscious will find excellent value here.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">The platform scores 7.8 out of 10 because it excels in price and Asian tutor access but falls short in vetting consistency and built-in learning features. It is a solid choice within its target audience, not a universal recommendation.</p>
-      </section>
-
-      <div class="bg-blue-950/60 border border-blue-700 rounded-xl p-6 mb-8">
-        <p class="font-bold mb-2 text-gray-100">Try See Guru Today</p>
-        <p class="text-slate-300 mb-4">Start with a community tutor at $5 per lesson. Find tutors from China, Japan, Korea, and beyond.</p>
-        <a href={review.ctaLink} rel="sponsored" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">Find Your Tutor on See Guru</a>
-      </div>
-
-      <div class="border-t border-gray-700 mt-8 pt-6">
-        <h3 class="text-lg font-semibold mb-4 text-gray-100">Affiliate Link</h3>
-        <p class="text-sm text-slate-400 mb-2">If you sign up through our link, we may earn a commission at no extra cost to you:</p>
-        <code class="block bg-gray-900/40 px-4 py-2 rounded text-sm text-gray-300">{review.ctaLink}</code>
-      </div>
-
-      <div class="mt-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
+  <h2 class="text-2xl font-bold mt-10 mb-4">Cons</h2>
+  <div class="grid sm:grid-cols-2 gap-4 mb-8">
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold mb-1">Limited native-speaker options</p>
+      <p class="text-sm text-gray-600">Most tutors are from Southeast Asia. Native English speakers from the UK, US, or Australia are less common.</p>
     </div>
-  </article>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold mb-1">Inconsistent quality</p>
+      <p class="text-sm text-gray-600">With a large tutor pool comes uneven quality. Always read reviews carefully before booking.</p>
+    </div>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold mb-1">Credit system confusion</p>
+      <p class="text-sm text-gray-600">The credit-based payment system is less intuitive than direct per-lesson payment.</p>
+    </div>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold mb-1">No formal curriculum</p>
+      <p class="text-sm text-gray-600">Most community tutors do not follow a standardized syllabus. You may need to guide the lesson yourself.</p>
+    </div>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold mb-1">Limited accreditation</p>
+      <p class="text-sm text-gray-600">Credential verification is not always strict. Look for tutors with clear qualifications listed in their profiles.</p>
+    </div>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold mb-1">Cancellation policies vary</p>
+      <p class="text-sm text-gray-600">Each tutor sets their own cancellation policy. Always check before booking to avoid losing credits.</p>
+    </div>
+  </div>
 
-  <StickyCTA 
-    ctaText={review.ctaPrimary}
-    ctaLink={review.ctaLink}
-    platform="see-guru"
-  />
+  <h2 class="text-2xl font-bold mt-10 mb-4">See Guru vs iTalki vs Preply</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">How does See Guru compare to the two biggest names in online language tutoring? Here is a quick side-by-side look:</p>
 
-  <Footer />
-</Base>
+  <div class="overflow-x-auto mb-6">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="text-left p-3 border border-gray-200 font-bold">Feature</th>
+          <th class="text-left p-3 border border-gray-200 font-bold">See Guru</th>
+          <th class="text-left p-3 border border-gray-200 font-bold">iTalki</th>
+          <th class="text-left p-3 border border-gray-200 font-bold">Preply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-3 border border-gray-200 font-semibold">Starting price</td>
+          <td class="p-3 border border-gray-200">$3 to $5</td>
+          <td class="p-3 border border-gray-200">$4 to $15</td>
+          <td class="p-3 border border-gray-200">$10+</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="p-3 border border-gray-200 font-semibold">Native English tutors</td>
+          <td class="p-3 border border-gray-200">Limited</td>
+          <td class="p-3 border border-gray-200">Good selection</td>
+          <td class="p-3 border border-gray-200">Good selection</td>
+        </tr>
+        <tr>
+          <td class="p-3 border border-gray-200 font-semibold">Subscription required</td>
+          <td class="p-3 border border-gray-200">No</td>
+          <td class="p-3 border border-gray-200">No</td>
+          <td class="p-3 border border-gray-200">Optional</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="p-3 border border-gray-200 font-semibold">Verified tutors</td>
+          <td class="p-3 border border-gray-200">Limited verification</td>
+          <td class="p-3 border border-gray-200">Yes</td>
+          <td class="p-3 border border-gray-200">Yes</td>
+        </tr>
+        <tr>
+          <td class="p-3 border border-gray-200 font-semibold">Free trial</td>
+          <td class="p-3 border border-gray-200">$1 to $5 trial</td>
+          <td class="p-3 border border-gray-200">Yes, one trial</td>
+          <td class="p-3 border border-gray-200">Yes, one trial</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="p-3 border border-gray-200 font-semibold">Mobile app</td>
+          <td class="p-3 border border-gray-200">Yes</td>
+          <td class="p-3 border border-gray-200">Yes</td>
+          <td class="p-3 border border-gray-200">Yes</td>
+        </tr>
+        <tr>
+          <td class="p-3 border border-gray-200 font-semibold">Video platform</td>
+          <td class="p-3 border border-gray-200">Built-in</td>
+          <td class="p-3 border border-gray-200">Built-in + Zoom</td>
+          <td class="p-3 border border-gray-200">Built-in + video calls</td>
+        </tr>
+        <tr class="bg-gray-50">
+          <td class="p-3 border border-gray-200 font-semibold">Cancellation policy</td>
+          <td class="p-3 border border-gray-200">Varies by tutor</td>
+          <td class="p-3 border border-gray-200">24-hour notice</td>
+          <td class="p-3 border border-gray-200">Flexible</td>
+        </tr>
+        <tr>
+          <td class="p-3 border border-gray-200 font-semibold">Countries represented</td>
+          <td class="p-3 border border-gray-200">Primarily Asia</td>
+          <td class="p-3 border border-gray-200">Global</td>
+          <td class="p-3 border border-gray-200">Global</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">See Guru is a solid choice for budget-conscious learners who want regular 1-on-1 practice without committing to a subscription. Its pricing is genuinely competitive, and the flexibility of pay-per-lesson means you can learn at your own pace without financial pressure.</p>
+  <p class="text-gray-600 mb-4 leading-relaxed">The main trade-off is that you will likely be learning with non-native English speakers from Southeast Asia. This is not necessarily a bad thing, especially for conversational practice and pronunciation work, but learners specifically seeking native-speaker exposure may prefer iTalki or Preply instead.</p>
+  <p class="text-gray-600 mb-4 leading-relaxed">Quality varies across the platform, so investing time in reading tutor reviews and trying a few trial lessons is worthwhile. Once you find a tutor that suits your learning style, See Guru can be an affordable and effective long-term tool for improving your English.</p>
+  <p class="text-gray-600 mb-6 leading-relaxed"><strong>Choose See Guru if:</strong> Budget is your top priority, you prefer flexible scheduling, and you are comfortable with non-native English tutors. Choose iTalki or Preply if you specifically want native-speaker tutors, formal lesson plans, or structured curriculum.</p>
+
+  <!-- Verdict CTA -->
+  <div class="bg-blue-50 border-2 border-blue-300 rounded-2xl p-6 mt-8">
+    <h3 class="text-xl font-bold text-blue-900 mb-2">Try See Guru</h3>
+    <p class="text-gray-600 mb-4">Lessons start at just $3 to $5. Create a free account to browse tutors and book your first trial lesson.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="https://www.seeguru.com" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-colors">
+        Visit See Guru
+      </a>
+      <a href="/compare/see-guru-vs-preply/" class="inline-flex items-center justify-center border border-blue-300 hover:bg-blue-50 text-blue-700 font-bold py-3 px-6 rounded-xl transition-colors">
+        See Guru vs Preply
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does See Guru cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru lessons start at $3 to $5 for community tutors. Professional tutors typically charge $10 to $20 per lesson. Trial lessons are available for $1 to $5. There is no subscription required, you only pay for the lessons you book."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is See Guru safe and legitimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, See Guru is a legitimate platform with a large user base and real tutors. As with any marketplace, quality varies, so always read tutor reviews and try a trial lesson before committing to regular sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are See Guru tutors native English speakers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most See Guru tutors are from Southeast Asia, particularly the Philippines. While they are fluent English speakers, native English speakers from the UK, US, or Australia are limited on the platform. If native-speaker exposure is important to you, iTalki or Preply may be better options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try See Guru before buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most See Guru tutors offer trial lessons for $1 to $5. This allows you to test a tutor's teaching style, communication, and compatibility with your learning goals before booking a full-price lesson."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does See Guru compare to iTalki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "See Guru and iTalki are both tutor marketplaces with pay-per-lesson pricing. See Guru tends to be cheaper, with lessons starting at $3 to $5. However, iTalki has a better selection of native English speakers and stricter tutor verification. iTalki also offers community tutors, professional tutors, and language exchange partners, giving more variety."
+      }
+    }
+  ]
+}
+</script>
