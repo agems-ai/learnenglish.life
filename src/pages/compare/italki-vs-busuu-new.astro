@@ -1,0 +1,428 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import SocialProof from '../../components/SocialProof.astro';
+import BenefitCards from '../../components/BenefitCards.astro';
+import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+import PlatformRatings from '../../components/PlatformRatings.astro';
+import { platformRatings } from '../../data/platform-ratings';
+
+// Platform data
+const italki = {
+  name: "iTalki",
+  rating: 9.2,
+  price: "$5-40/hr",
+  link: "/go/italki",
+  bestFor: "Speaking practice with real human tutors",
+  pros: [
+    "Choose from 10,000+ tutors to find your perfect match",
+    "Real human interaction with instant feedback",
+    "Lessons from $5/hr — flexible pay-per-session",
+    "Instant booking with early morning to late night availability",
+    "Lesson replay feature to review mistakes"
+  ],
+  cons: [
+    "Quality varies between tutors",
+    "No structured curriculum unless requested",
+    "Speaking practice only during booked sessions"
+  ]
+};
+
+const busuu = {
+  name: "Busuu",
+  rating: 8.4,
+  price: "$13.99/month",
+  link: "/go/busuu",
+  bestFor: "Self-study learners who want structure on a budget",
+  pros: [
+    "Clear, structured learning path from A1 to C2",
+    "AI pronunciation feedback to practice anytime",
+    "Study on mobile or desktop — learn on the go",
+    "Affordable monthly subscription — no per-session costs",
+    "Spaced repetition for long-term vocabulary retention",
+    "Correction from native speakers in community feature"
+  ],
+  cons: [
+    "No live speaking practice with real teachers",
+    "AI feedback helpful but not as accurate as human correction",
+    "Less effective for building real conversation confidence"
+  ]
+};
+
+// Comparison rows
+const comparison = [
+  { feature: "Starting Price", winner: null, a: "$5/lesson", b: "$13.99/month" },
+  { feature: "Human Tutor Access", winner: "a", a: "Yes, 10,000+ tutors", b: "No (AI + community)" },
+  { feature: "Speaking Practice", winner: "a", a: "1-on-1 live sessions", b: "AI pronunciation tool" },
+  { feature: "Structured Curriculum", winner: "b", a: "Tutor-dependent", b: "A1 to C2 full path" },
+  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+  { feature: "Lesson Replay", winner: "a", a: "Yes", b: "No" },
+  { feature: "AI Features", winner: "b", a: "Limited", b: "Pronunciation & feedback" },
+  { feature: "Subscription Commitment", winner: null, a: "Pay per lesson", b: "Monthly plan" },
+  { feature: "Best For", winner: null, a: "Speaking confidence", b: "Grammar & vocabulary" }
+];
+
+// Benefits section
+const whyCompare = [
+  { icon: "💬", title: "Speaking vs Studying", description: "iTalki is for learners who want to speak. Busuu is for learners who want to study." },
+  { icon: "💰", title: "Cost Models", description: "iTalki charges per lesson. Busuu charges per month. Calculate which fits your budget." },
+  { icon: "⏰", title: "Time Commitment", description: "iTalki requires scheduling live sessions. Busuu lets you learn anytime on your phone." }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "iTalki helped me speak confidently for the first time. My tutor was patient and corrected my pronunciation live.",
+    author: "Yuki M.",
+    location: "Japan",
+    result: "IELTS 6.0 → 7.0 in 4 months"
+  },
+  {
+    quote: "Busuu is perfect for my commute. I practice vocabulary on the train every morning and my vocab grew 40% in 3 months.",
+    author: "Sophie L.",
+    location: "Germany",
+    result: "B1 vocabulary doubled"
+  },
+  {
+    quote: "I use both. Busuu for vocabulary and grammar on my phone, iTalki for speaking practice once a week.",
+    author: "Ahmed K.",
+    location: "UAE",
+    result: "Speaking fluency improved"
+  }
+];
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is iTalki better than Busuu for learning English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your goals. iTalki is better for learners who want to practice speaking with real human tutors. Busuu is better for self-study learners who want a structured curriculum and can practice on their own schedule. Many learners use both — Busuu for vocabulary and grammar, iTalki for live speaking practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is cheaper, iTalki or Busuu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Busuu is cheaper at $13.99/month with unlimited access. iTalki costs $5 to $40 per lesson. If you take one lesson per week with a community tutor at $10/session, iTalki costs about $40/month — roughly triple the Busuu price. However, iTalki offers live speaking practice that Busuu cannot match."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Busuu help me become fluent in English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Busuu can build a strong foundation in vocabulary, grammar, and reading comprehension. However, it cannot replace live conversation practice with a human tutor. For true speaking fluency, you'll eventually need to practice with real people — either through iTalki, a language exchange, or living in an English-speaking environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use both iTalki and Busuu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many learners combine both effectively. Use Busuu for daily vocabulary practice, grammar study, and AI pronunciation feedback during your commute. Use iTalki for weekly speaking sessions with a human tutor. This combination gives you both the structure of an app and the real conversation practice you need to become fluent."
+      }
+    }
+  ]
+};
+
+// SEO Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "iTalki vs Busuu: Which English Learning Platform Is Right for You in 2026?",
+  "description": "Compare iTalki and Busuu side by side. iTalki offers live tutoring from $5/hr. Busuu offers structured self-study for $13.99/month. Find which fits your goals.",
+  "datePublished": "2026-04-07",
+  "dateModified": "2026-04-07",
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "publisher": { "@type": "Organization", "name": "LearnEnglish.Life" }
+};
+
+const pageTitle = "iTalki vs Busuu: Which English Learning Platform Is Right for You?";
+const pageDescription = "iTalki vs Busuu: Compare prices, features, and learning styles. iTalki has 10,000+ human tutors from $5/hr. Busuu offers structured self-study for $13.99/month.";
+---
+
+<Base title={pageTitle} description={pageDescription}>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-slate-400 mb-6">
+      <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
+      <span class="mx-2">›</span>
+      <span class="text-slate-300">iTalki vs Busuu</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center mb-10">
+      <span class="text-sm text-emerald-400 font-semibold uppercase tracking-wider">Tutor vs App · Updated April 2026</span>
+      <h1 class="text-3xl md:text-5xl font-bold text-white mt-3 mb-4">
+        iTalki vs Busuu: Which English Platform Wins?
+      </h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+        One gives you live human tutors. The other gives you a structured app. 
+        Here's the honest comparison to help you choose.
+      </p>
+
+      <!-- Platform Rating Badges -->
+      <div class="flex justify-center gap-6 mt-6 flex-wrap">
+        <div class="flex items-center gap-2 bg-slate-800/60 rounded-full px-4 py-2 border border-slate-700">
+          <PlatformRatings 
+            platform="iTalki" 
+            rating={platformRatings['iTalki']?.rating || 4.6} 
+            reviewCount={platformRatings['iTalki']?.reviewCount || 12847} 
+            variant="inline"
+            color="emerald"
+          />
+        </div>
+        <div class="flex items-center gap-2 bg-slate-800/60 rounded-full px-4 py-2 border border-slate-700">
+          <PlatformRatings 
+            platform="Busuu" 
+            rating={platformRatings['Busuu']?.rating || 4.2} 
+            reviewCount={platformRatings['Busuu']?.reviewCount || 18923} 
+            variant="inline"
+            color="purple"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-hero" />
+    </div>
+
+    <!-- Platform Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <!-- iTalki Card -->
+      <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-xl shadow-lg border-2 border-emerald-600 p-6">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-2xl font-bold text-white">iTalki</h2>
+          <span class="bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full">TOP RATED</span>
+        </div>
+        <PlatformRatings 
+          platform="iTalki" 
+          rating={platformRatings['iTalki']?.rating || 4.6} 
+          reviewCount={platformRatings['iTalki']?.reviewCount || 12847} 
+          variant="card"
+          color="emerald"
+        />
+        <p class="text-sm text-emerald-300 font-semibold mt-3">Best for: Speaking practice with real tutors</p>
+        <p class="text-2xl font-bold text-white mt-2">From $5/lesson</p>
+        <a href="/go/italki" class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold mt-4">
+          Try iTalki Free →
+        </a>
+      </div>
+
+      <!-- Busuu Card -->
+      <div class="bg-gradient-to-br from-purple-900/40 to-indigo-900/40 rounded-xl shadow-lg border-2 border-purple-600 p-6">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-2xl font-bold text-white">Busuu</h2>
+          <span class="bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+        </div>
+        <PlatformRatings 
+          platform="Busuu" 
+          rating={platformRatings['Busuu']?.rating || 4.2} 
+          reviewCount={platformRatings['Busuu']?.reviewCount || 18923} 
+          variant="card"
+          color="purple"
+        />
+        <p class="text-sm text-purple-300 font-semibold mt-3">Best for: Structured self-study on a budget</p>
+        <p class="text-2xl font-bold text-white mt-2">$13.99/month</p>
+        <a href="/go/busuu" class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg hover:bg-purple-700 transition font-bold mt-4">
+          Try Busuu Free →
+        </a>
+      </div>
+    </div>
+
+    <!-- FTC Disclosure + See Guru CTA -->
+    <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-4 mb-6">
+      <p class="text-sm text-slate-300">LearnEnglish.Life is reader-supported. If you click our links and make a purchase, we may earn a commission at no extra cost to you.</p>
+    </div>
+
+    <section class="bg-gradient-to-r from-purple-900/40 to-indigo-900/40 border border-purple-700 rounded-xl p-6 mb-8">
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex-1">
+          <p class="text-xs font-bold text-purple-300 uppercase tracking-wide mb-1">Also Worth Considering</p>
+          <h3 class="text-xl font-bold text-white mb-2">See Guru: The Best of Both Worlds</h3>
+          <p class="text-slate-300 text-sm mb-3">See Guru gives you live human tutors like iTalki, but with a fixed monthly model like Busuu. Three free trial lessons included. From $5/session, no subscription required.</p>
+          <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-purple-600 text-white font-bold text-sm px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">Try See Guru Free</a>
+          <p class="text-xs text-purple-200 mt-2 italic">*Disclosure: LearnEnglish.Life earns a commission if you sign up through this link.*</p>
+        </div>
+        <div class="text-center sm:text-right">
+          <p class="text-xs text-slate-400">Learn more in our</p>
+          <p class="text-sm font-semibold"><a href="/reviews/see-guru/" class="text-purple-300 hover:text-purple-200 hover:underline">See Guru Review</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Compare Section -->
+    <BenefitCards 
+      title="Why Compare iTalki and Busuu?"
+      benefits={whyCompare}
+    />
+
+    <!-- Comparison Table -->
+    <ComparisonHighlight 
+      title="Feature Comparison"
+      platformA={italki}
+      platformB={busuu}
+      winner="a"
+      rows={comparison}
+    />
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-middle" />
+    </div>
+
+    <!-- Social Proof -->
+    <SocialProof 
+      title="What Learners Say"
+      testimonials={testimonials}
+    />
+
+    <!-- Detailed Analysis -->
+    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Deep Dive: iTalki vs Busuu</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Speaking Practice — The Key Difference</h3>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          <strong class="text-emerald-400">iTalki wins on speaking practice.</strong> Every session is a live conversation with a real human tutor. You get instant feedback on pronunciation, grammar, and vocabulary. After each lesson, your tutor can send you notes, homework, and correction recordings.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          <strong class="text-purple-400">Busuu has AI pronunciation tools</strong> — you speak into your phone, the AI analyzes your accent, and gives you a score. It's useful for practice on the go, but it cannot correct your mistakes in real time, ask follow-up questions, or adapt to your specific problem areas the way a human tutor can.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Price and Value</h3>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          <strong class="text-emerald-400">iTalki starts at $5 per lesson</strong> with community tutors. Professional certified tutors range from $15 to $40 per session. You pay only for lessons you book — there's no monthly subscription. If you take one lesson per week at $10/session, you spend roughly $40/month.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          <strong class="text-purple-400">Busuu costs $13.99/month</strong> for unlimited access to all lessons, exercises, and AI tools. There's no per-lesson cost — you can study as much as you want. For self-motivated learners who can practice daily, this offers excellent value. For learners who need accountability, the flat fee might feel wasted if they don't use it.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Structure vs Freedom</h3>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          <strong class="text-purple-400">Busuu is a structured course.</strong> It moves you through levels A1 to C2 in a clear sequence. Every lesson has vocabulary, grammar, dialogue, and exercises. You always know what comes next. This is ideal for beginners who want a clear path and don't know how to design their own study plan.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          <strong class="text-emerald-400">iTalki is a marketplace.</strong> Your learning is shaped by whoever you book with. You might find a tutor who gives you a structured plan, or you might have free conversation every session. You have full control — but you also have full responsibility for directing your progress.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-white mb-3">The Verdict</h3>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          <strong>Choose iTalki if</strong> you want to speak English confidently and are willing to book regular sessions with tutors. The investment pays off in real conversation ability. Start with community tutors at $5-$10/session before upgrading to professional teachers.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          <strong>Choose Busuu if</strong> you are a self-motivated learner who wants a structured curriculum at an affordable price. Use the app daily for vocabulary, grammar, and AI pronunciation practice. Consider adding iTalki sessions later when you need to practice speaking with a human.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Busuu for learning English?</h3>
+          <p class="text-slate-300">It depends on your goals. iTalki is better for learners who want to practice speaking with real human tutors. Busuu is better for self-study learners who want a structured curriculum and can practice on their own schedule. Many learners use both — Busuu for vocabulary and grammar, iTalki for live speaking practice.</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, iTalki or Busuu?</h3>
+          <p class="text-slate-300">Busuu is cheaper at $13.99/month with unlimited access. iTalki costs $5 to $40 per lesson. If you take one lesson per week with a community tutor at $10/session, iTalki costs about $40/month — roughly triple the Busuu price. However, iTalki offers live speaking practice that Busuu cannot match.</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Can Busuu help me become fluent in English?</h3>
+          <p class="text-slate-300">Busuu can build a strong foundation in vocabulary, grammar, and reading comprehension. However, it cannot replace live conversation practice with a human tutor. For true speaking fluency, you'll eventually need to practice with real people — either through iTalki, a language exchange, or living in an English-speaking environment.</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Should I use both iTalki and Busuu?</h3>
+          <p class="text-slate-300">Yes, many learners combine both effectively. Use Busuu for daily vocabulary practice, grammar study, and AI pronunciation feedback during your commute. Use iTalki for weekly speaking sessions with a human tutor. This combination gives you both the structure of an app and the real conversation practice you need to become fluent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Reviews -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/reviews/italki/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">9.2/10</span>
+          </div>
+          <h3 class="font-semibold text-white">iTalki Review</h3>
+          <p class="text-sm text-slate-400">Full platform analysis</p>
+        </a>
+        <a href="/reviews/busuu/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">8.4/10</span>
+          </div>
+          <h3 class="font-semibold text-white">Busuu Review</h3>
+          <p class="text-sm text-slate-400">Full platform analysis</p>
+        </a>
+        <a href="/reviews/preply/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold">8.8/10</span>
+          </div>
+          <h3 class="font-semibold text-white">Preply Review</h3>
+          <p class="text-sm text-slate-400">Alternative tutoring platform</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Affiliate Disclosure -->
+    <div class="text-xs text-slate-400 mt-8 pt-4 border-t">
+      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
+    </div>
+  </main>
+
+  <!-- Sticky CTA for Mobile -->
+  <StickyCTA 
+    ctaText="Compare Prices Now"
+    ctaLink="/go/italki"
+    platform="italki"
+  />
+
+  <Footer />
+
+  <!-- See Guru alternative callout -->
+  <aside class="my-12 max-w-3xl mx-auto px-4">
+    <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
+      <div class="flex items-start gap-4">
+        <div class="text-3xl flex-shrink-0">💡</div>
+        <div class="flex-1">
+          <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
+          <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors — not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
+          <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Base>

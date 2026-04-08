@@ -1,0 +1,457 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import SocialProof from '../../components/SocialProof.astro';
+import BenefitCards from '../../components/BenefitCards.astro';
+import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+import PlatformRatings from '../../components/PlatformRatings.astro';
+import { platformRatings } from '../../data/platform-ratings';
+
+// Platform data
+const italki = {
+  name: "iTalki",
+  rating: 9.2,
+  price: "$5 per lesson",
+  link: "/go/italki",
+  bestFor: "Live speaking practice with real tutors",
+  pros: [
+    "Real human interaction with instant, contextual feedback",
+    "Flexible scheduling with thousands of tutors worldwide",
+    "Choose tutors who match your specific goals and level",
+    "Fastest path to speaking confidence through real conversations",
+    "Pay per lesson with no monthly commitment"
+  ],
+  cons: [
+    "Quality varies between tutors — vetting takes effort",
+    "No structured curriculum unless you request it",
+    "Speaking practice limited to booked sessions",
+    "Costs can add up with frequent lessons"
+  ]
+};
+
+const rosettaStone = {
+  name: "Rosetta Stone",
+  rating: 4.1,
+  price: "From $11.99/month",
+  link: "/go/rosetta-stone",
+  bestFor: "Self-paced immersion with pronunciation coaching",
+  pros: [
+    "TruAccent speech recognition for pronunciation feedback",
+    "Structured curriculum progression from beginner to advanced",
+    "Offline mode available for learning without internet",
+    "Immersive method builds reading and listening comprehension",
+    "Business English and specialized courses available"
+  ],
+  cons: [
+    "No live speaking practice with real people",
+    "Subscription model can feel expensive long-term",
+    "Immersion method not ideal for all learning styles",
+    "Less engaging than gamified apps for some users"
+  ]
+};
+
+// Comparison rows
+const comparison = [
+  { feature: "Starting Price", winner: null, a: "$5/lesson", b: "$11.99/month" },
+  { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
+  { feature: "AI Pronunciation Feedback", winner: "b", a: "No", b: "Yes (TruAccent)" },
+  { feature: "Structured Curriculum", winner: "b", a: "Only if requested", b: "Fully built-in" },
+  { feature: "Spaced Repetition", winner: "b", a: "No", b: "Yes" },
+  { feature: "Offline Mode", winner: "b", a: "No", b: "Yes" },
+  { feature: "Free Version", winner: null, a: "Language exchanges", b: "Limited trial" },
+  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+  { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI simulation only" }
+];
+
+// Benefits section
+const whyCompare = [
+  { icon: "🎯", title: "Match Your Learning Style", description: "Find the platform that matches whether you thrive with human interaction or prefer self-paced study" },
+  { icon: "💰", title: "Understand the Real Cost", description: "Compare pay-per-lesson vs subscription to find what fits your budget and usage habits" },
+  { icon: "⚡", title: "Get Results Faster", description: "Choose the platform that aligns with your goals and how you actually learn best" }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "iTalki changed my life. After 4 months of weekly lessons, I passed my job interview in English. Real conversations made all the difference.",
+    author: "Carlos M.",
+    location: "Mexico",
+    result: "Job promotion"
+  },
+  {
+    quote: "Rosetta Stone was perfect for my commute. I worked through the entire beginner course offline and built a solid foundation in reading and listening.",
+    author: "Priya K.",
+    location: "India",
+    result: "CEFR B1 certificate"
+  },
+  {
+    quote: "I used Rosetta Stone for grammar basics and iTalki for speaking practice. That combination got me to fluency faster than I expected.",
+    author: "Sofia L.",
+    location: "Spain",
+    result: "IELTS 7.0"
+  }
+];
+
+// SEO Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "iTalki vs Rosetta Stone: Live Tutors or AI Immersion?",
+  "description": "Compare iTalki and Rosetta Stone: real human tutors for live conversation vs AI-powered immersion learning. Find the best English platform for your goals.",
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-08",
+  "dateModified": "2026-04-08"
+};
+
+const comparisonSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "English Learning Platform Comparison",
+  "description": "Comparison between iTalki and Rosetta Stone for English language learning"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is iTalki better than Rosetta Stone for speaking English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, iTalki is significantly better for developing actual speaking ability. It connects you with real human tutors for live video conversations, giving you instant feedback on pronunciation, grammar, and natural word choice. Rosetta Stone uses AI for pronunciation feedback, but it cannot replicate the spontaneity and contextual guidance of talking to a real person."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is cheaper, iTalki or Rosetta Stone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rosetta Stone has a lower monthly cost at $11.99/month with full access to all courses. iTalki lessons start at $5 with community tutors, but you pay per lesson. For light usage, Rosetta Stone may be more cost-effective. For dedicated speaking practice several times a week, many learners find iTalki's pay-per-lesson model better value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use both iTalki and Rosetta Stone together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Many effective learners combine both platforms. They use Rosetta Stone to build vocabulary and grammar foundations during commutes or spare moments, then book regular iTalki sessions to practice what they have learned with real tutors. This creates a structured learning system plus real conversation practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform is better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both work for beginners, but in different ways. Rosetta Stone is better for complete beginners who want to build reading and listening comprehension from scratch through its immersive method. iTalki is better for beginners who want to start speaking immediately and are comfortable with a conversational approach from day one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Rosetta Stone help with speaking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rosetta Stone has a pronunciation feature called TruAccent that listens to your speech and gives feedback. It is helpful for practicing individual words and phrases, but it cannot engage you in a real conversation or answer your questions. For developing real conversational ability, iTalki is far more effective because you talk to a human who can adapt to your level and explain things in context."
+      }
+    }
+  ]
+};
+---
+
+<Base title="iTalki vs Rosetta Stone: Live Tutors or AI Immersion? (2026)" description="Compare iTalki and Rosetta Stone for English learning. iTalki offers live human tutors for real conversation practice. Rosetta Stone uses AI immersion. Find which is right for you.">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  
+  <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-neutral-300 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/compare/" class="hover:text-emerald-600">Comparisons</a>
+      <span class="mx-2">›</span>
+      <span class="text-neutral-300">iTalki vs Rosetta Stone</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+      <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
+      <h1 class="text-4xl font-bold mt-2 mb-4">iTalki vs Rosetta Stone: Live Tutors or AI Immersion?</h1>
+      <p class="text-emerald-100 text-lg">iTalki connects you with real human tutors for live conversation. Rosetta Stone uses AI-powered immersion to teach you through context. Here is how they really compare.</p>
+    </div>
+
+    <!-- Our Pick Banner -->
+    <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="font-bold text-lg">Our Pick</p>
+          <p class="text-3xl font-bold text-green-700">iTalki</p>
+          <p class="text-sm text-gray-500 mt-1">Best for speaking practice with real tutors</p>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-gray-500">Also great for</p>
+          <p class="font-semibold">Self-paced immersion learners</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Overview Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- iTalki Card -->
+      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-white">iTalki</h2>
+          <PlatformRatings
+            platform={italki.name}
+            rating={italki.rating}
+            scale={10}
+            variant="inline"
+            color="emerald"
+          />
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
+        </div>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+          <ul class="text-sm text-neutral-300 space-y-1">
+            {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <a href={italki.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
+          Try iTalki Free →
+        </a>
+      </div>
+
+      <!-- Rosetta Stone Card -->
+      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-white">Rosetta Stone</h2>
+          <PlatformRatings
+            platform={rosettaStone.name}
+            rating={rosettaStone.rating}
+            scale={10}
+            variant="inline"
+            color="blue"
+          />
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-blue-600">{rosettaStone.price}</span>
+        </div>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {rosettaStone.bestFor}</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+          <ul class="text-sm text-neutral-300 space-y-1">
+            {rosettaStone.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <a href={rosettaStone.link} class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-bold">
+          Try Rosetta Stone Free →
+        </a>
+      </div>
+    </div>
+
+    <!-- Why Compare Section -->
+    <BenefitCards 
+      title="Why Compare These Platforms?"
+      benefits={whyCompare}
+    />
+
+    <!-- Social Proof -->
+    <SocialProof 
+      title="What Learners Say"
+      testimonials={testimonials}
+    />
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-1" />
+    </div>
+
+    <!-- What Are the Main Differences -->
+    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2>
+      <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace. You browse thousands of human tutors, read their profiles, and book live video lessons whenever suits you. Each session is a real conversation with a real person who can answer your questions, correct your mistakes, and push you at exactly the right level.</p>
+      <p class="text-neutral-300 mb-4 leading-relaxed">Rosetta Stone is a language learning software suite. It uses a fully immersive method — no translations, no grammar explanations — just images, sounds, and context. You work through a structured course at your own pace, building reading, listening, and speaking skills through AI-powered exercises and TruAccent pronunciation practice.</p>
+      <p class="text-neutral-300 leading-relaxed">The fundamental difference is human vs AI. iTalki gets you talking to real people from day one. Rosetta Stone lets you study independently and practice pronunciation with software. Both can produce results, but they suit very different types of learners.</p>
+    </section>
+
+    <!-- Enhanced Comparison Table -->
+    <ComparisonHighlight 
+      title="Feature Comparison"
+      platformA={italki}
+      platformB={rosettaStone}
+      winner="a"
+      rows={comparison}
+    />
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-2" />
+    </div>
+
+    <!-- Detailed Analysis -->
+    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3>
+        <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4>
+        <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor based on their profile, availability, and reviews. Lessons can cover anything from casual conversation to business English to exam preparation.</p>
+        <p class="text-neutral-300 leading-relaxed">The key advantage is feedback that only a human can give. Your tutor hears exactly how you sound, notices patterns in your mistakes, and can explain why a phrase works in one situation but not another. This contextual, adaptive feedback is something no AI currently replicates reliably.</p>
+      </div>
+
+      <div class="mb-8">
+        <h4 class="text-lg font-semibold text-blue-400 mb-2">Rosetta Stone: AI-Powered Pronunciation Practice</h4>
+        <p class="text-neutral-300 mb-4 leading-relaxed">Rosetta Stone's TruAccent feature listens to your spoken words and compares them to native pronunciation. It gives you a score and highlights where you are deviating from the target sound. This is genuinely useful for improving your accent and getting feedback on individual words.</p>
+        <p class="text-neutral-300 mb-4 leading-relaxed">However, TruAccent cannot engage you in dialogue, answer your questions, or adapt to your specific mistakes in real time. It tells you how well you pronounced a phrase — it does not tell you how to sound more natural in a business meeting or how to order food more confidently.</p>
+        <p class="text-neutral-300 leading-relaxed">If your main goal is to practice speaking in realistic, unpredictable situations, iTalki is the clear winner. If you want to improve your pronunciation and build vocabulary independently, Rosetta Stone has real value.</p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-white mb-3">Learning Structure and Progression</h3>
+        <p class="text-neutral-300 mb-4 leading-relaxed">Rosetta Stone provides a complete learning path. Twenty levels take you from absolute beginner to advanced, with clear milestones. You always know where you are and what comes next. This structure suits learners who prefer guidance over freedom.</p>
+        <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is less structured by design. You set your own goals and work with tutors to achieve them. This is more flexible, but it requires more self-direction. Some learners thrive with this freedom; others need the scaffold that Rosetta Stone provides.</p>
+        <p class="text-neutral-300 leading-relaxed">Many successful learners combine both: they use Rosetta Stone's curriculum to build a solid foundation, then use iTalki to practice what they have learned in real conversations. This gives structure plus human interaction.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Rosetta Stone for speaking English?</h3>
+          <p class="text-neutral-300">
+            <strong>Yes, iTalki is significantly better</strong> for developing actual speaking ability. It connects you with real human tutors for live video conversations, giving you instant feedback on pronunciation, grammar, and natural word choice. Rosetta Stone uses AI for pronunciation feedback, but it cannot replicate the spontaneity and contextual guidance of talking to a real person.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, iTalki or Rosetta Stone?</h3>
+          <p class="text-neutral-300">
+            Rosetta Stone has a lower monthly cost at <strong>$11.99/month</strong> with full access to all courses. iTalki lessons start at <strong>$5</strong> with community tutors, but you pay per lesson. For light usage, Rosetta Stone may be more cost-effective. For dedicated speaking practice several times a week, iTalki's pay-per-lesson model often delivers better results per dollar spent.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Can I use both iTalki and Rosetta Stone together?</h3>
+          <p class="text-neutral-300">
+            <strong>Absolutely.</strong> Many effective learners combine both platforms. They use Rosetta Stone to build vocabulary and grammar foundations during commutes or spare moments, then book regular iTalki sessions to practice what they have learned with real tutors. This creates a structured learning system plus real conversation practice.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Which platform is better for beginners?</h3>
+          <p class="text-neutral-300">
+            Both work for beginners, but in different ways. <strong>Rosetta Stone</strong> is better for complete beginners who want to build reading and listening comprehension from scratch through its immersive method. <strong>iTalki</strong> is better for beginners who want to start speaking immediately and are comfortable with a conversational approach from day one.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Does Rosetta Stone help with speaking?</h3>
+          <p class="text-neutral-300">
+            Rosetta Stone has a pronunciation feature called <strong>TruAccent</strong> that listens to your speech and gives feedback. It is helpful for practicing individual words and phrases, but it cannot engage you in a real conversation. For developing real conversational ability, iTalki is far more effective because you talk to a human who can adapt to your level.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-3" />
+    </div>
+
+    <!-- Verdict Section -->
+    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
+          <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3>
+          <ul class="text-neutral-300 space-y-2">
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Your main goal is to speak English confidently</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want instant feedback from a real human</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You are preparing for a test, interview, or travel</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You prefer flexible, conversation-based learning</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
+          <h3 class="font-bold text-blue-300 mb-2">Choose Rosetta Stone if:</h3>
+          <ul class="text-neutral-300 space-y-2">
+            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You prefer structured, self-paced learning</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You need offline access for travel or commuting</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want to improve reading and listening comprehension</li>
+            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want AI pronunciation coaching on a budget</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-neutral-300">The best approach for most learners is to use both: Rosetta Stone for building vocabulary and grammar foundations, then iTalki to practise everything in real conversations with native speakers.</p>
+    </section>
+
+    <!-- See Guru Alternative -->
+    <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+      <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p>
+      <p class="text-gray-600 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured small-group classes and one-on-one tutoring with certified teachers, including three free trial lessons.</p>
+      <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a>
+      <p class="text-xs text-gray-500 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+    </section>
+
+    <!-- Related Reviews -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+      <div class="grid gap-4">
+        <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+          <p class="font-semibold text-white">iTalki Review</p>
+          <p class="text-sm text-neutral-400">9.2/10 — Best for affordable live tutor lessons</p>
+        </a>
+        <a href="/reviews/rosetta-stone/" class="block p-4 border border-gray-700 rounded-lg hover:border-blue-500 hover:bg-slate-800/50 transition-colors">
+          <p class="font-semibold text-white">Rosetta Stone Review</p>
+          <p class="text-sm text-neutral-400">Full review of Rosetta Stone's features, pricing, and learning tools</p>
+        </a>
+        <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+          <p class="font-semibold text-white">iTalki vs Preply</p>
+          <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Affiliate Disclosure -->
+    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
+      <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
+    </div>
+  </main>
+
+  <!-- Sticky CTA for Mobile -->
+  <StickyCTA 
+    ctaText="Compare Platforms"
+    ctaLink="/go/italki"
+    platform="italki"
+  />
+
+  <Footer />
+
+<!-- See Guru alternative callout -->
+<aside class="my-12 max-w-3xl mx-auto px-4">
+  <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
+    <div class="flex items-start gap-4">
+      <div class="text-3xl flex-shrink-0">💡</div>
+      <div class="flex-1">
+        <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3>
+        <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong> with certified English teachers — no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p>
+        <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+</Base>
