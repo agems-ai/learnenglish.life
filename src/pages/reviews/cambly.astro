@@ -1,269 +1,221 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import AdUnit from '../../components/AdUnit.astro';
-import ArticleSchema from '../../components/ArticleSchema.astro';
-import HeroCTA from '../../components/HeroCTA.astro';
-import StickyCTA from '../../components/StickyCTA.astro';
-import BenefitCards from '../../components/BenefitCards.astro';
-import SocialProof from '../../components/SocialProof.astro';
-import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+import Base from "../../layouts/Base.astro";
 
-const review = {
-  title: "Cambly Review",
-  rating: 8.2,
-  reviewCount: 7800,
-  price: "From $6.50/wk",
-  heroTitle: "Speak with Native Speakers. Anytime, No Appointments",
-  heroSubtitle: "Cambly gives you unlimited access to native English speakers 24/7. Perfect for casual conversation practice and building confidence.",
-  description: "Cambly offers unlimited conversation practice with native English speakers. Perfect for learners who want spontaneous speaking practice without scheduling lessons.",
-  publishedTime: "2026-01-10",
-  pros: [
-    "Unlimited conversation practice with native speakers",
-    "Available 24/7. no appointment needed",
-    "Wide variety of tutors from US, UK, Australia",
-    "Great for casual chat and confidence building",
-    "Subscription model = no pressure to maximize value"
-  ],
-  cons: [
-    "No structured curriculum",
-    "Quality varies by tutor",
-    "Limited grammar focus",
-    "Best for intermediate+ learners"
-  ],
-  ctaPrimary: "Start Speaking Now",
-  ctaSecondary: "Get 7 Minutes Free",
-  ctaLink: "/go/cambly"
-};
-
-// Benefits specific to Cambly
-const benefits = [
-  { icon: "🗣️", title: "Unlimited Speaking Practice", description: "No booking required. speak whenever you want, as much as you want" },
-  { icon: "🌍", title: "Native Speakers 24/7", description: "Connect with tutors from US, UK, Australia anytime day or night" },
-  { icon: "💯", title: "No Pressure Learning", description: "Relaxed conversations help you overcome fear of speaking" },
-  { icon: "📱", title: "Mobile App Available", description: "Practice on-the-go with iOS and Android apps" }
-];
-
-// Cambly testimonials
-const testimonials = [
-  {
-    quote: "I was terrified to speak English. Cambly's casual format helped me relax and now I speak fluently!",
-    author: "Yuki N.",
-    location: "Japan",
-    result: "Conquered speaking fear"
-  },
-  {
-    quote: "Perfect for daily practice. I use it during my commute and have improved tremendously.",
-    author: "Carlos R.",
-    location: "Mexico",
-    result: "TOEFL score improved"
-  },
-  {
-    quote: "The variety of accents is amazing. I can practice with British, American, and Australian speakers.",
-    author: "Fatima A.",
-    location: "Saudi Arabia",
-    result: "Multiple accents mastered"
-  }
-];
-
-// Comparison table data with winner highlighting
-const comparisonRows = [
-  { feature: "Subscription Model", winner: "c", a: "$5-40/hr", b: "$10-45/hr", c: "$6.50-80/wk Unlimited" },
-  { feature: "No Appointment Needed", winner: "c", a: "No", b: "No", c: "Yes" },
-  { feature: "Structured Curriculum", winner: "b", a: "No", b: "Yes", c: "No" },
-  { feature: "24/7 Availability", winner: "c", a: "Limited", b: "Moderate", c: "Yes" },
-  { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes", c: "Yes" }
-];
-
-const fullStars = Math.floor(review.rating);
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "Cambly",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "8.2",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": review.publishedTime
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "Cambly" }
-  ]
+const meta = {
+  title: "Cambly Review 2026: Is the Subscription Worth the Price?",
+  description: "Honest Cambly review covering pricing, tutor quality, features, and whether the subscription is worth it for English learners in 2026.",
 };
 ---
 
-<Base title="Cambly Review 2026: Pricing Plans, Pros Cons & Is It Worth It?" description={review.description} type="article" publishedTime={review.publishedTime}>
-
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
-
-  <Header />
-  
-  <!-- Breadcrumb -->
-  <nav class="bg-neutral-800 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-neutral-300">
-        <li><a href="/" class="hover:text-teal-600">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-teal-600">Reviews</a></li>
-        <li>/</li>
-        <li class="text-white">Cambly</li>
-      </ol>
+<Base {...meta}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <span class="text-sm text-gray-400">Review · Updated April 2026</span>
+      <h1 class="text-4xl font-bold mt-1 mb-4">Cambly Review 2026: Is the Subscription Worth the Price?</h1>
+      <p class="text-lg text-gray-500">Cambly gives you on-demand access to native English speakers for unlimited conversation practice. But with no structured curriculum and limited scheduling options, who is it actually for?</p>
     </div>
-  </nav>
 
-  <!-- Hero CTA Section -->
-  <div class="max-w-4xl mx-auto px-4 pt-6">
-    <HeroCTA 
-      platform="cambly"
-      rating={review.rating}
-      reviewCount={review.reviewCount}
-      price={review.price}
-      ctaText={review.ctaPrimary}
-      ctaLink={review.ctaLink}
-      title={review.heroTitle}
-      subtitle={review.heroSubtitle}
-    />
-  </div>
-
-  <!-- Affiliate Disclosure -->
-  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <article class="pb-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <!-- Benefit Cards -->
-      <BenefitCards 
-        title="Why Learners Choose Cambly"
-        benefits={benefits}
-      />
-
-      <!-- Social Proof Testimonials -->
-      <SocialProof 
-        title="Real Results from Real Learners"
-        testimonials={testimonials}
-      />
-
-      <!-- Ad -->
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <!-- Pros & Cons -->
-      <section class="mb-8 grid md:grid-cols-2 gap-6">
-        <div class="bg-emerald-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4">✅ Pros</h2>
-          <ul class="space-y-3">
-            {review.pros.map(pro => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-emerald-500 font-bold">✓</span>
-                <span>{pro}</span>
-              </li>
-            ))}
-          </ul>
+    <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="font-bold text-lg">Our Rating</p>
+          <p class="text-3xl font-bold text-green-700">8.2/10</p>
         </div>
-        <div class="bg-red-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4">⚠️ Cons</h2>
-          <ul class="space-y-3">
-            {review.cons.map(con => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-red-500 font-bold">−</span>
-                <span>{con}</span>
-              </li>
-            ))}
-          </ul>
+        <div class="text-right">
+          <p class="text-sm text-gray-500">Best for</p>
+          <p class="font-semibold">Casual learners wanting flexible, on-demand speaking practice</p>
         </div>
-      </section>
-
-      <!-- Comparison Table with Winner Highlighting -->
-      <ComparisonHighlight 
-        title="Cambly vs iTalki vs Preply"
-        platformA={{ name: "Cambly", slug: "cambly", link: "/go/cambly" }}
-        platformB={{ name: "iTalki", slug: "italki", link: "/go/italki" }}
-        platformC={{ name: "Preply", slug: "preply", link: "/go/preply" }}
-        winner="a"
-        rows={comparisonRows}
-      />
-
-      <!-- Ad -->
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="fluid" />
       </div>
-
-      <!-- Verdict -->
-      <section class="bg-neutral-800 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-white mb-3">Our Verdict</h2>
-        <p class="text-neutral-300">
-          Cambly earns an 8.2/10 for its unique "always available" approach to conversation practice. If you want unlimited speaking time with native speakers without the hassle of booking, Cambly is your answer. It's ideal for intermediate learners who want to build confidence through natural conversation.
-        </p>
-        <p class="mt-3 text-gray-300 font-medium">
-          Try Cambly free for 7 minutes and discover why so many learners use it daily.
-        </p>
-      </section>
-
-      <!-- Final CTA -->
-      <section class="bg-teal-600 rounded-xl p-8 text-center">
-        <h3 class="text-2xl font-bold text-white mb-2">Ready to try Cambly?</h3>
-        <p class="text-teal-100 mb-6">Start speaking English today. no appointment needed.</p>
-        <a href={review.ctaLink} class="inline-block px-8 py-4 bg-slate-900/60 text-teal-600 font-bold rounded-lg hover:bg-neutral-800 transition-colors">
-          {review.ctaSecondary}
-        </a>
-      </section>
-
-      <!-- Final Disclosure -->
-      <p class="text-sm text-slate-400 text-center mt-6">
-        <strong>Editorial Note:</strong> Our reviews are based on research and user feedback, not compensation. 
-        We may earn affiliate commissions from purchases made through links on this page.
-        <a href="/affiliate-disclosure/" class="text-teal-600 hover:underline">Learn more</a>
-      </p>
     </div>
+
+    <p class="text-gray-600 mb-4 leading-relaxed">
+      <em>Affiliate Disclosure: LearnEnglish.Life may earn a commission if you sign up through links on this page, at no extra cost to you. Our editorial reviews are based on thorough research and are never influenced by compensation.</em>
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">What Is Cambly?</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Cambly is an online English tutoring platform that connects learners with native English speakers for on-demand conversation practice. Founded in 2012 and based in San Francisco, Cambly differentiates itself from traditional tutoring platforms by offering unlimited practice sessions for a flat monthly or annual subscription fee.</p>
+    <p class="text-gray-600 mb-4 leading-relaxed">Unlike platforms where you book specific lesson times with a specific tutor, Cambly operates more like a video chat service: you log in, tap a button, and get connected to an available native speaker within seconds. It is designed for learners who want flexible, low-pressure conversation practice without the commitment of scheduling.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">How Does Cambly Work?</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Using Cambly is refreshingly simple:</p>
+    <ol class="list-decimal list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>Sign up and choose a plan.</strong> Pick between monthly or annual subscription. The annual plan offers significant savings.</li>
+      <li><strong>Set your preferences.</strong> Choose your dialect preference (American, British, or Australian English), and set your proficiency level.</li>
+      <li><strong>Start a conversation.</strong> Tap the "Start Speaking" button. Cambly connects you with an available tutor within moments.</li>
+      <li><strong>Talk for as long as you want.</strong> There is no time limit per session. You can speak for 5 minutes or 2 hours.</li>
+      <li><strong>Save tutors you like.</strong> If you have a great conversation with someone, you can save them as a favorite and request them in future sessions.</li>
+    </ol>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Pricing</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Cambly uses a straightforward subscription model. There are no per-minute charges or lesson credits to manage.</p>
+
+    <div class="overflow-x-auto mb-6">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-4 py-3 text-left text-sm font-bold text-gray-700">Plan</th>
+            <th class="px-4 py-3 text-left text-sm font-bold text-gray-700">Duration</th>
+            <th class="px-4 py-3 text-left text-sm font-bold text-gray-700">Price</th>
+            <th class="px-4 py-3 text-left text-sm font-bold text-gray-700">Cost per Month</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr>
+            <td class="px-4 py-3 text-sm text-gray-600">Monthly</td>
+            <td class="px-4 py-3 text-sm text-gray-600">1 month</td>
+            <td class="px-4 py-3 text-sm text-gray-800 font-semibold">$19.99/month</td>
+            <td class="px-4 py-3 text-sm text-gray-600">$19.99</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 text-sm text-gray-600">Annual</td>
+            <td class="px-4 py-3 text-sm text-gray-600">12 months</td>
+            <td class="px-4 py-3 text-sm text-gray-800 font-semibold">$99.99/year</td>
+            <td class="px-4 py-3 text-sm text-gray-600">$8.33/month</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-gray-600 mb-4 leading-relaxed">The annual plan is dramatically cheaper at $8.33 per month, compared to nearly $20 per month on the monthly plan. If you plan to use Cambly consistently, the annual subscription offers excellent value. Cambly also occasionally offers promotions and discounts, particularly around Black Friday.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Tutor Availability</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Cambly's tutors are all native English speakers, which is a major selling point. The platform employs two types of tutors:</p>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>Community tutors.</strong> Native English speakers from the US, UK, Canada, Australia, and other English-speaking countries. These are often university students, retired professionals, or language enthusiasts who tutor in their spare time.</li>
+      <li><strong>Academic tutors.</strong> A smaller group of tutors with formal teaching credentials. These tutors offer more structured sessions and may help with academic writing, exam prep, or business English.</li>
+    </ul>
+    <p class="text-gray-600 mb-4 leading-relaxed">Wait times vary depending on the time of day. During peak hours (morning and evening in North America), you can usually connect within 30 seconds. During off-peak times, you might wait two to five minutes. Tutors from different time zones help extend availability, but the best coverage is during North American business hours.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">The Conversation-Only Model</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">This is the most important thing to understand about Cambly: it is purely conversation-based. There is no built-in curriculum, no grammar lessons, no vocabulary drills, and no structured homework. You simply talk.</p>
+    <p class="text-gray-600 mb-4 leading-relaxed">For some learners, this is exactly what they need. Speaking practice with native speakers is one of the fastest ways to improve pronunciation, build confidence, and develop natural language patterns. The lack of structure also means there is no pressure and no homework.</p>
+    <p class="text-gray-600 mb-4 leading-relaxed">However, if you need structured learning, grammar explanations, or a clear progression path, Cambly alone will not provide that. You will need to combine it with other resources or look for a platform that includes a curriculum.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Kids and Family Subscriptions</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Cambly offers a dedicated kids version called Cambly Kids, which is designed for children aged 4 to 14. On this version, tutors use more visual aids, games, and age-appropriate conversation topics. The platform also has stricter tutor vetting for the kids section.</p>
+    <p class="text-gray-600 mb-4 leading-relaxed">For families, Cambly Family plans let multiple children share one subscription, which makes it more affordable for households with multiple English learners.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Platform Features</h2>
+    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>On-demand access.</strong> Connect to a native speaker whenever you want, no scheduling needed.</li>
+      <li><strong>Unlimited conversations.</strong> No time limits per session or per month.</li>
+      <li><strong>Topic selection.</strong> Before connecting, you can choose a topic (travel, business, daily life) to help guide the conversation.</li>
+      <li><strong>Save favorite tutors.</strong> Build relationships with tutors you enjoy talking with.</li>
+      <li><strong>Session recordings.</strong> Review your conversations later to revisit vocabulary and phrases.</li>
+      <li><strong>Dialect preference.</strong> Choose American, British, or Australian English.</li>
+      <li><strong>Mobile app.</strong> Available on iOS and Android for learning on the go.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Pros and Cons</h2>
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+        <h3 class="font-bold text-green-800 mb-3">Pros</h3>
+        <ul class="space-y-2 text-green-700">
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> Unlimited conversations for a flat fee</li>
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> All tutors are native English speakers</li>
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> No scheduling required, instant connections</li>
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> Very affordable at the annual plan price</li>
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> Great for building speaking confidence</li>
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> Kids version available for younger learners</li>
+          <li class="flex items-start gap-2"><span class="font-bold">+</span> Session recordings let you review later</li>
+        </ul>
+      </div>
+      <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-800 mb-3">Cons</h3>
+        <ul class="space-y-2 text-red-700">
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> No structured curriculum or grammar teaching</li>
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> Tutor quality varies significantly</li>
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> Cannot choose a specific tutor in advance</li>
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> Wait times can be long during off-peak hours</li>
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> Some tutors lack formal teaching qualifications</li>
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> Not ideal for learners needing structured exam prep</li>
+          <li class="flex items-start gap-2"><span class="font-bold">-</span> Limited use for intermediate-to-advanced learners without specific goals</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
+    <p class="text-gray-600 mb-4 leading-relaxed">Cambly is an excellent tool for one specific purpose: getting more spoken English practice with native speakers. If your main goal is to become more comfortable speaking English and you want unlimited practice without the pressure of scheduling or paying per session, Cambly delivers exactly that.</p>
+    <p class="text-gray-600 mb-4 leading-relaxed">The annual plan is genuinely good value at around $8 per month for unlimited native-speaker conversation time. That is hard to beat compared to per-session tutoring rates that can run $20 to $60 per hour.</p>
+    <p class="text-gray-600 mb-4 leading-relaxed">However, Cambly is not a complete English learning solution. It does not teach grammar, vocabulary systematically, or prepare you for specific exams. Think of it as an excellent supplement to a structured learning program rather than a standalone course.</p>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
+      <p class="font-bold text-lg mb-2">Want a More Structured Alternative?</p>
+      <p class="text-gray-600 mb-3">See Guru combines unlimited conversation practice with structured lesson plans and certified teachers. If you need more than casual speaking time, See Guru might be a better fit for your learning goals.</p>
+      <a href="/reviews/see-guru/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">Try See Guru</a>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div>
+        <h3 class="font-bold text-gray-800 mb-2">Is Cambly good for beginners?</h3>
+        <p class="text-gray-600">Yes, Cambly can work for beginners, though you may find conversations challenging at first. The informal nature of Cambly sessions means tutors are used to working with learners at all levels. Start with shorter sessions and work up to longer conversations as your confidence grows.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-800 mb-2">Can I choose a specific tutor on Cambly?</h3>
+        <p class="text-gray-600">You can save tutors as favorites and request them when they are online, but you cannot schedule with a specific tutor in advance. If you want guaranteed sessions with a specific teacher, Cambly may not be the right platform for you.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-800 mb-2">Does Cambly have grammar lessons?</h3>
+        <p class="text-gray-600">No. Cambly is a conversation-only platform. Tutors can help correct your grammar in conversation, but there are no dedicated grammar lessons, vocabulary units, or structured courses built into the platform.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-800 mb-2">Is Cambly better than iTalki or Preply?</h3>
+        <p class="text-gray-600">It depends on your goals. Cambly is cheaper for unlimited speaking practice but offers no structure. iTalki and Preply give you access to certified teachers with formal lesson plans. If you want structured learning with a dedicated teacher, those platforms may be better. If you want affordable, unlimited speaking practice, Cambly wins.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-gray-800 mb-2">Can I cancel my Cambly subscription?</h3>
+        <p class="text-gray-600">Yes. Cambly offers a 7-day money-back guarantee on first-time subscriptions. After that, you can cancel anytime, but annual plan refunds are prorated based on unused months.</p>
+      </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Cambly good for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Cambly can work for beginners, though you may find conversations challenging at first. Start with shorter sessions and work up to longer conversations as your confidence grows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose a specific tutor on Cambly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can save tutors as favorites and request them when they are online, but you cannot schedule with a specific tutor in advance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Cambly have grammar lessons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cambly is a conversation-only platform. There are no dedicated grammar lessons, vocabulary units, or structured courses built into the platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Cambly better than iTalki or Preply?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your goals. Cambly is cheaper for unlimited speaking practice but offers no structure. iTalki and Preply give you access to certified teachers with formal lesson plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my Cambly subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Cambly offers a 7-day money-back guarantee on first-time subscriptions. After that, you can cancel anytime."
+          }
+        }
+      ]
+    }
+    </script>
   </article>
-
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText={review.ctaPrimary}
-    ctaLink={review.ctaLink}
-    platform="cambly"
-  />
-
-  <Footer />
-<!-- See Guru alternative callout -->
-<aside class="my-12 max-w-3xl mx-auto px-4">
-  <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
-    <div class="flex items-start gap-4">
-      <div class="text-3xl flex-shrink-0">💡</div>
-      <div class="flex-1">
-        <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
-        <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors — not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
-        <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
-      </div>
-    </div>
-  </div>
-</aside>
-
 </Base>
