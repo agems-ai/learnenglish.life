@@ -7,7 +7,9 @@ import AdUnit from '../../components/AdUnit.astro';
 const pageTitle = "Best English Podcasts for Learners (2026)";
 const pageDescription = "The best English podcasts for learners at every level. We rank the top 12 podcasts for listening practice, vocabulary, and conversation skills.";
 const publishDate = "2026-04-10";
+const canonicalUrl = "/resources/english-podcasts-for-learners/";
 
+// Article JSON-LD schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -17,18 +19,99 @@ const articleSchema = {
     "@type": "Organization",
     "name": "LearnEnglish.Life"
   },
-  "datePublished": publishDate
+  "datePublished": publishDate,
+  "publisher": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life",
+    "url": "https://learnenglish.life"
+  }
+};
+
+// FAQPage JSON-LD schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are English learning podcasts free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most English learning podcasts are completely free. Shows like 6 Minute English, ESL Pod, and The English We Speak are available on all major podcast platforms without charge. Some podcasts offer premium materials or courses, but the core content is free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should I listen each day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twenty to thirty minutes per day is ideal for most learners. If you are busy, even 10 to 15 minutes helps. The key is to listen regularly. Daily practice builds your ear faster than occasional long sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can podcasts help with speaking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but indirectly. Podcasts train your ear to understand natural English, which is the first step to speaking better. To improve speaking directly, combine podcast listening with shadow speaking practice and conversation sessions with real tutors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best podcast for English beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Coffee Break English is our top pick for absolute beginners. It uses a clear structure, speaks at a learner-friendly pace, and covers practical topics. ESL Pod is also excellent if you prefer shorter episodes with vocabulary explanations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use transcripts while listening?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, transcripts are very helpful, especially when you are starting out. Reading along while listening helps you connect sounds with spellings and builds vocabulary faster. Many podcasts offer transcripts on their websites."
+      }
+    }
+  ]
+};
+
+// BreadcrumbList JSON-LD schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://learnenglish.life/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://learnenglish.life/resources/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "English Podcasts for Learners",
+      "item": "https://learnenglish.life/resources/english-podcasts-for-learners/"
+    }
+  ]
 };
 ---
 
-<Base title={pageTitle} description={pageDescription}>
+<Base title={pageTitle} description={pageDescription} canonical={canonicalUrl}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   
   <Header />
   
   <main class="max-w-4xl mx-auto px-4 py-8">
     <!-- Breadcrumb -->
-    <nav class="text-sm text-slate-400 mb-4">
+    <nav aria-label="Breadcrumb" class="text-sm text-slate-400 mb-4 flex items-center flex-wrap">
       <a href="/" class="hover:text-emerald-600">Home</a>
       <span class="mx-2">›</span>
       <a href="/resources/" class="hover:text-emerald-600">Resources</a>
@@ -333,33 +416,43 @@ const articleSchema = {
     <AdUnit slot="guide-mid" />
 
     <!-- FAQ -->
-    <section class="mb-12">
+    <section class="mb-12" itemscope itemtype="https://schema.org/FAQPage">
       <h2 class="text-2xl font-bold mb-6">English Learning Podcast FAQs</h2>
       
       <div class="space-y-6">
-        <div class="bg-slate-900/60 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-emerald-400 mb-3">Are English learning podcasts free?</h3>
-          <p class="text-gray-300">Most English learning podcasts are completely free. Shows like 6 Minute English, ESL Pod, and The English We Speak are available on all major podcast platforms without charge. Some podcasts offer premium materials or courses, but the core content is free.</p>
+        <div class="bg-slate-900/60 rounded-xl p-6" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-3" itemprop="name">Are English learning podcasts free?</h3>
+          <p class="text-gray-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">Most English learning podcasts are completely free. Shows like 6 Minute English, ESL Pod, and The English We Speak are available on all major podcast platforms without charge. Some podcasts offer premium materials or courses, but the core content is free.</span>
+          </p>
         </div>
         
-        <div class="bg-slate-900/60 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-emerald-400 mb-3">How long should I listen each day?</h3>
-          <p class="text-gray-300">Twenty to thirty minutes per day is ideal for most learners. If you are busy, even 10 to 15 minutes helps. The key is to listen regularly. Daily practice builds your ear faster than occasional long sessions.</p>
+        <div class="bg-slate-900/60 rounded-xl p-6" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-3" itemprop="name">How long should I listen each day?</h3>
+          <p class="text-gray-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">Twenty to thirty minutes per day is ideal for most learners. If you are busy, even 10 to 15 minutes helps. The key is to listen regularly. Daily practice builds your ear faster than occasional long sessions.</span>
+          </p>
         </div>
         
-        <div class="bg-slate-900/60 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-emerald-400 mb-3">Can podcasts help with speaking?</h3>
-          <p class="text-gray-300">Yes, but indirectly. Podcasts train your ear to understand natural English, which is the first step to speaking better. To improve speaking directly, combine podcast listening with shadow speaking practice and conversation sessions with real tutors.</p>
+        <div class="bg-slate-900/60 rounded-xl p-6" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-3" itemprop="name">Can podcasts help with speaking?</h3>
+          <p class="text-gray-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">Yes, but indirectly. Podcasts train your ear to understand natural English, which is the first step to speaking better. To improve speaking directly, combine podcast listening with shadow speaking practice and conversation sessions with real tutors.</span>
+          </p>
         </div>
         
-        <div class="bg-slate-900/60 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-emerald-400 mb-3">What is the best podcast for English beginners?</h3>
-          <p class="text-gray-300">Coffee Break English is our top pick for absolute beginners. It uses a clear structure, speaks at a learner-friendly pace, and covers practical topics. ESL Pod is also excellent if you prefer shorter episodes with vocabulary explanations.</p>
+        <div class="bg-slate-900/60 rounded-xl p-6" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-3" itemprop="name">What is the best podcast for English beginners?</h3>
+          <p class="text-gray-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">Coffee Break English is our top pick for absolute beginners. It uses a clear structure, speaks at a learner-friendly pace, and covers practical topics. ESL Pod is also excellent if you prefer shorter episodes with vocabulary explanations.</span>
+          </p>
         </div>
         
-        <div class="bg-slate-900/60 rounded-xl p-6">
-          <h3 class="text-lg font-semibold text-emerald-400 mb-3">Should I use transcripts while listening?</h3>
-          <p class="text-gray-300">Yes, transcripts are very helpful, especially when you are starting out. Reading along while listening helps you connect sounds with spellings and builds vocabulary faster. Many podcasts offer transcripts on their websites.</p>
+        <div class="bg-slate-900/60 rounded-xl p-6" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+          <h3 class="text-lg font-semibold text-emerald-400 mb-3" itemprop="name">Should I use transcripts while listening?</h3>
+          <p class="text-gray-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">Yes, transcripts are very helpful, especially when you are starting out. Reading along while listening helps you connect sounds with spellings and builds vocabulary faster. Many podcasts offer transcripts on their websites.</span>
+          </p>
         </div>
       </div>
     </section>
