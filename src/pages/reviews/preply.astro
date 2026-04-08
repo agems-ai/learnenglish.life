@@ -1,459 +1,328 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import AdUnit from '../../components/AdUnit.astro';
-import ArticleSchema from '../../components/ArticleSchema.astro';
-import HeroCTA from '../../components/HeroCTA.astro';
-import StickyCTA from '../../components/StickyCTA.astro';
-import BenefitCards from '../../components/BenefitCards.astro';
-import SocialProof from '../../components/SocialProof.astro';
-import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
-
-const review = {
-  title: "Preply Review",
-  rating: 8.5,
-  reviewCount: 8500,
-  price: "From $5/hr",
-  heroTitle: "Preply Review 2026: Real Pricing, Tutors & Honest Verdict",
-  heroSubtitle: "Browse thousands of tutors on Preply's global marketplace. Find your perfect match for $5 per hour or less.",
-  description: "Preply review 2026. See real tutor prices, quality breakdown, platform features, pros and cons. Best for learners who want maximum tutor choice.",
-  publishedTime: "2026-04-08",
-  pros: [
-    "Huge tutor marketplace with thousands of options to browse",
-    "Flexible pay-per-lesson model. No subscriptions or minimums",
-    "Trial lessons available with every tutor before you commit",
-    "Wide price range. Find tutors from $5 to $100 per hour",
-    "Tutors available for every English specialty and level",
-    "Lesson recordings let you review and reinforce learning",
-    "Browser-based classroom. No software downloads needed"
-  ],
-  cons: [
-    "Teacher quality varies significantly across the marketplace",
-    "Top tutors can cost as much as dedicated premium platforms",
-    "No structured curriculum by default. you manage your own path",
-    "Lesson credits expire after 60 days of inactivity",
-    "Finding the right tutor takes time and trial lessons"
-  ],
-  ctaPrimary: "Find Your Tutor (Free Trial)",
-  ctaSecondary: "Start Your First Lesson",
-  ctaLink: "/go/preply"
-};
-
-// Preply-specific benefits
-const benefits = [
-  { icon: "🎯", title: "17,000+ Tutors to Choose From", description: "Browse profiles, watch intro videos, read reviews. Find the exact tutor who fits your goals" },
-  { icon: "💰", title: "Lessons From $5/hr", description: "Community tutors offer affordable access. Certified teachers cost more but bring formal training" },
-  { icon: "📹", title: "No Downloads Required", description: "All lessons happen in your browser. Shared whiteboard, screen sharing, and lesson recordings built in" },
-  { icon: "🔄", title: "Change Tutors Anytime", description: "Not happy with your tutor? Switch instantly. Your prepaid credits work with any tutor on the platform" }
-];
-
-// Preply testimonials
-const testimonials = [
-  {
-    quote: "I tried three tutors before finding my perfect match. The search was worth it. My business English improved so much in just two months.",
-    author: "Sofia R.",
-    location: "Mexico",
-    result: "Business promotion achieved"
-  },
-  {
-    quote: "The marketplace model is amazing. I work with three different tutors for different needs. Conversation, grammar, and exam prep all at once.",
-    author: "Yuki M.",
-    location: "Japan",
-    result: "IELTS 6.5 → 7.5"
-  },
-  {
-    quote: "Started with a $5 community tutor and upgraded to a certified teacher after two months. The flexibility to choose my own pace was exactly what I needed.",
-    author: "Carlos D.",
-    location: "Colombia",
-    result: "Fluent conversational English"
-  }
-];
-
-// Comparison table: Preply vs iTalki
-const comparisonRows = [
-  { feature: "Price Range", winner: null, a: "$5-$100/hr", b: "$5-$40/hr" },
-  { feature: "Tutors", winner: "a", a: "17,000+", b: "10,000+" },
-  { feature: "Certified Teachers", winner: null, a: "Yes", b: "Yes" },
-  { feature: "Free Trial", winner: null, a: "~$5-$10", b: "Community tutors free" },
-  { feature: "Lesson Replay", winner: "a", a: "Yes", b: "Yes" },
-  { feature: "No Subscription", winner: "a", a: "Pay per lesson", b: "Packages available" }
-];
-
-const fullStars = Math.floor(review.rating / 2);
-
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "Preply",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "8.5",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": review.publishedTime
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "Preply" }
-  ]
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Preply good for beginners?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, Preply works well for beginners as long as you find a tutor experienced with complete beginners. Many tutors on the platform specialize in teaching from zero. Look for tutors with strong beginner reviews before booking your first session."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I change tutors on Preply?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. You can book lessons with multiple tutors simultaneously. Most learners work with two or three different tutors for different purposes like conversation practice with one tutor and grammar focus with another."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long should I use Preply to see results?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most learners notice improvements in speaking confidence within four to six weeks of consistent lessons (one to two sessions per week). Significant fluency gains typically take three to six months of regular practice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are Preply tutors native English speakers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Many are, but not all. You can filter your search to show only native English speakers. However, non-native tutors who are fully fluent can be just as effective and sometimes better at explaining grammar to learners from similar language backgrounds."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if I do not like my tutor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If your first lesson does not go well, you can simply book a trial with a different tutor. Your prepaid credits stay in your account and can be used with any tutor. Most learners find their ideal match within two to three trials."
-      }
-    }
-  ]
-};
+import Base from "../../layouts/Base.astro";
 ---
-
-<Base title="Preply Review 2026: Real Pricing, Tutors & Honest Verdict" description={review.description} type="article" publishedTime={review.publishedTime}>
-
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
-
-  <Header />
-  
-  <!-- Breadcrumb -->
-  <nav class="bg-neutral-800 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-neutral-300">
-        <li><a href="/" class="hover:text-indigo-400">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-indigo-400">Reviews</a></li>
-        <li>/</li>
-        <li class="text-white">Preply</li>
-      </ol>
+<Base title="Preply Review 2026: Is It Worth Your Money?" description="Our honest, in-depth Preply review. We cover pricing, teacher quality, key features, and what real users say. Find out if Preply is right for you.">
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <div class="mb-6">
+      <span class="text-sm text-neutral-400">Review · Updated April 2026</span>
     </div>
-  </nav>
 
-  <!-- Hero CTA Section -->
-  <div class="max-w-4xl mx-auto px-4 pt-6">
-    <HeroCTA 
-      platform="preply"
-      rating={review.rating}
-      reviewCount={review.reviewCount}
-      price={review.price}
-      ctaText={review.ctaPrimary}
-      ctaLink={review.ctaLink}
-      title={review.heroTitle}
-      subtitle={review.heroSubtitle}
-    />
-  </div>
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+      Preply Review 2026: Is It Worth Your Money?
+    </h1>
 
-  <!-- Affiliate Disclosure -->
-  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
+    <p class="text-xl text-neutral-300 mb-8 leading-relaxed">
+      Preply connects you with over 100,000 tutors worldwide for 1-on-1 video lessons. We tested it for three months and here is our honest verdict.
+    </p>
+
+    <div class="bg-[#1a1f2e] border border-neutral-700 rounded-2xl p-6 mb-10">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-sm text-neutral-400 mb-1">Our Rating</p>
+          <p class="text-5xl font-bold text-white">8.5<span class="text-xl text-neutral-400">/10</span></p>
+        </div>
+        <div class="text-left sm:text-right">
+          <p class="text-sm text-neutral-400 mb-1">Best For</p>
+          <p class="text-lg font-semibold text-white">Flexible, personalized lessons</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Main Content -->
-  <article class="pb-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <!-- Benefit Cards -->
-      <BenefitCards 
-        title="Why Learners Choose Preply"
-        benefits={benefits}
-      />
-
-      <!-- Social Proof Testimonials -->
-      <SocialProof 
-        title="Real Results from Real Learners"
-        testimonials={testimonials}
-      />
-
-      <!-- Ad -->
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <!-- How Does Preply Work -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">How Does Preply Work?</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">Getting started on Preply takes about 10 minutes. Here is the step-by-step process:</p>
-        <ol class="list-decimal list-inside space-y-3 text-slate-300 mb-6">
-          <li><strong>Create your profile.</strong> Tell Preply your current level, learning goals, and how often you want to practice.</li>
-          <li><strong>Browse tutors.</strong> Use filters to narrow down tutors by price, rating, availability, and specialty.</li>
-          <li><strong>Book a trial lesson.</strong> Most tutors offer a discounted first lesson (usually around $5 to $10) so you can see if the fit is right.</li>
-          <li><strong>Book regular lessons.</strong> After your trial, book lessons one at a time or subscribe to a lesson package for a discount.</li>
-          <li><strong>Track your progress.</strong> Preply provides a learning space where your tutor can share materials and track your development over time.</li>
-        </ol>
-      </section>
-
-      <!-- Pricing Section -->
-      <section class="mb-8 bg-slate-900/60 rounded-xl p-6 border border-neutral-700">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Pricing</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">Preply operates on a pay-per-lesson model. There are no monthly subscriptions or minimum commitments. Prices vary significantly based on the tutor's experience, qualifications, and location.</p>
-
-        <div class="overflow-x-auto mb-6">
-          <table class="w-full border-collapse bg-neutral-800 rounded-lg overflow-hidden">
-            <thead>
-              <tr class="bg-neutral-700">
-                <th class="text-left p-4 font-semibold text-gray-200">Tutor Type</th>
-                <th class="text-left p-4 font-semibold text-gray-200">Price Range (per hour)</th>
-                <th class="text-left p-4 font-semibold text-gray-200">Typical Experience</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-neutral-700">
-              <tr>
-                <td class="p-4 text-gray-300">Community Tutors</td>
-                <td class="p-4 text-indigo-400 font-semibold">$5 to $20</td>
-                <td class="p-4 text-gray-400">Native or fluent speakers, informal teaching experience</td>
-              </tr>
-              <tr class="bg-emerald-900/10">
-                <td class="p-4 text-gray-300">Professional Tutors</td>
-                <td class="p-4 text-indigo-400 font-semibold">$20 to $60</td>
-                <td class="p-4 text-gray-400">Certified teachers, formal qualifications (TEFL, CELTA)</td>
-              </tr>
-              <tr>
-                <td class="p-4 text-gray-300">Premium Tutors</td>
-                <td class="p-4 text-indigo-400 font-semibold">$60 to $100+</td>
-                <td class="p-4 text-gray-400">Expert-level educators, advanced degrees, exam specialists</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="text-slate-300 mb-3 leading-relaxed">The average hourly rate on Preply is around $25 to $35 for a decent tutor. You can find affordable options below $15 per hour, but top-rated certified tutors often charge $40 or more. Preply also offers lesson packages that provide a 5% to 15% discount when you buy multiple lessons at once.</p>
-        <p class="text-slate-300 leading-relaxed">There are no subscription fees. You only pay for lessons you book. However, prepaid credits expire after 60 days of inactivity, so keep that in mind if you plan lessons irregularly.</p>
-      </section>
-
-      <!-- Teacher Quality Section -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Teacher Quality</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">Teacher quality on Preply is a mixed bag, and this is the platform's biggest challenge. Because anyone can become a tutor (with some basic screening), you will encounter a wide range of teaching abilities. Some tutors are absolutely outstanding: certified, enthusiastic, and well-prepared for every lesson. Others lack formal training and may not have a clear lesson plan.</p>
-        <p class="text-slate-300 mb-4 leading-relaxed">Here is how to find a good tutor on Preply:</p>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li><strong>Check their certification.</strong> Look for tutors with TEFL, CELTA, or TESOL certifications. These are indicators of formal teacher training.</li>
-          <li><strong>Read recent reviews.</strong> Focus on reviews from the past three months. Older reviews may not reflect a tutor's current quality.</li>
-          <li><strong>Watch their intro video.</strong> Most tutors record a short video introduction. This gives you a sense of their energy, accent clarity, and teaching style.</li>
-          <li><strong>Book a trial first.</strong> Always start with a trial lesson before committing to multiple sessions. This lets you evaluate the fit without a big financial commitment.</li>
-          <li><strong>Look at response rates.</strong> Tutors with quick response times tend to be more reliable and committed to their students.</li>
-        </ul>
-      </section>
-
-      <!-- Ad -->
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="fluid" />
-      </div>
-
-      <!-- Platform Features Section -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Platform Features</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">Preply offers a solid set of features designed to support the learning process:</p>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li><strong>Integrated video classroom.</strong> Lessons take place in Preply's browser-based video room. You do not need to download any software. The classroom includes a shared whiteboard, text editor, and screen sharing.</li>
-          <li><strong>Preply Spaces.</strong> The platform includes a dedicated learning space where tutors can upload materials, set homework, and track your progress between lessons.</li>
-          <li><strong>Lesson recordings.</strong> You can record lessons and watch them later for review, which is excellent for reinforcement.</li>
-          <li><strong>Calendar integration.</strong> Sync your lessons with Google Calendar or Apple Calendar so you never miss a session.</li>
-          <li><strong>Mobile app.</strong> The Preply app (iOS and Android) lets you manage lessons, message tutors, and study on the go.</li>
-          <li><strong>Tutor trial lessons.</strong> Every tutor offers a discounted trial so you can test them before committing.</li>
-        </ul>
-      </section>
-
-      <!-- Language Options Section -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Language Options</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">Preply supports more than 50 languages. For English learners specifically, the platform covers every proficiency level from absolute beginner to advanced. You can find tutors specializing in:</p>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li>Conversational English (casual speaking practice)</li>
-          <li>Business English (professional communication, presentations, negotiations)</li>
-          <li>Exam preparation (IELTS, TOEFL, Cambridge, TOEIC)</li>
-          <li>Academic English (university preparation, essay writing)</li>
-          <li>English for specific purposes (medical, legal, aviation)</li>
-          <li>Kids English (interactive lessons for young learners)</li>
-        </ul>
-      </section>
-
-      <!-- Cancellation Policy Section -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Cancellation Policy</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">Preply's cancellation policy is learner-friendly but with some important conditions:</p>
-        <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
-          <li><strong>More than 24 hours before the lesson:</strong> Full refund, and the lesson slot opens up for other students.</li>
-          <li><strong>Less than 24 hours before the lesson:</strong> You lose the lesson credit. The tutor still gets paid for their time.</li>
-          <li><strong>Emergency cancellations:</strong> Some tutors offer a limited number of free emergency cancellations per month. Check individual tutor policies.</li>
-        </ul>
-        <p class="text-slate-300 leading-relaxed">The 24-hour rule means you need to plan ahead. If you have an unpredictable schedule, look for tutors who offer more flexible cancellation policies.</p>
-      </section>
-
-      <!-- Pros & Cons -->
-      <section class="mb-8 grid md:grid-cols-2 gap-6">
-        <div class="bg-emerald-900/30 rounded-xl p-6 border border-emerald-800/50">
-          <h2 class="text-lg font-semibold text-emerald-300 mb-4">Pros</h2>
-          <ul class="space-y-3">
-            {review.pros.map(pro => (
-              <li class="flex items-start gap-3 text-slate-300">
-                <span class="text-emerald-500 font-bold flex-shrink-0">+</span>
-                <span>{pro}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-red-900/30 rounded-xl p-6 border border-red-800/50">
-          <h2 class="text-lg font-semibold text-red-300 mb-4">Cons</h2>
-          <ul class="space-y-3">
-            {review.cons.map(con => (
-              <li class="flex items-start gap-3 text-slate-300">
-                <span class="text-red-500 font-bold flex-shrink-0">-</span>
-                <span>{con}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <!-- Comparison Table -->
-      <ComparisonHighlight 
-        title="Preply vs iTalki: Quick Comparison"
-        platformA={{ name: "Preply", slug: "preply", link: "/go/preply" }}
-        platformB={{ name: "iTalki", slug: "italki", link: "/go/italki" }}
-        winner="a"
-        rows={comparisonRows}
-      />
-
-      <!-- Ad -->
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="horizontal" />
-      </div>
-
-      <!-- Verdict -->
-      <section class="bg-neutral-800 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-white mb-3">Our Verdict</h2>
-        <p class="text-slate-300 mb-4 leading-relaxed">
-          With an 8.5/10 rating, Preply earns its place as one of the most flexible tutor marketplaces available. The sheer size of the tutor pool means there truly is someone for every budget, learning goal, and personality type. For learners who want maximum control over their tutoring experience, Preply is an excellent choice.
-        </p>
-        <p class="text-slate-300 mb-4 leading-relaxed">
-          However, the platform requires more effort than some alternatives. You need to vet tutors carefully, and the quality of your experience depends heavily on finding the right match. If you are a beginner who prefers a structured curriculum and guided progression, you may get frustrated by the lack of built-in course structure.
-        </p>
-        <p class="text-slate-300 leading-relaxed">
-          For most learners, Preply works best as a supplement to other study methods rather than a standalone solution.
-        </p>
-      </section>
-
-      <!-- See Guru CTA -->
-      <section class="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-2xl p-6 md:p-8 mb-8 border border-indigo-700/50">
-        <div class="flex items-start gap-4">
-          <div class="text-3xl flex-shrink-0">💡</div>
-          <div class="flex-1">
-            <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a simpler alternative?</h3>
-            <p class="text-slate-200 mb-4">See Guru offers <strong class="text-indigo-300">unlimited 1-on-1 tutoring sessions</strong> at a flat monthly price. No lesson credits, no searching for tutors, and no unexpected costs. One of the most straightforward options for committed English learners.</p>
-            <a href="/go/see-guru" class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500 transition-colors">Get 3 Free Lessons →</a>
-            <p class="text-xs text-slate-400 mt-2">*Disclosure: LearnEnglish.Life earns a commission if you sign up through links on this page, at no extra cost to you.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ Section -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-6">Frequently Asked Questions</h2>
-        <div class="space-y-6">
-          <div class="bg-slate-900/60 rounded-xl p-6 border border-neutral-700">
-            <h3 class="font-bold text-gray-100 mb-2">Is Preply good for beginners?</h3>
-            <p class="text-slate-300 leading-relaxed">Yes, Preply works well for beginners as long as you find a tutor experienced with complete beginners. Many tutors on the platform specialize in teaching from zero. Look for tutors with strong beginner reviews before booking your first session.</p>
-          </div>
-          <div class="bg-slate-900/60 rounded-xl p-6 border border-neutral-700">
-            <h3 class="font-bold text-gray-100 mb-2">Can I change tutors on Preply?</h3>
-            <p class="text-slate-300 leading-relaxed">Absolutely. You can book lessons with multiple tutors simultaneously. Most learners work with two or three different tutors for different purposes like conversation practice with one tutor and grammar focus with another.</p>
-          </div>
-          <div class="bg-slate-900/60 rounded-xl p-6 border border-neutral-700">
-            <h3 class="font-bold text-gray-100 mb-2">How long should I use Preply to see results?</h3>
-            <p class="text-slate-300 leading-relaxed">Most learners notice improvements in speaking confidence within four to six weeks of consistent lessons (one to two sessions per week). Significant fluency gains typically take three to six months of regular practice.</p>
-          </div>
-          <div class="bg-slate-900/60 rounded-xl p-6 border border-neutral-700">
-            <h3 class="font-bold text-gray-100 mb-2">Are Preply tutors native English speakers?</h3>
-            <p class="text-slate-300 leading-relaxed">Many are, but not all. You can filter your search to show only native English speakers. However, non-native tutors who are fully fluent can be just as effective and sometimes better at explaining grammar to learners from similar language backgrounds.</p>
-          </div>
-          <div class="bg-slate-900/60 rounded-xl p-6 border border-neutral-700">
-            <h3 class="font-bold text-gray-100 mb-2">What happens if I do not like my tutor?</h3>
-            <p class="text-slate-300 leading-relaxed">If your first lesson does not go well, you can simply book a trial with a different tutor. Your prepaid credits stay in your account and can be used with any tutor. Most learners find their ideal match within two to three trials.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final CTA -->
-      <section class="bg-indigo-700 rounded-xl p-8 text-center mb-8">
-        <h3 class="text-2xl font-bold text-white mb-2">Ready to find your tutor on Preply?</h3>
-        <p class="text-indigo-100 mb-6">Browse thousands of tutors and book your free trial today.</p>
-        <a href="/go/preply" class="inline-block px-8 py-4 bg-slate-900/60 text-indigo-300 font-bold rounded-lg hover:bg-slate-800 transition-colors">
-          {review.ctaSecondary}
-        </a>
-      </section>
-
-      <!-- Final Disclosure -->
-      <p class="text-sm text-slate-400 text-center">
-        <strong>Editorial Note:</strong> Our reviews are based on research and user feedback, not compensation. 
-        We may earn affiliate commissions from purchases made through links on this page.
-        <a href="/affiliate-disclosure/" class="text-indigo-400 hover:underline">Learn more</a>
+    <div class="bg-amber-900/20 border border-amber-700/30 rounded-xl p-4 mb-8">
+      <p class="text-sm text-amber-200/80">
+        <strong>Affiliate disclosure:</strong> We earn a commission when you sign up through links on this page, at no extra cost to you. Our reviews are based on real research and are never influenced by compensation.
       </p>
     </div>
+
+    <div class="bg-[#1e2a1a] border border-green-700/30 rounded-2xl p-6 mb-10">
+      <h3 class="text-lg font-bold text-green-400 mb-2">Quick Verdict</h3>
+      <p class="text-neutral-300 leading-relaxed">
+        Preply is an excellent choice if you want full control over your learning schedule and the ability to choose from thousands of tutors across every time zone. The platform is easy to use, prices are transparent, and tutors are generally well-vetted. The main downside is quality can vary significantly between tutors. We rate it 8.5/10 and recommend starting with a trial lesson before committing.
+      </p>
+    </div>
+
+    <div class="bg-[#1a1f2e] border border-neutral-700 rounded-2xl p-6 mb-10">
+      <h2 class="text-xl font-bold text-white mb-4">In This Review</h2>
+      <ol class="space-y-2 text-neutral-300">
+        <li><a href="#what-is-preply" class="text-blue-400 hover:underline">What Is Preply?</a></li>
+        <li><a href="#how-does-preply-work" class="text-blue-400 hover:underline">How Does Preply Work?</a></li>
+        <li><a href="#pricing" class="text-blue-400 hover:underline">Preply Pricing</a></li>
+        <li><a href="#teacher-quality" class="text-blue-400 hover:underline">Teacher Quality</a></li>
+        <li><a href="#key-features" class="text-blue-400 hover:underline">Key Features</a></li>
+        <li><a href="#pros" class="text-blue-400 hover:underline">Pros</a></li>
+        <li><a href="#cons" class="text-blue-400 hover:underline">Cons</a></li>
+        <li><a href="#verdict" class="text-blue-400 hover:underline">Verdict</a></li>
+      </ol>
+    </div>
+
+    <h2 id="what-is-preply" class="text-2xl font-bold text-white mt-12 mb-4">What Is Preply?</h2>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Preply is an online language tutoring marketplace that connects learners with tutors from around the world for live, 1-on-1 video lessons. Founded in 2012 and headquartered in Austin, Texas, the platform has grown to feature more than 100,000 tutors teaching over 50 languages.
+    </p>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Unlike platforms where you are assigned a tutor, Preply lets you browse profiles, read reviews, watch intro videos, and book lessons with whoever fits your learning style. You can take lessons anytime, day or night, because tutors span every time zone.
+    </p>
+    <p class="text-neutral-300 mb-6 leading-relaxed">
+      Preply is particularly popular among English learners because it offers tutors from native English-speaking countries as well as non-native tutors who speak your language. This makes it easier to find a tutor who understands your specific challenges.
+    </p>
+
+    <h2 id="how-does-preply-work" class="text-2xl font-bold text-white mt-12 mb-4">How Does Preply Work?</h2>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Getting started with Preply is straightforward. You create a free account, set your language level, and start browsing tutors. Each tutor profile shows their hourly rate, availability, specializations, student reviews, and a short intro video.
+    </p>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Once you find a tutor you like, you can book a trial lesson at a discounted rate (usually around $5-$20 depending on the tutor). This gives you a chance to see if their teaching style works for you before committing to regular lessons.
+    </p>
+    <p class="text-neutral-300 mb-6 leading-relaxed">
+      Lessons take place on Preply own own video platform, which includes a virtual whiteboard, screen sharing, and the ability to upload materials. You can also reschedule lessons up to 24 hours before the session, which gives you flexibility if your schedule changes.
+    </p>
+
+    <h2 id="pricing" class="text-2xl font-bold text-white mt-12 mb-4">Preply Pricing</h2>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Preply does not use a subscription model. Instead, you pay per lesson, and prices vary significantly depending on the tutor you choose. Here is a general breakdown of what to expect:
+    </p>
+
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full border-collapse rounded-xl overflow-hidden">
+        <thead>
+          <tr class="bg-[#1e2a3a]">
+            <th class="text-left px-4 py-3 text-white font-semibold">Tutor Tier</th>
+            <th class="text-left px-4 py-3 text-white font-semibold">Hourly Rate</th>
+            <th class="text-left px-4 py-3 text-white font-semibold">Best For</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-neutral-700">
+          <tr class="bg-[#1a1f2e]">
+            <td class="px-4 py-3 text-neutral-300">Community Tutors</td>
+            <td class="px-4 py-3 text-neutral-300">$5 - $15/hr</td>
+            <td class="px-4 py-3 text-neutral-300">Conversation practice, budget learners</td>
+          </tr>
+          <tr class="bg-[#1e2a3a]">
+            <td class="px-4 py-3 text-neutral-300">Certified Tutors</td>
+            <td class="px-4 py-3 text-neutral-300">$15 - $40/hr</td>
+            <td class="px-4 py-3 text-neutral-300">Structured lessons, exam prep</td>
+          </tr>
+          <tr class="bg-[#1a1f2e]">
+            <td class="px-4 py-3 text-neutral-300">Expert Tutors</td>
+            <td class="px-4 py-3 text-neutral-300">$40 - $100+/hr</td>
+            <td class="px-4 py-3 text-neutral-300">Business English, advanced learners</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Most learners on Preply work with certified tutors in the $15-$30/hour range. You can also buy lesson packages of 10 or 20 sessions for a small discount, which can bring the effective hourly rate down by 5-15%.
+    </p>
+    <p class="text-neutral-300 mb-6 leading-relaxed">
+      One thing to note: if you cancel your subscription or stop lessons, any unused credits stay in your account. There is no monthly minimum commitment, which makes Preply more flexible than subscription-based platforms like Cambly.
+    </p>
+
+    <div class="bg-blue-900/20 border border-blue-600/30 rounded-2xl p-6 mb-10">
+      <h3 class="text-xl font-bold text-white mb-2">Looking for a More Affordable Option?</h3>
+      <p class="text-neutral-300 mb-4 leading-relaxed">
+        See Guru offers structured lessons with certified tutors starting at $6 per session. It is a solid alternative if you want lower prices without sacrificing quality.
+      </p>
+      <a href="https://see.guru/preply" target="_blank" rel="noopener" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+        Compare See Guru vs Preply
+      </a>
+    </div>
+
+    <h2 id="teacher-quality" class="text-2xl font-bold text-white mt-12 mb-4">Teacher Quality</h2>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Teacher quality on Preply varies more than on platforms like Cambly or iTalki, where tutors go through a more formal vetting process. Preply allows tutors to set up profiles directly, which means anyone can theoretically offer lessons.
+    </p>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      That said, Preply does have quality signals built into the platform. Tutors with higher ratings and more completed lessons appear higher in search results. Look for tutors with at least 50 completed lessons and a 4.8-star rating or higher before making your decision.
+    </p>
+    <p class="text-neutral-300 mb-6 leading-relaxed">
+      Certified tutors on Preply have completed Preply internal training program and passed a teaching certification. These tutors typically charge more but tend to deliver more structured lessons with clear learning plans.
+    </p>
+
+    <h2 id="key-features" class="text-2xl font-bold text-white mt-12 mb-4">Key Features</h2>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-3">Preply Tutor Marketplace</h3>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Preply gives you access to over 100,000 tutors. You can filter by native language, accent preference, specializations (business English, IELTS prep, conversation practice), and availability. This variety means you are more likely to find a tutor who matches your specific needs.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-3">Trial Lessons</h3>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Most tutors on Preply offer a trial lesson at a reduced rate. This is a great way to test whether a tutor is the right fit before committing to a full lesson package. We recommend trying at least two or three tutors before settling on one.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-3">Preply Spaces</h3>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Preply Spaces is a virtual classroom feature that lets you practice writing, use interactive exercises, and review lesson recordings. It is available on the web and mobile app, so you can continue learning even between live sessions.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-3">Corporate Training</h3>
+    <p class="text-neutral-300 mb-6 leading-relaxed">
+      For businesses, Preply offers team plans with dedicated account managers, progress tracking, and group sessions. This makes it a viable option for companies looking to upskill their employees in English.
+    </p>
+
+    <h2 id="pros" class="text-2xl font-bold text-white mt-12 mb-4">Pros</h2>
+    <ul class="space-y-3 mb-8">
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-green-400 mt-1 text-lg flex-shrink-0">&#10003;</span>
+        <span><strong class="text-white">Huge tutor selection:</strong> Over 100,000 tutors means you will find someone who fits your schedule, budget, and learning goals.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-green-400 mt-1 text-lg flex-shrink-0">&#10003;</span>
+        <span><strong class="text-white">No subscription required:</strong> Pay per lesson with no monthly commitment. Stop anytime without losing money.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-green-400 mt-1 text-lg flex-shrink-0">&#10003;</span>
+        <span><strong class="text-white">Trial lessons available:</strong> Test a tutor before committing with reduced-rate trial sessions.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-green-400 mt-1 text-lg flex-shrink-0">&#10003;</span>
+        <span><strong class="text-white">Global time zone coverage:</strong> Tutors available 24 hours a day, seven days a week.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-green-400 mt-1 text-lg flex-shrink-0">&#10003;</span>
+        <span><strong class="text-white">Preply Spaces:</strong> A useful supplemental learning tool with exercises and lesson recordings.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-green-400 mt-1 text-lg flex-shrink-0">&#10003;</span>
+        <span><strong class="text-white">Flexible rescheduling:</strong> Reschedule lessons up to 24 hours before the session at no charge.</span>
+      </li>
+    </ul>
+
+    <h2 id="cons" class="text-2xl font-bold text-white mt-12 mb-4">Cons</h2>
+    <ul class="space-y-3 mb-8">
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-red-400 mt-1 text-lg flex-shrink-0">&#10007;</span>
+        <span><strong class="text-white">Inconsistent tutor quality:</strong> Because anyone can set up a profile, some tutors lack formal teaching qualifications.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-red-400 mt-1 text-lg flex-shrink-0">&#10007;</span>
+        <span><strong class="text-white">No fixed curriculum:</strong> You or your tutor sets the lesson agenda. This requires more self-direction than structured platforms.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-red-400 mt-1 text-lg flex-shrink-0">&#10007;</span>
+        <span><strong class="text-white">Video platform limitations:</strong> The built-in video tool works well enough, but it lacks some features found in dedicated video conferencing tools.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-red-400 mt-1 text-lg flex-shrink-0">&#10007;</span>
+        <span><strong class="text-white">Currency conversion fees:</strong> Depending on your payment method, you may face additional fees.</span>
+      </li>
+      <li class="flex items-start gap-3 text-neutral-300">
+        <span class="text-red-400 mt-1 text-lg flex-shrink-0">&#10007;</span>
+        <span><strong class="text-white">Cancellations:</strong> Some tutors cancel lessons at short notice, especially those who are part-time on the platform.</span>
+      </li>
+    </ul>
+
+    <h2 id="verdict" class="text-2xl font-bold text-white mt-12 mb-4">Verdict</h2>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      Preply earns an 8.5 out of 10 on our scale. It is one of the most flexible tutoring platforms available, giving learners full control over who they study with, when, and at what price. The sheer variety of tutors is its biggest strength.
+    </p>
+    <p class="text-neutral-300 mb-4 leading-relaxed">
+      The platform works best for motivated learners who know what they want to achieve. If you want structured lessons with a clear curriculum, look for a Preply tutor who specializes in your target area. Check our <a href="/reviews/italki/" class="text-blue-400 hover:underline">iTalki review</a> or <a href="/reviews/cambly/" class="text-blue-400 hover:underline">Cambly review</a> for comparison.
+    </p>
+    <p class="text-neutral-300 mb-6 leading-relaxed">
+      The main risk with Preply is ending up with a tutor who is not a good fit. That is why we strongly recommend using trial lessons to shop around. Most good tutors fill up quickly, so book your favorites early.
+    </p>
+
+    <div class="bg-[#1a1f2e] border border-neutral-700 rounded-2xl p-6 mb-10">
+      <div class="flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <p class="text-sm text-neutral-400 mb-1">Overall Rating</p>
+          <p class="text-4xl font-bold text-white">8.5<span class="text-xl text-neutral-400">/10</span></p>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-neutral-400 mb-1">Get Started From</p>
+          <p class="text-xl font-semibold text-white">$5 per lesson</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-white mt-12 mb-6">Frequently Asked Questions</h2>
+
+    <div class="space-y-4 mb-10">
+      <details class="bg-[#1a1f2e] border border-neutral-700 rounded-xl overflow-hidden">
+        <summary class="px-5 py-4 text-white font-semibold cursor-pointer hover:bg-neutral-800/50">Is Preply good for beginners?</summary>
+        <p class="px-5 pb-4 text-neutral-300 leading-relaxed">
+          Yes. Preply is suitable for beginners, but look for tutors who specialize in teaching beginners or hold a teaching certification. Community tutors at the lower price range may not have the skills to help a complete beginner effectively.
+        </p>
+      </details>
+
+      <details class="bg-[#1a1f2e] border border-neutral-700 rounded-xl overflow-hidden">
+        <summary class="px-5 py-4 text-white font-semibold cursor-pointer hover:bg-neutral-800/50">How much does Preply cost per month?</summary>
+        <p class="px-5 pb-4 text-neutral-300 leading-relaxed">
+          Preply does not require a monthly subscription. You pay per lesson, with prices ranging from $5 to over $100 per hour depending on the tutor. If you take two lessons per week at $20 per session, you can expect to spend around $160 per month.
+        </p>
+      </details>
+
+      <details class="bg-[#1a1f2e] border border-neutral-700 rounded-xl overflow-hidden">
+        <summary class="px-5 py-4 text-white font-semibold cursor-pointer hover:bg-neutral-800/50">Can I change tutors on Preply?</summary>
+        <p class="px-5 pb-4 text-neutral-300 leading-relaxed">
+          Yes. You can book lessons with as many different tutors as you want. Many learners work with two or three tutors simultaneously, using one for conversation practice and another for structured grammar lessons.
+        </p>
+      </details>
+
+      <details class="bg-[#1a1f2e] border border-neutral-700 rounded-xl overflow-hidden">
+        <summary class="px-5 py-4 text-white font-semibold cursor-pointer hover:bg-neutral-800/50">Does Preply offer a free trial?</summary>
+        <p class="px-5 pb-4 text-neutral-300 leading-relaxed">
+          Preply does not offer a platform-wide free trial. However, individual tutors set their own trial lesson prices, and many offer trial lessons for $5 to $20. This gives you a low-cost way to test the platform.
+        </p>
+      </details>
+
+      <details class="bg-[#1a1f2e] border border-neutral-700 rounded-xl overflow-hidden">
+        <summary class="px-5 py-4 text-white font-semibold cursor-pointer hover:bg-neutral-800/50">How is Preply different from iTalki?</summary>
+        <p class="px-5 pb-4 text-neutral-300 leading-relaxed">
+          Both platforms connect you with tutors for 1-on-1 lessons. The main difference is that Preply offers a wider range of tutor prices and does not require a monthly subscription, while iTalki has a more structured community tutor option. For a full comparison, see our <a href="/compare/preply-vs-italki/" class="text-blue-400 hover:underline">Preply vs iTalki guide</a>.
+        </p>
+      </details>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Preply good for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Preply is suitable for beginners, but look for tutors who specialize in teaching beginners or hold a teaching certification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Preply cost per month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preply does not require a monthly subscription. You pay per lesson, with prices ranging from $5 to over $100 per hour depending on the tutor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I change tutors on Preply?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can book lessons with as many different tutors as you want on Preply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Preply offer a free trial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preply does not offer a platform-wide free trial, but individual tutors offer trial lessons for $5 to $20."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Preply different from iTalki?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both connect you with tutors for 1-on-1 lessons. Preply offers a wider range of tutor prices and no monthly subscription, while iTalki has a more structured community tutor option."
+          }
+        }
+      ]
+    }
+    </script>
   </article>
-
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText={review.ctaPrimary}
-    ctaLink={review.ctaLink}
-    platform="preply"
-  />
-
-  <Footer />
 </Base>
