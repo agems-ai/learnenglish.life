@@ -2,8 +2,7 @@ import type { APIRoute } from 'astro';
 
 const SITE_URL = 'https://learnenglish.life';
 
-// All pages that should be in the sitemap
-// Updated: 2026-04-08 — Added elsaspeak-vs-italki and pimsleur-vs-italki
+// Sitemap — Updated: 2026-04-09
 const staticPages = [
   // Main pages
   { url: '', priority: '1.0', changefreq: 'daily' },
@@ -29,7 +28,7 @@ const staticPages = [
   { url: '/reviews/pimsleur', priority: '0.8', changefreq: 'monthly' },
   { url: '/reviews/elsa-speak', priority: '0.8', changefreq: 'monthly' },
 
-  // Comparison listing + pages (all 29 live comparisons)
+  // Comparison listing + pages
   { url: '/compare', priority: '0.9', changefreq: 'weekly' },
   { url: '/compare/italki-vs-preply', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/cambly-vs-italki', priority: '0.8', changefreq: 'monthly' },
@@ -60,13 +59,14 @@ const staticPages = [
   { url: '/compare/best-english-learning-apps', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/best-english-tutoring-platforms-2026', priority: '0.8', changefreq: 'monthly' },
 
-  // Guides listing + pages (all live guides)
+  // Guides listing + pages
   { url: '/guides', priority: '0.9', changefreq: 'weekly' },
   { url: '/guides/best-english-tutors-for-beginners', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/best-english-tutors-for-business', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/best-english-apps-for-beginners', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/best-english-apps-for-kids', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/best-english-tutors-ielts-preparation', priority: '0.8', changefreq: 'monthly' },
+  { url: '/guides/ielts-preparation-complete-guide', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/cheapest-1-on-1-english-lessons-online', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/how-much-does-italki-cost', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/common-english-mistakes', priority: '0.8', changefreq: 'monthly' },
@@ -84,11 +84,17 @@ const staticPages = [
   { url: '/guides/best-free-english-tutoring-apps', priority: '0.8', changefreq: 'monthly' },
   { url: '/guides/grammar', priority: '0.8', changefreq: 'monthly' },
 
+  // Resources listing + pages
+  { url: '/resources', priority: '0.9', changefreq: 'weekly' },
+  { url: '/resources/best-youtube-channels-learn-english', priority: '0.8', changefreq: 'monthly' },
+  { url: '/resources/english-podcasts-for-learners', priority: '0.8', changefreq: 'monthly' },
+
+  // Tools listing + pages
+  { url: '/tools', priority: '0.7', changefreq: 'monthly' },
+  { url: '/tools/text-to-speech-english', priority: '0.8', changefreq: 'monthly' },
+
   // Blog listing
   { url: '/blog', priority: '0.9', changefreq: 'weekly' },
-
-  // Tools
-  { url: '/tools', priority: '0.7', changefreq: 'monthly' },
 
   // Legal extras
   { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
