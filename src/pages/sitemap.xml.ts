@@ -31,6 +31,7 @@ const staticPages = [
   // Comparison listing + pages
   { url: '/compare', priority: '0.9', changefreq: 'weekly' },
   { url: '/compare/italki-vs-preply', priority: '0.8', changefreq: 'monthly' },
+      { url: '/compare/italki-vs-rocket-languages', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/cambly-vs-italki', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/cambly-vs-preply', priority: '0.8', changefreq: 'monthly' },
   { url: '/compare/preply-vs-cambly', priority: '0.8', changefreq: 'monthly' },
