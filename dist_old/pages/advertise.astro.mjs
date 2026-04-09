@@ -1,0 +1,24 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_DZoc_vH5.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$Advertise = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Advertise with Us. LearnEnglish.Life", "description": "Advertise on LearnEnglish.Life. Reach English learners worldwide with your products and services." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="max-w-3xl mx-auto px-4 py-12"> <div class="text-center mb-12"> <h1 class="text-4xl font-bold text-slate-100 mb-4">Advertise with LearnEnglish.Life</h1> <p class="text-lg text-slate-300">Reach millions of English learners actively searching for the best learning tools and platforms.</p> </div> <div class="bg-slate-900/60 rounded-xl border border-slate-700 p-8 mb-8"> <h2 class="text-2xl font-bold text-slate-100 mb-4">Why Advertise With Us?</h2> <ul class="space-y-3 text-slate-300"> <li class="flex items-start gap-3"> <span class="text-emerald-500 mt-1">✓</span> <span><strong>Highly targeted audience</strong>. English learners actively researching platforms, courses, and tools</span> </li> <li class="flex items-start gap-3"> <span class="text-emerald-500 mt-1">✓</span> <span><strong>Trustworthy content</strong>. Our reviews and recommendations are backed by thorough research</span> </li> <li class="flex items-start gap-3"> <span class="text-emerald-500 mt-1">✓</span> <span><strong>Global reach</strong>. Learners from 100+ countries visit our site monthly</span> </li> <li class="flex items-start gap-3"> <span class="text-emerald-500 mt-1">✓</span> <span><strong>Transparent reporting</strong>. Detailed analytics and performance metrics</span> </li> </ul> </div> <div class="bg-slate-950/60 rounded-xl border border-slate-700 p-8 mb-8"> <h2 class="text-2xl font-bold text-slate-100 mb-4">Advertising Options</h2> <div class="space-y-4"> <div class="bg-slate-900/60 rounded-lg p-4 border border-slate-700"> <h3 class="font-semibold text-slate-100 mb-2">Sponsored Content</h3> <p class="text-slate-300 text-sm">Featured platform reviews and comparison articles with clear disclosure.</p> </div> <div class="bg-slate-900/60 rounded-lg p-4 border border-slate-700"> <h3 class="font-semibold text-slate-100 mb-2">Display Advertising</h3> <p class="text-slate-300 text-sm">Banner ads on high-traffic pages across the site.</p> </div> <div class="bg-slate-900/60 rounded-lg p-4 border border-slate-700"> <h3 class="font-semibold text-slate-100 mb-2">Affiliate Partnerships</h3> <p class="text-slate-300 text-sm">Commission-based partnerships for tutoring platforms and course providers.</p> </div> </div> </div> <div class="bg-emerald-950/60 rounded-xl border border-emerald-700 p-6 text-center"> <p class="text-emerald-200 mb-4">Interested in advertising? Get in touch!</p> <a href="mailto:advertise@learnenglish.life" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
+Contact Us
+</a> </div> </section> ` })}`;
+}, "/var/www/learnenglish.life/src/pages/advertise.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/advertise.astro";
+const $$url = "/advertise";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Advertise,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

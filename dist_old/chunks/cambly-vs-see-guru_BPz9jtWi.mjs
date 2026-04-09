@@ -1,0 +1,171 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, b as addAttribute, m as maybeRenderHead, u as unescapeHTML } from './astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from './Base_DZoc_vH5.mjs';
+import { a as $$Footer, $ as $$Header } from './Footer_BqrSaoVo.mjs';
+import { $ as $$AdUnit } from './AdUnit_CfA3FelO.mjs';
+import { $ as $$StickyCTA } from './StickyCTA_CJElHHTS.mjs';
+import { $ as $$ComparisonHighlight, a as $$SocialProof } from './ComparisonHighlight_CnQ51mBr.mjs';
+import { $ as $$BenefitCards } from './BenefitCards_DF0LaMEG.mjs';
+import { $ as $$PlatformRatings } from './PlatformRatings_cCKrnvKW.mjs';
+import { p as platformRatings } from './platform-ratings_fa1tzaaV.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$CamblyVsSeeGuru = createComponent(($$result, $$props, $$slots) => {
+  const cambly = {
+    name: "Cambly",
+    rating: 8.2,
+    price: "$6.67/mo",
+    link: "/go/cambly",
+    bestFor: "Unlimited conversation practice with native speakers",
+    pros: [
+      "Unlimited conversation sessions with native speakers",
+      "No scheduling required, on-demand access",
+      "All tutors are native English speakers",
+      "Built-in curriculum and study materials",
+      "Kid-friendly option (Cambly for Kids)"
+    ],
+    cons: [
+      "Requires subscription (no pay-per-lesson)",
+      "Less structured than dedicated tutoring",
+      "Tutors cannot be specifically selected in advance",
+      "Best suited for listening and speaking, not grammar"
+    ]
+  };
+  const seeGuru = {
+    name: "See Guru",
+    rating: 7.8,
+    price: "$5-40/hr",
+    link: "/go/see-guru",
+    bestFor: "Affordable tutors with strong Asian selection",
+    pros: [
+      "Affordable lessons starting at $5/hour",
+      "Strong Asian tutor selection (Chinese, Japanese, Korean)",
+      "Pay-per-lesson model with no subscription required",
+      "Trial lessons available for $1-5",
+      "Good availability across time zones"
+    ],
+    cons: [
+      "Smaller tutor pool than major platforms",
+      "Basic vetting process",
+      "Limited built-in curriculum",
+      "Customer support can be slow"
+    ]
+  };
+  const comparison = [
+    { feature: "Starting Price", winner: "b", a: "$6.67/mo", b: "$5/hr" },
+    { feature: "Pricing Model", winner: null, a: "Subscription", b: "Pay per lesson" },
+    { feature: "Tutor Selection", winner: "a", a: "Large (global)", b: "Moderate (10,000+)" },
+    { feature: "Native English Speakers", winner: "a", a: "All tutors guaranteed", b: "Limited selection" },
+    { feature: "Asian Tutor Focus", winner: "b", a: "Good", b: "Excellent" },
+    { feature: "Trial Available", winner: "b", a: "Limited", b: "Yes ($1-5)" },
+    { feature: "Scheduling", winner: "b", a: "On-demand (no booking)", b: "Flexible booking" },
+    { feature: "Built-in Curriculum", winner: "a", a: "Yes", b: "None" },
+    { feature: "Pay-per-Lesson", winner: "b", a: "No", b: "Yes" },
+    { feature: "Kid-Friendly Option", winner: "a", a: "Yes", b: "No" }
+  ];
+  const whyCompare = [
+    { icon: "\u{1F4B0}", title: "Different Pricing Models", description: "See Guru offers pay-per-lesson while Cambly uses a subscription model. Find which fits your budget" },
+    { icon: "\u{1F3AF}", title: "Match Your Goals", description: "Whether you want specific tutors or unlimited practice, choose the platform that fits your learning style" },
+    { icon: "\u{1F30F}", title: "Tutor Availability", description: "See Guru excels in Asian tutors while Cambly provides global native English speakers" }
+  ];
+  const testimonials = [
+    {
+      quote: "Cambly's unlimited sessions helped me build confidence. I practice every day without worrying about costs.",
+      author: "Fatima A.",
+      location: "UAE",
+      result: "Speaking fluency gained"
+    },
+    {
+      quote: "See Guru's Asian tutors helped me understand cultural nuances in business English. Exactly what I needed.",
+      author: "Satoshi K.",
+      location: "Japan",
+      result: "Business communication improved"
+    },
+    {
+      quote: "I used See Guru for structured learning and Cambly for casual practice. Both serve different purposes well.",
+      author: "Elena M.",
+      location: "Spain",
+      result: "IELTS 7.5 achieved"
+    }
+  ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cambly vs See Guru: Which Online English Tutoring Platform Is Better in 2026?",
+    "description": "Comprehensive comparison of Cambly and See Guru online tutoring platforms. Compare pricing, tutor quality, features, and find the best platform for your English learning goals.",
+    "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+    "datePublished": "2026-04-07",
+    "dateModified": "2026-04-07"
+  };
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Online Language Tutoring Platforms Comparison",
+    "description": "Comparison between Cambly and See Guru for English language learning"
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Cambly or See Guru better for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cambly may be better for beginners due to its built-in curriculum and unlimited practice model. See Guru is better suited for learners who want to choose specific tutors, particularly from Asia, and prefer pay-per-lesson pricing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a lesson cost on Cambly vs See Guru?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cambly uses a subscription model at approximately $6.67/month for unlimited access. See Guru starts at just $5/hour with pay-per-lesson pricing. For occasional learners, See Guru may be more cost-effective. For daily practice, Cambly's unlimited model offers better value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platform has better native English speakers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cambly guarantees all tutors are native English speakers from North America, UK, Australia, and other English-speaking countries. See Guru has native English speakers available but they are not the platform's primary focus, which is more on Asian tutors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I try either platform before committing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "See Guru offers affordable trial lessons typically priced between $1-5, allowing you to test multiple tutors. Cambly offers a limited trial period with their subscription. See Guru provides more flexibility for testing before commitment."
+        }
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Cambly vs See Guru: Which Online Tutoring Platform Is Better in 2026?", "description": "Compare Cambly and See Guru online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred teaching style." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> ", " ", '<main class="max-w-5xl mx-auto px-4 py-8 pb-24"> <nav class="text-sm text-neutral-300 mb-4"> <a href="/" class="hover:text-emerald-600">Home</a> <span class="mx-2">\u203A</span> <a href="/compare/" class="hover:text-emerald-600">Comparisons</a> <span class="mx-2">\u203A</span> <span class="text-neutral-300">Cambly vs See Guru</span> </nav> <div class="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 text-white mb-8"> <span class="text-blue-200 text-sm font-medium">Comparison \xB7 Updated April 2026</span> <h1 class="text-4xl font-bold mt-2 mb-4">Cambly vs See Guru: Which Online Tutoring Platform Is Better?</h1> <p class="text-blue-100 text-lg">Two distinct approaches to online English tutoring face off. We compare pricing, tutor quality, features, and user experience to help you choose the right platform.</p> </div> <div class="grid md:grid-cols-2 gap-6 mb-8"> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">Cambly</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-blue-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-bold">\nTry Cambly Free \u2192\n</a> </div> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">See Guru</h2> <div class="flex items-center"> <span class="text-yellow-500 text-xl mr-1">\u2605</span> <span class="text-2xl font-bold text-white">', '</span> <span class="text-slate-400 text-sm ml-1">/10</span> </div> </div> <div class="mb-4"> <span class="text-3xl font-bold text-emerald-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">\nTry See Guru Free \u2192\n</a> </div> </div> ', " ", ' <div class="mb-8"> ', " </div> ", ' <div class="mb-8"> ', ` </div> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Pricing and Value</h3> <p class="text-neutral-300 leading-relaxed mb-4"> <strong>Cambly</strong> uses a subscription model at approximately $6.67/month for unlimited access. For learners who practice regularly (3+ times per week), Cambly offers better value since there's no per-lesson cost to worry about.
+</p> <p class="text-neutral-300 leading-relaxed"> <strong>See Guru</strong> operates on a pay-per-lesson model with prices starting at just $5/hour. This makes it accessible for occasional learners who want to control their spending. There's no subscription pressure, and you only pay for lessons you book.
+</p> </div> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Tutor Quality and Selection</h3> <p class="text-neutral-300 leading-relaxed mb-4"> <strong>Cambly</strong> guarantees all tutors are native English speakers from North America, UK, Australia, and other English-speaking regions. The platform focuses on conversation practice rather than formal teaching, making it ideal for learners who want to improve their speaking confidence.
+</p> <p class="text-neutral-300 leading-relaxed"> <strong>See Guru</strong> has a moderate tutor pool with a focus on Asian tutors from China, Japan, and Korea. The vetting process is basic, which means quality varies. However, the platform excels at connecting learners with tutors from specific regions who understand cultural nuances.
+</p> </div> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Learning Experience</h3> <p class="text-neutral-300 leading-relaxed mb-4"> <strong>Cambly</strong> provides on-demand access where you connect with available tutors instantly. There's no scheduling required, which encourages spontaneous practice. The platform includes built-in study materials and a dedicated kids' version (Cambly for Kids).
+</p> <p class="text-neutral-300 leading-relaxed"> <strong>See Guru</strong> offers more structured interactions where you book specific tutors in advance. You can watch video introductions, read reviews, and choose teachers who match your learning goals. The platform lacks built-in curriculum but allows for more personalized sessions.
+</p> </div> </section> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2> <div class="space-y-6"> <div> <h3 class="text-lg font-semibold text-white mb-2">Is Cambly or See Guru better for beginners?</h3> <p class="text-neutral-300"> <strong>Cambly may be better</strong> for beginners due to its built-in curriculum and unlimited practice model. See Guru is better suited for learners who want to choose specific tutors, particularly from Asia, and prefer pay-per-lesson pricing.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">How much does a lesson cost on Cambly vs See Guru?</h3> <p class="text-neutral-300">
+Cambly uses a subscription model at approximately <strong>$6.67/month</strong> for unlimited access. See Guru starts at just <strong>$5/hour</strong> with pay-per-lesson pricing. For occasional learners, See Guru may be more cost-effective. For daily practice, Cambly's unlimited model offers better value.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Which platform has better native English speakers?</h3> <p class="text-neutral-300"> <strong>Cambly guarantees all tutors are native English speakers</strong> from North America, UK, Australia, and other English-speaking countries. See Guru has native English speakers available but they are not the platform's primary focus, which is more on Asian tutors.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Can I try either platform before committing?</h3> <p class="text-neutral-300"> <strong>See Guru offers affordable trial lessons</strong> typically priced between $1-5, allowing you to test multiple tutors. Cambly offers a limited trial period with their subscription. See Guru provides more flexibility for testing before commitment.
+</p> </div> </div> </section> <div class="mb-8"> `, ' </div> <section class="bg-gradient-to-r from-blue-900/40 to-teal-900/40 rounded-xl p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2> <div class="grid md:grid-cols-2 gap-6"> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500"> <h3 class="font-bold text-blue-300 mb-2">Choose Cambly if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-blue-500 mr-2">\u2192</span>You want unlimited conversation practice</li> <li class="flex items-start"><span class="text-blue-500 mr-2">\u2192</span>Native English speaker tutors are essential</li> <li class="flex items-start"><span class="text-blue-500 mr-2">\u2192</span>On-demand access without scheduling appeals to you</li> <li class="flex items-start"><span class="text-blue-500 mr-2">\u2192</span>You practice 3+ times per week regularly</li> </ul> </div> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500"> <h3 class="font-bold text-emerald-300 mb-2">Choose See Guru if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You want pay-per-lesson pricing control</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>Asian tutor selection is important to you</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You prefer booking specific tutors in advance</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>Occasional practice fits your budget better</li> </ul> </div> </div> </section> <section class="mb-8"> <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2> <div class="grid md:grid-cols-2 gap-4"> <a href="/reviews/cambly/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition"> <div class="flex items-center mb-2"> <span class="text-yellow-500 mr-1">\u2605</span> <span class="font-bold">8.2/10</span> </div> <h3 class="font-semibold text-white">Cambly Review</h3> <p class="text-sm text-neutral-400">Full platform analysis</p> </a> <a href="/reviews/see-guru/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition"> <div class="flex items-center mb-2"> <span class="text-yellow-500 mr-1">\u2605</span> <span class="font-bold">7.8/10</span> </div> <h3 class="font-semibold text-white">See Guru Review</h3> <p class="text-sm text-neutral-400">Full platform analysis</p> </a> </div> </section> <div class="text-xs text-slate-400 mt-8 pt-4 border-t"> <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p> </div> </main> ', " ", " "])), unescapeHTML(JSON.stringify(articleSchema)), unescapeHTML(JSON.stringify(comparisonSchema)), unescapeHTML(JSON.stringify(faqSchema)), renderComponent($$result2, "Header", $$Header, {}), maybeRenderHead(), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": "Cambly", "rating": platformRatings["Cambly"]?.rating, "reviewCount": platformRatings["Cambly"]?.reviewCount, "variant": "badge", "color": "teal" }), cambly.price, cambly.bestFor, cambly.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(cambly.link, "href"), seeGuru.rating, seeGuru.price, seeGuru.bestFor, seeGuru.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(seeGuru.link, "href"), renderComponent($$result2, "BenefitCards", $$BenefitCards, { "title": "Why Compare These Platforms?", "benefits": whyCompare }), renderComponent($$result2, "SocialProof", $$SocialProof, { "title": "What Learners Say", "testimonials": testimonials }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-1" }), renderComponent($$result2, "ComparisonHighlight", $$ComparisonHighlight, { "title": "Feature Comparison", "platformA": cambly, "platformB": seeGuru, "winner": "mixed", "rows": comparison }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-2" }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-3" }), renderComponent($$result2, "StickyCTA", $$StickyCTA, { "ctaText": "Compare Prices Now", "ctaLink": "/go/cambly", "platform": "cambly" }), renderComponent($$result2, "Footer", $$Footer, {})) })}`;
+}, "/var/www/learnenglish.life/src/pages/compare/cambly-vs-see-guru.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/compare/cambly-vs-see-guru.astro";
+const $$url = "/compare/cambly-vs-see-guru";
+
+const __vite_glob_0_5 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$CamblyVsSeeGuru,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+export { __vite_glob_0_5 as _ };

@@ -1,0 +1,73 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, u as unescapeHTML, m as maybeRenderHead } from '../../chunks/astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../../chunks/Base_DZoc_vH5.mjs';
+import { $ as $$ArticleSchema } from '../../chunks/ArticleSchema_Cy6QqPfR.mjs';
+export { renderers } from '../../renderers.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$Lingoda = createComponent(($$result, $$props, $$slots) => {
+  const reviewData = {
+    datePublished: "2026-04-10"
+  };
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "Lingoda",
+      "applicationCategory": "EducationApplication"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "8.0",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life"
+    },
+    "datePublished": reviewData.datePublished
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://learnenglish.life"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Reviews",
+        "item": "https://learnenglish.life/reviews"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Lingoda"
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Lingoda Review 2026", "description": "Honest Lingoda review with pricing, features, pros and cons." }, { "default": ($$result2) => renderTemplate`  ${maybeRenderHead()}<article class="max-w-3xl mx-auto px-4 py-12"> <div class="mb-8"> <span class="text-sm text-gray-400">Review</span> <h1 class="text-4xl font-bold mt-1 mb-4">Lingoda Review 2026</h1> <p class="text-slate-400">Last updated: April 2026 · 8 min read</p> </div> <!-- Quick Verdict --> <div class="bg-yellow-950/60 border border-yellow-700 rounded-lg p-4 mb-8 text-sm text-gray-300"><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on research, not payments.</div> <div class="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6 mb-8"> <div class="flex items-start gap-4"> <div class="bg-primary text-white rounded-lg w-16 h-16 flex items-center justify-center text-2xl font-bold shrink-0">8.0</div> <div> <p class="font-bold text-lg">Online Language School</p> <p class="text-neutral-400 mt-1">Lingoda offers structured group and private classes with certified teachers. Good for learners wanting formal education online.</p> </div> </div> </div> <nav class="bg-neutral-800 rounded-xl p-6 mb-8"> <h2 class="font-bold mb-3">In This Review</h2> <ul class="space-y-2 text-sm"> <li><a href="#overview" class="text-primary hover:underline">1. Overview</a></li> <li><a href="#pricing" class="text-primary hover:underline">2. Pricing</a></li> <li><a href="#features" class="text-primary hover:underline">3. Features</a></li> <li><a href="#pros-cons" class="text-primary hover:underline">4. Pros & Cons</a></li> <li><a href="#verdict" class="text-primary hover:underline">5. Our Verdict</a></li> </ul> </nav> <h2 id="overview" class="text-2xl font-bold mt-8 mb-4">What is Lingoda?</h2> <p class="mb-4">Lingoda is an online language school based in Berlin, Germany, offering live classes with certified teachers. Unlike tutoring platforms where lessons are often informal, Lingoda follows a structured curriculum aligned with European language standards (CEFR).</p> <p class="mb-4">The platform offers both group classes (up to 5 students) and private one-on-one lessons. Classes run 24/7 with native and near-native teachers, making it accessible for learners in any timezone.</p> <p class="mb-4">Lingoda's courses are designed by language teaching professionals and follow a clear progression from A1 to C1 levels. This structured approach makes it feel more like a traditional language school than a language app.</p> <h2 id="pricing" class="text-2xl font-bold mt-8 mb-4">Lingoda Pricing</h2> <div class="overflow-x-auto mb-6"> <table class="w-full border-collapse border border-gray-700 rounded-lg overflow-hidden"> <thead class="bg-neutral-800"> <tr> <th class="border border-gray-700 px-4 py-3 text-left">Plan</th> <th class="border border-gray-700 px-4 py-3 text-left">Price per Class</th> <th class="border border-gray-700 px-4 py-3 text-left">Monthly (8 classes)</th> </tr> </thead> <tbody> <tr> <td class="border border-gray-700 px-4 py-3">Group Class</td> <td class="border border-gray-700 px-4 py-3">$7-12</td> <td class="border border-gray-700 px-4 py-3">$56-96</td> </tr> <tr class="bg-neutral-800"> <td class="border border-gray-700 px-4 py-3">Private Class</td> <td class="border border-gray-700 px-4 py-3">$15-25</td> <td class="border border-gray-700 px-4 py-3">$120-200</td> </tr> <tr> <td class="border border-gray-700 px-4 py-3">Super Intensive</td> <td class="border border-gray-700 px-4 py-3">$10-18</td> <td class="border border-gray-700 px-4 py-3">$80-144</td> </tr> </tbody> </table> </div> <div class="bg-yellow-950/60 border border-yellow-700 rounded-xl p-4 mb-6"> <p class="text-sm text-yellow-200"><strong>💡 Money-saving tip:</strong> Book classes in bundles for discounts. Annual plans offer the best value. up to 40% off monthly rates.</p> </div> <h2 id="features" class="text-2xl font-bold mt-8 mb-4">Key Features</h2> <h3 class="text-xl font-semibold mt-6 mb-3">1. Structured Curriculum</h3> <p class="mb-4">Lingoda follows a comprehensive curriculum aligned with CEFR levels. Each level consists of multiple courses covering practical topics with clear learning objectives and progress assessments.</p> <h3 class="text-xl font-semibold mt-6 mb-3">2. Certified Teachers</h3> <p class="mb-4">All Lingoda teachers are certified (TEFL, CELTA, or equivalent) and undergo training on the Lingoda method. This ensures consistent, quality instruction across all classes.</p> <h3 class="text-xl font-semibold mt-6 mb-3">3. Flexible Scheduling</h3> <p class="mb-4">Classes run every hour, 24 hours a day, 7 days a week. You can book up to 30 days in advance and cancel up to 12 hours before class.</p> <h3 class="text-xl font-semibold mt-6 mb-3">4. Small Group Classes</h3> <p class="mb-4">Group classes have a maximum of 5 students, ensuring plenty of speaking time for everyone. This also makes classes more affordable than private lessons.</p> <h3 class="text-xl font-semibold mt-6 mb-3">5. Certificates and Diplomas</h3> <p class="mb-4">Complete a full level and receive an official Lingoda certificate. They also offer Spring Language Diplomas that are recognized by some employers and universities.</p> <h2 id="pros-cons" class="text-2xl font-bold mt-8 mb-4">Pros & Cons</h2> <div class="grid md:grid-cols-2 gap-6 mb-6"> <div class="bg-green-950/60 border border-green-700 rounded-xl p-6"> <h3 class="font-bold text-green-200 mb-3">✅ Pros</h3> <ul class="space-y-2 text-sm"> <li>Structured curriculum with clear goals</li> <li>Certified, professional teachers</li> <li>24/7 class availability</li> <li>Small class sizes (max 5 students)</li> <li>Official certificates available</li> <li>Good for beginners to advanced</li> <li>Business English courses available</li> <li>Mobile app for learning on the go</li> </ul> </div> <div class="bg-red-950/60 border border-red-700 rounded-xl p-6"> <h3 class="font-bold text-red-200 mb-3">❌ Cons</h3> <ul class="space-y-2 text-sm"> <li>Requires commitment to schedule</li> <li>No free tier available</li> <li>Group classes can fill up quickly</li> <li>More expensive than apps</li> <li>Internet connection required</li> <li>Teachers vary in quality</li> <li>No native accent variety</li> <li>Canceling is inconvenient</li> </ul> </div> </div> <h2 id="verdict" class="text-2xl font-bold mt-8 mb-4">Our Verdict</h2> <p class="mb-4"><strong>Lingoda is the best option for learners who want formal, structured education online.</strong> Unlike apps that gamify learning or tutoring platforms with informal conversations, Lingoda feels like attending a real language school.</p> <p class="mb-4">The certified teachers and structured curriculum provide accountability and clear progress. However, it requires commitment to attending scheduled classes, making it less flexible than self-paced apps.</p> <p class="mb-4">Lingoda is best for:</p> <ul class="list-disc pl-6 mb-4 space-y-2"> <li>Serious learners wanting formal structure</li> <li>People who need accountability to progress</li> <li>Business professionals needing business English</li> <li>Those preparing for language exams</li> </ul> <div class="bg-neutral-800 rounded-xl p-6 mt-8"> <h3 class="font-bold mb-3">Rating Summary</h3> <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"> <div> <p class="text-2xl font-bold text-primary">8.5</p> <p class="text-xs text-slate-400">Curriculum</p> </div> <div> <p class="text-2xl font-bold text-primary">8.0</p> <p class="text-xs text-slate-400">Teacher Quality</p> </div> <div> <p class="text-2xl font-bold text-primary">7.0</p> <p class="text-xs text-slate-400">Flexibility</p> </div> <div> <p class="text-2xl font-bold text-primary">7.5</p> <p class="text-xs text-slate-400">Value</p> </div> </div> </div> <div class="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-xl"> <p class="font-medium">Ready to join an online language school?</p> <a href="https://www.lingoda.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg transition">Try Free Trial →</a> </div> <div class="flex gap-4 mt-8"> <a href="/reviews/" class="text-primary font-semibold hover:underline">← All Reviews</a> </div> ${renderComponent($$result2, "ArticleSchema", $$ArticleSchema, { "title": "Lingoda Review", "description": "Lingoda is an online language school based in Berlin, Germany, offering live classes with certified teachers.", "publishedTime": "2026-04-10" })} </article>  <aside class="my-12 max-w-3xl mx-auto px-4"> <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8"> <div class="flex items-start gap-4"> <div class="text-3xl flex-shrink-0">💡</div> <div class="flex-1"> <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3> <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors, not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p> <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a> </div> </div> </div> </aside> `, "structured-data": ($$result2) => renderTemplate(_a || (_a = __template(['<span> <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> </span>"])), unescapeHTML(JSON.stringify(reviewSchema)), unescapeHTML(JSON.stringify(breadcrumbSchema))) })}`;
+}, "/var/www/learnenglish.life/src/pages/reviews/lingoda.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/reviews/lingoda.astro";
+const $$url = "/reviews/lingoda";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Lingoda,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

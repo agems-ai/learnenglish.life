@@ -1,0 +1,160 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, b as addAttribute, m as maybeRenderHead, u as unescapeHTML } from './astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from './Base_DZoc_vH5.mjs';
+import { a as $$Footer, $ as $$Header } from './Footer_BqrSaoVo.mjs';
+import { $ as $$AdUnit } from './AdUnit_CfA3FelO.mjs';
+import { $ as $$StickyCTA } from './StickyCTA_CJElHHTS.mjs';
+import { $ as $$ComparisonHighlight, a as $$SocialProof } from './ComparisonHighlight_CnQ51mBr.mjs';
+import { $ as $$BenefitCards } from './BenefitCards_DF0LaMEG.mjs';
+import { $ as $$PlatformRatings } from './PlatformRatings_cCKrnvKW.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$PimsleurVsItalki = createComponent(($$result, $$props, $$slots) => {
+  const italki = {
+    name: "iTalki",
+    rating: 9.2,
+    price: "$5 per lesson",
+    link: "/go/italki",
+    bestFor: "Live speaking practice with real tutors",
+    pros: [
+      "Real human tutors for live, adaptive conversation practice",
+      "Instant, contextual feedback from native and professional speakers",
+      "Choose tutors who match your exact goals, level, and schedule",
+      "Full-spectrum language coaching: grammar, vocabulary, and fluency",
+      "Pay per lesson with no monthly commitment required"
+    ],
+    cons: [
+      "Quality varies between tutors, so vetting takes some effort",
+      "No built-in structured curriculum unless you request one",
+      "Speaking practice limited to booked sessions",
+      "Costs add up if you take lessons several times per week"
+    ]
+  };
+  const pimsleur = {
+    name: "Pimsleur",
+    rating: 4.6,
+    price: "$14.95 per month",
+    link: "/go/pimsleur",
+    bestFor: "Audio-based learning on the go",
+    pros: [
+      "30-minute audio lessons build natural spoken English through listening and repetition",
+      "Perfect for commuters, joggers, or anyone who learns better by ear",
+      "Proprietary graduated interval recall system reinforces memory effectively",
+      "Conversational focus means you learn phrases you can use immediately",
+      "No reading or writing required / pure oral method"
+    ],
+    cons: [
+      "No live speaking practice with real people",
+      "Subscription-based with no lifetime purchase option",
+      "Does not build reading or writing skills on its own",
+      "Repetitive method can feel slow for some learners"
+    ]
+  };
+  const comparison = [
+    { feature: "Starting Price", winner: null, a: "$5/lesson", b: "$14.95/month" },
+    { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
+    { feature: "AI Pronunciation Feedback", winner: null, a: "No", b: "Limited" },
+    { feature: "Structured Curriculum", winner: "b", a: "Custom per tutor", b: "Fully built-in" },
+    { feature: "Spaced Repetition", winner: "b", a: "No", b: "Yes (graduated recall)" },
+    { feature: "Free Version", winner: null, a: "Language exchanges", b: "7-day free trial" },
+    { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+    { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI simulation only" },
+    { feature: "Audio-Based Learning", winner: "b", a: "No", b: "Yes (core method)" }
+  ];
+  const whyCompare = [
+    { icon: "\u{1F3AF}", title: "Match Your Learning Style", description: "Find whether you learn best through audio immersion on the go or live conversations with real tutors" },
+    { icon: "\u{1F4B0}", title: "Understand the Real Cost", description: "Compare an audio-based subscription against a pay-per-lesson tutor marketplace to find what fits your budget and habits" },
+    { icon: "\u26A1", title: "Get Results Faster", description: "Choose the platform that aligns with whether you need real conversation practice or oral fluency building" }
+  ];
+  const testimonials = [
+    {
+      quote: "Pimsleur was perfect for my commute. I finished every level during my daily drives and my accent became noticeably more natural. Then I did iTalki to put it all into real conversations.",
+      author: "Hiroshi T.",
+      location: "Japan",
+      result: "Business English fluency"
+    },
+    {
+      quote: "The Pimsleur method trains your brain to think in English, not translate. After completing all levels, I could have basic conversations. iTalki then turned that into real confidence.",
+      author: "Amara O.",
+      location: "Nigeria",
+      result: "Conversational fluency in 8 months"
+    },
+    {
+      quote: "As someone who learns better by listening than reading, Pimsleur was exactly what I needed. It built my ear for English. Then iTalki gave me real people to practise with.",
+      author: "Marco V.",
+      location: "Italy",
+      result: "IELTS 7.0"
+    }
+  ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pimsleur vs iTalki: Audio Method or Live Tutor Sessions?",
+    "description": "Compare Pimsleur and iTalki: audio-based language learning versus live human tutor marketplace. Which builds English speaking ability faster?",
+    "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+    "datePublished": "2026-04-08",
+    "dateModified": "2026-04-08"
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is iTalki better than Pimsleur for learning to speak English?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For developing real conversational ability, iTalki is significantly better. Pimsleur builds your ability to understand and respond in English through audio repetition, but it does not give you the experience of talking to a real person. iTalki connects you with real human tutors for live video conversations where you get instant feedback on your actual speaking performance. For building genuine conversation skills, iTalki is the clear winner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Pimsleur replace iTalki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pimsleur cannot fully replace iTalki because it does not offer live conversation practice. Pimsleur is excellent for building listening comprehension, pronunciation patterns, and conversational phrases through audio. However, it cannot answer your questions, engage you in real dialogue, or give you the experience of thinking on your feet in an unpredictable conversation. Most learners who want to speak fluently need live practice with a human tutor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use both Pimsleur and iTalki together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Using both together is one of the most effective learning strategies available. Pimsleur builds your ear for English and trains your brain to think in the language through audio lessons. iTalki then lets you put all of that learned material into practice with a real tutor. Many top language learners use exactly this combination: Pimsleur for daily commute audio practice and iTalki for weekly live conversation sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is cheaper, Pimsleur or iTalki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pimsleur costs $14.95 per month with full access to all audio lessons. iTalki lessons start at $5 per lesson with community tutors, paid per lesson. For a predictable monthly cost, Pimsleur is straightforward. For value per speaking practice session, iTalki pay-per-lesson is excellent because every session is a real conversation with full human feedback. Learners who speak several times a week often find iTalki delivers better results per dollar spent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Pimsleur best for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pimsleur is best for learners who want to build spoken English primarily through listening and repetition. Its audio-first method is particularly suited to commuters, people with visual learning preferences, and those who want to maximise language exposure during otherwise unproductive time. It excels at building conversational phrases and pronunciation patterns, but it does not develop reading, writing, or the full range of conversational skills on its own."
+        }
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Pimsleur vs iTalki: Audio Method or Live Tutor Sessions? (2026)", "description": "Compare Pimsleur and iTalki for English learning. Pimsleur uses audio-based lessons for the commute. iTalki provides live tutors for real conversation. Find which is right for you." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> ", " ", '<main class="max-w-5xl mx-auto px-4 py-8 pb-24"> <nav class="text-sm text-slate-400 mb-4"> <a href="/" class="hover:text-emerald-400">Home</a> <span class="mx-2">/</span> <a href="/compare/" class="hover:text-emerald-400">Comparisons</a> <span class="mx-2">/</span> <span class="text-slate-500">Pimsleur vs iTalki</span> </nav> <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8"> <span class="text-emerald-200 text-sm font-medium">Comparison / Updated April 2026</span> <h1 class="text-4xl font-bold mt-2 mb-4">Pimsleur vs iTalki: Audio Method or Live Tutor Sessions?</h1> <p class="text-emerald-100 text-lg">Pimsleur trains your ear and speech patterns through audio lessons you can take anywhere. iTalki puts you face to face with real tutors for live conversation. Here is how they actually compare.</p> </div> <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8"> <div class="flex items-center justify-between flex-wrap gap-4"> <div> <p class="font-bold text-lg">Our Pick for Speaking</p> <p class="text-3xl font-bold text-green-700">iTalki</p> <p class="text-sm text-slate-400 mt-1">Best for live conversation with real tutors</p> </div> <div class="text-right"> <p class="text-sm text-slate-400">Best for Audio Learning</p> <p class="font-semibold text-gray-700">Pimsleur</p> </div> </div> </div> <div class="grid md:grid-cols-2 gap-6 mb-8"> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">iTalki</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-emerald-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">\nTry iTalki Free\n</a> </div> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-purple-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">Pimsleur</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-purple-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg hover:bg-purple-700 transition font-bold">\nTry Pimsleur Free\n</a> </div> </div> ', " ", ' <div class="mb-8"> ', ' </div> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2> <p class="text-neutral-300 mb-4 leading-relaxed">Pimsleur is an audio-based language learning system built around 30-minute spoken lessons. You listen to native speakers, repeat phrases out loud, and gradually build your ability to think and respond in English. The method focuses entirely on the spoken language, training your ear and your mouth simultaneously through a system of graduated interval recall. It is designed to be used while commuting, exercising, or doing household chores.</p> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace where you book live video sessions with real human tutors. You choose your tutor based on their profile and reviews, set your goals, and have genuine spoken exchanges. Every session is a real conversation with a real person who can answer your questions, correct your mistakes, and adapt to exactly your level and pace.</p> <p class="text-neutral-300 leading-relaxed">The core difference is audio simulation versus live human interaction. Pimsleur is excellent for building listening comprehension and spoken patterns passively. iTalki gives you the actual experience of talking to a real person, which is what you need to develop genuine conversational confidence. Most effective learners use both at different stages of their journey.</p> </section> ', ' <div class="mb-8"> ', ' </div> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3> <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4> <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor, set your goals, and have a genuine conversation. Your tutor hears exactly how you sound, notices patterns in your mistakes, and can explain why certain phrases work in one context but not another.</p> <p class="text-neutral-300 leading-relaxed">The key advantage is that real conversations are unpredictable. You have to think on your feet, handle unexpected questions, and adapt to different topics and cultural nuances. This is exactly what real communication requires, and iTalki builds this ability naturally through every session.</p> </div> <div class="mb-8"> <h4 class="text-lg font-semibold text-purple-400 mb-2">Pimsleur: Audio-Based Oral Training</h4> <p class="text-neutral-300 mb-4 leading-relaxed">Pimsleur builds speaking ability through audio lessons that simulate a conversation. A native speaker introduces a phrase or concept, you repeat it, and the lesson gradually builds complexity. The graduated interval recall system means you keep revisiting previous material at exactly the right time to move it into long-term memory.</p> <p class="text-neutral-300 mb-4 leading-relaxed">The method is highly effective at training your ear and building natural pronunciation patterns. You learn how English actually sounds, including contractions, linking, and stress patterns. This builds a foundation that makes real conversation much easier when you eventually have it.</p> <p class="text-neutral-300 leading-relaxed">However, Pimsleur conversations are simulated. The AI does not understand what you are trying to say, cannot answer your specific questions, and does not push you to explain yourself when you struggle. For building real conversational ability, iTalki is far more effective because you talk to a human who responds naturally.</p> </div> <div> <h3 class="text-xl font-bold text-white mb-3">Price and Value</h3> <p class="text-neutral-300 mb-4 leading-relaxed">Pimsleur costs $14.95 per month with full access to all audio lessons. It is a subscription model, so you pay as long as you use it. The monthly cost is predictable and covers unlimited audio lessons at every level.</p> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki lessons start at $5 per lesson with community tutors. You pay per lesson rather than monthly, so there is no automatic recurring charge unless you book a session. For dedicated learners who want one or two focused conversation sessions per week, iTalki offers excellent value because every session is a real human interaction.</p> <p class="text-neutral-300 leading-relaxed">The best value strategy is to use both: Pimsleur for daily commute audio practice and iTalki for weekly live conversation sessions. Together they cover everything a serious learner needs at a cost comparable to or less than many single subscriptions.</p> </div> </section> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2> <div class="space-y-6"> <div> <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Pimsleur for learning to speak English?</h3> <p class="text-neutral-300"><strong>For developing real conversational ability, iTalki is significantly better.</strong> Pimsleur builds your ability to understand and respond in English through audio repetition, but it does not give you the experience of talking to a real person. iTalki connects you with real human tutors for live video conversations where you get instant feedback on your actual speaking performance. For building genuine conversation skills, iTalki is the clear winner.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Can Pimsleur replace iTalki?</h3> <p class="text-neutral-300">Pimsleur cannot fully replace iTalki because it does not offer live conversation practice. Pimsleur is excellent for building listening comprehension, pronunciation patterns, and conversational phrases through audio. However, it cannot answer your questions, engage you in real dialogue, or give you the experience of thinking on your feet in an unpredictable conversation.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Should I use both Pimsleur and iTalki together?</h3> <p class="text-neutral-300">Using both together is <strong>one of the most effective learning strategies</strong> available. Pimsleur builds your ear for English and trains your brain to think in the language through audio lessons. iTalki then lets you put all of that learned material into practice with a real tutor. Many top language learners use exactly this combination: Pimsleur for daily commute audio practice and iTalki for weekly live conversation sessions.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, Pimsleur or iTalki?</h3> <p class="text-neutral-300">Pimsleur costs <strong>$14.95 per month</strong> with full access to all audio lessons. iTalki lessons start at <strong>$5 per lesson</strong> with community tutors, paid per lesson. For a predictable monthly cost, Pimsleur is straightforward. For value per speaking practice session, iTalki pay-per-lesson is excellent because every session is a real conversation with full human feedback.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">What is Pimsleur best for?</h3> <p class="text-neutral-300">Pimsleur is best for learners who want to <strong>build spoken English primarily through listening and repetition</strong>. Its audio-first method is particularly suited to commuters, people with visual learning preferences, and those who want to maximise language exposure during otherwise unproductive time. It excels at building conversational phrases and pronunciation patterns, but it does not develop reading, writing, or the full range of conversational skills on its own.</p> </div> </div> </section> <div class="mb-8"> ', ` </div> <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2> <div class="grid md:grid-cols-2 gap-6 mb-6"> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500"> <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>Your main goal is to speak English confidently with real people</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You want instant feedback from a human tutor</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You prefer direct, interactive conversation practice</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You are preparing for a test, interview, or real-world situation</li> </ul> </div> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-purple-500"> <h3 class="font-bold text-purple-300 mb-2">Choose Pimsleur if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-purple-500 mr-2">-</span>You want to maximise language learning during your commute</li> <li class="flex items-start"><span class="text-purple-500 mr-2">-</span>You prefer to learn by listening rather than reading</li> <li class="flex items-start"><span class="text-purple-500 mr-2">-</span>You want a structured audio curriculum to follow</li> <li class="flex items-start"><span class="text-purple-500 mr-2">-</span>You want to supplement live tutoring with daily audio practice</li> </ul> </div> </div> <p class="text-neutral-300">The most effective approach is to use both: Pimsleur for daily commute audio practice and iTalki for weekly live conversation sessions. Together they cover everything a serious learner needs for spoken English fluency.</p> </section> <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8"> <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p> <p class="text-slate-300 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured small-group classes and one-on-one tutoring with certified teachers, including three free trial lessons.</p> <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a> <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p> </section> <section class="mb-8"> <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2> <div class="grid gap-4"> <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">iTalki Review</p> <p class="text-sm text-neutral-400">9.2/10 / Best for affordable live tutor lessons</p> </a> <a href="/reviews/pimsleur/" class="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">Pimsleur Review</p> <p class="text-sm text-neutral-400">Full review of Pimsleur's audio method and effectiveness</p> </a> <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">iTalki vs Preply</p> <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p> </a> </div> </section> <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700"> <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p> </div> </main> `, " ", ' <aside class="my-12 max-w-3xl mx-auto px-4"> <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8"> <div class="flex items-start gap-4"> <div class="text-3xl flex-shrink-0">!</div> <div class="flex-1"> <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3> <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong> with certified English teachers / no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p> <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons</a> </div> </div> </div> </aside> '])), unescapeHTML(JSON.stringify(articleSchema)), unescapeHTML(JSON.stringify(faqSchema)), renderComponent($$result2, "Header", $$Header, {}), maybeRenderHead(), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": italki.name, "rating": italki.rating, "scale": 10, "variant": "inline", "color": "emerald" }), italki.price, italki.bestFor, italki.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(italki.link, "href"), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": pimsleur.name, "rating": pimsleur.rating, "scale": 10, "variant": "inline", "color": "purple" }), pimsleur.price, pimsleur.bestFor, pimsleur.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(pimsleur.link, "href"), renderComponent($$result2, "BenefitCards", $$BenefitCards, { "title": "Why Compare These Platforms?", "benefits": whyCompare }), renderComponent($$result2, "SocialProof", $$SocialProof, { "title": "What Learners Say", "testimonials": testimonials }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-1" }), renderComponent($$result2, "ComparisonHighlight", $$ComparisonHighlight, { "title": "Feature Comparison", "platformA": italki, "platformB": pimsleur, "winner": "a", "rows": comparison }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-2" }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-3" }), renderComponent($$result2, "StickyCTA", $$StickyCTA, { "ctaText": "Compare Platforms", "ctaLink": "/go/italki", "platform": "italki" }), renderComponent($$result2, "Footer", $$Footer, {})) })}`;
+}, "/var/www/learnenglish.life/src/pages/compare/pimsleur-vs-italki.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/compare/pimsleur-vs-italki.astro";
+const $$url = "/compare/pimsleur-vs-italki";
+
+const __vite_glob_0_17 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$PimsleurVsItalki,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+export { __vite_glob_0_17 as _ };

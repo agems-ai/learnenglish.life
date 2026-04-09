@@ -1,0 +1,46 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_DZoc_vH5.mjs';
+import { $ as $$Header, a as $$Footer } from '../chunks/Footer_BqrSaoVo.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$Contact = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Contact Us | LearnEnglish.Life", "description": "Get in touch with the LearnEnglish.Life team. We're here to help with your English learning questions." }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Header", $$Header, {})}  ${maybeRenderHead()}<section class="bg-emerald-700 py-12"> <div class="max-w-4xl mx-auto px-4"> <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+Contact Us
+</h1> <p class="text-emerald-100 text-lg">
+We'd love to hear from you
+</p> </div> </section>  <section class="py-12"> <div class="max-w-4xl mx-auto px-4"> <div class="grid md:grid-cols-2 gap-12"> <!-- Contact Form --> <div> <h2 class="text-2xl font-bold text-gray-100 mb-6">Send Us a Message</h2> <div class="bg-emerald-900/30 border border-emerald-700 rounded-xl p-4 mb-6"> <p class="text-sm text-emerald-300"> <strong>📝</strong> Your message will be reviewed by our editorial team, and we'll respond as quickly as possible, typically within 24-48 hours.
+</p> </div> <form class="space-y-6" action="#" method="POST" id="contact-form"> <div> <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Jane Smith"> </div> <div> <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="jane@example.com"> <p class="text-xs text-slate-400 mt-1">We'll never share your email with third parties.</p> </div> <div> <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label> <select id="subject" name="subject" required class="w-full px-4 py-2 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"> <option value="">Select a topic...</option> <option value="general">General Inquiry</option> <option value="review">Review Request or Correction</option> <option value="partnership">Partnership or Advertising</option> <option value="technical">Technical Issue</option> <option value="feedback">Site Feedback</option> <option value="affiliate">Affiliate Program</option> <option value="other">Other</option> </select> </div> <div> <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Your Message</label> <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-slate-700 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Tell us how we can help..."></textarea> </div> <div class="flex items-start gap-3"> <input type="checkbox" id="consent" name="consent" required class="mt-1 h-4 w-4 text-emerald-600 border-slate-700 rounded focus:ring-emerald-500"> <label for="consent" class="text-sm text-slate-300">
+I agree to the <a href="/privacy/" class="text-emerald-600 hover:underline">Privacy Policy</a> and consent to having LearnEnglish.Life store and process my message.
+</label> </div> <button type="submit" class="w-full bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-emerald-700 transition-colors focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+Send Message
+</button> </form> <div id="form-success" class="hidden mt-6 p-4 bg-emerald-900/40 border border-emerald-700 rounded-lg"> <p class="text-emerald-300 font-medium">✓ Message sent successfully!</p> <p class="text-emerald-600 text-sm mt-1">Thank you for reaching out. Our editorial team will review your message and respond soon.</p> </div> </div> <!-- Contact Info --> <div> <h2 class="text-2xl font-bold text-gray-100 mb-6">Other Ways to Reach Us</h2> <div class="space-y-6"> <div class="bg-neutral-800 rounded-xl p-6"> <h3 class="font-semibold text-gray-100 mb-2">📧 Email</h3> <p class="text-slate-300 mb-3">For general inquiries and support:</p> <a href="mailto:hello@learnenglish.life" class="text-emerald-600 hover:underline">hello@learnenglish.life</a> </div> <div class="bg-neutral-800 rounded-xl p-6"> <h3 class="font-semibold text-gray-100 mb-2">📝 Press & Media</h3> <p class="text-slate-300 mb-3">For press inquiries and interviews:</p> <a href="mailto:press@learnenglish.life" class="text-emerald-600 hover:underline">press@learnenglish.life</a> </div> <div class="bg-neutral-800 rounded-xl p-6"> <h3 class="font-semibold text-gray-100 mb-2">🤝 Partnerships</h3> <p class="text-slate-300 mb-3">For advertising and partnership opportunities:</p> <a href="mailto:partners@learnenglish.life" class="text-emerald-600 hover:underline">partners@learnenglish.life</a> </div> <div class="bg-neutral-800 rounded-xl p-6"> <h3 class="font-semibold text-gray-100 mb-2">🐛 Technical Issues</h3> <p class="text-slate-300 mb-3">Found a bug or have site feedback?</p> <a href="mailto:tech@learnenglish.life" class="text-emerald-600 hover:underline">tech@learnenglish.life</a> </div> </div> <div class="mt-8 p-6 bg-emerald-900/30 rounded-xl"> <h3 class="font-semibold text-emerald-200 mb-3">⏱️ Response Time</h3> <p class="text-emerald-300 text-sm">
+As an independent publisher, we process and respond to most inquiries within 24-48 hours. 
+              During high-volume periods, response times may be slightly longer.
+</p> </div> </div> </div> <!-- FAQ --> <div class="mt-16"> <h2 class="text-2xl font-bold text-gray-100 mb-6">Frequently Asked Questions</h2> <div class="space-y-4"> <details class="bg-neutral-800 rounded-xl p-4 group"> <summary class="font-medium text-gray-100 cursor-pointer">How can I submit a platform for review?</summary> <p class="text-slate-300 mt-2 pt-2 border-t border-gray-700">
+Email us at <a href="mailto:reviews@learnenglish.life" class="text-emerald-600 hover:underline">reviews@learnenglish.life</a> with information about the platform. 
+              Our team reviews all submissions and adds qualifying platforms to our review queue.
+</p> </details> <details class="bg-neutral-800 rounded-xl p-4 group"> <summary class="font-medium text-gray-100 cursor-pointer">Can I correct information in a review?</summary> <p class="text-slate-300 mt-2 pt-2 border-t border-gray-700">
+Absolutely! If you notice outdated or incorrect information, please contact us with the specific details. 
+              We verify and update reviews regularly but appreciate user input.
+</p> </details> <details class="bg-neutral-800 rounded-xl p-4 group"> <summary class="font-medium text-gray-100 cursor-pointer">How can I advertise on LearnEnglish.Life?</summary> <p class="text-slate-300 mt-2 pt-2 border-t border-gray-700">
+We offer advertising opportunities for English learning platforms and related services. 
+              Contact <a href="mailto:advertise@learnenglish.life" class="text-emerald-600 hover:underline">advertise@learnenglish.life</a> for our media kit and rates.
+</p> </details> <details class="bg-neutral-800 rounded-xl p-4 group"> <summary class="font-medium text-gray-100 cursor-pointer">How do you decide which platforms to review?</summary> <p class="text-slate-300 mt-2 pt-2 border-t border-gray-700">
+We review platforms based on popularity, user demand, and market relevance. We prioritize platforms that our readers frequently ask about or that represent significant options in the English learning market. We aim to cover a wide range of price points and learning styles.
+</p> </details> </div> </div> </div> </section> ${renderComponent($$result2, "Footer", $$Footer, {})}  ` })}`;
+}, "/var/www/learnenglish.life/src/pages/contact.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/contact.astro";
+const $$url = "/contact";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Contact,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

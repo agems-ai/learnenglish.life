@@ -1,0 +1,93 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, u as unescapeHTML, m as maybeRenderHead } from '../../chunks/astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../../chunks/Base_DZoc_vH5.mjs';
+import { $ as $$ArticleSchema } from '../../chunks/ArticleSchema_Cy6QqPfR.mjs';
+export { renderers } from '../../renderers.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$Busuu = createComponent(($$result, $$props, $$slots) => {
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "name": "Busuu",
+      "applicationCategory": "EducationApplication"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.3",
+      "bestRating": "10",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life"
+    },
+    "datePublished": "2026-01-20"
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://learnenglish.life"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Reviews",
+        "item": "https://learnenglish.life/reviews"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Busuu"
+      }
+    ]
+  };
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Busuu Review 2026. Is It Worth the Price?",
+    "description": "Complete review of Busuu language learning platform. Covers pricing, features, pros/cons, and whether it's the right choice for English learners.",
+    "datePublished": "2026-01-20",
+    "dateModified": "2026-04-06",
+    "author": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://learnenglish.life/logo.png"
+      }
+    }
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Busuu Review 2026", "description": "Honest busuu review with pricing, features, pros and cons." }, { "default": ($$result2) => renderTemplate`   ${maybeRenderHead()}<div class="bg-amber-900/30 border-b border-amber-700 py-3"> <div class="max-w-3xl mx-auto px-4 text-sm text-amber-200"> <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
+</div> </div> <article class="max-w-3xl mx-auto px-4 py-12"> <div class="mb-8"> <span class="text-sm text-gray-400">Review</span> <h1 class="text-4xl font-bold mt-1 mb-4">Busuu Review 2026</h1> <p class="text-slate-400">Last updated: April 2026 · 8 min read</p> </div> <!-- Quick Verdict --> <div class="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6 mb-8"> <div class="flex items-start gap-4"> <div class="bg-primary text-white rounded-lg w-16 h-16 flex items-center justify-center text-2xl font-bold shrink-0">8.3</div> <div> <p class="font-bold text-lg">Structured Learning with Community</p> <p class="text-neutral-400 mt-1">Busuu combines self-paced lessons with native speaker corrections. Good middle ground between apps and tutoring.</p> </div> </div> </div> <!-- Table of Contents --> <nav class="bg-neutral-800 rounded-xl p-6 mb-8"> <h2 class="font-bold mb-3">In This Review</h2> <ul class="space-y-2 text-sm"> <li><a href="#overview" class="text-primary hover:underline">1. Overview</a></li> <li><a href="#pricing" class="text-primary hover:underline">2. Pricing</a></li> <li><a href="#features" class="text-primary hover:underline">3. Features</a></li> <li><a href="#pros-cons" class="text-primary hover:underline">4. Pros & Cons</a></li> <li><a href="#verdict" class="text-primary hover:underline">5. Our Verdict</a></li> </ul> </nav> <h2 id="overview" class="text-2xl font-bold mt-8 mb-4">What is Busuu?</h2> <p class="mb-4">Busuu is a language learning platform founded in 2008 that combines self-paced lessons with community features. Unlike purely app-based learning, Busuu offers exercises reviewed by native speakers and structured courses aligned with CEFR language standards.</p> <p class="mb-4">The platform focuses on practical communication skills with courses designed by linguistics experts. Each unit covers vocabulary, grammar, dialogues, and cultural notes. The adaptive algorithm personalizes your learning path based on your performance.</p> <p class="mb-4">Busuu's unique differentiator is the community feature. You can submit exercises to native speakers for feedback, and you help other learners in return. This creates a reciprocal learning environment.</p> <h2 id="pricing" class="text-2xl font-bold mt-8 mb-4">Busuu Pricing</h2> <div class="overflow-x-auto mb-6"> <table class="w-full border-collapse border border-gray-700 rounded-lg overflow-hidden"> <thead class="bg-neutral-800"> <tr> <th class="border border-gray-700 px-4 py-3 text-left">Plan</th> <th class="border border-gray-700 px-4 py-3 text-left">Price</th> <th class="border border-gray-700 px-4 py-3 text-left">Features</th> </tr> </thead> <tbody> <tr> <td class="border border-gray-700 px-4 py-3">Free</td> <td class="border border-gray-700 px-4 py-3">$0</td> <td class="border border-gray-700 px-4 py-3">1 unit per language, basic vocabulary, ads shown</td> </tr> <tr class="bg-neutral-800"> <td class="border border-gray-700 px-4 py-3">Premium</td> <td class="border border-gray-700 px-4 py-3">$12.99/month or $89.99/year</td> <td class="border border-gray-700 px-4 py-3">Full courses, native speaker corrections, offline mode, certificates</td> </tr> <tr> <td class="border border-gray-700 px-4 py-3">Premium Plus</td> <td class="border border-gray-700 px-4 py-3">$19.99/month or $129.99/year</td> <td class="border border-gray-700 px-4 py-3">All Premium features + speaking practice with AI, 20 languages</td> </tr> </tbody> </table> </div> <h2 id="features" class="text-2xl font-bold mt-8 mb-4">Key Features</h2> <h3 class="text-xl font-semibold mt-6 mb-3">1. Structured Courses</h3> <p class="mb-4">Busuu offers comprehensive courses aligned with CEFR levels (A1-C2). Each unit includes vocabulary, grammar, listening, speaking, and writing exercises with clear learning objectives.</p> <h3 class="text-xl font-semibold mt-6 mb-3">2. Native Speaker Corrections</h3> <p class="mb-4">Premium users can submit writing exercises to native speakers for feedback. In return, you correct exercises for other learners. Creating a helpful community.</p> <h3 class="text-xl font-semibold mt-6 mb-3">3. Personalized Learning Path</h3> <p class="mb-4">The algorithm adapts to your level and learning pace. It identifies gaps in your knowledge and creates a customized study plan.</p> <h3 class="text-xl font-semibold mt-6 mb-3">4. Cultural Insights</h3> <p class="mb-4">Each lesson includes cultural notes about English-speaking countries, helping you understand context beyond grammar and vocabulary.</p> <h3 class="text-xl font-semibold mt-6 mb-3">5. Official Certificates</h3> <p class="mb-4">Complete a full course and receive a certificate. These are recognized by McGraw-Hill Education and can be shared on LinkedIn.</p> <h2 id="pros-cons" class="text-2xl font-bold mt-8 mb-4">Pros & Cons</h2> <div class="grid md:grid-cols-2 gap-6 mb-6"> <div class="bg-green-950/60 border border-green-700 rounded-xl p-6"> <h3 class="font-bold text-green-200 mb-3">✅ Pros</h3> <ul class="space-y-2 text-sm"> <li>Structured curriculum (CEFR aligned)</li> <li>Native speaker corrections</li> <li>Official certificates</li> <li>Good grammar explanations</li> <li>Helpful community feature</li> <li>Offline mode available</li> <li>Mobile and desktop access</li> <li>Quality over gamification</li> </ul> </div> <div class="bg-red-950/60 border border-red-700 rounded-xl p-6"> <h3 class="font-bold text-red-200 mb-3">❌ Cons</h3> <ul class="space-y-2 text-sm"> <li>Free version very limited</li> <li>Less fun than Duolingo</li> <li>Corrections may be slow</li> <li>No live conversation practice</li> <li>Pronunciation feedback limited</li> <li>Annual commitment for best price</li> <li>Can feel academic at times</li> <li>Fewer advanced level courses</li> </ul> </div> </div> <h2 id="verdict" class="text-2xl font-bold mt-8 mb-4">Our Verdict</h2> <p class="mb-4"><strong>Busuu is an excellent middle-ground between free apps and formal tutoring.</strong> It offers more structure than Duolingo while remaining more affordable than platforms like iTalki.</p> <p class="mb-4">The native speaker corrections are valuable for improving writing, and the structured curriculum helps learners progress systematically. However, there's no speaking practice with real people.</p> <p class="mb-4">Busuu is best for:</p> <ul class="list-disc pl-6 mb-4 space-y-2"> <li>Intermediate learners wanting structure</li> <li>People who prefer quality over gamification</li> <li>Those who want certificates for their resume</li> <li>Learners focused on grammar and writing</li> </ul> <div class="bg-neutral-800 rounded-xl p-6 mt-8"> <h3 class="font-bold mb-3">Rating Summary</h3> <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"> <div> <p class="text-2xl font-bold text-primary">8.0</p> <p class="text-xs text-slate-400">Structure</p> </div> <div> <p class="text-2xl font-bold text-primary">8.5</p> <p class="text-xs text-slate-400">Content Quality</p> </div> <div> <p class="text-2xl font-bold text-primary">7.0</p> <p class="text-xs text-slate-400">Speaking Practice</p> </div> <div> <p class="text-2xl font-bold text-primary">7.5</p> <p class="text-xs text-slate-400">Value</p> </div> </div> </div> <div class="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-xl"> <p class="font-medium">Ready to learn with a structured curriculum?</p> <a href="https://www.busuu.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg transition">Start Free Trial →</a> </div> <p class="text-sm text-slate-400 text-center mt-6"> <strong>Editorial Note:</strong> Our reviews are based on research and user feedback, not compensation.
+We may earn affiliate commissions from purchases made through links on this page.
+<a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Learn more</a> </p> <div class="flex gap-4 mt-8"> <a href="/reviews/" class="text-primary font-semibold hover:underline">← All Reviews</a> <a href="/compare/best-english-learning-apps/" class="text-primary font-semibold hover:underline">Compare Busuu →</a> </div> ${renderComponent($$result2, "ArticleSchema", $$ArticleSchema, { "title": "Busuu Review", "description": "Busuu is a structured language learning app with native speaker corrections and recognized certificates.", "publishedTime": "2026-01-20" })} </article> `, "structured-data": ($$result2) => renderTemplate(_a || (_a = __template(['<span> <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> </span>"])), unescapeHTML(JSON.stringify(reviewSchema)), unescapeHTML(JSON.stringify(breadcrumbSchema)), unescapeHTML(JSON.stringify(articleSchema))) })}`;
+}, "/var/www/learnenglish.life/src/pages/reviews/busuu.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/reviews/busuu.astro";
+const $$url = "/reviews/busuu";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Busuu,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

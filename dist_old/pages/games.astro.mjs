@@ -1,0 +1,98 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, F as Fragment, u as unescapeHTML, m as maybeRenderHead, b as addAttribute } from '../chunks/astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_DZoc_vH5.mjs';
+import { $ as $$Header, a as $$Footer } from '../chunks/Footer_BqrSaoVo.mjs';
+export { renderers } from '../renderers.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$Index = createComponent(($$result, $$props, $$slots) => {
+  const games = [
+    {
+      id: "grammar",
+      title: "Grammar Challenge",
+      description: "Test your grammar with fill-in-the-blank questions covering tenses, articles, prepositions, and more.",
+      icon: "\u{1F4DA}",
+      href: "/games/grammar/",
+      difficulty: "All Levels",
+      questions: "25+ questions",
+      features: ["Fill-in-the-blank", "Instant feedback", "Explanations"]
+    },
+    {
+      id: "vocabulary",
+      title: "Vocabulary Quiz",
+      description: "Multiple choice questions to test and expand your vocabulary across various topics.",
+      icon: "\u{1F4DD}",
+      href: "/games/vocabulary/",
+      difficulty: "A1 - C2",
+      questions: "50+ questions",
+      features: ["Multiple choice", "Level progression", "Topics"]
+    },
+    {
+      id: "wordsearch",
+      title: "Word Search",
+      description: "Find hidden words in the grid. Great for expanding vocabulary and spelling skills.",
+      icon: "\u{1F50D}",
+      href: "/games/word-search/",
+      difficulty: "All Levels",
+      questions: "Multiple levels",
+      features: ["Grid puzzles", "Timer mode", "Mobile friendly"]
+    }
+  ];
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "English Learning Games | LearnEnglish.Life",
+    "description": "Practice English with fun interactive games: Grammar Challenge, Vocabulary Quiz, and Word Search. Free to play!",
+    "url": "https://learnenglish.life/games/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": games.map((game, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": game.title,
+        "url": `https://learnenglish.life/games/${game.id}/`
+      }))
+    }
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "English Learning Games | LearnEnglish.Life", "description": "Practice English with fun interactive games: Grammar Challenge, Vocabulary Quiz, and Word Search. Free to play!", "canonicalUrl": "https://learnenglish.life/games/", "type": "website" }, { "default": ($$result2) => renderTemplate`    ${maybeRenderHead()}<section class="bg-gradient-to-b from-green-900/20 to-neutral-950 py-16 px-4"> <div class="max-w-content mx-auto text-center"> <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+English Learning Games
+</h1> <p class="text-xl text-neutral-400 max-w-2xl mx-auto mb-8">
+Practice your English with fun, interactive games. 
+        Track your progress, learn from mistakes, and improve your skills.
+</p> <div class="flex flex-wrap justify-center gap-4 text-sm"> <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">
+✓ Free to play
+</span> <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">
+✓ All difficulty levels
+</span> <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">
+✓ Mobile friendly
+</span> </div> </div> </section>  <section class="py-12 px-4 bg-neutral-950"> <div class="max-w-content mx-auto"> <div class="grid md:grid-cols-3 gap-6"> ${games.map((game) => renderTemplate`<a${addAttribute(game.href, "href")} class="bg-neutral-900 rounded-2xl p-6 border border-neutral-800 hover:border-green-500/50 transition-all hover:-translate-y-1 group"> <div class="text-5xl mb-4">${game.icon}</div> <h2 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors"> ${game.title} </h2> <p class="text-neutral-400 text-sm mb-4"> ${game.description} </p> <!-- Game Meta --> <div class="flex flex-wrap gap-2 mb-4"> <span class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded"> ${game.difficulty} </span> <span class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded"> ${game.questions} </span> </div> <!-- Features --> <ul class="space-y-1 mb-4"> ${game.features.map((feature) => renderTemplate`<li class="text-sm text-slate-400 flex items-center gap-2"> <span class="text-green-500">✓</span> ${feature} </li>`)} </ul> <!-- Play Button --> <div class="mt-4"> <span class="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg font-medium text-sm group-hover:bg-green-500 transition-colors">
+Play Now
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </span> </div> </a>`)} </div> </div> </section>  <section class="py-12 px-4 bg-neutral-900 border-t border-neutral-800"> <div class="max-w-content mx-auto"> <h2 class="text-2xl font-bold text-white mb-6 text-center">
+Why Learn English with Games?
+</h2> <div class="grid md:grid-cols-4 gap-6"> <div class="text-center"> <div class="text-4xl mb-3">🧠</div> <h3 class="font-semibold text-white mb-2">Better Retention</h3> <p class="text-neutral-400 text-sm">
+Games make learning memorable by creating emotional connections.
+</p> </div> <div class="text-center"> <div class="text-4xl mb-3">⚡</div> <h3 class="font-semibold text-white mb-2">Instant Feedback</h3> <p class="text-neutral-400 text-sm">
+Learn from mistakes immediately with detailed explanations.
+</p> </div> <div class="text-center"> <div class="text-4xl mb-3">📊</div> <h3 class="font-semibold text-white mb-2">Track Progress</h3> <p class="text-neutral-400 text-sm">
+See your scores and improvement over time.
+</p> </div> <div class="text-center"> <div class="text-4xl mb-3">🎯</div> <h3 class="font-semibold text-white mb-2">Targeted Practice</h3> <p class="text-neutral-400 text-sm">
+Focus on specific skills like grammar, vocabulary, or spelling.
+</p> </div> </div> </div> </section>  <section class="py-12 px-4 bg-neutral-950 border-t border-neutral-800"> <div class="max-w-content mx-auto"> <h2 class="text-2xl font-bold text-white mb-6">Continue Learning</h2> <div class="grid md:grid-cols-4 gap-6"> <a href="/reviews/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group"> <div class="text-2xl mb-2">⭐</div> <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Platform Reviews</h3> <p class="text-slate-400 text-sm">Honest reviews of tutoring platforms</p> </a> <a href="/guides/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group"> <div class="text-2xl mb-2">📚</div> <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Study Guides</h3> <p class="text-slate-400 text-sm">Grammar, vocabulary, and more</p> </a> <a href="/compare/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group"> <div class="text-2xl mb-2">⚖️</div> <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Comparisons</h3> <p class="text-slate-400 text-sm">Side-by-side platform comparisons</p> </a> <a href="/blog/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group"> <div class="text-2xl mb-2">✍️</div> <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Blog</h3> <p class="text-slate-400 text-sm">Tips and learning strategies</p> </a> </div> </div> </section>  <section class="py-6 px-4 bg-neutral-900 border-t border-neutral-800"> <div class="max-w-content mx-auto"> <div class="bg-neutral-800 rounded-lg p-4 text-center"> <p class="text-slate-400 text-sm">Advertisement</p> <div class="h-24 bg-neutral-700 rounded flex items-center justify-center"> <span class="text-slate-400 text-sm">Ad Space</span> </div> </div> </div> </section>  `, "footer": ($$result2) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "slot": "footer" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Footer", $$Footer, {})} ` })}`, "header": ($$result2) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "slot": "header" }, { "default": ($$result3) => renderTemplate` ${renderComponent($$result3, "Header", $$Header, {})} ` })}`, "structured-data": ($$result2) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "slot": "structured-data" }, { "default": ($$result3) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', "<\/script> "])), unescapeHTML(JSON.stringify(structuredData))) })}` })}`;
+}, "/var/www/learnenglish.life/src/pages/games/index.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/games/index.astro";
+const $$url = "/games";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Index,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

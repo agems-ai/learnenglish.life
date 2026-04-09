@@ -1,0 +1,176 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, b as addAttribute, m as maybeRenderHead, u as unescapeHTML } from './astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from './Base_DZoc_vH5.mjs';
+import { a as $$Footer, $ as $$Header } from './Footer_BqrSaoVo.mjs';
+import { $ as $$AdUnit } from './AdUnit_CfA3FelO.mjs';
+import { $ as $$StickyCTA } from './StickyCTA_CJElHHTS.mjs';
+import { $ as $$ComparisonHighlight, a as $$SocialProof } from './ComparisonHighlight_CnQ51mBr.mjs';
+import { $ as $$BenefitCards } from './BenefitCards_DF0LaMEG.mjs';
+import { $ as $$PlatformRatings } from './PlatformRatings_cCKrnvKW.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$BusuuVsItalki = createComponent(($$result, $$props, $$slots) => {
+  const busuu = {
+    name: "Busuu",
+    rating: 8,
+    price: "From $13.99/month",
+    link: "/go/busuu",
+    bestFor: "Structured self-paced learning with AI features",
+    pros: [
+      "Structured curriculum from beginner to advanced (CEFR A1-B2)",
+      "AI-powered writing corrections and pronunciation feedback",
+      "Official certification recognised by McGraw-Hill Education",
+      "Offline mode for learning without internet connection",
+      "Community corrections from native speakers"
+    ],
+    cons: [
+      "No live speaking practice with real tutors",
+      "Free version is very limited, full access requires paid plan",
+      "Speaking practice relies on AI, not real conversations",
+      "Less flexibility than pure tutoring platforms"
+    ]
+  };
+  const italki = {
+    name: "iTalki",
+    rating: 9.2,
+    price: "$5 per lesson",
+    link: "/go/italki",
+    bestFor: "Live speaking practice with real tutors",
+    pros: [
+      "Real human interaction with instant, contextual feedback",
+      "Flexible scheduling with thousands of tutors worldwide",
+      "Choose tutors who match your specific goals and level",
+      "Fastest path to speaking confidence through real conversations",
+      "Pay per lesson with no monthly commitment"
+    ],
+    cons: [
+      "Quality varies between tutors, vetting takes effort",
+      "No structured curriculum unless you request it",
+      "Speaking practice limited to booked sessions",
+      "Costs can add up with frequent lessons"
+    ]
+  };
+  const comparison = [
+    { feature: "Starting Price", winner: null, a: "From $13.99/month", b: "$5/lesson" },
+    { feature: "Live Human Tutors", winner: "b", a: "No", b: "Yes" },
+    { feature: "AI Features", winner: "a", a: "Writing corrections + pronunciation", b: "No (human feedback only)" },
+    { feature: "Structured Curriculum", winner: "a", a: "CEFR A1-B2 fully built-in", b: "Only if requested" },
+    { feature: "Official Certification", winner: "a", a: "Yes (McGraw-Hill)", b: "No" },
+    { feature: "Offline Mode", winner: null, a: "Yes", b: "No" },
+    { feature: "Community Correction", winner: "a", a: "Native speaker corrections", b: "N/A" },
+    { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+    { feature: "Conversation Practice", winner: "b", a: "AI simulation only", b: "Live video sessions" }
+  ];
+  const whyCompare = [
+    { icon: "\u{1F3AF}", title: "Match Your Learning Style", description: "Find the platform that matches whether you thrive with structured self-study or live conversational practice" },
+    { icon: "\u{1F4B0}", title: "Understand the Real Cost", description: "Compare subscription vs pay-per-lesson to find what fits your budget and how often you plan to practice" },
+    { icon: "\u26A1", title: "Get Results Faster", description: "Choose the platform that aligns with your goals, from mastering grammar to achieving confident fluency" }
+  ];
+  const testimonials = [
+    {
+      quote: "Busuu's certification helped me land my promotion. The structured curriculum meant I always knew what to study next, and I could track my progress clearly.",
+      author: "Ahmed R.",
+      location: "UAE",
+      result: "B2 certification"
+    },
+    {
+      quote: "After three months of iTalki, I held my first full conversation in English with a native speaker. The tutors pushed me to speak from day one and I could see progress immediately.",
+      author: "Yuki T.",
+      location: "Japan",
+      result: "Confidence in speaking"
+    },
+    {
+      quote: "I used Busuu for vocabulary and grammar, then iTalki every weekend to practice. That combination worked better than anything else I had tried.",
+      author: "Elena K.",
+      location: "Russia",
+      result: "IELTS 6.5"
+    }
+  ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Busuu vs iTalki: Structured Learning or Live Conversation?",
+    "description": "Compare Busuu and iTalki: AI-powered structured courses vs live human tutoring. Find the best English platform for your goals and learning style.",
+    "author": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life"
+    },
+    "datePublished": "2026-04-08",
+    "dateModified": "2026-04-08"
+  };
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "English Learning Platform Comparison",
+    "description": "Comparison between Busuu and iTalki for English language learning"
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Busuu or iTalki better for learning English?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your goals and learning style. Busuu is better if you want structured, self-paced learning with a clear curriculum and AI tools for writing and pronunciation practice. iTalki is better if you want to develop real speaking ability through live conversations with human tutors. Many learners use both, Busuu for grammar and vocabulary, iTalki for speaking practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is cheaper, Busuu or iTalki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Busuu costs from $13.99/month for full access to all courses and features. iTalki lessons start at $5 with community tutors, but you pay per lesson. If you only need a few lessons per month, iTalki could be cheaper. If you plan to practice daily with structured content, Busuu's subscription may offer better value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use both Busuu and iTalki together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this is actually one of the most effective combinations. Use Busuu to build vocabulary, grammar, and reading comprehension through its structured curriculum. Book iTalki sessions weekly to practice what you have learned in real conversations. This gives you the best of both worlds: a clear learning path plus human speaking practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Busuu have speaking practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Busuu has AI-powered speaking practice through its speech recognition feature, which gives feedback on pronunciation. However, this is not the same as live conversation. You can practice individual words and phrases, but you cannot hold a spontaneous conversation with the AI. For real conversational ability, iTalki's live human tutors are significantly more effective."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platform is better for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Busuu is generally better for beginners who want a structured, guided path through the fundamentals. Its curriculum spans CEFR A1 to B2 with clear milestones and exercises. iTalki is better for beginners who are comfortable jumping into conversation and want immediate speaking practice from day one, though the lack of structured content means you may not build as solid a foundation in grammar and vocabulary."
+        }
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Busuu vs iTalki: Structured Learning or Live Conversation? (2026)", "description": "Compare Busuu and iTalki for English learning. Busuu offers AI-powered structured courses; iTalki provides live human tutors. Find the best platform for your goals and budget." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> ", " ", '<main class="max-w-5xl mx-auto px-4 py-8 pb-24"> <!-- Breadcrumb --> <nav class="text-sm text-neutral-300 mb-4"> <a href="/" class="hover:text-emerald-600">Home</a> <span class="mx-2">\u203A</span> <a href="/compare/" class="hover:text-emerald-600">Comparisons</a> <span class="mx-2">\u203A</span> <span class="text-neutral-300">Busuu vs iTalki</span> </nav> <!-- Hero Section --> <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white mb-8"> <span class="text-purple-200 text-sm font-medium">Comparison \xB7 Updated April 2026</span> <h1 class="text-4xl font-bold mt-2 mb-4">Busuu vs iTalki: Structured Learning or Live Conversation?</h1> <p class="text-purple-100 text-lg">Busuu offers AI-powered structured courses with a clear curriculum. iTalki connects you with real human tutors for live conversation practice. Here is how they really compare.</p> </div> <!-- Our Pick Banner --> <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8"> <div class="flex items-center justify-between flex-wrap gap-4"> <div> <p class="font-bold text-lg">Our Pick</p> <p class="text-3xl font-bold text-green-700">iTalki</p> <p class="text-sm text-slate-400 mt-1">Best for speaking practice with real tutors</p> </div> <div class="text-right"> <p class="text-sm text-slate-400">Also great for</p> <p class="font-semibold">Structured self-paced learners</p> </div> </div> </div> <!-- Quick Overview Cards --> <div class="grid md:grid-cols-2 gap-6 mb-8"> <!-- Busuu Card --> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-purple-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">Busuu</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-purple-600">From $13.99/month</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg hover:bg-purple-700 transition font-bold">\nTry Busuu Free \u2192\n</a> </div> <!-- iTalki Card --> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">iTalki</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-emerald-600">$5 per lesson</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">\nTry iTalki Free \u2192\n</a> </div> </div> <!-- Why Compare Section --> ', " <!-- Social Proof --> ", ' <!-- Ad Unit --> <div class="mb-8"> ', ' </div> <!-- What Are the Main Differences --> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2> <p class="text-neutral-300 mb-4 leading-relaxed">Busuu is a structured language learning platform. It provides a complete curriculum, vocabulary, grammar, reading, listening, and speaking, mapped to CEFR levels from A1 to B2. You work through units at your own pace, get AI feedback on writing and pronunciation, and can earn an official certification recognised by McGraw-Hill Education.</p> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace. There is no built-in curriculum, instead, you browse thousands of human tutors, read their profiles, and book live video lessons when it suits you. The learning is entirely conversation-based: you talk, the tutor gives feedback, you talk some more. The pace and content depend on your tutor and your goals.</p> <p class="text-neutral-300 leading-relaxed">The fundamental difference is self-study vs live tutoring. Busuu gives you a map and lets you walk it yourself. iTalki puts you in a room with a guide who adapts to your every question and mistake in real time. Both approaches work, the right choice depends on how you learn best and what you are trying to achieve.</p> </section> <!-- Enhanced Comparison Table --> ', ' <!-- Ad Unit --> <div class="mb-8"> ', ` </div> <!-- Detailed Analysis --> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Learning Structure</h3> <h4 class="text-lg font-semibold text-purple-400 mb-2">Busuu: A Clear Path From Beginner to Advanced</h4> <p class="text-neutral-300 mb-4 leading-relaxed">Busuu's greatest strength is its structure. The curriculum is mapped to CEFR levels, so you always know exactly where you are and what comes next. Units cover vocabulary, grammar, dialogues, and speaking practice, all designed to build on each other in a logical progression. This makes it easy to study consistently without having to decide what to do next.</p> <p class="text-neutral-300 leading-relaxed">The community correction feature is also valuable: native speakers review your written exercises and give feedback. This adds a human element to the self-study experience, making it feel less isolated than some other apps.</p> </div> <div class="mb-8"> <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Flexible, Human-Led Learning</h4> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki's learning is as structured, or as unstructured, as you make it. If you want a structured path, you work with a tutor who designs a lesson plan for you. If you prefer free conversation, you just talk. Some learners thrive in this flexibility; others need the guardrails that Busuu provides.</p> <p class="text-neutral-300 mb-4 leading-relaxed">The key advantage is human adaptability. Your tutor hears you speak, notices patterns in your mistakes, and explains things in context, something AI cannot replicate. They can answer your specific questions, push you when you are coasting, and slow down when you are struggling. This real-time responsiveness is iTalki's biggest selling point.</p> </div> <div> <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3> <p class="text-neutral-300 mb-4 leading-relaxed">Busuu offers AI-powered speaking practice with speech recognition that gives feedback on your pronunciation. This is genuinely useful for drilling specific sounds and phrases. However, it cannot hold a conversation or respond to what you say in real time.</p> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki's speaking practice is conversation with a human being. You talk, they respond, you talk back. This is the fastest way to build real conversational ability because every mistake is caught immediately and every question is answered naturally.</p> <p class="text-neutral-300 leading-relaxed">For the best results, use both: Busuu to build vocabulary and study grammar through its structured exercises, then iTalki to put everything into practice in live conversations.</p> </div> </section> <!-- FAQ Section --> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2> <div class="space-y-6"> <div> <h3 class="text-lg font-semibold text-white mb-2">Is Busuu or iTalki better for learning English?</h3> <p class="text-neutral-300"> <strong>It depends on your goals and learning style.</strong> Busuu is better if you want structured, self-paced learning with a clear curriculum and AI tools for writing and pronunciation practice. iTalki is better if you want to develop real speaking ability through live conversations with human tutors. Many learners use both, Busuu for grammar and vocabulary, iTalki for speaking practice.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, Busuu or iTalki?</h3> <p class="text-neutral-300">
+Busuu costs from <strong>$13.99/month</strong> for full access to all courses and features. iTalki lessons start at <strong>$5</strong> with community tutors, but you pay per lesson. If you only need a few lessons per month, iTalki could be cheaper. If you plan to practice daily with structured content, Busuu's subscription may offer better value.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Can I use both Busuu and iTalki together?</h3> <p class="text-neutral-300"> <strong>Yes, this is actually one of the most effective combinations.</strong> Use Busuu to build vocabulary, grammar, and reading comprehension through its structured curriculum. Book iTalki sessions weekly to practice what you have learned in real conversations. This gives you the best of both worlds: a clear learning path plus human speaking practice.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Does Busuu have speaking practice?</h3> <p class="text-neutral-300">
+Busuu has AI-powered speaking practice through its speech recognition feature, which gives feedback on pronunciation. However, this is not the same as live conversation. You can practice individual words and phrases, but you cannot hold a spontaneous conversation with the AI. For real conversational ability, <strong>iTalki's live human tutors are significantly more effective</strong>.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Which platform is better for beginners?</h3> <p class="text-neutral-300"> <strong>Busuu is generally better for beginners</strong> who want a structured, guided path through the fundamentals. Its curriculum spans CEFR A1 to B2 with clear milestones and exercises. iTalki is better for beginners who are comfortable jumping into conversation and want immediate speaking practice from day one, though the lack of structured content means you may not build as solid a foundation in grammar and vocabulary.
+</p> </div> </div> </section> <!-- Ad Unit --> <div class="mb-8"> `, ' </div> <!-- Verdict Section --> <section class="bg-gradient-to-r from-purple-900/40 to-indigo-900/40 rounded-xl p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2> <div class="grid md:grid-cols-2 gap-6 mb-6"> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-purple-500"> <h3 class="font-bold text-neutral-300 mb-2">Choose Busuu if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-purple-500 mr-2">\u2192</span>You prefer structured, self-paced learning</li> <li class="flex items-start"><span class="text-purple-500 mr-2">\u2192</span>You want a clear curriculum from A1 to B2</li> <li class="flex items-start"><span class="text-purple-500 mr-2">\u2192</span>You need offline access for commuting or travel</li> <li class="flex items-start"><span class="text-purple-500 mr-2">\u2192</span>You want an official certification (McGraw-Hill)</li> </ul> </div> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500"> <h3 class="font-bold text-emerald-300 mb-2">Choose iTalki if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>Your main goal is to speak English confidently</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You want instant feedback from a real human</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You are preparing for a test, interview, or travel</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You prefer flexible, conversation-based learning</li> </ul> </div> </div> <p class="text-neutral-300">The most effective approach for most learners is to use both: Busuu for structured vocabulary and grammar study, iTalki for weekly conversation practice to apply what you have learned in real dialogues.</p> </section> <!-- See Guru Alternative --> <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8"> <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p> <p class="text-slate-300 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured small-group classes and one-on-one tutoring with certified teachers, including three free trial lessons.</p> <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a> <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p> </section> <!-- Related Reviews --> <section class="mb-8"> <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2> <div class="grid gap-4"> <a href="/reviews/busuu/" class="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">Busuu Review</p> <p class="text-sm text-neutral-400">8.0/10, Structured learning with AI features and certification</p> </a> <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">iTalki Review</p> <p class="text-sm text-neutral-400">9.2/10, Best for affordable live tutor lessons</p> </a> <a href="/compare/busuu-vs-rosetta-stone/" class="block p-4 border border-gray-700 rounded-lg hover:border-purple-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">Busuu vs Rosetta Stone</p> <p class="text-sm text-neutral-400">Compare two structured learning platforms side by side</p> </a> </div> </section> <!-- Affiliate Disclosure --> <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700"> <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p> </div> </main>  ', " ", '  <aside class="my-12 max-w-3xl mx-auto px-4"> <div class="bg-gradient-to-br from-purple-900/40 to-indigo-900/40 border border-purple-700 rounded-2xl p-6 md:p-8"> <div class="flex items-start gap-4"> <div class="text-3xl flex-shrink-0">\u{1F4A1}</div> <div class="flex-1"> <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring with a structured curriculum?</h3> <p class="text-slate-200 mb-4">See Guru offers <strong class="text-purple-300">three free trial lessons</strong> with certified English teachers, combining the structure of a course with real human conversation practice. Lessons start at $5, and you get a structured curriculum plus live speaking practice.</p> <a href="/go/see-guru" class="inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-500 transition-colors">Get 3 Free Lessons \u2192</a> </div> </div> </div> </aside> '])), unescapeHTML(JSON.stringify(articleSchema)), unescapeHTML(JSON.stringify(comparisonSchema)), unescapeHTML(JSON.stringify(faqSchema)), renderComponent($$result2, "Header", $$Header, {}), maybeRenderHead(), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": busuu.name, "rating": busuu.rating, "scale": 10, "variant": "inline", "color": "purple" }), busuu.bestFor, busuu.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(busuu.link, "href"), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": italki.name, "rating": italki.rating, "scale": 10, "variant": "inline", "color": "emerald" }), italki.bestFor, italki.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(italki.link, "href"), renderComponent($$result2, "BenefitCards", $$BenefitCards, { "title": "Why Compare These Platforms?", "benefits": whyCompare }), renderComponent($$result2, "SocialProof", $$SocialProof, { "title": "What Learners Say", "testimonials": testimonials }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-1" }), renderComponent($$result2, "ComparisonHighlight", $$ComparisonHighlight, { "title": "Feature Comparison", "platformA": busuu, "platformB": italki, "winner": "b", "rows": comparison }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-2" }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-3" }), renderComponent($$result2, "StickyCTA", $$StickyCTA, { "ctaText": "Compare Platforms", "ctaLink": "/go/italki", "platform": "italki" }), renderComponent($$result2, "Footer", $$Footer, {})) })}`;
+}, "/var/www/learnenglish.life/src/pages/compare/busuu-vs-italki.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/compare/busuu-vs-italki.astro";
+const $$url = "/compare/busuu-vs-italki";
+
+const __vite_glob_0_2 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$BusuuVsItalki,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+export { __vite_glob_0_2 as _ };

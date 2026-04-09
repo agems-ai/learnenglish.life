@@ -1,0 +1,61 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from '../chunks/Base_DZoc_vH5.mjs';
+import { $ as $$Header, a as $$Footer } from '../chunks/Footer_BqrSaoVo.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$Terms = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Terms of Service | LearnEnglish.Life", "description": "Read the terms and conditions for using LearnEnglish.Life." }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Header", $$Header, {})}  ${maybeRenderHead()}<section class="bg-emerald-700 py-12"> <div class="max-w-4xl mx-auto px-4"> <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+Terms of Service
+</h1> <p class="text-emerald-100 text-lg">
+Last updated: April 5, 2026
+</p> </div> </section>  <section class="py-12"> <div class="max-w-4xl mx-auto px-4"> <div class="prose prose-lg max-w-none"> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">1. Acceptance of Terms</h2> <p class="text-gray-300 mb-6">
+By accessing and using LearnEnglish.Life ("the Website"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Website.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">2. About LearnEnglish.Life</h2> <p class="text-gray-300 mb-4">
+LearnEnglish.Life is an English learning resource hub that provides:
+</p> <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2"> <li>Platform reviews and comparisons</li> <li>Learning guides and study materials</li> <li>AI-powered learning tools</li> <li>Interactive practice games</li> <li>Community-driven content</li> </ul> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">3. Use of the Website</h2> <p class="text-gray-300 mb-4">
+You agree to use the Website only for lawful purposes. You must not:
+</p> <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2"> <li>Use the site in any way that violates applicable laws or regulations</li> <li>Submit false, misleading, or fraudulent reviews or content</li> <li>Attempt to gain unauthorized access to our systems</li> <li>Interfere with the proper functioning of the Website</li> <li>Use automated systems to access the site without permission</li> <li>Harvest or collect information about other users without consent</li> </ul> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">4. Content and Intellectual Property</h2> <p class="text-gray-300 mb-4"> <strong>Our Content:</strong> All content on LearnEnglish.Life, including text, graphics, logos, and software, is owned by us or our licensors and is protected by copyright and other intellectual property laws.
+</p> <p class="text-gray-300 mb-4"> <strong>User-Submitted Content:</strong> By submitting reviews, comments, or other content to our site, you:
+</p> <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2"> <li>Grant us a non-exclusive, royalty-free license to use, reproduce, and display your content</li> <li>Represent that you own or have the right to use the content you submit</li> <li>Agree that your content may be publicly visible</li> </ul> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">5. Reviews and Ratings</h2> <p class="text-gray-300 mb-4">
+Our reviews are based on research and publicly available information. We strive for accuracy but cannot guarantee that all information is current or complete. Reviews represent our opinions and research, not endorsements of any platform.
+</p> <p class="text-gray-300 mb-4">
+We reserve the right to moderate, edit, or remove user-submitted reviews that violate our guidelines or applicable laws.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">6. Third-Party Links and Services</h2> <p class="text-gray-300 mb-4">
+Our Website may contain links to third-party websites, products, or services. We are not responsible for:
+</p> <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2"> <li>The content or practices of third-party websites</li> <li>The quality, pricing, or availability of third-party products or services</li> <li>Any transactions or agreements between you and third parties</li> </ul> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">7. Affiliate Links</h2> <p class="text-gray-300 mb-4">
+LearnEnglish.Life may receive compensation through affiliate links. When you click on affiliate links and make a purchase or sign up, we may earn a commission at no additional cost to you. This does not affect our reviews or recommendations. See our <a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Affiliate Disclosure</a> for details.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">8. Advertising</h2> <p class="text-gray-300 mb-4">
+Our Website displays advertisements through Google AdSense and other advertising networks. These advertisements may be targeted based on your browsing history and preferences. We are not responsible for the content of advertisements or the practices of advertisers.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">9. Disclaimer of Warranties</h2> <p class="text-gray-300 mb-6">
+THE WEBSITE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT:
+</p> <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2"> <li>The Website will be uninterrupted, secure, or error-free</li> <li>The content or information on the Website is accurate, complete, or current</li> <li>The Website will meet your specific requirements</li> <li>Any errors or defects will be corrected</li> </ul> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">10. Limitation of Liability</h2> <p class="text-gray-300 mb-6">
+To the fullest extent permitted by law, LearnEnglish.Life and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, arising out of or related to your use of the Website.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">11. Indemnification</h2> <p class="text-gray-300 mb-6">
+You agree to indemnify and hold harmless LearnEnglish.Life and its operators from any claims, damages, losses, or expenses arising out of your use of the Website or your violation of these Terms.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">12. Changes to Terms</h2> <p class="text-gray-300 mb-6">
+We may modify these Terms at any time. The "Last updated" date will reflect the most recent changes. Your continued use of the Website after changes constitutes acceptance of the modified Terms.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">13. Termination</h2> <p class="text-gray-300 mb-6">
+We reserve the right to terminate or suspend your access to the Website at our sole discretion, without notice, for any reason, including violation of these Terms.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">14. Governing Law</h2> <p class="text-gray-300 mb-6">
+These Terms shall be governed by and construed in accordance with applicable laws, without regard to its conflict of law provisions.
+</p> <h2 class="text-2xl font-bold text-gray-100 mt-8 mb-4">15. Contact Us</h2> <p class="text-gray-300 mb-6">
+If you have questions about these Terms of Service, contact us at:<br> <strong>Email:</strong> legal@learnenglish.life<br> <strong>Address:</strong> LearnEnglish.Life
+</p> <div class="bg-amber-950/60 rounded-xl p-6 mt-8"> <h3 class="font-bold text-amber-200 mb-2"> Transparency Notice</h3> <p class="text-sm text-amber-300">
+These Terms of Service were created by our editorial team. For questions, email legal@learnenglish.life.
+</p> </div> </div> </div> </section> ${renderComponent($$result2, "Footer", $$Footer, {})} ` })}`;
+}, "/var/www/learnenglish.life/src/pages/terms.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/terms.astro";
+const $$url = "/terms";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Terms,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

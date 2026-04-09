@@ -1,0 +1,160 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, b as addAttribute, m as maybeRenderHead, u as unescapeHTML } from './astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from './Base_DZoc_vH5.mjs';
+import { a as $$Footer, $ as $$Header } from './Footer_BqrSaoVo.mjs';
+import { $ as $$AdUnit } from './AdUnit_CfA3FelO.mjs';
+import { $ as $$StickyCTA } from './StickyCTA_CJElHHTS.mjs';
+import { $ as $$ComparisonHighlight, a as $$SocialProof } from './ComparisonHighlight_CnQ51mBr.mjs';
+import { $ as $$BenefitCards } from './BenefitCards_DF0LaMEG.mjs';
+import { $ as $$PlatformRatings } from './PlatformRatings_cCKrnvKW.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$ElsaSpeakVsItalki = createComponent(($$result, $$props, $$slots) => {
+  const italki = {
+    name: "iTalki",
+    rating: 9.2,
+    price: "$5 per lesson",
+    link: "/go/italki",
+    bestFor: "Live speaking practice with real tutors",
+    pros: [
+      "Real human tutors for live, adaptive conversation practice",
+      "Instant, contextual feedback from native and professional speakers",
+      "Choose tutors who match your exact goals, level, and schedule",
+      "Full-spectrum language coaching: grammar, vocabulary, and fluency",
+      "Pay per lesson with no monthly commitment required"
+    ],
+    cons: [
+      "Quality varies between tutors, so vetting takes some effort",
+      "No built-in structured curriculum unless you request one",
+      "Speaking practice limited to booked sessions",
+      "Costs add up if you take lessons several times per week"
+    ]
+  };
+  const elsaSpeak = {
+    name: "ELSA Speak",
+    rating: 4.4,
+    price: "$11.99 per month",
+    link: "/go/elsa-speak",
+    bestFor: "AI pronunciation coaching on a focused budget",
+    pros: [
+      "Advanced AI speech recognition identifies specific pronunciation gaps",
+      "Personalised feedback on individual sounds and intonation patterns",
+      "Short, focused sessions fit easily into a busy schedule",
+      "Covers American, British, and international English accents",
+      "Scales lessons to your exact level and learning pace"
+    ],
+    cons: [
+      "No live speaking practice with real people",
+      "Focused primarily on pronunciation, not grammar or vocabulary",
+      "Does not build real conversational confidence on its own",
+      "Requires consistent self-motivation without a tutor to push you"
+    ]
+  };
+  const comparison = [
+    { feature: "Starting Price", winner: null, a: "$5/lesson", b: "$11.99/month" },
+    { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
+    { feature: "AI Pronunciation Feedback", winner: "b", a: "No", b: "Yes (advanced)" },
+    { feature: "Structured Curriculum", winner: "a", a: "Custom per tutor", b: "Pronunciation-focused" },
+    { feature: "Spaced Repetition", winner: null, a: "No", b: "Yes" },
+    { feature: "Free Version", winner: null, a: "Language exchanges", b: "Limited free tier" },
+    { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+    { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI simulation only" },
+    { feature: "Speaking With Real People", winner: "a", a: "Yes, every lesson", b: "No" }
+  ];
+  const whyCompare = [
+    { icon: "\u{1F3AF}", title: "Match Your Learning Style", description: "Find whether you need AI pronunciation coaching or live human conversation to reach your goals" },
+    { icon: "\u{1F4B0}", title: "Understand the Real Cost", description: "Compare AI pronunciation coaching against a tutor marketplace to find what fits your learning needs and budget" },
+    { icon: "\u26A1", title: "Get Results Faster", description: "Choose the platform that aligns with whether you need to fix your accent or build full conversational ability" }
+  ];
+  const testimonials = [
+    {
+      quote: "ELSA helped me identify sounds I had been mispronouncing for years. Within three months, my accent changed noticeably and colleagues started complimenting my English.",
+      author: "Mei L.",
+      location: "Taiwan",
+      result: "Improved professional confidence"
+    },
+    {
+      quote: "ELSA fixed my pronunciation, but iTalki gave me the confidence to actually speak. I needed both: one to train my mouth and ears, the other to train my brain to think in English.",
+      author: "Daniel K.",
+      location: "Germany",
+      result: "IELTS 7.5"
+    },
+    {
+      quote: "As an advanced learner, I did not need vocabulary or grammar. I needed someone to help me sound more natural. iTalki tutors did exactly that in five sessions.",
+      author: "Fatima A.",
+      location: "UAE",
+      result: "Business presentation fluency"
+    }
+  ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ELSA Speak vs iTalki: AI Pronunciation Coach or Live Tutors?",
+    "description": "Compare ELSA Speak and iTalki: AI pronunciation coaching versus live human tutors for English speaking practice. Which is right for your goals?",
+    "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+    "datePublished": "2026-04-08",
+    "dateModified": "2026-04-08"
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is iTalki better than ELSA Speak for improving English pronunciation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both platforms improve pronunciation, but in different ways. ELSA Speak uses advanced AI speech recognition to identify exactly which sounds you are mispronouncing and gives you targeted drills to fix them. iTalki tutors give you live feedback on your overall speaking, including pronunciation, naturalness, and conversation flow. For narrow pronunciation improvement, ELSA Speak may be more focused. For overall speaking improvement that includes pronunciation, iTalki is more comprehensive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can ELSA Speak replace iTalki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ELSA Speak cannot replace iTalki because it does not offer live conversation practice. ELSA is excellent at improving pronunciation through AI drills, but it cannot engage you in dialogue, answer your grammar questions, or adapt to your specific conversational needs. iTalki provides full-spectrum speaking practice that includes real human interaction and conversation coaching."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use both ELSA Speak and iTalki together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Using both together can be highly effective. ELSA Speak targets your specific pronunciation gaps through AI drills. iTalki then lets you put your improved pronunciation into practice with real conversations. Many learners use this combination: ELSA for daily pronunciation coaching and iTalki for weekly live conversation sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is cheaper, ELSA Speak or iTalki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ELSA Speak costs $11.99 per month with full access to all pronunciation courses and drills. iTalki lessons start at $5 per lesson with community tutors, paid per lesson. For a pure monthly subscription, ELSA is more predictable. For value per speaking session, iTalki pay-per-lesson is excellent because every session is a real conversation. Heavy users may find iTalki more cost-effective for overall speaking improvement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is ELSA Speak best for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ELSA Speak is best for learners who want to specifically improve their pronunciation and accent. It uses AI to identify which sounds you struggle with and provides targeted practice to fix them. It is particularly useful for learners who have a good understanding of English but whose pronunciation holds them back in professional or social situations. For general conversation skills, vocabulary, and grammar, iTalki is the better choice."
+        }
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "ELSA Speak vs iTalki: AI Pronunciation Coach or Live Tutors? (2026)", "description": "Compare ELSA Speak and iTalki: AI pronunciation coaching app versus live human tutors for English. Find which is right for your speaking goals in 2026." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> ", " ", '<main class="max-w-5xl mx-auto px-4 py-8 pb-24"> <nav class="text-sm text-slate-400 mb-4"> <a href="/" class="hover:text-emerald-400">Home</a> <span class="mx-2">/</span> <a href="/compare/" class="hover:text-emerald-400">Comparisons</a> <span class="mx-2">/</span> <span class="text-slate-500">ELSA Speak vs iTalki</span> </nav> <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8"> <span class="text-emerald-200 text-sm font-medium">Comparison / Updated April 2026</span> <h1 class="text-4xl font-bold mt-2 mb-4">ELSA Speak vs iTalki: AI Pronunciation Coach or Live Tutors?</h1> <p class="text-emerald-100 text-lg">ELSA Speak uses AI to target your specific pronunciation gaps. iTalki puts you face to face with real tutors for live conversation practice. Here is how they really compare.</p> </div> <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8"> <div class="flex items-center justify-between flex-wrap gap-4"> <div> <p class="font-bold text-lg">Our Pick for Speaking</p> <p class="text-3xl font-bold text-green-700">iTalki</p> <p class="text-sm text-slate-400 mt-1">Best for live conversation with real tutors</p> </div> <div class="text-right"> <p class="text-sm text-slate-400">Best for Pronunciation</p> <p class="font-semibold text-gray-700">ELSA Speak</p> </div> </div> </div> <div class="grid md:grid-cols-2 gap-6 mb-8"> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">iTalki</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-emerald-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">\nTry iTalki Free\n</a> </div> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-amber-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">ELSA Speak</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-amber-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-amber-600 text-white text-center py-3 rounded-lg hover:bg-amber-700 transition font-bold">\nTry ELSA Speak Free\n</a> </div> </div> ', " ", ' <div class="mb-8"> ', ' </div> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2> <p class="text-neutral-300 mb-4 leading-relaxed">ELSA Speak is an AI-powered pronunciation coach. It uses advanced speech recognition to analyse your spoken English and identify exactly which sounds, stress patterns, and intonation you are getting wrong. It then guides you through targeted drills to fix each specific issue. The app is focused, efficient, and excellent for learners who know what they want to improve about their accent.</p> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace where you book live video sessions with real human tutors. You choose your tutor, set your conversation goals, and have genuine spoken exchanges. Your tutor hears your full performance, notices patterns in your mistakes, and can explain not just what to fix but why it matters in different contexts. This is far more adaptive than any AI pronunciation tool.</p> <p class="text-neutral-300 leading-relaxed">The core difference is narrow focus versus broad coverage. ELSA Speak is exceptional at one thing: fixing pronunciation. iTalki covers the full spectrum of speaking ability, from vocabulary and grammar to conversation flow and cultural nuance. Most learners need both at different stages of their journey.</p> </section> ', ' <div class="mb-8"> ', ' </div> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3> <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4> <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor, set your goals, and have a genuine conversation. Your tutor hears exactly how you sound, notices patterns in your mistakes, and can explain why certain phrases work in one context but not another.</p> <p class="text-neutral-300 leading-relaxed">The key advantage is that real conversations are unpredictable. You have to think on your feet, handle unexpected questions, and adapt to different topics. This is exactly what real communication requires, and iTalki builds this ability naturally through every session.</p> </div> <div class="mb-8"> <h4 class="text-lg font-semibold text-amber-400 mb-2">ELSA Speak: AI-Powered Pronunciation Training</h4> <p class="text-neutral-300 mb-4 leading-relaxed">ELSA Speak is built specifically for pronunciation improvement. The AI listens to your speech and gives you detailed feedback on individual sounds, syllable stress, word linking, and intonation. It breaks down your accent into specific components and assigns drills to address each one.</p> <p class="text-neutral-300 mb-4 leading-relaxed">The app is particularly strong for learners who have a solid grasp of English vocabulary and grammar but whose pronunciation holds them back. It is excellent at catching subtle sound differences that are hard to hear without software analysis, such as the difference between "ship" and "sheep" or "bet" and "bat."</p> <p class="text-neutral-300 leading-relaxed">However, ELSA Speak is not a conversation app. It helps you pronounce words better in isolation and scripted scenarios, but it cannot engage you in a real dialogue, answer your questions, or adapt its teaching to your conversational needs. For full speaking ability, iTalki is far more comprehensive.</p> </div> <div> <h3 class="text-xl font-bold text-white mb-3">Price and Value</h3> <p class="text-neutral-300 mb-4 leading-relaxed">ELSA Speak costs $11.99 per month for full access to all pronunciation courses and AI coaching. The subscription model is predictable and covers unlimited AI drills. It is a focused tool that delivers excellent value for what it does.</p> <p class="text-neutral-300 mb-4 leading-relaxed">iTalki lessons start at $5 per lesson with community tutors. You pay per lesson rather than monthly, so there is no automatic recurring charge. For dedicated learners who want one or two focused conversation sessions per week, iTalki offers excellent value because every session is a real human interaction that covers all aspects of speaking.</p> <p class="text-neutral-300 leading-relaxed">The best strategy for most learners is to use ELSA Speak to fix pronunciation and iTalki for conversation practice. Together they cost less than many all-in-one subscriptions while delivering better targeted results.</p> </div> </section> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2> <div class="space-y-6"> <div> <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than ELSA Speak for improving English pronunciation?</h3> <p class="text-neutral-300">Both platforms improve pronunciation, but in different ways. <strong>ELSA Speak</strong> uses advanced AI speech recognition to identify exactly which sounds you are mispronouncing and gives you targeted drills to fix them. <strong>iTalki</strong> tutors give you live feedback on your overall speaking, including pronunciation, naturalness, and conversation flow. For narrow pronunciation improvement, ELSA Speak may be more focused. For overall speaking improvement that includes pronunciation, iTalki is more comprehensive.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Can ELSA Speak replace iTalki?</h3> <p class="text-neutral-300">ELSA Speak cannot replace iTalki because it does not offer live conversation practice. ELSA is excellent at improving pronunciation through AI drills, but it cannot engage you in dialogue, answer your grammar questions, or adapt to your conversational needs. iTalki provides full-spectrum speaking practice that includes real human interaction.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Should I use both ELSA Speak and iTalki together?</h3> <p class="text-neutral-300">Using both together can be <strong>highly effective</strong>. ELSA Speak targets your specific pronunciation gaps through AI drills. iTalki then lets you put your improved pronunciation into practice with real conversations. Many learners use this combination: ELSA for daily pronunciation coaching and iTalki for weekly live conversation sessions.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, ELSA Speak or iTalki?</h3> <p class="text-neutral-300">ELSA Speak costs <strong>$11.99 per month</strong> with full access. iTalki lessons start at <strong>$5 per lesson</strong> with community tutors, paid per lesson. For a pure monthly subscription, ELSA is more predictable. For value per speaking session, iTalki pay-per-lesson is excellent because every session is a real conversation with full feedback.</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">What is ELSA Speak best for?</h3> <p class="text-neutral-300">ELSA Speak is best for learners who want to <strong>specifically improve their pronunciation and accent</strong>. It uses AI to identify which sounds you struggle with and provides targeted practice to fix them. It is particularly useful for advanced learners whose pronunciation holds them back in professional or social situations. For general conversation skills, vocabulary, and grammar, iTalki is the better choice.</p> </div> </div> </section> <div class="mb-8"> ', ` </div> <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2> <div class="grid md:grid-cols-2 gap-6 mb-6"> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500"> <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>Your main goal is to speak English confidently</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You want full conversation practice with real people</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You need coaching on grammar, vocabulary, and flow too</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You prefer human interaction over AI coaching</li> </ul> </div> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-amber-500"> <h3 class="font-bold text-amber-300 mb-2">Choose ELSA Speak if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-amber-500 mr-2">-</span>You specifically want to fix your English pronunciation</li> <li class="flex items-start"><span class="text-amber-500 mr-2">-</span>You have a good accent but want to sound more native</li> <li class="flex items-start"><span class="text-amber-500 mr-2">-</span>You prefer short, focused AI coaching sessions</li> <li class="flex items-start"><span class="text-amber-500 mr-2">-</span>You want to supplement live tutoring with pronunciation drills</li> </ul> </div> </div> <p class="text-neutral-300">The most effective approach is to use both: ELSA Speak to fix your pronunciation and iTalki to put your improved speaking into practice with real conversations. Together they cover everything a serious learner needs.</p> </section> <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8"> <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p> <p class="text-slate-300 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured small-group classes and one-on-one tutoring with certified teachers, including three free trial lessons.</p> <a href="https://see.guru/?aff=SG-SUAG151" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a> <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p> </section> <section class="mb-8"> <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2> <div class="grid gap-4"> <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">iTalki Review</p> <p class="text-sm text-neutral-400">9.2/10 / Best for affordable live tutor lessons</p> </a> <a href="/reviews/elsaspeak/" class="block p-4 border border-gray-700 rounded-lg hover:border-amber-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">ELSA Speak Review</p> <p class="text-sm text-neutral-400">Full review of ELSA Speak's features and pronunciation tools</p> </a> <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors"> <p class="font-semibold text-white">iTalki vs Preply</p> <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p> </a> </div> </section> <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700"> <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p> </div> </main> `, " ", ' <aside class="my-12 max-w-3xl mx-auto px-4"> <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8"> <div class="flex items-start gap-4"> <div class="text-3xl flex-shrink-0">!</div> <div class="flex-1"> <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3> <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong> with certified English teachers / no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p> <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons</a> </div> </div> </div> </aside> '])), unescapeHTML(JSON.stringify(articleSchema)), unescapeHTML(JSON.stringify(faqSchema)), renderComponent($$result2, "Header", $$Header, {}), maybeRenderHead(), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": italki.name, "rating": italki.rating, "scale": 10, "variant": "inline", "color": "emerald" }), italki.price, italki.bestFor, italki.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(italki.link, "href"), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": elsaSpeak.name, "rating": elsaSpeak.rating, "scale": 10, "variant": "inline", "color": "amber" }), elsaSpeak.price, elsaSpeak.bestFor, elsaSpeak.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(elsaSpeak.link, "href"), renderComponent($$result2, "BenefitCards", $$BenefitCards, { "title": "Why Compare These Platforms?", "benefits": whyCompare }), renderComponent($$result2, "SocialProof", $$SocialProof, { "title": "What Learners Say", "testimonials": testimonials }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-1" }), renderComponent($$result2, "ComparisonHighlight", $$ComparisonHighlight, { "title": "Feature Comparison", "platformA": italki, "platformB": elsaSpeak, "winner": "a", "rows": comparison }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-2" }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-3" }), renderComponent($$result2, "StickyCTA", $$StickyCTA, { "ctaText": "Compare Platforms", "ctaLink": "/go/italki", "platform": "italki" }), renderComponent($$result2, "Footer", $$Footer, {})) })}`;
+}, "/var/www/learnenglish.life/src/pages/compare/elsa-speak-vs-italki.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/compare/elsa-speak-vs-italki.astro";
+const $$url = "/compare/elsa-speak-vs-italki";
+
+const __vite_glob_0_9 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$ElsaSpeakVsItalki,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+export { __vite_glob_0_9 as _ };

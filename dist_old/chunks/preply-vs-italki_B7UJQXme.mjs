@@ -1,0 +1,175 @@
+import { c as createComponent, r as renderComponent, a as renderTemplate, b as addAttribute, m as maybeRenderHead, u as unescapeHTML } from './astro/server_DMtB4JkI.mjs';
+import 'kleur/colors';
+import { $ as $$Base } from './Base_DZoc_vH5.mjs';
+import { a as $$Footer, $ as $$Header } from './Footer_BqrSaoVo.mjs';
+import { $ as $$AdUnit } from './AdUnit_CfA3FelO.mjs';
+import { $ as $$StickyCTA } from './StickyCTA_CJElHHTS.mjs';
+import { $ as $$ComparisonHighlight, a as $$SocialProof } from './ComparisonHighlight_CnQ51mBr.mjs';
+import { $ as $$BenefitCards } from './BenefitCards_DF0LaMEG.mjs';
+import { $ as $$PlatformRatings } from './PlatformRatings_cCKrnvKW.mjs';
+import { p as platformRatings } from './platform-ratings_fa1tzaaV.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$PreplyVsItalki = createComponent(($$result, $$props, $$slots) => {
+  const preply = {
+    name: "Preply",
+    rating: 8.8,
+    price: "$10-45/hr",
+    link: "/go/preply",
+    bestFor: "Professional tutors with structured learning",
+    pros: [
+      "Vetted professional tutors with teaching credentials",
+      "Trial lesson included (first lesson discounted)",
+      "Structured curriculum available",
+      "Personalized learning plans",
+      "Corporate training options"
+    ],
+    cons: [
+      "Higher prices for certified tutors",
+      "Limited tutor availability in some time zones",
+      "Booking system less flexible than instant access"
+    ]
+  };
+  const italki = {
+    name: "iTalki",
+    rating: 9.2,
+    price: "$5-40/hr",
+    link: "/go/italki",
+    bestFor: "Speaking practice with community tutors",
+    pros: [
+      "Large selection of community tutors (10,000+)",
+      "Flexible scheduling with instant booking",
+      "Affordable community tutor options from $5/hr",
+      "User-friendly mobile app",
+      "Lesson replay feature"
+    ],
+    cons: [
+      "Community tutors lack formal training",
+      "Inconsistent quality among tutors",
+      "No structured curriculum for complete beginners"
+    ]
+  };
+  const comparison = [
+    { feature: "Starting Price", winner: "b", a: "$10/hr", b: "$5/hr" },
+    { feature: "Average Lesson Cost", winner: null, a: "$18-30/hr", b: "$15-25/hr" },
+    { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes" },
+    { feature: "Certified Teachers", winner: "a", a: "Yes", b: "Limited" },
+    { feature: "Trial Lesson", winner: null, a: "Discounted First", b: "One trial lesson" },
+    { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+    { feature: "Lesson Recording", winner: "b", a: "No", b: "Yes" },
+    { feature: "Corporate Plans", winner: "a", a: "Yes", b: "Limited" },
+    { feature: "Lesson Scheduling", winner: "b", a: "Moderately Flexible", b: "Very Flexible" }
+  ];
+  const whyCompare = [
+    { icon: "\u{1F4B0}", title: "Save Money", description: "Find the most affordable option for your budget and learning needs" },
+    { icon: "\u{1F4C8}", title: "Track Progress", description: "Choose a platform with tools to measure your improvement over time" },
+    { icon: "\u{1F3AF}", title: "Match Your Goals", description: "Whether exams, business, or conversation: pick the platform that fits" }
+  ];
+  const testimonials = [
+    {
+      quote: "Preply's structured approach was exactly what I needed for my IELTS preparation.",
+      author: "Kenji T.",
+      location: "Japan",
+      result: "IELTS 7.0 achieved"
+    },
+    {
+      quote: "After trying both, I chose iTalki for the flexibility and price. Best decision for my wallet!",
+      author: "Maria G.",
+      location: "Brazil",
+      result: "Saved $200/month"
+    },
+    {
+      quote: "Both platforms are great. It depends on whether you want casual or structured learning.",
+      author: "Ahmed K.",
+      location: "UAE",
+      result: "Fluent in 8 months"
+    }
+  ];
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Preply vs iTalki: Which Online Tutoring Platform Is Better in 2026?",
+    "description": "Comprehensive comparison of Preply and iTalki online tutoring platforms. Compare pricing, tutor quality, features, and find the best platform for your English learning goals.",
+    "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+    "datePublished": "2026-04-06",
+    "dateModified": "2026-04-06"
+  };
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Online Language Tutoring Platforms Comparison",
+    "description": "Comparison between Preply and iTalki for English language learning"
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Preply or iTalki better for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Preply may be better for complete beginners due to its structured curriculum and vetted professional tutors who can create personalized learning plans. iTalki is better suited for intermediate learners who want flexible conversation practice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a lesson cost on Preply vs iTalki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "iTalki starts at just $5/hour with community tutors, making it the budget-friendly option. Preply starts at $10/hour with tutors typically ranging from $18-30/hour for certified teachers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I try either platform before committing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both platforms offer trial lessons. Preply offers a discounted first lesson for all users. iTalki offers community tutors at lower rates, allowing you to try multiple tutors affordably before committing to regular sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platform has better native English speakers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both platforms have excellent selections of native English speakers. iTalki has a larger pool of community tutors, while Preply's tutors are more rigorously vetted for teaching qualifications."
+        }
+      }
+    ]
+  };
+  return renderTemplate`${renderComponent($$result, "Base", $$Base, { "title": "Preply vs iTalki: Which Online Tutoring Platform Is Better in 2026?", "description": "Compare Preply and iTalki online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred teaching style." }, { "default": ($$result2) => renderTemplate(_a || (_a = __template([' <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', '<\/script> <script type="application/ld+json">', "<\/script> ", " ", `<main class="max-w-5xl mx-auto px-4 py-8 pb-24"> <nav class="text-sm text-neutral-300 mb-4"> <a href="/" class="hover:text-emerald-600">Home</a> <span class="mx-2">\u203A</span> <a href="/compare/" class="hover:text-emerald-600">Comparisons</a> <span class="mx-2">\u203A</span> <span class="text-neutral-300">Preply vs iTalki</span> </nav> <!-- FTC Affiliate Disclosure - near top of content --> <div class="bg-amber-900/30 border border-amber-600/50 rounded-lg px-4 py-3 mb-6 text-sm text-amber-200"> <strong>Disclosure:</strong> LearnEnglish.Life is reader-supported. If you click our links and make a purchase, we may earn a commission at no extra cost to you.
+</div> <div class="bg-gradient-to-r from-indigo-600 to-emerald-600 rounded-2xl p-8 text-white mb-8"> <span class="text-indigo-200 text-sm font-medium">Comparison \xB7 Updated April 2026</span> <h1 class="text-4xl font-bold mt-2 mb-4">Preply vs iTalki: Which Online Tutoring Platform Is Better?</h1> <p class="text-indigo-100 text-lg">Two giants of online language tutoring face off. We compare pricing, tutor quality, features, and user experience to help you choose the right platform.</p> </div> <!-- See Guru CTA - prominently featured --> <div class="bg-gradient-to-r from-emerald-900/60 to-teal-900/60 rounded-2xl p-6 mb-8 border border-emerald-600/40"> <div class="flex flex-col md:flex-row items-center justify-between gap-4"> <div class="flex-1"> <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">EDITOR'S PICK</span> <h2 class="text-2xl font-bold text-white mb-2">Want a Free Alternative?</h2> <p class="text-emerald-200 text-sm">See Guru offers 3 free lessons with native English tutors. No credit card required. Perfect for learners who want to try before committing.</p> <div class="flex items-center gap-4 mt-3 text-sm text-emerald-300"> <span class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> 3 Free Lessons</span> <span class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> Native Speakers</span> <span class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> No Subscription</span> </div> </div> <div class="flex flex-col items-center gap-2"> <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="noopener sponsored" class="bg-emerald-600 text-white text-center font-bold py-3 px-8 rounded-lg hover:bg-emerald-500 transition-colors whitespace-nowrap w-full text-center">
+Try See Guru Free
+</a> <p class="text-xs text-emerald-300/70 italic">*Disclosure: LearnEnglish.Life earns a commission if you sign up through this link.</p> </div> </div> </div> <div class="grid md:grid-cols-2 gap-6 mb-8"> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-indigo-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">Preply</h2> `, ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-indigo-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-indigo-600 text-white text-center py-3 rounded-lg hover:bg-indigo-700 transition font-bold">\nTry Preply Free \u2192\n</a> </div> <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6"> <div class="flex items-center justify-between mb-4"> <h2 class="text-2xl font-bold text-white">iTalki</h2> ', ' </div> <div class="mb-4"> <span class="text-3xl font-bold text-emerald-600">', '</span> </div> <p class="text-neutral-400 mb-4"><strong>Best for:</strong> ', '</p> <div class="mb-4"> <h3 class="font-semibold text-green-300 mb-2">Pros</h3> <ul class="text-sm text-neutral-300 space-y-1"> ', " </ul> </div> <a", ' class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">\nTry iTalki Free \u2192\n</a> </div> </div> ', " ", ' <div class="mb-8"> ', " </div> ", ' <div class="mb-8"> ', ` </div> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Pricing and Value</h3> <p class="text-neutral-300 leading-relaxed mb-4"> <strong>iTalki wins on price flexibility</strong> with community tutors starting at just $5/hour. This makes it the most accessible option for budget-conscious learners. The platform separates tutors into "Community Tutors" (cheaper, more informal) and "Professional Tutors" (higher priced, more qualified).
+</p> <p class="text-neutral-300 leading-relaxed">
+Preply takes a more standardized approach, with prices typically ranging from $10-45/hour. Their platform includes a first-lesson discount for new users, making it easy to test compatibility before committing. For learners seeking professional credentials in their tutors, Preply's vetted teachers often justify the higher investment.
+</p> </div> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Tutor Quality and Selection</h3> <p class="text-neutral-300 leading-relaxed mb-4"> <strong>Preply</strong> takes a curation-first approach, requiring tutors to complete an application process that includes video interviews and teaching demonstrations. This means less variety but more consistent quality. Their tutors are more likely to have formal teaching qualifications like TEFL or CELTA certificates.
+</p> <p class="text-neutral-300 leading-relaxed"> <strong>iTalki</strong> boasts over 10,000 tutors across their platform. The sheer volume means learners have more options to find the perfect match for their schedule and learning style. However, quality can vary significantly, especially with community tutors who don't require formal teaching credentials.
+</p> </div> <div class="mb-8"> <h3 class="text-xl font-bold text-white mb-3">Learning Experience</h3> <p class="text-neutral-300 leading-relaxed mb-4">
+Preply provides a more <strong>structured learning environment</strong> with optional curriculum access. Their tutors can create personalized learning plans aligned with specific goals, whether that's business English, exam preparation, or conversation fluency. For learners who prefer guided progress over free-form conversation, Preply's approach may be more suitable.
+</p> <p class="text-neutral-300 leading-relaxed">
+iTalki offers a unique <strong>lesson replay</strong> feature that allows you to record sessions and review them later. This is invaluable for learners who want to reinforce vocabulary, pronunciation, or grammar covered during their lessons. The iTalki app is also highly rated for its ease of use and scheduling flexibility.
+</p> </div> </section> <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2> <div class="space-y-6"> <div> <h3 class="text-lg font-semibold text-white mb-2">Is Preply or iTalki better for beginners?</h3> <p class="text-neutral-300"> <strong>Preply may be better</strong> for complete beginners due to its structured curriculum and vetted professional tutors who can create personalized learning plans. iTalki is better suited for intermediate learners who want flexible conversation practice.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">How much does a lesson cost on Preply vs iTalki?</h3> <p class="text-neutral-300">
+iTalki starts at just <strong>$5/hour</strong> with community tutors, making it the budget-friendly option. Preply starts at <strong>$10/hour</strong> with tutors typically ranging from $18-30/hour for certified teachers.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Can I try either platform before committing?</h3> <p class="text-neutral-300"> <strong>Both platforms offer trial lessons.</strong> Preply offers a discounted first lesson for all new users. iTalki offers community tutors at lower rates, allowing you to try multiple tutors affordably before committing to regular sessions.
+</p> </div> <div> <h3 class="text-lg font-semibold text-white mb-2">Which platform has better native English speakers?</h3> <p class="text-neutral-300">
+Both platforms have excellent selections of native English speakers. iTalki has a larger pool of community tutors, while Preply's tutors are more rigorously vetted for teaching qualifications.
+</p> </div> </div> </section> <div class="mb-8"> `, ` </div> <section class="bg-gradient-to-r from-indigo-900/40 to-emerald-900/40 rounded-xl p-6 mb-8"> <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2> <div class="grid md:grid-cols-2 gap-6"> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-indigo-500"> <h3 class="font-bold text-indigo-300 mb-2">Choose Preply if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-indigo-500 mr-2">\u2192</span>You want professional, certified tutors</li> <li class="flex items-start"><span class="text-indigo-500 mr-2">\u2192</span>Structured curriculum is important</li> <li class="flex items-start"><span class="text-indigo-500 mr-2">\u2192</span>You're preparing for specific exams</li> <li class="flex items-start"><span class="text-indigo-500 mr-2">\u2192</span>Corporate training is needed</li> </ul> </div> <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500"> <h3 class="font-bold text-emerald-300 mb-2">Choose iTalki if:</h3> <ul class="text-neutral-300 space-y-2"> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>Budget is your primary concern (starting at $5/hr)</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You want lesson replay capability</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>Flexible scheduling is essential</li> <li class="flex items-start"><span class="text-emerald-500 mr-2">\u2192</span>You prefer conversation practice over structured lessons</li> </ul> </div> </div> </section> <section class="mb-8"> <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2> <div class="grid md:grid-cols-2 gap-4"> <a href="/reviews/preply/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition"> <div class="flex items-center mb-2"> <span class="text-yellow-500 mr-1">\u2605</span> <span class="font-bold">8.8/10</span> </div> <h3 class="font-semibold text-white">Preply Review</h3> <p class="text-sm text-neutral-400">Full platform analysis</p> </a> <a href="/reviews/italki/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition"> <div class="flex items-center mb-2"> <span class="text-yellow-500 mr-1">\u2605</span> <span class="font-bold">9.2/10</span> </div> <h3 class="font-semibold text-white">iTalki Review</h3> <p class="text-sm text-neutral-400">Full platform analysis</p> </a> </div> </section> <div class="text-xs text-slate-400 mt-8 pt-4 border-t"> <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p> </div> </main> `, " ", '  <aside class="my-12 max-w-3xl mx-auto px-4"> <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8"> <div class="flex items-start gap-4"> <div class="text-3xl flex-shrink-0">\u{1F4A1}</div> <div class="flex-1"> <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3> <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors - not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p> <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons \u2192</a> </div> </div> </div> </aside> '])), unescapeHTML(JSON.stringify(articleSchema)), unescapeHTML(JSON.stringify(comparisonSchema)), unescapeHTML(JSON.stringify(faqSchema)), renderComponent($$result2, "Header", $$Header, {}), maybeRenderHead(), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": "Preply", "rating": platformRatings["Preply"]?.rating, "reviewCount": platformRatings["Preply"]?.reviewCount, "variant": "badge", "color": "purple" }), preply.price, preply.bestFor, preply.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(preply.link, "href"), renderComponent($$result2, "PlatformRatings", $$PlatformRatings, { "platform": "iTalki", "rating": platformRatings["iTalki"]?.rating, "reviewCount": platformRatings["iTalki"]?.reviewCount, "variant": "badge", "color": "emerald" }), italki.price, italki.bestFor, italki.pros.map((pro) => renderTemplate`<li class="flex items-start"><span class="text-green-500 mr-2">✓</span>${pro}</li>`), addAttribute(italki.link, "href"), renderComponent($$result2, "BenefitCards", $$BenefitCards, { "title": "Why Compare These Platforms?", "benefits": whyCompare }), renderComponent($$result2, "SocialProof", $$SocialProof, { "title": "What Learners Say", "testimonials": testimonials }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-1" }), renderComponent($$result2, "ComparisonHighlight", $$ComparisonHighlight, { "title": "Feature Comparison", "platformA": preply, "platformB": italki, "winner": "mixed", "rows": comparison }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-2" }), renderComponent($$result2, "AdUnit", $$AdUnit, { "slot": "compare-3" }), renderComponent($$result2, "StickyCTA", $$StickyCTA, { "ctaText": "Compare Prices Now", "ctaLink": "/go/preply", "platform": "preply" }), renderComponent($$result2, "Footer", $$Footer, {})) })}`;
+}, "/var/www/learnenglish.life/src/pages/compare/preply-vs-italki.astro", void 0);
+
+const $$file = "/var/www/learnenglish.life/src/pages/compare/preply-vs-italki.astro";
+const $$url = "/compare/preply-vs-italki";
+
+const __vite_glob_0_19 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$PreplyVsItalki,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+export { __vite_glob_0_19 as _ };
