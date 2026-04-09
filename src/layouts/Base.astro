@@ -22,7 +22,6 @@ const {
   publishedTime,
   modifiedTime,
 } = Astro.props;
-
 const siteUrl = 'https://learnenglish.life';
 const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 ---
@@ -109,7 +108,7 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
       })();
     </script>
     
-    <!-- Google AdSense - Replace pub-XXXXXXXXXX with real publisher ID -->
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7792548915836467" crossorigin="anonymous"></script>
   </head>
   <body class="min-h-screen flex flex-col">
@@ -140,10 +139,7 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 
     <!-- Pagefind search script (loaded async after consent) -->
     <script>
-      // Defer pagefind loading (functional cookie - optional)
       window.addEventListener('load', () => {
-        // Only load pagefind if functional cookies are accepted
-        // or if user hasn't made any choice (pagefind is lightweight)
         const script = document.createElement('script');
         script.src = '/pagefind/pagefind.js';
         script.defer = true;
@@ -151,96 +147,87 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
       });
     </script>
 
-    <!-- See Guru Affiliate Click Tracker - GA4 Event: affiliate_click -->
+    <!-- Universal Affiliate Click Tracker → GA4 affiliate_click events -->
     <script is:inline>
       (function() {
         'use strict';
-        
-        function initSeeGuruTracker() {
-          // Select all See Guru affiliate links (matches our aff=SG-SUAG151 pattern)
-          var affiliateLinks = document.querySelectorAll('a[href*="see.guru/?aff=SG-SUAG151"], a[href*="see.guru%3Faff=SG-SUAG151"]');
-          var redirectLinks = document.querySelectorAll('a[href*="/go/see-guru"]');
-          
-          // Determine link type based on context
-          function getLinkType(link) {
-            var parent = link.closest('section, article, div, aside');
-            var id = parent ? (parent.id || '') : '';
-            var cls = parent ? (parent.className || '') : '';
-            var text = link.textContent || '';
-            
-            // Hero sections
-            if (id.match(/hero/i) || cls.match(/hero/i) || cls.match(/HeroCTA/i)) {
-              return 'hero';
-            }
-            // Sticky CTAs
-            if (id.match(/sticky/i) || cls.match(/sticky/i)) {
-              return 'sticky';
-            }
-            // Comparison/table contexts
-            if (id.match(/comparison/i) || cls.match(/comparison/i) || 
-                cls.match(/table/i) || cls.match(/Table/i) ||
-                cls.match(/card/i) || cls.match(/Card/i)) {
-              return 'comparison';
-            }
-            // Inline text links (inside paragraphs)
-            if (link.parentElement && link.parentElement.tagName === 'P') {
-              return 'inline';
-            }
-            // Sidebar/widget
-            if (id.match(/sidebar/i) || cls.match(/sidebar/i) || cls.match(/widget/i)) {
-              return 'sidebar';
-            }
-            // Default to CTA
-            return 'cta';
+
+        var AFFILIATE_PARTNERS = {
+          'see-guru':             { name: 'See Guru',             affId: 'SG-SUAG151' },
+          'italki':               { name: 'iTalki',              affId: 'LEARNENGLISHLIFE' },
+          'preply':               { name: 'Preply',              affId: 'LEARNENGLISHLIFE' },
+          'cambly':               { name: 'Cambly',              affId: null },
+          'busuu':                { name: 'Busuu',               affId: null },
+          'babbel':               { name: 'Babbel',              affId: null },
+          'duolingo':             { name: 'Duolingo',            affId: null },
+          'rosetta-stone':        { name: 'Rosetta Stone',       affId: null },
+          'elsa-speak':           { name: 'ELSA Speak',          affId: null },
+          'rocket-languages':     { name: 'Rocket Languages',    affId: null },
+          'pimsleur':             { name: 'Pimsleur',            affId: null },
+          'verbling':             { name: 'Verbling',            affId: null },
+          'italki-language-exchange': { name: 'iTalki',           affId: 'LEARNENGLISHLIFE' }
+        };
+
+        function getLinkType(link) {
+          var parent = link.closest('section, article, div, aside') || link.parentElement;
+          var id     = (parent && (parent.id || '')).toLowerCase();
+          var cls    = (parent && (parent.className || '')).toLowerCase();
+
+          if (id.includes('hero') || cls.includes('hero')) return 'hero';
+          if (id.includes('sticky') || cls.includes('sticky') || cls.includes('fixed')) return 'sticky';
+          if (id.includes('comparison') || cls.includes('comparison') ||
+              cls.includes(' table')    || cls.includes('card')       ||
+              cls.includes('winner')   || cls.includes('cta-box')    ||
+              cls.includes('sidebar')  || cls.includes('widget'))    return 'comparison';
+          if (link.parentElement && link.parentElement.tagName === 'P') return 'inline';
+          return 'cta';
+        }
+
+        function getPartnerFromHref(href) {
+          var m = href.match(/\/go\/([a-z0-9-]+)/i);
+          return m ? m[1].toLowerCase() : null;
+        }
+
+        function trackAffiliateClick(link) {
+          var href    = link.getAttribute('href') || '';
+          var partner = getPartnerFromHref(href);
+          if (!partner || !AFFILIATE_PARTNERS[partner]) return;
+
+          var info      = AFFILIATE_PARTNERS[partner];
+          var linkType  = getLinkType(link);
+          var pagePath  = window.location.pathname;
+
+          if (typeof gtag === 'function') {
+            gtag('event', 'affiliate_click', {
+              event_category:  'affiliate',
+              event_label:      info.name,
+              partner_name:     info.name,
+              link_type:        linkType,
+              currency:         'USD',
+              value:            0,
+              destination_url:  href,
+              affiliate_id:     info.affId || '',
+              page_path:        pagePath
+            });
           }
-          
-          // Track click
-          function trackClick(link) {
-            var linkType = getLinkType(link);
-            var href = link.getAttribute('href') || '';
-            var isRedirect = href.indexOf('/go/see-guru') !== -1;
-            
-            // Fire GA4 affiliate_click event
-            if (typeof gtag === 'function') {
-              gtag('event', 'affiliate_click', {
-                partner: 'See Guru',
-                link_type: linkType,
-                destination_url: href,
-                affiliate_id: 'SG-SUAG151',
-                is_redirect: isRedirect,
-                page_path: window.location.pathname
-              });
-            }
-            
-            console.log('[See Guru Tracker] affiliate_click fired: partner=See Guru, link_type=' + linkType);
-          }
-          
-          // Attach to direct affiliate links
-          affiliateLinks.forEach(function(link) {
-            if (!link.hasAttribute('data-see-guru-tracked')) {
-              link.setAttribute('data-see-guru-tracked', 'true');
-              link.addEventListener('click', function() {
-                trackClick(link);
-              }, { passive: true });
-            }
-          });
-          
-          // Attach to redirect page links
-          redirectLinks.forEach(function(link) {
-            if (!link.hasAttribute('data-see-guru-tracked')) {
-              link.setAttribute('data-see-guru-tracked', 'true');
-              link.addEventListener('click', function() {
-                trackClick(link);
-              }, { passive: true });
-            }
+
+          console.log('[Affiliate Tracker] affiliate_click → partner=' + info.name +
+            ', link_type=' + linkType + ', page=' + pagePath);
+        }
+
+        function initTracker() {
+          var links = document.querySelectorAll('a[href^="/go/"]');
+          links.forEach(function(link) {
+            if (link.hasAttribute('data-aff-tracked')) return;
+            link.setAttribute('data-aff-tracked', 'true');
+            link.addEventListener('click', function() { trackAffiliateClick(link); }, { passive: true });
           });
         }
-        
-        // Run on DOM ready
+
         if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initSeeGuruTracker);
+          document.addEventListener('DOMContentLoaded', initTracker);
         } else {
-          initSeeGuruTracker();
+          initTracker();
         }
       })();
     </script>
