@@ -28,6 +28,37 @@ const features = [
   }
 ];
 
+const popularLinks = [
+  {
+    label: "iTalki Review",
+    title: "iTalki Review 2026",
+    description: "Honest review of the world's largest language tutoring marketplace.",
+    href: "/reviews/italki/",
+    badge: "Top Rated"
+  },
+  {
+    label: "iTalki vs Preply",
+    title: "iTalki vs Preply: Which is Better?",
+    description: "Head-to-head comparison of pricing, teachers, and features.",
+    href: "/compare/italki-vs-preply/",
+    badge: "Comparison"
+  },
+  {
+    label: "Best Tutors for Beginners",
+    title: "Best Online English Tutors for Beginners",
+    description: "Where to start if you're new to 1-on-1 tutoring. Free trial options included.",
+    href: "/guides/best-english-tutors-for-beginners/",
+    badge: "Popular Guide"
+  },
+  {
+    label: "Tutors for Business English",
+    title: "Best English Tutors for Business Professionals",
+    description: "Find tutors who specialize in business English, presentations, and negotiations.",
+    href: "/guides/best-english-tutors-for-business/",
+    badge: "Top Guide"
+  }
+];
+
 // WebSite JSON-LD Schema
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -210,6 +241,44 @@ const websiteSchema = {
       <p class="text-sm text-gray-400 mt-4">
         No spam, ever. Unsubscribe anytime.
       </p>
+    </div>
+  </section>
+
+  <!-- Popular Guides & Key Pages -->
+  <section class="py-16 bg-neutral-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
+          Explore Our Top Resources
+        </h2>
+        <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
+          Deep-dive guides and comparisons that help you make smarter decisions about where to learn English.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {popularLinks.map(link => (
+          <a href={link.href} class="group bg-neutral-900 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
+                  {link.badge}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                {link.title} →
+              </h3>
+              <p class="text-neutral-400 text-sm">{link.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/guides/" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
+          Browse all guides →
+        </a>
+      </div>
     </div>
   </section>
 
