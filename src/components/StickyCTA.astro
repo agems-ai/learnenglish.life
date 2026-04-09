@@ -3,7 +3,7 @@
 interface Props {
   ctaText?: string;
   ctaLink?: string;
-  platform?: string; // 'italki' | 'preply' | 'cambly'
+  platform?: string; // 'italki' | 'preply' | 'cambly' | 'see-guru'
 }
 
 const { 
@@ -16,7 +16,8 @@ const {
 const colors = {
   italki: { bg: "bg-emerald-700", hover: "hover:bg-emerald-700" },
   preply: { bg: "bg-indigo-600", hover: "hover:bg-indigo-700" },
-  cambly: { bg: "bg-teal-600", hover: "hover:bg-teal-700" }
+  cambly: { bg: "bg-teal-600", hover: "hover:bg-teal-700" },
+  "see-guru": { bg: "bg-emerald-600", hover: "hover:bg-emerald-700" }
 };
 
 const color = colors[platform as keyof typeof colors] || colors.italki;
