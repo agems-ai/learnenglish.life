@@ -160,7 +160,18 @@ import { platformRatings } from '../../data/platform-ratings';
     <div class="border-t border-gray-200 pt-6 mt-8">
       <p class="text-sm text-slate-400"><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission if you sign up for Preply, Lingoda, or See Guru through links on this page, at no extra cost to you. We only recommend products and services we have thoroughly researched and believe genuinely help English learners. Our reviews are based on real features, pricing, and user experience.</p>
     </div>
-  </article>
+    <!-- Sticky CTA for See Guru -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="noopener sponsored" class="flex items-center justify-between bg-emerald-600 text-white px-4 py-3 shadow-lg">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold">SG</div>
+        <span class="font-semibold">Try See Guru — 3 Free Lessons</span>
+      </div>
+      <span class="bg-white text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">→</span>
+    </a>
+  </div>
+
+</article>
 
   <script type="application/ld+json">
   {
@@ -188,5 +199,9 @@ import { platformRatings } from '../../data/platform-ratings';
     </div>
   </div>
 </aside>
+
+  <StickyCTA 
+    platform="see-guru"
+  />
 
 </Base>

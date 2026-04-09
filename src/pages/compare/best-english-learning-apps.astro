@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { platformRatings } from '../../data/platform-ratings';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 const apps = [
@@ -371,5 +372,9 @@ const faqSchema = {
     </div>
   </div>
 </aside>
+
+  <StickyCTA 
+    platform="see-guru"
+  />
 
 </Base>

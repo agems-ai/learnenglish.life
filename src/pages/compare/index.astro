@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 // Auto-discover every comparison page so we never have to maintain a hand-written list
@@ -83,4 +84,8 @@ const comparisons = Object.entries(modules)
   </main>
 
   <Footer />
+  <StickyCTA 
+    platform="see-guru"
+  />
+
 </Base>
