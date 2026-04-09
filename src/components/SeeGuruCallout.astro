@@ -1,27 +1,141 @@
 ---
-// SeeGuruCallout.astro - See Guru affiliate CTA for comparison pages
+// SeeGuruCallout.astro — Conversion component: Why We Recommend See Guru + CTA
+interface Props {
+  variant?: 'inline' | 'standalone'; // inline = inside main content, standalone = full-width section
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  variant = 'inline',
+  title = "Why We Recommend See Guru",
+  subtitle = "See Guru combines affordability, tutor quality, and flexibility better than almost any platform in its price range. Here's why our team keeps recommending it:"
+} = Astro.props;
+
+const benefits = [
+  {
+    icon: "💰",
+    title: "Starting at just $5/hour",
+    detail: "Among the most affordable 1-on-1 tutoring available from certified teachers"
+  },
+  {
+    icon: "🎓",
+    title: "Certified, diploma-holding tutors",
+    detail: "Every tutor is vetted and holds at least one teaching diploma or certification"
+  },
+  {
+    icon: "🆓",
+    title: "3 free trial lessons",
+    detail: "More free trials than any major competitor — find your perfect tutor risk-free"
+  },
+  {
+    icon: "🌏",
+    title: "Strong Asian tutor selection",
+    detail: "Excellent coverage of Chinese, Japanese, and Korean tutors for cultural learning"
+  },
+  {
+    icon: "⚡",
+    title: "No subscription required",
+    detail: "Pay per lesson only. No pressure to commit to a monthly plan"
+  },
+  {
+    icon: "📅",
+    title: "Flexible scheduling",
+    detail: "Book lessons that fit your calendar, with tutors available across all time zones"
+  }
+];
 ---
-<div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-5 my-6">
-  <div class="flex items-start gap-3">
-    <div class="flex-shrink-0 w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
-      <span class="text-white text-xl font-bold">SG</span>
-    </div>
-    <div class="flex-1">
-      <div class="flex items-center gap-2 mb-1">
-        <span class="bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">BEST OVERALL</span>
-        <span class="text-yellow-400 text-sm">&#9733; 4.8/5</span>
+
+{variant === 'standalone' ? (
+  <section class="mb-12">
+    <div class="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-700 rounded-2xl p-6 md:p-8">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="flex-shrink-0 w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center text-2xl">
+          ⭐
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-2 bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+            <span>★</span> EDITOR'S CHOICE
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white">{title}</h2>
+        </div>
       </div>
-      <h4 class="text-white font-bold text-lg mb-1">See Guru</h4>
-      <p class="text-neutral-300 text-sm mb-3">Live 1-on-1 lessons with certified, diploma-holding tutors. Flexible scheduling, real conversation practice.</p>
-      <ul class="text-neutral-300 text-xs space-y-1 mb-4">
-        <li class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> Certified, diploma-holding tutors</li>
-        <li class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> Flexible 1-on-1 scheduling</li>
-        <li class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> Free trial lesson</li>
-      </ul>
-      <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="noopener sponsored" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">
-        Try See Guru Free &#8594;
-      </a>
-      <p class="text-neutral-500 text-xs mt-2">*Disclosure: LearnEnglish.Life earns a commission if you sign up through this link.</p>
+      <p class="text-slate-200 text-lg mb-8 leading-relaxed">{subtitle}</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {benefits.map(b => (
+          <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl flex-shrink-0">{b.icon}</span>
+              <div>
+                <h3 class="font-bold text-white text-sm mb-1">{b.title}</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">{b.detail}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <a 
+          href="https://see.guru/?aff=SG-SUAG151" 
+          target="_blank" 
+          rel="sponsored noopener"
+          class="w-full sm:w-auto text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg shadow-emerald-900/50"
+        >
+          Try See Guru — 3 Free Lessons →
+        </a>
+        <a 
+          href="/reviews/see-guru/" 
+          class="text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-colors"
+        >
+          Read Full Review →
+        </a>
+      </div>
+      <p class="text-slate-500 text-xs mt-4">
+        *LearnEnglish.Life earns a commission if you sign up through this link. This does not affect our editorial independence.
+      </p>
     </div>
-  </div>
-</div>
+  </section>
+) : (
+  <aside class="my-8">
+    <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-5 md:p-6">
+      <div class="flex items-start gap-3 mb-4">
+        <div class="flex-shrink-0 w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-sm">SG</span>
+        </div>
+        <div>
+          <div class="inline-flex items-center gap-1.5 bg-emerald-600/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold px-2 py-0.5 rounded-full mb-1">
+            <span class="text-yellow-400">★</span> EDITOR'S CHOICE
+          </div>
+          <h3 class="text-white font-bold text-lg leading-tight">Why We Recommend See Guru</h3>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-3 mb-5">
+        {benefits.slice(0, 4).map(b => (
+          <div class="flex items-start gap-2">
+            <span class="text-lg flex-shrink-0">{b.icon}</span>
+            <div>
+              <span class="text-white text-sm font-semibold">{b.title}</span>
+              <span class="text-slate-400 text-xs"> — {b.detail.split(' ').slice(0, 8).join(' ')}...</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-3">
+        <a 
+          href="https://see.guru/?aff=SG-SUAG151" 
+          target="_blank" 
+          rel="sponsored noopener"
+          class="w-full sm:w-auto text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-6 rounded-xl transition-colors text-sm"
+        >
+          Try See Guru Free (3 Lessons) →
+        </a>
+        <a 
+          href="/reviews/see-guru/" 
+          class="text-emerald-300 hover:text-emerald-200 text-xs font-medium transition-colors"
+        >
+          See Full Review
+        </a>
+      </div>
+    </div>
+  </aside>
+)}
