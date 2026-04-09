@@ -184,7 +184,10 @@ const schemaMarkup = generateSchemaMarkup({
         <!-- Sidebar -->
         <aside class="space-y-6">
           <PricingTable plans={pricing} />
-          <AdUnit format="sidebar" />
+          <!-- ADSENSE: SIDEBAR 300x250 -->
+          <div class="bg-neutral-800 border border-neutral-600 rounded-lg flex items-center justify-center" style="width:300px; height:250px; margin:0 auto;">
+            <span class="text-neutral-400 text-sm">Ad Placement: Sidebar (300x250)</span>
+          </div>
           <RelatedReviews reviews={relatedReviews} />
         </aside>
       </div>
