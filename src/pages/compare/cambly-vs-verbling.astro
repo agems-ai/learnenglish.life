@@ -1,17 +1,142 @@
 ---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+import SocialProof from '../../components/SocialProof.astro';
+import BenefitCards from '../../components/BenefitCards.astro';
+import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
+import PlatformRatings from '../../components/PlatformRatings.astro';
+import { platformRatings } from '../../data/platform-ratings';
 
-// SEO Schema
+// Platform data
+const cambly = {
+  name: "Cambly",
+  rating: 8.2,
+  price: "$15/wk",
+  link: "/go/cambly",
+  bestFor: "Unlimited conversation practice with native speakers",
+  pros: [
+    "Unlimited conversation practice (subscription model)",
+    "Available 24/7, no appointment needed",
+    "Native speakers from US, UK, Australia",
+    "Great for casual chat and confidence building",
+    "Mobile app available"
+  ],
+  cons: [
+    "No structured curriculum",
+    "Quality varies by tutor",
+    "Limited grammar focus",
+    "Best for intermediate+ learners"
+  ]
+};
+
+const verbling = {
+  name: "Verbling",
+  rating: 8.5,
+  price: "$15-45/lesson",
+  link: "/go/verbling",
+  bestFor: "Professional tutoring with structured lessons",
+  pros: [
+    "Professional qualified teachers (TEFL, CELTA)",
+    "Structured lesson plans",
+    "Pay-per-lesson flexibility",
+    "Group classes available",
+    "Lesson notes and homework"
+  ],
+  cons: [
+    "Higher cost per session",
+    "Need to book in advance",
+    "No unlimited practice option",
+    "Costs add up with frequent use"
+  ]
+};
+
+// Comparison rows
+const comparison = [
+  { feature: "Pricing Model", winner: null, a: "Subscription ($15+/wk)", b: "Pay-per-lesson ($15-45/lesson)" },
+  { feature: "Unlimited Practice", winner: "a", a: "Yes", b: "No" },
+  { feature: "Tutor Qualifications", winner: "b", a: "Mixed (conversationalists + teachers)", b: "Professional teachers (TEFL, CELTA)" },
+  { feature: "Lesson Structure", winner: "b", a: "Casual conversation", b: "Structured lessons" },
+  { feature: "Scheduling", winner: "b", a: "24/7 On-demand", b: "Book in advance" },
+  { feature: "Platform Usability", winner: null, a: "Simple, instant access", b: "Polished booking system" },
+  { feature: "Group Classes", winner: "b", a: "No", b: "Yes" },
+  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+  { feature: "Lesson Notes", winner: "b", a: "No", b: "Yes" }
+];
+
+// Benefits section
+const whyCompare = [
+  { icon: "⏰", title: "Save Time", description: "Compare platforms to find the one that fits your schedule and learning pace" },
+  { icon: "💰", title: "Save Money", description: "Get the most value for your investment with our detailed pricing comparison" },
+  { icon: "🎯", title: "Match Your Style", description: "Whether you want casual chat or structured lessons, find the right fit" }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "Cambly for daily practice, Verbling when I need focused prep. Best of both worlds!",
+    author: "Sarah M.",
+    location: "Germany",
+    result: "IELTS 7.5 achieved"
+  },
+  {
+    quote: "Started with Cambly for confidence, then moved to Verbling for structured learning.",
+    author: "Takeshi K.",
+    location: "Japan",
+    result: "TOEFL 95 score"
+  },
+  {
+    quote: "Verbling's professional teachers helped me nail my job interview in English.",
+    author: "Ana S.",
+    location: "Brazil",
+    result: "Promotion at work"
+  }
+];
+
+// ItemList JSON-LD Schema
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Cambly vs Verbling Comparison",
+  "description": "Side-by-side comparison of Cambly and Verbling English tutoring platforms",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "Cambly",
+        "url": "https://learnenglish.life/reviews/cambly/",
+        "description": "Subscription-based English tutoring platform with unlimited conversation practice"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "Verbling",
+        "url": "https://learnenglish.life/reviews/verbling/",
+        "description": "Pay-per-lesson English tutoring platform with professional qualified teachers"
+      }
+    }
+  ]
+};
+
+// Article Schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Cambly vs Verbling: Which Tutoring Platform Is Better?",
-  "description": "Compare Cambly and Verbling on price, features, tutor quality, and learning experience. Find out which platform is better for your English learning goals.",
+  "headline": "Cambly vs Verbling: Which Platform is Right for You in 2026?",
+  "description": "Comprehensive comparison of Cambly and Verbling English tutoring platforms. Compare pricing, tutor quality, lesson structure, and find the best platform for your English learning goals.",
   "author": {
     "@type": "Organization",
     "name": "LearnEnglish.Life"
   },
-  "datePublished": "2026-01-20",
-  "dateModified": "2026-01-20"
+  "datePublished": "2026-04-09",
+  "dateModified": "2026-04-09"
 };
 
 // FAQPage JSON-LD Schema
@@ -21,233 +146,431 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Cambly or Verbling better for beginners?",
+      "name": "Is Cambly cheaper than Verbling?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cambly may be better for complete beginners who want low-pressure, casual conversation practice. Verbling suits learners who prefer structured lessons from the start with professional teachers."
+        "text": "Yes, for frequent users. Cambly's subscription model provides unlimited minutes for roughly $10 per month on an annual plan. A single Verbling lesson costs $15 to $45. If you practice several times per week, Cambly is significantly more affordable."
       }
     },
     {
       "@type": "Question",
-      "name": "How much does Cambly cost vs Verbling?",
+      "name": "Can I use Cambly for formal English lessons?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cambly costs approximately $15 per month on an annual plan for unlimited conversations. Verbling charges $15-40 per individual lesson. Cambly offers significantly better value for frequent practice."
+        "text": "Cambly is primarily designed for conversation practice rather than formal instruction. Some tutors offer structured sessions, but the platform does not guarantee curriculum-based lessons. For formal English courses, Verbling is a better fit."
       }
     },
     {
       "@type": "Question",
-      "name": "Do both platforms offer free trials?",
+      "name": "Do both platforms offer native English tutors?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cambly offers a free trial with limited minutes. Verbling varies by tutor, some offer discounted first lessons. Both allow you to test the platform before committing."
+        "text": "Yes. Cambly and Verbling both connect you with native English speakers. Cambly has a wider network, while Verbling vets tutors more strictly for teaching qualifications."
       }
     },
     {
       "@type": "Question",
-      "name": "Which platform has more qualified teachers?",
+      "name": "Can I switch between Cambly and Verbling?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Verbling generally attracts more experienced, certified teachers. Cambly tutors are primarily native speakers who are good conversationalists but may lack formal teaching qualifications."
+        "text": "Absolutely. Many learners use both. Cambly for daily casual practice and Verbling for weekly structured lessons is a common combination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platform is better for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verbling may be better for beginners who need structured guidance. Cambly works best for learners who already have a basic level and want to improve through conversation."
       }
     }
   ]
 };
 
-import Base from "../../layouts/Base.astro"
-import PlatformRatings from '../../components/PlatformRatings.astro';
-import StickyCTA from '../../components/StickyCTA.astro';
-import { platformRatings } from '../../data/platform-ratings';
 ---
-<Base title="Cambly vs Verbling: Which Tutoring Platform Is Better?" description="Compare Cambly and Verbling on price, features, tutor quality, and learning experience. Find out which platform is better for your English learning goals.">
+
+<Base title="Cambly vs Verbling: Which Platform is Right for You in 2026?" description="Comprehensive comparison of Cambly and Verbling. Compare pricing, tutor quality, lesson structure, and find the best platform for your English learning goals in 2026.">
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  <article class="max-w-3xl mx-auto px-4 py-12">
+  
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-slate-400 mb-4">
+      <a href="/" class="hover:text-emerald-600">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/compare/" class="hover:text-emerald-600">Compare</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-300">Cambly vs Verbling</span>
+    </nav>
 
+    <!-- Hero Comparison -->
+    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+      <span class="text-emerald-200 text-sm font-medium">Platform Comparison</span>
+      <h1 class="text-4xl font-bold mt-2 mb-4">Cambly vs Verbling</h1>
+      <p class="text-emerald-100 text-lg mb-6">Two different approaches to English conversation practice. Cambly offers unlimited access on a subscription. Verbling lets you book individual lessons with professional teachers. Which is right for you?</p>
+      
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold">Cambly</div>
+          <div class="text-emerald-200 text-sm">$15+/wk</div>
+        </div>
+        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold">Verbling</div>
+          <div class="text-emerald-200 text-sm">$15-45/lesson</div>
+        </div>
+        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold">8.2/10</div>
+          <div class="text-emerald-200 text-sm">Cambly Rating</div>
+        </div>
+        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold">8.5/10</div>
+          <div class="text-emerald-200 text-sm">Verbling Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Verdict Box -->
+    <div class="bg-neutral-800 rounded-xl p-6 mb-8 border border-emerald-700">
+      <h2 class="text-xl font-bold text-white mb-4">Quick Verdict</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-teal-900/30 rounded-lg p-4">
+          <h3 class="font-bold text-teal-400 mb-2">Choose Cambly if:</h3>
+          <p class="text-neutral-300 text-sm">You want unlimited conversation practice on a budget and prefer a casual, relaxed learning environment.</p>
+        </div>
+        <div class="bg-emerald-900/30 rounded-lg p-4">
+          <h3 class="font-bold text-emerald-400 mb-2">Choose Verbling if:</h3>
+          <p class="text-neutral-300 text-sm">You want structured lessons with vetted professional teachers and prefer paying per lesson rather than subscribing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platform Cards Side by Side -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Cambly Card -->
+      <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-teal-400">Cambly</h2>
+          <PlatformRatings 
+            platform="Cambly" 
+            rating={platformRatings['Cambly']?.rating || 4.5} 
+            reviewCount={platformRatings['Cambly']?.reviewCount || 0}
+            variant="badge"
+            color="teal"
+          />
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-teal-600">$15+/wk</span>
+        </div>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Unlimited conversation practice with native speakers</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-400 mb-2">Pros</h3>
+          <ul class="text-sm text-neutral-300 space-y-1">
+            {cambly.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <a href={cambly.link} class="block w-full bg-teal-600 text-white text-center py-3 rounded-lg hover:bg-teal-700 transition font-bold">
+          Try Cambly Free →
+        </a>
+      </div>
+
+      <!-- Verbling Card -->
+      <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-bold text-emerald-400">Verbling</h2>
+          <PlatformRatings 
+            platform="Verbling" 
+            rating={platformRatings['Verbling']?.rating || 4.5} 
+            reviewCount={platformRatings['Verbling']?.reviewCount || 0}
+            variant="badge"
+            color="emerald"
+          />
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold text-emerald-600">$15-45/lesson</span>
+        </div>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Professional tutoring with structured lessons</p>
+        <div class="mb-4">
+          <h3 class="font-semibold text-green-400 mb-2">Pros</h3>
+          <ul class="text-sm text-neutral-300 space-y-1">
+            {verbling.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
+          </ul>
+        </div>
+        <a href={verbling.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
+          Try Verbling Free →
+        </a>
+      </div>
+    </div>
+
+    <!-- Why Compare Section -->
+    <BenefitCards 
+      title="Why Compare These Platforms?"
+      benefits={whyCompare}
+    />
+
+    <!-- Social Proof -->
+    <SocialProof 
+      title="What Learners Say"
+      testimonials={testimonials}
+    />
+
+    <!-- Ad Unit -->
     <div class="mb-8">
-      <span class="text-sm text-gray-400">Comparison · Updated April 2026</span>
-      <h1 class="text-4xl font-bold mt-1 mb-4">Cambly vs Verbling: Which Tutoring Platform Is Better?</h1>
-      <p class="text-lg text-gray-400">Both platforms offer 1-on-1 English lessons with native speakers. Here is how they compare on price, features, and learning experience.</p>
+      <AdUnit slot="compare-1" />
     </div>
 
-    <div class="bg-emerald-900/40 border-2 border-emerald-500 rounded-xl p-6 mb-8">
-      <div class="flex items-center justify-between flex-wrap gap-4">
+    <!-- Enhanced Comparison Table -->
+    <ComparisonHighlight 
+      title="Feature Comparison"
+      platformA={cambly}
+      platformB={verbling}
+      winner="b"
+      rows={comparison}
+    />
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-2" />
+    </div>
+
+    <!-- Detailed Analysis -->
+    <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Pricing Comparison</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          This is one of the biggest differences between the two platforms.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Cambly</strong> uses a subscription model. You pay a monthly or annual fee and get unlimited access to tutors. Prices start at around $15 per week for the Basic plan. Annual subscriptions bring the cost down significantly, working out to roughly $10 per month if you commit to a full year. Cambly also offers a free tier with limited minutes per month, so you can try the platform before paying.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Verbling</strong> uses a pay-per-lesson model. Each lesson costs between $15 and $45 depending on the tutor's experience and qualifications. There is no subscription required. You only pay for the lessons you book. This means you can start with a single lesson for under $20 and never feel locked into a monthly fee.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Winner for budget learners:</strong> Cambly. If you plan to practice frequently, the unlimited subscription offers better value for money. A single Verbling lesson could cost the same as a full month of Cambly access.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>Winner for flexibility:</strong> Verbling. No subscription means no pressure to use the platform every week. You book when you need to, not because you are already paying for it.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Tutor Quality</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          Both platforms attract native English speakers, but the profiles differ.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Cambly</strong> has a large network of tutors from around the English-speaking world. Many are conversationalists and language enthusiasts rather than trained teachers. You will find qualified teachers on Cambly too, especially those with a "Cambly for Kids" specialization, but the platform does not require teaching credentials. Quality varies significantly from tutor to tutor.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Verbling</strong> requires its tutors to have teaching experience or formal qualifications. Most tutors on Verbling hold teaching certificates such as TEFL or CELTA. The platform emphasizes professional instruction over casual conversation. Tutors often specialize in areas like business English, exam preparation, or conversational fluency.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Winner for professional instruction:</strong> Verbling. If you want a structured lesson with a qualified teacher, Verbling has the stronger roster.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>Winner for variety and casual practice:</strong> Cambly. The sheer size of the tutor network means more variety in accents, personalities, and conversation topics.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Platform Usability</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Cambly</strong> offers a clean, straightforward interface. You select a topic or enter a "room" and a tutor joins you. The mobile app works well for practicing on the go. The platform tracks your conversation minutes and lets you mark tutors as favorites for quick reconnection. One downside is that popular tutors can be busy during peak hours, and you may need to try a few before finding someone available.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Verbling</strong> has a more polished booking experience. You browse tutor profiles, read reviews, check availability, and book a specific time slot. The platform stores lesson notes and homework from your tutors. You can reschedule or cancel lessons with 24 hours notice. Verbling also offers group classes at lower prices, which Cambly does not.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>Winner for ease of use:</strong> Tie. Cambly wins for instant, frictionless practice. Verbling wins for organized, planned learning.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold text-white mb-3">Subscription vs Pay-as-You-Go</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          This is the fundamental difference between the two platforms.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Cambly</strong> works like a gym membership. You pay monthly or annually and speak as much as you want. This model encourages heavy usage. If you practice every day, the cost per minute is extremely low. However, if you only log in once a week, you may feel like you are not getting value from your subscription.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Verbling</strong> works like booking a fitness class. You pay per session and schedule it in advance. This suits learners who prefer structure. You know exactly who you are meeting, what you are covering, and how long the session lasts. The downside is that costs add up quickly if you practice several times per week.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Winner for frequent practice:</strong> Cambly. Unlimited minutes at a fixed monthly cost is hard to beat if you are an active learner.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>Winner for occasional or structured learning:</strong> Verbling. Paying per lesson gives you control and accountability without financial pressure.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-white mb-3">Conversation Focus</h3>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Cambly</strong> is built around free-form conversation. You and your tutor talk about whatever interests you. Some tutors have conversation packs or discussion topics, but there is no formal curriculum. The platform excels at building fluency through natural, unplanned dialogue. It works best for intermediate to advanced learners who just need more speaking time.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Verbling</strong> sessions are more goal-oriented. Many tutors follow a lesson plan and cover specific grammar points, vocabulary, or pronunciation goals. You can request a particular focus, such as business English or interview preparation, and your tutor will design the session around that. Verbling suits learners who want measurable progress in specific areas.
+        </p>
+        <p class="text-neutral-300 leading-relaxed mb-4">
+          <strong>Winner for natural fluency practice:</strong> Cambly.
+        </p>
+        <p class="text-neutral-300 leading-relaxed">
+          <strong>Winner for targeted skill improvement:</strong> Verbling.
+        </p>
+      </div>
+    </section>
+
+    <!-- Who Should Choose Section -->
+    <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Who Should Choose Each Platform</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-teal-900/30 rounded-xl p-5 border border-teal-700">
+          <h3 class="text-xl font-bold text-teal-400 mb-4">Choose Cambly if you:</h3>
+          <ul class="text-neutral-300 space-y-2">
+            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Want unlimited speaking practice without watching the clock</li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Are on a tight budget and plan to practice often</li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Prefer a casual, pressure-free environment</li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Want to explore many different tutors and accents</li>
+            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Are an intermediate or advanced learner who just needs speaking time</li>
+          </ul>
+          <a href="/reviews/cambly/" class="inline-block mt-4 text-teal-400 hover:text-teal-300 font-medium">See our full Cambly review →</a>
+        </div>
+        <div class="bg-emerald-900/30 rounded-xl p-5 border border-emerald-700">
+          <h3 class="text-xl font-bold text-emerald-400 mb-4">Choose Verbling if you:</h3>
+          <ul class="text-neutral-300 space-y-2">
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Prefer booking lessons with professional, qualified teachers</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Want to pay per lesson without a subscription</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Need structured lessons for specific goals (business, exams, pronunciation)</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Want the ability to review lesson notes and track progress</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Enjoy group classes at a lower price point</li>
+          </ul>
+          <a href="/reviews/verbling/" class="inline-block mt-4 text-emerald-400 hover:text-emerald-300 font-medium">See our full Verbling review →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Unit -->
+    <div class="mb-8">
+      <AdUnit slot="compare-3" />
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
         <div>
-          <p class="text-sm text-gray-400">Our Pick</p>
-          <p class="text-2xl font-bold text-emerald-300">Cambly</p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm text-gray-400">Best for</p>
-          <p class="font-semibold text-gray-200">Unlimited speaking practice, casual learners</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Cambly and Verbling both connect English learners with native speakers for conversation practice. Both platforms use a subscription model, but they differ in how lessons work, how much you pay, and what kind of learner each suits best.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">What Are Cambly and Verbling?</h2>
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Cambly is a subscription-based conversation platform. You pay a monthly fee and get unlimited access to native English speakers for open conversation sessions. There is no set curriculum. You join a call, get matched with a tutor, and talk. Cambly is designed for casual, ongoing speaking practice.
-    </p>
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Verbling is also a tutor marketplace, but it focuses more on structured lessons. You book lessons with professional tutors who often follow a specific plan or work through a topic you choose. Verbling tutors tend to be more experienced and the sessions feel more like formal classes than casual chats.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">Pricing Comparison</h2>
-    <div class="overflow-x-auto mb-6">
-      <table class="w-full border-collapse text-sm">
-        <thead>
-          <tr class="bg-slate-800">
-            <th class="border border-slate-700 px-4 py-2 text-left text-gray-200">Feature</th>
-            <th class="border border-slate-700 px-4 py-2 text-left text-gray-200">Cambly</th>
-            <th class="border border-slate-700 px-4 py-2 text-left text-gray-200">Verbling</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-slate-800/40">
-            <td class="border border-slate-700 px-4 py-2 font-medium text-gray-300">Subscription model</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Unlimited monthly plan</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Pay per lesson or bundle</td>
-          </tr>
-          <tr class="bg-slate-800/20">
-            <td class="border border-slate-700 px-4 py-2 font-medium text-gray-300">Starting price</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">$15/month (annual)</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">$15-40/lesson</td>
-          </tr>
-          <tr class="bg-slate-800/40">
-            <td class="border border-slate-700 px-4 py-2 font-medium text-gray-300">Free trial</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Yes (30 minutes)</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Varies by tutor</td>
-          </tr>
-          <tr class="bg-slate-800/20">
-            <td class="border border-slate-700 px-4 py-2 font-medium text-gray-300">Lesson commitment</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">None (unlimited access)</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Book per lesson or pack</td>
-          </tr>
-          <tr class="bg-slate-800/40">
-            <td class="border border-slate-700 px-4 py-2 font-medium text-gray-300">Group classes</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Yes (Cambly Kids)</td>
-            <td class="border border-slate-700 px-4 py-2 text-gray-300">Yes (group sessions)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Cambly is significantly cheaper if you want regular speaking practice. At around $15 per month on an annual plan, you get unlimited conversations. Verbling charges $15 to $40 per individual lesson, which adds up quickly if you want to practice multiple times per week.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">Lesson Structure and Learning Experience</h2>
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Cambly sessions are open conversations. You join a video call and speak with a native tutor for as long as you like. Some tutors have discussion prompts, but there is no formal lesson plan. This makes Cambly ideal for building confidence and fluency through natural conversation. It is less useful if you need structured grammar instruction.
-    </p>
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Verbling lessons feel more like formal tutoring. Tutors often prepare materials, work through specific topics, or correct errors in real time. You can choose tutors based on their specialty, such as business English, exam prep, or conversation. Verbling suits learners who want a more focused, purposeful lesson.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">Tutor Quality and Availability</h2>
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Cambly's tutors are native English speakers from the US, UK, Australia, and other countries. The platform verifies tutors but does not require formal teaching qualifications. Most are friendly conversationalists rather than trained teachers. Availability is high since Cambly uses many part-time tutors across multiple time zones.
-    </p>
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Verbling tends to attract more experienced tutors. Many have teaching certifications or years of language instruction experience. Tutors on Verbling typically apply with credentials and a detailed profile. If teacher qualifications matter to you, Verbling generally offers higher average quality.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">Scheduling and Flexibility</h2>
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Cambly offers the most flexibility. You can log in at any time and find a native speaker available for a conversation. The platform operates 24 hours a day, 7 days a week. There are no bookings required. This makes Cambly excellent for learners who want to practice spontaneously.
-    </p>
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Verbling requires advance booking. You schedule lessons with a specific tutor in advance. Some tutors offer flexible slots, but you cannot just log in and start talking like you can on Cambly. This is less convenient but means your tutor can prepare for your session.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">Specialization and Use Cases</h2>
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Cambly works best for:
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
-      <li>Building everyday speaking confidence</li>
-      <li>Practicing with native speakers casually</li>
-      <li>Low-budget learners who want maximum practice time</li>
-      <li>Listening comprehension improvement</li>
-      <li>Teenagers and young adults (Cambly Kids available)</li>
-    </ul>
-
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Verbling works best for:
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-gray-300 mb-8">
-      <li>Business English and professional communication</li>
-      <li>Exam preparation (IELTS, TOEFL, Cambridge)</li>
-      <li>Learners who prefer structured lessons</li>
-      <li>Specific skill improvement (grammar, pronunciation, writing)</li>
-      <li>Working with a certified, experienced teacher</li>
-    </ul>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-gray-100">The Verdict</h2>
-    <p class="text-gray-300 mb-6 leading-relaxed">
-      Cambly and Verbling serve different purposes. Choose Cambly if you want affordable, flexible, unlimited conversation practice. The low monthly cost and 24/7 availability make it one of the best value options for casual English learners.
-    </p>
-    <p class="text-gray-300 mb-8 leading-relaxed">
-      Choose Verbling if you need structured, professional tutoring for specific goals like business communication or exam prep. The higher per-lesson cost buys you a qualified teacher who can provide focused instruction.
-    </p>
-
-    <div class="bg-emerald-900/40 border-2 border-emerald-500 rounded-xl p-6 mb-8">
-      <p class="font-bold text-lg mb-2 text-gray-100">Want Unlimited English Conversation Practice?</p>
-      <p class="text-gray-300 mb-4">Cambly offers unlimited native speaker conversations starting at $15 per month. Log in anytime, speak with tutors from the US, UK, and Australia, and build your confidence through natural practice.</p>
-      <a href="https://www.cambly.com/" class="inline-block bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors">Try Cambly Free</a>
-    </div>
-
-    <div class="border-t border-slate-700 pt-8">
-      <h2 class="text-xl font-bold mb-4 text-gray-100">Frequently Asked Questions</h2>
-
-      <div class="space-y-4">
-        <div class="bg-slate-800/60 rounded-xl p-4">
-          <h3 class="font-semibold mb-1 text-emerald-400">Is Cambly more affordable than Verbling?</h3>
-          <p class="text-gray-300 text-sm">Yes. Cambly's unlimited subscription starts at around $15 per month on an annual plan. Verbling charges $15 to $40 per individual lesson. For regular practice, Cambly is much more cost-effective.</p>
+          <h3 class="text-lg font-semibold text-white mb-2">Is Cambly cheaper than Verbling?</h3>
+          <p class="text-neutral-300">
+            Yes, for frequent users. Cambly's subscription model provides unlimited minutes for roughly $10 per month on an annual plan. A single Verbling lesson costs $15 to $45. If you practice several times per week, Cambly is significantly more affordable.
+          </p>
         </div>
 
-        <div class="bg-slate-800/60 rounded-xl p-4">
-          <h3 class="font-semibold mb-1 text-emerald-400">Does Verbling offer better teacher quality?</h3>
-          <p class="text-gray-300 text-sm">Generally, yes. Verbling attracts more experienced, certified teachers. Many tutors on Verbling have formal teaching qualifications and years of language instruction experience. Cambly tutors are typically native speakers who are conversational rather than formally trained.</p>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Can I use Cambly for formal English lessons?</h3>
+          <p class="text-neutral-300">
+            Cambly is primarily designed for conversation practice rather than formal instruction. Some tutors offer structured sessions, but the platform does not guarantee curriculum-based lessons. For formal English courses, Verbling is a better fit.
+          </p>
         </div>
 
-        <div class="bg-slate-800/60 rounded-xl p-4">
-          <h3 class="font-semibold mb-1 text-emerald-400">Can I practice on Cambly without booking in advance?</h3>
-          <p class="text-gray-300 text-sm">Yes. Cambly operates 24/7. You log in, press the call button, and are connected to an available native speaker within minutes. No advance booking is needed.</p>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Do both platforms offer native English tutors?</h3>
+          <p class="text-neutral-300">
+            Yes. Cambly and Verbling both connect you with native English speakers. Cambly has a wider network, while Verbling vets tutors more strictly for teaching qualifications.
+          </p>
         </div>
 
-        <div class="bg-slate-800/60 rounded-xl p-4">
-          <h3 class="font-semibold mb-1 text-emerald-400">Which platform is better for business English?</h3>
-          <p class="text-gray-300 text-sm">Verbling is better for business English. You can find tutors who specialize in corporate communication, presentations, and professional writing. Cambly is more focused on casual conversation and may not offer the same level of professional instruction.</p>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Can I switch between Cambly and Verbling?</h3>
+          <p class="text-neutral-300">
+            Absolutely. Many learners use both. Cambly for daily casual practice and Verbling for weekly structured lessons is a common combination.
+          </p>
         </div>
 
-        <div class="bg-slate-800/60 rounded-xl p-4">
-          <h3 class="font-semibold mb-1 text-emerald-400">Can I use Cambly for exam preparation?</h3>
-          <p class="text-gray-300 text-sm">Cambly is not designed for structured exam prep. For IELTS, TOEFL, or Cambridge exams, Verbling is the better choice since you can work with a tutor who has specific exam teaching experience.</p>
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-2">Which platform is better for beginners?</h3>
+          <p class="text-neutral-300">
+            Verbling may be better for beginners who need structured guidance. Cambly works best for learners who already have a basic level and want to improve through conversation.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="mt-8 pt-6 border-t border-slate-700">
-      <p class="text-xs text-slate-400 italic">
-        <strong>Affiliate Disclosure:</strong> LearnEnglish.Life is reader-supported. We may earn a commission when you sign up through links on this page, at no extra cost to you. Our reviews are based on thorough research and are not influenced by compensation.
+    <!-- Final Recommendation -->
+    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-4">Final Recommendation</h2>
+      <p class="text-neutral-300 leading-relaxed mb-4">
+        Both platforms serve different needs. If you want to speak as much as possible for the lowest cost, Cambly wins. If you want professional instruction with more control over your schedule and curriculum, Verbling wins.
       </p>
-    </div>
-    <!-- Sticky CTA for See Guru -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-    <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="noopener sponsored" class="flex items-center justify-between bg-emerald-600 text-white px-4 py-3 shadow-lg">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-xs font-bold">SG</div>
-        <span class="font-semibold">Try See Guru — 3 Free Lessons</span>
+      <p class="text-neutral-300 leading-relaxed mb-4">
+        The good news is that both offer free trials or low-cost entry points. Try Cambly's free tier to see if unlimited conversation suits you. Book a single Verbling lesson to experience structured tutoring with a qualified teacher. Your learning style will quickly tell you which platform fits better.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div class="bg-neutral-800 rounded-lg p-4 border-l-4 border-teal-500">
+          <h3 class="font-bold text-teal-400 mb-1">Start with Cambly if:</h3>
+          <p class="text-neutral-300 text-sm">You want to build daily speaking habits without commitment.</p>
+        </div>
+        <div class="bg-neutral-800 rounded-lg p-4 border-l-4 border-emerald-500">
+          <h3 class="font-bold text-emerald-400 mb-1">Start with Verbling if:</h3>
+          <p class="text-neutral-300 text-sm">You have specific goals and prefer a teacher-led approach.</p>
+        </div>
       </div>
-      <span class="bg-white text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">→</span>
-    </a>
-  </div>
+    </section>
 
-</article>
+    <!-- Related Reviews -->
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/reviews/cambly/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold text-white">8.2/10</span>
+          </div>
+          <h3 class="font-semibold text-teal-400">Cambly Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
+        </a>
+        <a href="/reviews/verbling/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold text-white">8.5/10</span>
+          </div>
+          <h3 class="font-semibold text-emerald-400">Verbling Review</h3>
+          <p class="text-sm text-neutral-400">Full platform analysis</p>
+        </a>
+        <a href="/reviews/see-guru/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+          <div class="flex items-center mb-2">
+            <span class="text-yellow-500 mr-1">★</span>
+            <span class="font-bold text-white">8.5/10</span>
+          </div>
+          <h3 class="font-semibold text-yellow-400">See Guru Review</h3>
+          <p class="text-sm text-neutral-400">Best value tutoring</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Affiliate Disclosure -->
+    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-neutral-700">
+      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
+    </div>
+  </main>
+
+  <!-- Sticky CTA for Mobile -->
+  <StickyCTA 
+    ctaText="Compare Prices Now"
+    ctaLink="/go/cambly"
+    platform="cambly"
+  />
+
+  <Footer />
+
 <!-- See Guru alternative callout -->
 <aside class="my-12 max-w-3xl mx-auto px-4">
   <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
@@ -255,15 +578,11 @@ import { platformRatings } from '../../data/platform-ratings';
       <div class="text-3xl flex-shrink-0">💡</div>
       <div class="flex-1">
         <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
-        <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors - not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
+        <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
         <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
       </div>
     </div>
   </div>
 </aside>
-
-  <StickyCTA 
-    platform="see-guru"
-  />
 
 </Base>
