@@ -1,12 +1,49 @@
 ---
 import Base from "../../layouts/Base.astro";
 import AdUnit from "../../components/AdUnit.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+
+const review = {
+  title: "Pimsleur Review 2026",
+  rating: 8.0,
+  reviewCount: 4800,
+  price: "From $14.95/month",
+  heroTitle: "Pimsleur Review 2026: Does Audio-Only Learning Actually Work?",
+  publishedTime: "2026-01-15",
+};
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Pimsleur",
+    "description": "Premium audio-based English language learning program"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.0",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "datePublished": "2026-01-15"
+};
 ---
 
 <Base 
   title="Pimsleur Review 2026: Does Audio-Only Learning Actually Work?"
   description="Honest Pimsleur review for 2026. Learn about pricing, pros, cons, and how it compares to Duolingo and iTalki. Rating: 8.0/10."
 >
+  <ArticleSchema 
+    title={review.heroTitle}
+    description="Honest Pimsleur review for 2026. Learn about pricing, pros, cons, and how it compares to Duolingo and iTalki. Rating: 8.0/10."
+    publishedTime={review.publishedTime}
+    author="LearnEnglish.Life"
+    url="https://learnenglish.life/reviews/pimsleur/"
+  />
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400">Review · Updated April 2026</span>
