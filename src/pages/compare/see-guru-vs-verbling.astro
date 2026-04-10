@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 const pageTitle = "See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?";
 import PlatformRatings from '../../components/PlatformRatings.astro';
 import { platformRatings } from '../../data/platform-ratings';
@@ -7,6 +9,7 @@ const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find 
 ---
 
 <Base title="See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?" description="Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.">
+  <Header />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -332,4 +335,5 @@ const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find 
       <span class="bg-white text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">→</span>
     </a>
   </div>
+  <Footer />
 </Base>

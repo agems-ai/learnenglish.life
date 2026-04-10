@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 import PlatformRatings from "../../components/PlatformRatings.astro";
 import { platformRatings } from "../../data/platform-ratings";
 
@@ -8,6 +10,7 @@ const pageDesc = "Preply vs Verbling comparison focusing on European tutors, pri
 ---
 
 <Base title="Preply vs Verbling: European Tutor Comparison" description="Preply vs Verbling comparison focusing on European tutors, pricing, lesson structure, and platform features. Which one suits your learning style?">
+  <Header />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -308,4 +311,5 @@ const pageDesc = "Preply vs Verbling comparison focusing on European tutors, pri
       <span class="bg-white text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">→</span>
     </a>
   </div>
+  <Footer />
 </Base>
