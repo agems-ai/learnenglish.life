@@ -1,1 +1,0 @@
-import"./hoisted.DDLAtVeh.js";import"./hoisted.BVUAK2Bg.js";const e=document.getElementById("contact-form"),t=document.getElementById("form-success");e&&t&&e.addEventListener("submit",s=>{s.preventDefault(),e.style.display="none",t.classList.remove("hidden"),console.log("Form submitted:",new FormData(e))});
