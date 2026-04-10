@@ -9,22 +9,63 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  # Step 1: Build in CI first — catch errors BEFORE touching production
+  build-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+        env:
+          SITE: https://learnenglish.life
+
+  # Step 2: Only deploy if build passed
+  deploy:
+    needs: build-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH (with rollback safety)
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
           script_stop: true
+          command_timeout: 10m
           script: |
             set -eo pipefail
             cd /var/www/learnenglish.life
+            export PATH=$HOME/.nvm/versions/node/v22*/bin:/usr/local/bin:/usr/bin:/bin
+
+            # Backup current working dist before touching anything
+            if [ -d dist ]; then
+              rm -rf dist_backup
+              cp -r dist dist_backup
+              echo "Backed up current dist ($(ls dist | wc -l) files)"
+            fi
+
+            # Pull new code
             git fetch --all --quiet
             git reset --hard origin/main
-            export PATH=$HOME/.nvm/versions/node/v22*/bin:/usr/local/bin:/usr/bin:/bin
+
+            # Install deps
             npm ci --no-audit --no-fund --prefer-offline 2>&1 | tail -5
-            npm run build 2>&1 | tail -10
-            echo "Deploy OK at $(date -u +%FT%TZ)"
+
+            # Build — if this fails, restore backup
+            if npm run build 2>&1 | tail -20; then
+              echo "Build OK — $(ls dist | wc -l) files generated"
+              rm -rf dist_backup
+              echo "Deploy OK at $(date -u +%FT%TZ)"
+            else
+              echo "BUILD FAILED — restoring previous dist"
+              if [ -d dist_backup ]; then
+                rm -rf dist
+                mv dist_backup dist
+                echo "Rollback complete — site restored to previous version"
+              fi
+              exit 1
+            fi
