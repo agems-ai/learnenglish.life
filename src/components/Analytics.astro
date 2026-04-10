@@ -8,7 +8,7 @@
  */
 
 // GA4 Measurement ID from environment variable
-const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
+const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-Q1D36CSBCC';
 ---
 
 <!-- Google Analytics - Only loads when analytics consent is granted -->
@@ -32,7 +32,8 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 
   function initGA4() {
     // Only load GA4 script if not already loaded
-    if (window.dataLayer) return;
+    if (window._ga4_loaded) return;
+    window._ga4_loaded = true;
     
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -45,19 +46,21 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 
     // Custom event tracking functions
     window.analytics = {
-      // Track affiliate link clicks
+      // Track affiliate link clicks (manual call)
       trackAffiliateClick: (platform, url) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'affiliate_click', {
           event_category: 'Affiliate',
           event_label: platform,
           destination_url: url,
           transport_type: 'beacon',
         });
-        console.log(`[Analytics] Affiliate click: ${platform}`);
+        console.log(`[Analytics] Manual affiliate click: ${platform}`);
       },
 
       // Track ad impressions (viewability)
       trackAdImpression: (slot, format, adClient) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'ad_impression', {
           event_category: 'Advertising',
           event_label: slot,
@@ -65,32 +68,32 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
           ad_client: adClient,
           transport_type: 'beacon',
         });
-        console.log(`[Analytics] Ad impression: ${slot}`);
       },
 
       // Track ad clicks
       trackAdClick: (slot, format) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'ad_click', {
           event_category: 'Advertising',
           event_label: slot,
           ad_format: format,
           transport_type: 'beacon',
         });
-        console.log(`[Analytics] Ad click: ${slot}`);
       },
 
       // Track quiz interactions
       trackQuizStart: (quizId, quizTitle) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'quiz_start', {
           event_category: 'Engagement',
           event_label: quizId,
           quiz_title: quizTitle,
           transport_type: 'beacon',
         });
-        console.log(`[Analytics] Quiz start: ${quizId}`);
       },
 
       trackQuizComplete: (quizId, quizTitle, score, totalQuestions) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'quiz_complete', {
           event_category: 'Engagement',
           event_label: quizId,
@@ -100,55 +103,11 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
           completion_rate: (score / totalQuestions) * 100,
           transport_type: 'beacon',
         });
-        console.log(`[Analytics] Quiz complete: ${quizId} - Score: ${score}/${totalQuestions}`);
-      },
-
-      trackQuizQuestionAnswer: (quizId, questionNumber, correct, timeSpent) => {
-        gtag('event', 'quiz_answer', {
-          event_category: 'Engagement',
-          event_label: quizId,
-          question_number: questionNumber,
-          correct: correct,
-          time_spent_ms: timeSpent,
-          transport_type: 'beacon',
-        });
-      },
-
-      // Track game interactions
-      trackGameStart: (gameId, gameName) => {
-        gtag('event', 'game_start', {
-          event_category: 'Game',
-          event_label: gameId,
-          game_name: gameName,
-          transport_type: 'beacon',
-        });
-        console.log(`[Analytics] Game start: ${gameId}`);
-      },
-
-      trackGameComplete: (gameId, gameName, score, timeSpent) => {
-        gtag('event', 'game_complete', {
-          event_category: 'Game',
-          event_label: gameId,
-          game_name: gameName,
-          score: score,
-          time_spent_ms: timeSpent,
-          transport_type: 'beacon',
-        });
-        console.log(`[Analytics] Game complete: ${gameId} - Score: ${score}`);
-      },
-
-      trackGameAction: (gameId, action, value) => {
-        gtag('event', 'game_action', {
-          event_category: 'Game',
-          event_label: gameId,
-          action: action,
-          value: value,
-          transport_type: 'beacon',
-        });
       },
 
       // Track search
       trackSearch: (searchTerm, resultCount) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'search', {
           search_term: searchTerm,
           result_count: resultCount,
@@ -156,80 +115,47 @@ const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX';
         });
       },
 
-      // Track outbound links
-      trackOutboundClick: (url, linkText) => {
-        gtag('event', 'outbound_click', {
-          event_category: 'Navigation',
-          event_label: linkText || url,
-          destination_url: url,
-          transport_type: 'beacon',
-        });
-      },
-
-      // Track form submissions
-      trackFormSubmit: (formName, success) => {
-        gtag('event', 'form_submit', {
-          event_category: 'Conversion',
-          event_label: formName,
-          success: success,
-          transport_type: 'beacon',
-        });
-      },
-
       // Track newsletter signups
       trackNewsletterSignup: (source) => {
+        if (!window['marketing-enabled']) return;
         gtag('event', 'newsletter_signup', {
           event_category: 'Conversion',
           event_label: source || 'unknown',
           transport_type: 'beacon',
         });
+        
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'lead',
+            event_category: 'Conversion',
+            event_label: 'Newsletter',
+            source: source
+          });
+        }
       },
 
-      // Track page scroll depth
+      // Track scroll depth
       trackScrollDepth: (percent) => {
+        if (!window['ga-enabled']) return;
         gtag('event', 'scroll_depth', {
           percent_scrolled: percent,
           transport_type: 'beacon',
         });
       },
-
-      // Track video engagement (if applicable)
-      trackVideoEvent: (event, videoId, percentWatched) => {
-        gtag('event', 'video_engagement', {
-          event_category: 'Media',
-          event_label: videoId,
-          video_event: event,
-          percent_watched: percentWatched,
-          transport_type: 'beacon',
-        });
-      },
     };
 
-    // Auto-track affiliate links with /go/ prefix
-    document.addEventListener('DOMContentLoaded', () => {
-      // Track affiliate link clicks
-      document.querySelectorAll('a[href^="/go/"], a[data-affiliate]').forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href') || link.getAttribute('data-affiliate') || '';
-          const platform = href.replace('/go/', '').replace(/^\//, '');
-          if (window.analytics && href.includes('/go/')) {
-            window.analytics.trackAffiliateClick(platform, link.href);
-          }
-        });
-      });
-
-      // Track scroll depth (25%, 50%, 75%, 100%)
-      let scrollDepthTracked = { 25: false, 50: false, 75: false, 100: false };
-      window.addEventListener('scroll', () => {
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100);
-        
-        [25, 50, 75, 100].forEach(depth => {
-          if (scrollPercent >= depth && !scrollDepthTracked[depth] && window.analytics) {
-            window.analytics.trackScrollDepth(depth);
-            scrollDepthTracked[depth] = true;
-          }
-        });
+    // Auto-track scroll depth (25%, 50%, 75%, 100%)
+    let scrollDepthTracked = { 25: false, 50: false, 75: false, 100: false };
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100);
+      
+      [25, 50, 75, 100].forEach(depth => {
+        if (scrollPercent >= depth && !scrollDepthTracked[depth] && window.analytics) {
+          window.analytics.trackScrollDepth(depth);
+          scrollDepthTracked[depth] = true;
+        }
       });
     });
     

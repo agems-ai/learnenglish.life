@@ -147,7 +147,7 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
       });
     </script>
 
-    <!-- Universal Affiliate Click Tracker → GA4 affiliate_click events -->
+    <!-- Universal Affiliate Click Tracker → GA4 affiliate_click + GTM affiliate_lead events -->
     <script is:inline>
       (function() {
         'use strict';
@@ -158,7 +158,7 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
           'preply':               { name: 'Preply',              affId: 'LEARNENGLISHLIFE' },
           'cambly':               { name: 'Cambly',              affId: null },
           'busuu':                { name: 'Busuu',               affId: null },
-          'babbel':               { name: 'Babbel',              affId: null },
+          'babbel':               { name: 'Busuel',              affId: null },
           'duolingo':             { name: 'Duolingo',            affId: null },
           'rosetta-stone':        { name: 'Rosetta Stone',       affId: null },
           'elsa-speak':           { name: 'ELSA Speak',          affId: null },
@@ -185,7 +185,9 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 
         function getPartnerFromHref(href) {
           var m = href.match(/\/go\/([a-z0-9-]+)/i);
-          return m ? m[1].toLowerCase() : null;
+          if (m) return m[1].toLowerCase();
+          if (href.includes('see.guru')) return 'see-guru';
+          return null;
         }
 
         function trackAffiliateClick(link) {
@@ -197,7 +199,8 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
           var linkType  = getLinkType(link);
           var pagePath  = window.location.pathname;
 
-          if (typeof gtag === 'function') {
+          // 1. GA4 Event (direct gtag) - Only if analytics consent given
+          if (typeof gtag === 'function' && window['ga-enabled']) {
             gtag('event', 'affiliate_click', {
               event_category:  'affiliate',
               event_label:      info.name,
@@ -207,16 +210,32 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
               value:            0,
               destination_url:  href,
               affiliate_id:     info.affId || '',
-              page_path:        pagePath
+              page_path:        pagePath,
+              transport_type:   'beacon'
             });
           }
 
-          console.log('[Affiliate Tracker] affiliate_click → partner=' + info.name +
-            ', link_type=' + linkType + ', page=' + pagePath);
+          // 2. DataLayer Push for GTM (Triggers Meta Pixel 'Lead' and GAds Conversion)
+          // Fires if marketing consent given OR if GTM handles its own consent
+          if (window.dataLayer && window['marketing-enabled']) {
+            window.dataLayer.push({
+              event: 'affiliate_lead',
+              event_category: 'Conversion',
+              event_label: info.name,
+              platform: info.name,
+              destination_url: href,
+              link_type: linkType,
+              page_path: pagePath,
+              affiliate_id: info.affId || ''
+            });
+          }
+
+          console.log('[Affiliate Tracker] affiliate_click + affiliate_lead → partner=' + info.name);
         }
 
         function initTracker() {
-          var links = document.querySelectorAll('a[href^="/go/"]');
+          // Select all /go/ links AND direct see.guru links
+          var links = document.querySelectorAll('a[href^="/go/"], a[href*="see.guru"]');
           links.forEach(function(link) {
             if (link.hasAttribute('data-aff-tracked')) return;
             link.setAttribute('data-aff-tracked', 'true');
@@ -229,6 +248,9 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
         } else {
           initTracker();
         }
+        
+        // Re-init on consent update
+        window.addEventListener('consentUpdated', initTracker);
       })();
     </script>
   </body>
