@@ -1,19 +1,13 @@
 ---
+import Base from "../../layouts/Base.astro";
 const pageTitle = "See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?";
 import PlatformRatings from '../../components/PlatformRatings.astro';
 import { platformRatings } from '../../data/platform-ratings';
 const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{pageTitle}</title>
-<meta name="description" content={pageDesc}>
-<link rel="canonical" href="https://learnenglish.life/compare/see-guru-vs-verbling/">
-<script type="application/ld+json">
+<Base title="See Guru vs Verbling: Which Online Tutoring Platform Is Better in 2026?" description="Compare See Guru and Verbling online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -72,8 +66,6 @@ const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find 
   ]
 }
 </script>
-</head>
-<body class="min-h-screen flex flex-col">
 <main id="main-content" class="flex-1">
 
 <!-- Breadcrumb -->
@@ -340,6 +332,4 @@ const pageDesc = "Compare See Guru and Verbling online tutoring platforms. Find 
       <span class="bg-white text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">→</span>
     </a>
   </div>
-
-</body>
-</html>
+</Base>

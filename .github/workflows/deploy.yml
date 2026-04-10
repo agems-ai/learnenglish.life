@@ -19,6 +19,28 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci --no-audit --no-fund
+
+      # Guard: every page under src/pages/{compare,reviews,guides} MUST use the
+      # shared Base layout. Standalone <html><body> pages skip the site header,
+      # navigation and dark theme — they look broken to visitors. Reject the
+      # build if any orphans sneak in.
+      - name: Check pages use Base layout
+        run: |
+          ORPHANS=$(for f in src/pages/compare/*.astro src/pages/reviews/*.astro src/pages/guides/*.astro; do
+            [ -f "$f" ] || continue
+            if ! grep -q 'import.*Base\|layout:.*Base\|<Base' "$f" && grep -q '<!DOCTYPE\|<html' "$f"; then
+              echo "$f"
+            fi
+          done)
+          if [ -n "$ORPHANS" ]; then
+            echo "❌ Orphan pages (no Base layout) — they will render without header/nav/dark theme:"
+            echo "$ORPHANS"
+            echo ""
+            echo "Wrap each in <Base title=\"...\" description=\"...\"> ... </Base> instead of writing your own <html>."
+            exit 1
+          fi
+          echo "✅ All compare/reviews/guides pages use Base layout"
+
       - run: npm run build
         env:
           SITE: https://learnenglish.life

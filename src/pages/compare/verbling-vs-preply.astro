@@ -1,4 +1,5 @@
 ---
+import Base from "../../layouts/Base.astro";
 import PlatformRatings from "../../components/PlatformRatings.astro";
 import { platformRatings } from "../../data/platform-ratings";
 
@@ -6,15 +7,8 @@ const pageTitle = "Verbling vs Preply 2026: Which Tutoring Marketplace Wins?";
 const pageDesc = "Compare Verbling vs Preply: pricing, tutor quality, native speakers, flexibility, and more. Find out which online tutoring marketplace is better for your English goals.";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{pageTitle}</title>
-<meta name="description" content={pageDesc}>
-<link rel="canonical" href="https://learnenglish.life/compare/verbling-vs-preply/">
-<script type="application/ld+json">
+<Base title="Verbling vs Preply 2026: Which Tutoring Marketplace Wins?" description="Compare Verbling vs Preply: pricing, tutor quality, native speakers, flexibility, and more. Find out which online tutoring marketplace is better for your English goals.">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -73,8 +67,6 @@ const pageDesc = "Compare Verbling vs Preply: pricing, tutor quality, native spe
   ]
 }
 </script>
-</head>
-<body class="min-h-screen flex flex-col">
 <main id="main-content" class="flex-1">
 
 <!-- Breadcrumb -->
@@ -316,6 +308,4 @@ const pageDesc = "Compare Verbling vs Preply: pricing, tutor quality, native spe
       <span class="bg-white text-emerald-700 px-3 py-1 rounded-full text-sm font-bold">→</span>
     </a>
   </div>
-
-</body>
-</html>
+</Base>
