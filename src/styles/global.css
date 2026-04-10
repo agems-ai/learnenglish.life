@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ───────────────────────────────────────────────────────────
+   Dark theme contrast guards
+   Many older review/compare pages were authored in light-theme
+   classes (text-gray-600, bg-emerald-50, etc.). They render
+   inside our dark Base layout which causes gray-on-dark or
+   white-on-white. Override the worst offenders globally so
+   the pages stay readable while content is being audited.
+   ─────────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-gray-400, .text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800,
+  .text-slate-500, .text-slate-600, .text-slate-700, .text-slate-800 {
+    color: rgb(212 212 212) !important; /* neutral-300 */
+  }
+  /* Light pastel backgrounds that broke white-on-white */
+  .bg-emerald-50  { background-color: rgb(6 78 59 / 0.4) !important; }   /* emerald-900/40 */
+  .bg-blue-50     { background-color: rgb(30 58 138 / 0.4) !important; } /* blue-900/40 */
+  .bg-indigo-50   { background-color: rgb(49 46 129 / 0.4) !important; } /* indigo-900/40 */
+  .bg-teal-50     { background-color: rgb(19 78 74 / 0.4) !important; }  /* teal-900/40 */
+  .bg-purple-50   { background-color: rgb(76 29 149 / 0.4) !important; } /* purple-900/40 */
+  .bg-yellow-50   { background-color: rgb(113 63 18 / 0.4) !important; } /* yellow-900/40 */
+  .bg-gray-50     { background-color: rgb(38 38 38) !important; }        /* neutral-800 */
+  /* Pastel borders that vanished */
+  .border-emerald-200 { border-color: rgb(4 120 87) !important; }
+  .border-blue-200    { border-color: rgb(29 78 216) !important; }
+  .border-indigo-200  { border-color: rgb(67 56 202) !important; }
+  .border-teal-200    { border-color: rgb(15 118 110) !important; }
+  /* Heading text inside light pastel blocks (was gray-900 / emerald-900) */
+  .text-emerald-900, .text-blue-900, .text-indigo-900, .text-teal-900,
+  .text-purple-900, .text-yellow-900, .text-gray-900 {
+    color: rgb(255 255 255) !important;
+  }
+  /* Bright body text inside emerald pastel blocks */
+  .text-emerald-700, .text-emerald-800 { color: rgb(110 231 183) !important; } /* emerald-300 */
+  .text-blue-700,    .text-blue-800    { color: rgb(147 197 253) !important; } /* blue-300 */
+  .text-indigo-700,  .text-indigo-800  { color: rgb(165 180 252) !important; } /* indigo-300 */
+}
+
+
 @layer base {
   :root {
     --color-brand: 22 163 74; /* green-600 - matches primary */
