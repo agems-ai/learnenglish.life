@@ -1,62 +1,82 @@
 ---
 import Base from "../../layouts/Base.astro";
-import AdUnit from "../../components/AdUnit.astro";
-import ArticleSchema from "../../components/ArticleSchema.astro";
-
-// Review Schema
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "Memrise",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "4.1",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-01-25"
-};
-
-// Breadcrumb Schema
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://learnenglish.life"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Reviews",
-      "item": "https://learnenglish.life/reviews"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Memrise"
-    }
-  ]
-};
+const title = "Memrise Review 2026: Is the Pro Version Worth It? | LearnEnglish.Life";
+const description = "Deep dive into Memrise features, pricing, and 'Learn with Locals' video clips. Is Memrise Pro worth it for English learners in 2026? Find out in our honest review.";
+const keyword = "memrise review";
 ---
-<Base title="Memrise Review 2026" description="Honest memrise review with pricing, features, pros and cons.">
+<Base title={title} description={description} keyword={keyword}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+  <div class="mb-8">
+    <span class="text-sm text-gray-400">Review · Updated April 2026</span>
+    <h1 class="text-4xl font-bold mt-1 mb-4">Memrise Review 2026: Is the Pro Version Worth It?</h1>
+    <p class="text-lg text-gray-500">Memrise uses the power of memory and real-life video clips to help you learn English. We dive into the features, pricing, and effectiveness of this popular app.</p>
+  </div>
 
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  </span>
+  <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="font-bold text-lg">Our Rating</p>
+        <p class="text-3xl font-bold text-green-700">8.1/10</p>
+      </div>
+      <div class="text-right">
+        <p class="text-sm text-gray-500">Best for</p>
+        <p class="font-semibold">Vocabulary & Real-world listening</p>
+      </div>
+    </div>
+  </div>
 
-<article class="max-w-3xl mx-auto px-4 py-12"> <div class="mb-8"> <span class="text-sm text-gray-400">Review</span> <h1 class="text-4xl font-bold mt-1 mb-4">Memrise Review 2026</h1> <p class="text-slate-400">Last updated: April 2026 · 8 min read</p> </div> <div class="bg-blue-900/30 border border-blue-700 rounded-xl p-6 mb-8"> <p class="font-semibold text-primary">This review is coming soon!</p> <p class="text-sm text-neutral-400 mt-1">Our team is currently testing and writing a comprehensive review of Memrise. Check back soon for the full analysis including pricing, features, pros, cons, and our verdict.</p> </div> <div class="flex gap-4"> <a href="/reviews/" class="text-primary font-semibold hover:underline">← All Reviews</a> </div>   <ArticleSchema title="Memrise Review" description="Memrise is a memory-based language learning app that uses spaced repetition and multimedia content to help learners build vocabulary." publishedTime="2026-02-20" />
+  <p class="text-sm text-gray-400 mb-8 italic">Affiliate Disclosure: LearnEnglish.Life is supported by its readers. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">What is Memrise?</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Memrise is a language learning platform that focuses on building vocabulary through spaced repetition and immersive video content. Founded in 2010, the platform has evolved from a simple flashcard app into a comprehensive language tool that uses "Learn with Locals" videos to show how native speakers actually talk in real life.</p>
+  
+  <p class="text-gray-600 mb-4 leading-relaxed">The core philosophy of Memrise is that language learning should be fun and based on how our brains naturally remember things. By using short, engaging video clips and game-like exercises, Memrise aims to make English learning feel less like work and more like a hobby.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Key Features</h2>
+  <h3 class="text-xl font-bold mt-6 mb-3">1. Learn with Locals</h3>
+  <p class="text-gray-600 mb-4 leading-relaxed">This is the standout feature of Memrise. Instead of listening to robotic voices, you watch thousands of short video clips of real people speaking English in their home cities. This helps you understand different accents, body language, and the natural rhythm of the language.</p>
+
+  <h3 class="text-xl font-bold mt-6 mb-3">2. Spaced Repetition System (SRS)</h3>
+  <p class="text-gray-600 mb-4 leading-relaxed">Memrise uses a scientifically proven algorithm to show you words just as you are about to forget them. This ensures that the vocabulary you learn moves from your short-term memory into your long-term memory efficiently.</p>
+
+  <h3 class="text-xl font-bold mt-6 mb-3">3. MemBot (AI Tutor)</h3>
+  <p class="text-gray-600 mb-4 leading-relaxed">The new MemBot feature allows you to practice conversations with an AI tutor. You can choose different scenarios, such as checking into a hotel or ordering coffee, and practice your speaking and writing in a low-pressure environment.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Memrise Pricing</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Memrise offers a free version and a "Memrise Pro" subscription. The free version gives you access to basic courses, but the Pro version is required for the best features.</p>
+  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+    <li><strong>Monthly:</strong> $14.99 per month</li>
+    <li><strong>Annual:</strong> $89.99 per year (approx. $7.50 per month)</li>
+    <li><strong>Lifetime:</strong> $199.99 (one-time payment)</li>
+  </ul>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Pros and Cons</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <div class="bg-green-50 p-6 rounded-xl">
+      <p class="font-bold text-green-800 mb-3">Pros</p>
+      <ul class="list-disc list-inside space-y-2 text-green-900 text-sm">
+        <li>Excellent video content with real native speakers</li>
+        <li>Highly effective memory techniques</li>
+        <li>Fun and gamified user experience</li>
+        <li>Large variety of community-created courses</li>
+      </ul>
+    </div>
+    <div class="bg-red-50 p-6 rounded-xl">
+      <p class="font-bold text-red-800 mb-3">Cons</p>
+      <ul class="list-disc list-inside space-y-2 text-red-900 text-sm">
+        <li>Grammar explanations are quite basic</li>
+        <li>Free version is very limited</li>
+        <li>Not ideal for advanced learners who need deep conversation</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4">Verdict: Is it Worth it?</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Memrise is one of the best tools for beginners and intermediate learners who want to build a strong foundation of vocabulary and listening skills. The "Learn with Locals" videos are a game-changer for understanding natural English. However, if you are looking for deep grammar study or high-level academic English, you might need to pair Memrise with a more formal course or a 1-on-1 tutor on a platform like Preply.</p>
+
+  <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
+    <p class="font-bold mb-2">Try Memrise</p>
+    <p class="text-sm text-gray-600">Start learning with real native speakers today. Free and Pro versions available.</p>
+  </div>
 </article>
 </Base>
