@@ -17,10 +17,10 @@ interface Props {
   rows: ComparisonRow[];
 }
 
-const { 
+const {
   title = "How They Compare",
-  platformA,
-  platformB,
+  platformA = { name: 'Platform A', slug: '', link: '#' },
+  platformB = { name: 'Platform B', slug: '', link: '#' },
   platformC,
   winner = 'a',
   rows = []
