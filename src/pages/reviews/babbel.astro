@@ -1,186 +1,46 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import AdUnit from '../../components/AdUnit.astro';
-import ArticleSchema from '../../components/ArticleSchema.astro';
-
-const review = {
-  title: "Babbel Review",
-  rating: 4.3,
-  reviewCount: 15600,
-  price: "From $13.95/mo",
-  description: "Babbel is a structured language learning app focused on practical conversation skills. With grammar explanations and cultural insights, it's great for learners who want real-world English.",
-  publishedTime: "2026-01-12",
-  pros: ["Practical conversation focus", "Grammar explanations built-in", "Cultural insights included", "Short 10-15 min lessons", "Voice recognition for speaking practice"],
-  cons: ["No live tutor option", "Limited free version", "Speech recognition accuracy varies"]
-};
-
-const comparison = [
-  { feature: "Price Range", italki: "$10-50/hr", preply: "$10-45/hr", babbel: "$13.95/mo" },
-  { feature: "Tutors", italki: "10,000+", preply: "5,000+", babbel: "AI only" },
-  { feature: "Native Speakers", italki: "Yes", preply: "Yes", babbel: "Audio only" },
-  { feature: "Free Trial", italki: "Community", preply: "Limited", babbel: "Free first lesson" },
-  { feature: "Mobile App", italki: "iOS/Android", preply: "iOS/Android", babbel: "iOS/Android" },
-];
-
-const fullStars = Math.floor(review.rating);
-
-// Review Schema
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": { "@type": "SoftwareApplication", "name": "Babbel", "applicationCategory": "EducationApplication" },
-  "reviewRating": { "@type": "Rating", "ratingValue": "8.3", "bestRating": "10", "worstRating": "1" },
-  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
-  "datePublished": review.publishedTime
-};
-
-// Breadcrumb Schema
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "Babbel" }
-  ]
-};
+import Base from "../../layouts/Base.astro";
 ---
-<Base title="Babbel Review 2026: Pricing, Features & Honest Verdict" description={review.description} type="article" publishedTime={review.publishedTime}>
-
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
-
-  <Header />
-  
-  <nav class="bg-neutral-800 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-neutral-300">
-        <li><a href="/" class="hover:text-purple-600">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-purple-600">Reviews</a></li>
-        <li>/</li>
-        <li class="text-gray-100">Babbel</li>
-      </ol>
-    </div>
-  </nav>
-
-  <div class="bg-purple-600 py-8">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Babbel Review</h1>
-          <div class="flex items-center gap-2">
-            <div class="flex">
-              {Array.from({length: 5}).map((_, i) => (
-                <svg class={`w-6 h-6 ${i < fullStars ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span class="text-xl text-white font-semibold">{review.rating}/5</span>
-          </div>
-          <p class="text-purple-100 mt-2">Based on {review.reviewCount.toLocaleString()} reviews</p>
-        </div>
-        <div class="text-center md:text-right">
-          <p class="text-sm text-purple-200">Starting from</p>
-          <p class="text-3xl font-bold text-white">{review.price}</p>
-        </div>
+<Base title="Babbel Review: Practical Language for Real Life" description="A dialogue-focused learning app. Best for students who want to start speaking useful phrases from the very first lesson.">
+<article class="max-w-3xl mx-auto px-4 py-12">
+  <div class="mb-8">
+    <span class="text-sm text-gray-400">Review · Updated April 2026</span>
+    <h1 class="text-4xl font-bold mt-1 mb-4">Babbel Review: Practical Language for Real Life</h1>
+    <p class="text-lg text-gray-500">A dialogue-focused learning app. Best for students who want to start speaking useful phrases from the very first lesson.</p>
+  </div>
+  <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="font-bold text-lg text-emerald-900">Our Rating</p>
+        <p class="text-3xl font-bold text-emerald-700">8.5/10</p>
+      </div>
+      <div class="text-right">
+        <p class="text-sm text-gray-500">Best for</p>
+        <p class="font-semibold text-emerald-700">Practical conversation</p>
       </div>
     </div>
   </div>
-
-  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you.
-    </div>
+  <h2 class="text-2xl font-bold mt-10 mb-4">What is Babbel?</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Babbel is a subscription-based app that focuses on short, 15-minute lessons. The curriculum is designed by linguists and focuses on real-life dialogues. You will not spend time learning useless phrases like \"the apple is blue.\" Instead, you will learn how to introduce yourself, order coffee, and make travel plans.</p>
+  <h2 class="text-2xl font-bold mt-10 mb-4">Pricing</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Babbel costs between $7 and $14 per month depending on the length of your subscription. They also offer a Babbel Live subscription, which includes unlimited online group classes with native teachers for a higher monthly fee.</p>
+  <h2 class="text-2xl font-bold mt-10 mb-4">Pros</h2>
+  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+    <li>Content is tailored to your native language</li>
+    <li>Focus on practical, everyday conversation</li>
+    <li>Excellent review system using spaced repetition</li>
+  </ul>
+  <h2 class="text-2xl font-bold mt-10 mb-4">Cons</h2>
+  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
+    <li>No free version (only the first lesson is free)</li>
+    <li>Can be less \"fun\" than gamified apps like Duolingo</li>
+  </ul>
+  <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
+  <p class="text-gray-600 mb-4 leading-relaxed">Babbel is the best app for serious learners who want results without the distractions of a game. It is efficient, well-structured, and focuses on the skills you actually need to communicate in the real world.</p>
+  <div class="bg-emerald-600 rounded-xl p-8 text-white mt-12">
+    <h3 class="text-2xl font-bold mb-2">Start speaking English today</h3>
+    <p class="mb-6">Join millions of learners on Babbel and master practical conversation skills.</p>
+    <a href="https://www.babbel.com/" class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">Visit Babbel</a>
   </div>
-
-  <article class="py-8">
-    <div class="max-w-4xl mx-auto px-4">
-      <section class="mb-8">
-        <p class="text-lg text-gray-300 leading-relaxed">{review.description}</p>
-      </section>
-
-      <div class="bg-purple-900/30 border border-purple-700 rounded-xl p-6 mb-8 text-center">
-        <a href="https://www.babbel.com" target="_blank" rel="sponsored noopener" class="inline-block px-8 py-4 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700">Visit Babbel →</a>
-      </div>
-
-      <div class="mb-8"><AdUnit slot="in-article" format="horizontal" /></div>
-
-      <section class="mb-8 grid md:grid-cols-2 gap-6">
-        <div class="bg-emerald-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4">✅ Pros</h2>
-          <ul class="space-y-3">
-            {review.pros.map(pro => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-emerald-500 font-bold">✓</span>
-                <span>{pro}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-red-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4">⚠️ Cons</h2>
-          <ul class="space-y-3">
-            {review.cons.map(con => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-red-500 font-bold">−</span>
-                <span>{con}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">How Babbel Compares</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full border-collapse bg-slate-900/60 rounded-xl overflow-hidden shadow-sm">
-            <thead>
-              <tr class="bg-neutral-800">
-                <th class="text-left p-4 font-semibold">Feature</th>
-                <th class="text-center p-4 font-semibold">iTalki</th>
-                <th class="text-center p-4 font-semibold">Preply</th>
-                <th class="text-center p-4 font-semibold text-purple-600">Babbel</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y">
-              {comparison.map(row => (
-                <tr class="hover:bg-neutral-800">
-                  <td class="p-4 font-medium">{row.feature}</td>
-                  <td class="p-4 text-center">{row.italki}</td>
-                  <td class="p-4 text-center">{row.preply}</td>
-                  <td class="p-4 text-center">{row.babbel}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <div class="mb-8"><AdUnit slot="in-article" format="fluid" /></div>
-
-      <section class="bg-neutral-800 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-white mb-3">Our Verdict</h2>
-        <p class="text-gray-300">Babbel is excellent for learners who want structured grammar lessons and practical conversation skills. It's particularly strong for those planning to travel or work in English-speaking environments.</p>
-      </section>
-
-      <section class="bg-purple-600 rounded-xl p-8 text-center">
-        <h3 class="text-2xl font-bold text-white mb-2">Ready to try Babbel?</h3>
-        <p class="text-purple-100 mb-6">Learn English the practical way.</p>
-        <a href="https://www.babbel.com" target="_blank" rel="sponsored noopener" class="inline-block px-8 py-4 bg-slate-900/60 text-purple-600 font-bold rounded-lg hover:bg-neutral-800">Get Started →</a>
-      </section>
-
-      <p class="text-sm text-slate-400 text-center mt-6">
-        <a href="/affiliate-disclosure/" class="text-purple-600 hover:underline">Affiliate disclosure</a>
-      </p>
-    </div>
-  </article>
-
-  <Footer />
+</article>
 </Base>
