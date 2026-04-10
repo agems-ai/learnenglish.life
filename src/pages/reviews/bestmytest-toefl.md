@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Review.astro
+layout: ../../layouts/Base.astro
 title: "BestMyTest TOEFL Review: Comprehensive Prep for High Scores"
 description: "Discover the power of BestMyTest in our 2026 review. Learn about their practice tests, speaking feedback, and score guarantees."
 ---

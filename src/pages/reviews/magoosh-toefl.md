@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Review.astro
+layout: ../../layouts/Base.astro
 title: "Magoosh TOEFL Review 2026: Is It the Best Value?"
 description: "Read our detailed Magoosh TOEFL review. Discover why this affordable platform is a favorite for students worldwide."
 ---
