@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
+// Custom sitemap.xml.ts + sitemap-index.xml.ts are used instead of @astrojs/sitemap
+// import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://learnenglish.life',
@@ -10,7 +11,6 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
   ],
   output: 'static',
   build: {
