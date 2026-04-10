@@ -1,0 +1,83 @@
+---
+interface Props {
+  score: number;
+  pros: string[];
+  cons: string[];
+  ctaUrl: string;
+  platformName: string;
+}
+
+const { score, pros, cons, ctaUrl, platformName } = Astro.props;
+---
+
+<aside class="review-summary-widget bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl mb-8 lg:mb-0 lg:sticky lg:top-24 lg:w-80 lg:float-right lg:ml-8 z-10">
+  <div class="p-6">
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-xl font-bold text-white">{platformName}</h3>
+      <div class="flex flex-col items-end">
+        <span class="text-3xl font-black text-emerald-500">{score}</span>
+        <span class="text-[10px] text-neutral-500 uppercase tracking-widest">Expert Score</span>
+      </div>
+    </div>
+
+    <div class="space-y-6 mb-8">
+      <div>
+        <h4 class="text-xs font-bold text-emerald-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          The Pros
+        </h4>
+        <ul class="space-y-2">
+          {pros.slice(0, 4).map(pro => (
+            <li class="text-sm text-neutral-300 flex items-start gap-2">
+              <span class="text-emerald-500 mt-1">•</span>
+              <span>{pro}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold text-red-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+          </svg>
+          The Cons
+        </h4>
+        <ul class="space-y-2">
+          {cons.slice(0, 3).map(con => (
+            <li class="text-sm text-neutral-300 flex items-start gap-2">
+              <span class="text-red-500 mt-1">•</span>
+              <span>{con}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <a 
+      href={ctaUrl} 
+      target="_blank" 
+      rel="sponsored noopener" 
+      class="block w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-center font-bold rounded-xl transition-all shadow-lg shadow-emerald-900/20"
+    >
+      Visit {platformName} →
+    </a>
+    <p class="text-[10px] text-neutral-500 text-center mt-3 italic">
+      Official Website • Secure Link
+    </p>
+  </div>
+</aside>
+
+<style>
+  .review-summary-widget {
+    /* Clearfix for float-right on desktop */
+    clear: both;
+  }
+  @media (min-width: 1024px) {
+    .review-summary-widget {
+      clear: none;
+    }
+  }
+</style>
