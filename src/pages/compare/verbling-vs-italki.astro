@@ -1,58 +1,50 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+const title = "Verbling vs iTalki 2026: Which Tutoring Platform is Better? | LearnEnglish.Life";
+const description = "Comparing Verbling and iTalki head-to-head. We look at tutor quality, pricing, platform features, and student results.";
 ---
-<Base title="Verbling vs iTalki: Which Platform Has the Best English Tutors?" description="Choosing between Verbling and iTalki is the most common dilemma for English learners. We spent 50 hours testing both to give you the definitive answer.">
-<article class="max-w-4xl mx-auto px-4 py-12">
-  <div class="mb-12">
-    <span class="text-sm text-gray-400 uppercase tracking-widest">Comparison · Updated April 2026</span>
-    <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Verbling vs iTalki: Which Platform Has the Best English Tutors?</h1>
-    <p class="text-xl text-gray-600 leading-relaxed">Choosing between Verbling and iTalki is the most common dilemma for English learners. We spent 50 hours testing both to give you the definitive answer.</p>
+<Base title={title} description={description}>
+  <Header />
+  <main id="main-content" class="bg-neutral-950 min-h-screen">
+<article class="max-w-3xl mx-auto px-4 py-12">
+  <div class="mb-8">
+    <span class="text-sm text-neutral-500 uppercase tracking-widest font-semibold">Comparison · Updated April 2026</span>
+    <h1 class="text-4xl font-bold mt-2 mb-4">Verbling vs iTalki: The Ultimate Showdown</h1>
+    <p class="text-xl text-neutral-400">Both platforms offer 1-on-1 English lessons with native speakers. But which one is right for your goals and budget?</p>
   </div>
 
-  <div class="grid md:grid-cols-2 gap-8 mb-16">
-    <div class="bg-emerald-50 border border-emerald-100 rounded-3xl p-8">
-      <h3 class="text-2xl font-bold mb-4">iTalki</h3>
-      <p class="text-4xl font-black text-emerald-700 mb-4">9.2/10</p>
-      <p class="text-gray-700 mb-6">The undisputed king of variety and value. Perfect for casual learners and those on a budget.</p>
-      <ul class="space-y-3 text-sm text-gray-600 mb-8">
-        <li class="flex items-center">✅ Largest selection of native speakers</li>
-        <li class="flex items-center">✅ Most affordable pricing ($5/hr+)</li>
-        <li class="flex items-center">✅ No platform fees for students</li>
-      </ul>
-      <a href="/reviews/italki/" class="block text-center bg-emerald-600 text-white font-bold py-4 rounded-xl hover:bg-emerald-700 transition-colors">Read iTalki Review</a>
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+      <h3 class="text-xl font-bold text-white mb-2 text-center">iTalki</h3>
+      <div class="text-3xl font-bold text-emerald-500 text-center mb-4">9.2/10</div>
+      <p class="text-neutral-300 text-sm">The best choice for variety and budget-conscious learners. Massive selection of tutors.</p>
     </div>
-    <div class="bg-blue-50 border border-blue-100 rounded-3xl p-8">
-      <h3 class="text-2xl font-bold mb-4">Verbling</h3>
-      <p class="text-4xl font-black text-blue-700 mb-4">8.4/10</p>
-      <p class="text-gray-700 mb-6">A premium experience with a focus on professional teachers. Best for serious students and professionals.</p>
-      <ul class="space-y-3 text-sm text-gray-600 mb-8">
-        <li class="flex items-center">✅ 100% professional, vetted teachers</li>
-        <li class="flex items-center">✅ Superior integrated classroom tech</li>
-        <li class="flex items-center">✅ Better tools for structured learning</li>
-      </ul>
-      <a href="/reviews/verbling/" class="block text-center bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors">Read Verbling Review</a>
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
+      <h3 class="text-xl font-bold text-white mb-2 text-center">Verbling</h3>
+      <div class="text-3xl font-bold text-emerald-500 text-center mb-4">8.5/10</div>
+      <p class="text-neutral-300 text-sm">The best choice for professional, certified teachers and a polished learning environment.</p>
     </div>
   </div>
 
-  <h2 class="text-3xl font-bold mt-16 mb-6">The Vetting Process: Quality vs Quantity</h2>
-  <p class="text-gray-700 mb-6 leading-relaxed">The biggest difference between these two platforms lies in who is allowed to teach. iTalki offers two tiers: Professional Teachers and Community Tutors. While the professionals are vetted, the community tutors are often just native speakers looking to chat. This makes iTalki great for practice but hit-or-miss for structured lessons.</p>
-  <p class="text-gray-700 mb-6 leading-relaxed">Verbling takes a much stricter approach. Every single person teaching on Verbling must have a teaching certificate or a degree in education. They only accept about 5 percent of applicants. When you book a lesson on Verbling, you are paying for an educator, not just a conversation partner.</p>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Tutor Quality</h2>
+  <p class="text-neutral-300 mb-6"><strong>iTalki</strong> has two types of tutors: Professional Teachers (certified) and Community Tutors (native speakers). This gives you more choice but requires more vetting. <strong>Verbling</strong> only accepts certified professional teachers, ensuring a higher baseline of quality.</p>
 
-  <h2 class="text-3xl font-bold mt-16 mb-6">Classroom Technology: Integrated vs External</h2>
-  <p class="text-gray-700 mb-6 leading-relaxed">On iTalki, most lessons happen on Skype, Zoom, or Google Meet. While iTalki has its own "italki Classroom," it is often buggy and many teachers avoid it. This means you have to manage your own technical setup and share your personal contact details with tutors.</p>
-  <p class="text-gray-700 mb-6 leading-relaxed">Verbling Video is a game-changer. It is a custom-built classroom that lives entirely in your browser. It includes a collaborative notepad, file sharing, and a vocabulary tool that lets teachers save new words directly to your profile. It feels like a professional learning environment, not just a video call.</p>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Pricing and Fees</h2>
+  <p class="text-neutral-300 mb-6">iTalki is generally cheaper, with lessons starting as low as $5/hour. Verbling lessons usually start at $15/hour. iTalki uses a "credits" system or direct payment, while Verbling uses a simple checkout process.</p>
 
-  <h2 class="text-3xl font-bold mt-16 mb-6">Pricing and Value for Money</h2>
-  <p class="text-gray-700 mb-6 leading-relaxed">If budget is your primary concern, iTalki wins. With over 30,000 tutors, the competition keeps prices low. You can find excellent English teachers from countries with a lower cost of living for $8 to $12 per hour. Verbling is more expensive, with most professional English teachers charging between $20 and $40 per hour.</p>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Platform Features</h2>
+  <p class="text-neutral-300 mb-6">Verbling has a superior built-in classroom with integrated tools for sharing files and exercises. iTalki relies more on external tools like Skype or Zoom, though they have their own "iTalki Classroom" which is improving.</p>
 
-  <h2 class="text-3xl font-bold mt-16 mb-6">Final Verdict</h2>
-  <div class="bg-gray-900 text-white rounded-3xl p-10 mt-8">
-    <h3 class="text-2xl font-bold mb-4 text-emerald-400">Our Recommendation</h3>
-    <p class="text-lg mb-8 leading-relaxed">Choose iTalki if you want to practice speaking for a low price or need a huge variety of accents. Choose Verbling if you are preparing for a specific goal like a job interview or an exam and you want the best technology and the most qualified teachers.</p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="/reviews/italki/" class="bg-emerald-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-600 text-center transition-all">Start on iTalki</a>
-      <a href="/reviews/verbling/" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 text-center transition-all">Try Verbling</a>
-    </div>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Verdict</h2>
+  <p class="text-neutral-300 mb-12">Choose <strong>iTalki</strong> if you want the widest selection and the lowest prices. Choose <strong>Verbling</strong> if you want a guaranteed professional teacher and a better technical experience.</p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <a href="/go/italki" class="block bg-emerald-600 text-white font-bold text-center px-6 py-4 rounded-xl hover:bg-emerald-500 transition">Try iTalki</a>
+    <a href="/go/verbling" class="block bg-neutral-800 text-white font-bold text-center px-6 py-4 rounded-xl hover:bg-neutral-700 transition">Try Verbling</a>
   </div>
 </article>
+  </main>
+  <Footer />
 </Base>

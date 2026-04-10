@@ -1,53 +1,48 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+const title = "Busuu Review 2026: Is the Premium Plan Worth It? | LearnEnglish.Life";
+const description = "Busuu offers a unique community-driven approach to English learning. Does it actually work? Our 2026 review has the answers.";
 ---
-<Base title="Busuu Review: Learning Through Community" description="A social language learning app. Best for students who want feedback from native speakers on their writing and speaking exercises.">
+<Base title={title} description={description}>
+  <Header />
+  <main id="main-content" class="bg-neutral-950 min-h-screen">
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
-    <span class="text-sm text-gray-400">Review · Updated April 2026</span>
-    <h1 class="text-4xl font-bold mt-1 mb-4">Busuu Review: Learning Through Community</h1>
-    <p class="text-lg text-gray-500">A social language learning app. Best for students who want feedback from native speakers on their writing and speaking exercises.</p>
+    <span class="text-sm text-neutral-500 uppercase tracking-widest font-semibold">Review · Updated April 2026</span>
+    <h1 class="text-4xl font-bold mt-2 mb-4">Busuu Review: The Community-Powered App</h1>
+    <p class="text-xl text-neutral-400">Busuu's secret weapon is its community of millions of native speakers who correct your exercises. Is that enough to make it the best app?</p>
   </div>
 
-  <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
-    <div class="flex items-center justify-between">
+  <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-12">
+    <div class="flex items-center gap-4 mb-4">
+      <div class="text-4xl font-bold text-emerald-500">8.4</div>
       <div>
-        <p class="font-bold text-lg text-emerald-900">Our Rating</p>
-        <p class="text-3xl font-bold text-emerald-700">8.2/10</p>
-      </div>
-      <div class="text-right">
-        <p class="text-sm text-gray-500">Best for</p>
-        <p class="font-semibold text-emerald-700">Community feedback</p>
+        <div class="font-bold text-white">Our Score</div>
+        <div class="text-sm text-neutral-500">Best for grammar and writing</div>
       </div>
     </div>
+    <p class="text-neutral-300">Busuu is one of the most comprehensive language apps available. Its structured courses and community feedback loop make it a powerful tool for serious learners.</p>
   </div>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">What is Busuu?</h2>
-  <p class="text-gray-600 mb-4 leading-relaxed">Busuu combines traditional course materials with a unique social feature. When you complete a writing or speaking exercise, you can send it to the community for review. Native speakers will then provide corrections and tips. In return, you can correct exercises from people learning your native language.</p>
-
-  <h2 class="text-2xl font-bold mt-10 mb-4">Pricing</h2>
-  <p class="text-gray-600 mb-4 leading-relaxed">Busuu has a free version, but the best features are locked behind the Premium subscription. Premium costs around $10 per month (billed annually) and includes offline mode, grammar lessons, and official certificates from McGraw Hill.</p>
-
-  <h2 class="text-2xl font-bold mt-10 mb-4">Pros</h2>
-  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
-    <li>Valuable feedback from a global community of native speakers</li>
-    <li>High-quality, bite-sized lessons that are easy to finish</li>
-    <li>Official certification for completing levels</li>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Key Features</h2>
+  <ul class="space-y-4 text-neutral-300 mb-12">
+    <li><strong>Community Feedback:</strong> Send your writing and speaking exercises to native speakers for correction.</li>
+    <li><strong>Study Plan:</strong> A personalized schedule based on your goals and how much time you have.</li>
+    <li><strong>Grammar Review:</strong> Dedicated lessons that explain complex grammar points clearly.</li>
+    <li><strong>Certificates:</strong> Earn official McGraw Hill certificates as you complete levels.</li>
   </ul>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Cons</h2>
-  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
-    <li>The free version is very limited</li>
-    <li>Community corrections can sometimes be inconsistent</li>
-  </ul>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Pricing</h2>
+  <p class="text-neutral-300 mb-6">Busuu has a free version with limited features. Busuu Premium costs around $6.95/month (billed annually), making it one of the most affordable high-quality apps on the market.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
-  <p class="text-gray-600 mb-4 leading-relaxed">Busuu is one of the most effective language apps on the market because it forces you to produce the language, not just recognize it. The community feedback is a game-changer for solo learners.</p>
-
-  <div class="bg-emerald-600 rounded-xl p-8 text-white mt-12">
-    <h3 class="text-2xl font-bold mb-2">Get corrected by native speakers</h3>
-    <p class="mb-6">Join the Busuu community and start improving your English today.</p>
-    <a href="https://www.busuu.com/" class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">Visit Busuu</a>
+  <div class="bg-emerald-600 rounded-xl p-8 text-center mt-12">
+    <h3 class="text-2xl font-bold text-white mb-4">Join the Busuu Community</h3>
+    <p class="text-emerald-100 mb-6">Get real feedback on your English today.</p>
+    <a href="https://www.busuu.com/" class="inline-block bg-white text-emerald-600 font-bold px-8 py-3 rounded-lg hover:bg-neutral-100 transition">Start Learning</a>
   </div>
 </article>
+  </main>
+  <Footer />
 </Base>

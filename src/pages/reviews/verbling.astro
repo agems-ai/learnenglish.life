@@ -1,53 +1,46 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+const title = "Verbling Review 2026: Premium English Tutors for Serious Learners | LearnEnglish.Life";
+const description = "Verbling focuses on professional, certified teachers. Is the higher price point justified? We review the platform's features and quality.";
 ---
-<Base title="Verbling Review 2026: Professional Tutors for Serious Learners" description="A premium marketplace for language learning. Best for students who want high-quality, professional instruction.">
+<Base title={title} description={description}>
+  <Header />
+  <main id="main-content" class="bg-neutral-950 min-h-screen">
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
-    <span class="text-sm text-gray-400">Review · Updated April 2026</span>
-    <h1 class="text-4xl font-bold mt-1 mb-4">Verbling Review 2026: Professional Tutors for Serious Learners</h1>
-    <p class="text-lg text-gray-500">A premium marketplace for language learning. Best for students who want high-quality, professional instruction.</p>
+    <span class="text-sm text-neutral-500 uppercase tracking-widest font-semibold">Review · Updated April 2026</span>
+    <h1 class="text-4xl font-bold mt-2 mb-4">Verbling Review: Professionalism at a Price</h1>
+    <p class="text-xl text-neutral-400">Verbling positions itself as the premium choice for language tutoring. Does the experience live up to the hype?</p>
   </div>
 
-  <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
-    <div class="flex items-center justify-between">
+  <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-12">
+    <div class="flex items-center gap-4 mb-4">
+      <div class="text-4xl font-bold text-emerald-500">8.5</div>
       <div>
-        <p class="font-bold text-lg text-emerald-900">Our Rating</p>
-        <p class="text-3xl font-bold text-emerald-700">8.4/10</p>
-      </div>
-      <div class="text-right">
-        <p class="text-sm text-gray-500">Best for</p>
-        <p class="font-semibold text-emerald-700">Professional instruction</p>
+        <div class="font-bold text-white">Our Score</div>
+        <div class="text-sm text-neutral-500">Best for professional tutoring</div>
       </div>
     </div>
+    <p class="text-neutral-300">Verbling is excellent for learners who want a structured, professional environment. The quality of teachers is consistently high, and the platform features are top-notch.</p>
   </div>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">What is Verbling?</h2>
-  <p class="text-gray-600 mb-4 leading-relaxed">Verbling is a platform that connects students with professional language teachers. Unlike some marketplaces that allow casual conversation partners, Verbling requires all its teachers to have previous teaching experience. This focus on quality makes it a top choice for students with specific academic or professional goals.</p>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">What is Verbling?</h2>
+  <p class="text-neutral-300 mb-6">Verbling is an online language tutoring platform that connects students with professional teachers. Unlike iTalki, which allows community tutors, Verbling requires all its teachers to have previous teaching experience and/or a teaching certificate.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Pricing</h2>
-  <p class="text-gray-600 mb-4 leading-relaxed">Teachers on Verbling set their own rates. You can find lessons for as low as $15 per hour, but most experienced professional tutors charge between $25 and $40 per hour. There are no monthly subscription fees; you simply pay for the lessons you book.</p>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Verbling Classroom</h2>
+  <p class="text-neutral-300 mb-6">One of Verbling's best features is its built-in classroom. It includes a workspace for collaborative notes, a file-sharing system, and a flashcard tool. You don't need to use Skype or any other external software.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Pros</h2>
-  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
-    <li>Strict vetting process for all teachers</li>
-    <li>Excellent integrated video classroom with collaborative tools</li>
-    <li>No hidden fees or complex subscription models</li>
-  </ul>
+  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Pricing</h2>
+  <p class="text-neutral-300 mb-6">Verbling teachers set their own rates, but prices are generally higher than on iTalki or Preply. Most English lessons range from $15 to $30 per hour. They also offer bulk lesson packages for a discount.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Cons</h2>
-  <ul class="list-disc list-inside space-y-2 text-gray-600 mb-6">
-    <li>Higher average price than competitors like italki</li>
-    <li>Smaller selection of tutors compared to the largest platforms</li>
-  </ul>
-
-  <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
-  <p class="text-gray-600 mb-4 leading-relaxed">If you are tired of searching through hundreds of casual tutors and want a guaranteed professional experience, Verbling is worth the extra cost. The platform is clean, the tools are reliable, and the teachers are among the best in the industry.</p>
-
-  <div class="bg-emerald-600 rounded-xl p-8 text-white mt-12">
-    <h3 class="text-2xl font-bold mb-2">Book a professional lesson</h3>
-    <p class="mb-6">Start learning with a vetted professional tutor today. Prices start at $15/hour.</p>
-    <a href="https://www.verbling.com/" class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">Visit Verbling</a>
+  <div class="bg-emerald-600 rounded-xl p-8 text-center mt-12">
+    <h3 class="text-2xl font-bold text-white mb-4">Book a Professional Tutor</h3>
+    <p class="text-emerald-100 mb-6">Experience the Verbling difference today.</p>
+    <a href="https://www.verbling.com/" class="inline-block bg-white text-emerald-600 font-bold px-8 py-3 rounded-lg hover:bg-neutral-100 transition">Find a Teacher</a>
   </div>
 </article>
+  </main>
+  <Footer />
 </Base>
