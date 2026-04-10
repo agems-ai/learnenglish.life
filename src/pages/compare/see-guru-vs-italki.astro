@@ -1,5 +1,4 @@
----
-import Base from '../../layouts/Base.astro';
+---import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
@@ -147,6 +146,7 @@ const faqSchema = {
     }
   ]
 };
+import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="See Guru vs iTalki: Which Online Tutoring Platform Is Better in 2026?" description="Compare See Guru and iTalki online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.">
@@ -184,6 +184,8 @@ const faqSchema = {
         </div>
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
+
+    <ContextualCTA text="Ready to experience the difference? Book your first lesson on See Guru today." />
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
             <span class="text-2xl font-bold text-gray-100">7.8</span>

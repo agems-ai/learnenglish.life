@@ -1,5 +1,4 @@
----
-import Base from '../../layouts/Base.astro';
+---import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
@@ -16,6 +15,7 @@ const articleSchema = {
   "datePublished": "2026-04-07",
   "dateModified": "2026-04-07"
 };
+import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base
@@ -48,19 +48,13 @@ const articleSchema = {
 
     <p class="text-slate-400 mb-6 leading-relaxed">One of the first questions people ask when starting to learn English online is: how much will it cost? The answer depends on many factors, including which platform you choose, the experience level of your tutor, and how often you want to take lessons. This guide breaks down everything you need to know about online English tutor prices in 2026.</p>
 
+    <ContextualCTA text="Want a certified tutor without the high cost? Try See Guru for vetted professionals starting at $5." />
+
     <AdUnit slot="in-article" />
 
     <h2 class="text-2xl font-bold mt-10 mb-4">What affects the cost of online English lessons?</h2>
     <p class="text-slate-400 mb-4 leading-relaxed">Before looking at specific prices, it helps to understand what makes tutor costs go up or down. Several factors determine how much you will pay for a lesson.</p>
-    <!-- Contextual CTA --> 
-    <div class="my-8 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg shadow-sm"> 
-      <p class="text-lg text-emerald-900 font-medium mb-3"> 
-        Want a certified tutor without the high cost? Try See Guru for vetted professionals starting at $5. 
-      </p> 
-      <a href="/go/see-guru" class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white font-bold rounded hover:bg-emerald-700 transition-colors no-underline"> 
-        Explore See Guru → 
-      </a> 
-    </div>
+    
 
     <p class="text-slate-400 mb-4 leading-relaxed"><strong>Tutor experience and qualifications.</strong> Native English speakers with teaching certifications like TEFL or CELTA typically charge more than non-certified tutors. A tutor with five years of experience will usually cost more than someone just starting out.</p>
 

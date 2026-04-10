@@ -1,5 +1,4 @@
----
-import Base from '../../layouts/Base.astro';
+---import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
@@ -153,6 +152,7 @@ const faqSchema = {
     }
   ]
 };
+import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="See Guru vs Preply: Which Platform Is Better in 2026?" description="Compare See Guru (AI tutors) and Preply (human tutors). Find the best platform for your English learning goals, budget, and preferred learning style.">
@@ -186,6 +186,8 @@ const faqSchema = {
       <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-white">See Guru</h2>
+
+    <ContextualCTA text="See why serious learners are switching to See Guru for their English goals." />
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
             <span class="text-2xl font-bold text-white">{seeGuru.rating}</span>
@@ -275,15 +277,7 @@ const faqSchema = {
       rows={comparison}
     />
 
-    <!-- Contextual CTA -->
-    <div class="my-8 p-6 bg-neutral-800 border-l-4 border-emerald-500 rounded-r-lg shadow-sm">
-      <p class="text-lg text-emerald-200 font-medium mb-3">
-        See why serious learners are switching to See Guru for their English goals.
-      </p>
-      <a href="/go/see-guru" class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white font-bold rounded hover:bg-emerald-700 transition-colors no-underline">
-        Explore See Guru →
-      </a>
-    </div>
+    
 
     <!-- Ad Unit -->
     <div class="mb-8">

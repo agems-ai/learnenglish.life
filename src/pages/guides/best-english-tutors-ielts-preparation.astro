@@ -1,5 +1,4 @@
----
-import Base from '../../layouts/Base.astro';
+---import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
@@ -71,6 +70,7 @@ const faqSchema = {
     }
   ]
 };
+import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="Best English Tutors for IELTS Prep in 2026 | Top Picks" description="Compare the best English tutors for IELTS preparation. Expert 1-on-1 coaching for all IELTS modules. Find affordable options starting at $5/hr.">
@@ -94,15 +94,7 @@ const faqSchema = {
         <span class="text-sm text-gray-400">Guide · Updated April 2026</span>
         <h1 class="text-4xl font-bold mt-1 mb-4">Best English Tutors for IELTS Preparation in 2026</h1>
         <p class="text-lg text-gray-500">Compare the best English tutors for IELTS preparation. Expert 1-on-1 coaching for all IELTS modules. Find affordable options starting at $5/hr.</p>
-    <!-- Contextual CTA --> 
-    <div class="my-8 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg shadow-sm"> 
-      <p class="text-lg text-emerald-900 font-medium mb-3 text-left"> 
-        Targeting a Band 7+? Our IELTS specialists on See Guru can get you there. 
-      </p> 
-      <a href="/go/see-guru" class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white font-bold rounded hover:bg-emerald-700 transition-colors no-underline"> 
-        Explore See Guru → 
-      </a> 
-    </div>
+    
       </div>
 
       <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
@@ -124,6 +116,8 @@ const faqSchema = {
       <AdUnit />
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Why IELTS Requires Specialized Tutors</h2>
+
+    <ContextualCTA text="Targeting a Band 7+? Our IELTS specialists on See Guru can get you there." />
       <p class="text-slate-400 mb-4 leading-relaxed">The IELTS test is not just about knowing English. It tests how well you can use English under exam conditions, manage your time, and apply specific strategies for each module. A general English tutor may be excellent at conversation, but they may not understand the structure of IELTS writing Task 2 or what examiners look for in speaking band scores.</p>
       <p class="text-slate-400 mb-4 leading-relaxed">An IELTS specialist tutor knows:</p>
       <ul class="list-disc list-inside space-y-2 text-slate-400 mb-6">

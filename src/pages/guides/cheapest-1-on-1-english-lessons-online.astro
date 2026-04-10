@@ -1,5 +1,4 @@
----
-import Base from '../../layouts/Base.astro';
+---import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
@@ -71,6 +70,7 @@ const faqSchema = {
     }
   ]
 };
+import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="Cheapest 1-on-1 English Lessons Online (From $3/Hour)" description="Find the cheapest 1-on-1 English lessons online. Compare prices from 10+ platforms starting at $3/hr. Real tutors, real results.">
@@ -114,6 +114,8 @@ const faqSchema = {
 
       <div class="prose prose-lg max-w-none">
         <h2 class="text-2xl font-bold mt-8 mb-4">Why Choose 1-on-1 Online Lessons?</h2>
+
+    <ContextualCTA text="Affordable lessons don't have to mean low quality. Check out See Guru's vetted tutor list." />
         <p class="text-neutral-300 mb-4">Learning English one-on-one with a real tutor is one of the fastest ways to improve. Unlike group classes where you share the teacher's attention, 1-on-1 lessons are built entirely around you.</p>
         <p class="text-neutral-300 mb-4">With online platforms, you get:</p>
         <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
@@ -194,15 +196,7 @@ const faqSchema = {
               <p class="text-gray-200 mb-3">See Guru wins our top pick for cheapest 1-on-1 English lessons. Prices start at just $3 per lesson with professional native-speaking tutors. The platform is simple to use, offers free intro sessions for new users, and has a solid rating system to help you find the right tutor fast.</p>
               <a href="https://see.guru/?aff=SG-SUAG151" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors text-sm">
                 Get Started with See Guru &rarr;
-    <!-- Contextual CTA --> 
-    <div class="my-8 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg shadow-sm"> 
-      <p class="text-lg text-emerald-900 font-medium mb-3 text-left"> 
-        Affordable lessons don't have to mean low quality. Check out See Guru's vetted tutor list. 
-      </p> 
-      <a href="/go/see-guru" class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white font-bold rounded hover:bg-emerald-700 transition-colors no-underline"> 
-        Explore See Guru → 
-      </a> 
-    </div>
+    
               </a>
               <p class="text-xs text-gray-200 mt-2"><strong>Disclosure:</strong> We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
             </div>

@@ -1,5 +1,4 @@
----
-import Base from "../../layouts/Base.astro";
+---import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import AdUnit from "../../components/AdUnit.astro";
@@ -144,6 +143,7 @@ const faqSchema = {
     }
   ]
 };
+import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="Preply vs iTalki: Which Online Tutoring Platform Is Better in 2026?" description="Compare Preply and iTalki online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred teaching style.">
@@ -180,6 +180,8 @@ const faqSchema = {
         <div class="flex-1">
           <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">EDITOR'S PICK</span>
           <h2 class="text-2xl font-bold text-white mb-2">Want a Free Alternative?</h2>
+
+    <ContextualCTA text="Looking for a better alternative? See Guru is built for learners who want results, not just chat." />
           <p class="text-emerald-200 text-sm">See Guru offers 3 free lessons with native English tutors. No credit card required. Perfect for learners who want to try before committing.</p>
           <div class="flex items-center gap-4 mt-3 text-sm text-emerald-300">
             <span class="flex items-center gap-1"><span class="text-emerald-400">&#10003;</span> 3 Free Lessons</span>
@@ -252,15 +254,7 @@ const faqSchema = {
 
     <BenefitCards title="Why Compare These Platforms?" benefits={whyCompare} />
     <SocialProof title="What Learners Say" testimonials={testimonials} />
-    <!-- Contextual CTA --> 
-    <div class="my-8 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg shadow-sm"> 
-      <p class="text-lg text-emerald-900 font-medium mb-3 text-left"> 
-        Looking for a better alternative? See Guru is built for learners who want results, not just chat. 
-      </p> 
-      <a href="/go/see-guru" class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white font-bold rounded hover:bg-emerald-700 transition-colors no-underline"> 
-        Explore See Guru → 
-      </a> 
-    </div>
+    
 
     <div class="mb-8">
       <AdUnit slot="compare-1" />
