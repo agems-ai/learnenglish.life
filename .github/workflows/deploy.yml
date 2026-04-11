@@ -90,6 +90,34 @@ jobs:
             echo "FAIL: src/pages/index.astro re-introduces the email signup block (removed on purpose)"
             exit 1
           fi
+
+          # /go/* affiliate redirects must point to a real external URL,
+          # not back to themselves and not at a placeholder. A self-loop
+          # makes the page redirect to itself forever.
+          for f in src/pages/go/*.astro; do
+            slug=$(basename "$f" .astro)
+            # Must contain AFFILIATE_URL with https://
+            if ! grep -qE 'AFFILIATE_URL\s*=\s*"https?://' "$f"; then
+              echo "FAIL: $f does not point AFFILIATE_URL at an external https URL"
+              exit 1
+            fi
+            # Must NOT self-loop
+            if grep -qE "AFFILIATE_URL\s*=\s*\"/go/$slug" "$f"; then
+              echo "FAIL: $f self-loops (AFFILIATE_URL = /go/$slug/)"
+              exit 1
+            fi
+            # Must NOT contain template placeholder
+            if grep -qF '$partner' "$f"; then
+              echo "FAIL: $f contains \$partner template placeholder"
+              exit 1
+            fi
+            # Skip button anchor must also be an external URL or anchor, not /go/$slug/
+            if grep -qE "href=\"/go/$slug/?\"" "$f"; then
+              echo "FAIL: $f skip button hrefs back to itself"
+              exit 1
+            fi
+          done
+          echo "OK: all /go/* redirects point to real external URLs"
           echo "OK: critical invariants hold"
 
       - run: npm run build
