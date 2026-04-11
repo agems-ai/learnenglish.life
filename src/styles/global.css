@@ -2,47 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ───────────────────────────────────────────────────────────
-   Dark theme contrast guards
-   Force readable colors regardless of utility classes used in
-   content drafts (text-gray-900, text-gray-700, etc.).
-   ─────────────────────────────────────────────────────────── */
-@layer utilities {
-  /* Force body text to neutral-300 if it's any of these unreadable dark grays */
-  .text-gray-400, .text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800,
-  .text-slate-500, .text-slate-600, .text-slate-700, .text-slate-800,
-  .text-neutral-500, .text-neutral-600, .text-neutral-700, .text-neutral-800 {
-    color: rgb(212 212 212) !important; /* neutral-300 */
-  }
-
-  /* Force headings/dark text to white */
-  .text-emerald-900, .text-blue-900, .text-indigo-900, .text-teal-900,
-  .text-purple-900, .text-yellow-900, .text-gray-900, .text-slate-900, .text-neutral-900 {
-    color: rgb(255 255 255) !important; /* white */
-  }
-
-  /* Light pastel backgrounds that broke white-on-white */
-  .bg-emerald-50  { background-color: rgb(6 78 59 / 0.4) !important; }   /* emerald-900/40 */
-  .bg-blue-50     { background-color: rgb(30 58 138 / 0.4) !important; } /* blue-900/40 */
-  .bg-indigo-50   { background-color: rgb(49 46 129 / 0.4) !important; } /* indigo-900/40 */
-  .bg-teal-50     { background-color: rgb(19 78 74 / 0.4) !important; }  /* teal-900/40 */
-  .bg-purple-50   { background-color: rgb(76 29 149 / 0.4) !important; } /* purple-900/40 */
-  .bg-yellow-50   { background-color: rgb(113 63 18 / 0.4) !important; } /* yellow-900/40 */
-  .bg-gray-50     { background-color: rgb(38 38 38) !important; }        /* neutral-800 */
-  
-  /* Pastel borders that vanished */
-  .border-emerald-200 { border-color: rgb(4 120 87) !important; }
-  .border-blue-200    { border-color: rgb(29 78 216) !important; }
-  .border-indigo-200  { border-color: rgb(67 56 202) !important; }
-  .border-teal-200    { border-color: rgb(15 118 110) !important; }
-
-  /* Bright body text inside emerald pastel blocks */
-  .text-emerald-700, .text-emerald-800 { color: rgb(110 231 183) !important; } /* emerald-300 */
-  .text-blue-700,    .text-blue-800    { color: rgb(147 197 253) !important; } /* blue-300 */
-  .text-indigo-700,  .text-indigo-800  { color: rgb(165 180 252) !important; } /* indigo-300 */
-}
-
-
 @layer base {
   :root {
     --color-brand: 22 163 74; /* green-600 */
@@ -75,29 +34,52 @@
 
   /* Skip link for accessibility */
   .skip-link {
-    @apply absolute -top-10 left-4 bg-brand-500 text-white px-4 py-2 rounded-md z-50;
+    @apply absolute -top-10 left-4 bg-emerald-600 text-white px-4 py-2 rounded-md z-50;
     @apply focus:top-4;
   }
 }
 
 @layer components {
   .container-site {
-    @apply max-w-content mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-50;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
 
   .btn-primary {
-    @apply btn bg-brand-500 text-white hover:bg-brand-600 focus:ring-brand-400 shadow-sm;
+    @apply btn bg-emerald-600 text-white hover:bg-emerald-500 focus:ring-emerald-400 shadow-sm;
   }
 
   .btn-secondary {
-    @apply btn bg-slate-200 text-slate-700 hover:bg-slate-300 focus:ring-slate-400;
+    @apply btn bg-neutral-800 text-white hover:bg-neutral-700 focus:ring-neutral-600;
   }
 
   .btn-outline {
-    @apply btn border border-slate-300 text-slate-700 hover:bg-slate-900/40 hover:border-slate-400 focus:ring-slate-400;
+    @apply btn border border-neutral-700 text-neutral-300 hover:bg-neutral-800 hover:border-neutral-600 focus:ring-neutral-600;
+  }
+}
+
+@layer utilities {
+  /* Text Contrast Utilities - Use these to override base colors in specific contexts */
+  .text-on-light {
+    color: rgb(23 23 23) !important; /* neutral-900 */
+  }
+  
+  .text-on-light-muted {
+    color: rgb(82 82 82) !important; /* neutral-600 */
+  }
+  
+  .text-on-dark {
+    color: rgb(255 255 255) !important; /* white */
+  }
+  
+  .text-on-dark-muted {
+    color: rgb(163 163 163) !important; /* neutral-400 */
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
