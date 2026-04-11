@@ -78,9 +78,19 @@ const guides = [
  level: "All Levels"
  },
 ];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://learnenglish.life/guides/" }
+  ]
+};
+
 ---
 <Base title="English Study Guides | LearnEnglish.Life" description="Free study guides covering English grammar, common mistakes, speaking practice, choosing a tutor and the best learning apps. Built for self-directed learners.">
  <Header />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
  
  <!-- Hero -->
  <section class="bg-gradient-to-br from-emerald-950/60 to-teal-950/60 py-12">
