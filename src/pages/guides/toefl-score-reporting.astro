@@ -1,0 +1,56 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = "TOEFL Score Reporting: Everything You Need to Know";
+const description = "A simple guide on how to send your TOEFL scores to universities, what it costs, and how long it takes in 2026.";
+---
+
+<Base title={title} description={description} type="article">
+  <Header />
+  <article class="max-w-4xl mx-auto px-4 py-12 text-neutral-300">
+    <div class="mb-12">
+      <span class="text-sm text-blue-400 font-semibold uppercase tracking-wider">Guide · Updated April 2026</span>
+      <h1 class="text-5xl font-extrabold text-white mt-4 mb-6 leading-tight">TOEFL Score Reporting: Everything You Need to Know</h1>
+      <p class="text-xl text-neutral-400 leading-relaxed">A simple guide on how to send your scores to universities and what it costs.</p>
+    </div>
+
+    <h2 class="text-3xl font-bold text-white mt-16 mb-6">How Do You Send Your Scores?</h2>
+    <p class="mb-6 leading-relaxed">When you register for the TOEFL, you can choose up to four institutions to receive your scores for free. You must select these before 10 p.m. on the day before your test. After the test, you can still send scores, but there is a fee. You can order more score reports through your ETS account online. It is a simple process, but you need to know the institution codes for your chosen universities.</p>
+
+    <h2 class="text-3xl font-bold text-white mt-16 mb-6">The Cost of Score Reporting</h2>
+    <p class="mb-6 leading-relaxed">The first four reports are included in your test fee. For every additional report, you must pay $25. This can become expensive if you apply to many schools. We suggest doing your research early so you can use your four free reports wisely. If you are on a tight budget, focus on your top four choices first.</p>
+
+    <h2 class="text-3xl font-bold text-white mt-16 mb-6">How Long Does It Take?</h2>
+    <p class="mb-6 leading-relaxed">Your scores are usually available in your account 4 to 8 days after your test date. ETS sends the official score reports to your chosen institutions shortly after that. However, the delivery time depends on how the university receives the scores. Some receive them electronically, which is fast. Others receive them by mail, which can take several weeks. Always check the deadlines for your university applications.</p>
+
+    <h2 class="text-3xl font-bold text-white mt-16 mb-6">MyBest Scores</h2>
+    <p class="mb-6 leading-relaxed">The TOEFL score report automatically includes "MyBest" scores. This feature takes your best scores for each section from all valid tests you have taken in the last two years. This is a great way to show your highest potential to universities. Not all schools accept MyBest scores, so verify this on their admissions page.</p>
+
+    <h2 class="text-3xl font-bold text-white mt-16 mb-6">Expert Tip for Higher Scores</h2>
+    <p class="mb-6 leading-relaxed">If you are worried about your score, do not rush to send it. You can take the test again to improve. Many students work with professional tutors on iTalki to focus on their weakest sections. A tutor can give you specific feedback that a textbook cannot provide. This helps you ensure that the score you send is your absolute best.</p>
+
+    <div class="bg-blue-900/20 border border-blue-500/30 rounded-2xl p-8 my-12">
+      <h3 class="text-xl font-bold text-white mb-4">Need a Higher Score?</h3>
+      <p class="text-neutral-300">Find a TOEFL expert on Preply to help you reach your target score before the deadline.</p>
+    </div>
+  </article>
+
+  <script type="application/ld+json" slot="structured-data" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "author": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LearnEnglish.Life"
+    },
+    "datePublished": "2026-04-11"
+  })} />
+  <Footer />
+</Base>
