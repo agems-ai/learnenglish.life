@@ -22,7 +22,7 @@ const {
   subtitle = "Join millions of learners improving their English with personalized 1-on-1 lessons",
 } = Astro.props;
 
-// Tailwind doesn't support dynamic class names — must use static lookup tables
+// Tailwind doesn't support dynamic class names, must use static lookup tables
 const platforms: Record<string, { name: string; badge: string; cardBg: string; cardBorder: string; badgeBg: string; badgeText: string; ctaBg: string; ctaHover: string }> = {
   italki: {
     name: "iTalki",

@@ -1,5 +1,5 @@
 ---
-// SeeGuruCallout.astro — Conversion component: Why We Recommend See Guru + CTA
+// SeeGuruCallout.astro, Conversion component: Why We Recommend See Guru + CTA
 interface Props {
   variant?: 'inline' | 'standalone'; // inline = inside main content, standalone = full-width section
   title?: string;
@@ -26,7 +26,7 @@ const benefits = [
   {
     icon: "🆓",
     title: "3 free trial lessons",
-    detail: "More free trials than any major competitor — find your perfect tutor risk-free"
+    detail: "More free trials than any major competitor, find your perfect tutor risk-free"
   },
   {
     icon: "🌏",
@@ -81,7 +81,7 @@ const benefits = [
           rel="sponsored noopener"
           class="w-full sm:w-auto text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg shadow-emerald-900/50"
         >
-          Try See Guru — 3 Free Lessons →
+          Try See Guru, 3 Free Lessons →
         </a>
         <a 
           href="/reviews/see-guru/" 
@@ -115,7 +115,7 @@ const benefits = [
             <span class="text-lg flex-shrink-0">{b.icon}</span>
             <div>
               <span class="text-white text-sm font-semibold">{b.title}</span>
-              <span class="text-slate-400 text-xs"> — {b.detail.split(' ').slice(0, 8).join(' ')}...</span>
+              <span class="text-slate-400 text-xs">, {b.detail.split(' ').slice(0, 8).join(' ')}...</span>
             </div>
           </div>
         ))}

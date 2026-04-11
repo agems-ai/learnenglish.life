@@ -18,7 +18,7 @@ const EXCLUDE_PATTERNS = [
 ];
 
 // Manual priority/changefreq overrides for special pages.
-// Anything not listed defaults to weekly/0.7 — section indexes get 0.9.
+// Anything not listed defaults to weekly/0.7 , section indexes get 0.9.
 const OVERRIDES: Record<string, { priority: string; changefreq: string }> = {
   '': { priority: '1.0', changefreq: 'daily' },
   '/reviews': { priority: '0.9', changefreq: 'weekly' },

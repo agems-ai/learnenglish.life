@@ -22,7 +22,7 @@ export function generateSchemaMarkup(data: {
 }
 
 export const defaultSEO: SEOProps = {
-  title: 'LearnEnglish.Life — Your Trusted English Learning Resource',
+  title: 'LearnEnglish.Life, Your Trusted English Learning Resource',
   description: 'Comprehensive reviews, comparisons, and resources to help you master English. Find the best tutoring platforms, courses, and learning tools.',
   type: 'website',
 };
