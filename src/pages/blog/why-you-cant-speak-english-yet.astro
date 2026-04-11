@@ -1,0 +1,177 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const title = "Why You Can't Speak English Yet (Even After Years of Study)";
+const description = "The real reason intermediate learners stall on speaking, even after years of grammar and vocabulary work, plus the one habit that breaks the silence.";
+const publishDate = "2026-04-11";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "publisher": { "@type": "Organization", "name": "LearnEnglish.Life", "url": "https://learnenglish.life" },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://learnenglish.life/blog/why-you-cant-speak-english-yet/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
+    { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/why-you-cant-speak-english-yet/" }
+  ]
+};
+---
+
+<Base title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <Header />
+
+  <article class="bg-neutral-950">
+    <header class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 border-b border-slate-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <nav class="text-sm text-slate-400 mb-4">
+          <a href="/" class="hover:text-emerald-400">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/blog/" class="hover:text-emerald-400">Blog</a>
+        </nav>
+        <span class="inline-block px-3 py-1 bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold rounded-full mb-4">SPEAKING</span>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">{title}</h1>
+        <p class="text-lg text-slate-300">
+          You learn vocabulary. You drill grammar. You watch shows in English. You still freeze when you have to actually talk. Here is what the language research says, and the one fix that works.
+        </p>
+        <div class="flex items-center gap-4 mt-6 text-sm text-slate-400">
+          <span>April 11, 2026</span>
+          <span>·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-3xl mx-auto px-4 py-12 text-slate-200 leading-relaxed">
+
+      <p class="text-xl text-slate-100 mb-6">
+        If you have been studying English for two years or more and still cannot hold a conversation, the problem is almost never your grammar or your vocabulary. You have plenty of both. The problem is that you have spent thousands of hours on input (reading, listening, watching) and almost zero hours on output (actually producing English with your own mouth). Speaking is a separate skill, and it only grows when you do it.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The input output gap</h2>
+
+      <p class="mb-6">
+        Linguists call this the "comprehension production gap". Most learners can understand 80 to 90 percent of what they hear long before they can produce 30 percent of it themselves. The two skills use different parts of the brain. Listening is recognition: you match a sound to a meaning you already know. Speaking is retrieval and assembly: you have to find the right words, put them in the right order, choose the right tense, and pronounce them correctly, all in real time, without a pause button.
+      </p>
+
+      <p class="mb-6">
+        Recognition is much easier than retrieval. That is why you can finish a Netflix episode in English and still struggle to order coffee. The skill you trained is not the skill you need at the cafe.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Why apps don't fix this</h2>
+
+      <p class="mb-6">
+        Most language apps are built around input. You see a word, you hear a word, you tap the right answer. Even the apps with "speaking" features are usually doing one of two things: asking you to repeat a sentence after a recording (which is shadowing, useful but limited), or running speech recognition on a fixed prompt (which only checks pronunciation, not whether you can construct a sentence yourself).
+      </p>
+
+      <p class="mb-6">
+        Neither of these trains the actual skill of speaking. Speaking means: being asked an unpredictable question, finding the words from your own head, organizing them into a coherent answer, and producing them under social pressure with another human looking at you. No app can simulate the social pressure, and that is half the difficulty.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The one thing that actually works</h2>
+
+      <p class="mb-6">
+        Speaking practice with a real human, on a regular schedule, where you do most of the talking. That is it. There is no shortcut, no app, no audio course that replaces it. The good news is that the dose required is small: 30 to 60 minutes a week is enough to break the freeze for most learners.
+      </p>
+
+      <p class="mb-6">
+        The hard part is not finding the time. The hard part is overcoming the anxiety of the first few sessions. Almost every intermediate learner who finally tries 1 on 1 speaking practice reports the same thing: the first lesson was uncomfortable, the third was easier, the tenth felt natural. The only way through the discomfort is through it.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Why solo practice has a ceiling</h2>
+
+      <p class="mb-6">
+        We cover solo practice in our <a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300 underline">solo speaking guide</a>: shadowing, recording yourself, talking to AI tools, narrating your day in English. These methods all help, especially in the first few months. They have one fatal limit: you cannot tell which of your sentences sound natural and which sound wrong.
+      </p>
+
+      <p class="mb-6">
+        A native ear catches mistakes you literally cannot hear yourself. Tense errors, article errors, word stress, intonation patterns. Without that feedback loop, solo practice plateaus fast. You get fluent at producing the same wrong sentences over and over, which is worse than not practicing at all.
+      </p>
+
+      <!-- Sponsor card -->
+      <aside class="my-10 p-6 bg-emerald-950/40 border border-emerald-700 rounded-2xl">
+        <h3 class="text-xl font-bold text-white mb-2">The cheapest way past the speaking block</h3>
+        <p class="text-slate-200 mb-4">
+          The fastest fix for the speaking freeze is regular 1 on 1 practice with a real teacher. <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a> is the only platform we know of that gives you three full free lessons with certified teachers before any payment, no card on file. After three sessions you will know whether the format works for you. If not, you walk away. If yes, you keep going at $5 per lesson.
+        </p>
+        <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">
+          Claim 3 free See Guru lessons
+        </a>
+      </aside>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">A 4 week plan to actually start speaking</h2>
+
+      <p class="mb-4">
+        Here is the simplest plan that works for intermediate learners stuck at the speaking ceiling. It assumes you already understand most of what you hear and can read at a B1 or B2 level.
+      </p>
+
+      <ul class="list-disc list-inside space-y-3 mb-6">
+        <li><strong class="text-white">Week 1:</strong> Book one 30 minute lesson with a real teacher. Do not prepare. The point is to feel the freeze and survive it. Most learners overprepare and avoid the discomfort that does the actual work.</li>
+        <li><strong class="text-white">Week 2:</strong> Two 30 minute lessons. Same teacher if possible. The teacher will start to notice your specific mistakes.</li>
+        <li><strong class="text-white">Week 3:</strong> Two 45 minute lessons. Add 5 minutes of solo practice each morning: pick one topic from yesterday's lesson and tell it to yourself out loud as you brush your teeth.</li>
+        <li><strong class="text-white">Week 4:</strong> Two 45 minute lessons plus the 5 minute morning ritual. Rate yourself on the freeze: was the first sentence easier this week than two weeks ago?</li>
+      </ul>
+
+      <p class="mb-6">
+        Most learners report a clear improvement by week 4. Not fluency, but the freeze is gone. After that, it is just hours. The CEFR table in our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">reality check article</a> shows what to expect for your level.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">A note about anxiety</h2>
+
+      <p class="mb-6">
+        Speaking anxiety in a second language is real and well documented. The technical name is "foreign language classroom anxiety", and it shows up as a faster heartbeat, dry mouth, and a sudden inability to remember words you knew yesterday. It is not a sign that you are bad at languages. It is a sign that you are doing the right thing.
+      </p>
+
+      <p class="mb-6">
+        The two best ways to reduce it: start with a 1 on 1 setting (not a group), and pick a teacher you actually like rather than one with the highest credentials. A friendly teacher who waits patiently for you to find a word is worth more than a Cambridge certified professor who corrects every error.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Honest summary</h2>
+
+      <p class="mb-6">
+        You cannot speak English yet because you have spent your study hours on a different skill. The fix is not more grammar, more vocabulary, or another app. The fix is one to two short conversations a week with a real human who will let you talk. Start small, accept that the first few sessions will be uncomfortable, and the freeze breaks within a month.
+      </p>
+
+      <p class="mb-6">
+        If you have been stuck at intermediate for years, this is the lever. There is no other one that moves the needle as fast.
+      </p>
+
+      <!-- Related -->
+      <div class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+        <h3 class="text-lg font-bold text-white mb-4">Read next</h3>
+        <ul class="space-y-2">
+          <li><a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300">Practice speaking when you have no partner</a></li>
+          <li><a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300">How long does it really take to learn English?</a></li>
+          <li><a href="/blog/best-time-to-study-english/" class="text-emerald-400 hover:text-emerald-300">Best time of day to study English</a></li>
+          <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru review: 3 free lessons with real tutors</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="py-8 bg-neutral-900">
+      <div class="max-w-3xl mx-auto px-4">
+        <AdUnit slot="in-article" format="fluid" />
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>
