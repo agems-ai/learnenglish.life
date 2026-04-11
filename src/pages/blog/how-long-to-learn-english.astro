@@ -9,228 +9,212 @@ const description = "Honest answer with real CEFR study hours per level, why som
 const publishDate = "2026-04-11";
 
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": title,
-  "description": description,
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life",
-    "url": "https://learnenglish.life"
-  },
-  "datePublished": publishDate,
-  "dateModified": publishDate,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://learnenglish.life/blog/how-long-to-learn-english/"
-  }
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": title,
+ "description": description,
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "publisher": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life",
+ "url": "https://learnenglish.life"
+ },
+ "datePublished": publishDate,
+ "dateModified": publishDate,
+ "mainEntityOfPage": {
+ "@type": "WebPage",
+ "@id": "https://learnenglish.life/blog/how-long-to-learn-english/"
+ }
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
-    { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/how-long-to-learn-english/" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
+ { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
+ { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/how-long-to-learn-english/" }
+ ]
 };
 
 const cefrHours = [
-  { level: "A1", name: "Beginner", hours: "80 to 100", description: "Order food, ask directions, introduce yourself." },
-  { level: "A2", name: "Elementary", hours: "180 to 200", description: "Talk about your day, plans, family, simple opinions." },
-  { level: "B1", name: "Intermediate", hours: "350 to 400", description: "Travel independently, follow most TV shows, write short emails." },
-  { level: "B2", name: "Upper-Intermediate", hours: "500 to 600", description: "Hold a job interview, read a newspaper, debate ideas." },
-  { level: "C1", name: "Advanced", hours: "700 to 800", description: "University study, professional negotiation, nuanced humor." },
-  { level: "C2", name: "Mastery", hours: "1000 to 1200", description: "Indistinguishable from an educated native speaker in writing." }
+ { level: "A1", name: "Beginner", hours: "80 to 100", description: "Order food, ask directions, introduce yourself." },
+ { level: "A2", name: "Elementary", hours: "180 to 200", description: "Talk about your day, plans, family, simple opinions." },
+ { level: "B1", name: "Intermediate", hours: "350 to 400", description: "Travel independently, follow most TV shows, write short emails." },
+ { level: "B2", name: "Upper-Intermediate", hours: "500 to 600", description: "Hold a job interview, read a newspaper, debate ideas." },
+ { level: "C1", name: "Advanced", hours: "700 to 800", description: "University study, professional negotiation, nuanced humor." },
+ { level: "C2", name: "Mastery", hours: "1000 to 1200", description: "Indistinguishable from an educated native speaker in writing." }
 ];
 ---
 
 <Base title={title} description={description}>
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  <Header />
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+ <Header />
 
-  <article class="bg-neutral-950">
-    <!-- Hero -->
-    <header class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 border-b border-slate-800">
-      <div class="max-w-3xl mx-auto px-4">
-        <nav class="text-sm text-slate-400 mb-4">
-          <a href="/" class="hover:text-emerald-400">Home</a>
-          <span class="mx-2">/</span>
-          <a href="/blog/" class="hover:text-emerald-400">Blog</a>
-        </nav>
-        <span class="inline-block px-3 py-1 bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold rounded-full mb-4">REALITY CHECK</span>
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-          {title}
-        </h1>
-        <p class="text-lg text-slate-300">
-          The honest answer most courses won't give you, with real numbers from the Council of Europe and a step by step path that actually works.
-        </p>
-        <div class="flex items-center gap-4 mt-6 text-sm text-slate-400">
-          <span>April 11, 2026</span>
-          <span>•</span>
-          <span>9 min read</span>
-        </div>
-      </div>
-    </header>
+ <article class="bg-neutral-950">
+ <!-- Hero -->
+ <header class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 border-b border-slate-800">
+ <div class="max-w-3xl mx-auto px-4">
+ <nav class="text-sm text-slate-400 mb-4">
+ <a href="/" class="hover:text-emerald-400">Home</a>
+ <span class="mx-2">/</span>
+ <a href="/blog/" class="hover:text-emerald-400">Blog</a>
+ </nav>
+ <span class="inline-block px-3 py-1 bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold rounded-full mb-4">REALITY CHECK</span>
+ <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+ {title}
+ </h1>
+ <p class="text-lg text-slate-300">The honest answer most courses won't give you, with real numbers from the Council of Europe and a step by step path that actually works.
+ </p>
+ <div class="flex items-center gap-4 mt-6 text-sm text-slate-400">
+ <span>April 11, 2026</span>
+ <span>•</span>
+ <span>9 min read</span>
+ </div>
+ </div>
+ </header>
 
-    <!-- Body -->
-    <div class="max-w-3xl mx-auto px-4 py-12 prose-content text-slate-200 leading-relaxed">
+ <!-- Body -->
+ <div class="max-w-3xl mx-auto px-4 py-12 prose-content text-slate-200 leading-relaxed">
 
-      <p class="text-xl text-slate-100 mb-6">
-        Short version: it depends on where you are starting, where you want to land, and how many hours you actually put in each week. The good news is that the numbers are not a mystery. The Council of Europe has been measuring this for decades.
-      </p>
+ <p class="text-xl text-slate-100 mb-6">Short version: it depends on where you are starting, where you want to land, and how many hours you actually put in each week. The good news is that the numbers are not a mystery. The Council of Europe has been measuring this for decades.
+ </p>
 
-      <p class="mb-6">
-        Most learners want one number. They Google "how long to learn English" and hope for "six months". The reality is more useful than that. There is a published table of guided study hours per level, and once you see it, planning your own timeline becomes simple arithmetic.
-      </p>
+ <p class="mb-6">Most learners want one number. They Google "how long to learn English" and hope for "six months". The reality is more useful than that. There is a published table of guided study hours per level, and once you see it, planning your own timeline becomes simple arithmetic.
+ </p>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The CEFR table everyone should know</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">The CEFR table everyone should know</h2>
 
-      <p class="mb-6">
-        CEFR stands for the Common European Framework of Reference for Languages. It splits language ability into six levels, A1 through C2. The hours below are guided learning hours, meaning lessons plus directed homework. They come from Cambridge English and the Council of Europe and are widely cited by accredited schools.
-      </p>
+ <p class="mb-6">CEFR stands for the Common European Framework of Reference for Languages. It splits language ability into six levels, A1 through C2. The hours below are guided learning hours, meaning lessons plus directed homework. They come from Cambridge English and the Council of Europe and are widely cited by accredited schools.
+ </p>
 
-      <div class="overflow-x-auto my-8">
-        <table class="w-full border-collapse bg-slate-900/60 border border-slate-700 rounded-lg overflow-hidden">
-          <thead>
-            <tr class="bg-emerald-900/40 text-emerald-200">
-              <th class="px-4 py-3 text-left">Level</th>
-              <th class="px-4 py-3 text-left">Name</th>
-              <th class="px-4 py-3 text-left">Guided hours</th>
-              <th class="px-4 py-3 text-left">What you can do</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cefrHours.map(row => (
-              <tr class="border-t border-slate-700">
-                <td class="px-4 py-3 font-bold text-emerald-300">{row.level}</td>
-                <td class="px-4 py-3 text-white">{row.name}</td>
-                <td class="px-4 py-3 text-slate-200">{row.hours}</td>
-                <td class="px-4 py-3 text-slate-300">{row.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+ <div class="overflow-x-auto my-8">
+ <table class="w-full border-collapse bg-slate-900/60 border border-slate-700 rounded-lg overflow-hidden">
+ <thead>
+ <tr class="bg-emerald-900/40 text-emerald-200">
+ <th class="px-4 py-3 text-left">Level</th>
+ <th class="px-4 py-3 text-left">Name</th>
+ <th class="px-4 py-3 text-left">Guided hours</th>
+ <th class="px-4 py-3 text-left">What you can do</th>
+ </tr>
+ </thead>
+ <tbody>
+ {cefrHours.map(row => (
+ <tr class="border-t border-slate-700">
+ <td class="px-4 py-3 font-bold text-emerald-300">{row.level}</td>
+ <td class="px-4 py-3 text-white">{row.name}</td>
+ <td class="px-4 py-3 text-slate-200">{row.hours}</td>
+ <td class="px-4 py-3 text-slate-300">{row.description}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
 
-      <p class="mb-6">
-        Read it as a staircase. To get from zero to a confident B2 (the level most jobs and universities ask for), you are looking at roughly 1,200 to 1,500 total guided hours. That sounds huge until you turn it into a weekly plan.
-      </p>
+ <p class="mb-6">Read it as a staircase. To get from zero to a confident B2 (the level most jobs and universities ask for), you are looking at roughly 1,200 to 1,500 total guided hours. That sounds huge until you turn it into a weekly plan.
+ </p>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Turning hours into months</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">Turning hours into months</h2>
 
-      <p class="mb-4">
-        Here is what 1,200 hours looks like at different speeds:
-      </p>
+ <p class="mb-4">Here is what 1,200 hours looks like at different speeds:
+ </p>
 
-      <ul class="list-disc list-inside space-y-2 mb-6 text-slate-200">
-        <li><strong class="text-white">2 hours per week</strong> (one lesson, one homework session): about 11 years to B2. This is why "I have been learning English for ten years" is so common.</li>
-        <li><strong class="text-white">5 hours per week</strong> (two lessons, three short practice blocks): about 4.5 years to B2.</li>
-        <li><strong class="text-white">10 hours per week</strong> (an hour a day plus extras): about 2.3 years to B2.</li>
-        <li><strong class="text-white">20 hours per week</strong> (intensive program or immersion): about 14 months to B2.</li>
-        <li><strong class="text-white">30+ hours per week</strong> (full immersion abroad, daily 1 on 1 lessons): around 9 months to B2.</li>
-      </ul>
+ <ul class="list-disc list-inside space-y-2 mb-6 text-slate-200">
+ <li><strong class="text-white">2 hours per week</strong> (one lesson, one homework session): about 11 years to B2. This is why "I have been learning English for ten years" is so common.</li>
+ <li><strong class="text-white">5 hours per week</strong> (two lessons, three short practice blocks): about 4.5 years to B2.</li>
+ <li><strong class="text-white">10 hours per week</strong> (an hour a day plus extras): about 2.3 years to B2.</li>
+ <li><strong class="text-white">20 hours per week</strong> (intensive program or immersion): about 14 months to B2.</li>
+ <li><strong class="text-white">30+ hours per week</strong> (full immersion abroad, daily 1 on 1 lessons): around 9 months to B2.</li>
+ </ul>
 
-      <p class="mb-6">
-        Notice how steep the curve is. Doubling your weekly hours more than doubles your speed because you spend less time forgetting between sessions. This is the real secret nobody puts in their marketing.
-      </p>
+ <p class="mb-6">Notice how steep the curve is. Doubling your weekly hours more than doubles your speed because you spend less time forgetting between sessions. This is the real secret nobody puts in their marketing.
+ </p>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Why some learners get there much faster</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">Why some learners get there much faster</h2>
 
-      <p class="mb-4">
-        The published hours assume an average learner with no special advantages. Three things shrink the timeline dramatically:
-      </p>
+ <p class="mb-4">The published hours assume an average learner with no special advantages. Three things shrink the timeline dramatically:
+ </p>
 
-      <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-200">
-        <li><strong class="text-white">Speaking from day one.</strong> Learners who book regular 1 on 1 conversations from week one hit B1 in about half the time of learners who only do apps. Speaking forces retrieval, retrieval builds memory.</li>
-        <li><strong class="text-white">A native or near-native first language with shared roots.</strong> Dutch, German and Scandinavian speakers reach B2 faster because vocabulary overlaps. Speakers of Japanese, Korean, Arabic, or Mandarin typically need 30 to 50 percent more hours for the same level.</li>
-        <li><strong class="text-white">Spaced repetition for vocabulary.</strong> Anki, Memrise or any flashcard tool with a real algorithm cuts the time you spend re-learning forgotten words. Half an hour a day moves the needle.</li>
-      </ol>
+ <ol class="list-decimal list-inside space-y-3 mb-6 text-slate-200">
+ <li><strong class="text-white">Speaking from day one.</strong>Learners who book regular 1 on 1 conversations from week one hit B1 in about half the time of learners who only do apps. Speaking forces retrieval, retrieval builds memory.</li>
+ <li><strong class="text-white">A native or near-native first language with shared roots.</strong>Dutch, German and Scandinavian speakers reach B2 faster because vocabulary overlaps. Speakers of Japanese, Korean, Arabic, or Mandarin typically need 30 to 50 percent more hours for the same level.</li>
+ <li><strong class="text-white">Spaced repetition for vocabulary.</strong>Anki, Memrise or any flashcard tool with a real algorithm cuts the time you spend re-learning forgotten words. Half an hour a day moves the needle.</li>
+ </ol>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The fastest realistic path from A1 to B2</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">The fastest realistic path from A1 to B2</h2>
 
-      <p class="mb-4">
-        If you want a concrete plan, here is what we recommend in our <a href="/guides/best-english-tutors-for-beginners/" class="text-emerald-400 hover:text-emerald-300 underline">beginner guide</a>:
-      </p>
+ <p class="mb-4">If you want a concrete plan, here is what we recommend in our <a href="/guides/best-english-tutors-for-beginners/" class="text-emerald-400 hover:text-emerald-300 underline">beginner guide</a>:
+ </p>
 
-      <ul class="list-disc list-inside space-y-2 mb-6 text-slate-200">
-        <li>Two 1 on 1 lessons per week with the same tutor. Same person, every time. Continuity matters more than novelty.</li>
-        <li>20 minutes of vocabulary practice per day on a spaced repetition app.</li>
-        <li>One 30 minute speaking session with a conversation partner or community tutor each week.</li>
-        <li>One TV episode in English with English subtitles each week. Pick a show you actually enjoy.</li>
-      </ul>
+ <ul class="list-disc list-inside space-y-2 mb-6 text-slate-200">
+ <li>Two 1 on 1 lessons per week with the same tutor. Same person, every time. Continuity matters more than novelty.</li>
+ <li>20 minutes of vocabulary practice per day on a spaced repetition app.</li>
+ <li>One 30 minute speaking session with a conversation partner or community tutor each week.</li>
+ <li>One TV episode in English with English subtitles each week. Pick a show you actually enjoy.</li>
+ </ul>
 
-      <p class="mb-6">
-        That is roughly 5 hours of structured practice per week. Stick with it, and you can expect to move one CEFR level every 8 to 14 months.
-      </p>
+ <p class="mb-6">That is roughly 5 hours of structured practice per week. Stick with it, and you can expect to move one CEFR level every 8 to 14 months.
+ </p>
 
-      <!-- Sponsor card: positive See Guru mention -->
-      <aside class="my-10 p-6 bg-emerald-950/40 border border-emerald-700 rounded-2xl">
-        <div class="flex items-start gap-4">
-          <div class="text-3xl">🎁</div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold text-white mb-2">Want to test the speaking-first approach without paying first?</h3>
-            <p class="text-slate-200 mb-4">
-              <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a> is the only platform we know of that gives you three full 1 on 1 lessons with certified human tutors before any payment. It is the easiest way to find out whether 1 on 1 works for you, and the tutors are real teachers with diplomas, not random conversation partners.
-            </p>
-            <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">
-              Claim 3 free lessons →
-            </a>
-          </div>
-        </div>
-      </aside>
+ <!-- Sponsor card: positive See Guru mention -->
+ <aside class="my-10 p-6 bg-emerald-950/40 border border-emerald-700 rounded-2xl">
+ <div class="flex items-start gap-4">
+ <div class="text-3xl"></div>
+ <div class="flex-1">
+ <h3 class="text-xl font-bold text-white mb-2">Want to test the speaking-first approach without paying first?</h3>
+ <p class="text-slate-200 mb-4">
+ <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a>is the only platform we know of that gives you three full 1 on 1 lessons with certified human tutors before any payment. It is the easiest way to find out whether 1 on 1 works for you, and the tutors are real teachers with diplomas, not random conversation partners.
+ </p>
+ <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">Claim 3 free lessons →
+ </a>
+ </div>
+ </div>
+ </aside>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">When immersion changes the math</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">When immersion changes the math</h2>
 
-      <p class="mb-6">
-        Living in an English-speaking country only counts if you actually use the language. People who move abroad and stick to their first-language community make slow progress. People who join clubs, take a part-time job, or share an apartment with English speakers often hit B2 inside a year, even starting from A2. The difference is hours of forced retrieval per week, not the geography.
-      </p>
+ <p class="mb-6">Living in an English-speaking country only counts if you actually use the language. People who move abroad and stick to their first-language community make slow progress. People who join clubs, take a part-time job, or share an apartment with English speakers often hit B2 inside a year, even starting from A2. The difference is hours of forced retrieval per week, not the geography.
+ </p>
 
-      <p class="mb-6">
-        If you cannot move, online 1 on 1 lessons are the closest substitute. Picking the right tutor matters more than picking the right platform. Our <a href="/guides/how-to-choose-english-tutor/" class="text-emerald-400 hover:text-emerald-300 underline">tutor selection guide</a> walks through the questions to ask in a trial lesson.
-      </p>
+ <p class="mb-6">If you cannot move, online 1 on 1 lessons are the closest substitute. Picking the right tutor matters more than picking the right platform. Our <a href="/guides/how-to-choose-english-tutor/" class="text-emerald-400 hover:text-emerald-300 underline">tutor selection guide</a>walks through the questions to ask in a trial lesson.
+ </p>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">A note on apps</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">A note on apps</h2>
 
-      <p class="mb-6">
-        Apps are great for vocabulary, grammar drills and the daily streak that keeps you in the game. They are weak for the one thing that decides fluency: real conversation. Use them as a side dish, not the main course. We compare the strongest options in our <a href="/compare/best-english-learning-apps/" class="text-emerald-400 hover:text-emerald-300 underline">best apps roundup</a>.
-      </p>
+ <p class="mb-6">Apps are great for vocabulary, grammar drills and the daily streak that keeps you in the game. They are weak for the one thing that decides fluency: real conversation. Use them as a side dish, not the main course. We compare the strongest options in our <a href="/compare/best-english-learning-apps/" class="text-emerald-400 hover:text-emerald-300 underline">best apps roundup</a>.
+ </p>
 
-      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The honest summary</h2>
+ <h2 class="text-2xl font-bold text-white mt-10 mb-4">The honest summary</h2>
 
-      <p class="mb-6">
-        From zero, plan on 1,200 to 1,500 guided hours to reach a confident B2. At 5 hours per week that is roughly 5 years. At 10 hours per week, around 2.5 years. At 20 hours per week, just over a year. There is no shortcut, but there is a fastest realistic path: regular 1 on 1 speaking practice, a spaced repetition habit, and content you enjoy in your target language.
-      </p>
+ <p class="mb-6">From zero, plan on 1,200 to 1,500 guided hours to reach a confident B2. At 5 hours per week that is roughly 5 years. At 10 hours per week, around 2.5 years. At 20 hours per week, just over a year. There is no shortcut, but there is a fastest realistic path: regular 1 on 1 speaking practice, a spaced repetition habit, and content you enjoy in your target language.
+ </p>
 
-      <p class="mb-6">
-        The learners who get there are not the ones with the best app or the most expensive course. They are the ones who showed up every week.
-      </p>
+ <p class="mb-6">The learners who get there are not the ones with the best app or the most expensive course. They are the ones who showed up every week.
+ </p>
 
-      <!-- Related reads -->
-      <div class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-        <h3 class="text-lg font-bold text-white mb-4">Read next</h3>
-        <ul class="space-y-2">
-          <li><a href="/guides/best-english-tutors-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English tutors for absolute beginners</a></li>
-          <li><a href="/compare/italki-vs-preply/" class="text-emerald-400 hover:text-emerald-300">iTalki vs Preply: which is better in 2026</a></li>
-          <li><a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300">How to practice English speaking when you have no partner</a></li>
-          <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru review: 3 free lessons with real tutors</a></li>
-        </ul>
-      </div>
-    </div>
+ <!-- Related reads -->
+ <div class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Read next</h3>
+ <ul class="space-y-2">
+ <li><a href="/guides/best-english-tutors-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English tutors for absolute beginners</a></li>
+ <li><a href="/compare/italki-vs-preply/" class="text-emerald-400 hover:text-emerald-300">iTalki vs Preply: which is better in 2026</a></li>
+ <li><a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300">How to practice English speaking when you have no partner</a></li>
+ <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru review: 3 free lessons with real tutors</a></li>
+ </ul>
+ </div>
+ </div>
 
-    <!-- Mid ad -->
-    <div class="py-8 bg-neutral-900">
-      <div class="max-w-3xl mx-auto px-4">
-        <AdUnit slot="in-article" format="fluid" />
-      </div>
-    </div>
-  </article>
+ <!-- Mid ad -->
+ <div class="py-8 bg-neutral-900">
+ <div class="max-w-3xl mx-auto px-4">
+ <AdUnit slot="in-article" format="fluid" />
+ </div>
+ </div>
+ </article>
 
-  <Footer />
+ <Footer />
 </Base>

@@ -12,264 +12,260 @@ import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
 import ContextualCTA from '../../components/ContextualCTA.astro';
 
 const review = {
-  title: "iTalki Review",
-  rating: 9.2,
-  reviewCount: 12500,
-  price: "From $5/hr",
-  heroTitle: "iTalki Review 2026: Real Pricing, Tutors & Honest Verdict",
-  heroSubtitle: "Join 10M+ learners who improved their English with iTalki. Book a lesson with a native speaker for as low as $5.",
-  description: "Updated iTalki review 2026. Real tutor prices ($5-$50/hr), pros, cons, and what makes it the top choice for 1-on-1 lessons.",
-  publishedTime: "2026-01-08",
-  pros: [
-    "Choose from 10,000+ tutors to find your perfect match",
-    "Lessons from $5, pay only for what you book",
-    "Book lessons any hour, schedules across all time zones",
-    "Learn from native speakers from the US, UK, Australia",
-    "Trial lessons available with most tutors"
-  ],
-  cons: [
-    "Quality varies between tutors",
-    "Peak hour availability can be limited",
-    "Occasional connection issues"
-  ],
-  ctaPrimary: "Find Your Tutor (Free)",
-  ctaSecondary: "Start Speaking Today",
-  ctaLink: "/go/italki"
+ title: "iTalki Review",
+ rating: 9.2,
+ reviewCount: 12500,
+ price: "From $5/hr",
+ heroTitle: "iTalki Review 2026: Real Pricing, Tutors & Honest Verdict",
+ heroSubtitle: "Join 10M+ learners who improved their English with iTalki. Book a lesson with a native speaker for as low as $5.",
+ description: "Updated iTalki review 2026. Real tutor prices ($5-$50/hr), pros, cons, and what makes it the top choice for 1-on-1 lessons.",
+ publishedTime: "2026-01-08",
+ pros: [
+ "Choose from 10,000+ tutors to find your perfect match",
+ "Lessons from $5, pay only for what you book",
+ "Book lessons any hour, schedules across all time zones",
+ "Learn from native speakers from the US, UK, Australia",
+ "Trial lessons available with most tutors"
+ ],
+ cons: [
+ "Quality varies between tutors",
+ "Peak hour availability can be limited",
+ "Occasional connection issues"
+ ],
+ ctaPrimary: "Find Your Tutor (Free)",
+ ctaSecondary: "Start Speaking Today",
+ ctaLink: "/go/italki"
 };
 
 // Benefits specific to iTalki
 const benefits = [
-  { icon: "1", title: "Personalized 1-on-1 Lessons", description: "Every lesson tailored to YOUR goals. conversation, business, exams" },
-  { icon: "2", title: "Starting at Just $5/hr", description: "Community tutors are affordable, pay per lesson, no monthly commitment" },
-  { icon: "3", title: "10,000+ Native Speakers", description: "Learn from certified teachers from US, UK, Australia, Canada" },
-  { icon: "4", title: "Book Anytime, 24/7", description: "Pick any hour, tutors live across every major time zone" }
+ { icon: "1", title: "Personalized 1-on-1 Lessons", description: "Every lesson tailored to YOUR goals. conversation, business, exams" },
+ { icon: "2", title: "Starting at Just $5/hr", description: "Community tutors are affordable, pay per lesson, no monthly commitment" },
+ { icon: "3", title: "10,000+ Native Speakers", description: "Learn from certified teachers from US, UK, Australia, Canada" },
+ { icon: "4", title: "Book Anytime, 24/7", description: "Pick any hour, tutors live across every major time zone" }
 ];
 
 const testimonials = [];
 
 // Comparison table data with winner highlighting
 const comparisonRows = [
-  { feature: "Price Range", winner: "a", a: "$5-40/hr", b: "$10-45/hr" },
-  { feature: "Tutors", winner: "a", a: "10,000+", b: "5,000+" },
-  { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes" },
-  { feature: "Free Trial", winner: "a", a: "Community", b: "Limited" },
-  { feature: "Lesson Replay", winner: "a", a: "Yes", b: "No" }
+ { feature: "Price Range", winner: "a", a: "$5-40/hr", b: "$10-45/hr" },
+ { feature: "Tutors", winner: "a", a: "10,000+", b: "5,000+" },
+ { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes" },
+ { feature: "Free Trial", winner: "a", a: "Community", b: "Limited" },
+ { feature: "Lesson Replay", winner: "a", a: "Yes", b: "No" }
 ];
 
 const fullStars = Math.floor(review.rating / 2);
 
 const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "iTalki",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "9.2",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": review.publishedTime
+ "@context": "https://schema.org",
+ "@type": "Review",
+ "itemReviewed": {
+ "@type": "SoftwareApplication",
+ "name": "iTalki",
+ "applicationCategory": "EducationApplication"
+ },
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "9.2",
+ "bestRating": "10",
+ "worstRating": "1"
+ },
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": review.publishedTime
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "iTalki" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
+ { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
+ { "@type": "ListItem", "position": 3, "name": "iTalki" }
+ ]
 };
 ---
 
 <Base title="iTalki Review 2026: Real Pricing, Tutors & Pros Cons" description={review.description} type="article" publishedTime={review.publishedTime}>
 
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
+ <span slot="structured-data">
+ <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+ <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
+ </span>
 
-  <Header />
-  
-  <!-- Breadcrumb -->
-  <nav class="bg-neutral-800 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-neutral-300">
-        <li><a href="/" class="hover:text-emerald-600">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-emerald-600">Reviews</a></li>
-        <li>/</li>
-        <li class="text-white">iTalki</li>
-      </ol>
-    </div>
-  </nav>
+ <Header />
+ 
+ <!-- Breadcrumb -->
+ <nav class="bg-neutral-800 py-3">
+ <div class="max-w-4xl mx-auto px-4 text-sm">
+ <ol class="flex items-center gap-2 text-neutral-300">
+ <li><a href="/" class="hover:text-emerald-600">Home</a></li>
+ <li>/</li>
+ <li><a href="/reviews/" class="hover:text-emerald-600">Reviews</a></li>
+ <li>/</li>
+ <li class="text-white">iTalki</li>
+ </ol>
+ </div>
+ </nav>
 
-  <!-- Hero CTA Section -->
-  <div class="max-w-4xl mx-auto px-4 pt-6">
-    <HeroCTA 
-      platform="italki"
-      rating={review.rating}
-      reviewCount={review.reviewCount}
-      price={review.price}
-      ctaText={review.ctaPrimary}
-      ctaLink={review.ctaLink}
-      title={review.heroTitle}
-      subtitle={review.heroSubtitle}
-    />
-  </div>
+ <!-- Hero CTA Section -->
+ <div class="max-w-4xl mx-auto px-4 pt-6">
+ <HeroCTA 
+ platform="italki"
+ rating={review.rating}
+ reviewCount={review.reviewCount}
+ price={review.price}
+ ctaText={review.ctaPrimary}
+ ctaLink={review.ctaLink}
+ title={review.heroTitle}
+ subtitle={review.heroSubtitle}
+ />
+ </div>
 
-  <!-- Affiliate Disclosure -->
-  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
-    </div>
-  </div>
+ <!-- Affiliate Disclosure -->
+ <div class="bg-amber-900/30 border-b border-amber-700 py-3">
+ <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
+ <strong>Affiliate Disclosure:</strong>We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
+ </div>
+ </div>
 
-  <!-- Main Content -->
-  <article class="pb-24">
-    <div class="max-w-4xl mx-auto px-4">
-      <!-- Benefit Cards -->
-      <BenefitCards 
-        title="Why Learners Choose iTalki"
-        benefits={benefits}
-      />
+ <!-- Main Content -->
+ <article class="pb-24">
+ <div class="max-w-4xl mx-auto px-4">
+ <!-- Benefit Cards -->
+ <BenefitCards 
+ title="Why Learners Choose iTalki"
+ benefits={benefits}
+ />
 
-      <!-- Ad -->
-      <div class="mb-8">
-        <ContextualCTA text="Want to test 1 on 1 lessons before paying anything? See Guru gives you 3 free trial lessons, no card required." />
+ <!-- Ad -->
+ <div class="mb-8">
+ <ContextualCTA text="Want to test 1 on 1 lessons before paying anything? See Guru gives you 3 free trial lessons, no card required." />
 
-    <AdUnit slot="in-article" format="horizontal" />
-      </div>
+ <AdUnit slot="in-article" format="horizontal" />
+ </div>
 
-      <!-- Pros & Cons -->
-      <section class="mb-8 grid md:grid-cols-2 gap-6">
-        <div class="bg-emerald-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4 text-emerald-300">Pros</h2>
-          <ul class="space-y-3">
-            {review.pros.map(pro => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-emerald-500 font-bold">✓</span>
-                <span>{pro}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-red-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4 text-amber-300">Cons</h2>
-          <ul class="space-y-3">
-            {review.cons.map(con => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-red-500 font-bold">−</span>
-                <span>{con}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+ <!-- Pros & Cons -->
+ <section class="mb-8 grid md:grid-cols-2 gap-6">
+ <div class="bg-emerald-900/30 rounded-xl p-6">
+ <h2 class="text-lg font-semibold text-white mb-4 text-emerald-300">Pros</h2>
+ <ul class="space-y-3">
+ {review.pros.map(pro => (
+ <li class="flex items-start gap-3 text-neutral-300">
+ <span class="text-emerald-500 font-bold"></span>
+ <span>{pro}</span>
+ </li>
+ ))}
+ </ul>
+ </div>
+ <div class="bg-red-900/30 rounded-xl p-6">
+ <h2 class="text-lg font-semibold text-white mb-4 text-amber-300">Cons</h2>
+ <ul class="space-y-3">
+ {review.cons.map(con => (
+ <li class="flex items-start gap-3 text-neutral-300">
+ <span class="text-red-500 font-bold">−</span>
+ <span>{con}</span>
+ </li>
+ ))}
+ </ul>
+ </div>
+ </section>
 
-      <!-- Comparison Table with Winner Highlighting -->
-      <ComparisonHighlight 
-        title="iTalki vs Preply: Quick Comparison"
-        platformA={{ name: "iTalki", slug: "italki", link: "/go/italki" }}
-        platformB={{ name: "Preply", slug: "preply", link: "/go/preply" }}
-        winner="a"
-        rows={comparisonRows}
-      />
+ <!-- Comparison Table with Winner Highlighting -->
+ <ComparisonHighlight 
+ title="iTalki vs Preply: Quick Comparison"
+ platformA={{ name: "iTalki", slug: "italki", link: "/go/italki" }}
+ platformB={{ name: "Preply", slug: "preply", link: "/go/preply" }}
+ winner="a"
+ rows={comparisonRows}
+ />
 
-      <p class="text-neutral-300 mt-4 text-sm">Want more free study resources? Check out our <a href="/resources/best-youtube-channels-learn-english/" class="text-blue-400 hover:underline">best YouTube channels for English learners</a>.</p>
+ <p class="text-neutral-300 mt-4 text-sm">Want more free study resources? Check out our <a href="/resources/best-youtube-channels-learn-english/" class="text-blue-400 hover:underline">best YouTube channels for English learners</a>.</p>
 
-      <!-- Ad -->
-      <div class="mb-8">
-        <AdUnit slot="in-article" format="fluid" />
-      </div>
+ <!-- Ad -->
+ <div class="mb-8">
+ <AdUnit slot="in-article" format="fluid" />
+ </div>
 
-      <!-- Verdict -->
-      <section class="bg-neutral-800 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-white mb-3">Our Verdict</h2>
-        <p class="text-neutral-300">
-          With a 9.2/10 rating and over 12,000 verified reviews, iTalki stands out as the most flexible and affordable option for personalized English tutoring. Whether you're preparing for an exam, improving business communication, or building everyday conversation skills. iTalki's massive tutor pool ensures you'll find the perfect match.
-        </p>
-        <p class="mt-3 text-gray-300 font-medium">
-          Most tutors offer discounted trial lessons, so you can test the platform before committing to a paid lesson.
-        </p>
-      </section>
+ <!-- Verdict -->
+ <section class="bg-neutral-800 rounded-xl p-6 mb-8">
+ <h2 class="text-xl font-bold text-white mb-3">Our Verdict</h2>
+ <p class="text-neutral-300">With a 9.2/10 rating and over 12,000 verified reviews, iTalki stands out as the most flexible and affordable option for personalized English tutoring. Whether you're preparing for an exam, improving business communication, or building everyday conversation skills. iTalki's massive tutor pool ensures you'll find the perfect match.
+ </p>
+ <p class="mt-3 text-gray-300 font-medium">Most tutors offer discounted trial lessons, so you can test the platform before committing to a paid lesson.
+ </p>
+ </section>
 
-      <!-- Final CTA -->
-      <section class="bg-emerald-700 rounded-xl p-8 text-center">
-        <h3 class="text-2xl font-bold text-white mb-2">Ready to try iTalki?</h3>
-        <p class="text-emerald-100 mb-6">Join millions of learners improving their English.</p>
-        <a href={review.ctaLink} class="inline-block px-8 py-4 bg-slate-900/60 text-emerald-600 font-bold rounded-lg hover:bg-neutral-800 transition-colors">
-          {review.ctaSecondary}
-        </a>
-      </section>
+ <!-- Final CTA -->
+ <section class="bg-emerald-700 rounded-xl p-8 text-center">
+ <h3 class="text-2xl font-bold text-white mb-2">Ready to try iTalki?</h3>
+ <p class="text-emerald-100 mb-6">Join millions of learners improving their English.</p>
+ <a href={review.ctaLink} class="inline-block px-8 py-4 bg-slate-900/60 text-emerald-600 font-bold rounded-lg hover:bg-neutral-800 transition-colors">
+ {review.ctaSecondary}
+ </a>
+ </section>
 
-      <!-- Final Disclosure -->
-      <p class="text-sm text-slate-400 text-center mt-6">
-        <strong>Editorial Note:</strong> Our reviews are based on research and user feedback, not compensation. 
-        We may earn affiliate commissions from purchases made through links on this page.
-        <a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Learn more</a>
-      </p>
-    </div>
-  
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
-        <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
-        <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
-        <li><a href="/reviews/lingoda/" class="text-emerald-400 hover:text-emerald-300"><strong>Lingoda</strong> <span class="text-slate-400 font-normal">Class-based marathon programs with certificates</span></a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> to see how many hours your target really takes.
-      </p>
-    </aside>
+ <!-- Final Disclosure -->
+ <p class="text-sm text-slate-400 text-center mt-6">
+ <strong>Editorial Note:</strong>Our reviews are based on research and user feedback, not compensation. 
+ We may earn affiliate commissions from purchases made through links on this page.
+ <a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Learn more</a>
+ </p>
+ </div>
+ 
+ <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
+ <ul class="space-y-2 text-base">
+ <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
+ <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
+ <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
+ <li><a href="/reviews/lingoda/" class="text-emerald-400 hover:text-emerald-300"><strong>Lingoda</strong> <span class="text-slate-400 font-normal">Class-based marathon programs with certificates</span></a></li>
+ </ul>
+ <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a>to see how many hours your target really takes.
+ </p>
+ </aside>
 
 
-    <!-- See Guru sponsor callout -->
-    <aside class="my-10 mx-auto max-w-3xl px-4">
-      <div class="bg-gradient-to-br from-emerald-900/50 to-teal-900/40 border-2 border-emerald-600/60 rounded-2xl p-6">
-        <h3 class="text-xl font-bold text-white mb-2">Want to test 1 on 1 lessons before paying anything?</h3>
-        <p class="text-slate-200 mb-4">
-          <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a> is the only platform we know of that gives you three full free lessons with certified, diploma holding teachers. No card on file, no subscription. After three sessions you actually know whether 1 on 1 tutoring fits your week. Lessons from $5 if you keep going.
-        </p>
-        <a href="/go/see-guru/" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">
-          Claim 3 free See Guru lessons
-        </a>
-      </div>
-    </aside>
+ <!-- See Guru sponsor callout -->
+ <aside class="my-10 mx-auto max-w-3xl px-4">
+ <div class="bg-gradient-to-br from-emerald-900/50 to-teal-900/40 border-2 border-emerald-600/60 rounded-2xl p-6">
+ <h3 class="text-xl font-bold text-white mb-2">Want to test 1 on 1 lessons before paying anything?</h3>
+ <p class="text-slate-200 mb-4">
+ <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a>is the only platform we know of that gives you three full free lessons with certified, diploma holding teachers. No card on file, no subscription. After three sessions you actually know whether 1 on 1 tutoring fits your week. Lessons from $5 if you keep going.
+ </p>
+ <a href="/go/see-guru/" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">Claim 3 free See Guru lessons
+ </a>
+ </div>
+ </aside>
 
-  </article>
+ </article>
 
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText={review.ctaPrimary}
-    ctaLink={review.ctaLink}
-    platform="italki"
-  />
+ <!-- Sticky CTA for Mobile -->
+ <StickyCTA 
+ ctaText={review.ctaPrimary}
+ ctaLink={review.ctaLink}
+ platform="italki"
+ />
 
-  <!-- Desktop Sidebar Ad -->
-  <div class="hidden lg:block lg:float-right lg:ml-8 lg:mb-4">
-    <div class="sticky top-24 w-72 bg-neutral-800/80 backdrop-blur rounded-xl p-4 border border-neutral-700">
-      <span class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Advertisement</span>
-      <ins class="adsbygoogle"
-           style="display:block; width:300px; height:250px;"
-           data-ad-client="ca-pub-7792548915836467"
-           data-ad-slot="REVIEW-SIDEBAR"
-           data-ad-format="auto">
-      </ins>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7792548915836467" crossorigin="anonymous"></script>
-    </div>
-  </div>
+ <!-- Desktop Sidebar Ad -->
+ <div class="hidden lg:block lg:float-right lg:ml-8 lg:mb-4">
+ <div class="sticky top-24 w-72 bg-neutral-800/80 backdrop-blur rounded-xl p-4 border border-neutral-700">
+ <span class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Advertisement</span>
+ <ins class="adsbygoogle"
+ style="display:block; width:300px; height:250px;"
+ data-ad-client="ca-pub-7792548915836467"
+ data-ad-slot="REVIEW-SIDEBAR"
+ data-ad-format="auto">
+ </ins>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7792548915836467" crossorigin="anonymous"></script>
+ </div>
+ </div>
 
-  <Footer />
+ <Footer />
 
 </Base>

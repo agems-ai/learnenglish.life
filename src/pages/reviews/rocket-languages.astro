@@ -6,287 +6,285 @@ import AdUnit from '../../components/AdUnit.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 
 const review = {
-  title: "Rocket Languages Review",
-  rating: 7.8,
-  reviewCount: 4200,
-  price: "From $9.95/month",
-  description: "Rocket Languages is a self-paced audio course platform with native speaker recordings and voice recording for pronunciation practice. Good for learners who want structured lessons on their own schedule.",
-  publishedTime: "2026-02-01",
-  affiliateLink: "https://www.rocketlanguages.com/?utm_source=learnenglishlife&utm_campaign=affiliate",
-  pros: [
-    "High-quality audio lessons recorded by native speakers",
-    "Interactive voice recording for pronunciation feedback",
-    "Offline access for learning on the go",
-    "Structured curriculum with clear progression",
-    "Certification pathways available"
-  ],
-  cons: [
-    "No live speaking practice with real tutors",
-    "Self-paced only, no accountability or human interaction",
-    "Learning style may not suit all learners",
-    "Subscription required for full access",
-    "Less engaging than gamified apps"
-  ]
+ title: "Rocket Languages Review",
+ rating: 7.8,
+ reviewCount: 4200,
+ price: "From $9.95/month",
+ description: "Rocket Languages is a self-paced audio course platform with native speaker recordings and voice recording for pronunciation practice. Good for learners who want structured lessons on their own schedule.",
+ publishedTime: "2026-02-01",
+ affiliateLink: "https://www.rocketlanguages.com/?utm_source=learnenglishlife&utm_campaign=affiliate",
+ pros: [
+ "High-quality audio lessons recorded by native speakers",
+ "Interactive voice recording for pronunciation feedback",
+ "Offline access for learning on the go",
+ "Structured curriculum with clear progression",
+ "Certification pathways available"
+ ],
+ cons: [
+ "No live speaking practice with real tutors",
+ "Self-paced only, no accountability or human interaction",
+ "Learning style may not suit all learners",
+ "Subscription required for full access",
+ "Less engaging than gamified apps"
+ ]
 };
 
 const fullStars = Math.floor(review.rating / 2); // Convert 10-point to 5-star
 
 // Review Schema
 const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": { "@type": "SoftwareApplication", "name": "Rocket Languages", "applicationCategory": "EducationApplication" },
-  "reviewRating": { "@type": "Rating", "ratingValue": "7.8", "bestRating": "10", "worstRating": "1" },
-  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
-  "datePublished": review.publishedTime
+ "@context": "https://schema.org",
+ "@type": "Review",
+ "itemReviewed": { "@type": "SoftwareApplication", "name": "Rocket Languages", "applicationCategory": "EducationApplication" },
+ "reviewRating": { "@type": "Rating", "ratingValue": "7.8", "bestRating": "10", "worstRating": "1" },
+ "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+ "datePublished": review.publishedTime
 };
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "Rocket Languages" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
+ { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
+ { "@type": "ListItem", "position": 3, "name": "Rocket Languages" }
+ ]
 };
 ---
 
 <Base 
-  title="Rocket Languages Review 2026: Honest Verdict on Features & Pricing" 
-  description={review.description} 
-  type="article" 
-  publishedTime={review.publishedTime}
+ title="Rocket Languages Review 2026: Honest Verdict on Features & Pricing" 
+ description={review.description} 
+ type="article" 
+ publishedTime={review.publishedTime}
 >
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
+ <span slot="structured-data">
+ <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+ <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
+ </span>
 
-  <Header />
-  
-  <nav class="bg-neutral-800 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-neutral-300">
-        <li><a href="/" class="hover:text-cyan-600">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-cyan-600">Reviews</a></li>
-        <li>/</li>
-        <li class="text-gray-100">Rocket Languages</li>
-      </ol>
-    </div>
-  </nav>
+ <Header />
+ 
+ <nav class="bg-neutral-800 py-3">
+ <div class="max-w-4xl mx-auto px-4 text-sm">
+ <ol class="flex items-center gap-2 text-neutral-300">
+ <li><a href="/" class="hover:text-cyan-600">Home</a></li>
+ <li>/</li>
+ <li><a href="/reviews/" class="hover:text-cyan-600">Reviews</a></li>
+ <li>/</li>
+ <li class="text-gray-100">Rocket Languages</li>
+ </ol>
+ </div>
+ </nav>
 
-  <div class="bg-blue-600 py-8">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Rocket Languages Review</h1>
-          <div class="flex items-center gap-2">
-            <div class="flex">
-              {Array.from({length: 5}).map((_, i) => (
-                <svg class={`w-6 h-6 ${i < fullStars ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span class="text-xl text-white font-semibold">{review.rating}/10</span>
-          </div>
-          <p class="text-blue-100 mt-2">Based on {review.reviewCount.toLocaleString()} reviews</p>
-        </div>
-        <div class="text-center md:text-right">
-          <p class="text-sm text-blue-200">Starting from</p>
-          <p class="text-3xl font-bold text-white">{review.price}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="bg-blue-600 py-8">
+ <div class="max-w-4xl mx-auto px-4">
+ <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+ <div>
+ <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Rocket Languages Review</h1>
+ <div class="flex items-center gap-2">
+ <div class="flex">
+ {Array.from({length: 5}).map((_, i) => (
+ <svg class={`w-6 h-6 ${i < fullStars ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+ <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+ </svg>
+ ))}
+ </div>
+ <span class="text-xl text-white font-semibold">{review.rating}/10</span>
+ </div>
+ <p class="text-blue-100 mt-2">Based on {review.reviewCount.toLocaleString()} reviews</p>
+ </div>
+ <div class="text-center md:text-right">
+ <p class="text-sm text-blue-200">Starting from</p>
+ <p class="text-3xl font-bold text-white">{review.price}</p>
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you.
-    </div>
-  </div>
+ <div class="bg-amber-900/30 border-b border-amber-700 py-3">
+ <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
+ <strong>Affiliate Disclosure:</strong>We may earn a commission when you sign up through our links, at no extra cost to you.
+ </div>
+ </div>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <!-- Quick Summary -->
-    <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">What Is Rocket Languages?</h2>
-      <p class="text-neutral-300 leading-relaxed mb-4">Rocket Languages is a self-paced online language learning platform founded in New Zealand. Unlike tutoring platforms like iTalki, Rocket Languages does not connect you with real teachers. Instead, it provides structured audio courses recorded by native speakers, interactive voice recording exercises, and formal lesson progressions that you work through independently.</p>
-      <p class="text-neutral-300 leading-relaxed">The platform covers English as well as Spanish, French, Japanese, Mandarin, and other languages. English courses are organized into levels from beginner to advanced, with lessons covering vocabulary, listening comprehension, pronunciation, grammar, and cultural notes.</p>
-    </section>
+ <main class="max-w-4xl mx-auto px-4 py-8">
+ <!-- Quick Summary -->
+ <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">What Is Rocket Languages?</h2>
+ <p class="text-neutral-300 leading-relaxed mb-4">Rocket Languages is a self-paced online language learning platform founded in New Zealand. Unlike tutoring platforms like iTalki, Rocket Languages does not connect you with real teachers. Instead, it provides structured audio courses recorded by native speakers, interactive voice recording exercises, and formal lesson progressions that you work through independently.</p>
+ <p class="text-neutral-300 leading-relaxed">The platform covers English as well as Spanish, French, Japanese, Mandarin, and other languages. English courses are organized into levels from beginner to advanced, with lessons covering vocabulary, listening comprehension, pronunciation, grammar, and cultural notes.</p>
+ </section>
 
-    <!-- Rating Cards -->
-    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-      <div class="bg-slate-800/60 rounded-xl p-4 text-center">
-        <p class="text-sm text-neutral-400 mb-1">Overall</p>
-        <p class="text-3xl font-black text-white">{review.rating}/10</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-xl p-4 text-center">
-        <p class="text-sm text-neutral-400 mb-1">Price</p>
-        <p class="text-lg font-bold text-white">From $9.95/mo</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-xl p-4 text-center">
-        <p class="text-sm text-neutral-400 mb-1">Tutors</p>
-        <p class="text-lg font-bold text-white">None</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-xl p-4 text-center">
-        <p class="text-sm text-neutral-400 mb-1">Speaking Practice</p>
-        <p class="text-lg font-bold text-white">AI Only</p>
-      </div>
-    </section>
+ <!-- Rating Cards -->
+ <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+ <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+ <p class="text-sm text-neutral-400 mb-1">Overall</p>
+ <p class="text-3xl font-black text-white">{review.rating}/10</p>
+ </div>
+ <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+ <p class="text-sm text-neutral-400 mb-1">Price</p>
+ <p class="text-lg font-bold text-white">From $9.95/mo</p>
+ </div>
+ <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+ <p class="text-sm text-neutral-400 mb-1">Tutors</p>
+ <p class="text-lg font-bold text-white">None</p>
+ </div>
+ <div class="bg-slate-800/60 rounded-xl p-4 text-center">
+ <p class="text-sm text-neutral-400 mb-1">Speaking Practice</p>
+ <p class="text-lg font-bold text-white">AI Only</p>
+ </div>
+ </section>
 
-    <!-- Pros and Cons -->
-    <section class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="bg-emerald-900/30 border border-emerald-800 rounded-xl p-6">
-        <h3 class="text-lg font-bold text-emerald-400 mb-4">Pros</h3>
-        <ul class="space-y-2">
-          {review.pros.map(pro => (
-            <li class="flex items-start text-neutral-300">
-              <span class="text-emerald-400 mr-2">✓</span>
-              {pro}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="bg-red-900/30 border border-red-800 rounded-xl p-6">
-        <h3 class="text-lg font-bold text-red-400 mb-4">Cons</h3>
-        <ul class="space-y-2">
-          {review.cons.map(con => (
-            <li class="flex items-start text-neutral-300">
-              <span class="text-red-400 mr-2">✗</span>
-              {con}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+ <!-- Pros and Cons -->
+ <section class="grid md:grid-cols-2 gap-6 mb-8">
+ <div class="bg-emerald-900/30 border border-emerald-800 rounded-xl p-6">
+ <h3 class="text-lg font-bold text-emerald-400 mb-4">Pros</h3>
+ <ul class="space-y-2">
+ {review.pros.map(pro => (
+ <li class="flex items-start text-neutral-300">
+ <span class="text-emerald-400 mr-2"></span>
+ {pro}
+ </li>
+ ))}
+ </ul>
+ </div>
+ <div class="bg-red-900/30 border border-red-800 rounded-xl p-6">
+ <h3 class="text-lg font-bold text-red-400 mb-4">Cons</h3>
+ <ul class="space-y-2">
+ {review.cons.map(con => (
+ <li class="flex items-start text-neutral-300">
+ <span class="text-red-400 mr-2"></span>
+ {con}
+ </li>
+ ))}
+ </ul>
+ </div>
+ </section>
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="review-1" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="review-1" />
+ </div>
 
-    <!-- Key Features -->
-    <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400 mb-2">Audio Lessons</h3>
-          <p class="text-neutral-300 leading-relaxed">Every lesson includes audio recorded by native English speakers. These audio lessons walk you through vocabulary, phrases, dialogue, and cultural context. The quality of the recordings is genuinely high, the narrators are clear, engaging, and speak at a pace that's easy to follow.</p>
-        </div>
+ <!-- Key Features -->
+ <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
+ 
+ <div class="space-y-6">
+ <div>
+ <h3 class="text-lg font-semibold text-blue-400 mb-2">Audio Lessons</h3>
+ <p class="text-neutral-300 leading-relaxed">Every lesson includes audio recorded by native English speakers. These audio lessons walk you through vocabulary, phrases, dialogue, and cultural context. The quality of the recordings is genuinely high, the narrators are clear, engaging, and speak at a pace that's easy to follow.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400 mb-2">Voice Recording & Pronunciation Practice</h3>
-          <p class="text-neutral-300 leading-relaxed">After each audio lesson, you can record yourself speaking the same phrases and compare your pronunciation to the native audio. This is one of Rocket Languages' standout features. It gives you immediate feedback on how close your accent is to the target, which is genuinely useful for accent improvement.</p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-blue-400 mb-2">Voice Recording & Pronunciation Practice</h3>
+ <p class="text-neutral-300 leading-relaxed">After each audio lesson, you can record yourself speaking the same phrases and compare your pronunciation to the native audio. This is one of Rocket Languages' standout features. It gives you immediate feedback on how close your accent is to the target, which is genuinely useful for accent improvement.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400 mb-2">Structured Curriculum</h3>
-          <p class="text-neutral-300 leading-relaxed">Courses are organized into clear levels and modules. Each module covers a specific topic, travel, dining, business, etc., with lessons that build progressively. You always know where you are and what comes next, which makes it easy to track your progress and stay motivated.</p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-blue-400 mb-2">Structured Curriculum</h3>
+ <p class="text-neutral-300 leading-relaxed">Courses are organized into clear levels and modules. Each module covers a specific topic, travel, dining, business, etc., with lessons that build progressively. You always know where you are and what comes next, which makes it easy to track your progress and stay motivated.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400 mb-2">Grammar & Cultural Notes</h3>
-          <p class="text-neutral-300 leading-relaxed">Beyond vocabulary and pronunciation, lessons include grammar explanations and cultural notes that explain why certain phrases are used in certain situations. These extras add real depth to the learning experience and help you understand not just what to say, but when and why to say it.</p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-blue-400 mb-2">Grammar & Cultural Notes</h3>
+ <p class="text-neutral-300 leading-relaxed">Beyond vocabulary and pronunciation, lessons include grammar explanations and cultural notes that explain why certain phrases are used in certain situations. These extras add real depth to the learning experience and help you understand not just what to say, but when and why to say it.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-blue-400 mb-2">Offline Mode</h3>
-          <p class="text-neutral-300 leading-relaxed">Rocket Languages offers an offline mode through its mobile app, so you can download lessons and audio files for learning without internet access. This is particularly useful for commuters or learners in areas with unreliable internet.</p>
-        </div>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-lg font-semibold text-blue-400 mb-2">Offline Mode</h3>
+ <p class="text-neutral-300 leading-relaxed">Rocket Languages offers an offline mode through its mobile app, so you can download lessons and audio files for learning without internet access. This is particularly useful for commuters or learners in areas with unreliable internet.</p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="review-2" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="review-2" />
+ </div>
 
-    <!-- Pricing -->
-    <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Pricing</h2>
-      <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages uses a subscription model with lifetime access options:</p>
-      <ul class="space-y-2 text-neutral-300 mb-4">
-        <li><strong class="text-white">Monthly:</strong> From $9.95/month</li>
-        <li><strong class="text-white">6-Month:</strong> From $6.95/month (billed as a lump sum)</li>
-        <li><strong class="text-white">Lifetime:</strong> From $149.95 (one-time payment, all languages)</li>
-      </ul>
-      <p class="text-neutral-300 leading-relaxed">The lifetime access option is good value if you plan to use the platform for more than 15 months. A free trial is available so you can test the platform before committing.</p>
-    </section>
+ <!-- Pricing -->
+ <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Pricing</h2>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages uses a subscription model with lifetime access options:</p>
+ <ul class="space-y-2 text-neutral-300 mb-4">
+ <li><strong class="text-white">Monthly:</strong>From $9.95/month</li>
+ <li><strong class="text-white">6-Month:</strong>From $6.95/month (billed as a lump sum)</li>
+ <li><strong class="text-white">Lifetime:</strong>From $149.95 (one-time payment, all languages)</li>
+ </ul>
+ <p class="text-neutral-300 leading-relaxed">The lifetime access option is good value if you plan to use the platform for more than 15 months. A free trial is available so you can test the platform before committing.</p>
+ </section>
 
-    <!-- Comparison -->
-    <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">How Does It Compare?</h2>
-      <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages is a self-paced platform with no live tutors. If you want actual conversation practice with a real person, <a href="/reviews/italki/" class="text-emerald-400 hover:underline">iTalki</a> is the better choice, it connects you with real tutors for live video lessons from $5 per session. Many learners use both: Rocket Languages for building vocabulary and listening comprehension, then iTalki for speaking practice.</p>
-      <p class="text-neutral-300 leading-relaxed">Compared to gamified apps like <a href="/reviews/duolingo/" class="text-emerald-400 hover:underline">Duolingo</a> or <a href="/reviews/babbel/" class="text-emerald-400 hover:underline">Babbel</a>, Rocket Languages offers deeper audio lessons and more formal course structure. The trade-off is that Rocket Languages is less gamified and requires more self-discipline.</p>
-    </section>
+ <!-- Comparison -->
+ <section class="bg-slate-900/60 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">How Does It Compare?</h2>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages is a self-paced platform with no live tutors. If you want actual conversation practice with a real person, <a href="/reviews/italki/" class="text-emerald-400 hover:underline">iTalki</a>is the better choice, it connects you with real tutors for live video lessons from $5 per session. Many learners use both: Rocket Languages for building vocabulary and listening comprehension, then iTalki for speaking practice.</p>
+ <p class="text-neutral-300 leading-relaxed">Compared to gamified apps like <a href="/reviews/duolingo/" class="text-emerald-400 hover:underline">Duolingo</a>or <a href="/reviews/babbel/" class="text-emerald-400 hover:underline">Babbel</a>, Rocket Languages offers deeper audio lessons and more formal course structure. The trade-off is that Rocket Languages is less gamified and requires more self-discipline.</p>
+ </section>
 
-    <!-- Verdict -->
-    <section class="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
-      <p class="text-neutral-300 mb-4 leading-relaxed"><strong class="text-white">Rocket Languages is a solid choice for self-motivated learners</strong> who want high-quality audio lessons and a structured path through English. The native speaker recordings are genuinely excellent, and the voice recording feature provides useful pronunciation feedback.</p>
-      <p class="text-neutral-300 mb-4 leading-relaxed">The main limitation is the absence of live conversation practice. Rocket Languages prepares you to speak in the sense that it builds your vocabulary, listening comprehension, and pronunciation. But practicing those skills with an AI recording is fundamentally different from holding a real conversation.</p>
-      <p class="text-neutral-300 leading-relaxed">If you want to actually hold conversations in English, for travel, work, or social situations, you will eventually need to practice with real people. Rocket Languages is best used as a complement to live tutoring, or as a foundation-building tool before moving to conversation-focused platforms.</p>
-    </section>
+ <!-- Verdict -->
+ <section class="bg-gradient-to-r from-blue-900/40 to-indigo-900/40 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
+ <p class="text-neutral-300 mb-4 leading-relaxed"><strong class="text-white">Rocket Languages is a solid choice for self-motivated learners</strong>who want high-quality audio lessons and a structured path through English. The native speaker recordings are genuinely excellent, and the voice recording feature provides useful pronunciation feedback.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">The main limitation is the absence of live conversation practice. Rocket Languages prepares you to speak in the sense that it builds your vocabulary, listening comprehension, and pronunciation. But practicing those skills with an AI recording is fundamentally different from holding a real conversation.</p>
+ <p class="text-neutral-300 leading-relaxed">If you want to actually hold conversations in English, for travel, work, or social situations, you will eventually need to practice with real people. Rocket Languages is best used as a complement to live tutoring, or as a foundation-building tool before moving to conversation-focused platforms.</p>
+ </section>
 
-    <!-- CTA -->
-    <div class="bg-blue-900/40 border-2 border-blue-600 rounded-2xl p-6 mb-8">
-      <div class="flex items-start gap-4">
-        <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-          <span class="text-white text-xl font-bold">RL</span>
-        </div>
-        <div class="flex-1">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-blue-400 font-bold text-lg">Rocket Languages</span>
-            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">7.8/10</span>
-          </div>
-          <p class="text-neutral-300 text-sm mb-3">Self-paced audio lessons from $9.95/month. Offline access, native speaker recordings, pronunciation practice.</p>
-          <a href={review.affiliateLink} target="_blank" rel="noopener sponsored" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">
-            Try Rocket Languages →
-          </a>
-          <p class="text-neutral-500 text-xs mt-2">We earn a commission from qualifying purchases.</p>
-        </div>
-      </div>
-    </div>
+ <!-- CTA -->
+ <div class="bg-blue-900/40 border-2 border-blue-600 rounded-2xl p-6 mb-8">
+ <div class="flex items-start gap-4">
+ <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+ <span class="text-white text-xl font-bold">RL</span>
+ </div>
+ <div class="flex-1">
+ <div class="flex items-center gap-2 mb-1">
+ <span class="text-blue-400 font-bold text-lg">Rocket Languages</span>
+ <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">7.8/10</span>
+ </div>
+ <p class="text-neutral-300 text-sm mb-3">Self-paced audio lessons from $9.95/month. Offline access, native speaker recordings, pronunciation practice.</p>
+ <a href={review.affiliateLink} target="_blank" rel="noopener sponsored" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">Try Rocket Languages →
+ </a>
+ <p class="text-neutral-500 text-xs mt-2">We earn a commission from qualifying purchases.</p>
+ </div>
+ </div>
+ </div>
 
-    <!-- Related Comparisons -->
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Related Comparisons</h2>
-      <div class="grid gap-4">
-        <a href="/compare/italki-vs-rocket-languages/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">iTalki vs Rocket Languages</p>
-          <p class="text-sm text-neutral-400">Live tutoring vs self-paced audio courses, which is right for you?</p>
-        </a>
-        <a href="/compare/italki-vs-rosetta-stone/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">iTalki vs Rosetta Stone</p>
-          <p class="text-sm text-neutral-400">Compare iTalki with another popular self-paced platform</p>
-        </a>
-      </div>
-    </section>
+ <!-- Related Comparisons -->
+ <section class="mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">Related Comparisons</h2>
+ <div class="grid gap-4">
+ <a href="/compare/italki-vs-rocket-languages/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">iTalki vs Rocket Languages</p>
+ <p class="text-sm text-neutral-400">Live tutoring vs self-paced audio courses, which is right for you?</p>
+ </a>
+ <a href="/compare/italki-vs-rosetta-stone/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">iTalki vs Rosetta Stone</p>
+ <p class="text-sm text-neutral-400">Compare iTalki with another popular self-paced platform</p>
+ </a>
+ </div>
+ </section>
 
-    <!-- Affiliate Disclosure -->
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
-      <p>Last updated {review.publishedTime}. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
-    </div>
-  </main>
+ <!-- Affiliate Disclosure -->
+ <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
+ <p>Last updated {review.publishedTime}. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
+ </div>
+ </main>
 
-  
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
-        <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
-        <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
-        <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> to see how many hours your target really takes.
-      </p>
-    </aside>
+ 
+ <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
+ <ul class="space-y-2 text-base">
+ <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
+ <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
+ <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
+ <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
+ </ul>
+ <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a>to see how many hours your target really takes.
+ </p>
+ </aside>
 
-  <Footer />
+ <Footer />
 </Base>

@@ -11,401 +11,399 @@ import PlatformRatings from '../../components/PlatformRatings.astro';
 import { platformRatings } from '../../data/platform-ratings';
 
 const italki = {
-  name: "iTalki",
-  rating: 9.2,
-  price: "$5 per lesson",
-  link: "/go/italki",
-  bestFor: "Live speaking practice with real tutors",
-  pros: [
-    "Real human tutors for live, adaptive conversation practice",
-    "Instant, contextual feedback from native and professional speakers",
-    "Choose tutors who match your exact goals, level, and schedule",
-    "One-on-one focus means every minute is personalised to you",
-    "Pay per lesson with no monthly commitment required"
-  ],
-  cons: [
-    "Quality varies between tutors, so vetting takes some effort",
-    "No built-in structured curriculum unless you request one",
-    "Speaking practice limited to booked sessions",
-    "Costs add up if you take lessons several times per week"
-  ]
+ name: "iTalki",
+ rating: 9.2,
+ price: "$5 per lesson",
+ link: "/go/italki",
+ bestFor: "Live speaking practice with real tutors",
+ pros: [
+ "Real human tutors for live, adaptive conversation practice",
+ "Instant, contextual feedback from native and professional speakers",
+ "Choose tutors who match your exact goals, level, and schedule",
+ "One-on-one focus means every minute is personalised to you",
+ "Pay per lesson with no monthly commitment required"
+ ],
+ cons: [
+ "Quality varies between tutors, so vetting takes some effort",
+ "No built-in structured curriculum unless you request one",
+ "Speaking practice limited to booked sessions",
+ "Costs add up if you take lessons several times per week"
+ ]
 };
 
 const duolingo = {
-  name: "Duolingo",
-  rating: 4.5,
-  price: "Free / $12.99 per month",
-  link: "/go/duolingo",
-  bestFor: "Fun, gamified daily practice on a budget",
-  pros: [
-    "Completely free to use with a generous free tier",
-    "Highly engaging gamification keeps you coming back daily",
-    "Short lessons fit easily into any schedule",
-    "Covers vocabulary, grammar, listening, and reading across all levels",
-    "Strong community and streaks motivate consistent practice"
-  ],
-  cons: [
-    "No live speaking practice with real people",
-    "AI pronunciation feedback is basic compared to dedicated tools",
-    "Does not build real conversational confidence on its own",
-    "Premium subscription is required for full features and unlimited hearts"
-  ]
+ name: "Duolingo",
+ rating: 4.5,
+ price: "Free / $12.99 per month",
+ link: "/go/duolingo",
+ bestFor: "Fun, gamified daily practice on a budget",
+ pros: [
+ "Completely free to use with a generous free tier",
+ "Highly engaging gamification keeps you coming back daily",
+ "Short lessons fit easily into any schedule",
+ "Covers vocabulary, grammar, listening, and reading across all levels",
+ "Strong community and streaks motivate consistent practice"
+ ],
+ cons: [
+ "No live speaking practice with real people",
+ "AI pronunciation feedback is basic compared to dedicated tools",
+ "Does not build real conversational confidence on its own",
+ "Premium subscription is required for full features and unlimited hearts"
+ ]
 };
 
 const comparison = [
-  { feature: "Starting Price", winner: null, a: "$5/lesson", b: "Free / $12.99/month" },
-  { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
-  { feature: "AI Pronunciation Feedback", winner: null, a: "No", b: "Yes (basic)" },
-  { feature: "Structured Curriculum", winner: "b", a: "Only if requested", b: "Fully built-in" },
-  { feature: "Spaced Repetition", winner: "b", a: "No", b: "Yes" },
-  { feature: "Free Version", winner: "b", a: "Language exchanges", b: "Generous free tier" },
-  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
-  { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI role-play only" },
-  { feature: "Speaking With Real People", winner: "a", a: "Yes, every lesson", b: "No" }
+ { feature: "Starting Price", winner: null, a: "$5/lesson", b: "Free / $12.99/month" },
+ { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
+ { feature: "AI Pronunciation Feedback", winner: null, a: "No", b: "Yes (basic)" },
+ { feature: "Structured Curriculum", winner: "b", a: "Only if requested", b: "Fully built-in" },
+ { feature: "Spaced Repetition", winner: "b", a: "No", b: "Yes" },
+ { feature: "Free Version", winner: "b", a: "Language exchanges", b: "Generous free tier" },
+ { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+ { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI role-play only" },
+ { feature: "Speaking With Real People", winner: "a", a: "Yes, every lesson", b: "No" }
 ];
 
 const whyCompare = [
-  { icon: "🎯", title: "Match Your Learning Style", description: "Find whether you learn best through fun daily games or live conversations with real tutors" },
-  { icon: "💰", title: "Understand the Real Cost", description: "Compare a free gamified app against a pay-per-lesson tutor marketplace to find what fits your budget" },
-  { icon: "⚡", title: "Get Results Faster", description: "Choose the platform that aligns with whether you need real speaking practice or vocabulary building" }
+ { icon: "", title: "Match Your Learning Style", description: "Find whether you learn best through fun daily games or live conversations with real tutors" },
+ { icon: "", title: "Understand the Real Cost", description: "Compare a free gamified app against a pay-per-lesson tutor marketplace to find what fits your budget" },
+ { icon: "", title: "Get Results Faster", description: "Choose the platform that aligns with whether you need real speaking practice or vocabulary building" }
 ];
 
 const testimonials = [
-  {
-    quote: "Duolingo kept me practising every single day for six months. I learned thousands of words, but when I actually tried to speak, I froze. iTalki fixed that in two lessons.",
-    author: "Takeshi R.",
-    location: "Japan",
-    result: "TOIEC 750"
-  },
-  {
-    quote: "I used Duolingo every morning during my commute and iTalki twice a week for conversation practice. That combination built my vocabulary AND my confidence to speak.",
-    author: "Ana P.",
-    location: "Brazil",
-    result: "IELTS 6.5"
-  },
-  {
-    quote: "As a complete beginner, Duolingo was perfect. The gamification made it fun and I never missed a day. Now I am on iTalki and the real conversations are taking me to the next level.",
-    author: "Kofi A.",
-    location: "Ghana",
-    result: "CEFR B1 progress"
-  }
+ {
+ quote: "Duolingo kept me practising every single day for six months. I learned thousands of words, but when I actually tried to speak, I froze. iTalki fixed that in two lessons.",
+ author: "Takeshi R.",
+ location: "Japan",
+ result: "TOIEC 750"
+ },
+ {
+ quote: "I used Duolingo every morning during my commute and iTalki twice a week for conversation practice. That combination built my vocabulary AND my confidence to speak.",
+ author: "Ana P.",
+ location: "Brazil",
+ result: "IELTS 6.5"
+ },
+ {
+ quote: "As a complete beginner, Duolingo was perfect. The gamification made it fun and I never missed a day. Now I am on iTalki and the real conversations are taking me to the next level.",
+ author: "Kofi A.",
+ location: "Ghana",
+ result: "CEFR B1 progress"
+ }
 ];
 
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Duolingo vs iTalki: Gamified App or Live Tutor Sessions?",
-  "description": "Compare Duolingo and iTalki: the free gamified language app vs live tutor marketplace. Which builds real English conversation skills faster?",
-  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
-  "datePublished": "2026-04-08",
-  "dateModified": "2026-04-08"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Duolingo vs iTalki: Gamified App or Live Tutor Sessions?",
+ "description": "Compare Duolingo and iTalki: the free gamified language app vs live tutor marketplace. Which builds real English conversation skills faster?",
+ "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+ "datePublished": "2026-04-08",
+ "dateModified": "2026-04-08"
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is iTalki better than Duolingo for learning to speak English?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, iTalki is significantly better for developing real speaking ability. It connects you with real human tutors for live video conversations where you get instant feedback on your pronunciation, grammar, and natural word choice. Duolingo has an AI role-play feature, but it cannot answer your questions, adapt to your mistakes in real time, or give you the experience of talking to a real person. If your goal is to speak English confidently, iTalki is the clear winner."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can Duolingo replace iTalki?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Duolingo cannot fully replace iTalki because it does not offer live conversation practice. Duolingo is excellent for building vocabulary and grammar through daily practice, but it does not develop your ability to hold real conversations. Most learners who want to speak fluently eventually need live practice with a human tutor, which is exactly what iTalki provides."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I use both Duolingo and iTalki together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Using both together is one of the most effective learning strategies available. Duolingo builds your vocabulary and grammar foundation through daily, bite-sized lessons. iTalki then lets you put everything you have learned into practice with a real tutor. Many top language learners use this exact combination: Duolingo for daily practice and iTalki for weekly conversation sessions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which is cheaper, Duolingo or iTalki?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Duolingo is free to use with a very generous free tier. The Super subscription costs $12.99 per month for unlimited hearts and full access to all features. iTalki lessons start at $5 with community tutors, paid per lesson. For pure cost efficiency on building vocabulary and grammar, Duolingo wins. For speaking practice value, iTalki pay-per-lesson is excellent because every session is a real conversation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does Duolingo help with English speaking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Duolingo has improved its speaking features and now includes AI-powered role-play conversations. These let you speak to an AI character and get pronunciation feedback. However, this is still simulation rather than real conversation. For developing the ability to speak confidently with real people, nothing beats iTalki where you talk to a human who can respond unpredictably and adapt to your level."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "Is iTalki better than Duolingo for learning to speak English?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Yes, iTalki is significantly better for developing real speaking ability. It connects you with real human tutors for live video conversations where you get instant feedback on your pronunciation, grammar, and natural word choice. Duolingo has an AI role-play feature, but it cannot answer your questions, adapt to your mistakes in real time, or give you the experience of talking to a real person. If your goal is to speak English confidently, iTalki is the clear winner."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Can Duolingo replace iTalki?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Duolingo cannot fully replace iTalki because it does not offer live conversation practice. Duolingo is excellent for building vocabulary and grammar through daily practice, but it does not develop your ability to hold real conversations. Most learners who want to speak fluently eventually need live practice with a human tutor, which is exactly what iTalki provides."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Should I use both Duolingo and iTalki together?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Using both together is one of the most effective learning strategies available. Duolingo builds your vocabulary and grammar foundation through daily, bite-sized lessons. iTalki then lets you put everything you have learned into practice with a real tutor. Many top language learners use this exact combination: Duolingo for daily practice and iTalki for weekly conversation sessions."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Which is cheaper, Duolingo or iTalki?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Duolingo is free to use with a very generous free tier. The Super subscription costs $12.99 per month for unlimited hearts and full access to all features. iTalki lessons start at $5 with community tutors, paid per lesson. For pure cost efficiency on building vocabulary and grammar, Duolingo wins. For speaking practice value, iTalki pay-per-lesson is excellent because every session is a real conversation."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Does Duolingo help with English speaking?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Duolingo has improved its speaking features and now includes AI-powered role-play conversations. These let you speak to an AI character and get pronunciation feedback. However, this is still simulation rather than real conversation. For developing the ability to speak confidently with real people, nothing beats iTalki where you talk to a human who can respond unpredictably and adapt to your level."
+ }
+ }
+ ]
 };
 ---
 
 <Base title="Duolingo vs iTalki: Gamified App or Live Tutor Sessions? (2026)" description="Compare Duolingo and iTalki for English learning. Duolingo offers free gamified daily practice. iTalki provides live tutors for real conversation. Find which suits your goals.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <Header />
+ <Header />
 
-  <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
-    <nav class="text-sm text-slate-400 mb-4">
-      <a href="/" class="hover:text-emerald-400">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
-      <span class="mx-2">/</span>
-      <span class="text-slate-500">Duolingo vs iTalki</span>
-    </nav>
+ <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
+ <nav class="text-sm text-slate-400 mb-4">
+ <a href="/" class="hover:text-emerald-400">Home</a>
+ <span class="mx-2">/</span>
+ <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
+ <span class="mx-2">/</span>
+ <span class="text-slate-500">Duolingo vs iTalki</span>
+ </nav>
 
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
-      <span class="text-emerald-200 text-sm font-medium">Comparison / Updated April 2026</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">Duolingo vs iTalki: Gamified App or Live Tutor Sessions?</h1>
-    <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
-      <p class="text-emerald-100 text-lg">Duolingo turns daily practice into a game. iTalki puts you face to face with real tutors for live conversation. Here is how they actually compare.</p>
-    </div>
+ <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+ <span class="text-emerald-200 text-sm font-medium">Comparison / Updated April 2026</span>
+ <h1 class="text-4xl font-bold mt-2 mb-4">Duolingo vs iTalki: Gamified App or Live Tutor Sessions?</h1>
+ <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
+ <p class="text-emerald-100 text-lg">Duolingo turns daily practice into a game. iTalki puts you face to face with real tutors for live conversation. Here is how they actually compare.</p>
+ </div>
 
-    <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
-      <div class="flex items-center justify-between flex-wrap gap-4">
-        <div>
-          <p class="font-bold text-lg">Our Pick for Speaking</p>
-          <p class="text-3xl font-bold text-green-700">iTalki</p>
-          <p class="text-sm text-slate-400 mt-1">Best for live conversation with real tutors</p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm text-slate-400">Best Free Option</p>
-          <p class="font-semibold text-gray-700">Duolingo</p>
-        </div>
-      </div>
-    </div>
+ <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+ <div class="flex items-center justify-between flex-wrap gap-4">
+ <div>
+ <p class="font-bold text-lg">Our Pick for Speaking</p>
+ <p class="text-3xl font-bold text-green-700">iTalki</p>
+ <p class="text-sm text-slate-400 mt-1">Best for live conversation with real tutors</p>
+ </div>
+ <div class="text-right">
+ <p class="text-sm text-slate-400">Best Free Option</p>
+ <p class="font-semibold text-gray-700">Duolingo</p>
+ </div>
+ </div>
+ </div>
 
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-white">iTalki</h2>
-          <PlatformRatings
-            platform={italki.name}
-            rating={italki.rating}
-            scale={10}
-            variant="inline"
-            color="emerald"
-          />
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={italki.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
-          Try iTalki Free
-        </a>
-      </div>
+ <div class="grid md:grid-cols-2 gap-6 mb-8">
+ <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
+ <div class="flex items-center justify-between mb-4">
+ <h2 class="text-2xl font-bold text-white">iTalki</h2>
+ <PlatformRatings
+ platform={italki.name}
+ rating={italki.rating}
+ scale={10}
+ variant="inline"
+ color="emerald"
+ />
+ </div>
+ <div class="mb-4">
+ <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
+ </div>
+ <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
+ <div class="mb-4">
+ <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+ <ul class="text-sm text-neutral-300 space-y-1">
+ {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2"></span>{pro}</li>)}
+ </ul>
+ </div>
+ <a href={italki.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">Try iTalki Free
+ </a>
+ </div>
 
-      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-green-500 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-white">Duolingo</h2>
-          <PlatformRatings
-            platform={duolingo.name}
-            rating={duolingo.rating}
-            scale={10}
-            variant="inline"
-            color="green"
-          />
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-green-600">{duolingo.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {duolingo.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {duolingo.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={duolingo.link} class="block w-full bg-green-600 text-white text-center py-3 rounded-lg hover:bg-green-700 transition font-bold">
-          Try Duolingo Free
-        </a>
-      </div>
-    </div>
+ <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-green-500 p-6">
+ <div class="flex items-center justify-between mb-4">
+ <h2 class="text-2xl font-bold text-white">Duolingo</h2>
+ <PlatformRatings
+ platform={duolingo.name}
+ rating={duolingo.rating}
+ scale={10}
+ variant="inline"
+ color="green"
+ />
+ </div>
+ <div class="mb-4">
+ <span class="text-3xl font-bold text-green-600">{duolingo.price}</span>
+ </div>
+ <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {duolingo.bestFor}</p>
+ <div class="mb-4">
+ <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+ <ul class="text-sm text-neutral-300 space-y-1">
+ {duolingo.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2"></span>{pro}</li>)}
+ </ul>
+ </div>
+ <a href={duolingo.link} class="block w-full bg-green-600 text-white text-center py-3 rounded-lg hover:bg-green-700 transition font-bold">Try Duolingo Free
+ </a>
+ </div>
+ </div>
 
-    <BenefitCards
-      title="Why Compare These Platforms?"
-      benefits={whyCompare}
-    />
+ <BenefitCards
+ title="Why Compare These Platforms?"
+ benefits={whyCompare}
+ />
 
-    <SocialProof
-      title="What Learners Say"
-      testimonials={testimonials}
-    />
+ <SocialProof
+ title="What Learners Say"
+ testimonials={testimonials}
+ />
 
-    <div class="mb-8">
-      <AdUnit slot="compare-1" />
-    </div>
+ <div class="mb-8">
+ <AdUnit slot="compare-1" />
+ </div>
 
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2>
-      <p class="text-neutral-300 mb-4 leading-relaxed">Duolingo is a language learning app built around daily gamified lessons. Each session takes five to ten minutes and covers vocabulary, grammar, listening, and reading through games, streaks, and rewards. It is free, fun, and highly addictive. Millions of people use it every day to build their vocabulary and keep up consistent practice.</p>
-      <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace where you book live video sessions with real human tutors. You choose your tutor based on their profile, read reviews from other learners, and book lessons around your schedule. Every session is a real conversation with a real person who can answer your questions, correct your mistakes, and push you at exactly the right level.</p>
-      <p class="text-neutral-300 leading-relaxed">The core difference is simulation versus reality. Duolingo is excellent at building vocabulary and keeping you in a daily learning habit. iTalki is the fastest path to real conversational ability because you actually talk to people. Most serious English learners eventually use both: Duolingo for daily practice and iTalki for conversation coaching.</p>
-    </section>
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Duolingo is a language learning app built around daily gamified lessons. Each session takes five to ten minutes and covers vocabulary, grammar, listening, and reading through games, streaks, and rewards. It is free, fun, and highly addictive. Millions of people use it every day to build their vocabulary and keep up consistent practice.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace where you book live video sessions with real human tutors. You choose your tutor based on their profile, read reviews from other learners, and book lessons around your schedule. Every session is a real conversation with a real person who can answer your questions, correct your mistakes, and push you at exactly the right level.</p>
+ <p class="text-neutral-300 leading-relaxed">The core difference is simulation versus reality. Duolingo is excellent at building vocabulary and keeping you in a daily learning habit. iTalki is the fastest path to real conversational ability because you actually talk to people. Most serious English learners eventually use both: Duolingo for daily practice and iTalki for conversation coaching.</p>
+ </section>
 
-    <ComparisonHighlight
-      title="Feature Comparison"
-      platformA={italki}
-      platformB={duolingo}
-      winner="a"
-      rows={comparison}
-    />
+ <ComparisonHighlight
+ title="Feature Comparison"
+ platformA={italki}
+ platformB={duolingo}
+ winner="a"
+ rows={comparison}
+ />
 
-    <div class="mb-8">
-      <AdUnit slot="compare-2" />
-    </div>
+ <div class="mb-8">
+ <AdUnit slot="compare-2" />
+ </div>
 
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3>
-        <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4>
-        <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor, set your goals, and have a genuine conversation. Your tutor hears exactly how you sound, notices patterns in your mistakes, and explains why certain phrases work in one context but not another.</p>
-        <p class="text-neutral-300 leading-relaxed">The key advantage is feedback that only a human can give. Real conversations are unpredictable. You have to think on your feet, ask follow-up questions, and handle topics you did not prepare for. This is exactly what real communication requires, and iTalki is the only platform of the two that builds this ability.</p>
-      </div>
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3>
+ <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor, set your goals, and have a genuine conversation. Your tutor hears exactly how you sound, notices patterns in your mistakes, and explains why certain phrases work in one context but not another.</p>
+ <p class="text-neutral-300 leading-relaxed">The key advantage is feedback that only a human can give. Real conversations are unpredictable. You have to think on your feet, ask follow-up questions, and handle topics you did not prepare for. This is exactly what real communication requires, and iTalki is the only platform of the two that builds this ability.</p>
+ </div>
 
-      <div class="mb-8">
-        <h4 class="text-lg font-semibold text-green-400 mb-2">Duolingo: Gamified Speaking Drills</h4>
-        <p class="text-neutral-300 mb-4 leading-relaxed">Duolingo has expanded its speaking features significantly. The AI role-play feature lets you have spoken conversations with virtual characters in various scenarios. You also get pronunciation scoring through voice recognition, which gives you feedback on individual words and phrases.</p>
-        <p class="text-neutral-300 mb-4 leading-relaxed">However, Duolingo speaking practice is still fundamentally different from real conversation. The AI characters follow scripts. They do not ask you unexpected questions, do not laugh at your jokes, and cannot explain why a phrase sounds unnatural in a business meeting. For building the muscle memory of real speaking, nothing beats talking to a real person.</p>
-        <p class="text-neutral-300 leading-relaxed">Where Duolingo really shines is keeping you consistent. Its streaks, leagues, and daily goals create a habit that most learners cannot maintain with iTalki alone. Many learners use Duolingo to build vocabulary and listening comprehension, then use iTalki for actual speaking practice.</p>
-      </div>
+ <div class="mb-8">
+ <h4 class="text-lg font-semibold text-green-400 mb-2">Duolingo: Gamified Speaking Drills</h4>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Duolingo has expanded its speaking features significantly. The AI role-play feature lets you have spoken conversations with virtual characters in various scenarios. You also get pronunciation scoring through voice recognition, which gives you feedback on individual words and phrases.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">However, Duolingo speaking practice is still fundamentally different from real conversation. The AI characters follow scripts. They do not ask you unexpected questions, do not laugh at your jokes, and cannot explain why a phrase sounds unnatural in a business meeting. For building the muscle memory of real speaking, nothing beats talking to a real person.</p>
+ <p class="text-neutral-300 leading-relaxed">Where Duolingo really shines is keeping you consistent. Its streaks, leagues, and daily goals create a habit that most learners cannot maintain with iTalki alone. Many learners use Duolingo to build vocabulary and listening comprehension, then use iTalki for actual speaking practice.</p>
+ </div>
 
-      <div>
-        <h3 class="text-xl font-bold text-white mb-3">Price and Value</h3>
-        <p class="text-neutral-300 mb-4 leading-relaxed">Duolingo is free to use with a surprisingly generous free tier. You can make significant progress in vocabulary and grammar without spending a cent. The Super subscription at $12.99 per month removes ads and unlocks unlimited hearts and full story content, but it is entirely optional.</p>
-        <p class="text-neutral-300 mb-4 leading-relaxed">iTalki lessons start at $5 per lesson with community tutors. Professional tutors charge more, typically $15 to $50 per session. You pay per lesson rather than monthly, so there is no automatic charge unless you book a session. For learners who want one or two focused conversation sessions per week, iTalki is excellent value. For pure cost efficiency on daily vocabulary building, Duolingo is unmatched.</p>
-        <p class="text-neutral-300 leading-relaxed">The best value strategy is to use both: Duolingo free for daily habit building and vocabulary, then one or two iTalki sessions per week for speaking practice. Together they cost less than many subscription alternatives while delivering better results.</p>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-xl font-bold text-white mb-3">Price and Value</h3>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Duolingo is free to use with a surprisingly generous free tier. You can make significant progress in vocabulary and grammar without spending a cent. The Super subscription at $12.99 per month removes ads and unlocks unlimited hearts and full story content, but it is entirely optional.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">iTalki lessons start at $5 per lesson with community tutors. Professional tutors charge more, typically $15 to $50 per session. You pay per lesson rather than monthly, so there is no automatic charge unless you book a session. For learners who want one or two focused conversation sessions per week, iTalki is excellent value. For pure cost efficiency on daily vocabulary building, Duolingo is unmatched.</p>
+ <p class="text-neutral-300 leading-relaxed">The best value strategy is to use both: Duolingo free for daily habit building and vocabulary, then one or two iTalki sessions per week for speaking practice. Together they cost less than many subscription alternatives while delivering better results.</p>
+ </div>
+ </section>
 
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
 
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Duolingo for learning to speak English?</h3>
-          <p class="text-neutral-300"><strong>Yes, iTalki is significantly better</strong> for developing real speaking ability. It connects you with real human tutors for live video conversations where you get instant feedback on your pronunciation, grammar, and natural word choice. Duolingo has an AI role-play feature, but it cannot answer your questions, adapt to your mistakes in real time, or give you the experience of talking to a real person. If your goal is to speak English confidently, iTalki is the clear winner.</p>
-        </div>
+ <div class="space-y-6">
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Duolingo for learning to speak English?</h3>
+ <p class="text-neutral-300"><strong>Yes, iTalki is significantly better</strong>for developing real speaking ability. It connects you with real human tutors for live video conversations where you get instant feedback on your pronunciation, grammar, and natural word choice. Duolingo has an AI role-play feature, but it cannot answer your questions, adapt to your mistakes in real time, or give you the experience of talking to a real person. If your goal is to speak English confidently, iTalki is the clear winner.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Can Duolingo replace iTalki?</h3>
-          <p class="text-neutral-300">Duolingo cannot fully replace iTalki because it does not offer live conversation practice. Duolingo is excellent for building vocabulary and grammar through daily practice, but it does not develop your ability to hold real conversations. Most learners who want to speak fluently eventually need live practice with a human tutor, which is exactly what iTalki provides.</p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Can Duolingo replace iTalki?</h3>
+ <p class="text-neutral-300">Duolingo cannot fully replace iTalki because it does not offer live conversation practice. Duolingo is excellent for building vocabulary and grammar through daily practice, but it does not develop your ability to hold real conversations. Most learners who want to speak fluently eventually need live practice with a human tutor, which is exactly what iTalki provides.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Should I use both Duolingo and iTalki together?</h3>
-          <p class="text-neutral-300">Using both together is <strong>one of the most effective learning strategies</strong> available. Duolingo builds your vocabulary and grammar foundation through daily, bite-sized lessons. iTalki then lets you put everything you have learned into practice with a real tutor. Many top language learners use this exact combination: Duolingo for daily practice and iTalki for weekly conversation sessions.</p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Should I use both Duolingo and iTalki together?</h3>
+ <p class="text-neutral-300">Using both together is <strong>one of the most effective learning strategies</strong>available. Duolingo builds your vocabulary and grammar foundation through daily, bite-sized lessons. iTalki then lets you put everything you have learned into practice with a real tutor. Many top language learners use this exact combination: Duolingo for daily practice and iTalki for weekly conversation sessions.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, Duolingo or iTalki?</h3>
-          <p class="text-neutral-300">Duolingo is free to use with a very generous free tier. The Super subscription costs <strong>$12.99 per month</strong> for unlimited hearts and full access. iTalki lessons start at <strong>$5</strong> with community tutors, paid per lesson. For pure cost efficiency on building vocabulary and grammar, Duolingo wins. For speaking practice value, iTalki pay-per-lesson is excellent because every session is a real conversation.</p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, Duolingo or iTalki?</h3>
+ <p class="text-neutral-300">Duolingo is free to use with a very generous free tier. The Super subscription costs <strong>$12.99 per month</strong>for unlimited hearts and full access. iTalki lessons start at <strong>$5</strong>with community tutors, paid per lesson. For pure cost efficiency on building vocabulary and grammar, Duolingo wins. For speaking practice value, iTalki pay-per-lesson is excellent because every session is a real conversation.</p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Does Duolingo help with English speaking?</h3>
-          <p class="text-neutral-300">Duolingo has improved its speaking features and now includes AI-powered role-play conversations. These let you speak to an AI character and get pronunciation feedback. However, this is still simulation rather than real conversation. For developing the ability to speak confidently with real people, nothing beats iTalki where you talk to a human who can respond unpredictably and adapt to your level.</p>
-        </div>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Does Duolingo help with English speaking?</h3>
+ <p class="text-neutral-300">Duolingo has improved its speaking features and now includes AI-powered role-play conversations. These let you speak to an AI character and get pronunciation feedback. However, this is still simulation rather than real conversation. For developing the ability to speak confidently with real people, nothing beats iTalki where you talk to a human who can respond unpredictably and adapt to your level.</p>
+ </div>
+ </div>
+ </section>
 
-    <div class="mb-8">
-      <AdUnit slot="compare-3" />
-    </div>
+ <div class="mb-8">
+ <AdUnit slot="compare-3" />
+ </div>
 
-    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2>
-      <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
-          <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>Your main goal is to speak English confidently</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You want instant feedback from a real human</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You are preparing for a test, interview, or travel</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You prefer flexible, conversation-based learning</li>
-          </ul>
-        </div>
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-green-500">
-          <h3 class="font-bold text-green-300 mb-2">Choose Duolingo if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You want to build a daily learning habit for free</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You are a complete beginner needing vocabulary foundation</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You prefer gamified, bite-sized lessons</li>
-            <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You want to supplement live tutoring with daily practice</li>
-          </ul>
-        </div>
-      </div>
-      <p class="text-neutral-300">The most effective approach is to use both: Duolingo to build vocabulary and maintain a daily habit, then iTalki for weekly live conversation practice. Together they cover everything a serious learner needs.</p>
-    </section>
+ <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2>
+ <div class="grid md:grid-cols-2 gap-6 mb-6">
+ <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
+ <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>Your main goal is to speak English confidently</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You want instant feedback from a real human</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You are preparing for a test, interview, or travel</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">-</span>You prefer flexible, conversation-based learning</li>
+ </ul>
+ </div>
+ <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-green-500">
+ <h3 class="font-bold text-green-300 mb-2">Choose Duolingo if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You want to build a daily learning habit for free</li>
+ <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You are a complete beginner needing vocabulary foundation</li>
+ <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You prefer gamified, bite-sized lessons</li>
+ <li class="flex items-start"><span class="text-green-500 mr-2">-</span>You want to supplement live tutoring with daily practice</li>
+ </ul>
+ </div>
+ </div>
+ <p class="text-neutral-300">The most effective approach is to use both: Duolingo to build vocabulary and maintain a daily habit, then iTalki for weekly live conversation practice. Together they cover everything a serious learner needs.</p>
+ </section>
 
-    <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
-      <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p>
-      <p class="text-slate-300 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured small-group classes and one-on-one tutoring with certified teachers, including three free trial lessons.</p>
-      <a href="/go/see-guru/" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a>
-      <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
-    </section>
+ <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+ <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p>
+ <p class="text-slate-300 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured small-group classes and one-on-one tutoring with certified teachers, including three free trial lessons.</p>
+ <a href="/go/see-guru/" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a>
+ <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+ </section>
 
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
-      <div class="grid gap-4">
-        <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">iTalki Review</p>
-          <p class="text-sm text-neutral-400">9.2/10 / Best for affordable live tutor lessons</p>
-        </a>
-        <a href="/reviews/duolingo/" class="block p-4 border border-gray-700 rounded-lg hover:border-green-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">Duolingo Review</p>
-          <p class="text-sm text-neutral-400">Full review of Duolingo's features, pricing, and effectiveness</p>
-        </a>
-        <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">iTalki vs Preply</p>
-          <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p>
-        </a>
-      </div>
-    </section>
+ <section class="mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+ <div class="grid gap-4">
+ <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">iTalki Review</p>
+ <p class="text-sm text-neutral-400">9.2/10 / Best for affordable live tutor lessons</p>
+ </a>
+ <a href="/reviews/duolingo/" class="block p-4 border border-gray-700 rounded-lg hover:border-green-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">Duolingo Review</p>
+ <p class="text-sm text-neutral-400">Full review of Duolingo's features, pricing, and effectiveness</p>
+ </a>
+ <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">iTalki vs Preply</p>
+ <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p>
+ </a>
+ </div>
+ </section>
 
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
-      <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
-    </div>
-  </main>
+ <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
+ <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
+ </div>
+ </main>
 
-  <StickyCTA
-    ctaText="Compare Platforms"
-    ctaLink="/go/italki"
-    platform="italki"
-  />
+ <StickyCTA
+ ctaText="Compare Platforms"
+ ctaLink="/go/italki"
+ platform="italki"
+ />
 
-  <Footer />
+ <Footer />
 
-  <aside class="my-12 max-w-3xl mx-auto px-4">
-    <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
-      <div class="flex items-start gap-4">
-        <div class="text-3xl flex-shrink-0">!</div>
-        <div class="flex-1">
-          <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3>
-          <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong> with certified English teachers / no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p>
-          <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons</a>
-        </div>
-      </div>
-    </div>
-  </aside>
+ <aside class="my-12 max-w-3xl mx-auto px-4">
+ <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
+ <div class="flex items-start gap-4">
+ <div class="text-3xl flex-shrink-0">!</div>
+ <div class="flex-1">
+ <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3>
+ <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong>with certified English teachers / no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p>
+ <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons</a>
+ </div>
+ </div>
+ </div>
+ </aside>
 
 </Base>

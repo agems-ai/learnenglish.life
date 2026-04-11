@@ -5,319 +5,318 @@ import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "English Grammar Basics: A Complete Guide for All Levels",
-  "description": "Master English grammar from scratch. Learn tenses, sentence structure, parts of speech, and common patterns. Perfect for beginners and intermediate learners.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-01-10",
-  "dateModified": "2026-01-10"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "English Grammar Basics: A Complete Guide for All Levels",
+ "description": "Master English grammar from scratch. Learn tenses, sentence structure, parts of speech, and common patterns. Perfect for beginners and intermediate learners.",
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2026-01-10",
+ "dateModified": "2026-01-10"
 };
 ---
 
 <Base title="English Grammar Basics: A Complete Guide (2026)" description="Master English grammar from scratch. Learn tenses, sentence structure, parts of speech, and common patterns. Perfect for beginners and intermediate learners.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  
-  <Header />
-  
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-slate-400 mb-4">
-      <a href="/" class="hover:text-emerald-600">Home</a>
-      <span class="mx-2">›</span>
-      <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
-      <span class="mx-2">›</span>
-      <span class="text-gray-300">Grammar Basics</span>
-    </nav>
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ 
+ <Header />
+ 
+ <main class="max-w-4xl mx-auto px-4 py-8">
+ <!-- Breadcrumb -->
+ <nav class="text-sm text-slate-400 mb-4">
+ <a href="/" class="hover:text-emerald-600">Home</a>
+ <span class="mx-2">›</span>
+ <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
+ <span class="mx-2">›</span>
+ <span class="text-gray-300">Grammar Basics</span>
+ </nav>
 
-    <!-- Hero -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
-      <span class="text-emerald-200 text-sm font-medium">Study Guide</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">English Grammar Basics</h1>
-      <p class="text-emerald-100 text-lg mb-6">Everything you need to understand how English grammar works. From basic sentence structure to verb tenses, we've got you covered.</p>
-      
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="bg-slate-900/60/20 px-3 py-1 rounded-full text-sm">Beginner</span>
-        <span class="bg-slate-900/60/20 px-3 py-1 rounded-full text-sm">Intermediate</span>
-        <span class="bg-slate-900/60/20 px-3 py-1 rounded-full text-sm">45 min read</span>
-      </div>
-    </div>
+ <!-- Hero -->
+ <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+ <span class="text-emerald-200 text-sm font-medium">Study Guide</span>
+ <h1 class="text-4xl font-bold mt-2 mb-4">English Grammar Basics</h1>
+ <p class="text-emerald-100 text-lg mb-6">Everything you need to understand how English grammar works. From basic sentence structure to verb tenses, we've got you covered.</p>
+ 
+ <div class="flex flex-wrap gap-2 mt-4">
+ <span class="bg-slate-900/60/20 px-3 py-1 rounded-full text-sm">Beginner</span>
+ <span class="bg-slate-900/60/20 px-3 py-1 rounded-full text-sm">Intermediate</span>
+ <span class="bg-slate-900/60/20 px-3 py-1 rounded-full text-sm">45 min read</span>
+ </div>
+ </div>
 
-    <!-- TL;DR -->
-    <div class="bg-amber-950/60 border-l-4 border-amber-400 p-4 rounded-r-lg mb-8">
-      <h2 class="font-semibold text-amber-200">Quick Summary</h2>
-      <p class="text-amber-300">English grammar follows a few key patterns: subject + verb + object, consistent verb tenses, and proper use of articles. Master these basics, and you'll understand most English sentences.</p>
-    </div>
+ <!-- TL;DR -->
+ <div class="bg-amber-950/60 border-l-4 border-amber-400 p-4 rounded-r-lg mb-8">
+ <h2 class="font-semibold text-amber-200">Quick Summary</h2>
+ <p class="text-amber-300">English grammar follows a few key patterns: subject + verb + object, consistent verb tenses, and proper use of articles. Master these basics, and you'll understand most English sentences.</p>
+ </div>
 
-    <AdUnit slot="guide-header" />
+ <AdUnit slot="guide-header" />
 
-    <!-- Table of Contents -->
-    <nav class="bg-neutral-800 rounded-xl p-6 mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">In This Guide</h2>
-      <ul class="space-y-2">
-        <li><a href="#parts-of-speech" class="text-emerald-400 hover:underline">1. Parts of Speech</a></li>
-        <li><a href="#sentence-structure" class="text-emerald-400 hover:underline">2. Basic Sentence Structure</a></li>
-        <li><a href="#verb-tenses" class="text-emerald-400 hover:underline">3. Verb Tenses</a></li>
-        <li><a href="#articles" class="text-emerald-400 hover:underline">4. Articles: a, an, the</a></li>
-        <li><a href="#common-mistakes" class="text-emerald-400 hover:underline">5. Common Mistakes</a></li>
-      </ul>
-    </nav>
+ <!-- Table of Contents -->
+ <nav class="bg-neutral-800 rounded-xl p-6 mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">In This Guide</h2>
+ <ul class="space-y-2">
+ <li><a href="#parts-of-speech" class="text-emerald-400 hover:underline">1. Parts of Speech</a></li>
+ <li><a href="#sentence-structure" class="text-emerald-400 hover:underline">2. Basic Sentence Structure</a></li>
+ <li><a href="#verb-tenses" class="text-emerald-400 hover:underline">3. Verb Tenses</a></li>
+ <li><a href="#articles" class="text-emerald-400 hover:underline">4. Articles: a, an, the</a></li>
+ <li><a href="#common-mistakes" class="text-emerald-400 hover:underline">5. Common Mistakes</a></li>
+ </ul>
+ </nav>
 
-    <!-- Parts of Speech -->
-    <section id="parts-of-speech" class="mb-10">
-      <h2 class="text-2xl font-bold text-white mb-6">1. Parts of Speech</h2>
-      
-      <div class="grid md:grid-cols-2 gap-4 mb-6">
-        <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
-          <h3 class="text-lg font-bold text-emerald-400 mb-2">Nouns</h3>
-          <p class="text-neutral-300 text-sm mb-2">Words for people, places, things, or ideas.</p>
-          <p class="text-neutral-400 text-sm italic">Examples: cat, London, happiness, John</p>
-        </div>
-        <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
-          <h3 class="text-lg font-bold text-emerald-400 mb-2">Verbs</h3>
-          <p class="text-neutral-300 text-sm mb-2">Action or state words.</p>
-          <p class="text-neutral-400 text-sm italic">Examples: run, is, think, eat</p>
-        </div>
-        <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
-          <h3 class="text-lg font-bold text-emerald-400 mb-2">Adjectives</h3>
-          <p class="text-neutral-300 text-sm mb-2">Words that describe nouns.</p>
-          <p class="text-neutral-400 text-sm italic">Examples: beautiful, tall, happy</p>
-        </div>
-        <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
-          <h3 class="text-lg font-bold text-emerald-400 mb-2">Adverbs</h3>
-          <p class="text-neutral-300 text-sm mb-2">Words that describe verbs, adjectives, or other adverbs.</p>
-          <p class="text-neutral-400 text-sm italic">Examples: quickly, very, always</p>
-        </div>
-      </div>
+ <!-- Parts of Speech -->
+ <section id="parts-of-speech" class="mb-10">
+ <h2 class="text-2xl font-bold text-white mb-6">1. Parts of Speech</h2>
+ 
+ <div class="grid md:grid-cols-2 gap-4 mb-6">
+ <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
+ <h3 class="text-lg font-bold text-emerald-400 mb-2">Nouns</h3>
+ <p class="text-neutral-300 text-sm mb-2">Words for people, places, things, or ideas.</p>
+ <p class="text-neutral-400 text-sm italic">Examples: cat, London, happiness, John</p>
+ </div>
+ <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
+ <h3 class="text-lg font-bold text-emerald-400 mb-2">Verbs</h3>
+ <p class="text-neutral-300 text-sm mb-2">Action or state words.</p>
+ <p class="text-neutral-400 text-sm italic">Examples: run, is, think, eat</p>
+ </div>
+ <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
+ <h3 class="text-lg font-bold text-emerald-400 mb-2">Adjectives</h3>
+ <p class="text-neutral-300 text-sm mb-2">Words that describe nouns.</p>
+ <p class="text-neutral-400 text-sm italic">Examples: beautiful, tall, happy</p>
+ </div>
+ <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
+ <h3 class="text-lg font-bold text-emerald-400 mb-2">Adverbs</h3>
+ <p class="text-neutral-300 text-sm mb-2">Words that describe verbs, adjectives, or other adverbs.</p>
+ <p class="text-neutral-400 text-sm italic">Examples: quickly, very, always</p>
+ </div>
+ </div>
 
-      <div class="bg-slate-900/60 rounded-xl p-5 border border-neutral-700">
-        <h3 class="text-lg font-bold text-white mb-3">Example Sentence Breakdown</h3>
-        <p class="text-neutral-300 text-lg mb-2">"The <span class="text-emerald-400">quick</span> brown <span class="text-blue-400">fox</span> <span class="text-red-400">jumps</span> <span class="text-yellow-400">over</span> the lazy dog."</p>
-        <div class="flex flex-wrap gap-2 mt-3">
-          <span class="bg-emerald-900/50 text-emerald-400 px-2 py-1 rounded text-xs">quick = adjective</span>
-          <span class="bg-blue-900/50 text-blue-400 px-2 py-1 rounded text-xs">fox = noun</span>
-          <span class="bg-red-900/50 text-red-400 px-2 py-1 rounded text-xs">jumps = verb</span>
-          <span class="bg-yellow-900/50 text-yellow-400 px-2 py-1 rounded text-xs">over = preposition</span>
-        </div>
-      </div>
-    </section>
+ <div class="bg-slate-900/60 rounded-xl p-5 border border-neutral-700">
+ <h3 class="text-lg font-bold text-white mb-3">Example Sentence Breakdown</h3>
+ <p class="text-neutral-300 text-lg mb-2">"The <span class="text-emerald-400">quick</span>brown <span class="text-blue-400">fox</span> <span class="text-red-400">jumps</span> <span class="text-yellow-400">over</span>the lazy dog."</p>
+ <div class="flex flex-wrap gap-2 mt-3">
+ <span class="bg-emerald-900/50 text-emerald-400 px-2 py-1 rounded text-xs">quick = adjective</span>
+ <span class="bg-blue-900/50 text-blue-400 px-2 py-1 rounded text-xs">fox = noun</span>
+ <span class="bg-red-900/50 text-red-400 px-2 py-1 rounded text-xs">jumps = verb</span>
+ <span class="bg-yellow-900/50 text-yellow-400 px-2 py-1 rounded text-xs">over = preposition</span>
+ </div>
+ </div>
+ </section>
 
-    <!-- Sentence Structure -->
-    <section id="sentence-structure" class="mb-10">
-      <h2 class="text-2xl font-bold text-white mb-6">2. Basic Sentence Structure</h2>
-      
-      <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700 mb-6">
-        <h3 class="text-xl font-bold text-emerald-400 mb-4">Subject + Verb + Object (SVO)</h3>
-        <p class="text-neutral-300 mb-4">The most common English sentence pattern:</p>
-        
-        <div class="space-y-3">
-          <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
-            <span class="bg-emerald-900/50 text-emerald-400 px-3 py-1 rounded">Subject</span>
-            <span class="bg-red-900/50 text-red-400 px-3 py-1 rounded">Verb</span>
-            <span class="bg-blue-900/50 text-blue-400 px-3 py-1 rounded">Object</span>
-          </div>
-          <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
-            <span class="text-white">I</span>
-            <span class="text-slate-400">→</span>
-            <span class="text-white">love</span>
-            <span class="text-slate-400">→</span>
-            <span class="text-white">English</span>
-          </div>
-          <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
-            <span class="text-white">She</span>
-            <span class="text-slate-400">→</span>
-            <span class="text-white">reads</span>
-            <span class="text-slate-400">→</span>
-            <span class="text-white">books</span>
-          </div>
-          <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
-            <span class="text-white">They</span>
-            <span class="text-slate-400">→</span>
-            <span class="text-white">played</span>
-            <span class="text-slate-400">→</span>
-            <span class="text-white">football</span>
-          </div>
-        </div>
-      </div>
-    </section>
+ <!-- Sentence Structure -->
+ <section id="sentence-structure" class="mb-10">
+ <h2 class="text-2xl font-bold text-white mb-6">2. Basic Sentence Structure</h2>
+ 
+ <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700 mb-6">
+ <h3 class="text-xl font-bold text-emerald-400 mb-4">Subject + Verb + Object (SVO)</h3>
+ <p class="text-neutral-300 mb-4">The most common English sentence pattern:</p>
+ 
+ <div class="space-y-3">
+ <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
+ <span class="bg-emerald-900/50 text-emerald-400 px-3 py-1 rounded">Subject</span>
+ <span class="bg-red-900/50 text-red-400 px-3 py-1 rounded">Verb</span>
+ <span class="bg-blue-900/50 text-blue-400 px-3 py-1 rounded">Object</span>
+ </div>
+ <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
+ <span class="text-white">I</span>
+ <span class="text-slate-400">→</span>
+ <span class="text-white">love</span>
+ <span class="text-slate-400">→</span>
+ <span class="text-white">English</span>
+ </div>
+ <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
+ <span class="text-white">She</span>
+ <span class="text-slate-400">→</span>
+ <span class="text-white">reads</span>
+ <span class="text-slate-400">→</span>
+ <span class="text-white">books</span>
+ </div>
+ <div class="flex items-center gap-4 p-3 bg-neutral-900 rounded-lg">
+ <span class="text-white">They</span>
+ <span class="text-slate-400">→</span>
+ <span class="text-white">played</span>
+ <span class="text-slate-400">→</span>
+ <span class="text-white">football</span>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <!-- Verb Tenses -->
-    <section id="verb-tenses" class="mb-10">
-      <h2 class="text-2xl font-bold text-white mb-6">3. Verb Tenses</h2>
-      
-      <div class="overflow-x-auto mb-6">
-        <table class="w-full border-collapse bg-neutral-800 rounded-xl overflow-hidden">
-          <thead>
-            <tr class="bg-emerald-900/50">
-              <th class="text-left p-4 text-white">Tense</th>
-              <th class="text-left p-4 text-white">Use</th>
-              <th class="text-left p-4 text-white">Example</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-neutral-700">
-            <tr>
-              <td class="p-4 text-emerald-400 font-semibold">Present Simple</td>
-              <td class="p-4 text-neutral-300">Habits, facts, general truths</td>
-              <td class="p-4 text-neutral-300">I <strong>work</strong> every day.</td>
-            </tr>
-            <tr class="bg-neutral-900">
-              <td class="p-4 text-emerald-400 font-semibold">Past Simple</td>
-              <td class="p-4 text-neutral-300">Completed actions in the past</td>
-              <td class="p-4 text-neutral-300">I <strong>worked</strong> yesterday.</td>
-            </tr>
-            <tr>
-              <td class="p-4 text-emerald-400 font-semibold">Future Simple</td>
-              <td class="p-4 text-neutral-300">Predictions, plans</td>
-              <td class="p-4 text-neutral-300">I <strong>will work</strong> tomorrow.</td>
-            </tr>
-            <tr class="bg-neutral-900">
-              <td class="p-4 text-emerald-400 font-semibold">Present Continuous</td>
-              <td class="p-4 text-neutral-300">Actions happening now</td>
-              <td class="p-4 text-neutral-300">I <strong>am working</strong> now.</td>
-            </tr>
-            <tr>
-              <td class="p-4 text-emerald-400 font-semibold">Present Perfect</td>
-              <td class="p-4 text-neutral-300">Past actions with present results</td>
-              <td class="p-4 text-neutral-300">I <strong>have worked</strong> here for 5 years.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+ <!-- Verb Tenses -->
+ <section id="verb-tenses" class="mb-10">
+ <h2 class="text-2xl font-bold text-white mb-6">3. Verb Tenses</h2>
+ 
+ <div class="overflow-x-auto mb-6">
+ <table class="w-full border-collapse bg-neutral-800 rounded-xl overflow-hidden">
+ <thead>
+ <tr class="bg-emerald-900/50">
+ <th class="text-left p-4 text-white">Tense</th>
+ <th class="text-left p-4 text-white">Use</th>
+ <th class="text-left p-4 text-white">Example</th>
+ </tr>
+ </thead>
+ <tbody class="divide-y divide-neutral-700">
+ <tr>
+ <td class="p-4 text-emerald-400 font-semibold">Present Simple</td>
+ <td class="p-4 text-neutral-300">Habits, facts, general truths</td>
+ <td class="p-4 text-neutral-300">I <strong>work</strong>every day.</td>
+ </tr>
+ <tr class="bg-neutral-900">
+ <td class="p-4 text-emerald-400 font-semibold">Past Simple</td>
+ <td class="p-4 text-neutral-300">Completed actions in the past</td>
+ <td class="p-4 text-neutral-300">I <strong>worked</strong>yesterday.</td>
+ </tr>
+ <tr>
+ <td class="p-4 text-emerald-400 font-semibold">Future Simple</td>
+ <td class="p-4 text-neutral-300">Predictions, plans</td>
+ <td class="p-4 text-neutral-300">I <strong>will work</strong>tomorrow.</td>
+ </tr>
+ <tr class="bg-neutral-900">
+ <td class="p-4 text-emerald-400 font-semibold">Present Continuous</td>
+ <td class="p-4 text-neutral-300">Actions happening now</td>
+ <td class="p-4 text-neutral-300">I <strong>am working</strong>now.</td>
+ </tr>
+ <tr>
+ <td class="p-4 text-emerald-400 font-semibold">Present Perfect</td>
+ <td class="p-4 text-neutral-300">Past actions with present results</td>
+ <td class="p-4 text-neutral-300">I <strong>have worked</strong>here for 5 years.</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-    <AdUnit slot="guide-mid" />
+ <AdUnit slot="guide-mid" />
 
-    <!-- Articles -->
-    <section id="articles" class="mb-10">
-      <h2 class="text-2xl font-bold text-white mb-6">4. Articles: a, an, the</h2>
-      
-      <div class="grid md:grid-cols-3 gap-4 mb-6">
-        <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
-          <h3 class="text-lg font-bold text-yellow-400 mb-3">a / an</h3>
-          <p class="text-neutral-300 text-sm mb-3">Indefinite articles. one of many</p>
-          <div class="space-y-2 text-sm">
-            <p class="text-neutral-400"><strong class="text-white">a</strong> before consonant sounds:</p>
-            <p class="text-neutral-300">a <strong>cat</strong>, a <strong>book</strong>, a <strong>university</strong></p>
-            <p class="text-neutral-400 mt-2"><strong class="text-white">an</strong> before vowel sounds:</p>
-            <p class="text-neutral-300">an <strong>apple</strong>, an <strong>hour</strong>, an <strong>idea</strong></p>
-          </div>
-        </div>
-        <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 md:col-span-2">
-          <h3 class="text-lg font-bold text-emerald-400 mb-3">the</h3>
-          <p class="text-neutral-300 text-sm mb-3">Definite article. specific thing we both know</p>
-          <div class="space-y-2 text-sm">
-            <p class="text-neutral-400"><strong class="text-white">the + singular noun</strong> when there's only one:</p>
-            <p class="text-neutral-300">the <strong>sun</strong>, the <strong>Earth</strong>, the <strong>President</strong></p>
-            <p class="text-neutral-400 mt-2"><strong class="text-white">the + noun</strong> when both speaker and listener know what we're referring to:</p>
-            <p class="text-neutral-300">"Where is <strong>the bathroom</strong>?"</p>
-          </div>
-        </div>
-      </div>
+ <!-- Articles -->
+ <section id="articles" class="mb-10">
+ <h2 class="text-2xl font-bold text-white mb-6">4. Articles: a, an, the</h2>
+ 
+ <div class="grid md:grid-cols-3 gap-4 mb-6">
+ <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700">
+ <h3 class="text-lg font-bold text-yellow-400 mb-3">a / an</h3>
+ <p class="text-neutral-300 text-sm mb-3">Indefinite articles. one of many</p>
+ <div class="space-y-2 text-sm">
+ <p class="text-neutral-400"><strong class="text-white">a</strong>before consonant sounds:</p>
+ <p class="text-neutral-300">a <strong>cat</strong>, a <strong>book</strong>, a <strong>university</strong></p>
+ <p class="text-neutral-400 mt-2"><strong class="text-white">an</strong>before vowel sounds:</p>
+ <p class="text-neutral-300">an <strong>apple</strong>, an <strong>hour</strong>, an <strong>idea</strong></p>
+ </div>
+ </div>
+ <div class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 md:col-span-2">
+ <h3 class="text-lg font-bold text-emerald-400 mb-3">the</h3>
+ <p class="text-neutral-300 text-sm mb-3">Definite article. specific thing we both know</p>
+ <div class="space-y-2 text-sm">
+ <p class="text-neutral-400"><strong class="text-white">the + singular noun</strong>when there's only one:</p>
+ <p class="text-neutral-300">the <strong>sun</strong>, the <strong>Earth</strong>, the <strong>President</strong></p>
+ <p class="text-neutral-400 mt-2"><strong class="text-white">the + noun</strong>when both speaker and listener know what we're referring to:</p>
+ <p class="text-neutral-300">"Where is <strong>the bathroom</strong>?"</p>
+ </div>
+ </div>
+ </div>
 
-      <div class="bg-amber-950/60 border-l-4 border-amber-400 p-4 rounded-r-lg">
-        <h3 class="font-semibold text-amber-200 mb-2">💡 Quick Tip</h3>
-        <p class="text-amber-300 text-sm">The sound matters, not the letter! We say "a <strong>u</strong>niversity" (yu-), so it's "a university" not "an university." We say "an <strong>h</strong>our" (our-), so it's "an hour" not "a hour."</p>
-      </div>
-    </section>
+ <div class="bg-amber-950/60 border-l-4 border-amber-400 p-4 rounded-r-lg">
+ <h3 class="font-semibold text-amber-200 mb-2">Quick Tip</h3>
+ <p class="text-amber-300 text-sm">The sound matters, not the letter! We say "a <strong>u</strong>niversity" (yu-), so it's "a university" not "an university." We say "an <strong>h</strong>our" (our-), so it's "an hour" not "a hour."</p>
+ </div>
+ </section>
 
-    <!-- Common Mistakes -->
-    <section id="common-mistakes" class="mb-10">
-      <h2 class="text-2xl font-bold text-white mb-6">5. Common Mistakes to Avoid</h2>
-      
-      <div class="space-y-4">
-        <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
-          <h3 class="font-semibold text-red-400 mb-2">❌ Their vs There vs They're</h3>
-          <p class="text-neutral-300 text-sm mb-2"><strong>Their</strong> = possessive (their house), <strong>There</strong> = place (over there), <strong>They're</strong> = they are</p>
-          <p class="text-neutral-400 text-sm italic">Correct: They're going to their house over there.</p>
-        </div>
-        
-        <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
-          <h3 class="font-semibold text-red-400 mb-2">❌ Your vs You're</h3>
-          <p class="text-neutral-300 text-sm mb-2"><strong>Your</strong> = possessive (your book), <strong>You're</strong> = you are</p>
-          <p class="text-neutral-400 text-sm italic">Correct: You're going to love your new book.</p>
-        </div>
-        
-        <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
-          <h3 class="font-semibold text-red-400 mb-2">❌ Its vs It's</h3>
-          <p class="text-neutral-300 text-sm mb-2"><strong>Its</strong> = possessive (the cat licked its paw), <strong>It's</strong> = it is or it has</p>
-          <p class="text-neutral-400 text-sm italic">Correct: It's a beautiful day, and the dog is enjoying its walk.</p>
-        </div>
+ <!-- Common Mistakes -->
+ <section id="common-mistakes" class="mb-10">
+ <h2 class="text-2xl font-bold text-white mb-6">5. Common Mistakes to Avoid</h2>
+ 
+ <div class="space-y-4">
+ <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
+ <h3 class="font-semibold text-red-400 mb-2">Their vs There vs They're</h3>
+ <p class="text-neutral-300 text-sm mb-2"><strong>Their</strong> = possessive (their house), <strong>There</strong> = place (over there), <strong>They're</strong> = they are</p>
+ <p class="text-neutral-400 text-sm italic">Correct: They're going to their house over there.</p>
+ </div>
+ 
+ <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
+ <h3 class="font-semibold text-red-400 mb-2">Your vs You're</h3>
+ <p class="text-neutral-300 text-sm mb-2"><strong>Your</strong> = possessive (your book), <strong>You're</strong> = you are</p>
+ <p class="text-neutral-400 text-sm italic">Correct: You're going to love your new book.</p>
+ </div>
+ 
+ <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
+ <h3 class="font-semibold text-red-400 mb-2">Its vs It's</h3>
+ <p class="text-neutral-300 text-sm mb-2"><strong>Its</strong> = possessive (the cat licked its paw), <strong>It's</strong> = it is or it has</p>
+ <p class="text-neutral-400 text-sm italic">Correct: It's a beautiful day, and the dog is enjoying its walk.</p>
+ </div>
 
-        <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
-          <h3 class="font-semibold text-red-400 mb-2">❌ Subject-Verb Agreement</h3>
-          <p class="text-neutral-300 text-sm mb-2">Singular subjects need singular verbs, plural subjects need plural verbs.</p>
-          <p class="text-neutral-400 text-sm italic">Correct: He <strong>likes</strong> coffee. They <strong>like</strong> coffee.</p>
-        </div>
-      </div>
-    </section>
+ <div class="bg-red-900/30 border-l-4 border-red-500 p-4 rounded-r-lg">
+ <h3 class="font-semibold text-red-400 mb-2">Subject-Verb Agreement</h3>
+ <p class="text-neutral-300 text-sm mb-2">Singular subjects need singular verbs, plural subjects need plural verbs.</p>
+ <p class="text-neutral-400 text-sm italic">Correct: He <strong>likes</strong>coffee. They <strong>like</strong>coffee.</p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Practice Section -->
-    <section class="bg-emerald-900/30 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Practice Exercises</h2>
-      <p class="text-neutral-300 mb-4">Test your understanding with these quick exercises:</p>
-      
-      <div class="space-y-4">
-        <div class="bg-neutral-800 rounded-lg p-4">
-          <p class="text-white mb-2">1. Choose the correct sentence:</p>
-          <label class="text-neutral-300 block mb-1"><input type="radio" name="q1"> A) She don't like coffee.</label>
-          <label class="text-emerald-400 block mb-1"><input type="radio" name="q1"> B) She doesn't like coffee. ✓</label>
-        </div>
-        
-        <div class="bg-neutral-800 rounded-lg p-4">
-          <p class="text-white mb-2">2. Fill in the blank: "I have been learning English ___ three years."</p>
-          <label class="text-emerald-400 block mb-1"><input type="radio" name="q2"> A) for ✓</label>
-          <label class="text-neutral-300 block mb-1"><input type="radio" name="q2"> B) since</label>
-        </div>
+ <!-- Practice Section -->
+ <section class="bg-emerald-900/30 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Practice Exercises</h2>
+ <p class="text-neutral-300 mb-4">Test your understanding with these quick exercises:</p>
+ 
+ <div class="space-y-4">
+ <div class="bg-neutral-800 rounded-lg p-4">
+ <p class="text-white mb-2">1. Choose the correct sentence:</p>
+ <label class="text-neutral-300 block mb-1"><input type="radio" name="q1">A) She don't like coffee.</label>
+ <label class="text-emerald-400 block mb-1"><input type="radio" name="q1">B) She doesn't like coffee. </label>
+ </div>
+ 
+ <div class="bg-neutral-800 rounded-lg p-4">
+ <p class="text-white mb-2">2. Fill in the blank: "I have been learning English ___ three years."</p>
+ <label class="text-emerald-400 block mb-1"><input type="radio" name="q2">A) for </label>
+ <label class="text-neutral-300 block mb-1"><input type="radio" name="q2">B) since</label>
+ </div>
 
-        <div class="bg-neutral-800 rounded-lg p-4">
-          <p class="text-white mb-2">3. Which sentence is correct?</p>
-          <label class="text-neutral-300 block mb-1"><input type="radio" name="q3"> A) I went to the store yesterday.</label>
-          <label class="text-emerald-400 block mb-1"><input type="radio" name="q3"> B) I goed to the store yesterday. ✓</label>
-        </div>
-      </div>
-    </section>
+ <div class="bg-neutral-800 rounded-lg p-4">
+ <p class="text-white mb-2">3. Which sentence is correct?</p>
+ <label class="text-neutral-300 block mb-1"><input type="radio" name="q3">A) I went to the store yesterday.</label>
+ <label class="text-emerald-400 block mb-1"><input type="radio" name="q3">B) I goed to the store yesterday. </label>
+ </div>
+ </div>
+ </section>
 
-    <!-- Related Guides -->
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Continue Learning</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a href="/guides/common-english-mistakes/" class="bg-neutral-800 rounded-lg p-4 hover:border-emerald-500 border border-neutral-700 transition">
-          <h3 class="font-semibold text-emerald-400 mb-2">Common Mistakes</h3>
-          <p class="text-sm text-neutral-400">Avoid the most frequent errors</p>
-        </a>
-        <a href="/guides/" class="bg-neutral-800 rounded-lg p-4 hover:border-emerald-500 border border-neutral-700 transition">
-          <h3 class="font-semibold text-emerald-400 mb-2">Vocabulary Building</h3>
-          <p class="text-sm text-neutral-400">Expand your word power</p>
-        </a>
-        <a href="/reviews/" class="bg-neutral-800 rounded-lg p-4 hover:border-emerald-500 border border-neutral-700 transition">
-          <h3 class="font-semibold text-emerald-400 mb-2">Find a Tutor</h3>
-          <p class="text-sm text-neutral-400">Practice with native speakers</p>
-        </a>
-      </div>
-    </section>
+ <!-- Related Guides -->
+ <section class="mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">Continue Learning</h2>
+ <div class="grid md:grid-cols-3 gap-4">
+ <a href="/guides/common-english-mistakes/" class="bg-neutral-800 rounded-lg p-4 hover:border-emerald-500 border border-neutral-700 transition">
+ <h3 class="font-semibold text-emerald-400 mb-2">Common Mistakes</h3>
+ <p class="text-sm text-neutral-400">Avoid the most frequent errors</p>
+ </a>
+ <a href="/guides/" class="bg-neutral-800 rounded-lg p-4 hover:border-emerald-500 border border-neutral-700 transition">
+ <h3 class="font-semibold text-emerald-400 mb-2">Vocabulary Building</h3>
+ <p class="text-sm text-neutral-400">Expand your word power</p>
+ </a>
+ <a href="/reviews/" class="bg-neutral-800 rounded-lg p-4 hover:border-emerald-500 border border-neutral-700 transition">
+ <h3 class="font-semibold text-emerald-400 mb-2">Find a Tutor</h3>
+ <p class="text-sm text-neutral-400">Practice with native speakers</p>
+ </a>
+ </div>
+ </section>
 
-    <!-- AI Disclosure -->
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-neutral-700">
-      <p><strong></strong> This guide was created and reviewed by our editorial team. <a href="/about/" class="text-emerald-600 hover:underline">Learn more about how we work</a>.</p>
-    </div>
-  </main>
+ <!-- AI Disclosure -->
+ <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-neutral-700">
+ <p><strong></strong>This guide was created and reviewed by our editorial team. <a href="/about/" class="text-emerald-600 hover:underline">Learn more about how we work</a>.</p>
+ </div>
+ </main>
 
-  
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Related guides</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/guides/best-english-tutors-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English Tutors for Beginners</a></li>
-        <li><a href="/guides/best-english-apps-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English Apps for Beginners</a></li>
-        <li><a href="/guides/common-english-mistakes/" class="text-emerald-400 hover:text-emerald-300">Common English Mistakes</a></li>
-        <li><a href="/guides/how-to-choose-english-tutor/" class="text-emerald-400 hover:text-emerald-300">How to Choose an English Tutor</a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        Want to test 1 on 1 lessons before paying? <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a> gives 3 free lessons with certified teachers, no card required.
-      </p>
-    </aside>
+ 
+ <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Related guides</h3>
+ <ul class="space-y-2 text-base">
+ <li><a href="/guides/best-english-tutors-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English Tutors for Beginners</a></li>
+ <li><a href="/guides/best-english-apps-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English Apps for Beginners</a></li>
+ <li><a href="/guides/common-english-mistakes/" class="text-emerald-400 hover:text-emerald-300">Common English Mistakes</a></li>
+ <li><a href="/guides/how-to-choose-english-tutor/" class="text-emerald-400 hover:text-emerald-300">How to Choose an English Tutor</a></li>
+ </ul>
+ <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">Want to test 1 on 1 lessons before paying? <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a>gives 3 free lessons with certified teachers, no card required.
+ </p>
+ </aside>
 
-  <Footer />
+ <Footer />
 </Base>

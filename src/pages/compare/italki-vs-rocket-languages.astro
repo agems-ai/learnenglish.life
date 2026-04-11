@@ -12,395 +12,390 @@ import { platformRatings } from '../../data/platform-ratings';
 
 // Platform data
 const italki = {
-  name: "iTalki",
-  rating: 9.2,
-  price: "$5 per lesson",
-  link: "/go/italki",
-  bestFor: "Live speaking practice with real tutors",
-  pros: [
-    "Real human interaction with instant, contextual feedback",
-    "Flexible scheduling with thousands of tutors worldwide",
-    "Choose tutors who match your specific goals and level",
-    "Fastest path to speaking confidence through real conversations",
-    "Pay per lesson with no monthly commitment"
-  ],
-  cons: [
-    "Quality varies between tutors, vetting takes effort",
-    "No structured curriculum unless you request it",
-    "Speaking practice limited to booked sessions",
-    "Costs can add up with frequent lessons"
-  ]
+ name: "iTalki",
+ rating: 9.2,
+ price: "$5 per lesson",
+ link: "/go/italki",
+ bestFor: "Live speaking practice with real tutors",
+ pros: [
+ "Real human interaction with instant, contextual feedback",
+ "Flexible scheduling with thousands of tutors worldwide",
+ "Choose tutors who match your specific goals and level",
+ "Fastest path to speaking confidence through real conversations",
+ "Pay per lesson with no monthly commitment"
+ ],
+ cons: [
+ "Quality varies between tutors, vetting takes effort",
+ "No structured curriculum unless you request it",
+ "Speaking practice limited to booked sessions",
+ "Costs can add up with frequent lessons"
+ ]
 };
 
 const rocketLanguages = {
-  name: "Rocket Languages",
-  rating: 7.8,
-  price: "From $9.95/month",
-  link: "/go/rocket-languages",
-  bestFor: "Self-paced audio lessons with pronunciation practice",
-  pros: [
-    "In-depth audio lessons recorded by native speakers",
-    "Interactive voice recording for pronunciation feedback",
-    "Formal language courses with certification pathways",
-    "Works on desktop and mobile with offline access",
-    "Good value for committed self-learners"
-  ],
-  cons: [
-    "No live speaking practice with real tutors",
-    "Self-paced only, no accountability or scheduling",
-    "Learning style may not suit all learners",
-    "Subscription required for full access",
-    "Less engaging than gamified apps"
-  ]
+ name: "Rocket Languages",
+ rating: 7.8,
+ price: "From $9.95/month",
+ link: "/go/rocket-languages",
+ bestFor: "Self-paced audio lessons with pronunciation practice",
+ pros: [
+ "In-depth audio lessons recorded by native speakers",
+ "Interactive voice recording for pronunciation feedback",
+ "Formal language courses with certification pathways",
+ "Works on desktop and mobile with offline access",
+ "Good value for committed self-learners"
+ ],
+ cons: [
+ "No live speaking practice with real tutors",
+ "Self-paced only, no accountability or scheduling",
+ "Learning style may not suit all learners",
+ "Subscription required for full access",
+ "Less engaging than gamified apps"
+ ]
 };
 
 // Comparison rows
 const comparison = [
-  { feature: "Starting Price", winner: null, a: "$5/lesson", b: "$9.95/month" },
-  { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
-  { feature: "AI Pronunciation Feedback", winner: "b", a: "No", b: "Yes (voice recording)" },
-  { feature: "Structured Curriculum", winner: "b", a: "Only if requested", b: "Fully built-in" },
-  { feature: "Offline Mode", winner: "b", a: "No", b: "Yes" },
-  { feature: "Free Version", winner: null, a: "Language exchanges", b: "Limited trial" },
-  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
-  { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI recording only" },
-  { feature: "Certification", winner: "b", a: "No", b: "Yes" }
+ { feature: "Starting Price", winner: null, a: "$5/lesson", b: "$9.95/month" },
+ { feature: "Live Human Tutors", winner: "a", a: "Yes", b: "No" },
+ { feature: "AI Pronunciation Feedback", winner: "b", a: "No", b: "Yes (voice recording)" },
+ { feature: "Structured Curriculum", winner: "b", a: "Only if requested", b: "Fully built-in" },
+ { feature: "Offline Mode", winner: "b", a: "No", b: "Yes" },
+ { feature: "Free Version", winner: null, a: "Language exchanges", b: "Limited trial" },
+ { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+ { feature: "Conversation Practice", winner: "a", a: "Live video sessions", b: "AI recording only" },
+ { feature: "Certification", winner: "b", a: "No", b: "Yes" }
 ];
 
 // Benefits section
 const whyCompare = [
-  { icon: "🎯", title: "Match Your Learning Style", description: "Find the platform that matches whether you thrive with human interaction or prefer self-paced study" },
-  { icon: "💰", title: "Understand the Real Cost", description: "Compare pay-per-lesson vs subscription to find what fits your budget and usage habits" },
-  { icon: "⚡", title: "Get Results Faster", description: "Choose the platform that aligns with your goals and how you actually learn best" }
+ { icon: "", title: "Match Your Learning Style", description: "Find the platform that matches whether you thrive with human interaction or prefer self-paced study" },
+ { icon: "", title: "Understand the Real Cost", description: "Compare pay-per-lesson vs subscription to find what fits your budget and usage habits" },
+ { icon: "", title: "Get Results Faster", description: "Choose the platform that aligns with your goals and how you actually learn best" }
 ];
 
 // Testimonials
 const testimonials = [
-  {
-    quote: "iTalki changed my life. After 4 months of weekly lessons, I passed my job interview in English. Real conversations made all the difference.",
-    author: "Carlos M.",
-    location: "Mexico City"
-  },
-  {
-    quote: "I was skeptical about paying for tutors, but the ROI was incredible. I went from B1 to B2 in six months with regular iTalki sessions.",
-    author: "Aiko T.",
-    location: "Tokyo"
-  },
-  {
-    quote: "Rocket Languages was perfect for my commute. The audio lessons are well-produced and I actually retained vocabulary. But I still needed real conversations to sound natural.",
-    author: "James R.",
-    location: "London"
-  }
+ {
+ quote: "iTalki changed my life. After 4 months of weekly lessons, I passed my job interview in English. Real conversations made all the difference.",
+ author: "Carlos M.",
+ location: "Mexico City"
+ },
+ {
+ quote: "I was skeptical about paying for tutors, but the ROI was incredible. I went from B1 to B2 in six months with regular iTalki sessions.",
+ author: "Aiko T.",
+ location: "Tokyo"
+ },
+ {
+ quote: "Rocket Languages was perfect for my commute. The audio lessons are well-produced and I actually retained vocabulary. But I still needed real conversations to sound natural.",
+ author: "James R.",
+ location: "London"
+ }
 ];
 
 const ratings = platformRatings;
 ---
 
 <Base 
-  title="iTalki vs Rocket Languages 2026: Which Is Better?"
-  description="Compare iTalki vs Rocket Languages: live tutoring vs self-paced audio course. Find out which platform is better for your English learning goals and budget."
+ title="iTalki vs Rocket Languages 2026: Which Is Better?"
+ description="Compare iTalki vs Rocket Languages: live tutoring vs self-paced audio course. Find out which platform is better for your English learning goals and budget."
 >
-  <Header />
-  
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-neutral-400 mb-4">
-      <a href="/" class="hover:text-emerald-400">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/compare" class="hover:text-emerald-400">Comparisons</a>
-      <span class="mx-2">/</span>
-      <span class="text-white">iTalki vs Rocket Languages</span>
-    </nav>
+ <Header />
+ 
+ <main class="max-w-4xl mx-auto px-4 py-8">
+ <!-- Breadcrumb -->
+ <nav class="text-sm text-neutral-400 mb-4">
+ <a href="/" class="hover:text-emerald-400">Home</a>
+ <span class="mx-2">/</span>
+ <a href="/compare" class="hover:text-emerald-400">Comparisons</a>
+ <span class="mx-2">/</span>
+ <span class="text-white">iTalki vs Rocket Languages</span>
+ </nav>
 
-    <!-- Hero Comparison Header -->
-    <div class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <div class="flex items-center justify-between mb-6">
-        <div class="text-center flex-1">
-          <a href="/reviews/italki/" class="hover:opacity-80 transition-opacity">
-            <p class="text-sm text-emerald-400 font-semibold uppercase tracking-wide mb-1">iTalki</p>
-            <div class="inline-flex items-center gap-1 bg-emerald-900/60 border border-emerald-700 rounded-lg px-3 py-1">
-              <span class="text-emerald-300 font-bold text-lg">{ratings.italki?.rating || '9.2'}</span>
-              <span class="text-emerald-400 text-xs">/10</span>
-            </div>
-          </a>
-        </div>
-        <div class="text-center px-4">
-          <span class="text-neutral-500 text-sm font-semibold">VS</span>
-        </div>
-        <div class="text-center flex-1">
-          <a href="/reviews/rocket-languages/" class="hover:opacity-80 transition-opacity">
-            <p class="text-sm text-blue-400 font-semibold uppercase tracking-wide mb-1">Rocket Languages</p>
-            <div class="inline-flex items-center gap-1 bg-blue-900/60 border border-blue-700 rounded-lg px-3 py-1">
-              <span class="text-blue-300 font-bold text-lg">{ratings['rocket-languages']?.rating || '7.8'}</span>
-              <span class="text-blue-400 text-xs">/10</span>
-            </div>
-          </a>
-        </div>
-      </div>
+ <!-- Hero Comparison Header -->
+ <div class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <div class="flex items-center justify-between mb-6">
+ <div class="text-center flex-1">
+ <a href="/reviews/italki/" class="hover:opacity-80 transition-opacity">
+ <p class="text-sm text-emerald-400 font-semibold uppercase tracking-wide mb-1">iTalki</p>
+ <div class="inline-flex items-center gap-1 bg-emerald-900/60 border border-emerald-700 rounded-lg px-3 py-1">
+ <span class="text-emerald-300 font-bold text-lg">{ratings.italki?.rating || '9.2'}</span>
+ <span class="text-emerald-400 text-xs">/10</span>
+ </div>
+ </a>
+ </div>
+ <div class="text-center px-4">
+ <span class="text-neutral-500 text-sm font-semibold">VS</span>
+ </div>
+ <div class="text-center flex-1">
+ <a href="/reviews/rocket-languages/" class="hover:opacity-80 transition-opacity">
+ <p class="text-sm text-blue-400 font-semibold uppercase tracking-wide mb-1">Rocket Languages</p>
+ <div class="inline-flex items-center gap-1 bg-blue-900/60 border border-blue-700 rounded-lg px-3 py-1">
+ <span class="text-blue-300 font-bold text-lg">{ratings['rocket-languages']?.rating || '7.8'}</span>
+ <span class="text-blue-400 text-xs">/10</span>
+ </div>
+ </a>
+ </div>
+ </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="text-center">
-          <p class="text-emerald-300 font-semibold mb-1">iTalki</p>
-          <p class="text-2xl font-black text-white mb-2">{italki.price}</p>
-          <p class="text-neutral-400 text-sm">{italki.bestFor}</p>
-        </div>
-        <div class="text-center">
-          <p class="text-blue-300 font-semibold mb-1">Rocket Languages</p>
-          <p class="text-2xl font-black text-white mb-2">{rocketLanguages.price}</p>
-          <p class="text-neutral-400 text-sm">{rocketLanguages.bestFor}</p>
-        </div>
-      </div>
-    </div>
+ <div class="grid md:grid-cols-2 gap-6">
+ <div class="text-center">
+ <p class="text-emerald-300 font-semibold mb-1">iTalki</p>
+ <p class="text-2xl font-black text-white mb-2">{italki.price}</p>
+ <p class="text-neutral-400 text-sm">{italki.bestFor}</p>
+ </div>
+ <div class="text-center">
+ <p class="text-blue-300 font-semibold mb-1">Rocket Languages</p>
+ <p class="text-2xl font-black text-white mb-2">{rocketLanguages.price}</p>
+ <p class="text-neutral-400 text-sm">{rocketLanguages.bestFor}</p>
+ </div>
+ </div>
+ </div>
 
-    <!-- Quick Verdict -->
-    <div class="grid sm:grid-cols-2 gap-4 mb-8">
-      <div class="bg-emerald-900/30 border-2 border-emerald-600 rounded-2xl p-5 text-center">
-        <p class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Better for Speaking</p>
-        <p class="text-3xl font-black text-emerald-400">iTalki</p>
-        <p class="text-sm text-neutral-400 mt-2">Real tutors, real conversations</p>
-      </div>
-      <div class="bg-blue-900/30 border-2 border-blue-600 rounded-2xl p-5 text-center">
-        <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Better for Self-Paced</p>
-        <p class="text-3xl font-black text-blue-400">Rocket Languages</p>
-        <p class="text-sm text-neutral-400 mt-2">Audio lessons on your schedule</p>
-      </div>
-    </div>
+ <!-- Quick Verdict -->
+ <div class="grid sm:grid-cols-2 gap-4 mb-8">
+ <div class="bg-emerald-900/30 border-2 border-emerald-600 rounded-2xl p-5 text-center">
+ <p class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Better for Speaking</p>
+ <p class="text-3xl font-black text-emerald-400">iTalki</p>
+ <p class="text-sm text-neutral-400 mt-2">Real tutors, real conversations</p>
+ </div>
+ <div class="bg-blue-900/30 border-2 border-blue-600 rounded-2xl p-5 text-center">
+ <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Better for Self-Paced</p>
+ <p class="text-3xl font-black text-blue-400">Rocket Languages</p>
+ <p class="text-sm text-neutral-400 mt-2">Audio lessons on your schedule</p>
+ </div>
+ </div>
 
-    <!-- FTC Disclosure -->
-    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8 text-sm text-gray-700">
-      <p><strong>Disclosure:</strong> LearnEnglish.Life earns a commission when you sign up for iTalki or Rocket Languages through links on this page. This does not affect our editorial independence. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure</a>.</p>
-    </div>
+ <!-- FTC Disclosure -->
+ <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8 text-sm text-gray-700">
+ <p><strong>Disclosure:</strong>LearnEnglish.Life earns a commission when you sign up for iTalki or Rocket Languages through links on this page. This does not affect our editorial independence. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure</a>.</p>
+ </div>
 
-    <!-- Why Compare Section -->
-    <BenefitCards 
-      title="Why Compare These Platforms?"
-      benefits={whyCompare}
-    />
+ <!-- Why Compare Section -->
+ <BenefitCards 
+ title="Why Compare These Platforms?"
+ benefits={whyCompare}
+ />
 
-    <!-- Social Proof -->
-    <SocialProof 
-      title="What Learners Say"
-      testimonials={testimonials}
-    />
+ <!-- Social Proof -->
+ <SocialProof 
+ title="What Learners Say"
+ testimonials={testimonials}
+ />
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-1" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-1" />
+ </div>
 
-    <!-- What Are the Main Differences -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2>
-      <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace. You browse thousands of human tutors, read their profiles, and book live video lessons whenever suits you. Each session is a real conversation with a real person who can answer your questions, correct your mistakes, and push you at exactly the right level.</p>
-      <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages is a self-paced audio course platform. It uses a combination of high-quality audio lessons recorded by native speakers, interactive voice recording exercises, and formal course structures. You work through lessons at your own pace, building vocabulary, listening comprehension, and pronunciation skills independently.</p>
-      <p class="text-neutral-300 leading-relaxed">The fundamental difference is human vs software. iTalki gets you talking to real people from day one. Rocket Languages lets you study on your schedule with audio lessons and pronunciation practice. Both can produce results, but they suit very different types of learners.</p>
-    </section>
+ <!-- What Are the Main Differences -->
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">What Are the Main Differences?</h2>
+ <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is a tutoring marketplace. You browse thousands of human tutors, read their profiles, and book live video lessons whenever suits you. Each session is a real conversation with a real person who can answer your questions, correct your mistakes, and push you at exactly the right level.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages is a self-paced audio course platform. It uses a combination of high-quality audio lessons recorded by native speakers, interactive voice recording exercises, and formal course structures. You work through lessons at your own pace, building vocabulary, listening comprehension, and pronunciation skills independently.</p>
+ <p class="text-neutral-300 leading-relaxed">The fundamental difference is human vs software. iTalki gets you talking to real people from day one. Rocket Languages lets you study on your schedule with audio lessons and pronunciation practice. Both can produce results, but they suit very different types of learners.</p>
+ </section>
 
-    <!-- Enhanced Comparison Table -->
-    <ComparisonHighlight 
-      title="Feature Comparison"
-      platformA={italki}
-      platformB={rocketLanguages}
-      winner="a"
-      rows={comparison}
-    />
+ <!-- Enhanced Comparison Table -->
+ <ComparisonHighlight 
+ title="Feature Comparison"
+ platformA={italki}
+ platformB={rocketLanguages}
+ winner="a"
+ rows={comparison}
+ />
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-2" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-2" />
+ </div>
 
-    <!-- Detailed Analysis -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
-      
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3>
-        <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4>
-        <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor based on their profile, availability, and reviews. Lessons can cover anything from casual conversation to business English to exam preparation.</p>
-        <p class="text-neutral-300 leading-relaxed">The key advantage is feedback that only a human can give. Your tutor hears exactly how you sound, notices patterns in your mistakes, and can explain why a phrase works in one situation but not another. This contextual, adaptive feedback is something no software currently replicates reliably.</p>
-      </div>
+ <!-- Detailed Analysis -->
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
+ 
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-white mb-3">Speaking Practice</h3>
+ <h4 class="text-lg font-semibold text-emerald-400 mb-2">iTalki: Real Conversations With Real Tutors</h4>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Speaking practice on iTalki means booking a lesson and talking to a real person over video. You choose your tutor based on their profile, availability, and reviews. Lessons can cover anything from casual conversation to business English to exam preparation.</p>
+ <p class="text-neutral-300 leading-relaxed">The key advantage is feedback that only a human can give. Your tutor hears exactly how you sound, notices patterns in your mistakes, and can explain why a phrase works in one situation but not another. This contextual, adaptive feedback is something no software currently replicates reliably.</p>
+ </div>
 
-      <div class="mb-8">
-        <h4 class="text-lg font-semibold text-blue-400 mb-2">Rocket Languages: Audio Lessons and Pronunciation Recording</h4>
-        <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages focuses on audio lessons as its core learning method. Native speakers record the lessons, and you listen, repeat, and record yourself. The voice recording tool compares your pronunciation to the native audio and gives you feedback on how well you matched it.</p>
-        <p class="text-neutral-300 mb-4 leading-relaxed">This approach is genuinely useful for building listening comprehension and practicing pronunciation in isolation. However, recording yourself speaking single phrases into a microphone is fundamentally different from holding a conversation. Rocket Languages does not prepare you for the unpredictability of real spoken English.</p>
-        <p class="text-neutral-300 leading-relaxed">If your main goal is to improve your accent and build vocabulary through listening, Rocket Languages has real value. If you want to actually hold conversations in English, iTalki is the clear winner.</p>
-      </div>
+ <div class="mb-8">
+ <h4 class="text-lg font-semibold text-blue-400 mb-2">Rocket Languages: Audio Lessons and Pronunciation Recording</h4>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages focuses on audio lessons as its core learning method. Native speakers record the lessons, and you listen, repeat, and record yourself. The voice recording tool compares your pronunciation to the native audio and gives you feedback on how well you matched it.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">This approach is genuinely useful for building listening comprehension and practicing pronunciation in isolation. However, recording yourself speaking single phrases into a microphone is fundamentally different from holding a conversation. Rocket Languages does not prepare you for the unpredictability of real spoken English.</p>
+ <p class="text-neutral-300 leading-relaxed">If your main goal is to improve your accent and build vocabulary through listening, Rocket Languages has real value. If you want to actually hold conversations in English, iTalki is the clear winner.</p>
+ </div>
 
-      <div>
-        <h3 class="text-xl font-bold text-white mb-3">Learning Structure and Progression</h3>
-        <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages provides a structured course path. Lessons are organized into modules covering vocabulary, dialogue, grammar, and cultural notes. You always know where you are and what comes next. This structure suits learners who prefer guidance over freedom.</p>
-        <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is less structured by design. You set your own goals and work with tutors to achieve them. This is more flexible, but it requires more self-direction. Some learners thrive with this freedom; others need the scaffold that Rocket Languages provides.</p>
-        <p class="text-neutral-300 leading-relaxed">Many successful learners combine both: they use Rocket Languages to build vocabulary and listening foundations, then use iTalki to practice what they have learned in real conversations. This gives structure plus human interaction.</p>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-xl font-bold text-white mb-3">Learning Structure and Progression</h3>
+ <p class="text-neutral-300 mb-4 leading-relaxed">Rocket Languages provides a structured course path. Lessons are organized into modules covering vocabulary, dialogue, grammar, and cultural notes. You always know where you are and what comes next. This structure suits learners who prefer guidance over freedom.</p>
+ <p class="text-neutral-300 mb-4 leading-relaxed">iTalki is less structured by design. You set your own goals and work with tutors to achieve them. This is more flexible, but it requires more self-direction. Some learners thrive with this freedom; others need the scaffold that Rocket Languages provides.</p>
+ <p class="text-neutral-300 leading-relaxed">Many successful learners combine both: they use Rocket Languages to build vocabulary and listening foundations, then use iTalki to practice what they have learned in real conversations. This gives structure plus human interaction.</p>
+ </div>
+ </section>
 
-    <!-- FAQ Section -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Rocket Languages for speaking English?</h3>
-          <p class="text-neutral-300">
-            <strong>Yes, iTalki is significantly better</strong> for developing actual speaking ability. It connects you with real human tutors for live video conversations, giving you instant feedback on pronunciation, grammar, and natural word choice. Rocket Languages uses voice recording for pronunciation feedback, but it cannot replicate the spontaneity and contextual guidance of talking to a real person.
-          </p>
-        </div>
+ <!-- FAQ Section -->
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+ 
+ <div class="space-y-6">
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Is iTalki better than Rocket Languages for speaking English?</h3>
+ <p class="text-neutral-300">
+ <strong>Yes, iTalki is significantly better</strong>for developing actual speaking ability. It connects you with real human tutors for live video conversations, giving you instant feedback on pronunciation, grammar, and natural word choice. Rocket Languages uses voice recording for pronunciation feedback, but it cannot replicate the spontaneity and contextual guidance of talking to a real person.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, iTalki or Rocket Languages?</h3>
-          <p class="text-neutral-300">
-            Rocket Languages has a lower monthly cost at <strong>$9.95/month</strong> with full access to all courses. iTalki lessons start at <strong>$5</strong> with community tutors, but you pay per lesson. For light usage, Rocket Languages may be more cost-effective. For dedicated speaking practice several times a week, iTalki's pay-per-lesson model often delivers better results per dollar spent.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Which is cheaper, iTalki or Rocket Languages?</h3>
+ <p class="text-neutral-300">Rocket Languages has a lower monthly cost at <strong>$9.95/month</strong>with full access to all courses. iTalki lessons start at <strong>$5</strong>with community tutors, but you pay per lesson. For light usage, Rocket Languages may be more cost-effective. For dedicated speaking practice several times a week, iTalki's pay-per-lesson model often delivers better results per dollar spent.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Can I use both iTalki and Rocket Languages together?</h3>
-          <p class="text-neutral-300">
-            <strong>Absolutely.</strong> Many effective learners combine both platforms. They use Rocket Languages to build vocabulary and listening comprehension during commutes or spare moments, then book regular iTalki sessions to practice what they have learned with real tutors. This creates a structured learning system plus real conversation practice.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Can I use both iTalki and Rocket Languages together?</h3>
+ <p class="text-neutral-300">
+ <strong>Absolutely.</strong>Many effective learners combine both platforms. They use Rocket Languages to build vocabulary and listening comprehension during commutes or spare moments, then book regular iTalki sessions to practice what they have learned with real tutors. This creates a structured learning system plus real conversation practice.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Which platform is better for beginners?</h3>
-          <p class="text-neutral-300">
-            Both work for beginners, but in different ways. <strong>Rocket Languages</strong> is better for learners who want to start building vocabulary and listening comprehension from scratch through structured audio lessons. <strong>iTalki</strong> is better for beginners who want to start speaking immediately and are comfortable with a conversational approach from day one.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Which platform is better for beginners?</h3>
+ <p class="text-neutral-300">Both work for beginners, but in different ways. <strong>Rocket Languages</strong>is better for learners who want to start building vocabulary and listening comprehension from scratch through structured audio lessons. <strong>iTalki</strong>is better for beginners who want to start speaking immediately and are comfortable with a conversational approach from day one.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Does Rocket Languages actually help with speaking?</h3>
-          <p class="text-neutral-300">
-            Rocket Languages has a voice recording feature that compares your spoken English to native audio. It is helpful for practicing pronunciation and building confidence speaking in isolation. However, it cannot engage you in a real conversation or adapt to your specific mistakes in real time. For developing real conversational ability, iTalki is far more effective.
-          </p>
-        </div>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Does Rocket Languages actually help with speaking?</h3>
+ <p class="text-neutral-300">Rocket Languages has a voice recording feature that compares your spoken English to native audio. It is helpful for practicing pronunciation and building confidence speaking in isolation. However, it cannot engage you in a real conversation or adapt to your specific mistakes in real time. For developing real conversational ability, iTalki is far more effective.
+ </p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-3" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-3" />
+ </div>
 
-    <!-- Verdict Section -->
-    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2>
-      <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
-          <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Your main goal is to speak English confidently</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want instant feedback from a real human</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You are preparing for a test, interview, or travel</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You prefer flexible, conversation-based learning</li>
-          </ul>
-        </div>
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
-          <h3 class="font-bold text-blue-300 mb-2">Choose Rocket Languages if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You prefer structured, self-paced audio lessons</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You need offline access for travel or commuting</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want to build listening comprehension first</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want formal certification pathways</li>
-          </ul>
-        </div>
-      </div>
-      <p class="text-neutral-300">The best approach for most learners is to use both: Rocket Languages for building vocabulary and listening foundations, then iTalki to practice everything in real conversations with native speakers.</p>
-    </section>
+ <!-- Verdict Section -->
+ <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Which Should You Choose?</h2>
+ <div class="grid md:grid-cols-2 gap-6 mb-6">
+ <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
+ <h3 class="font-bold text-neutral-300 mb-2">Choose iTalki if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Your main goal is to speak English confidently</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want instant feedback from a real human</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You are preparing for a test, interview, or travel</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You prefer flexible, conversation-based learning</li>
+ </ul>
+ </div>
+ <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
+ <h3 class="font-bold text-blue-300 mb-2">Choose Rocket Languages if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You prefer structured, self-paced audio lessons</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You need offline access for travel or commuting</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want to build listening comprehension first</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2">→</span>You want formal certification pathways</li>
+ </ul>
+ </div>
+ </div>
+ <p class="text-neutral-300">The best approach for most learners is to use both: Rocket Languages for building vocabulary and listening foundations, then iTalki to practice everything in real conversations with native speakers.</p>
+ </section>
 
-    <!-- iTalki CTA -->
-    <div class="bg-emerald-900/40 border-2 border-emerald-600 rounded-2xl p-6 mb-6">
-      <div class="flex items-start gap-4">
-        <div class="flex-shrink-0 w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
-          <span class="text-white text-xl font-bold">iT</span>
-        </div>
-        <div class="flex-1">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-emerald-400 font-bold text-lg">iTalki</span>
-            <span class="bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">EDITOR'S CHOICE</span>
-          </div>
-          <p class="text-neutral-300 text-sm mb-3">Live 1-on-1 lessons with real tutors from $5. Flexible scheduling, no subscription required.</p>
-          <a href="/go/italki" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">
-            Try iTalki → 
-          </a>
-        </div>
-      </div>
-    </div>
+ <!-- iTalki CTA -->
+ <div class="bg-emerald-900/40 border-2 border-emerald-600 rounded-2xl p-6 mb-6">
+ <div class="flex items-start gap-4">
+ <div class="flex-shrink-0 w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
+ <span class="text-white text-xl font-bold">iT</span>
+ </div>
+ <div class="flex-1">
+ <div class="flex items-center gap-2 mb-1">
+ <span class="text-emerald-400 font-bold text-lg">iTalki</span>
+ <span class="bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">EDITOR'S CHOICE</span>
+ </div>
+ <p class="text-neutral-300 text-sm mb-3">Live 1-on-1 lessons with real tutors from $5. Flexible scheduling, no subscription required.</p>
+ <a href="/go/italki" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">Try iTalki → 
+ </a>
+ </div>
+ </div>
+ </div>
 
-    <!-- Rocket Languages CTA -->
-    <div class="bg-blue-900/40 border-2 border-blue-600 rounded-2xl p-6 mb-6">
-      <div class="flex items-start gap-4">
-        <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-          <span class="text-white text-xl font-bold">RL</span>
-        </div>
-        <div class="flex-1">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-blue-400 font-bold text-lg">Rocket Languages</span>
-            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">GOOD VALUE</span>
-          </div>
-          <p class="text-neutral-300 text-sm mb-3">Self-paced audio lessons from $9.95/month. Offline access, native speaker recordings, pronunciation practice.</p>
-          <a href="/go/rocket-languages" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">
-            Try Rocket Languages → 
-          </a>
-        </div>
-      </div>
-    </div>
+ <!-- Rocket Languages CTA -->
+ <div class="bg-blue-900/40 border-2 border-blue-600 rounded-2xl p-6 mb-6">
+ <div class="flex items-start gap-4">
+ <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+ <span class="text-white text-xl font-bold">RL</span>
+ </div>
+ <div class="flex-1">
+ <div class="flex items-center gap-2 mb-1">
+ <span class="text-blue-400 font-bold text-lg">Rocket Languages</span>
+ <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">GOOD VALUE</span>
+ </div>
+ <p class="text-neutral-300 text-sm mb-3">Self-paced audio lessons from $9.95/month. Offline access, native speaker recordings, pronunciation practice.</p>
+ <a href="/go/rocket-languages" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-xl text-sm transition-colors">Try Rocket Languages → 
+ </a>
+ </div>
+ </div>
+ </div>
 
-    <!-- See Guru Alternative -->
-    <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
-      <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p>
-      <p class="text-slate-600 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured one-on-one tutoring with certified teachers, including three free trial lessons.</p>
-      <a href="/go/see-guru" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a>
-      <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
-    </section>
+ <!-- See Guru Alternative -->
+ <section class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+ <p class="font-bold text-lg mb-2">Try See Guru as an Alternative</p>
+ <p class="text-slate-600 mb-4">If you want live tutoring sessions at a fixed monthly price, See Guru is another option worth considering. It offers structured one-on-one tutoring with certified teachers, including three free trial lessons.</p>
+ <a href="/go/see-guru" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Visit See Guru</a>
+ <p class="text-xs text-slate-400 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+ </section>
 
-    <!-- Related Reviews -->
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
-      <div class="grid gap-4">
-        <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">iTalki Review</p>
-          <p class="text-sm text-neutral-400">9.2/10, Best for affordable live tutor lessons</p>
-        </a>
-        <a href="/reviews/rosetta-stone/" class="block p-4 border border-gray-700 rounded-lg hover:border-blue-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">Rocket Languages Review</p>
-          <p class="text-sm text-neutral-400">Full review of Rocket Languages' features, pricing, and audio learning tools</p>
-        </a>
-        <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
-          <p class="font-semibold text-white">iTalki vs Preply</p>
-          <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p>
-        </a>
-      </div>
-    </section>
+ <!-- Related Reviews -->
+ <section class="mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+ <div class="grid gap-4">
+ <a href="/reviews/italki/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">iTalki Review</p>
+ <p class="text-sm text-neutral-400">9.2/10, Best for affordable live tutor lessons</p>
+ </a>
+ <a href="/reviews/rosetta-stone/" class="block p-4 border border-gray-700 rounded-lg hover:border-blue-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">Rocket Languages Review</p>
+ <p class="text-sm text-neutral-400">Full review of Rocket Languages' features, pricing, and audio learning tools</p>
+ </a>
+ <a href="/compare/italki-vs-preply/" class="block p-4 border border-gray-700 rounded-lg hover:border-emerald-500 hover:bg-slate-800/50 transition-colors">
+ <p class="font-semibold text-white">iTalki vs Preply</p>
+ <p class="text-sm text-neutral-400">Compare two popular tutor marketplaces side by side</p>
+ </a>
+ </div>
+ </section>
 
-    <!-- Affiliate Disclosure -->
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
-      <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
-    </div>
-  </main>
+ <!-- Affiliate Disclosure -->
+ <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-slate-700">
+ <p>Last updated April 2026. Pricing is approximate and may change. This page contains affiliate links. <a href="/affiliate-disclosure/" class="underline hover:text-emerald-400">See our full affiliate disclosure</a>.</p>
+ </div>
+ </main>
 
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText="Compare Platforms"
-    ctaLink="/go/italki"
-    platform="italki"
-  />
+ <!-- Sticky CTA for Mobile -->
+ <StickyCTA 
+ ctaText="Compare Platforms"
+ ctaLink="/go/italki"
+ platform="italki"
+ />
 
-  <Footer />
+ <Footer />
 
-  <!-- See Guru alternative callout -->
-  <aside class="my-12 max-w-3xl mx-auto px-4">
-    <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
-      <div class="flex items-start gap-4">
-        <div class="text-3xl flex-shrink-0">💡</div>
-        <div class="flex-1">
-          <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3>
-          <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong> with certified English teachers, no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p>
-          <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
-        </div>
-      </div>
-    </div>
-  </aside>
+ <!-- See Guru alternative callout -->
+ <aside class="my-12 max-w-3xl mx-auto px-4">
+ <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
+ <div class="flex items-start gap-4">
+ <div class="text-3xl flex-shrink-0"></div>
+ <div class="flex-1">
+ <h3 class="text-lg md:text-xl font-bold text-white mb-2">Want live tutoring without the marketplace search?</h3>
+ <p class="text-slate-200 mb-4">See Guru offers <strong class="text-emerald-300">three free trial lessons</strong>with certified English teachers, no searching for tutors, no scheduling hassle. Lessons start at $5, and you get a structured curriculum plus real conversation practice.</p>
+ <a href="/go/see-guru" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
+ </div>
+ </div>
+ </div>
+ </aside>
 
 </Base>

@@ -6,384 +6,359 @@ import ReviewCard from '../components/ReviewCard.astro';
 import AdUnit from '../components/AdUnit.astro';
 
 const features = [
-  {
-    title: "Honest Platform Reviews",
-    description: "In-depth, unbiased reviews of 50+ tutoring platforms, courses, and apps.",
-    icon: "📝"
-  },
-  {
-    title: "Side-by-Side Comparisons",
-    description: "Compare prices, features, and user ratings to find your perfect match.",
-    icon: "⚖️"
-  },
-  {
-    title: "AI Learning Tools",
-    description: "Practice with our free AI-powered grammar checker, vocabulary builder, and more.",
-    icon: "🤖"
-  },
-  {
-    title: "Interactive Games",
-    description: "Learn English through fun games: quizzes, word puzzles, and challenges.",
-    icon: "🎮"
-  }
+ {
+ title: "Honest Platform Reviews",
+ description: "In-depth, unbiased reviews of 50+ tutoring platforms, courses, and apps.",
+ icon: "Reviews"
+ },
+ {
+ title: "Side-by-Side Comparisons",
+ description: "Compare prices, features, and user ratings to find your perfect match.",
+ icon: "Compare"
+ },
+ {
+ title: "AI Learning Tools",
+ description: "Practice with our free AI-powered grammar checker, vocabulary builder, and more.",
+ icon: "Compare"
+ },
+ {
+ title: "Interactive Games",
+ description: "Learn English through fun games: quizzes, word puzzles, and challenges.",
+ icon: "Tools"
+ }
 ];
 
 const popularLinks = [
-  {
-    label: "iTalki Review",
-    title: "iTalki Review 2026",
-    description: "Honest review of the world's largest language tutoring marketplace.",
-    href: "/reviews/italki/",
-    badge: "Top Rated"
-  },
-  {
-    label: "iTalki vs Preply",
-    title: "iTalki vs Preply: Which is Better?",
-    description: "Head-to-head comparison of pricing, teachers, and features.",
-    href: "/compare/italki-vs-preply/",
-    badge: "Comparison"
-  },
-  {
-    label: "Best Tutors for Beginners",
-    title: "Best Online English Tutors for Beginners",
-    description: "Where to start if you're new to 1-on-1 tutoring. Free trial options included.",
-    href: "/guides/best-english-tutors-for-beginners/",
-    badge: "Popular Guide"
-  },
-  {
-    label: "Tutors for Business English",
-    title: "Best English Tutors for Business Professionals",
-    description: "Find tutors who specialize in business English, presentations, and negotiations.",
-    href: "/guides/best-english-tutors-for-business/",
-    badge: "Top Guide"
-  }
+ {
+ label: "iTalki Review",
+ title: "iTalki Review 2026",
+ description: "Honest review of the world's largest language tutoring marketplace.",
+ href: "/reviews/italki/",
+ badge: "Top Rated"
+ },
+ {
+ label: "iTalki vs Preply",
+ title: "iTalki vs Preply: Which is Better?",
+ description: "Head-to-head comparison of pricing, teachers, and features.",
+ href: "/compare/italki-vs-preply/",
+ badge: "Comparison"
+ },
+ {
+ label: "Best Tutors for Beginners",
+ title: "Best Online English Tutors for Beginners",
+ description: "Where to start if you're new to 1-on-1 tutoring. Free trial options included.",
+ href: "/guides/best-english-tutors-for-beginners/",
+ badge: "Popular Guide"
+ },
+ {
+ label: "Tutors for Business English",
+ title: "Best English Tutors for Business Professionals",
+ description: "Find tutors who specialize in business English, presentations, and negotiations.",
+ href: "/guides/best-english-tutors-for-business/",
+ badge: "Top Guide"
+ }
 ];
 
 // WebSite JSON-LD Schema
 const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "LearnEnglish.Life",
-  "url": "https://learnenglish.life",
-  "description": "Honest reviews, side-by-side comparisons and free practice tools to help you find the best way to learn English online.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://learnenglish.life/?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life",
-    "url": "https://learnenglish.life"
-  }
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "LearnEnglish.Life",
+ "url": "https://learnenglish.life",
+ "description": "Honest reviews, side-by-side comparisons and free practice tools to help you find the best way to learn English online.",
+ "potentialAction": {
+ "@type": "SearchAction",
+ "target": {
+ "@type": "EntryPoint",
+ "urlTemplate": "https://learnenglish.life/?q={search_term_string}"
+ },
+ "query-input": "required name=search_term_string"
+ },
+ "publisher": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life",
+ "url": "https://learnenglish.life"
+ }
 };
 ---
 
 <Base title="LearnEnglish.Life - Your Guide to the Best English Learning Resources" description="Honest reviews, side-by-side comparisons and free practice tools to help you find the best way to learn English online, including tutors, courses and apps tested for you.">
-  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-  <Header />
-  
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 md:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-          Master English with the
-          <span class="text-emerald-400">Right Tools</span>
-        </h1>
-        <p class="text-lg md:text-xl text-neutral-300 mb-8">
-          Honest reviews, expert comparisons, and free AI-powered practice tools.
-          Everything you need to find your perfect English learning path.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/reviews/" class="px-8 py-4 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">
-            Explore Reviews
-          </a>
-          <a href="/tools/" class="px-8 py-4 bg-slate-900/60/10 text-white font-semibold rounded-lg border-2 border-white/30 hover:border-emerald-400 hover:text-emerald-400 transition-colors">
-            Try Free Tools
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+ <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+ <Header />
+ 
+ <!-- Hero Section -->
+ <section class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 md:py-24">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6">
+ <div class="text-center max-w-3xl mx-auto">
+ <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Master English with the
+ <span class="text-emerald-400">Right Tools</span>
+ </h1>
+ <p class="text-lg md:text-xl text-neutral-300 mb-8">Honest reviews, expert comparisons, and free AI-powered practice tools.
+ Everything you need to find your perfect English learning path.
+ </p>
+ <div class="flex flex-col sm:flex-row gap-4 justify-center">
+ <a href="/reviews/" class="px-8 py-4 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Explore Reviews
+ </a>
+ <a href="/tools/" class="px-8 py-4 bg-slate-900/60/10 text-white font-semibold rounded-lg border-2 border-white/30 hover:border-emerald-400 hover:text-emerald-400 transition-colors">Try Free Tools
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <!-- ADSENSE: LEADERBOARD -->
-  <div class="bg-neutral-800 border border-neutral-600 rounded-lg flex items-center justify-center" style="width:100%; max-width:728px; height:90px; margin:0 auto;">
-    <span class="text-neutral-400 text-sm">Ad Placement: Leaderboard (728x90)</span>
-  </div>
+ <!-- ADSENSE: LEADERBOARD -->
+ <div class="bg-neutral-800 border border-neutral-600 rounded-lg flex items-center justify-center" style="width:100%; max-width:728px; height:90px; margin:0 auto;">
+ <span class="text-neutral-400 text-sm">Ad Placement: Leaderboard (728x90)</span>
+ </div>
 
 
-  <!-- Affiliate Disclosure Banner -->
-  <div class="bg-amber-950/60 border-y border-amber-700 py-4">
-    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-amber-100">
-      <strong class="text-amber-300">🔗 Affiliate Disclosure:</strong> We may earn a commission at no extra cost to you when you sign up through our links. Our reviews remain 100% unbiased. <a href="/affiliate-disclosure/" class="underline text-amber-300 hover:text-white">Learn more</a>
-    </div>
-  </div>
+ <!-- Affiliate Disclosure Banner -->
+ <div class="bg-amber-950/60 border-y border-amber-700 py-4">
+ <div class="max-w-6xl mx-auto px-4 text-center text-sm text-amber-100">
+ <strong class="text-amber-300">Affiliate Disclosure:</strong>We may earn a commission at no extra cost to you when you sign up through our links. Our reviews remain 100% unbiased. <a href="/affiliate-disclosure/" class="underline text-amber-300 hover:text-white">Learn more</a>
+ </div>
+ </div>
 
-  <!-- Ad Banner -->
-  <div class="bg-neutral-900 py-4">
-    <div class="max-w-6xl mx-auto px-4">
-      <AdUnit slot="header" format="horizontal" />
-    </div>
-  </div>
+ <!-- Ad Banner -->
+ <div class="bg-neutral-900 py-4">
+ <div class="max-w-6xl mx-auto px-4">
+ <AdUnit slot="header" format="horizontal" />
+ </div>
+ </div>
 
-  <!-- Top 3 Platforms with Affiliate CTAs -->
-  <section class="py-16 bg-neutral-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-          Start Learning Today: Our Top Picks
-        </h2>
-        <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
-          We tested dozens of platforms. Here are our three favorites for learning English online.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- See Guru - BEST OVERALL -->
-        <div class="bg-neutral-900 rounded-2xl p-6 border border-emerald-800">
-          <div class="flex items-center justify-between mb-4">
-            <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST OVERALL</span>
-            <span class="text-2xl font-bold text-emerald-400">4.8/5</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-1">See Guru</h3>
-          <div class="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full mb-3">🎁 3 FREE TRIAL LESSONS</div>
-          <p class="text-neutral-300 mb-4">The only platform that gives you three free 1-on-1 lessons with real human tutors - not bots, not videos. Certified, diploma-holding teachers and flexible scheduling.</p>
-          <ul class="text-sm space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-neutral-200">✅ <strong>3 free trial lessons</strong> with real tutors</li>
-            <li class="flex items-center gap-2 text-neutral-200">✅ Certified, diploma-holding teachers</li>
-            <li class="flex items-center gap-2 text-neutral-200">✅ Flexible 1-on-1 scheduling, $5+/lesson</li>
-          </ul>
-          <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="block w-full bg-emerald-600 text-white text-center font-bold py-3 rounded-lg hover:bg-emerald-500 transition-colors">
-            Get 3 Free Lessons →
-          </a>
-        </div>
-        
-        <!-- Preply -->
-        <div class="bg-neutral-900 rounded-2xl p-6 border border-blue-800">
-          <div class="flex items-center justify-between mb-4">
-            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST STRUCTURE</span>
-            <span class="text-2xl font-bold text-blue-400">4.6/5</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-2">Preply</h3>
-          <p class="text-neutral-300 mb-4">Professional tutors, structured curriculum, and 1-on-1 lessons tailored to your goals.</p>
-          <ul class="text-sm space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-neutral-200">✅ From $10/hour</li>
-            <li class="flex items-center gap-2 text-neutral-200">✅ Certified teachers</li>
-            <li class="flex items-center gap-2 text-neutral-200">✅ Personalized plans</li>
-          </ul>
-          <a href="/go/preply" class="block w-full bg-blue-600 text-white text-center font-bold py-3 rounded-lg hover:bg-blue-500 transition-colors">
-            Try Preply Free →
-          </a>
-        </div>
-        
-        <!-- Cambly -->
-        <div class="bg-neutral-900 rounded-2xl p-6 border border-purple-800">
-          <div class="flex items-center justify-between mb-4">
-            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</span>
-            <span class="text-2xl font-bold text-purple-400">4.4/5</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-2">Cambly</h3>
-          <p class="text-neutral-300 mb-4">Unlimited conversation practice with native speakers. Great for building confidence.</p>
-          <ul class="text-sm space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-neutral-200">✅ From $6.50/week</li>
-            <li class="flex items-center gap-2 text-neutral-200">✅ Unlimited minutes</li>
-            <li class="flex items-center gap-2 text-neutral-200">✅ No subscription</li>
-          </ul>
-          <a href="/go/cambly" class="block w-full bg-purple-600 text-white text-center font-bold py-3 rounded-lg hover:bg-purple-500 transition-colors">
-            Try Cambly Free →
-          </a>
-        </div>
-      </div>
-      
-      <p class="text-center text-sm text-neutral-400 mt-6">
-        * We may earn a commission when you sign up through our links. <a href="/affiliate-disclosure/" class="text-emerald-400 hover:underline">Full disclosure</a>
-      </p>
-    </div>
-  </section>
+ <!-- Top 3 Platforms with Affiliate CTAs -->
+ <section class="py-16 bg-neutral-950">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6">
+ <div class="text-center mb-12">
+ <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Start Learning Today: Our Top Picks
+ </h2>
+ <p class="text-lg text-neutral-300 max-w-2xl mx-auto">We tested dozens of platforms. Here are our three favorites for learning English online.
+ </p>
+ </div>
+ 
+ <div class="grid md:grid-cols-3 gap-8">
+ <!-- See Guru - BEST OVERALL -->
+ <div class="bg-neutral-900 rounded-2xl p-6 border border-emerald-800">
+ <div class="flex items-center justify-between mb-4">
+ <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST OVERALL</span>
+ <span class="text-2xl font-bold text-emerald-400">4.8/5</span>
+ </div>
+ <h3 class="text-2xl font-bold text-white mb-1">See Guru</h3>
+ <div class="inline-block bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs font-bold px-2.5 py-1 rounded-full mb-3">3 FREE TRIAL LESSONS</div>
+ <p class="text-neutral-300 mb-4">The only platform that gives you three free 1-on-1 lessons with real human tutors - not bots, not videos. Certified, diploma-holding teachers and flexible scheduling.</p>
+ <ul class="text-sm space-y-2 mb-6">
+ <li class="flex items-center gap-2 text-neutral-200"> <strong>3 free trial lessons</strong>with real tutors</li>
+ <li class="flex items-center gap-2 text-neutral-200">Certified, diploma-holding teachers</li>
+ <li class="flex items-center gap-2 text-neutral-200">Flexible 1-on-1 scheduling, $5+/lesson</li>
+ </ul>
+ <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="block w-full bg-emerald-600 text-white text-center font-bold py-3 rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →
+ </a>
+ </div>
+ 
+ <!-- Preply -->
+ <div class="bg-neutral-900 rounded-2xl p-6 border border-blue-800">
+ <div class="flex items-center justify-between mb-4">
+ <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST STRUCTURE</span>
+ <span class="text-2xl font-bold text-blue-400">4.6/5</span>
+ </div>
+ <h3 class="text-2xl font-bold text-white mb-2">Preply</h3>
+ <p class="text-neutral-300 mb-4">Professional tutors, structured curriculum, and 1-on-1 lessons tailored to your goals.</p>
+ <ul class="text-sm space-y-2 mb-6">
+ <li class="flex items-center gap-2 text-neutral-200">From $10/hour</li>
+ <li class="flex items-center gap-2 text-neutral-200">Certified teachers</li>
+ <li class="flex items-center gap-2 text-neutral-200">Personalized plans</li>
+ </ul>
+ <a href="/go/preply" class="block w-full bg-blue-600 text-white text-center font-bold py-3 rounded-lg hover:bg-blue-500 transition-colors">Try Preply Free →
+ </a>
+ </div>
+ 
+ <!-- Cambly -->
+ <div class="bg-neutral-900 rounded-2xl p-6 border border-purple-800">
+ <div class="flex items-center justify-between mb-4">
+ <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</span>
+ <span class="text-2xl font-bold text-purple-400">4.4/5</span>
+ </div>
+ <h3 class="text-2xl font-bold text-white mb-2">Cambly</h3>
+ <p class="text-neutral-300 mb-4">Unlimited conversation practice with native speakers. Great for building confidence.</p>
+ <ul class="text-sm space-y-2 mb-6">
+ <li class="flex items-center gap-2 text-neutral-200">From $6.50/week</li>
+ <li class="flex items-center gap-2 text-neutral-200">Unlimited minutes</li>
+ <li class="flex items-center gap-2 text-neutral-200">No subscription</li>
+ </ul>
+ <a href="/go/cambly" class="block w-full bg-purple-600 text-white text-center font-bold py-3 rounded-lg hover:bg-purple-500 transition-colors">Try Cambly Free →
+ </a>
+ </div>
+ </div>
+ 
+ <p class="text-center text-sm text-neutral-400 mt-6">
+ * We may earn a commission when you sign up through our links. <a href="/affiliate-disclosure/" class="text-emerald-400 hover:underline">Full disclosure</a>
+ </p>
+ </div>
+ </section>
 
-  <!-- Popular Guides & Key Pages -->
-  <section class="py-16 bg-neutral-950">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
-          Popular Guides
-        </h2>
-        <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
-          Deep-dive guides and comparisons that help you make smarter decisions about where to learn English.
-        </p>
-      </div>
+ <!-- Popular Guides & Key Pages -->
+ <section class="py-16 bg-neutral-950">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6">
+ <div class="text-center mb-10">
+ <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Popular Guides
+ </h2>
+ <p class="text-lg text-neutral-300 max-w-2xl mx-auto">Deep-dive guides and comparisons that help you make smarter decisions about where to learn English.
+ </p>
+ </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        {popularLinks.map(link => (
-          <a href={link.href} class="group bg-neutral-900 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
-            <div class="p-6">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
-                  {link.badge}
-                </span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
-                {link.title} →
-              </h3>
-              <p class="text-neutral-400 text-sm">{link.description}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+ <div class="grid md:grid-cols-2 gap-6">
+ {popularLinks.map(link => (
+ <a href={link.href} class="group bg-neutral-900 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
+ <div class="p-6">
+ <div class="flex items-center gap-3 mb-3">
+ <span class="bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">
+ {link.badge}
+ </span>
+ </div>
+ <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+ {link.title} →
+ </h3>
+ <p class="text-neutral-400 text-sm">{link.description}</p>
+ </div>
+ </a>
+ ))}
+ </div>
 
-      <div class="text-center mt-8">
-        <a href="/guides/" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
-          Browse all guides →
-        </a>
-      </div>
-    </div>
-  </section>
+ <div class="text-center mt-8">
+ <a href="/guides/" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">Browse all guides →
+ </a>
+ </div>
+ </div>
+ </section>
 
-  <!-- From the blog -->
-  <section class="py-16 bg-neutral-900 border-y border-neutral-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
-          Latest from the Blog
-        </h2>
-        <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
-          Honest, practical articles to help you actually learn English faster.
-        </p>
-      </div>
+ <!-- From the blog -->
+ <section class="py-16 bg-neutral-900 border-y border-neutral-800">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6">
+ <div class="text-center mb-10">
+ <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Latest from the Blog
+ </h2>
+ <p class="text-lg text-neutral-300 max-w-2xl mx-auto">Honest, practical articles to help you actually learn English faster.
+ </p>
+ </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <a href="/blog/how-long-to-learn-english/" class="group bg-neutral-950 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
-          <div class="p-6">
-            <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-3">REALITY CHECK</span>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
-              How Long Does It Really Take to Learn English?
-            </h3>
-            <p class="text-neutral-400 text-sm">Real CEFR study hours per level. The honest math behind every learner's timeline.</p>
-            <p class="mt-4 text-emerald-400 text-sm font-semibold">Read article &rarr;</p>
-          </div>
-        </a>
-        <a href="/blog/best-time-to-study-english/" class="group bg-neutral-950 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
-          <div class="p-6">
-            <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-3">STUDY HABITS</span>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
-              What's the Best Time of Day to Study English?
-            </h3>
-            <p class="text-neutral-400 text-sm">Sleep science, the post-lunch dip, and a real schedule for working learners.</p>
-            <p class="mt-4 text-emerald-400 text-sm font-semibold">Read article &rarr;</p>
-          </div>
-        </a>
-        <a href="/blog/free-vs-paid-english-resources/" class="group bg-neutral-950 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
-          <div class="p-6">
-            <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-3">BUDGET GUIDE</span>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
-              Free vs Paid English Resources
-            </h3>
-            <p class="text-neutral-400 text-sm">Where free wins, where it fails, and a hybrid plan under $30 a month.</p>
-            <p class="mt-4 text-emerald-400 text-sm font-semibold">Read article &rarr;</p>
-          </div>
-        </a>
-      </div>
+ <div class="grid md:grid-cols-3 gap-6">
+ <a href="/blog/how-long-to-learn-english/" class="group bg-neutral-950 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
+ <div class="p-6">
+ <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-3">REALITY CHECK</span>
+ <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">How Long Does It Really Take to Learn English?
+ </h3>
+ <p class="text-neutral-400 text-sm">Real CEFR study hours per level. The honest math behind every learner's timeline.</p>
+ <p class="mt-4 text-emerald-400 text-sm font-semibold">Read article &rarr;</p>
+ </div>
+ </a>
+ <a href="/blog/best-time-to-study-english/" class="group bg-neutral-950 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
+ <div class="p-6">
+ <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-3">STUDY HABITS</span>
+ <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">What's the Best Time of Day to Study English?
+ </h3>
+ <p class="text-neutral-400 text-sm">Sleep science, the post-lunch dip, and a real schedule for working learners.</p>
+ <p class="mt-4 text-emerald-400 text-sm font-semibold">Read article &rarr;</p>
+ </div>
+ </a>
+ <a href="/blog/free-vs-paid-english-resources/" class="group bg-neutral-950 rounded-xl border border-neutral-700 hover:border-emerald-500 transition-colors overflow-hidden block">
+ <div class="p-6">
+ <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full mb-3">BUDGET GUIDE</span>
+ <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Free vs Paid English Resources
+ </h3>
+ <p class="text-neutral-400 text-sm">Where free wins, where it fails, and a hybrid plan under $30 a month.</p>
+ <p class="mt-4 text-emerald-400 text-sm font-semibold">Read article &rarr;</p>
+ </div>
+ </a>
+ </div>
 
-      <div class="text-center mt-8">
-        <a href="/blog/" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
-          Browse all articles &rarr;
-        </a>
-      </div>
-    </div>
-  </section>
+ <div class="text-center mt-8">
+ <a href="/blog/" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">Browse all articles &rarr;
+ </a>
+ </div>
+ </div>
+ </section>
 
-  <!-- Features Section - Everything You Need to Succeed -->
-  <section class="py-16 md:py-20 bg-neutral-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-          Everything You Need to Succeed
-        </h2>
-        <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
-          We research, test, and compare so you can focus on learning.
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map(feature => (
-          <div class="bg-neutral-950 rounded-xl p-6 border border-neutral-700 hover:shadow-md transition-shadow">
-            <div class="text-4xl mb-4">{feature.icon}</div>
-            <h3 class="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-            <p class="text-neutral-300">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+ <!-- Features Section - Everything You Need to Succeed -->
+ <section class="py-16 md:py-20 bg-neutral-900">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6">
+ <div class="text-center mb-12">
+ <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Everything You Need to Succeed
+ </h2>
+ <p class="text-lg text-neutral-300 max-w-2xl mx-auto">We research, test, and compare so you can focus on learning.
+ </p>
+ </div>
+ 
+ <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+ {features.map(feature => (
+ <div class="bg-neutral-950 rounded-xl p-6 border border-neutral-700 hover:shadow-md transition-shadow">
+ <span class="inline-block bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded mb-4">{feature.icon}</span>
+ <h3 class="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+ <p class="text-neutral-300">{feature.description}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
 
-  <!-- Ad In-Feed -->
-  <div class="py-8 bg-neutral-900">
-    <div class="max-w-6xl mx-auto px-4">
-      <AdUnit slot="in-article" format="fluid" />
-    </div>
-  </div>
+ <!-- Ad In-Feed -->
+ <div class="py-8 bg-neutral-900">
+ <div class="max-w-6xl mx-auto px-4">
+ <AdUnit slot="in-article" format="fluid" />
+ </div>
+ </div>
 
-  <!-- CTA Section -->
-  <section class="py-16 bg-emerald-700">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        Start Your English Journey Today
-      </h2>
-      <p class="text-xl text-emerald-100 mb-8">
-        No credit card required. 100% free tools to get you started.
-      </p>
-      <a href="/tools/" class="inline-block px-8 py-4 bg-slate-900/60 text-emerald-600 font-bold rounded-lg hover:bg-gray-900/40 transition-colors">
-        Try AI Tools Free
-      </a>
-    </div>
-  </section>
+ <!-- CTA Section -->
+ <section class="py-16 bg-emerald-700">
+ <div class="max-w-4xl mx-auto px-4 text-center">
+ <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Start Your English Journey Today
+ </h2>
+ <p class="text-xl text-emerald-100 mb-8">No credit card required. 100% free tools to get you started.
+ </p>
+ <a href="/tools/" class="inline-block px-8 py-4 bg-slate-900/60 text-emerald-600 font-bold rounded-lg hover:bg-gray-900/40 transition-colors">Try AI Tools Free
+ </a>
+ </div>
+ </section>
 
-  <!-- Affiliate Disclosure -->
-  <section class="py-8 bg-neutral-900">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <p class="text-sm text-neutral-300">
-        We use affiliate links to support our operations. Our reviews are based on research, 
-        not compensation. <a href="/about/" class="text-emerald-400 hover:underline">Learn more</a>
-      </p>
-    </div>
-  </section>
+ <!-- Affiliate Disclosure -->
+ <section class="py-8 bg-neutral-900">
+ <div class="max-w-4xl mx-auto px-4 text-center">
+ <p class="text-sm text-neutral-300">We use affiliate links to support our operations. Our reviews are based on research, 
+ not compensation. <a href="/about/" class="text-emerald-400 hover:underline">Learn more</a>
+ </p>
+ </div>
+ </section>
 
-  <Footer />
-  
-  <!-- Form handling script -->
-  <script>
-    const form = document.getElementById('email-signup');
-    const successMsg = document.getElementById('form-success');
-    
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      btn.textContent = 'Subscribing...';
-      btn.disabled = true;
-      
-      try {
-        const formData = new FormData(form);
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        
-        if (response.ok) {
-          form.classList.add('hidden');
-          successMsg.classList.remove('hidden');
-        } else {
-          throw new Error('Failed');
-        }
-      } catch (err) {
-        btn.textContent = 'Try Again';
-        btn.disabled = false;
-        alert('Something went wrong. Please try again.');
-      }
-    });
-  </script>
+ <Footer />
+ 
+ <!-- Form handling script -->
+ <script>const form = document.getElementById('email-signup');
+ const successMsg = document.getElementById('form-success');
+ 
+ form?.addEventListener('submit', async (e) => {
+ e.preventDefault();
+ const btn = form.querySelector('button');
+ btn.textContent = 'Subscribing...';
+ btn.disabled = true;
+ 
+ try {
+ const formData = new FormData(form);
+ const response = await fetch(form.action, {
+ method: 'POST',
+ body: formData,
+ headers: { 'Accept': 'application/json' }
+ });
+ 
+ if (response.ok) {
+ form.classList.add('hidden');
+ successMsg.classList.remove('hidden');
+ } else {
+ throw new Error('Failed');
+ }
+ } catch (err) {
+ btn.textContent = 'Try Again';
+ btn.disabled = false;
+ alert('Something went wrong. Please try again.');
+ }
+ });
+ </script>
 </Base>

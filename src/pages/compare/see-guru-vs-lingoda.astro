@@ -12,477 +12,473 @@ import { platformRatings } from '../../data/platform-ratings';
 
 // Platform data
 const seeGuru = {
-  name: "See Guru",
-  rating: 9.4,
-  price: "$5-40/hr",
-  link: "/go/see-guru",
-  bestFor: "Affordable tutors with flexible scheduling",
-  pros: [
-    "Affordable lessons starting at $5/hour",
-    "Strong Asian tutor selection (Chinese, Japanese, Korean)",
-    "Pay-per-lesson model with no subscription required",
-    "Trial lessons available for $1-5",
-    "Good availability across time zones"
-  ],
-  cons: []
+ name: "See Guru",
+ rating: 9.4,
+ price: "$5-40/hr",
+ link: "/go/see-guru",
+ bestFor: "Affordable tutors with flexible scheduling",
+ pros: [
+ "Affordable lessons starting at $5/hour",
+ "Strong Asian tutor selection (Chinese, Japanese, Korean)",
+ "Pay-per-lesson model with no subscription required",
+ "Trial lessons available for $1-5",
+ "Good availability across time zones"
+ ],
+ cons: []
 };
 
 const lingoda = {
-  name: "Lingoda",
-  rating: 8.0,
-  price: "From €12/session",
-  link: "/go/lingoda",
-  bestFor: "Structured learning with certified teachers",
-  pros: [
-    "Certified professional teachers",
-    "CEFR-aligned curriculum (A1-C2)",
-    "Group and private class options",
-    "24/7 class availability",
-    "Official course credits and certificates"
-  ],
-  cons: [
-    "Higher price point than tutoring apps",
-    "Subscription required",
-    "Less flexible scheduling than open tutor marketplace",
-    "Group classes may not suit all learning styles"
-  ]
+ name: "Lingoda",
+ rating: 8.0,
+ price: "From €12/session",
+ link: "/go/lingoda",
+ bestFor: "Structured learning with certified teachers",
+ pros: [
+ "Certified professional teachers",
+ "CEFR-aligned curriculum (A1-C2)",
+ "Group and private class options",
+ "24/7 class availability",
+ "Official course credits and certificates"
+ ],
+ cons: [
+ "Higher price point than tutoring apps",
+ "Subscription required",
+ "Less flexible scheduling than open tutor marketplace",
+ "Group classes may not suit all learning styles"
+ ]
 };
 
 // Comparison rows
 const comparison = [
-  { feature: "Starting Price", winner: "a", a: "$5/hr", b: "€12/session" },
-  { feature: "Pricing Model", winner: null, a: "Pay per lesson", b: "Subscription" },
-  { feature: "Teacher Certification", winner: "b", a: "Basic vetting", b: "Certified teachers" },
-  { feature: "Curriculum", winner: "b", a: "Minimal", b: "CEFR-aligned (A1-C2)" },
-  { feature: "Class Format", winner: null, a: "One-on-one only", b: "Group + Private" },
-  { feature: "Trial Available", winner: "a", a: "Yes ($1-5)", b: "Limited" },
-  { feature: "Scheduling", winner: null, a: "Book specific tutors", b: "24/7 classes" },
-  { feature: "Certificate", winner: "b", a: "No", b: "Yes (course credits)" },
-  { feature: "Pay-per-Lesson", winner: "a", a: "Yes", b: "No" },
-  { feature: "Asian Tutor Focus", winner: "a", a: "Excellent", b: "Good" }
+ { feature: "Starting Price", winner: "a", a: "$5/hr", b: "€12/session" },
+ { feature: "Pricing Model", winner: null, a: "Pay per lesson", b: "Subscription" },
+ { feature: "Teacher Certification", winner: "b", a: "Basic vetting", b: "Certified teachers" },
+ { feature: "Curriculum", winner: "b", a: "Minimal", b: "CEFR-aligned (A1-C2)" },
+ { feature: "Class Format", winner: null, a: "One-on-one only", b: "Group + Private" },
+ { feature: "Trial Available", winner: "a", a: "Yes ($1-5)", b: "Limited" },
+ { feature: "Scheduling", winner: null, a: "Book specific tutors", b: "24/7 classes" },
+ { feature: "Certificate", winner: "b", a: "No", b: "Yes (course credits)" },
+ { feature: "Pay-per-Lesson", winner: "a", a: "Yes", b: "No" },
+ { feature: "Asian Tutor Focus", winner: "a", a: "Excellent", b: "Good" }
 ];
 
 // Benefits section
 const whyCompare = [
-  { icon: "📚", title: "Different Learning Approaches", description: "See Guru offers informal tutoring while Lingoda provides structured, curriculum-based education" },
-  { icon: "💰", title: "Pricing Models", description: "Compare pay-per-lesson vs subscription costs to find what fits your budget" },
-  { icon: "🎓", title: "Certification Goals", description: "Lingoda offers certificates; See Guru focuses on conversational practice" }
+ { icon: "", title: "Different Learning Approaches", description: "See Guru offers informal tutoring while Lingoda provides structured, curriculum-based education" },
+ { icon: "", title: "Pricing Models", description: "Compare pay-per-lesson vs subscription costs to find what fits your budget" },
+ { icon: "", title: "Certification Goals", description: "Lingoda offers certificates; See Guru focuses on conversational practice" }
 ];
 
 // Testimonials
 const testimonials = [
-  {
-    quote: "Lingoda's structured curriculum helped me pass my B2 exam. The certified teachers knew exactly what to focus on.",
-    author: "Marco T.",
-    location: "Italy",
-    result: "B2 certificate achieved"
-  },
-  {
-    quote: "See Guru's affordable tutors helped me practice Japanese-English business vocabulary with native speakers from Asia.",
-    author: "Yuki N.",
-    location: "Japan",
-    result: "Business fluency improved"
-  },
-  {
-    quote: "I needed flexible scheduling for my busy lifestyle. See Guru's pay-per-lesson model was perfect for irregular hours.",
-    author: "Carlos M.",
-    location: "Brazil",
-    result: "Conversational confidence gained"
-  }
+ {
+ quote: "Lingoda's structured curriculum helped me pass my B2 exam. The certified teachers knew exactly what to focus on.",
+ author: "Marco T.",
+ location: "Italy",
+ result: "B2 certificate achieved"
+ },
+ {
+ quote: "See Guru's affordable tutors helped me practice Japanese-English business vocabulary with native speakers from Asia.",
+ author: "Yuki N.",
+ location: "Japan",
+ result: "Business fluency improved"
+ },
+ {
+ quote: "I needed flexible scheduling for my busy lifestyle. See Guru's pay-per-lesson model was perfect for irregular hours.",
+ author: "Carlos M.",
+ location: "Brazil",
+ result: "Conversational confidence gained"
+ }
 ];
 
 // SEO Schema
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "See Guru vs Lingoda: Which Online English Learning Platform Is Better in 2026?",
-  "description": "Compare See Guru and Lingoda online English learning platforms. Find the best choice for your learning style, goals, and budget.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-04-15",
-  "dateModified": "2026-04-15"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "See Guru vs Lingoda: Which Online English Learning Platform Is Better in 2026?",
+ "description": "Compare See Guru and Lingoda online English learning platforms. Find the best choice for your learning style, goals, and budget.",
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2026-04-15",
+ "dateModified": "2026-04-15"
 };
 
 const comparisonSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Online Language Learning Platforms Comparison",
-  "description": "Comparison between See Guru and Lingoda for English language learning"
+ "@context": "https://schema.org",
+ "@type": "Product",
+ "name": "Online Language Learning Platforms Comparison",
+ "description": "Comparison between See Guru and Lingoda for English language learning"
 };
 
 // FAQ Schema
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is See Guru or Lingoda better for structured learning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Lingoda is significantly better for structured learning. It offers CEFR-aligned curriculum from A1 to C2 levels, with certified teachers and official course credits. See Guru focuses on informal tutoring and conversation practice without a formal curriculum."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which platform is more affordable, See Guru or Lingoda?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "See Guru is more affordable with lessons starting at $5/hour on a pay-per-lesson model. Lingoda uses a subscription model with sessions starting at approximately €12 each. For occasional learners, See Guru offers better value. For committed learners wanting certification, Lingoda's investment may be worthwhile."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I get an English certificate from See Guru or Lingoda?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Lingoda offers official course completion certificates and credits that can count toward language qualifications. See Guru does not provide certificates or formal qualifications - it's focused on conversation practice and informal learning."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which platform has better Asian tutor selection?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "See Guru has a significantly stronger focus on Asian tutors from China, Japan, and Korea, making it the better choice if you specifically want tutors from these regions. Lingoda has good teacher availability but doesn't specialize in Asian tutors."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "Is See Guru or Lingoda better for structured learning?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Lingoda is significantly better for structured learning. It offers CEFR-aligned curriculum from A1 to C2 levels, with certified teachers and official course credits. See Guru focuses on informal tutoring and conversation practice without a formal curriculum."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Which platform is more affordable, See Guru or Lingoda?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "See Guru is more affordable with lessons starting at $5/hour on a pay-per-lesson model. Lingoda uses a subscription model with sessions starting at approximately €12 each. For occasional learners, See Guru offers better value. For committed learners wanting certification, Lingoda's investment may be worthwhile."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Can I get an English certificate from See Guru or Lingoda?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Lingoda offers official course completion certificates and credits that can count toward language qualifications. See Guru does not provide certificates or formal qualifications - it's focused on conversation practice and informal learning."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Which platform has better Asian tutor selection?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "See Guru has a significantly stronger focus on Asian tutors from China, Japan, and Korea, making it the better choice if you specifically want tutors from these regions. Lingoda has good teacher availability but doesn't specialize in Asian tutors."
+ }
+ }
+ ]
 };
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://learnenglish.life"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Comparisons",
-      "item": "https://learnenglish.life/compare"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "See Guru vs Lingoda"
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Home",
+ "item": "https://learnenglish.life"
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "name": "Comparisons",
+ "item": "https://learnenglish.life/compare"
+ },
+ {
+ "@type": "ListItem",
+ "position": 3,
+ "name": "See Guru vs Lingoda"
+ }
+ ]
 };
 ---
 
 <Base title="See Guru vs Lingoda: Which Online English Learning Platform Is Better in 2026?" description="Compare See Guru and Lingoda online English learning platforms. Find the best choice for your learning style, goals, and budget.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  
-  <Header />
-  
-  <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-neutral-300 mb-4">
-      <a href="/" class="hover:text-emerald-600">Home</a>
-      <span class="mx-2">›</span>
-      <a href="/compare/" class="hover:text-emerald-600">Comparisons</a>
-      <span class="mx-2">›</span>
-      <span class="text-neutral-300">See Guru vs Lingoda</span>
-    </nav>
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+ 
+ <Header />
+ 
+ <main class="max-w-5xl mx-auto px-4 py-8 pb-24">
+ <!-- Breadcrumb -->
+ <nav class="text-sm text-neutral-300 mb-4">
+ <a href="/" class="hover:text-emerald-600">Home</a>
+ <span class="mx-2">›</span>
+ <a href="/compare/" class="hover:text-emerald-600">Comparisons</a>
+ <span class="mx-2">›</span>
+ <span class="text-neutral-300">See Guru vs Lingoda</span>
+ </nav>
 
-    <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
-      <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">See Guru vs Lingoda: Which Online English Learning Platform Is Better?</h1>
-    <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
-      <p class="text-emerald-100 text-lg">Two distinct approaches to online English learning face off. Compare pricing, curriculum quality, teacher certification, and find the platform that fits your goals.</p>
-    </div>
+ <!-- Hero Section -->
+ <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+ <span class="text-emerald-200 text-sm font-medium">Comparison · Updated April 2026</span>
+ <h1 class="text-4xl font-bold mt-2 mb-4">See Guru vs Lingoda: Which Online English Learning Platform Is Better?</h1>
+ <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
+ <p class="text-emerald-100 text-lg">Two distinct approaches to online English learning face off. Compare pricing, curriculum quality, teacher certification, and find the platform that fits your goals.</p>
+ </div>
 
-    <!-- Verdict Box -->
-    <div class="bg-gradient-to-r from-yellow-900/40 to-amber-900/40 border border-yellow-600/50 rounded-xl p-6 mb-8">
-      <h2 class="text-xl font-bold text-white mb-3">🏆 Quick Verdict</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-slate-900/60 rounded-lg p-4">
-          <h3 class="font-bold text-emerald-400 mb-1">Choose See Guru if:</h3>
-          <p class="text-neutral-300 text-sm">You want <strong>flexible, affordable</strong> tutoring with <strong>pay-per-lesson</strong> pricing and prefer tutors from <strong>Asian markets</strong>.</p>
-        </div>
-        <div class="bg-slate-900/60 rounded-lg p-4">
-          <h3 class="font-bold text-blue-400 mb-1">Choose Lingoda if:</h3>
-          <p class="text-neutral-300 text-sm">You want <strong>structured, certified</strong> learning with a <strong>CEFR-aligned curriculum</strong> and official <strong>course certificates</strong>.</p>
-        </div>
-      </div>
-    </div>
+ <!-- Verdict Box -->
+ <div class="bg-gradient-to-r from-yellow-900/40 to-amber-900/40 border border-yellow-600/50 rounded-xl p-6 mb-8">
+ <h2 class="text-xl font-bold text-white mb-3">Quick Verdict</h2>
+ <div class="grid md:grid-cols-2 gap-4">
+ <div class="bg-slate-900/60 rounded-lg p-4">
+ <h3 class="font-bold text-emerald-400 mb-1">Choose See Guru if:</h3>
+ <p class="text-neutral-300 text-sm">You want <strong>flexible, affordable</strong>tutoring with <strong>pay-per-lesson</strong>pricing and prefer tutors from <strong>Asian markets</strong>.</p>
+ </div>
+ <div class="bg-slate-900/60 rounded-lg p-4">
+ <h3 class="font-bold text-blue-400 mb-1">Choose Lingoda if:</h3>
+ <p class="text-neutral-300 text-sm">You want <strong>structured, certified</strong>learning with a <strong>CEFR-aligned curriculum</strong>and official <strong>course certificates</strong>.</p>
+ </div>
+ </div>
+ </div>
 
-    <!-- Quick Overview Cards -->
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <!-- See Guru Card -->
-      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">{seeGuru.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-emerald-600">{seeGuru.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {seeGuru.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {seeGuru.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={seeGuru.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
-          Try See Guru Free →
-        </a>
-      </div>
+ <!-- Quick Overview Cards -->
+ <div class="grid md:grid-cols-2 gap-6 mb-8">
+ <!-- See Guru Card -->
+ <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
+ <div class="flex items-center justify-between mb-4">
+ <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
+ <div class="flex items-center">
+ <span class="text-yellow-500 text-xl mr-1">★</span>
+ <span class="text-2xl font-bold text-gray-100">{seeGuru.rating}</span>
+ <span class="text-slate-400 text-sm ml-1">/10</span>
+ </div>
+ </div>
+ <div class="mb-4">
+ <span class="text-3xl font-bold text-emerald-600">{seeGuru.price}</span>
+ </div>
+ <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {seeGuru.bestFor}</p>
+ <div class="mb-4">
+ <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+ <ul class="text-sm text-neutral-300 space-y-1">
+ {seeGuru.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2"></span>{pro}</li>)}
+ </ul>
+ </div>
+ <a href={seeGuru.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">Try See Guru Free →
+ </a>
+ </div>
 
-      <!-- Lingoda Card -->
-      <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-gray-100">Lingoda</h2>
-          <div class="flex items-center">
-            <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">{lingoda.rating}</span>
-            <span class="text-slate-400 text-sm ml-1">/10</span>
-          </div>
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-blue-600">{lingoda.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {lingoda.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {lingoda.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={lingoda.link} class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-bold">
-          Try Lingoda Free →
-        </a>
-      </div>
-    </div>
+ <!-- Lingoda Card -->
+ <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-blue-500 p-6">
+ <div class="flex items-center justify-between mb-4">
+ <h2 class="text-2xl font-bold text-gray-100">Lingoda</h2>
+ <div class="flex items-center">
+ <span class="text-yellow-500 text-xl mr-1">★</span>
+ <span class="text-2xl font-bold text-gray-100">{lingoda.rating}</span>
+ <span class="text-slate-400 text-sm ml-1">/10</span>
+ </div>
+ </div>
+ <div class="mb-4">
+ <span class="text-3xl font-bold text-blue-600">{lingoda.price}</span>
+ </div>
+ <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {lingoda.bestFor}</p>
+ <div class="mb-4">
+ <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
+ <ul class="text-sm text-neutral-300 space-y-1">
+ {lingoda.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2"></span>{pro}</li>)}
+ </ul>
+ </div>
+ <a href={lingoda.link} class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition font-bold">Try Lingoda Free →
+ </a>
+ </div>
+ </div>
 
-    <!-- Why Compare Section -->
-    <BenefitCards 
-      title="Why Compare These Platforms?"
-      benefits={whyCompare}
-    />
+ <!-- Why Compare Section -->
+ <BenefitCards 
+ title="Why Compare These Platforms?"
+ benefits={whyCompare}
+ />
 
-    <!-- Social Proof -->
-    <SocialProof 
-      title="What Learners Say"
-      testimonials={testimonials}
-    />
+ <!-- Social Proof -->
+ <SocialProof 
+ title="What Learners Say"
+ testimonials={testimonials}
+ />
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-1" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-1" />
+ </div>
 
-    <!-- Enhanced Comparison Table -->
-    <ComparisonHighlight 
-      title="Feature Comparison"
-      platformA={seeGuru}
-      platformB={lingoda}
-      winner="mixed"
-      rows={comparison}
-    />
+ <!-- Enhanced Comparison Table -->
+ <ComparisonHighlight 
+ title="Feature Comparison"
+ platformA={seeGuru}
+ platformB={lingoda}
+ winner="mixed"
+ rows={comparison}
+ />
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-2" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-2" />
+ </div>
 
-    <!-- Price Breakdown Section -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-100 mb-6">Price Breakdown</h2>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-slate-800/60 rounded-lg p-5">
-          <h3 class="text-xl font-bold text-emerald-400 mb-3">See Guru Pricing</h3>
-          <ul class="text-neutral-300 space-y-2 text-sm">
-            <li>• Lessons from <strong>$5/hour</strong></li>
-            <li>• Pay-per-lesson (no subscription)</li>
-            <li>• Trial lessons $1-5</li>
-            <li>• No commitment required</li>
-            <li>• Budget-friendly for occasional learners</li>
-          </ul>
-          <p class="text-emerald-400 font-bold mt-3">Best for: Flexible, budget-conscious learners</p>
-        </div>
-        <div class="bg-slate-800/60 rounded-lg p-5">
-          <h3 class="text-xl font-bold text-blue-400 mb-3">Lingoda Pricing</h3>
-          <ul class="text-neutral-300 space-y-2 text-sm">
-            <li>• Sessions from <strong>€12/session</strong></li>
-            <li>• Subscription model required</li>
-            <li>• Group classes (up to 5 students)</li>
-            <li>• Private lessons available</li>
-            <li>• Course completion certificates included</li>
-          </ul>
-          <p class="text-blue-400 font-bold mt-3">Best for: Committed learners seeking certification</p>
-        </div>
-      </div>
-    </section>
+ <!-- Price Breakdown Section -->
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-6">Price Breakdown</h2>
+ 
+ <div class="grid md:grid-cols-2 gap-6">
+ <div class="bg-slate-800/60 rounded-lg p-5">
+ <h3 class="text-xl font-bold text-emerald-400 mb-3">See Guru Pricing</h3>
+ <ul class="text-neutral-300 space-y-2 text-sm">
+ <li>• Lessons from <strong>$5/hour</strong></li>
+ <li>• Pay-per-lesson (no subscription)</li>
+ <li>• Trial lessons $1-5</li>
+ <li>• No commitment required</li>
+ <li>• Budget-friendly for occasional learners</li>
+ </ul>
+ <p class="text-emerald-400 font-bold mt-3">Best for: Flexible, budget-conscious learners</p>
+ </div>
+ <div class="bg-slate-800/60 rounded-lg p-5">
+ <h3 class="text-xl font-bold text-blue-400 mb-3">Lingoda Pricing</h3>
+ <ul class="text-neutral-300 space-y-2 text-sm">
+ <li>• Sessions from <strong>€12/session</strong></li>
+ <li>• Subscription model required</li>
+ <li>• Group classes (up to 5 students)</li>
+ <li>• Private lessons available</li>
+ <li>• Course completion certificates included</li>
+ </ul>
+ <p class="text-blue-400 font-bold mt-3">Best for: Committed learners seeking certification</p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Detailed Analysis -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-100 mb-6">Detailed Analysis</h2>
-      
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Curriculum and Learning Structure</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>Lingoda</strong> offers a structured, CEFR-aligned curriculum progressing from A1 to C2 levels. Classes are designed by language teaching professionals and follow European language standards. This formal approach feels like attending a traditional language school online.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>See Guru</strong> provides a more informal tutoring experience without a structured curriculum. Lessons focus on conversation practice and can be customized to your specific needs. There's no formal progression system or course structure.
-        </p>
-      </div>
+ <!-- Detailed Analysis -->
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-6">Detailed Analysis</h2>
+ 
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-gray-100 mb-3">Curriculum and Learning Structure</h3>
+ <p class="text-neutral-300 leading-relaxed mb-4">
+ <strong>Lingoda</strong>offers a structured, CEFR-aligned curriculum progressing from A1 to C2 levels. Classes are designed by language teaching professionals and follow European language standards. This formal approach feels like attending a traditional language school online.
+ </p>
+ <p class="text-neutral-300 leading-relaxed">
+ <strong>See Guru</strong>provides a more informal tutoring experience without a structured curriculum. Lessons focus on conversation practice and can be customized to your specific needs. There's no formal progression system or course structure.
+ </p>
+ </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Teacher Quality</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>Lingoda</strong> employs certified, professional language teachers who are trained and vetted. All teachers meet specific qualification requirements, ensuring consistent quality across the platform. The Berlin-based company maintains high standards for instructor selection.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>See Guru</strong> uses a more basic vetting process for tutors. Quality varies more significantly between teachers. The platform excels at connecting learners with Asian tutors who understand cultural nuances in language use.
-        </p>
-      </div>
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-gray-100 mb-3">Teacher Quality</h3>
+ <p class="text-neutral-300 leading-relaxed mb-4">
+ <strong>Lingoda</strong>employs certified, professional language teachers who are trained and vetted. All teachers meet specific qualification requirements, ensuring consistent quality across the platform. The Berlin-based company maintains high standards for instructor selection.
+ </p>
+ <p class="text-neutral-300 leading-relaxed">
+ <strong>See Guru</strong>uses a more basic vetting process for tutors. Quality varies more significantly between teachers. The platform excels at connecting learners with Asian tutors who understand cultural nuances in language use.
+ </p>
+ </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-gray-100 mb-3">Learning Experience</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>Lingoda</strong> offers both group classes (up to 5 students) and private one-on-one lessons. Classes run 24/7, accommodating learners in any timezone. The structured approach includes homework, progress tracking, and formal assessments.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>See Guru</strong> provides one-on-one tutoring with flexible booking. You can choose specific tutors, view their profiles, and book lessons that fit your schedule. The informal approach allows for conversational practice tailored to your interests.
-        </p>
-      </div>
-    </section>
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-gray-100 mb-3">Learning Experience</h3>
+ <p class="text-neutral-300 leading-relaxed mb-4">
+ <strong>Lingoda</strong>offers both group classes (up to 5 students) and private one-on-one lessons. Classes run 24/7, accommodating learners in any timezone. The structured approach includes homework, progress tracking, and formal assessments.
+ </p>
+ <p class="text-neutral-300 leading-relaxed">
+ <strong>See Guru</strong>provides one-on-one tutoring with flexible booking. You can choose specific tutors, view their profiles, and book lessons that fit your schedule. The informal approach allows for conversational practice tailored to your interests.
+ </p>
+ </div>
+ </section>
 
-    <!-- Who Should Pick Which -->
-    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Who Should Pick Which Platform?</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
-          <h3 class="font-bold text-gray-100 mb-3 text-lg">Choose See Guru if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">✓</span>You want pay-per-lesson flexibility</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">✓</span>Asian tutors are important to you</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">✓</span>You prefer informal conversation practice</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">✓</span>Budget is your primary concern</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">✓</span>You don't need formal certification</li>
-          </ul>
-        </div>
-        <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
-          <h3 class="font-bold text-blue-300 mb-3 text-lg">Choose Lingoda if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span>You want structured, formal learning</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span>Certification is your goal</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span>Certified teachers are essential</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span>You prefer group class interaction</li>
-            <li class="flex items-start"><span class="text-blue-500 mr-2">✓</span>CEFR levels matter to you</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+ <!-- Who Should Pick Which -->
+ <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Who Should Pick Which Platform?</h2>
+ <div class="grid md:grid-cols-2 gap-6">
+ <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
+ <h3 class="font-bold text-gray-100 mb-3 text-lg">Choose See Guru if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>You want pay-per-lesson flexibility</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>Asian tutors are important to you</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>You prefer informal conversation practice</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>Budget is your primary concern</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>You don't need formal certification</li>
+ </ul>
+ </div>
+ <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
+ <h3 class="font-bold text-blue-300 mb-3 text-lg">Choose Lingoda if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-blue-500 mr-2"></span>You want structured, formal learning</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2"></span>Certification is your goal</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2"></span>Certified teachers are essential</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2"></span>You prefer group class interaction</li>
+ <li class="flex items-start"><span class="text-blue-500 mr-2"></span>CEFR levels matter to you</li>
+ </ul>
+ </div>
+ </div>
+ </section>
 
-    <!-- FAQ Section -->
-    <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-gray-100 mb-6">Frequently Asked Questions</h2>
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Lingoda better for structured learning?</h3>
-          <p class="text-neutral-300">
-            <strong>Lingoda is significantly better</strong> for structured learning. It offers CEFR-aligned curriculum from A1 to C2 levels, with certified teachers and official course credits. See Guru focuses on informal tutoring and conversation practice without a formal curriculum.
-          </p>
-        </div>
+ <!-- FAQ Section -->
+ <section class="bg-slate-900/60 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-6">Frequently Asked Questions</h2>
+ 
+ <div class="space-y-6">
+ <div>
+ <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Lingoda better for structured learning?</h3>
+ <p class="text-neutral-300">
+ <strong>Lingoda is significantly better</strong>for structured learning. It offers CEFR-aligned curriculum from A1 to C2 levels, with certified teachers and official course credits. See Guru focuses on informal tutoring and conversation practice without a formal curriculum.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform is more affordable, See Guru or Lingoda?</h3>
-          <p class="text-neutral-300">
-            <strong>See Guru is more affordable</strong> with lessons starting at $5/hour on a pay-per-lesson model. Lingoda uses a subscription model with sessions starting at approximately €12 each. For occasional learners, See Guru offers better value.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform is more affordable, See Guru or Lingoda?</h3>
+ <p class="text-neutral-300">
+ <strong>See Guru is more affordable</strong>with lessons starting at $5/hour on a pay-per-lesson model. Lingoda uses a subscription model with sessions starting at approximately €12 each. For occasional learners, See Guru offers better value.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I get an English certificate from See Guru or Lingoda?</h3>
-          <p class="text-neutral-300">
-            <strong>Lingoda offers official course completion certificates</strong> and credits that can count toward language qualifications. See Guru does not provide certificates or formal qualifications - it's focused on conversation practice and informal learning.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I get an English certificate from See Guru or Lingoda?</h3>
+ <p class="text-neutral-300">
+ <strong>Lingoda offers official course completion certificates</strong>and credits that can count toward language qualifications. See Guru does not provide certificates or formal qualifications - it's focused on conversation practice and informal learning.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better Asian tutor selection?</h3>
-          <p class="text-neutral-300">
-            <strong>See Guru has a significantly stronger focus</strong> on Asian tutors from China, Japan, and Korea, making it the better choice if you specifically want tutors from these regions. Lingoda has good teacher availability but doesn't specialize in Asian tutors.
-          </p>
-        </div>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better Asian tutor selection?</h3>
+ <p class="text-neutral-300">
+ <strong>See Guru has a significantly stronger focus</strong>on Asian tutors from China, Japan, and Korea, making it the better choice if you specifically want tutors from these regions. Lingoda has good teacher availability but doesn't specialize in Asian tutors.
+ </p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-3" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-3" />
+ </div>
 
-    <!-- CTA Section -->
-    <section class="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4 text-center">Ready to Start Learning?</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/go/see-guru/" class="block bg-emerald-600 text-white text-center py-4 rounded-lg hover:bg-emerald-700 transition font-bold text-lg">
-          Try See Guru  -  From $5/lesson →
-        </a>
-        <a href="/go/lingoda" class="block bg-blue-600 text-white text-center py-4 rounded-lg hover:bg-blue-700 transition font-bold text-lg">
-          Try Lingoda  -  Certified Teachers →
-        </a>
-      </div>
-    </section>
+ <!-- CTA Section -->
+ <section class="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4 text-center">Ready to Start Learning?</h2>
+ <div class="grid md:grid-cols-2 gap-4">
+ <a href="/go/see-guru/" class="block bg-emerald-600 text-white text-center py-4 rounded-lg hover:bg-emerald-700 transition font-bold text-lg">Try See Guru - From $5/lesson →
+ </a>
+ <a href="/go/lingoda" class="block bg-blue-600 text-white text-center py-4 rounded-lg hover:bg-blue-700 transition font-bold text-lg">Try Lingoda - Certified Teachers →
+ </a>
+ </div>
+ </section>
 
-    <!-- Related Reviews -->
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/reviews/see-guru/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold">9.4/10</span>
-          </div>
-          <h3 class="font-semibold text-gray-100">See Guru Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-        <a href="/reviews/lingoda/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold">8.0/10</span>
-          </div>
-          <h3 class="font-semibold text-gray-100">Lingoda Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-      </div>
-    </section>
+ <!-- Related Reviews -->
+ <section class="mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+ <div class="grid md:grid-cols-2 gap-4">
+ <a href="/reviews/see-guru/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+ <div class="flex items-center mb-2">
+ <span class="text-yellow-500 mr-1">★</span>
+ <span class="font-bold">9.4/10</span>
+ </div>
+ <h3 class="font-semibold text-gray-100">See Guru Review</h3>
+ <p class="text-sm text-neutral-400">Full platform analysis</p>
+ </a>
+ <a href="/reviews/lingoda/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
+ <div class="flex items-center mb-2">
+ <span class="text-yellow-500 mr-1">★</span>
+ <span class="font-bold">8.0/10</span>
+ </div>
+ <h3 class="font-semibold text-gray-100">Lingoda Review</h3>
+ <p class="text-sm text-neutral-400">Full platform analysis</p>
+ </a>
+ </div>
+ </section>
 
-    <!-- Affiliate Disclosure -->
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t">
-      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up for platforms recommended on this page, at no extra cost to you. Our recommendations are based on thorough research and genuine assessment of each platform's value for English learners.</p>
-    </div>
-  </main>
+ <!-- Affiliate Disclosure -->
+ <div class="text-xs text-slate-400 mt-8 pt-4 border-t">
+ <p><strong>Affiliate Disclosure:</strong>LearnEnglish.Life may earn a commission when you sign up for platforms recommended on this page, at no extra cost to you. Our recommendations are based on thorough research and genuine assessment of each platform's value for English learners.</p>
+ </div>
+ </main>
 
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText="Compare Prices Now"
-    ctaLink="/go/see-guru"
-    platform="see-guru"
-  />
+ <!-- Sticky CTA for Mobile -->
+ <StickyCTA 
+ ctaText="Compare Prices Now"
+ ctaLink="/go/see-guru"
+ platform="see-guru"
+ />
 
-  <Footer />
+ <Footer />
 </Base>

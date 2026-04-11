@@ -4,271 +4,267 @@ import Footer from '../../components/Footer.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Cheapest 1-on-1 English Lessons Online in 2026",
-  "description": "Find the cheapest 1-on-1 English lessons online. Compare prices from 10+ platforms starting at $3/hr. Real tutors, real results.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-04-07",
-  "dateModified": "2026-04-07"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Cheapest 1-on-1 English Lessons Online in 2026",
+ "description": "Find the cheapest 1-on-1 English lessons online. Compare prices from 10+ platforms starting at $3/hr. Real tutors, real results.",
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2026-04-07",
+ "dateModified": "2026-04-07"
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the cheapest 1-on-1 English lesson online?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "See Guru currently offers lessons starting at $3 per session, making it the most affordable option for 1-on-1 English tutoring. iTalki community tutors start at $5/hour, and platforms like Cambly offer monthly subscriptions starting around $6.99/month for unlimited speaking practice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are cheap 1-on-1 lessons actually good quality?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quality varies, but many affordable platforms connect you with vetted, experienced tutors. See Guru, iTalki, and Preply all have review systems so you can check ratings before booking. The cheapest lessons are often from community tutors who are still qualified native speakers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can I get 1-on-1 English lessons for free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Several platforms offer free trials: Cambly offers a limited free trial, iTalki sometimes has promotional credits, and some tutors on See Guru offer free intro sessions. YouTube channels like BBC Learning English and Rachel's English offer free self-paced lessons too."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should I look for in a cheap English tutor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Check three things: tutor ratings and reviews, their teaching qualifications (TEFL/CELTA helps), and whether they specialize in your goals (conversational, business, exam prep). A cheap tutor is only good value if they actually help you improve."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I really improve my English with budget 1-on-1 lessons?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Research shows that regular 1-on-1 speaking practice is one of the fastest ways to improve. Even one or two sessions per week at $3-$10 per lesson can make a significant difference over a few months. Consistency matters more than price."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the catch with really cheap online tutors?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Watch for: timezone mismatches (tutors may be in very different time zones), limited availability during peak hours, potential language barriers with non-native speakers, and platforms with hidden fees. Always read the fine print on payment terms."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "What is the cheapest 1-on-1 English lesson online?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "See Guru currently offers lessons starting at $3 per session, making it the most affordable option for 1-on-1 English tutoring. iTalki community tutors start at $5/hour, and platforms like Cambly offer monthly subscriptions starting around $6.99/month for unlimited speaking practice."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Are cheap 1-on-1 lessons actually good quality?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Quality varies, but many affordable platforms connect you with vetted, experienced tutors. See Guru, iTalki, and Preply all have review systems so you can check ratings before booking. The cheapest lessons are often from community tutors who are still qualified native speakers."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "How can I get 1-on-1 English lessons for free?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Several platforms offer free trials: Cambly offers a limited free trial, iTalki sometimes has promotional credits, and some tutors on See Guru offer free intro sessions. YouTube channels like BBC Learning English and Rachel's English offer free self-paced lessons too."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "What should I look for in a cheap English tutor?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Check three things: tutor ratings and reviews, their teaching qualifications (TEFL/CELTA helps), and whether they specialize in your goals (conversational, business, exam prep). A cheap tutor is only good value if they actually help you improve."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Can I really improve my English with budget 1-on-1 lessons?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Yes. Research shows that regular 1-on-1 speaking practice is one of the fastest ways to improve. Even one or two sessions per week at $3-$10 per lesson can make a significant difference over a few months. Consistency matters more than price."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "What's the catch with really cheap online tutors?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Watch for: timezone mismatches (tutors may be in very different time zones), limited availability during peak hours, potential language barriers with non-native speakers, and platforms with hidden fees. Always read the fine print on payment terms."
+ }
+ }
+ ]
 };
 import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="Cheapest 1-on-1 English Lessons Online (From $3/Hour)" description="Find the cheapest 1-on-1 English lessons online. Compare prices from 10+ platforms starting at $3/hr. Real tutors, real results.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  
-  <Header />
-  
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-slate-400 mb-4">
-      <a href="/" class="hover:text-emerald-600">Home</a>
-      <span class="mx-2">›</span>
-      <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
-      <span class="mx-2">›</span>
-      <span class="text-gray-300">Cheapest 1-on-1 English Lessons Online</span>
-    </nav>
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+ 
+ <Header />
+ 
+ <main class="max-w-4xl mx-auto px-4 py-8">
+ <!-- Breadcrumb -->
+ <nav class="text-sm text-slate-400 mb-4">
+ <a href="/" class="hover:text-emerald-600">Home</a>
+ <span class="mx-2">›</span>
+ <a href="/guides/" class="hover:text-emerald-600">Study Guides</a>
+ <span class="mx-2">›</span>
+ <span class="text-gray-300">Cheapest 1-on-1 English Lessons Online</span>
+ </nav>
 
-    <article class="max-w-3xl mx-auto px-4 py-12">
-      <div class="mb-8">
-        <span class="text-sm text-gray-500">Guide · Updated April 2026</span>
-        <h1 class="text-4xl font-bold mt-1 mb-4">Cheapest 1-on-1 English Lessons Online in 2026</h1>
-        <p class="text-lg text-gray-600">Find the cheapest 1-on-1 English lessons online. Compare prices from 10+ platforms starting at $3/hr. Real tutors, real results.</p>
-      </div>
+ <article class="max-w-3xl mx-auto px-4 py-12">
+ <div class="mb-8">
+ <span class="text-sm text-gray-500">Guide · Updated April 2026</span>
+ <h1 class="text-4xl font-bold mt-1 mb-4">Cheapest 1-on-1 English Lessons Online in 2026</h1>
+ <p class="text-lg text-gray-600">Find the cheapest 1-on-1 English lessons online. Compare prices from 10+ platforms starting at $3/hr. Real tutors, real results.</p>
+ </div>
 
-      <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
-        <div class="flex items-center justify-between flex-wrap gap-4">
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">💡</span>
-            <div>
-              <p class="font-semibold text-neutral-300">Looking for affordable 1-on-1 tutoring?</p>
-              <p class="text-sm text-neutral-300">See Guru starts at just $3 per lesson with professional tutors.</p>
-            </div>
-          </div>
-          <a href="/go/see-guru/" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-            Try See Guru &rarr;
-          </a>
-          <p class="text-xs text-emerald-700 mt-1">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
-        </div>
-      </div>
+ <div class="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+ <div class="flex items-center justify-between flex-wrap gap-4">
+ <div class="flex items-center gap-3">
+ <span class="text-2xl"></span>
+ <div>
+ <p class="font-semibold text-neutral-300">Looking for affordable 1-on-1 tutoring?</p>
+ <p class="text-sm text-neutral-300">See Guru starts at just $3 per lesson with professional tutors.</p>
+ </div>
+ </div>
+ <a href="/go/see-guru/" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">Try See Guru &rarr;
+ </a>
+ <p class="text-xs text-emerald-700 mt-1">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+ </div>
+ </div>
 
-      <div class="prose prose-lg max-w-none">
-        <h2 class="text-2xl font-bold mt-8 mb-4">Why Choose 1-on-1 Online Lessons?</h2>
+ <div class="prose prose-lg max-w-none">
+ <h2 class="text-2xl font-bold mt-8 mb-4">Why Choose 1-on-1 Online Lessons?</h2>
 
-    <ContextualCTA text="Affordable lessons don't have to mean low quality. Check out See Guru's vetted tutor list." />
-        <p class="text-neutral-300 mb-4">Learning English one-on-one with a real tutor is one of the fastest ways to improve. Unlike group classes where you share the teacher's attention, 1-on-1 lessons are built entirely around you.</p>
-        <p class="text-neutral-300 mb-4">With online platforms, you get:</p>
-        <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
-          <li><strong>Personalized feedback</strong> on your pronunciation, grammar, and vocabulary choices</li>
-          <li><strong>Flexible scheduling</strong> to fit lessons around your job, school, or daily routine</li>
-          <li><strong>Lower cost</strong> than traditional language schools since you pay only for teaching time</li>
-          <li><strong>Access to native speakers</strong> from around the world without traveling</li>
-        </ul>
-        <p class="text-neutral-300 mb-4">The best part? You do not need to spend $50 per hour to get excellent results. Many quality tutors charge between $3 and $15 per lesson.</p>
+ <ContextualCTA text="Affordable lessons don't have to mean low quality. Check out See Guru's vetted tutor list." />
+ <p class="text-neutral-300 mb-4">Learning English one-on-one with a real tutor is one of the fastest ways to improve. Unlike group classes where you share the teacher's attention, 1-on-1 lessons are built entirely around you.</p>
+ <p class="text-neutral-300 mb-4">With online platforms, you get:</p>
+ <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
+ <li><strong>Personalized feedback</strong>on your pronunciation, grammar, and vocabulary choices</li>
+ <li><strong>Flexible scheduling</strong>to fit lessons around your job, school, or daily routine</li>
+ <li><strong>Lower cost</strong>than traditional language schools since you pay only for teaching time</li>
+ <li><strong>Access to native speakers</strong>from around the world without traveling</li>
+ </ul>
+ <p class="text-neutral-300 mb-4">The best part? You do not need to spend $50 per hour to get excellent results. Many quality tutors charge between $3 and $15 per lesson.</p>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">The Cheapest Platforms for 1-on-1 English Lessons</h2>
-        <p class="text-neutral-300 mb-4">We tested and compared more than a dozen platforms to find the most affordable 1-on-1 English tutoring options. Here is what we found:</p>
-        
-        <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden mb-6">
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm">
-              <thead class="bg-gray-800 text-gray-300">
-                <tr>
-                  <th class="px-4 py-3 text-left font-semibold">Platform</th>
-                  <th class="px-4 py-3 text-left font-semibold">Starting Price</th>
-                  <th class="px-4 py-3 text-left font-semibold">Tutor Type</th>
-                  <th class="px-4 py-3 text-left font-semibold">Trial</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-700">
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">See Guru</td>
-                  <td class="px-4 py-3">$3/lesson</td>
-                  <td class="px-4 py-3">Native speakers</td>
-                  <td class="px-4 py-3">Free intro</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">iTalki</td>
-                  <td class="px-4 py-3">$5/hour</td>
-                  <td class="px-4 py-3">Community & professional</td>
-                  <td class="px-4 py-3">Credits available</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">Preply</td>
-                  <td class="px-4 py-3">$8/hour</td>
-                  <td class="px-4 py-3">Vetted tutors</td>
-                  <td class="px-4 py-3">First lesson trial</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">Cambly</td>
-                  <td class="px-4 py-3">$6.99/month</td>
-                  <td class="px-4 py-3">Native speakers</td>
-                  <td class="px-4 py-3">Limited free trial</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">Verbling</td>
-                  <td class="px-4 py-3">$15/hour</td>
-                  <td class="px-4 py-3">Professional tutors</td>
-                  <td class="px-4 py-3">Trial lesson</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">Lingoda</td>
-                  <td class="px-4 py-3">$6-12/class</td>
-                  <td class="px-4 py-3">Certified teachers</td>
-                  <td class="px-4 py-3">Free trial class</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 font-semibold text-emerald-400">Italki</td>
-                  <td class="px-4 py-3">$5/hour</td>
-                  <td class="px-4 py-3">Community tutors</td>
-                  <td class="px-4 py-3">Promo credits</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+ <h2 class="text-2xl font-bold mt-8 mb-4">The Cheapest Platforms for 1-on-1 English Lessons</h2>
+ <p class="text-neutral-300 mb-4">We tested and compared more than a dozen platforms to find the most affordable 1-on-1 English tutoring options. Here is what we found:</p>
+ 
+ <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden mb-6">
+ <div class="overflow-x-auto">
+ <table class="w-full text-sm">
+ <thead class="bg-gray-800 text-gray-300">
+ <tr>
+ <th class="px-4 py-3 text-left font-semibold">Platform</th>
+ <th class="px-4 py-3 text-left font-semibold">Starting Price</th>
+ <th class="px-4 py-3 text-left font-semibold">Tutor Type</th>
+ <th class="px-4 py-3 text-left font-semibold">Trial</th>
+ </tr>
+ </thead>
+ <tbody class="divide-y divide-gray-700">
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">See Guru</td>
+ <td class="px-4 py-3">$3/lesson</td>
+ <td class="px-4 py-3">Native speakers</td>
+ <td class="px-4 py-3">Free intro</td>
+ </tr>
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">iTalki</td>
+ <td class="px-4 py-3">$5/hour</td>
+ <td class="px-4 py-3">Community & professional</td>
+ <td class="px-4 py-3">Credits available</td>
+ </tr>
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">Preply</td>
+ <td class="px-4 py-3">$8/hour</td>
+ <td class="px-4 py-3">Vetted tutors</td>
+ <td class="px-4 py-3">First lesson trial</td>
+ </tr>
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">Cambly</td>
+ <td class="px-4 py-3">$6.99/month</td>
+ <td class="px-4 py-3">Native speakers</td>
+ <td class="px-4 py-3">Limited free trial</td>
+ </tr>
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">Verbling</td>
+ <td class="px-4 py-3">$15/hour</td>
+ <td class="px-4 py-3">Professional tutors</td>
+ <td class="px-4 py-3">Trial lesson</td>
+ </tr>
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">Lingoda</td>
+ <td class="px-4 py-3">$6-12/class</td>
+ <td class="px-4 py-3">Certified teachers</td>
+ <td class="px-4 py-3">Free trial class</td>
+ </tr>
+ <tr>
+ <td class="px-4 py-3 font-semibold text-emerald-400">Italki</td>
+ <td class="px-4 py-3">$5/hour</td>
+ <td class="px-4 py-3">Community tutors</td>
+ <td class="px-4 py-3">Promo credits</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
 
-        <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 mb-6">
-          <div class="flex items-start gap-4">
-            <span class="text-3xl">🏆</span>
-            <div>
-              <h3 class="font-bold text-lg mb-2">Top Pick: See Guru</h3>
-              <p class="text-gray-200 mb-3">See Guru wins our top pick for cheapest 1-on-1 English lessons. Prices start at just $3 per lesson with professional native-speaking tutors. The platform is simple to use, offers free intro sessions for new users, and has a solid rating system to help you find the right tutor fast.</p>
-              <a href="/go/see-guru/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors text-sm">
-                Get Started with See Guru &rarr;
-    
-              </a>
-              <p class="text-xs text-gray-200 mt-2"><strong>Disclosure:</strong> We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
-            </div>
-          </div>
-        </div>
+ <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 mb-6">
+ <div class="flex items-start gap-4">
+ <span class="text-3xl"></span>
+ <div>
+ <h3 class="font-bold text-lg mb-2">Top Pick: See Guru</h3>
+ <p class="text-gray-200 mb-3">See Guru wins our top pick for cheapest 1-on-1 English lessons. Prices start at just $3 per lesson with professional native-speaking tutors. The platform is simple to use, offers free intro sessions for new users, and has a solid rating system to help you find the right tutor fast.</p>
+ <a href="/go/see-guru/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2 rounded-lg transition-colors text-sm">Get Started with See Guru &rarr;
+ 
+ </a>
+ <p class="text-xs text-gray-200 mt-2"><strong>Disclosure:</strong>We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+ </div>
+ </div>
+ </div>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Price Comparison: What Do Budget Tutors Actually Cost?</h2>
-        <p class="text-neutral-300 mb-4">Understanding the true cost of online tutoring helps you budget smarter. Here is how monthly costs compare assuming 8 lessons per month:</p>
-        <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
-          <li><strong>See Guru ($3/lesson):</strong> $24/month for 8 lessons</li>
-          <li><strong>iTalki community tutors ($5/hour):</strong> $40/month for 8 hours</li>
-          <li><strong>Preply ($8/hour):</strong> $64/month for 8 hours</li>
-          <li><strong>Cambly ($6.99/month):</strong> $6.99/month unlimited practice</li>
-          <li><strong>Verbling ($15/hour):</strong> $120/month for 8 hours</li>
-        </ul>
-        <p class="text-neutral-300 mb-4">If you want maximum affordability with real 1-on-1 human interaction, See Guru and iTalki community tutors deliver the best value per dollar spent.</p>
+ <h2 class="text-2xl font-bold mt-8 mb-4">Price Comparison: What Do Budget Tutors Actually Cost?</h2>
+ <p class="text-neutral-300 mb-4">Understanding the true cost of online tutoring helps you budget smarter. Here is how monthly costs compare assuming 8 lessons per month:</p>
+ <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
+ <li><strong>See Guru ($3/lesson):</strong> $24/month for 8 lessons</li>
+ <li><strong>iTalki community tutors ($5/hour):</strong> $40/month for 8 hours</li>
+ <li><strong>Preply ($8/hour):</strong> $64/month for 8 hours</li>
+ <li><strong>Cambly ($6.99/month):</strong> $6.99/month unlimited practice</li>
+ <li><strong>Verbling ($15/hour):</strong> $120/month for 8 hours</li>
+ </ul>
+ <p class="text-neutral-300 mb-4">If you want maximum affordability with real 1-on-1 human interaction, See Guru and iTalki community tutors deliver the best value per dollar spent.</p>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">How to Get the Most From Cheap 1-on-1 Lessons</h2>
-        <p class="text-neutral-300 mb-4">A cheap lesson is only a good deal if you actually learn from it. Here is how to maximize every session:</p>
-        <ol class="list-decimal pl-6 mb-4 text-neutral-300 space-y-3">
-          <li><strong>Prepare before your lesson.</strong> Write down 3-5 questions or topics you want to cover. Do not waste paid time figuring out what to say.</li>
-          <li><strong>Ask for pronunciation feedback.</strong> Most learners improve fastest by focusing on sounds that do not exist in their native language.</li>
-          <li><strong>Request correction.</strong> Tell your tutor to correct you immediately when you make mistakes. Gentle correction policies may slow your progress.</li>
-          <li><strong>Record key vocabulary.</strong> Take notes during class and review them between sessions. This builds retention.</li>
-          <li><strong>Book consistency over frequency.</strong> Two solid lessons per week beats four rushed ones. Quality contact time matters more than volume.</li>
-        </ol>
+ <h2 class="text-2xl font-bold mt-8 mb-4">How to Get the Most From Cheap 1-on-1 Lessons</h2>
+ <p class="text-neutral-300 mb-4">A cheap lesson is only a good deal if you actually learn from it. Here is how to maximize every session:</p>
+ <ol class="list-decimal pl-6 mb-4 text-neutral-300 space-y-3">
+ <li><strong>Prepare before your lesson.</strong>Write down 3-5 questions or topics you want to cover. Do not waste paid time figuring out what to say.</li>
+ <li><strong>Ask for pronunciation feedback.</strong>Most learners improve fastest by focusing on sounds that do not exist in their native language.</li>
+ <li><strong>Request correction.</strong>Tell your tutor to correct you immediately when you make mistakes. Gentle correction policies may slow your progress.</li>
+ <li><strong>Record key vocabulary.</strong>Take notes during class and review them between sessions. This builds retention.</li>
+ <li><strong>Book consistency over frequency.</strong>Two solid lessons per week beats four rushed ones. Quality contact time matters more than volume.</li>
+ </ol>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">What to Look for in a Budget Tutor</h2>
-        <p class="text-neutral-300 mb-4">Affordability matters, but the wrong tutor wastes money no matter how cheap the rate. Watch for these qualities:</p>
-        <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
-          <li><strong>Ratings above 4.5 stars.</strong> Real student reviews reveal whether a tutor is reliable and helpful.</li>
-          <li><strong>Teaching experience or qualifications.</strong> TEFL or CELTA certifications indicate structured training, not just fluency.</li>
-          <li><strong>Specialization matching your goals.</strong> A conversation tutor may not be ideal for business English prep.</li>
-          <li><strong>Availability that matches your schedule.</strong> A cheap tutor is frustrating if they are only available at odd hours.</li>
-          <li><strong>Clear communication style.</strong> Some tutors talk too much. The best tutors ask questions and make you speak.</li>
-        </ul>
+ <h2 class="text-2xl font-bold mt-8 mb-4">What to Look for in a Budget Tutor</h2>
+ <p class="text-neutral-300 mb-4">Affordability matters, but the wrong tutor wastes money no matter how cheap the rate. Watch for these qualities:</p>
+ <ul class="list-disc pl-6 mb-4 text-neutral-300 space-y-2">
+ <li><strong>Ratings above 4.5 stars.</strong>Real student reviews reveal whether a tutor is reliable and helpful.</li>
+ <li><strong>Teaching experience or qualifications.</strong>TEFL or CELTA certifications indicate structured training, not just fluency.</li>
+ <li><strong>Specialization matching your goals.</strong>A conversation tutor may not be ideal for business English prep.</li>
+ <li><strong>Availability that matches your schedule.</strong>A cheap tutor is frustrating if they are only available at odd hours.</li>
+ <li><strong>Clear communication style.</strong>Some tutors talk too much. The best tutors ask questions and make you speak.</li>
+ </ul>
 
-        <h2 class="text-2xl font-bold mt-8 mb-4">Our Recommendation: Start With See Guru</h2>
-        <p class="text-neutral-300 mb-4">See Guru combines the lowest prices we found with a straightforward platform that actually works. At $3 per lesson, you can afford to practice twice a week and see real progress without straining your budget.</p>
-        <p class="text-neutral-300 mb-4">Sign up for a free intro session, try 2-3 different tutors to find your best match, then commit to a regular schedule. Most learners notice improvement within 4-6 weeks of consistent 1-on-1 practice.</p>
+ <h2 class="text-2xl font-bold mt-8 mb-4">Our Recommendation: Start With See Guru</h2>
+ <p class="text-neutral-300 mb-4">See Guru combines the lowest prices we found with a straightforward platform that actually works. At $3 per lesson, you can afford to practice twice a week and see real progress without straining your budget.</p>
+ <p class="text-neutral-300 mb-4">Sign up for a free intro session, try 2-3 different tutors to find your best match, then commit to a regular schedule. Most learners notice improvement within 4-6 weeks of consistent 1-on-1 practice.</p>
 
-        <div class="bg-gradient-to-r from-emerald-900 to-gray-900 rounded-xl p-6 mt-8">
-          <h3 class="text-xl font-bold mb-3">Ready to Start Saving on English Lessons?</h3>
-          <p class="text-neutral-300 mb-4">See Guru connects you with professional native-speaking tutors starting at just $3 per session. No subscription required, pay per lesson as you go.</p>
-          <a href="/go/see-guru/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-lg transition-colors">
-            Find Your Tutor on See Guru &rarr;
-          </a>
-          <p class="text-xs text-emerald-200 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
-        </div>
+ <div class="bg-gradient-to-r from-emerald-900 to-gray-900 rounded-xl p-6 mt-8">
+ <h3 class="text-xl font-bold mb-3">Ready to Start Saving on English Lessons?</h3>
+ <p class="text-neutral-300 mb-4">See Guru connects you with professional native-speaking tutors starting at just $3 per session. No subscription required, pay per lesson as you go.</p>
+ <a href="/go/see-guru/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-lg transition-colors">Find Your Tutor on See Guru &rarr;
+ </a>
+ <p class="text-xs text-emerald-200 mt-2">We earn a commission from qualifying purchases made through this link, at no extra cost to you.</p>
+ </div>
 
-        <div class="mt-8 pt-6 border-t border-gray-800">
-          <p class="text-xs text-gray-500">Affiliate Disclosure: LearnEnglish.Life is reader-supported. We may earn a commission when you sign up for See Guru through links on this page, at no extra cost to you. Our reviews are based on research and real user experience, not payment.</p>
-        </div>
-      </div>
+ <div class="mt-8 pt-6 border-t border-gray-800">
+ <p class="text-xs text-gray-500">Affiliate Disclosure: LearnEnglish.Life is reader-supported. We may earn a commission when you sign up for See Guru through links on this page, at no extra cost to you. Our reviews are based on research and real user experience, not payment.</p>
+ </div>
+ </div>
 
-      <AdUnit />
-    
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Related guides</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/guides/how-much-does-italki-cost/" class="text-emerald-400 hover:text-emerald-300">How Much Does iTalki Cost?</a></li>
-        <li><a href="/guides/online-english-tutors-cost-2026/" class="text-emerald-400 hover:text-emerald-300">Online English Tutor Costs 2026</a></li>
-        <li><a href="/guides/free-vs-paid-english-learning/" class="text-emerald-400 hover:text-emerald-300">Free vs Paid English Learning</a></li>
-        <li><a href="/guides/free-trial-english-lessons-no-credit-card/" class="text-emerald-400 hover:text-emerald-300">Free Trial Lessons, No Credit Card</a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        Want to test 1 on 1 lessons before paying? <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a> gives 3 free lessons with certified teachers, no card required.
-      </p>
-    </aside>
+ <AdUnit />
+ 
+ <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Related guides</h3>
+ <ul class="space-y-2 text-base">
+ <li><a href="/guides/how-much-does-italki-cost/" class="text-emerald-400 hover:text-emerald-300">How Much Does iTalki Cost?</a></li>
+ <li><a href="/guides/online-english-tutors-cost-2026/" class="text-emerald-400 hover:text-emerald-300">Online English Tutor Costs 2026</a></li>
+ <li><a href="/guides/free-vs-paid-english-learning/" class="text-emerald-400 hover:text-emerald-300">Free vs Paid English Learning</a></li>
+ <li><a href="/guides/free-trial-english-lessons-no-credit-card/" class="text-emerald-400 hover:text-emerald-300">Free Trial Lessons, No Credit Card</a></li>
+ </ul>
+ <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">Want to test 1 on 1 lessons before paying? <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a>gives 3 free lessons with certified teachers, no card required.
+ </p>
+ </aside>
 
-  </article>
-  </main>
+ </article>
+ </main>
 
-  <Footer />
+ <Footer />
 </Base>

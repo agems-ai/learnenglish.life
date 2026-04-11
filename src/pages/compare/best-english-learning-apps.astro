@@ -7,375 +7,375 @@ import StickyCTA from '../../components/StickyCTA.astro';
 import AdUnit from '../../components/AdUnit.astro';
 
 const apps = [
-  { name: "Duolingo", rating: 4.5, price: "Free / $12.99/mo", best: "Casual learners", color: "bg-green-500" },
-  { name: "ELSA Speak", rating: 4.4, price: "Free / $69.99/yr", best: "Pronunciation", color: "bg-blue-900/300" },
-  { name: "iTalki", rating: 4.7, price: "$10-50/hr", best: "Speaking practice", color: "bg-orange-500" },
-  { name: "Babbel", rating: 4.3, price: "$13.95/mo", best: "Grammar focus", color: "bg-purple-900/300" },
-  { name: "Pimsleur", rating: 4.6, price: "$14.95/mo", best: "Audio learners", color: "bg-red-500" },
-  { name: "Cambly", rating: 4.4, price: "$6.50-80/wk", best: "Conversation", color: "bg-teal-500" },
-  { name: "Preply", rating: 4.6, price: "$10-45/hr", best: "Professional tutors", color: "bg-indigo-900/300" },
-  { name: "Busuu", rating: 4.2, price: "$13.99/mo", best: "Structured courses", color: "bg-pink-500" },
-  { name: "Rosetta Stone", rating: 4.1, price: "$11.99/mo", best: "Immersion method", color: "bg-cyan-500" },
-  { name: "Memrise", rating: 4.3, price: "Free / $9.99/mo", best: "Vocabulary", color: "bg-yellow-500" }
+ { name: "Duolingo", rating: 4.5, price: "Free / $12.99/mo", best: "Casual learners", color: "bg-green-500" },
+ { name: "ELSA Speak", rating: 4.4, price: "Free / $69.99/yr", best: "Pronunciation", color: "bg-blue-900/300" },
+ { name: "iTalki", rating: 4.7, price: "$10-50/hr", best: "Speaking practice", color: "bg-orange-500" },
+ { name: "Babbel", rating: 4.3, price: "$13.95/mo", best: "Grammar focus", color: "bg-purple-900/300" },
+ { name: "Pimsleur", rating: 4.6, price: "$14.95/mo", best: "Audio learners", color: "bg-red-500" },
+ { name: "Cambly", rating: 4.4, price: "$6.50-80/wk", best: "Conversation", color: "bg-teal-500" },
+ { name: "Preply", rating: 4.6, price: "$10-45/hr", best: "Professional tutors", color: "bg-indigo-900/300" },
+ { name: "Busuu", rating: 4.2, price: "$13.99/mo", best: "Structured courses", color: "bg-pink-500" },
+ { name: "Rosetta Stone", rating: 4.1, price: "$11.99/mo", best: "Immersion method", color: "bg-cyan-500" },
+ { name: "Memrise", rating: 4.3, price: "Free / $9.99/mo", best: "Vocabulary", color: "bg-yellow-500" }
 ];
 
 const features = [
-  { feature: "Free Version", duolingo: "Yes", elsa: "Limited", italki: "Community only", babbel: "Limited", pimsleur: "No", cambly: "Trial only", preply: "Trial only", busuu: "Limited", rosetta: "Trial only", memrise: "Yes" },
-  { feature: "Speaking Practice", duolingo: "AI only", elsa: "AI", italki: "Live tutors", babbel: "No", pimsleur: "Audio", cambly: "Live tutors", preply: "Live tutors", busuu: "AI", rosetta: "No", memrise: "No" },
-  { feature: "Native Speakers", duolingo: "No", elsa: "No", italki: "Yes", babbel: "No", pimsleur: "Audio", cambly: "Yes", preply: "Yes", busuu: "No", rosetta: "No", memrise: "No" },
-  { feature: "Mobile App", duolingo: "iOS/Android", elsa: "iOS/Android", italki: "iOS/Android", babbel: "iOS/Android", pimsleur: "iOS/Android", cambly: "iOS/Android", preply: "iOS/Android", busuu: "iOS/Android", rosetta: "iOS/Android", memrise: "iOS/Android" },
-  { feature: "Offline Mode", duolingo: "Plus only", elsa: "No", italki: "No", babbel: "No", pimsleur: "Yes", cambly: "No", preply: "No", busuu: "Premium only", rosetta: "Yes", memrise: "Plus only" },
-  { feature: "Certification", duolingo: "No", elsa: "No", italki: "No", babbel: "Yes", pimsleur: "No", cambly: "No", preply: "Yes", busuu: "Yes", rosetta: "Yes", memrise: "No" }
+ { feature: "Free Version", duolingo: "Yes", elsa: "Limited", italki: "Community only", babbel: "Limited", pimsleur: "No", cambly: "Trial only", preply: "Trial only", busuu: "Limited", rosetta: "Trial only", memrise: "Yes" },
+ { feature: "Speaking Practice", duolingo: "AI only", elsa: "AI", italki: "Live tutors", babbel: "No", pimsleur: "Audio", cambly: "Live tutors", preply: "Live tutors", busuu: "AI", rosetta: "No", memrise: "No" },
+ { feature: "Native Speakers", duolingo: "No", elsa: "No", italki: "Yes", babbel: "No", pimsleur: "Audio", cambly: "Yes", preply: "Yes", busuu: "No", rosetta: "No", memrise: "No" },
+ { feature: "Mobile App", duolingo: "iOS/Android", elsa: "iOS/Android", italki: "iOS/Android", babbel: "iOS/Android", pimsleur: "iOS/Android", cambly: "iOS/Android", preply: "iOS/Android", busuu: "iOS/Android", rosetta: "iOS/Android", memrise: "iOS/Android" },
+ { feature: "Offline Mode", duolingo: "Plus only", elsa: "No", italki: "No", babbel: "No", pimsleur: "Yes", cambly: "No", preply: "No", busuu: "Premium only", rosetta: "Yes", memrise: "Plus only" },
+ { feature: "Certification", duolingo: "No", elsa: "No", italki: "No", babbel: "Yes", pimsleur: "No", cambly: "No", preply: "Yes", busuu: "Yes", rosetta: "Yes", memrise: "No" }
 ];
 
 // SEO Schema
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Best English Learning Apps in 2025: Top 10 Apps Compared",
-  "description": "Comprehensive comparison of the best English learning apps in 2025. Find the right app for your budget, goals, and learning style.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2025-06-01",
-  "dateModified": "2025-06-01"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Best English Learning Apps in 2025: Top 10 Apps Compared",
+ "description": "Comprehensive comparison of the best English learning apps in 2025. Find the right app for your budget, goals, and learning style.",
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2025-06-01",
+ "dateModified": "2025-06-01"
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the best free English learning app?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Duolingo and Memrise offer the best free versions with gamified lessons, daily streaks, and core vocabulary building. However, free versions have limitations compared to paid plans."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which app is best for improving English speaking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For speaking practice, iTalki and Cambly offer live conversations with native speakers. ELSA Speak uses AI for pronunciation feedback. Pimsleur focuses on audio-based speaking skills."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much do English learning apps cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Apps range from free (Duolingo, Memrise) to $10-50/hour for live tutoring (iTalki, Preply). Monthly subscriptions typically cost $10-70/month. Some offer lifetime access options."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "What is the best free English learning app?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Duolingo and Memrise offer the best free versions with gamified lessons, daily streaks, and core vocabulary building. However, free versions have limitations compared to paid plans."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Which app is best for improving English speaking?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "For speaking practice, iTalki and Cambly offer live conversations with native speakers. ELSA Speak uses AI for pronunciation feedback. Pimsleur focuses on audio-based speaking skills."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "How much do English learning apps cost?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Apps range from free (Duolingo, Memrise) to $10-50/hour for live tutoring (iTalki, Preply). Monthly subscriptions typically cost $10-70/month. Some offer lifetime access options."
+ }
+ }
+ ]
 };
 ---
 
 <Base title="Best English Learning Apps 2025: Top 10 Apps Compared" description="Compare the best English learning apps of 2025. Features, pricing, pros and cons for Duolingo, ELSA Speak, iTalki, Babbel, Pimsleur, and more.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  
-  <Header />
-  
-  <main class="max-w-5xl mx-auto px-4 py-8">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-neutral-300 mb-4">
-      <a href="/" class="hover:text-emerald-600">Home</a>
-      <span class="mx-2">›</span>
-      <a href="/compare/" class="hover:text-emerald-600">Comparisons</a>
-      <span class="mx-2">›</span>
-      <span class="text-neutral-300">Best English Learning Apps</span>
-    </nav>
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+ 
+ <Header />
+ 
+ <main class="max-w-5xl mx-auto px-4 py-8">
+ <!-- Breadcrumb -->
+ <nav class="text-sm text-neutral-300 mb-4">
+ <a href="/" class="hover:text-emerald-600">Home</a>
+ <span class="mx-2">›</span>
+ <a href="/compare/" class="hover:text-emerald-600">Comparisons</a>
+ <span class="mx-2">›</span>
+ <span class="text-neutral-300">Best English Learning Apps</span>
+ </nav>
 
-    <!-- Hero -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
-      <span class="text-emerald-200 text-sm font-medium">Comparison · Updated June 2025</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">Best English Learning Apps in 2025: Top 10 Apps Compared</h1>
-    <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
-      <p class="text-emerald-100 text-lg">We tested 10+ apps to find the best English learning tools. Whether you're a beginner or advanced learner, there's a perfect app for your goals and budget.</p>
-      <div class="flex flex-wrap gap-4 mt-6">
-        <a href="#quick-compare" class="bg-slate-900/60 text-neutral-300 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-900/30 transition">Quick Compare</a>
-        <a href="#detailed-reviews" class="border-2 border-white text-white px-5 py-2 rounded-lg font-semibold hover:bg-slate-900/60/10 transition">Detailed Reviews</a>
-      </div>
-    </div>
+ <!-- Hero -->
+ <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+ <span class="text-emerald-200 text-sm font-medium">Comparison · Updated June 2025</span>
+ <h1 class="text-4xl font-bold mt-2 mb-4">Best English Learning Apps in 2025: Top 10 Apps Compared</h1>
+ <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
+ <p class="text-emerald-100 text-lg">We tested 10+ apps to find the best English learning tools. Whether you're a beginner or advanced learner, there's a perfect app for your goals and budget.</p>
+ <div class="flex flex-wrap gap-4 mt-6">
+ <a href="#quick-compare" class="bg-slate-900/60 text-neutral-300 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-900/30 transition">Quick Compare</a>
+ <a href="#detailed-reviews" class="border-2 border-white text-white px-5 py-2 rounded-lg font-semibold hover:bg-slate-900/60/10 transition">Detailed Reviews</a>
+ </div>
+ </div>
 
-    <!-- Quick Compare Table -->
-    <section id="quick-compare" class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">Quick Comparison: Best English Apps at a Glance</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse bg-slate-900/60 rounded-xl shadow-sm overflow-hidden">
-          <thead>
-            <tr class="bg-neutral-800">
-              <th class="text-left p-4 font-semibold">App</th>
-              <th class="text-center p-4 font-semibold">Rating</th>
-              <th class="text-center p-4 font-semibold">Price</th>
-              <th class="text-left p-4 font-semibold">Best For</th>
-            </tr>
-          </thead>
-          <tbody>
-            {apps.map((app, i) => (
-              <tr class={i % 2 === 0 ? 'bg-slate-900/60' : 'bg-neutral-800'}>
-                <td class="p-4 font-semibold text-neutral-300">{app.name}</td>
-                <td class="p-4 text-center">
-                  <span class="bg-emerald-900/40 text-neutral-300 px-2 py-1 rounded font-semibold">{app.rating}/5</span>
-                </td>
-                <td class="p-4 text-center text-neutral-400">{app.price}</td>
-                <td class="p-4 text-neutral-400">{app.best}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+ <!-- Quick Compare Table -->
+ <section id="quick-compare" class="mb-12">
+ <h2 class="text-2xl font-bold mb-6">Quick Comparison: Best English Apps at a Glance</h2>
+ <div class="overflow-x-auto">
+ <table class="w-full border-collapse bg-slate-900/60 rounded-xl shadow-sm overflow-hidden">
+ <thead>
+ <tr class="bg-neutral-800">
+ <th class="text-left p-4 font-semibold">App</th>
+ <th class="text-center p-4 font-semibold">Rating</th>
+ <th class="text-center p-4 font-semibold">Price</th>
+ <th class="text-left p-4 font-semibold">Best For</th>
+ </tr>
+ </thead>
+ <tbody>
+ {apps.map((app, i) => (
+ <tr class={i % 2 === 0 ? 'bg-slate-900/60' : 'bg-neutral-800'}>
+ <td class="p-4 font-semibold text-neutral-300">{app.name}</td>
+ <td class="p-4 text-center">
+ <span class="bg-emerald-900/40 text-neutral-300 px-2 py-1 rounded font-semibold">{app.rating}/5</span>
+ </td>
+ <td class="p-4 text-center text-neutral-400">{app.price}</td>
+ <td class="p-4 text-neutral-400">{app.best}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-    <AdUnit slot="compare-1" />
+ <AdUnit slot="compare-1" />
 
-    <!-- Detailed Reviews -->
-    <section id="detailed-reviews" class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">Detailed App Reviews</h2>
-      
-      <!-- Duolingo -->
-      <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-xl font-bold">Duolingo</h3>
-            <p class="text-slate-400">The gamified learning pioneer</p>
-          </div>
-          <div class="text-right">
-            <span class="bg-green-900/40 text-green-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['Duolingo']?.rating || 4.5} / 5</span>
-            <p class="text-slate-400 text-sm mt-1">{platformRatings['Duolingo']?.reviewCount?.toLocaleString() || 256847} reviews</p>
-          </div>
-        </div>
-        <p class="text-neutral-400 mb-4">Duolingo makes learning English feel like a game. With daily streaks, XP points, and bite-sized lessons, it's perfect for beginners who struggle with motivation. The app uses gamification brilliantly to keep you coming back.</p>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✓ Completely free core version</li>
-              <li>✓ Gamified learning is highly engaging</li>
-              <li>✓ Bite-sized 5-minute lessons</li>
-              <li>✓ Strong mobile app experience</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✗ Limited speaking practice</li>
-              <li>✗ Advanced content requires Plus</li>
-              <li>✗ Can't replace real conversation</li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex justify-between items-center pt-4 border-t">
-          <span class="text-neutral-400"><strong>Price:</strong> Free / $12.99/month</span>
-          <a href="/reviews/duolingo/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
-        </div>
-      </div>
+ <!-- Detailed Reviews -->
+ <section id="detailed-reviews" class="mb-12">
+ <h2 class="text-2xl font-bold mb-6">Detailed App Reviews</h2>
+ 
+ <!-- Duolingo -->
+ <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
+ <div class="flex items-start justify-between mb-4">
+ <div>
+ <h3 class="text-xl font-bold">Duolingo</h3>
+ <p class="text-slate-400">The gamified learning pioneer</p>
+ </div>
+ <div class="text-right">
+ <span class="bg-green-900/40 text-green-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['Duolingo']?.rating || 4.5} / 5</span>
+ <p class="text-slate-400 text-sm mt-1">{platformRatings['Duolingo']?.reviewCount?.toLocaleString() || 256847} reviews</p>
+ </div>
+ </div>
+ <p class="text-neutral-400 mb-4">Duolingo makes learning English feel like a game. With daily streaks, XP points, and bite-sized lessons, it's perfect for beginners who struggle with motivation. The app uses gamification brilliantly to keep you coming back.</p>
+ <div class="grid md:grid-cols-2 gap-4 mb-4">
+ <div>
+ <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Completely free core version</li>
+ <li>Gamified learning is highly engaging</li>
+ <li>Bite-sized 5-minute lessons</li>
+ <li>Strong mobile app experience</li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Limited speaking practice</li>
+ <li>Advanced content requires Plus</li>
+ <li>Can't replace real conversation</li>
+ </ul>
+ </div>
+ </div>
+ <div class="flex justify-between items-center pt-4 border-t">
+ <span class="text-neutral-400"><strong>Price:</strong>Free / $12.99/month</span>
+ <a href="/reviews/duolingo/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
+ </div>
+ </div>
 
-      <!-- iTalki -->
-      <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-xl font-bold">iTalki</h3>
-            <p class="text-slate-400">Best for live conversation practice</p>
-          </div>
-          <div class="text-right">
-            <span class="bg-emerald-900/40 text-neutral-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['iTalki']?.rating || 4.6} / 5</span>
-            <p class="text-slate-400 text-sm mt-1">{platformRatings['iTalki']?.reviewCount?.toLocaleString() || 12847} reviews</p>
-          </div>
-        </div>
-        <p class="text-neutral-400 mb-4">iTalki connects you with over 10,000 tutors worldwide for 1-on-1 video lessons. It's the best choice if you want to practice speaking with real people. Community features offer free practice too.</p>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✓ 10,000+ tutors across all levels</li>
-              <li>✓ Affordable community tutors ($4-10/hr)</li>
-              <li>✓ Flexible scheduling</li>
-              <li>✓ Free community features</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✗ Quality varies between tutors</li>
-              <li>✗ Requires paid lessons for structured learning</li>
-              <li>✗ Time zone coordination can be tricky</li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex justify-between items-center pt-4 border-t">
-          <span class="text-neutral-400"><strong>Price:</strong> $4-50/hour</span>
-          <a href="/reviews/italki/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
-        </div>
-      </div>
+ <!-- iTalki -->
+ <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
+ <div class="flex items-start justify-between mb-4">
+ <div>
+ <h3 class="text-xl font-bold">iTalki</h3>
+ <p class="text-slate-400">Best for live conversation practice</p>
+ </div>
+ <div class="text-right">
+ <span class="bg-emerald-900/40 text-neutral-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['iTalki']?.rating || 4.6} / 5</span>
+ <p class="text-slate-400 text-sm mt-1">{platformRatings['iTalki']?.reviewCount?.toLocaleString() || 12847} reviews</p>
+ </div>
+ </div>
+ <p class="text-neutral-400 mb-4">iTalki connects you with over 10,000 tutors worldwide for 1-on-1 video lessons. It's the best choice if you want to practice speaking with real people. Community features offer free practice too.</p>
+ <div class="grid md:grid-cols-2 gap-4 mb-4">
+ <div>
+ <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li> 10,000+ tutors across all levels</li>
+ <li>Affordable community tutors ($4-10/hr)</li>
+ <li>Flexible scheduling</li>
+ <li>Free community features</li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Quality varies between tutors</li>
+ <li>Requires paid lessons for structured learning</li>
+ <li>Time zone coordination can be tricky</li>
+ </ul>
+ </div>
+ </div>
+ <div class="flex justify-between items-center pt-4 border-t">
+ <span class="text-neutral-400"><strong>Price:</strong> $4-50/hour</span>
+ <a href="/reviews/italki/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
+ </div>
+ </div>
 
-      <!-- Pimsleur -->
-      <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-xl font-bold">Pimsleur</h3>
-            <p class="text-slate-400">Best audio-based learning</p>
-          </div>
-          <div class="text-right">
-            <span class="bg-orange-900/40 text-orange-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['Pimsleur']?.rating || 4.6} / 5</span>
-            <p class="text-slate-400 text-sm mt-1">{platformRatings['Pimsleur']?.reviewCount?.toLocaleString() || 34215} reviews</p>
-          </div>
-        </div>
-        <p class="text-neutral-400 mb-4">Pimsleur uses audio lessons you can listen to anywhere. commuting, exercising, doing chores. Each 30-minute lesson builds speaking confidence through gradual, scientifically-proven repetition.</p>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✓ Perfect for commute/workout learning</li>
-              <li>✓ Excellent pronunciation practice</li>
-              <li>✓ Offline audio downloads</li>
-              <li>✓ No reading/writing required</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✗ Expensive monthly subscription</li>
-              <li>✗ Limited vocabulary depth</li>
-              <li>✗ Modern UI could be better</li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex justify-between items-center pt-4 border-t">
-          <span class="text-neutral-400"><strong>Price:</strong> $14.95-44.95/month</span>
-          <a href="/reviews/pimsleur/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
-        </div>
-      </div>
+ <!-- Pimsleur -->
+ <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
+ <div class="flex items-start justify-between mb-4">
+ <div>
+ <h3 class="text-xl font-bold">Pimsleur</h3>
+ <p class="text-slate-400">Best audio-based learning</p>
+ </div>
+ <div class="text-right">
+ <span class="bg-orange-900/40 text-orange-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['Pimsleur']?.rating || 4.6} / 5</span>
+ <p class="text-slate-400 text-sm mt-1">{platformRatings['Pimsleur']?.reviewCount?.toLocaleString() || 34215} reviews</p>
+ </div>
+ </div>
+ <p class="text-neutral-400 mb-4">Pimsleur uses audio lessons you can listen to anywhere. commuting, exercising, doing chores. Each 30-minute lesson builds speaking confidence through gradual, scientifically-proven repetition.</p>
+ <div class="grid md:grid-cols-2 gap-4 mb-4">
+ <div>
+ <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Perfect for commute/workout learning</li>
+ <li>Excellent pronunciation practice</li>
+ <li>Offline audio downloads</li>
+ <li>No reading/writing required</li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Expensive monthly subscription</li>
+ <li>Limited vocabulary depth</li>
+ <li>Modern UI could be better</li>
+ </ul>
+ </div>
+ </div>
+ <div class="flex justify-between items-center pt-4 border-t">
+ <span class="text-neutral-400"><strong>Price:</strong> $14.95-44.95/month</span>
+ <a href="/reviews/pimsleur/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
+ </div>
+ </div>
 
-      <!-- ELSA Speak -->
-      <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
-        <div class="flex items-start justify-between mb-4">
-          <div>
-            <h3 class="text-xl font-bold">ELSA Speak</h3>
-            <p class="text-slate-400">AI pronunciation coach</p>
-          </div>
-          <div class="text-right">
-            <span class="bg-blue-900/40 text-neutral-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['ELSA Speak']?.rating || 4.4} / 5</span>
-            <p class="text-slate-400 text-sm mt-1">{platformRatings['ELSA Speak']?.reviewCount?.toLocaleString() || 23456} reviews</p>
-          </div>
-        </div>
-        <p class="text-neutral-400 mb-4">ELSA uses AI to analyze your pronunciation and gives instant feedback. It's like having a personal accent coach. Particularly useful for speakers of Asian languages working on difficult sounds.</p>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✓ AI-powered pronunciation analysis</li>
-              <li>✓ Personalized speech coaching</li>
-              <li>✓ Covers difficult sounds by native language</li>
-              <li>✓ Good free version available</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
-            <ul class="text-sm text-neutral-400 space-y-1">
-              <li>✗ Limited vocabulary building</li>
-              <li>✗ No live speaking practice</li>
-              <li>✗ Premium features are pricey</li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex justify-between items-center pt-4 border-t">
-          <span class="text-neutral-400"><strong>Price:</strong> Free / $69.99/year</span>
-          <a href="/reviews/elsa-speak/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
-        </div>
-      </div>
+ <!-- ELSA Speak -->
+ <div class="bg-slate-900/60 rounded-xl shadow-sm p-6 mb-6">
+ <div class="flex items-start justify-between mb-4">
+ <div>
+ <h3 class="text-xl font-bold">ELSA Speak</h3>
+ <p class="text-slate-400">AI pronunciation coach</p>
+ </div>
+ <div class="text-right">
+ <span class="bg-blue-900/40 text-neutral-300 px-3 py-1 rounded-full font-semibold inline-block">⭐ {platformRatings['ELSA Speak']?.rating || 4.4} / 5</span>
+ <p class="text-slate-400 text-sm mt-1">{platformRatings['ELSA Speak']?.reviewCount?.toLocaleString() || 23456} reviews</p>
+ </div>
+ </div>
+ <p class="text-neutral-400 mb-4">ELSA uses AI to analyze your pronunciation and gives instant feedback. It's like having a personal accent coach. Particularly useful for speakers of Asian languages working on difficult sounds.</p>
+ <div class="grid md:grid-cols-2 gap-4 mb-4">
+ <div>
+ <h4 class="font-semibold text-green-600 mb-2">Pros</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>AI-powered pronunciation analysis</li>
+ <li>Personalized speech coaching</li>
+ <li>Covers difficult sounds by native language</li>
+ <li>Good free version available</li>
+ </ul>
+ </div>
+ <div>
+ <h4 class="font-semibold text-red-600 mb-2">Cons</h4>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Limited vocabulary building</li>
+ <li>No live speaking practice</li>
+ <li>Premium features are pricey</li>
+ </ul>
+ </div>
+ </div>
+ <div class="flex justify-between items-center pt-4 border-t">
+ <span class="text-neutral-400"><strong>Price:</strong>Free / $69.99/year</span>
+ <a href="/reviews/elsa-speak/" class="text-emerald-600 font-semibold hover:underline">Full Review →</a>
+ </div>
+ </div>
 
-    </section>
+ </section>
 
-    <AdUnit slot="compare-2" />
+ <AdUnit slot="compare-2" />
 
-    <!-- Feature Comparison -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">Feature-by-Feature Comparison</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse bg-slate-900/60 rounded-xl shadow-sm overflow-hidden text-sm">
-          <thead>
-            <tr class="bg-neutral-800">
-              <th class="text-left p-3 font-semibold">Feature</th>
-              <th class="text-center p-3 font-semibold bg-green-950/60">Duolingo</th>
-              <th class="text-center p-3 font-semibold bg-blue-900/30">ELSA</th>
-              <th class="text-center p-3 font-semibold bg-orange-950/60">iTalki</th>
-              <th class="text-center p-3 font-semibold bg-purple-900/30">Babbel</th>
-            </tr>
-          </thead>
-          <tbody>
-            {features.slice(0, 4).map((row, i) => (
-              <tr class={i % 2 === 0 ? 'bg-slate-900/60' : 'bg-neutral-800'}>
-                <td class="p-3 font-medium">{row.feature}</td>
-                <td class="p-3 text-center">{row.duolingo}</td>
-                <td class="p-3 text-center">{row.elsa}</td>
-                <td class="p-3 text-center">{row.italki}</td>
-                <td class="p-3 text-center">{row.babbel}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+ <!-- Feature Comparison -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6">Feature-by-Feature Comparison</h2>
+ <div class="overflow-x-auto">
+ <table class="w-full border-collapse bg-slate-900/60 rounded-xl shadow-sm overflow-hidden text-sm">
+ <thead>
+ <tr class="bg-neutral-800">
+ <th class="text-left p-3 font-semibold">Feature</th>
+ <th class="text-center p-3 font-semibold bg-green-950/60">Duolingo</th>
+ <th class="text-center p-3 font-semibold bg-blue-900/30">ELSA</th>
+ <th class="text-center p-3 font-semibold bg-orange-950/60">iTalki</th>
+ <th class="text-center p-3 font-semibold bg-purple-900/30">Babbel</th>
+ </tr>
+ </thead>
+ <tbody>
+ {features.slice(0, 4).map((row, i) => (
+ <tr class={i % 2 === 0 ? 'bg-slate-900/60' : 'bg-neutral-800'}>
+ <td class="p-3 font-medium">{row.feature}</td>
+ <td class="p-3 text-center">{row.duolingo}</td>
+ <td class="p-3 text-center">{row.elsa}</td>
+ <td class="p-3 text-center">{row.italki}</td>
+ <td class="p-3 text-center">{row.babbel}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-    <!-- FAQ Section -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
-          <summary class="font-semibold cursor-pointer">What is the best free English learning app?</summary>
-          <p class="text-neutral-400 mt-3">Duolingo and Memrise offer the best free versions with gamified lessons, daily streaks, and core vocabulary building. However, free versions have limitations compared to paid plans.</p>
-        </details>
-        <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
-          <summary class="font-semibold cursor-pointer">Which app is best for improving English speaking?</summary>
-          <p class="text-neutral-400 mt-3">For speaking practice, iTalki and Cambly offer live conversations with native speakers. ELSA Speak uses AI for pronunciation feedback. Pimsleur focuses on audio-based speaking skills.</p>
-        </details>
-        <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
-          <summary class="font-semibold cursor-pointer">How much do English learning apps cost?</summary>
-          <p class="text-neutral-400 mt-3">Apps range from free (Duolingo, Memrise) to $10-50/hour for live tutoring (iTalki, Preply). Monthly subscriptions typically cost $10-70/month. Some offer lifetime access options.</p>
-        </details>
-        <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
-          <summary class="font-semibold cursor-pointer">Can apps replace traditional English classes?</summary>
-          <p class="text-neutral-400 mt-3">Apps are excellent supplements but cannot fully replace structured classes or tutoring. Use apps for daily practice and vocabulary building, combined with tutor sessions for speaking practice and feedback.</p>
-        </details>
-      </div>
-    </section>
+ <!-- FAQ Section -->
+ <section class="mb-12">
+ <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+ <div class="space-y-4">
+ <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
+ <summary class="font-semibold cursor-pointer">What is the best free English learning app?</summary>
+ <p class="text-neutral-400 mt-3">Duolingo and Memrise offer the best free versions with gamified lessons, daily streaks, and core vocabulary building. However, free versions have limitations compared to paid plans.</p>
+ </details>
+ <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
+ <summary class="font-semibold cursor-pointer">Which app is best for improving English speaking?</summary>
+ <p class="text-neutral-400 mt-3">For speaking practice, iTalki and Cambly offer live conversations with native speakers. ELSA Speak uses AI for pronunciation feedback. Pimsleur focuses on audio-based speaking skills.</p>
+ </details>
+ <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
+ <summary class="font-semibold cursor-pointer">How much do English learning apps cost?</summary>
+ <p class="text-neutral-400 mt-3">Apps range from free (Duolingo, Memrise) to $10-50/hour for live tutoring (iTalki, Preply). Monthly subscriptions typically cost $10-70/month. Some offer lifetime access options.</p>
+ </details>
+ <details class="bg-slate-900/60 rounded-xl shadow-sm p-4 group">
+ <summary class="font-semibold cursor-pointer">Can apps replace traditional English classes?</summary>
+ <p class="text-neutral-400 mt-3">Apps are excellent supplements but cannot fully replace structured classes or tutoring. Use apps for daily practice and vocabulary building, combined with tutor sessions for speaking practice and feedback.</p>
+ </details>
+ </div>
+ </section>
 
-    <!-- Verdict -->
-    <section class="bg-emerald-900/30 rounded-xl p-6 mb-8">
-      <h2 class="text-xl font-bold mb-4">Our Recommendation</h2>
-      <p class="text-neutral-300 mb-4">For most learners, we recommend a combination approach:</p>
-      <ul class="text-neutral-400 space-y-2 mb-4">
-        <li>• <strong>Daily practice:</strong> Duolingo or Memrise (free)</li>
-        <li>• <strong>Speaking practice:</strong> iTalki (1-2 sessions per week)</li>
-        <li>• <strong>Pronunciation:</strong> ELSA Speak</li>
-      </ul>
-      <p class="text-neutral-300">This combination gives you structure, conversation, and feedback. the three pillars of English mastery.</p>
-    </section>
+ <!-- Verdict -->
+ <section class="bg-emerald-900/30 rounded-xl p-6 mb-8">
+ <h2 class="text-xl font-bold mb-4">Our Recommendation</h2>
+ <p class="text-neutral-300 mb-4">For most learners, we recommend a combination approach:</p>
+ <ul class="text-neutral-400 space-y-2 mb-4">
+ <li>• <strong>Daily practice:</strong>Duolingo or Memrise (free)</li>
+ <li>• <strong>Speaking practice:</strong>iTalki (1-2 sessions per week)</li>
+ <li>• <strong>Pronunciation:</strong>ELSA Speak</li>
+ </ul>
+ <p class="text-neutral-300">This combination gives you structure, conversation, and feedback. the three pillars of English mastery.</p>
+ </section>
 
-  </main>
+ </main>
 
-  <Footer />
+ <Footer />
 <!-- See Guru alternative callout -->
 <aside class="my-12 max-w-3xl mx-auto px-4">
-  <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
-    <div class="flex items-start gap-4">
-      <div class="text-3xl flex-shrink-0">💡</div>
-      <div class="flex-1">
-        <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
-        <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors - not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
-        <a href="/go/see-guru/" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
-      </div>
-    </div>
-  </div>
+ <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
+ <div class="flex items-start gap-4">
+ <div class="text-3xl flex-shrink-0"></div>
+ <div class="flex-1">
+ <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
+ <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong>with real human tutors - not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
+ <a href="/go/see-guru/" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
+ </div>
+ </div>
+ </div>
 </aside>
 
-  <StickyCTA 
-    platform="see-guru"
-  />
+ <StickyCTA 
+ platform="see-guru"
+ />
 
 </Base>

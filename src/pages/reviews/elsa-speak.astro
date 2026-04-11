@@ -7,58 +7,58 @@ import ArticleSchema from "../../components/ArticleSchema.astro";
 
 // Review Schema
 const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "SoftwareApplication",
-    "name": "ELSA Speak",
-    "applicationCategory": "EducationApplication"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "8.2",
-    "bestRating": "10",
-    "worstRating": "1"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-02-01"
+ "@context": "https://schema.org",
+ "@type": "Review",
+ "itemReviewed": {
+ "@type": "SoftwareApplication",
+ "name": "ELSA Speak",
+ "applicationCategory": "EducationApplication"
+ },
+ "reviewRating": {
+ "@type": "Rating",
+ "ratingValue": "8.2",
+ "bestRating": "10",
+ "worstRating": "1"
+ },
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2026-02-01"
 };
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://learnenglish.life"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Reviews",
-      "item": "https://learnenglish.life/reviews"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "ELSA Speak"
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Home",
+ "item": "https://learnenglish.life"
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "name": "Reviews",
+ "item": "https://learnenglish.life/reviews"
+ },
+ {
+ "@type": "ListItem",
+ "position": 3,
+ "name": "ELSA Speak"
+ }
+ ]
 };
 ---
 <Base title="ELSA Speak Review 2026: AI Pronunciation Coach" description="ELSA Speak Review 2026: 8.2/10. AI-powered pronunciation app with real-time feedback. Perfect for accent reduction and exam prep. Free trial available.">
-  <Header />
+ <Header />
 
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  </span>
+ <span slot="structured-data">
+ <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+ </span>
 
 <article class="max-w-3xl mx-auto px-4 py-12">
 <div class="mb-8">
@@ -68,7 +68,7 @@ const breadcrumbSchema = {
 </div>
 <!-- FTC Disclosure -->
 <div class="bg-yellow-950/60 border border-yellow-700 rounded-lg p-4 mb-8 text-sm text-gray-300">
-<strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on research, not payments.
+<strong>Affiliate Disclosure:</strong>LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on research, not payments.
 </div>
 <!-- Quick Verdict -->
 <div class="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6 mb-8">
@@ -139,7 +139,7 @@ const breadcrumbSchema = {
 <h2 id="pros-cons" class="text-2xl font-bold mt-8 mb-4">Pros & Cons</h2>
 <div class="grid md:grid-cols-2 gap-6 mb-6">
 <div class="bg-green-950/60 border border-green-700 rounded-xl p-6">
-<h3 class="font-bold text-green-200 mb-3">✅ Pros</h3>
+<h3 class="font-bold text-green-200 mb-3">Pros</h3>
 <ul class="space-y-2 text-sm">
 <li>Excellent pronunciation analysis</li>
 <li>Personalized learning path</li>
@@ -152,7 +152,7 @@ const breadcrumbSchema = {
 </ul>
 </div>
 <div class="bg-red-950/60 border border-red-700 rounded-xl p-6">
-<h3 class="font-bold text-red-200 mb-3">❌ Cons</h3>
+<h3 class="font-bold text-red-200 mb-3">Cons</h3>
 <ul class="space-y-2 text-sm">
 <li>Only pronunciation, not full English</li>
 <li>Free version very limited</li>
@@ -166,8 +166,8 @@ const breadcrumbSchema = {
 </div>
 </div>
 <h2 id="verdict" class="text-2xl font-bold mt-8 mb-4">Our Verdict</h2>
-<p class="mb-4"><strong>ELSA Speak is the best app specifically for pronunciation improvement.</strong> If you struggle with sounding more native-like, ELSA's AI analysis provides insights you can't get from any other app.</p>
-<p class="mb-4">However, ELSA is not a complete English learning solution. It focuses only on speaking and pronunciation. Use it alongside apps like <a href="/reviews/duolingo/" class="text-primary hover:underline">Duolingo</a> or <a href="/reviews/busuu/" class="text-primary hover:underline">Busuu</a> for vocabulary and grammar.</p>
+<p class="mb-4"><strong>ELSA Speak is the best app specifically for pronunciation improvement.</strong>If you struggle with sounding more native-like, ELSA's AI analysis provides insights you can't get from any other app.</p>
+<p class="mb-4">However, ELSA is not a complete English learning solution. It focuses only on speaking and pronunciation. Use it alongside apps like <a href="/reviews/duolingo/" class="text-primary hover:underline">Duolingo</a>or <a href="/reviews/busuu/" class="text-primary hover:underline">Busuu</a>for vocabulary and grammar.</p>
 <p class="mb-4">ELSA is best for:</p>
 <ul class="list-disc pl-6 mb-4 space-y-2">
 <li>Intermediate learners focusing on pronunciation</li>
@@ -204,21 +204,20 @@ const breadcrumbSchema = {
 <div class="flex gap-4 mt-8">
 <a href="/reviews/" class="text-primary font-semibold hover:underline">← All Reviews</a>
 </div>
-  <ArticleSchema title="Elsa Speak Review" description="Elsa Speak is an AI-powered pronunciation app that uses speech recognition to help learners improve their accent and speaking confidence." publishedTime="2026-03-15" />
+ <ArticleSchema title="Elsa Speak Review" description="Elsa Speak is an AI-powered pronunciation app that uses speech recognition to help learners improve their accent and speaking confidence." publishedTime="2026-03-15" />
 
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
-        <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
-        <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
-        <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> to see how many hours your target really takes.
-      </p>
-    </aside>
+ <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
+ <ul class="space-y-2 text-base">
+ <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
+ <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
+ <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
+ <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
+ </ul>
+ <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a>to see how many hours your target really takes.
+ </p>
+ </aside>
 
-  </article>
-  <Footer />
+ </article>
+ <Footer />
 </Base>

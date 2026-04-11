@@ -6,361 +6,360 @@ import AdUnit from '../../components/AdUnit.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 
 const review = {
-  title: "Duolingo Review 2026: The Free Way to Start Learning English",
-  rating: 8.5,
-  reviewCount: 15000,
-  price: "Free / $12.99/mo",
-  description: "The world's most popular language learning app. Best for beginners who want bite-sized lessons and gamified learning.",
-  publishedTime: "2026-04-06",
-  pros: [
-    "Completely free core lessons",
-    "Gamification keeps beginners motivated",
-    "Beginner-friendly with lessons from zero",
-    "Short 5-10 minute daily lessons",
-    "One of the best-designed language apps",
-    "Strong community of learners"
-  ],
-  cons: [
-    "Grammar explanations are basic",
-    "No real conversation practice",
-    "Ads can disrupt free users",
-    "Limited speaking practice with AI",
-    "Heart system can be frustrating",
-    "Not enough to reach fluency alone"
-  ]
+ title: "Duolingo Review 2026: The Free Way to Start Learning English",
+ rating: 8.5,
+ reviewCount: 15000,
+ price: "Free / $12.99/mo",
+ description: "The world's most popular language learning app. Best for beginners who want bite-sized lessons and gamified learning.",
+ publishedTime: "2026-04-06",
+ pros: [
+ "Completely free core lessons",
+ "Gamification keeps beginners motivated",
+ "Beginner-friendly with lessons from zero",
+ "Short 5-10 minute daily lessons",
+ "One of the best-designed language apps",
+ "Strong community of learners"
+ ],
+ cons: [
+ "Grammar explanations are basic",
+ "No real conversation practice",
+ "Ads can disrupt free users",
+ "Limited speaking practice with AI",
+ "Heart system can be frustrating",
+ "Not enough to reach fluency alone"
+ ]
 };
 
 const comparison = [
-  { feature: "Price", duolingo: "Free / $12.99/mo", babbel: "$13.95/mo", italki: "$5+/hour" },
-  { feature: "Speaking Practice", duolingo: "AI only", babbel: "AI only", italki: "Real tutors" },
-  { feature: "Grammar Depth", duolingo: "Basic", babbel: "Good", italki: "Varies" },
-  { feature: "Best for Level", duolingo: "Beginner", babbel: "Beginner-Int.", italki: "All levels" },
-  { feature: "Human Interaction", duolingo: "✗ None", babbel: "✗ None", italki: "✓ 1-on-1" },
+ { feature: "Price", duolingo: "Free / $12.99/mo", babbel: "$13.95/mo", italki: "$5+/hour" },
+ { feature: "Speaking Practice", duolingo: "AI only", babbel: "AI only", italki: "Real tutors" },
+ { feature: "Grammar Depth", duolingo: "Basic", babbel: "Good", italki: "Varies" },
+ { feature: "Best for Level", duolingo: "Beginner", babbel: "Beginner-Int.", italki: "All levels" },
+ { feature: "Human Interaction", duolingo: " None", babbel: " None", italki: " 1-on-1" },
 ];
 
 const fullStars = Math.floor(review.rating / 2);
 
 // Review Schema
 const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": { "@type": "SoftwareApplication", "name": "Duolingo", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, Android, Web" },
-  "reviewRating": { "@type": "Rating", "ratingValue": "8.5", "bestRating": "10", "worstRating": "1" },
-  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
-  "datePublished": review.publishedTime,
-  "reviewBody": "Duolingo is an excellent starting point for learning English. The free access, gamified lessons, and bite-sized format make it perfect for beginners."
+ "@context": "https://schema.org",
+ "@type": "Review",
+ "itemReviewed": { "@type": "SoftwareApplication", "name": "Duolingo", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, Android, Web" },
+ "reviewRating": { "@type": "Rating", "ratingValue": "8.5", "bestRating": "10", "worstRating": "1" },
+ "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+ "datePublished": review.publishedTime,
+ "reviewBody": "Duolingo is an excellent starting point for learning English. The free access, gamified lessons, and bite-sized format make it perfect for beginners."
 };
 
 // Breadcrumb Schema
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "Duolingo" }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
+ { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
+ { "@type": "ListItem", "position": 3, "name": "Duolingo" }
+ ]
 };
 ---
 
 <Base title="Duolingo Review 2026: Free vs Super, Features & Honest Verdict" description={review.description} type="article" publishedTime={review.publishedTime}>
 
-  <span slot="structured-data">
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
-  </span>
+ <span slot="structured-data">
+ <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+ <ArticleSchema title={review.title} description={review.description} publishedTime={review.publishedTime} />
+ </span>
 
-  <Header />
-  
-  <nav class="bg-neutral-800 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm">
-      <ol class="flex items-center gap-2 text-neutral-300">
-        <li><a href="/" class="hover:text-green-600">Home</a></li>
-        <li>/</li>
-        <li><a href="/reviews/" class="hover:text-green-600">Reviews</a></li>
-        <li>/</li>
-        <li class="text-gray-100">Duolingo</li>
-      </ol>
-    </div>
-  </nav>
+ <Header />
+ 
+ <nav class="bg-neutral-800 py-3">
+ <div class="max-w-4xl mx-auto px-4 text-sm">
+ <ol class="flex items-center gap-2 text-neutral-300">
+ <li><a href="/" class="hover:text-green-600">Home</a></li>
+ <li>/</li>
+ <li><a href="/reviews/" class="hover:text-green-600">Reviews</a></li>
+ <li>/</li>
+ <li class="text-gray-100">Duolingo</li>
+ </ol>
+ </div>
+ </nav>
 
-  <div class="bg-green-600 py-8">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Duolingo Review</h1>
-          <div class="flex items-center gap-2">
-            <div class="flex">
-              {Array.from({length: 5}).map((_, i) => (
-                <svg class={`w-6 h-6 ${i < fullStars ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span class="text-xl text-white font-semibold">{review.rating}/10</span>
-          </div>
-          <p class="text-green-100 mt-2">Based on {review.reviewCount.toLocaleString()} reviews</p>
-        </div>
-        <div class="text-center md:text-right">
-          <p class="text-sm text-green-200">Starting from</p>
-          <p class="text-3xl font-bold text-white">{review.price}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="bg-green-600 py-8">
+ <div class="max-w-4xl mx-auto px-4">
+ <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+ <div>
+ <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Duolingo Review</h1>
+ <div class="flex items-center gap-2">
+ <div class="flex">
+ {Array.from({length: 5}).map((_, i) => (
+ <svg class={`w-6 h-6 ${i < fullStars ? 'text-yellow-400' : 'text-gray-300'}`} fill="currentColor" viewBox="0 0 20 20">
+ <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+ </svg>
+ ))}
+ </div>
+ <span class="text-xl text-white font-semibold">{review.rating}/10</span>
+ </div>
+ <p class="text-green-100 mt-2">Based on {review.reviewCount.toLocaleString()} reviews</p>
+ </div>
+ <div class="text-center md:text-right">
+ <p class="text-sm text-green-200">Starting from</p>
+ <p class="text-3xl font-bold text-white">{review.price}</p>
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
-    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
-      <strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on thorough research, not paid placements.
-    </div>
-  </div>
+ <div class="bg-amber-900/30 border-b border-amber-700 py-3">
+ <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
+ <strong>Affiliate Disclosure:</strong>LearnEnglish.Life may earn a commission when you sign up through links on this page, at no extra cost to you. Our recommendations are based on thorough research, not paid placements.
+ </div>
+ </div>
 
-  <article class="py-8">
-    <div class="max-w-4xl mx-auto px-4">
-      <section class="mb-8">
-        <p class="text-lg text-gray-300 leading-relaxed">{review.description}</p>
-      </section>
+ <article class="py-8">
+ <div class="max-w-4xl mx-auto px-4">
+ <section class="mb-8">
+ <p class="text-lg text-gray-300 leading-relaxed">{review.description}</p>
+ </section>
 
-      <div class="bg-emerald-900/30 border border-emerald-700 rounded-xl p-6 mb-8">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <p class="font-bold text-lg">Our Rating</p>
-            <p class="text-3xl font-bold text-emerald-400">{review.rating}/10</p>
-          </div>
-          <div class="text-right">
-            <p class="text-sm text-slate-400">Best for</p>
-            <p class="font-semibold">Beginners & casual learners</p>
-          </div>
-        </div>
-      </div>
+ <div class="bg-emerald-900/30 border border-emerald-700 rounded-xl p-6 mb-8">
+ <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+ <div>
+ <p class="font-bold text-lg">Our Rating</p>
+ <p class="text-3xl font-bold text-emerald-400">{review.rating}/10</p>
+ </div>
+ <div class="text-right">
+ <p class="text-sm text-slate-400">Best for</p>
+ <p class="font-semibold">Beginners & casual learners</p>
+ </div>
+ </div>
+ </div>
 
-      <div class="bg-emerald-900/30 border border-emerald-700 rounded-xl p-6 mb-8 text-center">
-        <a href="https://www.duolingo.com" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700">Try Duolingo Free →</a>
-        <p class="text-sm text-neutral-400 mt-3">No credit card required</p>
-      </div>
+ <div class="bg-emerald-900/30 border border-emerald-700 rounded-xl p-6 mb-8 text-center">
+ <a href="https://www.duolingo.com" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700">Try Duolingo Free →</a>
+ <p class="text-sm text-neutral-400 mt-3">No credit card required</p>
+ </div>
 
-      <div class="mb-8"><AdUnit slot="in-article" format="horizontal" /></div>
+ <div class="mb-8"><AdUnit slot="in-article" format="horizontal" /></div>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">What is Duolingo?</h2>
-        <p class="text-neutral-400 mb-4 leading-relaxed">Duolingo is a free language learning app that makes studying English fun. More than 500 million people have downloaded it worldwide. The app uses games, short lessons, and daily challenges to keep you motivated.</p>
-        <p class="text-neutral-400 mb-4 leading-relaxed">You can use Duolingo on your phone, tablet, or computer. Lessons take only 5-10 minutes each. This makes it easy to practice every day, even if you are busy. The app tracks your "streak". how many days in a row you have studied. Many users love this feature because it creates a habit.</p>
-        <p class="text-neutral-400 mb-4 leading-relaxed">Duolingo was founded in 2011 and is based in Pittsburgh, USA. It offers courses in 40+ languages, including English for speakers of Spanish, Chinese, French, and many other languages.</p>
-      </section>
+ <section class="mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">What is Duolingo?</h2>
+ <p class="text-neutral-400 mb-4 leading-relaxed">Duolingo is a free language learning app that makes studying English fun. More than 500 million people have downloaded it worldwide. The app uses games, short lessons, and daily challenges to keep you motivated.</p>
+ <p class="text-neutral-400 mb-4 leading-relaxed">You can use Duolingo on your phone, tablet, or computer. Lessons take only 5-10 minutes each. This makes it easy to practice every day, even if you are busy. The app tracks your "streak". how many days in a row you have studied. Many users love this feature because it creates a habit.</p>
+ <p class="text-neutral-400 mb-4 leading-relaxed">Duolingo was founded in 2011 and is based in Pittsburgh, USA. It offers courses in 40+ languages, including English for speakers of Spanish, Chinese, French, and many other languages.</p>
+ </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">How Does It Work?</h2>
-        <p class="text-neutral-400 mb-4 leading-relaxed">Duolingo organizes learning into "skills." Each skill has several lessons. You earn points (called "Lingots" or "Gems") for completing lessons. You lose points if you answer incorrectly. This gamification keeps users engaged and coming back.</p>
-        <p class="text-neutral-400 mb-4 leading-relaxed">Lessons include:</p>
-        <ul class="list-disc list-inside space-y-2 text-neutral-400 mb-6">
-          <li><strong>Translation exercises</strong>. Translate sentences between English and your language</li>
-          <li><strong>Listening practice</strong>. Hear sentences and choose the correct answer</li>
-          <li><strong>Speaking drills</strong>. Record yourself speaking English and get feedback</li>
-          <li><strong>Fill-in-the-blank</strong>. Complete sentences with missing words</li>
-          <li><strong>Matching games</strong>. Connect words with their meanings</li>
-        </ul>
-        <p class="text-neutral-400 mb-4 leading-relaxed">The app uses "spaced repetition". it shows you words again just before you forget them. This helps you remember vocabulary better. You also unlock new levels as you progress, which keeps the learning feeling fresh.</p>
-      </section>
+ <section class="mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">How Does It Work?</h2>
+ <p class="text-neutral-400 mb-4 leading-relaxed">Duolingo organizes learning into "skills." Each skill has several lessons. You earn points (called "Lingots" or "Gems") for completing lessons. You lose points if you answer incorrectly. This gamification keeps users engaged and coming back.</p>
+ <p class="text-neutral-400 mb-4 leading-relaxed">Lessons include:</p>
+ <ul class="list-disc list-inside space-y-2 text-neutral-400 mb-6">
+ <li><strong>Translation exercises</strong>. Translate sentences between English and your language</li>
+ <li><strong>Listening practice</strong>. Hear sentences and choose the correct answer</li>
+ <li><strong>Speaking drills</strong>. Record yourself speaking English and get feedback</li>
+ <li><strong>Fill-in-the-blank</strong>. Complete sentences with missing words</li>
+ <li><strong>Matching games</strong>. Connect words with their meanings</li>
+ </ul>
+ <p class="text-neutral-400 mb-4 leading-relaxed">The app uses "spaced repetition". it shows you words again just before you forget them. This helps you remember vocabulary better. You also unlock new levels as you progress, which keeps the learning feeling fresh.</p>
+ </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Pricing</h2>
-        <div class="bg-neutral-800 rounded-xl p-6 mb-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="border rounded-lg p-4">
-              <h3 class="font-bold text-lg mb-2">Free Plan</h3>
-              <p class="text-3xl font-bold mb-2">$0</p>
-              <ul class="text-sm text-neutral-400 space-y-1">
-                <li>✓ All basic lessons</li>
-                <li>✓ Daily streak tracking</li>
-                <li>✓ Basic vocabulary practice</li>
-                <li>✗ Ads displayed between lessons</li>
-                <li>✗ Limited hearts (lives)</li>
-                <li>✗ No offline mode</li>
-              </ul>
-            </div>
-            <div class="border-2 border-blue-500 rounded-lg p-4 bg-blue-900/30">
-              <h3 class="font-bold text-lg mb-2 text-blue-200">Super Duolingo</h3>
-              <p class="text-3xl font-bold mb-2">$12.99<span class="text-sm font-normal">/month</span></p>
-              <p class="text-sm text-slate-400 mb-2">Or $69.99/year</p>
-              <ul class="text-sm text-neutral-400 space-y-1">
-                <li>✓ Ad-free learning</li>
-                <li>✓ Unlimited hearts</li>
-                <li>✓ Offline mode</li>
-                <li>✓ Progress explanations</li>
-                <li>✓ Unlimited Legendary levels</li>
-                <li>✓ Monthly streak repair</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <p class="text-neutral-400 mb-4 leading-relaxed"><strong>Note:</strong> Pricing may vary by region. The free plan is very usable, but the paid plan removes ads and limitations that can interrupt your learning.</p>
-      </section>
+ <section class="mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">Pricing</h2>
+ <div class="bg-neutral-800 rounded-xl p-6 mb-6">
+ <div class="grid md:grid-cols-2 gap-6">
+ <div class="border rounded-lg p-4">
+ <h3 class="font-bold text-lg mb-2">Free Plan</h3>
+ <p class="text-3xl font-bold mb-2">$0</p>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>All basic lessons</li>
+ <li>Daily streak tracking</li>
+ <li>Basic vocabulary practice</li>
+ <li>Ads displayed between lessons</li>
+ <li>Limited hearts (lives)</li>
+ <li>No offline mode</li>
+ </ul>
+ </div>
+ <div class="border-2 border-blue-500 rounded-lg p-4 bg-blue-900/30">
+ <h3 class="font-bold text-lg mb-2 text-blue-200">Super Duolingo</h3>
+ <p class="text-3xl font-bold mb-2">$12.99<span class="text-sm font-normal">/month</span></p>
+ <p class="text-sm text-slate-400 mb-2">Or $69.99/year</p>
+ <ul class="text-sm text-neutral-400 space-y-1">
+ <li>Ad-free learning</li>
+ <li>Unlimited hearts</li>
+ <li>Offline mode</li>
+ <li>Progress explanations</li>
+ <li>Unlimited Legendary levels</li>
+ <li>Monthly streak repair</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <p class="text-neutral-400 mb-4 leading-relaxed"><strong>Note:</strong>Pricing may vary by region. The free plan is very usable, but the paid plan removes ads and limitations that can interrupt your learning.</p>
+ </section>
 
-      <div class="mb-8"><AdUnit slot="in-article" format="fluid" /></div>
+ <div class="mb-8"><AdUnit slot="in-article" format="fluid" /></div>
 
-      <section class="mb-8 grid md:grid-cols-2 gap-6">
-        <div class="bg-emerald-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4">✅ Pros</h2>
-          <ul class="space-y-3">
-            {review.pros.map(pro => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-emerald-500 font-bold">✓</span>
-                <span>{pro}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-red-900/30 rounded-xl p-6">
-          <h2 class="text-lg font-semibold text-white mb-4">⚠️ Cons</h2>
-          <ul class="space-y-3">
-            {review.cons.map(con => (
-              <li class="flex items-start gap-3 text-neutral-300">
-                <span class="text-red-500 font-bold">−</span>
-                <span>{con}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+ <section class="mb-8 grid md:grid-cols-2 gap-6">
+ <div class="bg-emerald-900/30 rounded-xl p-6">
+ <h2 class="text-lg font-semibold text-white mb-4">Pros</h2>
+ <ul class="space-y-3">
+ {review.pros.map(pro => (
+ <li class="flex items-start gap-3 text-neutral-300">
+ <span class="text-emerald-500 font-bold"></span>
+ <span>{pro}</span>
+ </li>
+ ))}
+ </ul>
+ </div>
+ <div class="bg-red-900/30 rounded-xl p-6">
+ <h2 class="text-lg font-semibold text-white mb-4">️ Cons</h2>
+ <ul class="space-y-3">
+ {review.cons.map(con => (
+ <li class="flex items-start gap-3 text-neutral-300">
+ <span class="text-red-500 font-bold">−</span>
+ <span>{con}</span>
+ </li>
+ ))}
+ </ul>
+ </div>
+ </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Who Should Use Duolingo?</h2>
-        <p class="text-neutral-400 mb-4 leading-relaxed"><strong>Best for:</strong></p>
-        <ul class="list-disc list-inside space-y-2 text-neutral-400 mb-6">
-          <li>Complete beginners starting from zero</li>
-          <li>Casual learners who want short, daily practice</li>
-          <li>Students who enjoy gamified learning</li>
-          <li>People testing if they enjoy learning English</li>
-          <li>Young learners (ages 8+) enjoying a game-like app</li>
-        </ul>
-        <p class="text-neutral-400 mb-4 leading-relaxed"><strong>Not ideal for:</strong></p>
-        <ul class="list-disc list-inside space-y-2 text-neutral-400 mb-6">
-          <li>Intermediate or advanced learners needing deeper study</li>
-          <li>Business English students needing professional vocabulary</li>
-          <li>People who need structured curriculum and accountability</li>
-          <li>Learners who want to practice real conversations</li>
-        </ul>
-      </section>
+ <section class="mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">Who Should Use Duolingo?</h2>
+ <p class="text-neutral-400 mb-4 leading-relaxed"><strong>Best for:</strong></p>
+ <ul class="list-disc list-inside space-y-2 text-neutral-400 mb-6">
+ <li>Complete beginners starting from zero</li>
+ <li>Casual learners who want short, daily practice</li>
+ <li>Students who enjoy gamified learning</li>
+ <li>People testing if they enjoy learning English</li>
+ <li>Young learners (ages 8+) enjoying a game-like app</li>
+ </ul>
+ <p class="text-neutral-400 mb-4 leading-relaxed"><strong>Not ideal for:</strong></p>
+ <ul class="list-disc list-inside space-y-2 text-neutral-400 mb-6">
+ <li>Intermediate or advanced learners needing deeper study</li>
+ <li>Business English students needing professional vocabulary</li>
+ <li>People who need structured curriculum and accountability</li>
+ <li>Learners who want to practice real conversations</li>
+ </ul>
+ </section>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">How Does It Compare?</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full border-collapse bg-slate-900/60 rounded-xl overflow-hidden shadow-sm">
-            <thead>
-              <tr class="bg-neutral-800">
-                <th class="text-left p-4 font-semibold">Feature</th>
-                <th class="text-center p-4 font-semibold">Duolingo</th>
-                <th class="text-center p-4 font-semibold">Babbel</th>
-                <th class="text-center p-4 font-semibold">iTalki</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y">
-              {comparison.map(row => (
-                <tr class="hover:bg-neutral-800">
-                  <td class="p-4 font-medium">{row.feature}</td>
-                  <td class="p-4 text-center">{row.duolingo}</td>
-                  <td class="p-4 text-center">{row.babbel}</td>
-                  <td class="p-4 text-center">{row.italki}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+ <section class="mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">How Does It Compare?</h2>
+ <div class="overflow-x-auto">
+ <table class="w-full border-collapse bg-slate-900/60 rounded-xl overflow-hidden shadow-sm">
+ <thead>
+ <tr class="bg-neutral-800">
+ <th class="text-left p-4 font-semibold">Feature</th>
+ <th class="text-center p-4 font-semibold">Duolingo</th>
+ <th class="text-center p-4 font-semibold">Babbel</th>
+ <th class="text-center p-4 font-semibold">iTalki</th>
+ </tr>
+ </thead>
+ <tbody class="divide-y">
+ {comparison.map(row => (
+ <tr class="hover:bg-neutral-800">
+ <td class="p-4 font-medium">{row.feature}</td>
+ <td class="p-4 text-center">{row.duolingo}</td>
+ <td class="p-4 text-center">{row.babbel}</td>
+ <td class="p-4 text-center">{row.italki}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-      <div class="mb-8"><AdUnit slot="in-article" format="horizontal" /></div>
+ <div class="mb-8"><AdUnit slot="in-article" format="horizontal" /></div>
 
-      <section class="mb-8">
-        <h2 class="text-2xl font-bold text-gray-100 mb-4">Rating Breakdown</h2>
-        <div class="space-y-4 bg-neutral-800 rounded-xl p-6">
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="font-medium">Ease of Use</span>
-              <span class="text-neutral-400">9/10</span>
-            </div>
-            <div class="bg-gray-200 rounded-full h-3">
-              <div class="bg-emerald-900/300 h-3 rounded-full" style="width: 90%"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="font-medium">Content Quality</span>
-              <span class="text-neutral-400">8/10</span>
-            </div>
-            <div class="bg-gray-200 rounded-full h-3">
-              <div class="bg-emerald-900/300 h-3 rounded-full" style="width: 80%"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="font-medium">Value for Money</span>
-              <span class="text-neutral-400">9/10</span>
-            </div>
-            <div class="bg-gray-200 rounded-full h-3">
-              <div class="bg-emerald-900/300 h-3 rounded-full" style="width: 90%"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="font-medium">Speaking Practice</span>
-              <span class="text-neutral-400">6/10</span>
-            </div>
-            <div class="bg-gray-200 rounded-full h-3">
-              <div class="bg-yellow-500 h-3 rounded-full" style="width: 60%"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="font-medium">Grammar Depth</span>
-              <span class="text-neutral-400">7/10</span>
-            </div>
-            <div class="bg-gray-200 rounded-full h-3">
-              <div class="bg-yellow-500 h-3 rounded-full" style="width: 70%"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+ <section class="mb-8">
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">Rating Breakdown</h2>
+ <div class="space-y-4 bg-neutral-800 rounded-xl p-6">
+ <div>
+ <div class="flex justify-between mb-1">
+ <span class="font-medium">Ease of Use</span>
+ <span class="text-neutral-400">9/10</span>
+ </div>
+ <div class="bg-gray-200 rounded-full h-3">
+ <div class="bg-emerald-900/300 h-3 rounded-full" style="width: 90%"></div>
+ </div>
+ </div>
+ <div>
+ <div class="flex justify-between mb-1">
+ <span class="font-medium">Content Quality</span>
+ <span class="text-neutral-400">8/10</span>
+ </div>
+ <div class="bg-gray-200 rounded-full h-3">
+ <div class="bg-emerald-900/300 h-3 rounded-full" style="width: 80%"></div>
+ </div>
+ </div>
+ <div>
+ <div class="flex justify-between mb-1">
+ <span class="font-medium">Value for Money</span>
+ <span class="text-neutral-400">9/10</span>
+ </div>
+ <div class="bg-gray-200 rounded-full h-3">
+ <div class="bg-emerald-900/300 h-3 rounded-full" style="width: 90%"></div>
+ </div>
+ </div>
+ <div>
+ <div class="flex justify-between mb-1">
+ <span class="font-medium">Speaking Practice</span>
+ <span class="text-neutral-400">6/10</span>
+ </div>
+ <div class="bg-gray-200 rounded-full h-3">
+ <div class="bg-yellow-500 h-3 rounded-full" style="width: 60%"></div>
+ </div>
+ </div>
+ <div>
+ <div class="flex justify-between mb-1">
+ <span class="font-medium">Grammar Depth</span>
+ <span class="text-neutral-400">7/10</span>
+ </div>
+ <div class="bg-gray-200 rounded-full h-3">
+ <div class="bg-yellow-500 h-3 rounded-full" style="width: 70%"></div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-      <section class="bg-neutral-800 rounded-xl p-6 mb-8">
-        <h2 class="text-xl font-bold text-white mb-3">Final Verdict</h2>
-        <p class="text-gray-300 mb-4">Duolingo is an excellent starting point for learning English. The free access, gamified lessons, and bite-sized format make it perfect for beginners. If you have never studied English before, Duolingo will teach you basic vocabulary and simple sentences.</p>
-        <p class="text-gray-300 mb-4">However, Duolingo alone will not make you fluent. The grammar explanations are shallow, and you cannot practice real conversations with the app. Once you finish the basics, you will need to add other tools. like a tutor on iTalki or structured lessons. to reach intermediate or advanced levels.</p>
-        <p class="text-gray-300"><strong>Our recommendation:</strong> Start with Duolingo to build a daily habit and learn vocabulary. After 2-3 months, add a tutoring platform like iTalki for speaking practice. Together, these tools create a strong foundation for English fluency.</p>
-      </section>
+ <section class="bg-neutral-800 rounded-xl p-6 mb-8">
+ <h2 class="text-xl font-bold text-white mb-3">Final Verdict</h2>
+ <p class="text-gray-300 mb-4">Duolingo is an excellent starting point for learning English. The free access, gamified lessons, and bite-sized format make it perfect for beginners. If you have never studied English before, Duolingo will teach you basic vocabulary and simple sentences.</p>
+ <p class="text-gray-300 mb-4">However, Duolingo alone will not make you fluent. The grammar explanations are shallow, and you cannot practice real conversations with the app. Once you finish the basics, you will need to add other tools. like a tutor on iTalki or structured lessons. to reach intermediate or advanced levels.</p>
+ <p class="text-gray-300"><strong>Our recommendation:</strong>Start with Duolingo to build a daily habit and learn vocabulary. After 2-3 months, add a tutoring platform like iTalki for speaking practice. Together, these tools create a strong foundation for English fluency.</p>
+ </section>
 
-      <section class="bg-gradient-to-r from-green-500 to-blue-500 rounded-xl p-8 text-center">
-        <h3 class="text-2xl font-bold text-white mb-2">Ready to Start?</h3>
-        <p class="text-white/90 mb-6">Download Duolingo free and start learning today. No credit card required.</p>
-        <a href="https://www.duolingo.com" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-slate-900/60 text-green-600 font-bold rounded-lg hover:bg-neutral-800">Try Duolingo Free →</a>
-      </section>
+ <section class="bg-gradient-to-r from-green-500 to-blue-500 rounded-xl p-8 text-center">
+ <h3 class="text-2xl font-bold text-white mb-2">Ready to Start?</h3>
+ <p class="text-white/90 mb-6">Download Duolingo free and start learning today. No credit card required.</p>
+ <a href="https://www.duolingo.com" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-slate-900/60 text-green-600 font-bold rounded-lg hover:bg-neutral-800">Try Duolingo Free →</a>
+ </section>
 
-      <p class="text-xs text-gray-400 mt-4 text-center">We recommend starting with free lessons first. Upgrade to Super Duolingo only if you find the ads disruptive to your learning.</p>
+ <p class="text-xs text-gray-400 mt-4 text-center">We recommend starting with free lessons first. Upgrade to Super Duolingo only if you find the ads disruptive to your learning.</p>
 
-      <div class="bg-neutral-800 rounded-xl p-6 mt-8">
-        <h3 class="font-bold mb-2">About This Review</h3>
-        <p class="text-sm text-neutral-400">This review is based on research of Duolingo's features, pricing, and user feedback as of April 2026. We update our reviews regularly when platforms change their offerings. LearnEnglish.Life is an independent review site. We may earn a commission from qualifying purchases, but this does not affect our editorial decisions.</p>
-      </div>
+ <div class="bg-neutral-800 rounded-xl p-6 mt-8">
+ <h3 class="font-bold mb-2">About This Review</h3>
+ <p class="text-sm text-neutral-400">This review is based on research of Duolingo's features, pricing, and user feedback as of April 2026. We update our reviews regularly when platforms change their offerings. LearnEnglish.Life is an independent review site. We may earn a commission from qualifying purchases, but this does not affect our editorial decisions.</p>
+ </div>
 
-      <p class="text-sm text-slate-400 text-center mt-6">
-        <a href="/affiliate-disclosure/" class="text-green-600 hover:underline">Affiliate disclosure</a>
-      </p>
-    </div>
-  
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
-        <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
-        <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
-        <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> to see how many hours your target really takes.
-      </p>
-    </aside>
+ <p class="text-sm text-slate-400 text-center mt-6">
+ <a href="/affiliate-disclosure/" class="text-green-600 hover:underline">Affiliate disclosure</a>
+ </p>
+ </div>
+ 
+ <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+ <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
+ <ul class="space-y-2 text-base">
+ <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
+ <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
+ <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
+ <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
+ </ul>
+ <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a>to see how many hours your target really takes.
+ </p>
+ </aside>
 
-  </article>
+ </article>
 
-  <Footer />
+ <Footer />
 </Base>

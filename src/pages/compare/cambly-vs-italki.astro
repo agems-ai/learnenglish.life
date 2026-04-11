@@ -12,440 +12,436 @@ import { platformRatings } from '../../data/platform-ratings';
 
 // Platform data
 const cambly = {
-  name: "Cambly",
-  rating: 8.2,
-  price: "$6.50-80/wk",
-  link: "/go/cambly",
-  bestFor: "Unlimited conversation practice with native speakers",
-  pros: [
-    "Unlimited conversation practice (subscription model)",
-    "Available 24/7. no appointment needed",
-    "Native speakers from US, UK, Australia",
-    "Great for casual chat and confidence building",
-    "Mobile app available"
-  ],
-  cons: [
-    "No structured curriculum",
-    "Quality varies by tutor",
-    "Limited grammar focus",
-    "Best for intermediate+ learners"
-  ]
+ name: "Cambly",
+ rating: 8.2,
+ price: "$6.50-80/wk",
+ link: "/go/cambly",
+ bestFor: "Unlimited conversation practice with native speakers",
+ pros: [
+ "Unlimited conversation practice (subscription model)",
+ "Available 24/7. no appointment needed",
+ "Native speakers from US, UK, Australia",
+ "Great for casual chat and confidence building",
+ "Mobile app available"
+ ],
+ cons: [
+ "No structured curriculum",
+ "Quality varies by tutor",
+ "Limited grammar focus",
+ "Best for intermediate+ learners"
+ ]
 };
 
 const italki = {
-  name: "iTalki",
-  rating: 9.2,
-  price: "$5-40/hr",
-  link: "/go/italki",
-  bestFor: "Professional tutoring with flexible scheduling",
-  pros: [
-    "Large selection of tutors (10,000+)",
-    "Flexible scheduling with instant booking",
-    "Affordable community tutor options from $5/hr",
-    "Lesson replay feature",
-    "Professional tutors available"
-  ],
-  cons: [
-    "Community tutors lack formal training",
-    "Inconsistent quality among tutors",
-    "No structured curriculum for complete beginners"
-  ]
+ name: "iTalki",
+ rating: 9.2,
+ price: "$5-40/hr",
+ link: "/go/italki",
+ bestFor: "Professional tutoring with flexible scheduling",
+ pros: [
+ "Large selection of tutors (10,000+)",
+ "Flexible scheduling with instant booking",
+ "Affordable community tutor options from $5/hr",
+ "Lesson replay feature",
+ "Professional tutors available"
+ ],
+ cons: [
+ "Community tutors lack formal training",
+ "Inconsistent quality among tutors",
+ "No structured curriculum for complete beginners"
+ ]
 };
 
 // Comparison rows with winner highlighting
 const comparison = [
-  { feature: "Pricing Model", winner: null, a: "Subscription ($6.50-80/wk)", b: "Per-lesson ($5-40/hr)" },
-  { feature: "Unlimited Practice", winner: "a", a: "Yes", b: "No" },
-  { feature: "Scheduling", winner: "b", a: "24/7 On-demand", b: "Book in advance" },
-  { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes" },
-  { feature: "Lesson Recording", winner: "b", a: "No", b: "Yes" },
-  { feature: "Structured Curriculum", winner: "b", a: "No", b: "Available" },
-  { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
-  { feature: "Professional Tutors", winner: "b", a: "Limited", b: "Yes" },
-  { feature: "Trial Lesson", winner: null, a: "Limited free", b: "Available" }
+ { feature: "Pricing Model", winner: null, a: "Subscription ($6.50-80/wk)", b: "Per-lesson ($5-40/hr)" },
+ { feature: "Unlimited Practice", winner: "a", a: "Yes", b: "No" },
+ { feature: "Scheduling", winner: "b", a: "24/7 On-demand", b: "Book in advance" },
+ { feature: "Native Speakers", winner: null, a: "Yes", b: "Yes" },
+ { feature: "Lesson Recording", winner: "b", a: "No", b: "Yes" },
+ { feature: "Structured Curriculum", winner: "b", a: "No", b: "Available" },
+ { feature: "Mobile App", winner: null, a: "iOS & Android", b: "iOS & Android" },
+ { feature: "Professional Tutors", winner: "b", a: "Limited", b: "Yes" },
+ { feature: "Trial Lesson", winner: null, a: "Limited free", b: "Available" }
 ];
 
 // Benefits section
 const whyCompare = [
-  { icon: "⏰", title: "Save Time", description: "Compare platforms to find the one that fits your schedule and learning pace" },
-  { icon: "💰", title: "Save Money", description: "Get the most value for your investment with our detailed pricing comparison" },
-  { icon: "🎯", title: "Match Your Style", description: "Whether you want casual chat or structured lessons, find the right fit" }
+ { icon: "⏰", title: "Save Time", description: "Compare platforms to find the one that fits your schedule and learning pace" },
+ { icon: "", title: "Save Money", description: "Get the most value for your investment with our detailed pricing comparison" },
+ { icon: "", title: "Match Your Style", description: "Whether you want casual chat or structured lessons, find the right fit" }
 ];
 
 // Testimonials
 const testimonials = [
-  {
-    quote: "Cambly for daily practice, iTalki when I need focused prep. Best of both worlds!",
-    author: "Sarah M.",
-    location: "Germany",
-    result: "IELTS 7.5 achieved"
-  },
-  {
-    quote: "Started with Cambly for confidence, then moved to iTalki for structured learning.",
-    author: "Takeshi K.",
-    location: "Japan",
-    result: "TOEFL 95 score"
-  },
-  {
-    quote: "The subscription model on Cambly is perfect for my daily practice routine.",
-    author: "Ana S.",
-    location: "Brazil",
-    result: "Fluent in 10 months"
-  }
+ {
+ quote: "Cambly for daily practice, iTalki when I need focused prep. Best of both worlds!",
+ author: "Sarah M.",
+ location: "Germany",
+ result: "IELTS 7.5 achieved"
+ },
+ {
+ quote: "Started with Cambly for confidence, then moved to iTalki for structured learning.",
+ author: "Takeshi K.",
+ location: "Japan",
+ result: "TOEFL 95 score"
+ },
+ {
+ quote: "The subscription model on Cambly is perfect for my daily practice routine.",
+ author: "Ana S.",
+ location: "Brazil",
+ result: "Fluent in 10 months"
+ }
 ];
 
 // SEO Schema
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Cambly vs iTalki: Which English Tutoring Platform Is Better in 2026?",
-  "description": "Comprehensive comparison of Cambly and iTalki online tutoring platforms. Compare pricing, features, tutor quality, and find the best platform for your English learning goals.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-01-15",
-  "dateModified": "2026-01-15"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Cambly vs iTalki: Which English Tutoring Platform Is Better in 2026?",
+ "description": "Comprehensive comparison of Cambly and iTalki online tutoring platforms. Compare pricing, features, tutor quality, and find the best platform for your English learning goals.",
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2026-01-15",
+ "dateModified": "2026-01-15"
 };
 // FAQPage JSON-LD Schema
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Cambly or iTalki better for beginners?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "iTalki may be better for beginners who want structured guidance. Look for tutors with TEFL/CELTA certifications who specialize in teaching beginners. Cambly is better suited for intermediate learners who want to practice existing skills."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use both Cambly and iTalki together?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. Many learners use both strategically. Cambly for daily casual practice and iTalki for focused lessons on specific skills or exam prep. This combination often produces the best results."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does Cambly cost compared to iTalki?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cambly costs $6.50-80 per week for unlimited access. iTalki starts at $5 per lesson (30-60 min), roughly $5-40/hour. For heavy users, Cambly's unlimited model often works out cheaper per hour of practice."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which platform has better native speakers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Both platforms have excellent native speaker selections. Cambly tutors are primarily from the US, UK, and Australia. iTalki offers more variety including tutors from Canada, Ireland, and other English-speaking regions."
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "Is Cambly or iTalki better for beginners?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "iTalki may be better for beginners who want structured guidance. Look for tutors with TEFL/CELTA certifications who specialize in teaching beginners. Cambly is better suited for intermediate learners who want to practice existing skills."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Can I use both Cambly and iTalki together?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Absolutely. Many learners use both strategically. Cambly for daily casual practice and iTalki for focused lessons on specific skills or exam prep. This combination often produces the best results."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "How much does Cambly cost compared to iTalki?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Cambly costs $6.50-80 per week for unlimited access. iTalki starts at $5 per lesson (30-60 min), roughly $5-40/hour. For heavy users, Cambly's unlimited model often works out cheaper per hour of practice."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Which platform has better native speakers?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Both platforms have excellent native speaker selections. Cambly tutors are primarily from the US, UK, and Australia. iTalki offers more variety including tutors from Canada, Ireland, and other English-speaking regions."
+ }
+ }
+ ]
 };
 
 ---
 
 <Base title="Cambly vs iTalki: Which Online Tutoring Platform Is Better in 2026?" description="Comprehensive comparison of Cambly and iTalki. Compare pricing, features, tutor quality, and find the best platform for your English learning goals.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  
-  <Header />
-  
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-slate-400 mb-4">
-      <a href="/" class="hover:text-emerald-600">Home</a>
-      <span class="mx-2">›</span>
-      <a href="/compare/" class="hover:text-emerald-600">Compare</a>
-      <span class="mx-2">›</span>
-      <span class="text-gray-300">Cambly vs iTalki</span>
-    </nav>
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+ 
+ <Header />
+ 
+ <main class="max-w-4xl mx-auto px-4 py-8">
+ <!-- Breadcrumb -->
+ <nav class="text-sm text-slate-400 mb-4">
+ <a href="/" class="hover:text-emerald-600">Home</a>
+ <span class="mx-2">›</span>
+ <a href="/compare/" class="hover:text-emerald-600">Compare</a>
+ <span class="mx-2">›</span>
+ <span class="text-gray-300">Cambly vs iTalki</span>
+ </nav>
 
-    <!-- Hero Comparison -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
-      <span class="text-emerald-200 text-sm font-medium">Platform Comparison</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">Cambly vs iTalki</h1>
-    <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
-      <p class="text-emerald-100 text-lg mb-6">Two different approaches to English conversation practice. Cambly offers unlimited access on a subscription. iTalki provides structured tutoring by the hour. Which is right for you?</p>
-      
-      <!-- Quick Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">Cambly</div>
-          <div class="text-emerald-200 text-sm">$6.50-80/wk</div>
-        </div>
-        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">iTalki</div>
-          <div class="text-emerald-200 text-sm">$5-40/hr</div>
-        </div>
-        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">8.2/10</div>
-          <div class="text-emerald-200 text-sm">Cambly Rating</div>
-        </div>
-        <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
-          <div class="text-2xl font-bold">9.2/10</div>
-          <div class="text-emerald-200 text-sm">iTalki Rating</div>
-        </div>
-      </div>
-    </div>
+ <!-- Hero Comparison -->
+ <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-white mb-8">
+ <span class="text-emerald-200 text-sm font-medium">Platform Comparison</span>
+ <h1 class="text-4xl font-bold mt-2 mb-4">Cambly vs iTalki</h1>
+ <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
+ <p class="text-emerald-100 text-lg mb-6">Two different approaches to English conversation practice. Cambly offers unlimited access on a subscription. iTalki provides structured tutoring by the hour. Which is right for you?</p>
+ 
+ <!-- Quick Stats -->
+ <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+ <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+ <div class="text-2xl font-bold">Cambly</div>
+ <div class="text-emerald-200 text-sm">$6.50-80/wk</div>
+ </div>
+ <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+ <div class="text-2xl font-bold">iTalki</div>
+ <div class="text-emerald-200 text-sm">$5-40/hr</div>
+ </div>
+ <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+ <div class="text-2xl font-bold">8.2/10</div>
+ <div class="text-emerald-200 text-sm">Cambly Rating</div>
+ </div>
+ <div class="bg-slate-900/60/10 rounded-lg p-3 text-center">
+ <div class="text-2xl font-bold">9.2/10</div>
+ <div class="text-emerald-200 text-sm">iTalki Rating</div>
+ </div>
+ </div>
+ </div>
 
-    <!-- Platform Cards Side by Side -->
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <!-- Cambly Card -->
-      <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-teal-400">Cambly</h2>
-          <PlatformRatings 
-            platform="Cambly" 
-            rating={platformRatings['Cambly']?.rating || 4.5} 
-            reviewCount={platformRatings['Cambly']?.reviewCount || 0}
-            variant="badge"
-            color="teal"
-          />
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-teal-600">{cambly.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {cambly.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-400 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {cambly.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={cambly.link} class="block w-full bg-teal-600 text-white text-center py-3 rounded-lg hover:bg-teal-700 transition font-bold">
-          Try Cambly Free →
-        </a>
-      </div>
+ <!-- Platform Cards Side by Side -->
+ <div class="grid md:grid-cols-2 gap-6 mb-8">
+ <!-- Cambly Card -->
+ <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+ <div class="flex items-center justify-between mb-4">
+ <h2 class="text-2xl font-bold text-teal-400">Cambly</h2>
+ <PlatformRatings 
+ platform="Cambly" 
+ rating={platformRatings['Cambly']?.rating || 4.5} 
+ reviewCount={platformRatings['Cambly']?.reviewCount || 0}
+ variant="badge"
+ color="teal"
+ />
+ </div>
+ <div class="mb-4">
+ <span class="text-3xl font-bold text-teal-600">{cambly.price}</span>
+ </div>
+ <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {cambly.bestFor}</p>
+ <div class="mb-4">
+ <h3 class="font-semibold text-green-400 mb-2">Pros</h3>
+ <ul class="text-sm text-neutral-300 space-y-1">
+ {cambly.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2"></span>{pro}</li>)}
+ </ul>
+ </div>
+ <a href={cambly.link} class="block w-full bg-teal-600 text-white text-center py-3 rounded-lg hover:bg-teal-700 transition font-bold">Try Cambly Free →
+ </a>
+ </div>
 
-      <!-- iTalki Card -->
-      <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-bold text-emerald-400">iTalki</h2>
-          <PlatformRatings 
-            platform="iTalki" 
-            rating={platformRatings['iTalki']?.rating || 4.5} 
-            reviewCount={platformRatings['iTalki']?.reviewCount || 0}
-            variant="badge"
-            color="emerald"
-          />
-        </div>
-        <div class="mb-4">
-          <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
-        </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
-        <div class="mb-4">
-          <h3 class="font-semibold text-green-400 mb-2">Pros</h3>
-          <ul class="text-sm text-neutral-300 space-y-1">
-            {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2">✓</span>{pro}</li>)}
-          </ul>
-        </div>
-        <a href={italki.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">
-          Try iTalki Free →
-        </a>
-      </div>
-    </div>
+ <!-- iTalki Card -->
+ <div class="bg-neutral-800 rounded-xl p-6 border border-neutral-700">
+ <div class="flex items-center justify-between mb-4">
+ <h2 class="text-2xl font-bold text-emerald-400">iTalki</h2>
+ <PlatformRatings 
+ platform="iTalki" 
+ rating={platformRatings['iTalki']?.rating || 4.5} 
+ reviewCount={platformRatings['iTalki']?.reviewCount || 0}
+ variant="badge"
+ color="emerald"
+ />
+ </div>
+ <div class="mb-4">
+ <span class="text-3xl font-bold text-emerald-600">{italki.price}</span>
+ </div>
+ <p class="text-neutral-400 mb-4"><strong>Best for:</strong> {italki.bestFor}</p>
+ <div class="mb-4">
+ <h3 class="font-semibold text-green-400 mb-2">Pros</h3>
+ <ul class="text-sm text-neutral-300 space-y-1">
+ {italki.pros.map(pro => <li class="flex items-start"><span class="text-green-500 mr-2"></span>{pro}</li>)}
+ </ul>
+ </div>
+ <a href={italki.link} class="block w-full bg-emerald-600 text-white text-center py-3 rounded-lg hover:bg-emerald-700 transition font-bold">Try iTalki Free →
+ </a>
+ </div>
+ </div>
 
-    <!-- Why Compare Section -->
-    <BenefitCards 
-      title="Why Compare These Platforms?"
-      benefits={whyCompare}
-    />
+ <!-- Why Compare Section -->
+ <BenefitCards 
+ title="Why Compare These Platforms?"
+ benefits={whyCompare}
+ />
 
-    <!-- Social Proof -->
-    <SocialProof 
-      title="What Learners Say"
-      testimonials={testimonials}
-    />
+ <!-- Social Proof -->
+ <SocialProof 
+ title="What Learners Say"
+ testimonials={testimonials}
+ />
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-1" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-1" />
+ </div>
 
-    <!-- Enhanced Comparison Table -->
-    <ComparisonHighlight 
-      title="Feature Comparison"
-      platformA={cambly}
-      platformB={italki}
-      winner="b"
-      rows={comparison}
-    />
+ <!-- Enhanced Comparison Table -->
+ <ComparisonHighlight 
+ title="Feature Comparison"
+ platformA={cambly}
+ platformB={italki}
+ winner="b"
+ rows={comparison}
+ />
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-2" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-2" />
+ </div>
 
-    <!-- Detailed Analysis -->
-    <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
-      
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-white mb-3">Pricing and Value</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>Cambly wins on unlimited access</strong> with its subscription model. For $6.50-80 per week, you get unlimited conversation practice with native speakers. no per-minute or per-lesson fees. This makes it ideal for learners who want to practice daily without watching the clock.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>iTalki uses a pay-per-lesson model</strong> starting at just $5/hour for community tutors. This gives you more control over spending, but costs can add up quickly if you take multiple lessons per week. For structured, focused sessions, iTalki often provides better value.
-        </p>
-      </div>
+ <!-- Detailed Analysis -->
+ <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-6">Detailed Analysis</h2>
+ 
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-white mb-3">Pricing and Value</h3>
+ <p class="text-neutral-300 leading-relaxed mb-4">
+ <strong>Cambly wins on unlimited access</strong>with its subscription model. For $6.50-80 per week, you get unlimited conversation practice with native speakers. no per-minute or per-lesson fees. This makes it ideal for learners who want to practice daily without watching the clock.
+ </p>
+ <p class="text-neutral-300 leading-relaxed">
+ <strong>iTalki uses a pay-per-lesson model</strong>starting at just $5/hour for community tutors. This gives you more control over spending, but costs can add up quickly if you take multiple lessons per week. For structured, focused sessions, iTalki often provides better value.
+ </p>
+ </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-white mb-3">Learning Approach</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>Cambly</strong> is designed for casual, pressure-free conversation practice. Log in anytime and connect with an available native speaker. Topics are flexible, and there's no curriculum to follow. It's perfect for building confidence and practicing real-world conversations.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>iTalki</strong> offers a more structured approach. Book lessons with specific tutors who can help with grammar, vocabulary, pronunciation, or exam preparation. The lesson replay feature lets you review sessions later. a huge advantage for serious learners.
-        </p>
-      </div>
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-white mb-3">Learning Approach</h3>
+ <p class="text-neutral-300 leading-relaxed mb-4">
+ <strong>Cambly</strong>is designed for casual, pressure-free conversation practice. Log in anytime and connect with an available native speaker. Topics are flexible, and there's no curriculum to follow. It's perfect for building confidence and practicing real-world conversations.
+ </p>
+ <p class="text-neutral-300 leading-relaxed">
+ <strong>iTalki</strong>offers a more structured approach. Book lessons with specific tutors who can help with grammar, vocabulary, pronunciation, or exam preparation. The lesson replay feature lets you review sessions later. a huge advantage for serious learners.
+ </p>
+ </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-bold text-white mb-3">Tutor Quality</h3>
-        <p class="text-neutral-300 leading-relaxed mb-4">
-          Both platforms feature native English speakers from the US, UK, Australia, and other English-speaking countries. <strong>iTalki</strong> separates tutors into "Community Tutors" (more casual, lower prices) and "Professional Tutors" (certified, higher prices), giving you more control over quality vs. cost.
-        </p>
-        <p class="text-neutral-300 leading-relaxed">
-          <strong>Cambly's tutors</strong> are generally better for casual conversation but may lack the teaching qualifications available on iTalki. The quality can vary, but the unlimited access model means you can easily switch to a different tutor if one doesn't suit you.
-        </p>
-      </div>
-    </section>
+ <div class="mb-8">
+ <h3 class="text-xl font-bold text-white mb-3">Tutor Quality</h3>
+ <p class="text-neutral-300 leading-relaxed mb-4">Both platforms feature native English speakers from the US, UK, Australia, and other English-speaking countries. <strong>iTalki</strong>separates tutors into "Community Tutors" (more casual, lower prices) and "Professional Tutors" (certified, higher prices), giving you more control over quality vs. cost.
+ </p>
+ <p class="text-neutral-300 leading-relaxed">
+ <strong>Cambly's tutors</strong>are generally better for casual conversation but may lack the teaching qualifications available on iTalki. The quality can vary, but the unlimited access model means you can easily switch to a different tutor if one doesn't suit you.
+ </p>
+ </div>
+ </section>
 
-    <!-- FAQ Section -->
-    <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Is Cambly or iTalki better for beginners?</h3>
-          <p class="text-neutral-300">
-            <strong>iTalki may be better</strong> for beginners who want structured guidance. Look for tutors with TEFL/CELTA certifications who specialize in teaching beginners. Cambly is better suited for intermediate learners who want to practice existing skills.
-          </p>
-        </div>
+ <!-- FAQ Section -->
+ <section class="bg-neutral-800 rounded-xl shadow-lg p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+ 
+ <div class="space-y-6">
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Is Cambly or iTalki better for beginners?</h3>
+ <p class="text-neutral-300">
+ <strong>iTalki may be better</strong>for beginners who want structured guidance. Look for tutors with TEFL/CELTA certifications who specialize in teaching beginners. Cambly is better suited for intermediate learners who want to practice existing skills.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Can I use both Cambly and iTalki together?</h3>
-          <p class="text-neutral-300">
-            <strong>Absolutely!</strong> Many learners use both strategically. Cambly for daily casual practice and iTalki for focused lessons on specific skills or exam prep. This combination often produces the best results.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Can I use both Cambly and iTalki together?</h3>
+ <p class="text-neutral-300">
+ <strong>Absolutely!</strong>Many learners use both strategically. Cambly for daily casual practice and iTalki for focused lessons on specific skills or exam prep. This combination often produces the best results.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">How much does Cambly cost compared to iTalki?</h3>
-          <p class="text-neutral-300">
-            <strong>Cambly costs $6.50-80 per week</strong> for unlimited access. <strong>iTalki starts at $5 per lesson</strong> (30-60 min), or roughly $5-40/hour depending on tutor selection. For heavy users, Cambly's unlimited model often works out cheaper.
-          </p>
-        </div>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">How much does Cambly cost compared to iTalki?</h3>
+ <p class="text-neutral-300">
+ <strong>Cambly costs $6.50-80 per week</strong>for unlimited access. <strong>iTalki starts at $5 per lesson</strong> (30-60 min), or roughly $5-40/hour depending on tutor selection. For heavy users, Cambly's unlimited model often works out cheaper.
+ </p>
+ </div>
 
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Which platform has better native speakers?</h3>
-          <p class="text-neutral-300">
-            Both platforms have excellent native speaker selections. Cambly tutors are primarily from the US, UK, and Australia. iTalki offers more variety including tutors from Canada, Ireland, and other English-speaking regions.
-          </p>
-        </div>
-      </div>
-    </section>
+ <div>
+ <h3 class="text-lg font-semibold text-white mb-2">Which platform has better native speakers?</h3>
+ <p class="text-neutral-300">Both platforms have excellent native speaker selections. Cambly tutors are primarily from the US, UK, and Australia. iTalki offers more variety including tutors from Canada, Ireland, and other English-speaking regions.
+ </p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Ad Unit -->
-    <div class="mb-8">
-      <AdUnit slot="compare-3" />
-    </div>
+ <!-- Ad Unit -->
+ <div class="mb-8">
+ <AdUnit slot="compare-3" />
+ </div>
 
-    <!-- Verdict Section -->
-    <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-neutral-800 rounded-lg p-4 border-l-4 border-teal-500">
-          <h3 class="font-bold text-teal-400 mb-2">Choose Cambly if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>You want unlimited speaking practice</li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>You prefer casual, pressure-free conversations</li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>You want to practice anytime without booking</li>
-            <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Building confidence is your priority</li>
-          </ul>
-        </div>
-        <div class="bg-neutral-800 rounded-lg p-4 border-l-4 border-emerald-500">
-          <h3 class="font-bold text-emerald-400 mb-2">Choose iTalki if:</h3>
-          <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want structured lessons and curriculum</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You're preparing for specific exams</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Lesson replay is important to you</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want professional, certified tutors</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+ <!-- Verdict Section -->
+ <section class="bg-gradient-to-r from-emerald-900/40 to-teal-900/40 rounded-xl p-6 mb-8">
+ <h2 class="text-2xl font-bold text-white mb-4">Our Verdict</h2>
+ <div class="grid md:grid-cols-2 gap-6">
+ <div class="bg-neutral-800 rounded-lg p-4 border-l-4 border-teal-500">
+ <h3 class="font-bold text-teal-400 mb-2">Choose Cambly if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>You want unlimited speaking practice</li>
+ <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>You prefer casual, pressure-free conversations</li>
+ <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>You want to practice anytime without booking</li>
+ <li class="flex items-start"><span class="text-teal-500 mr-2">→</span>Building confidence is your priority</li>
+ </ul>
+ </div>
+ <div class="bg-neutral-800 rounded-lg p-4 border-l-4 border-emerald-500">
+ <h3 class="font-bold text-emerald-400 mb-2">Choose iTalki if:</h3>
+ <ul class="text-neutral-300 space-y-2">
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want structured lessons and curriculum</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You're preparing for specific exams</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Lesson replay is important to you</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want professional, certified tutors</li>
+ </ul>
+ </div>
+ </div>
+ </section>
 
-    <!-- Related Reviews -->
-    <section class="mb-8">
-      <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <a href="/reviews/cambly/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold text-white">8.2/10</span>
-          </div>
-          <h3 class="font-semibold text-teal-400">Cambly Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-        <a href="/reviews/see-guru/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold text-white">8.5/10</span>
-          </div>
-          <h3 class="font-semibold text-yellow-400">See Guru Review</h3>
-          <p class="text-sm text-neutral-400">Best value tutoring</p>
-        </a>
-        <a href="/reviews/italki/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold text-white">9.2/10</span>
-          </div>
-          <h3 class="font-semibold text-emerald-400">iTalki Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-        <a href="/reviews/preply/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
-          <div class="flex items-center mb-2">
-            <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold text-white">8.8/10</span>
-          </div>
-          <h3 class="font-semibold text-white">Preply Review</h3>
-          <p class="text-sm text-neutral-400">Full platform analysis</p>
-        </a>
-      </div>
-    </section>
+ <!-- Related Reviews -->
+ <section class="mb-8">
+ <h2 class="text-xl font-bold text-white mb-4">Related Reviews</h2>
+ <div class="grid md:grid-cols-3 gap-4">
+ <a href="/reviews/cambly/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+ <div class="flex items-center mb-2">
+ <span class="text-yellow-500 mr-1">★</span>
+ <span class="font-bold text-white">8.2/10</span>
+ </div>
+ <h3 class="font-semibold text-teal-400">Cambly Review</h3>
+ <p class="text-sm text-neutral-400">Full platform analysis</p>
+ </a>
+ <a href="/reviews/see-guru/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+ <div class="flex items-center mb-2">
+ <span class="text-yellow-500 mr-1">★</span>
+ <span class="font-bold text-white">8.5/10</span>
+ </div>
+ <h3 class="font-semibold text-yellow-400">See Guru Review</h3>
+ <p class="text-sm text-neutral-400">Best value tutoring</p>
+ </a>
+ <a href="/reviews/italki/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+ <div class="flex items-center mb-2">
+ <span class="text-yellow-500 mr-1">★</span>
+ <span class="font-bold text-white">9.2/10</span>
+ </div>
+ <h3 class="font-semibold text-emerald-400">iTalki Review</h3>
+ <p class="text-sm text-neutral-400">Full platform analysis</p>
+ </a>
+ <a href="/reviews/preply/" class="bg-neutral-800 rounded-lg shadow p-4 hover:shadow-lg transition border border-neutral-700">
+ <div class="flex items-center mb-2">
+ <span class="text-yellow-500 mr-1">★</span>
+ <span class="font-bold text-white">8.8/10</span>
+ </div>
+ <h3 class="font-semibold text-white">Preply Review</h3>
+ <p class="text-sm text-neutral-400">Full platform analysis</p>
+ </a>
+ </div>
+ </section>
 
-    <!-- Affiliate Disclosure -->
-    <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-neutral-700">
-      <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
-    </div>
-  </main>
+ <!-- Affiliate Disclosure -->
+ <div class="text-xs text-slate-400 mt-8 pt-4 border-t border-neutral-700">
+ <p><strong>Affiliate Disclosure:</strong>LearnEnglish.Life may earn commissions from qualifying purchases made through links on this page. This does not affect our reviews or ratings. We only recommend products we genuinely believe will help English learners.</p>
+ </div>
+ </main>
 
-  <!-- Sticky CTA for Mobile -->
-  <StickyCTA 
-    ctaText="Compare Prices Now"
-    ctaLink="/go/cambly"
-    platform="cambly"
-  />
+ <!-- Sticky CTA for Mobile -->
+ <StickyCTA 
+ ctaText="Compare Prices Now"
+ ctaLink="/go/cambly"
+ platform="cambly"
+ />
 
-  <Footer />
+ <Footer />
 <!-- See Guru alternative callout -->
 <aside class="my-12 max-w-3xl mx-auto px-4">
-  <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
-    <div class="flex items-start gap-4">
-      <div class="text-3xl flex-shrink-0">💡</div>
-      <div class="flex-1">
-        <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
-        <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong> with real human tutors - not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
-        <a href="/go/see-guru/" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
-      </div>
-    </div>
-  </div>
+ <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 border border-emerald-700 rounded-2xl p-6 md:p-8">
+ <div class="flex items-start gap-4">
+ <div class="text-3xl flex-shrink-0"></div>
+ <div class="flex-1">
+ <h3 class="text-lg md:text-xl font-bold text-white mb-2">Looking for a different style of tutoring?</h3>
+ <p class="text-slate-200 mb-4">See Guru is the only platform that gives you <strong class="text-emerald-300">three free trial lessons</strong>with real human tutors - not bots, not videos. Certified, diploma-holding English teachers, flexible scheduling, and lessons starting at $5 each. No subscription required.</p>
+ <a href="/go/see-guru/" target="_blank" rel="sponsored noopener" class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors">Get 3 Free Lessons →</a>
+ </div>
+ </div>
+ </div>
 </aside>
 
 </Base>

@@ -11,205 +11,205 @@ import PlatformRatings from '../../components/PlatformRatings.astro';
 import { platformRatings } from '../../data/platform-ratings';
 
 const duolingo = {
-  name: "Duolingo",
-  rating: 9.0,
-  price: "$6.99/mo",
-  link: "/go/duolingo",
-  slug: "duolingo",
-  bestFor: "Free gamified learning with daily streaks",
-  pros: [
-    "Genuinely useful free version with no time limits",
-    "Habit-forming streak system keeps you motivated",
-    "Short lessons fit easily into daily life",
-    "Covers an enormous vocabulary range",
-    "Available in 40+ languages",
-    "Large global community for social features"
-  ],
-  cons: [
-    "Grammar is taught implicitly, not explained",
-    "Speaking practice limited without Super",
-    "Lessons can feel shallow for intermediate learners",
-    "The free version shows ads"
-  ]
+ name: "Duolingo",
+ rating: 9.0,
+ price: "$6.99/mo",
+ link: "/go/duolingo",
+ slug: "duolingo",
+ bestFor: "Free gamified learning with daily streaks",
+ pros: [
+ "Genuinely useful free version with no time limits",
+ "Habit-forming streak system keeps you motivated",
+ "Short lessons fit easily into daily life",
+ "Covers an enormous vocabulary range",
+ "Available in 40+ languages",
+ "Large global community for social features"
+ ],
+ cons: [
+ "Grammar is taught implicitly, not explained",
+ "Speaking practice limited without Super",
+ "Lessons can feel shallow for intermediate learners",
+ "The free version shows ads"
+ ]
 };
 
 const babbel = {
-  name: "Babbel",
-  rating: 8.6,
-  price: "$6.95/mo",
-  link: "/go/babbel",
-  slug: "babbel",
-  bestFor: "Structured grammar and conversation skills",
-  pros: [
-    "Explicit grammar instruction builds real understanding",
-    "Practical conversation scenarios from lesson one",
-    "Deeper content per topic than Duolingo",
-    "Speaking practice included in all plans",
-    "Babbel Live offers real human tutors",
-    "Structured curriculum with clear progress path"
-  ],
-  cons: [
-    "No meaningful free version",
-    "More expensive than Duolingo for monthly plans",
-    "Fewer languages available (14)",
-    "Longer lessons require more time commitment",
-    "Gamification is minimal, which can reduce motivation"
-  ]
+ name: "Babbel",
+ rating: 8.6,
+ price: "$6.95/mo",
+ link: "/go/babbel",
+ slug: "babbel",
+ bestFor: "Structured grammar and conversation skills",
+ pros: [
+ "Explicit grammar instruction builds real understanding",
+ "Practical conversation scenarios from lesson one",
+ "Deeper content per topic than Duolingo",
+ "Speaking practice included in all plans",
+ "Babbel Live offers real human tutors",
+ "Structured curriculum with clear progress path"
+ ],
+ cons: [
+ "No meaningful free version",
+ "More expensive than Duolingo for monthly plans",
+ "Fewer languages available (14)",
+ "Longer lessons require more time commitment",
+ "Gamification is minimal, which can reduce motivation"
+ ]
 };
 
 const comparisonRows = [
-  { feature: "Free version", winner: "a", a: "Yes, full-featured", b: "Limited (first lesson only)" },
-  { feature: "Learning approach", winner: null, a: "Gamified, bite-sized", b: "Structured, conversation-based" },
-  { feature: "Grammar instruction", winner: "b", a: "Light, implicit", b: "Direct, explicit" },
-  { feature: "Speaking practice", winner: "b", a: "Limited on free tier", b: "Included in all plans" },
-  { feature: "Lesson length", winner: "a", a: "1-5 minutes", b: "10-15 minutes" },
-  { feature: "Languages available", winner: "a", a: "40+", b: "14" }
+ { feature: "Free version", winner: "a", a: "Yes, full-featured", b: "Limited (first lesson only)" },
+ { feature: "Learning approach", winner: null, a: "Gamified, bite-sized", b: "Structured, conversation-based" },
+ { feature: "Grammar instruction", winner: "b", a: "Light, implicit", b: "Direct, explicit" },
+ { feature: "Speaking practice", winner: "b", a: "Limited on free tier", b: "Included in all plans" },
+ { feature: "Lesson length", winner: "a", a: "1-5 minutes", b: "10-15 minutes" },
+ { feature: "Languages available", winner: "a", a: "40+", b: "14" }
 ];
 
 const benefits = [
-  { icon: "🎮", title: "Gamified Learning", description: "Duolingo's streak system makes daily practice addictive and fun." },
-  { icon: "📚", title: "Structured Curriculum", description: "Babbel offers a clear path from beginner to intermediate levels." },
-  { icon: "🗣️", title: "Real Conversations", description: "Babbel's lessons are built around practical, real-world scenarios." }
+ { icon: "", title: "Gamified Learning", description: "Duolingo's streak system makes daily practice addictive and fun." },
+ { icon: "", title: "Structured Curriculum", description: "Babbel offers a clear path from beginner to intermediate levels." },
+ { icon: "️", title: "Real Conversations", description: "Babbel's lessons are built around practical, real-world scenarios." }
 ];
 
 // JSON-LD Schema
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Duolingo vs Babbel 2026: Which English Learning App Wins?",
-  "description": "Compare Duolingo vs Babbel for English learners. Pricing, learning approach, content depth, mobile experience, and speaking practice side by side.",
-  "author": {
-    "@type": "Organization",
-    "name": "LearnEnglish.Life"
-  },
-  "datePublished": "2026-04-01",
-  "dateModified": "2026-04-09"
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Duolingo vs Babbel 2026: Which English Learning App Wins?",
+ "description": "Compare Duolingo vs Babbel for English learners. Pricing, learning approach, content depth, mobile experience, and speaking practice side by side.",
+ "author": {
+ "@type": "Organization",
+ "name": "LearnEnglish.Life"
+ },
+ "datePublished": "2026-04-01",
+ "dateModified": "2026-04-09"
 };
 
 const comparisonSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Duolingo vs Babbel Comparison",
-  "description": "Side-by-side comparison of Duolingo and Babbel English learning apps covering pricing, learning approach, content depth, mobile experience, and speaking practice.",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "Duolingo",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "iOS, Android, Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "description": "Free version available. Super subscription from $6.99/month (annual plan)."
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "SoftwareApplication",
-        "name": "Babbel",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "iOS, Android, Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "6.95",
-          "priceCurrency": "USD",
-          "description": "Annual subscription from $6.95/month. 1-month plan from $13.95."
-        }
-      }
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "ItemList",
+ "name": "Duolingo vs Babbel Comparison",
+ "description": "Side-by-side comparison of Duolingo and Babbel English learning apps covering pricing, learning approach, content depth, mobile experience, and speaking practice.",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "item": {
+ "@type": "SoftwareApplication",
+ "name": "Duolingo",
+ "applicationCategory": "EducationApplication",
+ "operatingSystem": "iOS, Android, Web",
+ "offers": {
+ "@type": "Offer",
+ "price": "0",
+ "priceCurrency": "USD",
+ "description": "Free version available. Super subscription from $6.99/month (annual plan)."
+ }
+ }
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "item": {
+ "@type": "SoftwareApplication",
+ "name": "Babbel",
+ "applicationCategory": "EducationApplication",
+ "operatingSystem": "iOS, Android, Web",
+ "offers": {
+ "@type": "Offer",
+ "price": "6.95",
+ "priceCurrency": "USD",
+ "description": "Annual subscription from $6.95/month. 1-month plan from $13.95."
+ }
+ }
+ }
+ ]
 };
 ---
 
 <Base title="Duolingo vs Babbel 2026: Which English Learning App Wins?" description="Compare Duolingo vs Babbel for English learners. Pricing, learning approach, content depth, mobile experience, and speaking practice side by side.">
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+ <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
 
-  <Header platform="Duolingo vs Babbel" />
-  
-  <div class="max-w-4xl mx-auto px-4 py-8">
-    <div class="mb-8">
-      <span class="text-sm text-gray-400">Comparison · Updated April 2026</span>
-      <h1 class="text-4xl font-bold mt-2 mb-4">Duolingo vs Babbel 2026: Which English Learning App Wins?</h1>
-    <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
-      <p class="text-lg text-gray-500">Two of the most popular English learning apps go head to head. We compare pricing, learning style, content depth, and speaking practice to help you choose.</p>
-    </div>
+ <Header platform="Duolingo vs Babbel" />
+ 
+ <div class="max-w-4xl mx-auto px-4 py-8">
+ <div class="mb-8">
+ <span class="text-sm text-gray-400">Comparison · Updated April 2026</span>
+ <h1 class="text-4xl font-bold mt-2 mb-4">Duolingo vs Babbel 2026: Which English Learning App Wins?</h1>
+ <a href="#verdict" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded-lg mt-2 md:hidden">↓ Jump to Verdict</a>
+ <p class="text-lg text-gray-500">Two of the most popular English learning apps go head to head. We compare pricing, learning style, content depth, and speaking practice to help you choose.</p>
+ </div>
 
-    <!-- FTC Disclosure -->
-    <div class="bg-neutral-800 border border-neutral-700 rounded-xl p-4 mb-8 text-sm text-gray-300">
-      <p><strong>Disclosure:</strong> LearnEnglish.Life earns a commission when you sign up for Duolingo, Babbel, or See Guru through links on this page. This does not affect our editorial independence. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure</a>.</p>
-    </div>
+ <!-- FTC Disclosure -->
+ <div class="bg-neutral-800 border border-neutral-700 rounded-xl p-4 mb-8 text-sm text-gray-300">
+ <p><strong>Disclosure:</strong>LearnEnglish.Life earns a commission when you sign up for Duolingo, Babbel, or See Guru through links on this page. This does not affect our editorial independence. <a href="/affiliate-disclosure/" class="underline">See our full affiliate disclosure</a>.</p>
+ </div>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Quick Verdict</h2>
-    <p class="text-gray-300 mb-4 leading-relaxed">Choose <strong>Duolingo</strong> if you want to learn for free, enjoy game-like lessons, and prefer short daily sessions on your phone. Choose <strong>Babbel</strong> if you want a structured curriculum, are serious about grammar, and want lessons that teach you to hold real conversations from day one.</p>
-    <p class="text-gray-300 mb-6 leading-relaxed"><strong>Our pick for most learners:</strong> Duolingo for beginners on a budget. Babbel for intermediate learners who want deeper grammar and conversation skills.</p>
+ <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Quick Verdict</h2>
+ <p class="text-gray-300 mb-4 leading-relaxed">Choose <strong>Duolingo</strong>if you want to learn for free, enjoy game-like lessons, and prefer short daily sessions on your phone. Choose <strong>Babbel</strong>if you want a structured curriculum, are serious about grammar, and want lessons that teach you to hold real conversations from day one.</p>
+ <p class="text-gray-300 mb-6 leading-relaxed"><strong>Our pick for most learners:</strong>Duolingo for beginners on a budget. Babbel for intermediate learners who want deeper grammar and conversation skills.</p>
 
-    <div class="grid sm:grid-cols-2 gap-4 mb-8">
-      <div class="bg-emerald-900/20 border-2 border-emerald-700 rounded-2xl p-6 text-center">
-        <p class="text-sm font-semibold text-emerald-400 uppercase tracking-wide mb-2">Best for Free Learning</p>
-        <p class="text-3xl font-black text-white">Duolingo</p>
-        <p class="text-sm text-gray-400 mt-2">Free tier available</p>
-      </div>
-      <div class="bg-blue-900/20 border-2 border-blue-700 rounded-2xl p-6 text-center">
-        <p class="text-sm font-semibold text-blue-400 uppercase tracking-wide mb-2">Best for Grammar Depth</p>
-        <p class="text-3xl font-black text-white">Babbel</p>
-        <p class="text-sm text-gray-400 mt-2">Explicit grammar teaching</p>
-      </div>
-    </div>
+ <div class="grid sm:grid-cols-2 gap-4 mb-8">
+ <div class="bg-emerald-900/20 border-2 border-emerald-700 rounded-2xl p-6 text-center">
+ <p class="text-sm font-semibold text-emerald-400 uppercase tracking-wide mb-2">Best for Free Learning</p>
+ <p class="text-3xl font-black text-white">Duolingo</p>
+ <p class="text-sm text-gray-400 mt-2">Free tier available</p>
+ </div>
+ <div class="bg-blue-900/20 border-2 border-blue-700 rounded-2xl p-6 text-center">
+ <p class="text-sm font-semibold text-blue-400 uppercase tracking-wide mb-2">Best for Grammar Depth</p>
+ <p class="text-3xl font-black text-white">Babbel</p>
+ <p class="text-sm text-gray-400 mt-2">Explicit grammar teaching</p>
+ </div>
+ </div>
 
-    <AdUnit slot="header" />
+ <AdUnit slot="header" />
 
-    <ComparisonHighlight 
-      title="Duolingo vs Babbel"
-      platformA={duolingo}
-      platformB={babbel}
-      winner="a"
-      rows={comparisonRows}
-    />
+ <ComparisonHighlight 
+ title="Duolingo vs Babbel"
+ platformA={duolingo}
+ platformB={babbel}
+ winner="a"
+ rows={comparisonRows}
+ />
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Pricing</h2>
-    <h3 class="text-xl font-bold mb-3 text-white">Duolingo</h3>
-    <p class="text-gray-300 mb-4 leading-relaxed">Duolingo operates on a freemium model. The free version gives you access to the full tree of lessons, daily reviews, streaks, and most exercises. You can make real progress without spending a cent.</p>
-    <p class="text-gray-300 mb-4 leading-relaxed">Duolingo Super removes ads and unlocks unlimited hearts, offline mode, and full access to all stories and listening exercises. Super costs $12.99 per month, or around $6.99 per month on an annual plan.</p>
+ <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Pricing</h2>
+ <h3 class="text-xl font-bold mb-3 text-white">Duolingo</h3>
+ <p class="text-gray-300 mb-4 leading-relaxed">Duolingo operates on a freemium model. The free version gives you access to the full tree of lessons, daily reviews, streaks, and most exercises. You can make real progress without spending a cent.</p>
+ <p class="text-gray-300 mb-4 leading-relaxed">Duolingo Super removes ads and unlocks unlimited hearts, offline mode, and full access to all stories and listening exercises. Super costs $12.99 per month, or around $6.99 per month on an annual plan.</p>
 
-    <h3 class="text-xl font-bold mb-3 text-white">Babbel</h3>
-    <p class="text-gray-300 mb-4 leading-relaxed">Babbel does not offer a meaningful free version. You can try the first lesson of any course at no cost, but everything else requires a paid subscription. Prices range from $13.95/month to $6.95/month on an annual plan.</p>
+ <h3 class="text-xl font-bold mb-3 text-white">Babbel</h3>
+ <p class="text-gray-300 mb-4 leading-relaxed">Babbel does not offer a meaningful free version. You can try the first lesson of any course at no cost, but everything else requires a paid subscription. Prices range from $13.95/month to $6.95/month on an annual plan.</p>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Learning Approach</h2>
-    <h3 class="text-xl font-bold mb-3 text-white">Duolingo: Gamified and Addictive</h3>
-    <p class="text-gray-300 mb-4 leading-relaxed">Duolingo turns learning into a game. Every lesson you complete earns you experience points. Miss a day and you lose your streak. The streak system motivates daily practice and keeps users coming back.</p>
+ <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Learning Approach</h2>
+ <h3 class="text-xl font-bold mb-3 text-white">Duolingo: Gamified and Addictive</h3>
+ <p class="text-gray-300 mb-4 leading-relaxed">Duolingo turns learning into a game. Every lesson you complete earns you experience points. Miss a day and you lose your streak. The streak system motivates daily practice and keeps users coming back.</p>
 
-    <h3 class="text-xl font-bold mb-3 text-white">Babbel: Structured and Practical</h3>
-    <p class="text-gray-300 mb-4 leading-relaxed">Babbel takes a more traditional approach. Each lesson is built around a specific conversation scenario. Vocabulary and grammar are taught together, with clear explanations of how sentences are formed.</p>
+ <h3 class="text-xl font-bold mb-3 text-white">Babbel: Structured and Practical</h3>
+ <p class="text-gray-300 mb-4 leading-relaxed">Babbel takes a more traditional approach. Each lesson is built around a specific conversation scenario. Vocabulary and grammar are taught together, with clear explanations of how sentences are formed.</p>
 
-    <BenefitCards 
-      title="Why Choose These Apps?"
-      benefits={benefits}
-    />
+ <BenefitCards 
+ title="Why Choose These Apps?"
+ benefits={benefits}
+ />
 
-    <SocialProof platform="duolingo" />
-    <SocialProof platform="babbel" />
+ <SocialProof platform="duolingo" />
+ <SocialProof platform="babbel" />
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Which Should You Choose?</h2>
-    <p class="text-gray-300 mb-4 leading-relaxed">Choose Duolingo if you are a beginner who wants to build a daily learning habit without spending money. Choose Babbel if you are serious about understanding English grammar and want a structured curriculum.</p>
+ <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Which Should You Choose?</h2>
+ <p class="text-gray-300 mb-4 leading-relaxed">Choose Duolingo if you are a beginner who wants to build a daily learning habit without spending money. Choose Babbel if you are serious about understanding English grammar and want a structured curriculum.</p>
 
-    <div class="mt-12 pt-8 border-t border-neutral-700">
-      <h2 class="text-xl font-bold text-white mb-4">Related Content</h2>
-      <ul class="list-disc list-inside space-y-2 text-gray-400">
-        <li><a href="/reviews/duolingo/" class="text-emerald-400 underline hover:text-emerald-300">Duolingo Review</a></li>
-        <li><a href="/reviews/babbel/" class="text-emerald-400 underline hover:text-emerald-300">Babbel Review</a></li>
-        <li><a href="/compare/best-english-learning-apps/" class="text-emerald-400 underline hover:text-emerald-300">Best English Learning Apps</a></li>
-      </ul>
-    </div>
-  </div>
+ <div class="mt-12 pt-8 border-t border-neutral-700">
+ <h2 class="text-xl font-bold text-white mb-4">Related Content</h2>
+ <ul class="list-disc list-inside space-y-2 text-gray-400">
+ <li><a href="/reviews/duolingo/" class="text-emerald-400 underline hover:text-emerald-300">Duolingo Review</a></li>
+ <li><a href="/reviews/babbel/" class="text-emerald-400 underline hover:text-emerald-300">Babbel Review</a></li>
+ <li><a href="/compare/best-english-learning-apps/" class="text-emerald-400 underline hover:text-emerald-300">Best English Learning Apps</a></li>
+ </ul>
+ </div>
+ </div>
 
-  <Footer />
-  <StickyCTA platform="duolingo" ctaText="Start Free with Duolingo" />
+ <Footer />
+ <StickyCTA platform="duolingo" ctaText="Start Free with Duolingo" />
 </Base>
