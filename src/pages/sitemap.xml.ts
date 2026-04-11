@@ -2,136 +2,92 @@ import type { APIRoute } from 'astro';
 
 const SITE_URL = 'https://learnenglish.life';
 
-const staticPages = [
-  // Main pages
-  { url: '', priority: '1.0', changefreq: 'daily' },
-  { url: '/about', priority: '0.8', changefreq: 'monthly' },
-  { url: '/privacy', priority: '0.3', changefreq: 'yearly' },
-  { url: '/terms', priority: '0.3', changefreq: 'yearly' },
-  { url: '/cookies', priority: '0.3', changefreq: 'yearly' },
-  { url: '/affiliate-disclosure', priority: '0.3', changefreq: 'yearly' },
-  { url: '/contact', priority: '0.3', changefreq: 'monthly' },
-  { url: '/advertise', priority: '0.3', changefreq: 'monthly' },
+// Auto-generate sitemap from filesystem.
+// Every .astro page in src/pages (excluding redirects, 404, dynamic api routes,
+// and the sitemap files themselves) is included so new content shows up
+// without manual edits.
 
-  // Reviews listing + individual reviews
-  { url: '/reviews', priority: '0.9', changefreq: 'weekly' },
-  { url: '/reviews/italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/preply', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/cambly', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/babbel', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/duolingo', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/rosetta-stone', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/see-guru', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/lingoda', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/verbling', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/busuu', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/memrise', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/pimsleur', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/elsa-speak', priority: '0.8', changefreq: 'monthly' },
-  { url: '/reviews/rocket-languages', priority: '0.8', changefreq: 'monthly' },
+// Glob runs at build time. Astro recognises this pattern and inlines the file list.
+const allPages = import.meta.glob('/src/pages/**/*.astro', { eager: false });
 
-  // Comparison listing + pages
-  { url: '/compare', priority: '0.9', changefreq: 'weekly' },
-  { url: '/compare/italki-vs-preply', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/italki-vs-cambly', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/italki-vs-pimsleur', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/italki-vs-busuu', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/italki-vs-rocket-languages', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/italki-vs-rosetta-stone', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/cambly-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/cambly-vs-preply', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/cambly-vs-see-guru', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/cambly-vs-verbling', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/cambly-vs-lingoda', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/preply-vs-cambly', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/preply-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/preply-vs-lingoda', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/preply-vs-verbling', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/busuu-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/see-guru-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/see-guru-vs-preply', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/see-guru-vs-cambly', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/see-guru-vs-lingoda', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/see-guru-vs-verbling', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/lingoda-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/duolingo-vs-babbel', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/duolingo-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/verbling-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/verbling-vs-preply', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/elsa-speak-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/pimsleur-vs-italki', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/best-budget-online-english-tutors', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/best-1-on-1-english-tutors-under-15', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/best-ielts-tutors', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/best-english-learning-apps', priority: '0.8', changefreq: 'monthly' },
-  { url: '/compare/best-english-tutoring-platforms-2026', priority: '0.8', changefreq: 'monthly' },
-
-  // Guides listing + pages
-  { url: '/guides', priority: '0.9', changefreq: 'weekly' },
-  { url: '/guides/best-english-tutors-for-beginners', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-english-tutors-for-business', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-english-apps-for-beginners', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-english-apps-for-kids', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-english-tutors-ielts-preparation', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/ielts-preparation-complete-guide', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/cheapest-1-on-1-english-lessons-online', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/how-much-does-italki-cost', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/common-english-mistakes', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/grammar', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/english-grammar-basics', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/english-tutors-business-professionals', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/free-trial-english-lessons-no-credit-card', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/free-vs-paid-english-learning', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/free-online-english-courses', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/how-to-choose-english-tutor', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/how-to-practice-speaking-alone', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/online-english-tutors-cost-2026', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-english-tutoring-platforms-2026', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-english-learning-apps', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-1-on-1-english-tutoring-2026', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-free-english-tutoring-apps', priority: '0.8', changefreq: 'monthly' },
-  { url: '/guides/best-ielts-prep-course-2026', priority: '0.8', changefreq: 'monthly' },
-
-  // Resources listing + pages
-  { url: '/resources', priority: '0.9', changefreq: 'weekly' },
-  { url: '/resources/best-youtube-channels-learn-english', priority: '0.8', changefreq: 'monthly' },
-  { url: '/resources/english-podcasts-for-learners', priority: '0.8', changefreq: 'monthly' },
-
-  // Study guide (redirects to /guides/ — include for SEO)
-  { url: '/study-guide', priority: '0.5', changefreq: 'weekly' },
-  { url: '/study-guide/how-to-practice-english-speaking-alone', priority: '0.8', changefreq: 'monthly' },
-  { url: '/study-guide/how-to-choose-english-tutor', priority: '0.8', changefreq: 'monthly' },
-
-  // Games
-  { url: '/games', priority: '0.7', changefreq: 'monthly' },
-  { url: '/games/grammar-challenge', priority: '0.7', changefreq: 'monthly' },
-  { url: '/games/vocabulary', priority: '0.7', changefreq: 'monthly' },
-  { url: '/games/word-search', priority: '0.7', changefreq: 'monthly' },
-
-  // Tools
-  { url: '/tools', priority: '0.7', changefreq: 'monthly' },
-  { url: '/tools/text-to-speech-english', priority: '0.8', changefreq: 'monthly' },
-
-  // Blog listing
-  { url: '/blog', priority: '0.9', changefreq: 'weekly' },
-
-  // Study + Affiliate redirects
-  { url: '/study', priority: '0.7', changefreq: 'monthly' },
-  { url: '/go/italki', priority: '0.5', changefreq: 'monthly' },
-  { url: '/go/preply', priority: '0.5', changefreq: 'monthly' },
-  { url: '/go/cambly', priority: '0.5', changefreq: 'monthly' },
-  { url: '/go/see-guru', priority: '0.5', changefreq: 'monthly' },
+const EXCLUDE_PATTERNS = [
+  /\/404\.astro$/,
+  /\/sitemap[^/]*\.xml\.ts$/,
+  /\/go\/[^/]+\.astro$/,        // affiliate redirect interstitials
+  /\[.+\]/,                       // dynamic routes (none currently, future-proofing)
 ];
 
-function generateXML(pages: typeof staticPages): string {
+// Manual priority/changefreq overrides for special pages.
+// Anything not listed defaults to weekly/0.7 — section indexes get 0.9.
+const OVERRIDES: Record<string, { priority: string; changefreq: string }> = {
+  '': { priority: '1.0', changefreq: 'daily' },
+  '/reviews': { priority: '0.9', changefreq: 'weekly' },
+  '/compare': { priority: '0.9', changefreq: 'weekly' },
+  '/guides': { priority: '0.9', changefreq: 'weekly' },
+  '/blog': { priority: '0.9', changefreq: 'daily' },
+  '/resources': { priority: '0.9', changefreq: 'weekly' },
+  '/tools': { priority: '0.8', changefreq: 'weekly' },
+  '/games': { priority: '0.7', changefreq: 'monthly' },
+  '/about': { priority: '0.6', changefreq: 'monthly' },
+  '/contact': { priority: '0.4', changefreq: 'monthly' },
+  '/advertise': { priority: '0.4', changefreq: 'monthly' },
+  '/privacy': { priority: '0.3', changefreq: 'yearly' },
+  '/privacy-policy': { priority: '0.3', changefreq: 'yearly' },
+  '/terms': { priority: '0.3', changefreq: 'yearly' },
+  '/cookies': { priority: '0.3', changefreq: 'yearly' },
+  '/cookie-policy': { priority: '0.3', changefreq: 'yearly' },
+  '/affiliate-disclosure': { priority: '0.3', changefreq: 'yearly' },
+};
+
+function pathToUrl(path: string): string | null {
+  // path looks like "/src/pages/compare/foo.astro" or "/src/pages/index.astro"
+  for (const re of EXCLUDE_PATTERNS) if (re.test(path)) return null;
+  let url = path
+    .replace(/^\/src\/pages/, '')
+    .replace(/\.astro$/, '')
+    .replace(/\/index$/, '');
+  if (url === '') return '';
+  return url;
+}
+
+function defaultPriority(url: string): { priority: string; changefreq: string } {
+  if (OVERRIDES[url]) return OVERRIDES[url];
+  // Section detail pages: blog posts, reviews, comparisons, guides
+  if (
+    url.startsWith('/blog/') ||
+    url.startsWith('/reviews/') ||
+    url.startsWith('/compare/') ||
+    url.startsWith('/guides/') ||
+    url.startsWith('/resources/') ||
+    url.startsWith('/study-guide/')
+  ) {
+    return { priority: '0.8', changefreq: 'monthly' };
+  }
+  if (url.startsWith('/tools/') || url.startsWith('/games/')) {
+    return { priority: '0.7', changefreq: 'monthly' };
+  }
+  return { priority: '0.6', changefreq: 'monthly' };
+}
+
+function generateXML(): string {
   const today = new Date().toISOString().split('T')[0];
 
-  const urls = pages.map(page => `  <url>
-    <loc>${SITE_URL}${page.url}</loc>
+  const urls = Object.keys(allPages)
+    .map(pathToUrl)
+    .filter((u): u is string => u !== null)
+    // dedupe and sort for stable output
+    .filter((u, i, arr) => arr.indexOf(u) === i)
+    .sort()
+    .map((url) => {
+      const { priority, changefreq } = defaultPriority(url);
+      return `  <url>
+    <loc>${SITE_URL}${url}</loc>
     <lastmod>${today}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`).join('\n');
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+    })
+    .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -140,9 +96,7 @@ ${urls}
 }
 
 export const GET: APIRoute = () => {
-  const xml = generateXML(staticPages);
-
-  return new Response(xml, {
+  return new Response(generateXML(), {
     status: 200,
     headers: {
       'Content-Type': 'application/xml',
