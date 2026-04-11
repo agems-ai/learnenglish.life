@@ -1,8 +1,15 @@
----title: "iTalki vs Preply 2026: Which Is Better?"
-description: "iTalki vs Preply: compare pricing, tutor quality, features, and more. Find out which platform is better for your English learning goals and budget."
-pubDate: "2026-04-08"
-import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ContextualCTA from '../../components/ContextualCTA.astro';
+
+const title = 'iTalki vs Preply 2026: Which Is Better?';
+const description = 'iTalki vs Preply: compare pricing, tutor quality, features, and more. Find out which platform is better for your English learning goals and budget.';
+---
+
+<Base title={title} description={description}>
+  <Header />
 
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
@@ -228,3 +235,6 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
   </div>
 
 </article>
+
+  <Footer />
+</Base>

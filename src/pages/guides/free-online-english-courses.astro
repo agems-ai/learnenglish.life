@@ -1,8 +1,14 @@
 ---
-title: "Free Online English Courses: The Best Ways to Learn English Without Paying"
-description: "Discover the best free online English courses in 2026. From BBC to Coursera, learn English without spending a cent. Expert guide with links and tips."
-pubDate: "2026-04-08"
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = 'Free Online English Courses: The Best Ways to Learn English Without Paying';
+const description = 'Discover the best free online English courses in 2026. From BBC to Coursera, learn English without spending a cent. Expert guide with links and tips.';
 ---
+
+<Base title={title} description={description}>
+  <Header />
 
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
@@ -156,3 +162,6 @@ pubDate: "2026-04-08"
   }
 }
 </script>
+
+  <Footer />
+</Base>

@@ -1,7 +1,14 @@
 ---
-title: "Best English Learning Apps 2026: The Top 10 Apps Ranked and Reviewed"
-description: "Which English learning app actually works? We tested the top 10 apps and ranked them by price, features, and effectiveness. Find your perfect match."
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = 'Best English Learning Apps 2026: The Top 10 Apps Ranked and Reviewed';
+const description = 'Which English learning app actually works? We tested the top 10 apps and ranked them by price, features, and effectiveness. Find your perfect match.';
 ---
+
+<Base title={title} description={description}>
+  <Header />
 
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
@@ -159,3 +166,6 @@ description: "Which English learning app actually works? We tested the top 10 ap
   }
 }
 </script>
+
+  <Footer />
+</Base>
