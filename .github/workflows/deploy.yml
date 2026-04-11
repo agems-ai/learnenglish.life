@@ -20,10 +20,10 @@ jobs:
           cache: 'npm'
       - run: npm ci --no-audit --no-fund
 
-      # Guard: every page under src/pages/{compare,reviews,guides} MUST use the
-      # shared Base layout. Standalone <html><body> pages skip the site header,
-      # navigation and dark theme — they look broken to visitors. Reject the
-      # build if any orphans sneak in.
+      # Guard 1: every page under src/pages/{compare,reviews,guides} MUST use
+      # the shared Base layout. Standalone <html><body> pages skip the site
+      # header, navigation and dark theme, so visitors see a broken page.
+      # Reject the build if any orphans sneak in.
       - name: Check pages use Base layout
         run: |
           ORPHANS=$(for f in src/pages/compare/*.astro src/pages/reviews/*.astro src/pages/guides/*.astro; do
@@ -33,13 +33,39 @@ jobs:
             fi
           done)
           if [ -n "$ORPHANS" ]; then
-            echo "❌ Orphan pages (no Base layout) — they will render without header/nav/dark theme:"
+            echo "FAIL: orphan pages (no Base layout) would render without header, nav or dark theme:"
             echo "$ORPHANS"
             echo ""
             echo "Wrap each in <Base title=\"...\" description=\"...\"> ... </Base> instead of writing your own <html>."
             exit 1
           fi
-          echo "✅ All compare/reviews/guides pages use Base layout"
+          echo "OK: all compare/reviews/guides pages use Base layout"
+
+      # Guard 2: critical infrastructure files must contain certain tokens.
+      # If someone regenerates these files from scratch, the tokens disappear
+      # and the build fails, forcing a manual review instead of a silent
+      # regression.
+      - name: Check critical files still contain their invariants
+        run: |
+          set -e
+          check() {
+            local file="$1"; local needle="$2"; local reason="$3"
+            if ! grep -qF "$needle" "$file"; then
+              echo "FAIL: $file is missing '$needle' ($reason)"
+              exit 1
+            fi
+            echo "OK: $file contains '$needle'"
+          }
+          check src/pages/sitemap.xml.ts 'import.meta.glob' 'sitemap must auto-generate from filesystem, not hardcoded'
+          check src/components/Footer.astro 'facebook.com/profile.php?id=61574447922784' 'footer must link the real Facebook page'
+          check src/components/Footer.astro 'instagram.com/learnenglish.life' 'footer must link the real Instagram account'
+          check src/pages/blog/how-long-to-learn-english.astro 'CEFR' 'reality check article must remain published'
+          # index.astro must NOT contain the old email signup formspree placeholder
+          if grep -q 'formspree.io/f/YOUR_FORM_ID\|Get Free English Tips Weekly' src/pages/index.astro; then
+            echo "FAIL: src/pages/index.astro re-introduces the email signup block (removed on purpose)"
+            exit 1
+          fi
+          echo "OK: critical invariants hold"
 
       - run: npm run build
         env:
