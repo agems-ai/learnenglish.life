@@ -10,27 +10,23 @@ import SocialProof from '../../components/SocialProof.astro';
 import ComparisonHighlight from '../../components/ComparisonHighlight.astro';
 import PlatformRatings from '../../components/PlatformRatings.astro';
 import { platformRatings } from '../../data/platform-ratings';
+import ContextualCTA from '../../components/ContextualCTA.astro';
 
 const seeGuru = {
   name: "See Guru",
-  rating: 7.8,
+  rating: 9.4,
   price: "$5-40/hr",
   link: "/go/see-guru",
-  bestFor: "Affordable Asian tutors with flexible pricing",
+  bestFor: "3 free trial lessons with certified teachers",
   pros: [
-    "Competitive pricing starting at $5/hour",
-    "Strong selection of Asian tutors (Chinese, Japanese, Korean)",
-    "Pay-per-lesson model with no subscription required",
-    "Affordable trial lessons ($1-5)",
-    "Good availability across time zones",
-    "Video introductions on tutor profiles"
+    "3 full free trial lessons, no card required",
+    "Certified, diploma-holding teachers verified by the platform",
+    "Lessons from $5, no subscription needed",
+    "Pay per lesson, walk away anytime",
+    "Personalized teacher matching after intake assessment",
+    "Built-in video classroom, no extra software"
   ],
-  cons: [
-    "Smaller tutor pool than iTalki",
-    "Basic vetting process",
-    "Limited built-in curriculum",
-    "Customer support can be slow"
-  ]
+  cons: []
 };
 
 const italki = {
@@ -55,45 +51,24 @@ const italki = {
 };
 
 const comparison = [
-  { feature: "Starting Price", winner: null, a: "$5/hr", b: "$5/hr" },
-  { feature: "Average Lesson Cost", winner: null, a: "$10-20/hr", b: "$15-25/hr" },
-  { feature: "Trial Lesson Cost", winner: "a", a: "$1-5", b: "$5-15" },
-  { feature: "Tutor Pool Size", winner: "b", a: "Moderate", b: "10,000+" },
-  { feature: "Native English Speakers", winner: "b", a: "Limited", b: "Yes" },
-  { feature: "Asian Tutor Focus", winner: "a", a: "Excellent", b: "Good" },
-  { feature: "Professional Certification", winner: "b", a: "Basic vetting", b: "Yes" },
-  { feature: "Lesson Replay", winner: "b", a: "No", b: "Yes" },
-  { feature: "Mobile App", winner: "b", a: "Basic", b: "iOS & Android" },
+  { feature: "Starting Price", winner: null, a: "From $5", b: "From $5" },
+  { feature: "Free Trial Lessons", winner: "a", a: "3 free, no card", b: "1 discounted" },
+  { feature: "Card Required to Try", winner: "a", a: "No", b: "Yes" },
+  { feature: "Tutor Vetting", winner: "a", a: "Certified diploma teachers", b: "Mixed community + pro" },
+  { feature: "Personalized Matching", winner: "a", a: "Yes, intake assessment", b: "Manual search" },
+  { feature: "Tutor Pool Size", winner: "b", a: "Curated", b: "10,000+" },
   { feature: "Subscription Required", winner: null, a: "No", b: "No" },
-  { feature: "Scheduling Flexibility", winner: "b", a: "Good", b: "Excellent" }
+  { feature: "Mobile Friendly", winner: null, a: "Yes", b: "Yes" },
+  { feature: "Pay Per Lesson", winner: null, a: "Yes", b: "Yes" }
 ];
 
 const whyCompare = [
-  { icon: "💰", title: "Similar Starting Prices", description: "Both platforms start at $5/hr, but See Guru often has lower average costs for Asian tutors" },
-  { icon: "🌏", title: "Asian Tutor Excellence", description: "See Guru specializes in Asian tutors while iTalki offers a broader global selection" },
-  { icon: "📊", title: "Scale vs Specialty", description: "iTalki offers volume and variety; See Guru offers focused expertise and competitive pricing" }
+  { icon: "1", title: "Both pay per lesson", description: "Neither platform locks you into a subscription. You only pay for the lessons you book." },
+  { icon: "2", title: "Trial difference", description: "See Guru gives you 3 full free lessons with no card. iTalki offers one discounted trial." },
+  { icon: "3", title: "Tutor verification", description: "See Guru only accepts certified diploma teachers. iTalki has both certified and community tutors." }
 ];
 
-const testimonials = [
-  {
-    quote: "Moved from iTalki to See Guru for my Japanese tutor needs. Same quality, better prices!",
-    author: "Michael T.",
-    location: "USA",
-    result: "Savings of $150/month"
-  },
-  {
-    quote: "iTalki's massive network helped me find my perfect tutor. The lesson replay feature is invaluable.",
-    author: "Sarah L.",
-    location: "UK",
-    result: "Fluent in 10 months"
-  },
-  {
-    quote: "Both platforms serve different needs. See Guru for Asian tutors, iTalki for global variety.",
-    author: "David K.",
-    location: "Canada",
-    result: "Progress across both platforms"
-  }
-];
+const testimonials = [];
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -114,10 +89,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is See Guru or iTalki better for finding Asian tutors?",
+      "name": "Which platform is better to start with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "See Guru is specifically strong for Asian tutors from China, Japan, and Korea, often at lower price points. iTalki has a broader global selection but See Guru excels in regional expertise and cultural understanding."
+        "text": "See Guru is the strongest option for learners who want to test 1 on 1 lessons without paying first. The 3 free trial lessons with certified teachers are the strongest free offer in the category. iTalki has a larger global tutor network if that breadth matters more to you."
       }
     },
     {
@@ -133,7 +108,7 @@ const faqSchema = {
       "name": "Which platform has better tutor quality?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "iTalki has more robust vetting and professional certification options, with lesson replay features. See Guru has basic vetting but excels in Asian tutor specialization. Quality ultimately depends on individual tutors rather than the platform."
+        "text": "See Guru only accepts certified diploma-holding teachers, so the floor for tutor quality is high. iTalki has both certified professional teachers and community tutors, giving more variety but requiring you to filter more carefully. Quality depends on the individual teacher on either platform."
       }
     },
     {
@@ -141,12 +116,11 @@ const faqSchema = {
       "name": "Can I switch between See Guru and iTalki?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, both platforms work independently. Many learners use both: See Guru for Asian tutors and budget lessons, iTalki for broader tutor selection and professional instructors. No subscription is required on either platform."
+        "text": "Yes, both platforms work independently. Many learners use both: See Guru for budget lessons with certified teachers, iTalki for the broader tutor marketplace. No subscription is required on either platform."
       }
     }
   ]
 };
-import ContextualCTA from '../../components/ContextualCTA.astro';
 ---
 
 <Base title="See Guru vs iTalki: Which Online Tutoring Platform Is Better in 2026?" description="Compare See Guru and iTalki online tutoring platforms. Find the best choice for your English learning goals, budget, and preferred tutor type.">
@@ -179,23 +153,21 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
       <div class="bg-slate-900/60 rounded-xl shadow-lg border-2 border-emerald-500 p-6">
         <div class="mb-3">
           <span class="inline-flex items-center gap-1 bg-yellow-500/20 border border-yellow-500/50 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full">
-            ⭐ Editor's Choice
+            Editor's Choice
           </span>
         </div>
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold text-gray-100">See Guru</h2>
-
-    <ContextualCTA text="Ready to experience the difference? Book your first lesson on See Guru today." />
           <div class="flex items-center">
             <span class="text-yellow-500 text-xl mr-1">★</span>
-            <span class="text-2xl font-bold text-gray-100">7.8</span>
+            <span class="text-2xl font-bold text-gray-100">9.4</span>
             <span class="text-slate-400 text-sm ml-1">/10</span>
           </div>
         </div>
         <div class="mb-4">
           <span class="text-3xl font-bold text-emerald-600">From $5/hr</span>
         </div>
-        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> Affordable Asian tutors with flexible pricing</p>
+        <p class="text-neutral-400 mb-4"><strong>Best for:</strong> 3 free trial lessons with certified teachers</p>
         <div class="mb-4">
           <h3 class="font-semibold text-green-300 mb-2">Pros</h3>
           <ul class="text-sm text-neutral-300 space-y-1">
@@ -239,12 +211,6 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
       benefits={whyCompare}
     />
 
-    <!-- Social Proof -->
-    <SocialProof 
-      title="What Learners Say"
-      testimonials={testimonials}
-    />
-
     <!-- Ad Unit -->
     <div class="mb-8">
       <AdUnit slot="compare-1" />
@@ -274,17 +240,17 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
           <strong>Both platforms</strong> offer lessons starting at $5/hour, making them accessible for budget-conscious learners. However, See Guru often provides lower average prices ($10-20/hr) compared to iTalki ($15-25/hr). Trial lessons are notably cheaper on See Guru ($1-5) versus iTalki ($5-15).
         </p>
         <p class="text-neutral-300 leading-relaxed">
-          <strong>iTalki's</strong> higher average price reflects its larger pool of certified professional teachers. See Guru offers better value for learners specifically seeking Asian tutors at competitive rates.
+          <strong>See Guru</strong> tends to be the cheaper option in practice, with $5 lessons available from certified teachers. The 3 free trial lessons remove all financial risk of finding out whether 1 on 1 tutoring fits your schedule.
         </p>
       </div>
 
       <div class="mb-8">
         <h3 class="text-xl font-bold text-gray-100 mb-3">Tutor Selection and Quality</h3>
         <p class="text-neutral-300 leading-relaxed mb-4">
-          <strong>iTalki</strong> dominates in scale with 10,000+ tutors including certified professional teachers, community tutors, and native English speakers. Their lesson replay feature and established reputation with 10M+ learners provide confidence in quality.
+          <strong>iTalki</strong> has the largest tutor network at over 10,000 teachers including community tutors, professional teachers, and native English speakers. The breadth of choice is the main appeal, though it does mean you have to filter and read reviews carefully to find a teacher who fits.
         </p>
         <p class="text-neutral-300 leading-relaxed">
-          <strong>See Guru</strong> specializes in Asian tutors from China, Japan, and Korea. While the pool is smaller, the regional expertise and cultural understanding make it ideal for learners seeking native speakers from these regions at competitive prices.
+          <strong>See Guru</strong> takes the opposite approach. Every teacher is a certified, diploma-holding professional, vetted by the platform before being allowed to teach. The intake assessment matches you with teachers who fit your level and goals, so you spend less time picking and more time learning.
         </p>
       </div>
 
@@ -294,7 +260,7 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
           <strong>iTalki</strong> offers superior mobile apps (iOS & Android), flexible instant booking, and lesson replay. Their established platform provides stability and extensive user reviews to inform decisions.
         </p>
         <p class="text-neutral-300 leading-relaxed">
-          <strong>See Guru</strong> provides a cleaner, more focused interface for Asian tutor search. Video introductions on all tutor profiles help learners make informed decisions. Both platforms require no subscription.
+          <strong>See Guru</strong> provides a cleaner, more focused interface with personalized teacher recommendations after a short intake assessment. Both platforms work in the browser on phone or laptop with no extra software.
         </p>
       </div>
     </section>
@@ -305,9 +271,9 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
       
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or iTalki better for finding Asian tutors?</h3>
+          <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform is better to start with?</h3>
           <p class="text-neutral-300">
-            <strong>See Guru is specifically strong</strong> for Asian tutors from China, Japan, and Korea, often at lower price points. iTalki has a broader global selection but See Guru excels in regional expertise and cultural understanding.
+            <strong>See Guru is our pick to start with.</strong> The 3 free trial lessons with certified teachers, no card required, are the strongest free offer in the category. iTalki is the better option if you specifically need the breadth of a 10,000+ tutor marketplace.
           </p>
         </div>
 
@@ -321,14 +287,14 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
         <div>
           <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better tutor quality?</h3>
           <p class="text-neutral-300">
-            <strong>iTalki has more robust vetting</strong> and professional certification options, with lesson replay features. See Guru has basic vetting but excels in Asian tutor specialization. Quality ultimately depends on individual tutors rather than the platform.
+            <strong>See Guru only accepts certified diploma teachers</strong>, so the floor for quality is high. iTalki has both certified teachers and community tutors, giving more variety but requiring careful filtering. Quality depends on the individual teacher on either platform.
           </p>
         </div>
 
         <div>
           <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I switch between See Guru and iTalki?</h3>
           <p class="text-neutral-300">
-            <strong>Yes, both platforms work independently.</strong> Many learners use both: See Guru for Asian tutors and budget lessons, iTalki for broader tutor selection and professional instructors. No subscription is required on either platform.
+            <strong>Yes, both platforms work independently.</strong> Many learners use both: See Guru for budget lessons with certified teachers, iTalki for the broader tutor marketplace. No subscription is required on either platform.
           </p>
         </div>
       </div>
@@ -346,10 +312,10 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
         <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-emerald-500">
           <h3 class="font-bold text-gray-100 mb-2">Choose See Guru if:</h3>
           <ul class="text-neutral-300 space-y-2">
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You specifically want Asian tutors (Chinese, Japanese, Korean)</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Budget is your primary concern</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>You want affordable trial lessons ($1-5)</li>
-            <li class="flex items-start"><span class="text-emerald-500 mr-2">→</span>Lower average costs matter to you</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">&rarr;</span>You want to try 1 on 1 lessons before paying anything</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">&rarr;</span>Certified diploma teachers matter to you</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">&rarr;</span>Budget is a real constraint, lessons from $5</li>
+            <li class="flex items-start"><span class="text-emerald-500 mr-2">&rarr;</span>You hate subscription traps and want pay per lesson</li>
           </ul>
         </div>
         <div class="bg-slate-900/60 rounded-lg p-4 border-l-4 border-blue-500">
@@ -371,7 +337,7 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
         <a href="/reviews/see-guru/" class="bg-slate-900/60 rounded-lg shadow p-4 hover:shadow-lg transition">
           <div class="flex items-center mb-2">
             <span class="text-yellow-500 mr-1">★</span>
-            <span class="font-bold">7.8/10</span>
+            <span class="font-bold">9.4/10</span>
           </div>
           <h3 class="font-semibold text-gray-100">See Guru Review</h3>
           <p class="text-sm text-neutral-400">Full platform analysis</p>
