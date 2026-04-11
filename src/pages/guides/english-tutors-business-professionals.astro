@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const title = "English Tutors for Business Professionals: Find the Right Coach for Your Career";
 const description = "The best online tutors for professionals who need business English skills, clear communication, and confidence in meetings and presentations.";
 ---
 
 <Base title={title} description={description}>
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400">Guide · Updated April 2026</span>
@@ -118,4 +121,5 @@ const description = "The best online tutors for professionals who need business 
       <p class="text-sm text-gray-500">We earn a commission when you sign up through links on this page. This helps us keep our content free and accurate. Our reviews are based on real research, and we only recommend products we genuinely believe in.</p>
     </div>
   </article>
+  <Footer />
 </Base>

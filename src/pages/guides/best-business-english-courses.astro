@@ -1,10 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 const title = "Best Business English Courses 2026: Boost Your Career";
 const description = "Master professional communication and increase your earning potential with these top-rated courses.";
 ---
 
 <Base title={title} description={description}>
+  <Header />
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
     <span class="text-sm text-gray-400">Guide · Updated April 2026</span>
@@ -72,4 +75,5 @@ const description = "Master professional communication and increase your earning
     <p class="text-sm text-gray-600">Want 1-on-1 business practice? Check out our <a href="/reviews/italki/" class="text-blue-600 underline">iTalki review</a> to find professional business teachers.</p>
   </div>
 </article>
+  <Footer />
 </Base>

@@ -1,7 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 <Base title="Babbel Review: Practical Language for Real Life" description="A dialogue-focused learning app. Best for students who want to start speaking useful phrases from the very first lesson.">
+  <Header />
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
     <span class="text-sm text-gray-400">Review · Updated April 2026</span>
@@ -50,4 +53,5 @@ import Base from "../../layouts/Base.astro";
     <a href="https://www.babbel.com/" class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">Visit Babbel</a>
   </div>
 </article>
+  <Footer />
 </Base>

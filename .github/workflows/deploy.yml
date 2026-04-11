@@ -41,6 +41,26 @@ jobs:
           fi
           echo "OK: all compare/reviews/guides pages use Base layout"
 
+          # Sub-check: pages that DO use Base must also include Header and Footer.
+          # Base alone is just metadata, the site nav lives in <Header /> and
+          # the social/legal links live in <Footer />. Pages that skip them
+          # render with no navigation at all.
+          MISSING=$(for f in $(find src/pages -name '*.astro'); do
+            if grep -q '<Base' "$f"; then
+              if ! grep -q '<Header' "$f" || ! grep -q '<Footer' "$f"; then
+                echo "$f"
+              fi
+            fi
+          done)
+          if [ -n "$MISSING" ]; then
+            echo "FAIL: pages using <Base> are missing <Header /> or <Footer />:"
+            echo "$MISSING"
+            echo ""
+            echo "Every page must include both <Header /> right after <Base> and <Footer /> right before </Base>."
+            exit 1
+          fi
+          echo "OK: every Base page has Header and Footer"
+
       # Guard 2: critical infrastructure files must contain certain tokens.
       # If someone regenerates these files from scratch, the tokens disappear
       # and the build fails, forcing a manual review instead of a silent

@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Base 
   title="iTalki vs Preply vs Cambly: Which is Best for You? (2026)" 
   description="We compared the three giants of online English learning. Find out which platform fits your goals, budget, and schedule."
 >
+  <Header />
   <article class="max-w-4xl mx-auto px-4 py-12">
     <div class="mb-12 text-center">
       <span class="text-blue-600 font-semibold uppercase tracking-wider text-sm">Comparison Guide</span>
@@ -167,4 +170,5 @@ import Base from "../../layouts/Base.astro";
     ]
   }
   </script>
+  <Footer />
 </Base>

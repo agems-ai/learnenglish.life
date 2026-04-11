@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const title = "Best Academic English Writing Course: 2026 Comparison";
 const description = "Mastering university-level writing is essential for academic success. We compare the top courses from Coursera, edX, and the British Council to help you choose the right one.";
 ---
 
 <Base title={title} description={description}>
+  <Header />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -266,4 +269,5 @@ const description = "Mastering university-level writing is essential for academi
 
   <p class="text-xs text-neutral-500 mt-12 italic">Disclosure: We are an independent review site. We may receive referral commissions from some of the platforms listed on this page. This does not affect our ratings or the honesty of our reviews. We prioritize quality and user value above all else.</p>
 </article>
+  <Footer />
 </Base>

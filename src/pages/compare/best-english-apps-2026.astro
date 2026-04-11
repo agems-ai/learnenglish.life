@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Base 
   title="Best English Learning Apps for 2026: The Definitive Guide" 
   description="We have tested the top English learning apps for 2026. Whether you want to master grammar, improve your pronunciation, or build vocabulary, here is the best choice for your goals."
 >
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-neutral-400">Guide · Updated April 2026</span>
@@ -75,4 +78,5 @@ import Base from "../../layouts/Base.astro";
       <p class="text-sm text-neutral-400 italic">This guide is updated annually. Last updated April 2026. All prices are based on annual subscriptions where available.</p>
     </div>
   </article>
+  <Footer />
 </Base>

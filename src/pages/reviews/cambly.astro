@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import AdUnit from "../../components/AdUnit.astro";
 
 const meta = {
@@ -9,6 +11,7 @@ const meta = {
 ---
 
 <Base {...meta}>
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400">Review · Updated April 2026</span>
@@ -223,4 +226,5 @@ const meta = {
     }
     </script>
   </article>
+  <Footer />
 </Base>

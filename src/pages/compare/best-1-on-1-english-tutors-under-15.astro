@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -55,6 +57,7 @@ const schema = {
   canonical="https://learnenglish.life/compare/best-1-on-1-english-tutors-under-15/"
   schema={schema}
 >
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400">Comparison · Updated April 2026</span>
@@ -241,4 +244,5 @@ const schema = {
       </div>
     </div>
   </article>
+  <Footer />
 </Base>

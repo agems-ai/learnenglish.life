@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import AdUnit from "../../components/AdUnit.astro";
 import ArticleSchema from "../../components/ArticleSchema.astro";
 
@@ -51,6 +53,7 @@ const breadcrumbSchema = {
 };
 ---
 <Base title="ELSA Speak Review 2026: AI Pronunciation Coach" description="ELSA Speak Review 2026: 8.2/10. AI-powered pronunciation app with real-time feedback. Perfect for accent reduction and exam prep. Free trial available.">
+  <Header />
 
   <span slot="structured-data">
     <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
@@ -203,4 +206,5 @@ const breadcrumbSchema = {
 </div>
   <ArticleSchema title="Elsa Speak Review" description="Elsa Speak is an AI-powered pronunciation app that uses speech recognition to help learners improve their accent and speaking confidence." publishedTime="2026-03-15" />
 </article>
+  <Footer />
 </Base>

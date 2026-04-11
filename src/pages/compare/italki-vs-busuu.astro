@@ -1,4 +1,6 @@
 ---import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 // SEO Schema - ComparisonTable (ItemList)
 const articleSchema = {
@@ -100,6 +102,7 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
   title="iTalki vs Busuu: Which Is Better for Learning English?" 
   description="Compare iTalki and Busuu side by side. We check pricing, teacher quality, features, lesson types, and cancellation policies to help you choose."
 >
+  <Header />
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -275,4 +278,5 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
       <p><strong>Affiliate Disclosure:</strong> LearnEnglish.Life is reader-supported. If you click on links to tutoring platforms and make a purchase, we may earn a commission at no extra cost to you. Our editorial reviews are based on independent research and are not influenced by affiliate partnerships. <a href="/affiliate-disclosure/" class="underline">Learn more</a>.</p>
     </div>
   </article>
+  <Footer />
 </Base>

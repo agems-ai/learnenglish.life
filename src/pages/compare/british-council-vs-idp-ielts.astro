@@ -1,11 +1,14 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Base 
   title="British Council vs IDP IELTS: Which One Should You Choose? | LearnEnglish.Life"
   description="The test is the same, but the experience is not. We break down the practical differences between the two biggest IELTS providers: British Council and IDP."
 >
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400 text-uppercase tracking-wider font-semibold">Comparison · Updated April 2026</span>
@@ -133,4 +136,5 @@ import Base from "../../layouts/Base.astro";
       </div>
     </div>
   </article>
+  <Footer />
 </Base>

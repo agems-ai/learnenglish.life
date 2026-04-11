@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const title = "Best Free English Grammar Exercises: Top 4 Sites for 2026";
 const description = "Master English grammar without spending a dollar. We reviewed the best websites for free practice, from beginner basics to advanced sentence structures.";
@@ -54,6 +56,7 @@ const listSchema = {
 ---
 
 <Base title={title} description={description}>
+  <Header />
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(listSchema)} />
   
@@ -186,4 +189,5 @@ const listSchema = {
     <p class="text-sm text-gray-600">The best way to learn is with a real teacher. Check out our <a href="/reviews/italki/" class="text-green-700 underline font-semibold">iTalki review</a> to see how you can find a tutor for as little as $5 per hour.</p>
   </div>
 </article>
+  <Footer />
 </Base>

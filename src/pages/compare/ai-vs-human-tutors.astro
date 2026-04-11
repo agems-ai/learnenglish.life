@@ -1,7 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 <Base title="AI vs Human English Tutors: Which is Better in 2026?" description="The debate of the decade. Can a chatbot really replace a native speaker? We look at the data to help you decide.">
+  <Header />
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-12">
     <span class="text-sm text-emerald-600 font-bold uppercase tracking-widest">Comparison</span>
@@ -64,4 +67,5 @@ import Base from "../../layouts/Base.astro";
     <a href="/reviews/italki/" class="bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-block text-center">Find a Human Tutor</a>
   </div>
 </article>
+  <Footer />
 </Base>

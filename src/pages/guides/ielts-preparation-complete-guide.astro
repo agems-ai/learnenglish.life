@@ -1,5 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const title = "IELTS Preparation: Complete Guide for 2026";
 const description = "Expert IELTS preparation guide with proven strategies for all four modules. Step-by-step plan, tips, and the best free and paid resources to reach your target band score.";
@@ -8,6 +10,7 @@ const keywords = ["ielts preparation", "ielts exam", "ielts tips", "ielts practi
 ---
 
 <Base title={title} description={description} canonical={Astro.url.href}>
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400">Guide &bull; Updated April 2026</span>
@@ -229,3 +232,7 @@ const keywords = ["ielts preparation", "ielts exam", "ielts tips", "ielts practi
   ]
 })}
 </script>
+
+  </article>
+  <Footer />
+</Base>

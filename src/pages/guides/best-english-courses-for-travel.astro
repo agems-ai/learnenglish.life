@@ -1,7 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 <Base title="5 Best English Courses for Travel: Your Ticket to the World" description="Master the essential phrases and confidence you need to navigate any destination with ease.">
+  <Header />
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
     <span class="text-sm text-gray-400">Guide · Updated April 2026</span>
@@ -48,4 +51,5 @@ import Base from "../../layouts/Base.astro";
     <a href="/reviews/italki/" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">Find a Travel Tutor</a>
   </div>
 </article>
+  <Footer />
 </Base>

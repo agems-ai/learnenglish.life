@@ -1,8 +1,11 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Base title="Free Online English Courses 2026" description="The best free online English courses available in 2026. Expert-curated list of free resources for learners at every level, from beginner to advanced.">
+  <Header />
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-neutral-400">Study Resources &bull; Updated April 2026</span>
@@ -117,4 +120,5 @@ import Base from "../../layouts/Base.astro";
     }
     </script>
   </article>
+  <Footer />
 </Base>

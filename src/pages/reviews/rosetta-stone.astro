@@ -1,7 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 <Base title="Rosetta Stone Review: The Classic Immersion Method" description="The most famous name in language learning. Best for beginners who want a pure immersion experience without translations.">
+  <Header />
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
     <span class="text-sm text-gray-400">Review · Updated April 2026</span>
@@ -51,4 +54,5 @@ import Base from "../../layouts/Base.astro";
     <a href="https://www.rosettastone.com/" class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">Visit Rosetta Stone</a>
   </div>
 </article>
+  <Footer />
 </Base>
