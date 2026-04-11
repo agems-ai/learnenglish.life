@@ -1,0 +1,235 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const title = "Free vs Paid English Resources: When Each One Actually Wins";
+const description = "An honest breakdown of where free English resources beat paid ones, where they fail, and a hybrid plan that costs almost nothing but works.";
+const publishDate = "2026-04-11";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "publisher": { "@type": "Organization", "name": "LearnEnglish.Life", "url": "https://learnenglish.life" },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://learnenglish.life/blog/free-vs-paid-english-resources/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
+    { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/free-vs-paid-english-resources/" }
+  ]
+};
+---
+
+<Base title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <Header />
+
+  <article class="bg-neutral-950">
+    <header class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 border-b border-slate-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <nav class="text-sm text-slate-400 mb-4">
+          <a href="/" class="hover:text-emerald-400">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/blog/" class="hover:text-emerald-400">Blog</a>
+        </nav>
+        <span class="inline-block px-3 py-1 bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold rounded-full mb-4">BUDGET GUIDE</span>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">{title}</h1>
+        <p class="text-lg text-slate-300">
+          The honest answer: it depends on the skill. Speaking is hard to learn for free. Vocabulary is hard to learn paying. Here is where each side wins.
+        </p>
+        <div class="flex items-center gap-4 mt-6 text-sm text-slate-400">
+          <span>April 11, 2026</span>
+          <span>·</span>
+          <span>10 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-3xl mx-auto px-4 py-12 text-slate-200 leading-relaxed">
+
+      <p class="text-xl text-slate-100 mb-6">
+        Every English learner asks the same question eventually: do I really need to pay for this, or can I get fluent for free? The honest answer is yes to both, but not at the same time and not for the same skills. Free resources are excellent for some things and terrible for others. Paid tools are the same. The trick is knowing which is which.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The four skills, ranked by cost effectiveness</h2>
+
+      <p class="mb-4">
+        Language learning splits into reading, listening, writing, and speaking. Each one has a different "free works fine" ceiling. Knowing where the ceilings are saves you money and stops you from blaming the wrong tool when progress stalls.
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full border-collapse bg-slate-900/60 border border-slate-700 rounded-lg overflow-hidden">
+          <thead>
+            <tr class="bg-emerald-900/40 text-emerald-200">
+              <th class="px-4 py-3 text-left">Skill</th>
+              <th class="px-4 py-3 text-left">Free works until</th>
+              <th class="px-4 py-3 text-left">Paid is worth it for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-700">
+              <td class="px-4 py-3 font-bold text-emerald-300">Reading</td>
+              <td class="px-4 py-3 text-white">All the way to C2</td>
+              <td class="px-4 py-3 text-slate-300">Almost never. Free books and articles are unbeatable.</td>
+            </tr>
+            <tr class="border-t border-slate-700">
+              <td class="px-4 py-3 font-bold text-emerald-300">Listening</td>
+              <td class="px-4 py-3 text-white">All the way to C1</td>
+              <td class="px-4 py-3 text-slate-300">Specialized accents (academic, legal, medical) at C2.</td>
+            </tr>
+            <tr class="border-t border-slate-700">
+              <td class="px-4 py-3 font-bold text-emerald-300">Vocabulary</td>
+              <td class="px-4 py-3 text-white">A2 to B1</td>
+              <td class="px-4 py-3 text-slate-300">B2 and above, where free apps run out of useful words.</td>
+            </tr>
+            <tr class="border-t border-slate-700">
+              <td class="px-4 py-3 font-bold text-emerald-300">Grammar</td>
+              <td class="px-4 py-3 text-white">A2 to B1</td>
+              <td class="px-4 py-3 text-slate-300">When you need a teacher to explain why your sentence sounds wrong.</td>
+            </tr>
+            <tr class="border-t border-slate-700">
+              <td class="px-4 py-3 font-bold text-emerald-300">Writing</td>
+              <td class="px-4 py-3 text-white">Limited, no real feedback</td>
+              <td class="px-4 py-3 text-slate-300">Anything graded: emails for work, IELTS, university essays.</td>
+            </tr>
+            <tr class="border-t border-slate-700">
+              <td class="px-4 py-3 font-bold text-emerald-300">Speaking</td>
+              <td class="px-4 py-3 text-white">A1 only</td>
+              <td class="px-4 py-3 text-slate-300">Almost always. The single hardest skill to develop alone.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Where free is unbeatable</h2>
+
+      <p class="mb-4">
+        For input skills (reading and listening), free resources are not just acceptable, they are better than most paid courses. The internet has more high quality English content than any one person could consume in a lifetime, and almost all of it is free.
+      </p>
+
+      <ul class="list-disc list-inside space-y-2 mb-6">
+        <li><strong class="text-white">Reading:</strong> Project Gutenberg has 70,000 free public domain books. Newspaper websites give you a few free articles a month. Wikipedia is endless free reading at every level.</li>
+        <li><strong class="text-white">Listening:</strong> Podcasts, YouTube, BBC Sounds, NPR, and audiobook samples on Audible give you decades of free listening practice. Pick something you actually enjoy and stay with it.</li>
+        <li><strong class="text-white">Beginner vocabulary:</strong> Anki and Memrise free decks cover the first 2,000 words better than any paid app.</li>
+        <li><strong class="text-white">Beginner grammar:</strong> Duolingo, BBC Learning English, and the British Council's LearnEnglish website are free and complete through B1.</li>
+      </ul>
+
+      <p class="mb-6">
+        For these skills, paying for a premium app is mostly buying convenience and design. The actual learning material is the same or worse than what you can find for free.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Where free quietly fails</h2>
+
+      <p class="mb-4">
+        Two skills resist the free approach: speaking and graded writing. Both require feedback from a real human, and free resources give you almost none.
+      </p>
+
+      <p class="mb-6">
+        You can practice speaking alone, our <a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300 underline">solo speaking guide</a> covers shadowing, recording yourself, and using AI tools for short practice sessions. These methods work for the first few weeks. After that, you hit a wall: you cannot tell which of your sentences sound natural and which are wrong because you have no native ear to compare against.
+      </p>
+
+      <p class="mb-6">
+        The same is true for writing. Grammarly and similar tools catch obvious errors. They will not tell you that your email sounds rude, or that your IELTS task two essay is missing the structure the examiner is looking for. Only a human can give you that kind of feedback.
+      </p>
+
+      <p class="mb-6">
+        The cheapest fix is the smallest possible amount of paid help: one or two hours per week with a real tutor. That is enough to break through the speaking and writing ceilings without paying for a full subscription stack.
+      </p>
+
+      <!-- Sponsor card -->
+      <aside class="my-10 p-6 bg-emerald-950/40 border border-emerald-700 rounded-2xl">
+        <h3 class="text-xl font-bold text-white mb-2">The cheapest way to test paid speaking practice</h3>
+        <p class="text-slate-200 mb-4">
+          Before committing to a tutor subscription, try <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a>. It is the only platform we know of that gives you three full 1 on 1 lessons with certified teachers, free, no card on file. After three lessons you actually know whether 1 on 1 tutoring fits your week. If it does not, you walk away. If it does, lessons start at $5 each, which is cheaper than most app subscriptions.
+        </p>
+        <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">
+          Claim 3 free See Guru lessons
+        </a>
+      </aside>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">A real hybrid plan that costs less than $30 a month</h2>
+
+      <p class="mb-4">
+        Here is a complete English learning stack built mostly from free tools, with one targeted paid component for speaking. It looks like this:
+      </p>
+
+      <ul class="list-disc list-inside space-y-2 mb-6">
+        <li><strong class="text-white">Vocabulary (free):</strong> Anki, 20 minutes a day, using a community deck like the 2,000 most common English words.</li>
+        <li><strong class="text-white">Grammar (free):</strong> BBC Learning English or the British Council's free site, 15 minutes a day.</li>
+        <li><strong class="text-white">Reading (free):</strong> One Wikipedia article a day, then move to short stories and a graded novel.</li>
+        <li><strong class="text-white">Listening (free):</strong> One podcast you actually enjoy, played during commute, cooking, or chores.</li>
+        <li><strong class="text-white">Speaking (paid, $20 to $30 per month):</strong> Two 1 on 1 lessons per week with the same tutor, $5 to $8 per lesson on a pay per lesson platform.</li>
+      </ul>
+
+      <p class="mb-6">
+        Total cost: under $30 per month. Total time: about 5 hours per week. Following this plan, most learners can move one CEFR level every 8 to 14 months. We unpack the math behind that timeline in our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check article</a>.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">When paid is worth a lot more than $30 a month</h2>
+
+      <p class="mb-4">
+        There are three situations where paying more is genuinely smarter:
+      </p>
+
+      <ol class="list-decimal list-inside space-y-3 mb-6">
+        <li><strong class="text-white">A deadline.</strong> University admission, a visa, a job interview that depends on your English. Paid intensive programs can compress 6 months of progress into 6 weeks if you have the time and money. The trade off is real, but if the deadline is real, intensive paid coaching is the right call.</li>
+        <li><strong class="text-white">A specialized field.</strong> Business English, legal English, medical English, IELTS Academic. Free resources rarely cover these well. A specialist tutor or a paid course saves you months of cobbling together random material.</li>
+        <li><strong class="text-white">You have failed before.</strong> If you have tried free apps for two years and feel stuck, the issue is almost always the lack of speaking practice. Paying for one year of a real tutor will move you further than another year of solo apps.</li>
+      </ol>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The trap to avoid: stacking paid subscriptions</h2>
+
+      <p class="mb-6">
+        The biggest waste of money in English learning is paying for three apps you barely use. Babbel, Duolingo Plus, Pimsleur, Rosetta Stone, and a tutor platform on top, all running at the same time, is around $80 per month. Most learners using this stack do less than 30 minutes a day total, which means they are paying $2 per active minute.
+      </p>
+
+      <p class="mb-6">
+        Pick one input source you enjoy (free), one vocabulary tool (free), and one paid tool that gives you feedback from a real human. That is the entire stack you need. Anything more is paying to feel productive, not to actually learn.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Honest summary</h2>
+
+      <p class="mb-6">
+        For reading, listening, beginner vocabulary, and beginner grammar, free is not just enough, it is excellent. For speaking and graded writing, free hits a ceiling fast. The cheapest path that actually works is mostly free with one small paid component for speaking practice. Total cost: less than what most learners pay for a single Babbel subscription.
+      </p>
+
+      <p class="mb-6">
+        If you can only afford one paid thing, make it weekly speaking practice. That is the lever that moves the needle.
+      </p>
+
+      <!-- Related -->
+      <div class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+        <h3 class="text-lg font-bold text-white mb-4">Read next</h3>
+        <ul class="space-y-2">
+          <li><a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300">How long does it really take to learn English?</a></li>
+          <li><a href="/blog/best-time-to-study-english/" class="text-emerald-400 hover:text-emerald-300">Best time of day to study English</a></li>
+          <li><a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300">Practice speaking when you have no partner</a></li>
+          <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru review: 3 free lessons with real tutors</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="py-8 bg-neutral-900">
+      <div class="max-w-3xl mx-auto px-4">
+        <AdUnit slot="in-article" format="fluid" />
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>
