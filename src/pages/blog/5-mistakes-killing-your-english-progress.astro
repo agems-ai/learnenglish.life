@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const title = "5 Mistakes That Quietly Kill Your English Progress";
+const description = "The five quiet habits that hold most adult English learners back, and the small changes that fix them. Honest, no fluff, no shopping list of apps.";
+const publishDate = "2026-04-11";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": { "@type": "Organization", "name": "LearnEnglish.Life" },
+  "publisher": { "@type": "Organization", "name": "LearnEnglish.Life", "url": "https://learnenglish.life" },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://learnenglish.life/blog/5-mistakes-killing-your-english-progress/"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
+    { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/5-mistakes-killing-your-english-progress/" }
+  ]
+};
+---
+
+<Base title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <Header />
+
+  <article class="bg-neutral-950">
+    <header class="bg-gradient-to-br from-emerald-950 via-neutral-950 to-teal-950 py-16 border-b border-slate-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <nav class="text-sm text-slate-400 mb-4">
+          <a href="/" class="hover:text-emerald-400">Home</a>
+          <span class="mx-2">/</span>
+          <a href="/blog/" class="hover:text-emerald-400">Blog</a>
+        </nav>
+        <span class="inline-block px-3 py-1 bg-emerald-900/40 border border-emerald-700 text-emerald-300 text-xs font-bold rounded-full mb-4">HABITS</span>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">{title}</h1>
+        <p class="text-lg text-slate-300">
+          Most learners do not stall because they lack motivation. They stall because of five small habits nobody warned them about.
+        </p>
+        <div class="flex items-center gap-4 mt-6 text-sm text-slate-400">
+          <span>April 11, 2026</span>
+          <span>·</span>
+          <span>8 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-3xl mx-auto px-4 py-12 text-slate-200 leading-relaxed">
+
+      <p class="text-xl text-slate-100 mb-6">
+        After years of helping learners through these articles, the same patterns show up again and again. The people who get fluent are not smarter or more disciplined than the ones who give up. They just avoided five quiet traps. None of them are obvious from the inside, which is why they wreck so much progress before learners notice.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Mistake 1: Switching apps every two weeks</h2>
+
+      <p class="mb-4">
+        You start with Duolingo. After ten days you read a Reddit thread saying Babbel is better, so you switch. Three weeks later someone tells you Pimsleur is the only thing that actually works. You switch again. Two months in, you have spent more time picking apps than actually learning English.
+      </p>
+
+      <p class="mb-6">
+        The fix: pick one tool per skill, stick with it for at least three months, and judge it by your own progress, not by Reddit. Almost any popular app works if you use it daily for a quarter. None of them work if you bounce between three.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Mistake 2: Studying only when you feel motivated</h2>
+
+      <p class="mb-4">
+        Motivation is the worst possible trigger for a study habit because it disappears exactly when you need it. The learners who reach B2 are not the ones who feel inspired every day. They are the ones who built a small routine that happens whether they feel like it or not.
+      </p>
+
+      <p class="mb-6">
+        The fix: pair your English session with a habit you already have. Right after morning coffee. The first 10 minutes of your commute. Right before brushing your teeth at night. Tying it to an existing trigger removes the daily decision, which is what saves the habit when motivation crashes. Our <a href="/blog/best-time-to-study-english/" class="text-emerald-400 hover:text-emerald-300 underline">best time to study article</a> covers this in more depth.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Mistake 3: Avoiding speaking until you feel ready</h2>
+
+      <p class="mb-4">
+        Most learners postpone speaking until they "know enough vocabulary" or "feel confident". The problem is that you never feel ready, because the only thing that builds the readiness is doing the thing you are postponing. Years pass, the freeze gets worse, and the learner blames themself for "being shy".
+      </p>
+
+      <p class="mb-6">
+        The fix: book a real conversation with a real human as early as possible, even at A1. The first session will be uncomfortable. So will the third. By the tenth, the freeze starts to crack. We unpack this in detail in our <a href="/blog/why-you-cant-speak-english-yet/" class="text-emerald-400 hover:text-emerald-300 underline">speaking block article</a>.
+      </p>
+
+      <!-- Sponsor card -->
+      <aside class="my-10 p-6 bg-emerald-950/40 border border-emerald-700 rounded-2xl">
+        <h3 class="text-xl font-bold text-white mb-2">The cheapest way to fix mistake 3</h3>
+        <p class="text-slate-200 mb-4">
+          The hardest part of starting speaking practice is finding a teacher you actually like before paying. <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a> is the only platform we know of that gives you three full 1 on 1 lessons with certified teachers, free, no card required. By lesson three the freeze is much smaller. If it is still not for you, you walk away with no charge.
+        </p>
+        <a href="/go/see-guru" target="_blank" rel="noopener sponsored" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">
+          Claim 3 free See Guru lessons
+        </a>
+      </aside>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Mistake 4: Watching shows in English with subtitles in your own language</h2>
+
+      <p class="mb-4">
+        This feels like learning. You enjoy the show, you understand the plot, you tell yourself you are practicing English. In reality your eyes spend almost the entire time on the subtitles, and your brain barely processes the audio. After 100 hours of this, your listening barely moves.
+      </p>
+
+      <p class="mb-6">
+        The fix has two stages. Stage one (B1 and below): watch with English subtitles. You will read most of them, and that is fine, because you are still mapping spoken sound to written form. Stage two (B2 and above): no subtitles. Pause and rewind when you miss something. It feels harder, but it actually trains the listening muscle.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Mistake 5: Not tracking anything</h2>
+
+      <p class="mb-4">
+        Most learners have no idea what level they are or how fast they are moving, which means they cannot tell whether their study plan is working. Without feedback, they just keep doing the same thing for years and assume "languages are hard".
+      </p>
+
+      <p class="mb-6">
+        The fix is small. Once a month, do a free CEFR placement test online (the British Council has one), write the result in a note, and compare it to last month. Even if the level number does not change, your subscore on the four skills probably does. Seeing the number move keeps you going. Seeing it not move tells you to change something. Either way is more useful than guessing. The numbers in our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> give you a baseline to plan against.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">The pattern behind all five</h2>
+
+      <p class="mb-6">
+        Every one of these mistakes has the same root: optimizing for how the activity feels rather than what it produces. App hopping feels like progress. Studying when motivated feels efficient. Postponing speaking feels safe. Subtitles feel comfortable. Not measuring feels hopeful. They are all comfortable in the moment and quietly destructive over time.
+      </p>
+
+      <p class="mb-6">
+        The fix is the same for all of them: pick one boring small thing, do it daily for a month, then look at the result. Boring beats exciting every time when the goal is to actually move from A2 to B1.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-10 mb-4">Honest summary</h2>
+
+      <p class="mb-6">
+        If any of these five hit a nerve, that is the one to fix this week. You do not need a new app, a new course, or a new schedule. You just need to stop one of the quiet traps and replace it with a small daily action. The learners who get fluent are not the ones with the best tools. They are the ones who stopped sabotaging themselves with these five habits.
+      </p>
+
+      <!-- Related -->
+      <div class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+        <h3 class="text-lg font-bold text-white mb-4">Read next</h3>
+        <ul class="space-y-2">
+          <li><a href="/blog/why-you-cant-speak-english-yet/" class="text-emerald-400 hover:text-emerald-300">Why you can't speak English yet</a></li>
+          <li><a href="/blog/best-time-to-study-english/" class="text-emerald-400 hover:text-emerald-300">Best time of day to study English</a></li>
+          <li><a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300">How long does it really take to learn English?</a></li>
+          <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru review: 3 free lessons with real tutors</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="py-8 bg-neutral-900">
+      <div class="max-w-3xl mx-auto px-4">
+        <AdUnit slot="in-article" format="fluid" />
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>
