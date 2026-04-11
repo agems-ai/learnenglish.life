@@ -118,6 +118,53 @@ jobs:
             fi
           done
           echo "OK: all /go/* redirects point to real external URLs"
+
+      # Guard 3: every internal link in src/pages must resolve to a page
+      # that actually exists. Catches typos like /reviews/elsaspeak/ and
+      # rotted links like /guides/how-to-learn-english-fast/ before they
+      # hit production as visible 404s.
+      - name: Check all internal links resolve to real pages
+        run: |
+          python3 - <<'PY'
+          import os, re, sys
+          routes = set()
+          for root, _, files in os.walk('src/pages'):
+              for f in files:
+                  if not f.endswith('.astro'): continue
+                  rel = os.path.relpath(os.path.join(root, f), 'src/pages')
+                  slug = rel[:-6]
+                  if slug.endswith('/index'): slug = slug[:-6]
+                  if slug == 'index': slug = ''
+                  routes.add('/' + slug if slug else '/')
+                  routes.add('/' + slug + '/' if slug else '/')
+          public_files = set()
+          for root, _, files in os.walk('public'):
+              for f in files:
+                  rel = '/' + os.path.relpath(os.path.join(root, f), 'public').replace(os.sep, '/')
+                  public_files.add(rel)
+          HREF_RE = re.compile(r'href\s*=\s*["\']([^"\']+)["\']')
+          broken = []
+          for root, _, files in os.walk('src/pages'):
+              for f in files:
+                  if not f.endswith('.astro'): continue
+                  p = os.path.join(root, f)
+                  with open(p) as fh: s = fh.read()
+                  for m in HREF_RE.finditer(s):
+                      url = m.group(1)
+                      if not url or url[0] in '#?': continue
+                      if url.startswith(('mailto:', 'tel:', 'http', 'javascript:', 'data:')): continue
+                      base = url.split('#')[0].split('?')[0]
+                      base_clean = base.rstrip('/') if base != '/' else base
+                      base_with_slash = base_clean if base_clean == '/' else base_clean + '/'
+                      if base_clean not in routes and base_with_slash not in routes and base not in routes and base not in public_files:
+                          broken.append((base, p))
+          if broken:
+              print(f'FAIL: {len(broken)} broken internal links:')
+              for b, p in broken[:30]:
+                  print(f'  {b}  in  {p}')
+              sys.exit(1)
+          print('OK: all internal links resolve')
+          PY
           echo "OK: critical invariants hold"
 
       - run: npm run build
