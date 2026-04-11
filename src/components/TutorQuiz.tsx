@@ -10,7 +10,7 @@ const platforms = {
     description: 'Live 1-on-1 lessons with certified, diploma-holding English tutors. Honest feedback, flexible scheduling, and real conversation practice.',
     strengths: ['Certified, diploma-holding tutors', 'Flexible 1-on-1 scheduling', 'Free trial lesson'],
     price: '$12-40/hour',
-    url: 'https://see.guru/?aff=SG-SUAG151',
+    url: '/go/see-guru/',
     tags: ['live-tutoring', 'professional', 'flexible', 'all-levels']
   },
   preply: {
