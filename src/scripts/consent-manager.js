@@ -54,11 +54,11 @@
       // Load the gtag script
       var script = document.createElement('script');
       script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q1D36CSBCC';
       document.head.appendChild(script);
     }
     
-    gtag('config', 'G-XXXXXXXXXX', {
+    gtag('config', 'G-Q1D36CSBCC', {
       'anonymize_ip': true, // Anonymize IPs for GDPR
       'cookie_flags': 'SameSite=Lax;Secure'
     });
