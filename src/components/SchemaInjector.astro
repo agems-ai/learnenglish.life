@@ -1,0 +1,74 @@
+---
+/**
+ * SchemaInjector.astro — Automatic JSON-LD schema injection
+ * 
+ * This component is included in Base.astro and generates:
+ * 1. Organization schema (every page)
+ * 2. WebSite schema with SearchAction (every page)
+ * 3. BreadcrumbList schema (auto-generated from URL path, every page)
+ * 4. Article/Review/FAQPage schema (when provided via props)
+ * 
+ * No per-page manual script tags needed.
+ */
+import {
+  SITE_URL,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+  buildBreadcrumbSchema,
+  buildArticleSchema,
+  buildReviewSchema,
+  buildFAQSchema,
+  type ArticleSchemaData,
+  type ReviewSchemaData,
+  type FAQSchemaData,
+} from '../lib/seo';
+
+interface Props {
+  /** Current page pathname, e.g. /reviews/italki/ */
+  pathname: string;
+  /** Page title for breadcrumb last item override */
+  pageTitle?: string;
+  /** Article schema data — auto-generates Article JSON-LD */
+  article?: ArticleSchemaData;
+  /** Review schema data — auto-generates Review JSON-LD */
+  review?: ReviewSchemaData;
+  /** FAQ schema data — auto-generates FAQPage JSON-LD */
+  faq?: FAQSchemaData;
+  /** Additional custom schemas (pre-built objects) */
+  customSchemas?: object[];
+}
+
+const {
+  pathname,
+  pageTitle,
+  article,
+  review,
+  faq,
+  customSchemas = [],
+} = Astro.props;
+
+// Always generate these three
+const orgSchema = buildOrganizationSchema();
+const webSiteSchema = buildWebSiteSchema();
+const breadcrumbSchema = buildBreadcrumbSchema(pathname);
+
+// Conditionally generate content schemas
+const articleSchema = article ? buildArticleSchema(article, pathname) : null;
+const reviewSchema = review ? buildReviewSchema(review) : null;
+const faqSchema = faq ? buildFAQSchema(faq) : null;
+
+// Collect all schemas to render
+const allSchemas = [
+  orgSchema,
+  webSiteSchema,
+  breadcrumbSchema,
+  ...(articleSchema ? [articleSchema] : []),
+  ...(reviewSchema ? [reviewSchema] : []),
+  ...(faqSchema ? [faqSchema] : []),
+  ...customSchemas,
+];
+---
+
+{allSchemas.map(schema => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+))}

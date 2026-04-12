@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import CookieConsent from '../components/CookieConsent';
 import Analytics from '../components/Analytics.astro';
+import SchemaInjector from '../components/SchemaInjector.astro';
+import type { ArticleSchemaData, ReviewSchemaData, FAQSchemaData } from '../lib/seo';
 
 interface Props {
   title: string;
@@ -11,6 +13,14 @@ interface Props {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  /** Article schema data — auto-generates Article JSON-LD */
+  articleSchema?: ArticleSchemaData;
+  /** Review schema data — auto-generates Review JSON-LD */
+  reviewSchema?: ReviewSchemaData;
+  /** FAQ schema data — auto-generates FAQPage JSON-LD */
+  faqSchema?: FAQSchemaData;
+  /** Additional custom JSON-LD schema objects */
+  customSchemas?: object[];
 }
 
 const {
@@ -21,6 +31,10 @@ const {
   type = 'website',
   publishedTime,
   modifiedTime,
+  articleSchema,
+  reviewSchema,
+  faqSchema,
+  customSchemas,
 } = Astro.props;
 const siteUrl = 'https://learnenglish.life';
 const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
@@ -85,7 +99,17 @@ const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Structured Data -->
+    <!-- Auto-generated Structured Data (Organization + WebSite + BreadcrumbList + content schemas) -->
+    <SchemaInjector
+      pathname={Astro.url.pathname}
+      pageTitle={title}
+      article={articleSchema}
+      review={reviewSchema}
+      faq={faqSchema}
+      customSchemas={customSchemas}
+    />
+
+    <!-- Legacy structured-data slot for backward compatibility -->
     <slot name="structured-data" />
 
     <!-- GDPR Cookie Consent Manager - MUST LOAD FIRST -->
