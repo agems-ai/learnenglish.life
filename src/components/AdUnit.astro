@@ -1,28 +1,45 @@
 ---
-// Google AdSense Ad Unit Component
-// Publisher ID: ca-pub-7792548915836467
+/**
+ * AdUnit — Centralized AdSense component for LearnEnglish.Life
+ * 
+ * Usage: <AdUnit slot="homepage_leaderboard" />
+ * 
+ * When AD_CONFIG.ENABLED is false or the slot has no ID,
+ * renders a subtle placeholder div instead of a live ad.
+ * The AdSense script is loaded once in Base.astro, not here.
+ */
+import { AD_CONFIG, hasSlotId, getSlotId } from "../config/ads";
 
 interface Props {
-  slot?: string;  // e.g. "header", "in-article", "sidebar"
+  slot: string;                                    // Key from AD_CONFIG.SLOTS
   format?: "auto" | "rectangle" | "horizontal" | "vertical" | "fluid";
+  className?: string;
+  style?: string;
 }
 
 const {
-  slot = "placeholder",
-  format = "auto"
+  slot,
+  format = "auto",
+  className = "",
+  style = "",
 } = Astro.props;
+
+const slotId = getSlotId(slot);
+const isLive = hasSlotId(slot);
 ---
 
-<!-- AdSense Ad Unit -->
-<ins class="adsbygoogle"
-     style="display:block; width:100%; min-height:90px;"
-     data-ad-client="ca-pub-7792548915836467"
-     data-ad-slot={slot}
-     data-ad-format="auto"
-     data-full-width-responsive="true">
-</ins>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7792548915836467" crossorigin="anonymous"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+{isLive ? (
+  <div class={`ad-container ${className}`} style={style}>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client={AD_CONFIG.PUBLISHER_ID}
+         data-ad-slot={slotId}
+         data-ad-format={format}
+         data-full-width-responsive="true">
+    </ins>
+  </div>
+) : (
+  <div class={`ad-placeholder ${className}`} style={`display:flex;align-items:center;justify-content:center;min-height:90px;border:1px dashed rgba(255,255,255,0.1);border-radius:8px;margin:1rem 0;${style}`}>
+    <span style="font-size:0.75rem;color:rgba(255,255,255,0.2);">Ad: {slot}</span>
+  </div>
+)}
