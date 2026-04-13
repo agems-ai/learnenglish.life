@@ -41,12 +41,12 @@ const isLive = hasSlotId(slot);
 ) : (
   <div class={`seeguru-ad bg-neutral-800/60 rounded-xl p-4 ${className}`} style={`margin:1rem 0;border:1px solid rgba(255,255,255,0.08);${style}`}>
     <p class="text-center text-xs text-slate-500 mb-2">Advertisement</p>
-    <a href="/go/see-guru/" rel="sponsored nofollow" class="block text-center">
+    <a href="/go/see-guru/" rel="sponsored nofollow" class="block">
       <img
         src={format === "rectangle" ? "/banners/seeguru-300x250.jpg" : "/banners/seeguru-728x90.jpg"}
         alt="See Guru - Learn English 1-on-1 with certified teachers. Try 3 free lessons."
         loading="lazy"
-        class="rounded-lg hover:opacity-90 transition-opacity max-w-full h-auto inline-block"
+        class="rounded-lg hover:opacity-90 transition-opacity w-full h-auto"
       />
     </a>
   </div>
