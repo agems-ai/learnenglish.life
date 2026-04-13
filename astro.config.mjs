@@ -6,6 +6,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   site: 'https://learnenglish.life',
+  trailingSlash: 'always',
   integrations: [
     react(),
     tailwind({

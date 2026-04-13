@@ -37,7 +37,8 @@ const {
   customSchemas,
 } = Astro.props;
 const siteUrl = 'https://learnenglish.life';
-const fullCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+const rawCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+const fullCanonical = rawCanonical.endsWith('/') ? rawCanonical : rawCanonical + '/';
 ---
 
 <!DOCTYPE html>
