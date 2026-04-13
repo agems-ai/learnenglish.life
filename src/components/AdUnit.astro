@@ -39,13 +39,13 @@ const isLive = hasSlotId(slot);
     </ins>
   </div>
 ) : (
-  <div class={`seeguru-banner ${className}`} style={`margin:1rem 0;${style}`}>
-    <a href="/go/see-guru/" rel="sponsored nofollow" class="block">
+  <div class={`seeguru-banner ${className}`} style={`margin:1rem 0;text-align:center;${style}`}>
+    <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-block">
       <img
-        src={["/banners/seeguru-leaderboard.jpg", "/banners/seeguru-inline.jpg", "/banners/seeguru-compare.jpg"][Math.floor(Math.random() * 3)]}
+        src={format === "rectangle" ? "/banners/seeguru-300x250.jpg" : "/banners/seeguru-728x90.jpg"}
         alt="See Guru - Learn English 1-on-1 with certified teachers. Try 3 free lessons."
         loading="lazy"
-        class="w-full rounded-lg hover:opacity-90 transition-opacity"
+        class="rounded-lg hover:opacity-90 transition-opacity max-w-full h-auto"
       />
     </a>
   </div>
