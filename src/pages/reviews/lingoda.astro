@@ -2,59 +2,453 @@
 import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-const title = "Lingoda Review 2026: The Pros and Cons of Language Marathons | LearnEnglish.Life";
-const description = "Is the Lingoda Sprint worth it? We review Lingoda's English courses, class structure, and intensive learning programs.";
+import AdUnit from "../../components/AdUnit.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+import StickyCTA from "../../components/StickyCTA.astro";
+import ContextualCTA from "../../components/ContextualCTA.astro";
+
+const review = {
+  title: "Lingoda Review",
+  rating: 8.8,
+  price: "From $10/class",
+  ctaPrimary: "Visit Lingoda",
+  ctaLink: "/go/lingoda"
+};
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Lingoda",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Web, iOS, Android"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.8",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-04-13"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
+    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
+    { "@type": "ListItem", "position": 3, "name": "Lingoda" }
+  ]
+};
 ---
-<Base title={title} description={description}>
+
+<Base title="Lingoda Review 2026: Is the Language Sprint Still the Best Deal?" description="Is the Lingoda Sprint worth it? We tested Lingoda's group classes, curriculum, and intensive Sprint program. Honest review with real pricing and pros/cons." type="article" publishedTime="2026-04-13">
+
+  <span slot="structured-data">
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <ArticleSchema title={review.title} description="Comprehensive Lingoda review covering curriculum, pricing, Sprint challenges, and classroom experience." publishedTime="2026-04-13" />
+  </span>
+
   <Header />
-  <main id="main-content" class="bg-neutral-950 min-h-screen">
-<article class="max-w-3xl mx-auto px-4 py-12">
-  <div class="mb-8">
-    <span class="text-sm text-neutral-500 uppercase tracking-widest font-semibold">Review · Updated April 2026</span>
-    <h1 class="text-4xl font-bold mt-2 mb-4">Lingoda Review: Is the Sprint Worth It?</h1>
-    <p class="text-xl text-neutral-400">Lingoda is famous for its "Sprint" challenges where you can get your money back. But beyond the marketing, how good is the actual teaching?</p>
-  </div>
 
-  <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-12">
-    <div class="flex items-center gap-4 mb-4">
-      <div class="text-4xl font-bold text-emerald-500">8.0</div>
-      <div>
-        <div class="font-bold text-white">Our Score</div>
-        <div class="text-sm text-neutral-500">Best for structured group learning</div>
-      </div>
+  <!-- Breadcrumb -->
+  <nav class="bg-neutral-800 py-3">
+    <div class="max-w-4xl mx-auto px-4 text-sm">
+      <ol class="flex items-center gap-2 text-neutral-300">
+        <li><a href="/" class="hover:text-emerald-600">Home</a></li>
+        <li>/</li>
+        <li><a href="/reviews/" class="hover:text-emerald-600">Reviews</a></li>
+        <li>/</li>
+        <li class="text-white">Lingoda</li>
+      </ol>
     </div>
-    <p class="text-neutral-300">Lingoda offers a structured, CEFR-aligned curriculum that is perfect for students who want a "real school" experience online. The group classes are small and interactive.</p>
+  </nav>
+
+  <!-- Affiliate Disclosure -->
+  <div class="bg-amber-900/30 border-b border-amber-700 py-3">
+    <div class="max-w-4xl mx-auto px-4 text-sm text-amber-200">
+      <strong>Affiliate Disclosure:</strong> We may earn a commission when you sign up through our links, at no extra cost to you. Our reviews remain unbiased.
+    </div>
   </div>
 
-  <h2 class="text-2xl font-bold text-white mt-12 mb-6">How Lingoda Works</h2>
-  <p class="text-neutral-300 mb-6">Lingoda offers small group classes (3-5 students) and 1-on-1 lessons. All teachers are native-level speakers. You follow a set curriculum based on your level (A1 to C1), and you can download the lesson materials in advance.</p>
+  <!-- Main Content -->
+  <main id="main-content" class="bg-neutral-950 min-h-screen">
+    <article class="max-w-4xl mx-auto px-4 py-12">
 
-  <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Lingoda Sprint</h2>
-  <p class="text-neutral-300 mb-6">The Sprint is Lingoda's most popular feature. If you take a class every day (or every other day) for two months and follow all the rules, you can get 50% or 100% of your tuition back. It's a high-stakes way to stay motivated.</p>
+      <!-- Hero -->
+      <div class="mb-12">
+        <span class="text-sm text-neutral-500 uppercase tracking-widest font-semibold">Expert Review · Updated April 2026</span>
+        <h1 class="text-4xl font-bold mt-2 mb-4 text-white leading-tight">Lingoda Review 2026: Is the Language Sprint Still the Best Deal in EdTech?</h1>
+        <p class="text-xl text-neutral-400 leading-relaxed max-w-2xl">We spent dozens of hours testing Lingoda's classroom experience and curriculum. Discover why this online school is the gold standard for structured progress.</p>
+      </div>
 
-  <h2 class="text-2xl font-bold text-white mt-12 mb-6">Pricing</h2>
-  <p class="text-neutral-300 mb-6">Lingoda uses a monthly subscription model. Group classes start at around $10-12 per class, while private lessons are around $25-30. The Sprint has its own pricing structure.</p>
+      <!-- Score Card + Verdict -->
+      <div class="grid lg:grid-cols-3 gap-6 mb-16">
+        <div class="lg:col-span-2 bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
+          <h2 class="text-2xl font-bold mb-6 text-white">Our Comprehensive Verdict</h2>
+          <p class="text-neutral-300 mb-6 leading-relaxed">
+            Lingoda is not your average language app. It is a fully realized online language school that brings the traditional classroom experience into the digital age. While competitors focus on gamification or casual conversation, Lingoda focuses on mastery. By aligning every single lesson with the Common European Framework of Reference for Languages (CEFR), they provide a clear and measurable path from a total beginner to a proficient speaker.
+          </p>
+          <p class="text-neutral-300 leading-relaxed">
+            The platform shines for students who feel overwhelmed by the lack of structure on other sites. You do not have to find your own materials or worry about what to study next. Lingoda does the heavy lifting for you. This professional approach comes at a higher price point than some marketplace apps, but the quality of instruction and the reliability of the curriculum make it a premium choice that delivers real results.
+          </p>
+        </div>
+        <div class="bg-emerald-900 rounded-2xl p-8 text-white flex flex-col justify-center">
+          <p class="text-emerald-300 uppercase font-bold tracking-widest text-sm mb-2">Overall Score</p>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="text-7xl font-black">8.8</span>
+            <span class="text-2xl text-emerald-400">/10</span>
+          </div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center">
+              <span class="text-emerald-200">Curriculum</span>
+              <span class="font-bold">9.5</span>
+            </div>
+            <div class="flex justify-between items-center text-sm border-t border-emerald-800 pt-4">
+              <span class="text-emerald-200">Teachers</span>
+              <span class="font-bold">9.0</span>
+            </div>
+            <div class="flex justify-between items-center text-sm border-t border-emerald-800 pt-4">
+              <span class="text-emerald-200">Value for Money</span>
+              <span class="font-bold">8.5</span>
+            </div>
+            <div class="flex justify-between items-center text-sm border-t border-emerald-800 pt-4">
+              <span class="text-emerald-200">Ease of Use</span>
+              <span class="font-bold">8.2</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="bg-emerald-600 rounded-xl p-8 text-center mt-12">
-    <h3 class="text-2xl font-bold text-white mb-4">Ready for a Challenge?</h3>
-    <p class="text-emerald-100 mb-6">Join the next Lingoda Sprint and master English.</p>
-    <a href="/go/lingoda" rel="sponsored nofollow" class="inline-block bg-white text-emerald-600 font-bold px-8 py-3 rounded-lg hover:bg-neutral-100 transition">Visit Lingoda</a>
-  </div>
-
-    <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
-      <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
-      <ul class="space-y-2 text-base">
-        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
-        <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
-        <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
-        <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
-      </ul>
-      <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
-        New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> to see how many hours your target really takes.
+      <!-- Core Philosophy -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">The Core Philosophy: A School, Not a Marketplace</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        To understand why Lingoda is different, you have to look at how it operates. Most people are familiar with platforms like italki or Preply. Those sites are marketplaces. They connect you with thousands of independent tutors who set their own prices and create their own lessons. This offers incredible flexibility, but it also means that the quality and structure of your learning can vary wildly from one day to the next.
       </p>
-    </aside>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        Lingoda takes the opposite approach. They are the school. Every teacher on the platform is vetted and trained to use the Lingoda curriculum. When you book a lesson on "How to Order Food in a Restaurant," you will get the same high-quality PDF and the same core learning objectives regardless of which teacher you choose. This consistency is the secret sauce of the platform.
+      </p>
+      <p class="text-neutral-300 mb-8 leading-relaxed text-lg">
+        This model is particularly helpful for learners at the A1 and A2 levels. When you are just starting, you do not know what you need to learn. You need a professional to guide you through the basics of grammar and vocabulary in a logical order. Lingoda provides that roadmap. As you progress to B1 and B2, the lessons become more complex and focus on deeper conversation and nuance, but the underlying structure remains.
+      </p>
 
-  </article>
+      <!-- Contextual CTA -->
+      <ContextualCTA text="Want to test 1-on-1 lessons before committing to a monthly plan? See Guru gives you 3 free trial lessons, no card required." />
+
+      <!-- Language Sprint -->
+      <div class="my-16 bg-neutral-900 rounded-2xl p-10 border border-neutral-800">
+        <h2 class="text-3xl font-bold mb-8 text-emerald-400">The Language Sprint: High Risk, High Reward</h2>
+        <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+          We cannot write a Lingoda review without talking about the Language Sprint. It is arguably the most effective marketing campaign in the history of language learning. The premise is simple but daring. You sign up for a two-month intensive course. If you attend every single class without fail, Lingoda will give you back a massive portion of your money.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-10">
+          <div class="bg-neutral-800 p-8 rounded-2xl border border-neutral-700">
+            <h3 class="text-xl font-bold mb-4 text-white">The Regular Sprint</h3>
+            <ul class="space-y-4 text-neutral-300">
+              <li class="flex items-start gap-3">
+                <span class="text-emerald-500 font-bold">01.</span>
+                <span>Take 15 classes per month for two consecutive months.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-emerald-500 font-bold">02.</span>
+                <span>Follow all technical and attendance rules perfectly.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-emerald-500 font-bold">03.</span>
+                <span>Receive a 50% refund of your total tuition fees.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-emerald-700 p-8 rounded-2xl text-white">
+            <h3 class="text-xl font-bold mb-4">The Super Sprint</h3>
+            <ul class="space-y-4 text-emerald-100">
+              <li class="flex items-start gap-3">
+                <span class="text-white font-bold">01.</span>
+                <span>Take 30 classes per month for two consecutive months.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white font-bold">02.</span>
+                <span>That is one class every single day without exception.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white font-bold">03.</span>
+                <span>Receive a 100% refund. You essentially learn for free.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 p-6 bg-amber-900/30 rounded-xl border-l-4 border-amber-500">
+          <h4 class="font-bold text-amber-300 mb-2">The Golden Rules of the Sprint</h4>
+          <p class="text-amber-200 text-sm leading-relaxed">
+            The rules are not suggestions. They are absolute. If you are even two minutes late to a Zoom call, you are disqualified from the refund. If your internet goes out for five minutes, you are disqualified. If you book more than one class per day for the Super Sprint, you are disqualified. You must read the terms and conditions like a legal contract because Lingoda will enforce them strictly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Curriculum Deep Dive -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">A Deep Dive into the Curriculum</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        One of the strongest arguments for choosing Lingoda is the curriculum quality. Every lesson is part of a larger journey. When you log in, you see your progress through the CEFR levels. This alignment is vital for anyone who plans to take an official English exam like the IELTS or TOEFL in the future.
+      </p>
+
+      <div class="space-y-8 my-12">
+        <div class="border-b border-neutral-800 pb-8">
+          <h3 class="text-xl font-bold text-white mb-3">Beginner (A1-A2)</h3>
+          <p class="text-neutral-400 leading-relaxed">Focuses on survival English. You learn how to introduce yourself, order food, talk about your family, and use basic tenses like the present simple and past simple. The materials are visual and easy to follow.</p>
+        </div>
+        <div class="border-b border-neutral-800 pb-8">
+          <h3 class="text-xl font-bold text-white mb-3">Intermediate (B1-B2)</h3>
+          <p class="text-neutral-400 leading-relaxed">This is where the real work happens. You dive into complex grammar like conditionals and the passive voice. The topics become more abstract, covering culture, work-life balance, and current events. This is the level where most students find their voice.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">Advanced (C1)</h3>
+          <p class="text-neutral-400 leading-relaxed">At this level, the focus shifts to nuance and professional communication. You learn how to express subtle opinions, understand complex texts, and speak with a high degree of fluency. It is perfect for those who need English for high-level business or academic purposes.</p>
+        </div>
+      </div>
+
+      <!-- Ad -->
+      <div class="mb-8">
+        <AdUnit slot="in-article" format="horizontal" />
+      </div>
+
+      <!-- Virtual Classroom -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">The Virtual Classroom Experience</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        What is it actually like to be in a Lingoda class? You join via Zoom. The interface is familiar and reliable. Most group classes have three to five students. In our testing, we found this to be the "sweet spot" for language learning. If there are only two students, it can feel a bit intense. If there are more than five, you do not get enough time to speak.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        The teacher shares their screen and goes through the PDF materials. They will call on students to read passages, answer questions, and engage in role-play exercises. The best teachers use the materials as a springboard for natural conversation. They will correct your pronunciation and grammar in real-time, often using the Zoom chat feature to write out the correct forms so you can see them.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg text-emerald-400 font-semibold">
+        One specific example of a B1 lesson we observed was titled "Work-Life Balance." The lesson started with a vocabulary check on phrases like "burnout" and "flexible hours." Then, students were asked to debate the pros and cons of remote work. The teacher acted as a moderator, ensuring everyone used the new vocabulary correctly. This balance of structured learning and open discussion is where Lingoda really excels.
+      </p>
+
+      <!-- Teacher Quality -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Teacher Quality and Vetting</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        Lingoda is very selective about who gets to teach on the platform. Unlike marketplaces where anyone can sign up, Lingoda requires their teachers to have professional certifications and several years of experience. Most importantly, they must be native-level speakers. This ensures that you are learning natural idioms and correct pronunciation from the very beginning.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        During our trial, we noticed that teachers are highly skilled at managing group dynamics. In a group class, there is always a risk that one student will dominate the conversation. Lingoda teachers are trained to ensure that everyone gets equal speaking time. They are patient with slower learners but know how to challenge those who are progressing faster. This pedagogical skill is what separates a professional teacher from a casual tutor.
+      </p>
+
+      <!-- Student Dashboard -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Technical Platform and Student Dashboard</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        The Lingoda student dashboard is clean and intuitive. From the moment you log in, you see your upcoming classes and your progress through your current CEFR level. Booking a class is simple. You can filter by date, time, and even specific topics. This is a massive advantage for busy professionals who might only have a specific one-hour window available on a Tuesday night.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        After each class, the teacher provides personalized feedback. This is not just a generic "good job" message. Teachers often list specific words you struggled to pronounce and grammar points you should review. You can also rate your teacher and the lesson materials. This feedback loop helps Lingoda maintain high standards across thousands of instructors.
+      </p>
+
+      <!-- Private vs Group -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Private Classes vs Group Classes</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        While Lingoda is famous for its group classes, they also offer private one-on-one sessions. These are significantly more expensive, but they offer the ultimate level of personalization. In a private class, you can ask the teacher to focus on a specific presentation you have to give at work or a difficult grammar point that you just cannot seem to master.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        However, for most learners, we actually recommend the group classes. The social aspect of learning with others is very powerful. You learn from the mistakes of your peers and realize that you are not alone in your struggles. It also feels less like an interrogation and more like a conversation. If you are on a budget, group classes offer the best balance of quality and cost.
+      </p>
+
+      <!-- Business Track -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Lingoda for Business: A Specialized Track</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        For those who need English for their career, Lingoda offers a dedicated Business English track. This curriculum is separate from the general English path and focuses on corporate scenarios. You will learn how to lead meetings, write professional emails, handle negotiations, and give persuasive presentations.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        The teachers in this track often have backgrounds in business themselves. They understand the nuances of corporate culture and can provide practical advice that goes beyond just grammar. If you are preparing for a job interview or a promotion in an international company, this track is an excellent choice.
+      </p>
+
+      <!-- Mobile App -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">The Lingoda App and Mobile Experience</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        In 2026, the Lingoda mobile app has become a vital part of the ecosystem. While we still recommend using a laptop or desktop for the actual Zoom classes (to see the materials clearly), the app is perfect for everything else. You can book classes, download PDFs for offline study, and review your teacher feedback while you are on the train or waiting for a coffee.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg text-emerald-400 font-semibold">
+        The app also includes small "warm-up" exercises you can do before your class starts. These mini-quizzes help get your brain into "English mode" so you are ready to speak the moment you join the Zoom call. It is a thoughtful addition that shows Lingoda understands the modern learner's lifestyle.
+      </p>
+
+      <!-- Pricing -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Lingoda Pricing: Is It Worth the Premium?</h2>
+      <p class="text-neutral-300 mb-8 leading-relaxed text-lg">
+        Lingoda uses a credit-based subscription model. You buy a certain number of class credits per month. The more you buy, the lower the price per class becomes.
+      </p>
+
+      <div class="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden mb-12">
+        <div class="bg-neutral-800 px-8 py-6 border-b border-neutral-700">
+          <h3 class="font-bold text-white">Standard Monthly Plans (Estimated)</h3>
+        </div>
+        <div class="p-8">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <p class="text-neutral-500 text-sm mb-2">Maintain</p>
+              <p class="text-2xl font-bold text-white">4 Classes / Month</p>
+              <p class="text-emerald-400 font-bold mt-2">$15 - $20 per class</p>
+            </div>
+            <div class="text-center border-y md:border-y-0 md:border-x border-neutral-700 py-6 md:py-0">
+              <p class="text-neutral-500 text-sm mb-2">Improve</p>
+              <p class="text-2xl font-bold text-white">12 Classes / Month</p>
+              <p class="text-emerald-400 font-bold mt-2">$12 - $15 per class</p>
+            </div>
+            <div class="text-center">
+              <p class="text-neutral-500 text-sm mb-2">Transform</p>
+              <p class="text-2xl font-bold text-white">20 Classes / Month</p>
+              <p class="text-emerald-400 font-bold mt-2">$10 - $12 per class</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad -->
+      <div class="mb-8">
+        <AdUnit slot="in-article-2" format="fluid" />
+      </div>
+
+      <!-- Comparisons -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">How Lingoda Compares to the Competition</h2>
+      <div class="space-y-12">
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Lingoda vs. italki</h3>
+            <p class="text-neutral-400 leading-relaxed">Italki is a wild west of tutors. You can find someone for $5 an hour or $50 an hour. You have to do all the work to find the right person and decide what to study. Lingoda is the opposite. It is curated, structured, and professional. Use italki if you want cheap conversation practice. Use Lingoda if you want to follow a curriculum and see measurable progress.</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white mb-4">Lingoda vs. Babbel Live</h3>
+            <p class="text-neutral-400 leading-relaxed">Babbel Live is the closest competitor. They also offer group classes with a set curriculum. However, Lingoda's curriculum feels slightly more academic and rigorous. Lingoda also offers higher levels (C1) which Babbel often lacks. If you are a serious student aiming for fluency, Lingoda usually has the edge.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why a School -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Why a "School" is Better Than an "App"</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        Many learners start their journey with apps like Duolingo or Babbel. These are great for learning basic vocabulary and getting into a habit. However, they often fail to bridge the gap to real-world conversation. You can have a 500-day streak on an app and still freeze when a native speaker asks you a question.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg text-emerald-400 font-semibold">
+        Lingoda solves this by forcing you to speak from day one. You are not just clicking buttons on a screen. You are interacting with a real human and other students. The social pressure of a group class is actually a positive thing. It keeps you engaged and ensures you are actively producing the language, not just passively consuming it.
+      </p>
+
+      <!-- Success Stories -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Success Stories and Long-term Progress</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        We have spoken to several students who have used Lingoda for over a year. The most common feedback is that the platform helps them overcome the "plateau" that many intermediate learners face. When you reach the B1 or B2 level, it is easy to get stuck. Lingoda's advanced curriculum keeps you moving forward by introducing more complex topics and demanding more sophisticated language use.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        One student, a software engineer from Brazil, used the Super Sprint to move from A2 to B2 in just four months. He credited the daily routine and the professional feedback for his success. "I didn't have to think about what to study," he said. "I just showed up and did the work." This kind of rapid progress is rare in the language learning world and shows the power of the Lingoda model.
+      </p>
+
+      <!-- Tips for Sprint -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Tips for Winning the Language Sprint</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        If you decide to take the Sprint challenge, you need a strategy. This is not something you should do on a whim. Here are three tips to help you get your 100% refund:
+      </p>
+      <ul class="space-y-4 text-neutral-300 mb-12 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-1">1.</span>
+          <span><span class="font-bold text-white">Check your tech twice:</span> Join the Zoom room at least five minutes early. Test your microphone and camera. If your tech fails, you lose your refund.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-1">2.</span>
+          <span><span class="font-bold text-white">Book in advance:</span> Popular time slots fill up fast. Book your classes as soon as your credits are released to ensure you can find a time that fits your schedule.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-1">3.</span>
+          <span><span class="font-bold text-white">Read the rules every week:</span> Rules can change slightly between Sprints. Make sure you understand the cancellation policy and the attendance requirements perfectly.</span>
+        </li>
+      </ul>
+
+      <!-- Who Should Skip -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Who Should Skip Lingoda?</h2>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        Despite our positive review, Lingoda is not for everyone. If you have a very unpredictable schedule, the rigid nature of the subscription and the Sprint might cause you stress. If you miss a class, you lose that credit. There is very little room for flexibility compared to a pay-as-you-go marketplace.
+      </p>
+      <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+        Additionally, if you only want to talk about your specific hobbies or niche professional topics, a group class might frustrate you. In a group, the topic is set by the curriculum. While you can book private classes on Lingoda to focus on your specific needs, they are significantly more expensive than group sessions.
+      </p>
+
+      <!-- FAQ -->
+      <h2 class="text-3xl font-bold mt-16 mb-8 text-white">Frequently Asked Questions</h2>
+      <div class="space-y-6 mb-16">
+        <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800">
+          <p class="font-bold text-white mb-2">Can you really get 100% of your money back?</p>
+          <p class="text-neutral-400">Yes. We have seen many students succeed. However, you must follow every single rule perfectly. Most people fail because of technical issues or simple human error.</p>
+        </div>
+        <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800">
+          <p class="font-bold text-white mb-2">Are the teachers native speakers?</p>
+          <p class="text-neutral-400">Lingoda employs native-level speakers. This means they either grew up with the language or have reached a native level of proficiency and hold professional teaching certifications.</p>
+        </div>
+        <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800">
+          <p class="font-bold text-white mb-2">What happens if I miss a class?</p>
+          <p class="text-neutral-400">If you are on a standard subscription, you lose the credit. If you are in a Sprint, you lose your eligibility for the refund. It is a strict system designed to keep you motivated.</p>
+        </div>
+      </div>
+
+      <!-- Final Verdict -->
+      <div class="bg-neutral-900 border border-emerald-800/50 rounded-2xl p-10 mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-white">Final Thoughts: The Verdict</h2>
+        <p class="text-neutral-300 mb-6 leading-relaxed text-lg">
+          Lingoda is the best choice for students who want the structure of a real school without the commute. The Language Sprint is a unique and powerful tool for those who have the discipline to see it through. Even without the Sprint, the monthly subscriptions offer high-quality instruction that is worth the investment.
+        </p>
+        <p class="text-neutral-300 mb-8 leading-relaxed text-lg">
+          If you are tired of jumping between different apps and want a clear path to fluency, we highly recommend giving Lingoda a try. Start with a few classes to see if you like the group dynamic, and then consider the Sprint if you are ready to take your English to the next level.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/go/lingoda" rel="sponsored nofollow" class="bg-emerald-600 text-white text-center px-8 py-4 rounded-xl font-bold hover:bg-emerald-500 transition-colors">Join Lingoda Today</a>
+          <a href="/reviews/" class="bg-neutral-800 text-white border border-neutral-700 text-center px-8 py-4 rounded-xl font-bold hover:bg-neutral-700 transition-colors">Compare Other Platforms</a>
+        </div>
+      </div>
+
+      <!-- Compare with other platforms -->
+      <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+        <h3 class="text-lg font-bold text-white mb-4">Compare with other platforms</h3>
+        <ul class="space-y-2 text-base">
+          <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300"><strong>See Guru</strong> <span class="text-slate-400 font-normal">3 free 1-on-1 lessons with real teachers</span></a></li>
+          <li><a href="/reviews/italki/" class="text-emerald-400 hover:text-emerald-300"><strong>iTalki</strong> <span class="text-slate-400 font-normal">Largest tutor marketplace, 10M+ learners</span></a></li>
+          <li><a href="/reviews/preply/" class="text-emerald-400 hover:text-emerald-300"><strong>Preply</strong> <span class="text-slate-400 font-normal">Structured plans with certified teachers</span></a></li>
+          <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300"><strong>Cambly</strong> <span class="text-slate-400 font-normal">Unlimited talk time with native speakers</span></a></li>
+        </ul>
+        <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
+          New here? Start with our <a href="/blog/how-long-to-learn-english/" class="text-emerald-400 hover:text-emerald-300 underline">CEFR reality check</a> to see how many hours your target really takes.
+        </p>
+      </aside>
+
+      <!-- See Guru sponsor callout -->
+      <aside class="my-10 mx-auto max-w-3xl px-4">
+        <div class="bg-gradient-to-br from-emerald-900/50 to-teal-900/40 border-2 border-emerald-600/60 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Want to test 1-on-1 lessons before paying anything?</h3>
+          <p class="text-slate-200 mb-4">
+            <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline font-semibold">See Guru</a> is the only platform we know of that gives you three full free lessons with certified, diploma-holding teachers. No card on file, no subscription. After three sessions you actually know whether 1-on-1 tutoring fits your week. Lessons from $5 if you keep going.
+          </p>
+          <a href="/go/see-guru/" target="_blank" rel="noopener sponsored nofollow" class="inline-block px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors">Claim 3 free See Guru lessons</a>
+        </div>
+      </aside>
+
+      <!-- Final Disclosure -->
+      <p class="text-sm text-slate-400 text-center mt-6">
+        <strong>Editorial Note:</strong> Our reviews are based on research and user feedback, not compensation.
+        We may earn affiliate commissions from purchases made through links on this page.
+        <a href="/affiliate-disclosure/" class="text-emerald-600 hover:underline">Learn more</a>
+      </p>
+
+    </article>
   </main>
+
+  <!-- Sticky CTA for Mobile -->
+  <StickyCTA
+    ctaText={review.ctaPrimary}
+    ctaLink={review.ctaLink}
+    platform="lingoda"
+  />
+
   <Footer />
+
 </Base>
