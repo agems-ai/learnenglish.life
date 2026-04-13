@@ -26,6 +26,12 @@ const {
 
 const slotId = getSlotId(slot);
 const isLive = hasSlotId(slot);
+
+// Pick a random See Guru banner variant (1-5) at build time per page
+const bannerVariant = Math.floor(Math.random() * 5) + 1;
+const bannerSrc = format === "rectangle"
+  ? "/banners/seeguru-300x250.jpg"
+  : `/banners/seeguru-728x90-v${bannerVariant}.jpg`;
 ---
 
 {isLive ? (
@@ -43,7 +49,7 @@ const isLive = hasSlotId(slot);
     <p class="text-center text-xs text-slate-500 mb-2">Advertisement</p>
     <a href="/go/see-guru/" rel="sponsored nofollow" class="block">
       <img
-        src={format === "rectangle" ? "/banners/seeguru-300x250.jpg" : "/banners/seeguru-728x90.jpg"}
+        src={bannerSrc}
         alt="See Guru - Learn English 1-on-1 with certified teachers. Try 3 free lessons."
         loading="lazy"
         class="rounded-lg hover:opacity-90 transition-opacity w-full h-auto"
