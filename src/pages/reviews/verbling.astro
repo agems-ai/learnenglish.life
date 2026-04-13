@@ -4,8 +4,32 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 const title = "Verbling Review 2026: Premium English Tutors for Serious Learners | LearnEnglish.Life";
 const description = "Verbling focuses on professional, certified teachers. Is the higher price point justified? We review the platform's features and quality.";
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Verbling",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Web, iOS, Android"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.5",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-01-20",
+  "reviewBody": "Verbling positions itself as the premium choice for language tutoring with certified, professional teachers. Best for serious learners wanting structured, high-quality lessons."
+};
 ---
 <Base title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
   <Header />
   <main id="main-content" class="bg-neutral-950 min-h-screen">
     <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">

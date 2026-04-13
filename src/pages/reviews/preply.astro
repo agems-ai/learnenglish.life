@@ -3,8 +3,32 @@ import Base from "../../layouts/Base.astro";
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import AdUnit from "../../components/AdUnit.astro";
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Preply",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Web, iOS, Android"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.5",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-01-15",
+  "reviewBody": "Preply is an excellent choice if you want full control over your learning schedule and the ability to choose from thousands of tutors across every time zone. The platform is easy to use, prices are transparent, and tutors are generally well-vetted."
+};
 ---
 <Base title="Preply Review 2026: Is It Worth Your Money?" description="Our in-depth Preply review covers pricing, tutor quality, and key features. Find out if Preply is right for you.">
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
   <Header />
   <div class="max-w-3xl mx-auto px-4 pt-6">
     <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">

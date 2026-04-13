@@ -8,9 +8,33 @@ const meta = {
   title: "Cambly Review 2026: Is the Subscription Worth the Price?",
   description: "Honest Cambly review covering pricing, tutor quality, features, and whether the subscription is worth it for English learners in 2026.",
 };
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Cambly",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Web, iOS, Android"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.2",
+    "bestRating": "10",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "LearnEnglish.Life"
+  },
+  "datePublished": "2026-01-15",
+  "reviewBody": "Cambly gives on-demand access to native English speakers for unlimited conversation practice. Best for casual learners wanting flexible, on-demand speaking practice with no commitment."
+};
 ---
 
 <Base {...meta}>
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
   <Header />
   <div class="max-w-3xl mx-auto px-4 pt-6">
     <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">

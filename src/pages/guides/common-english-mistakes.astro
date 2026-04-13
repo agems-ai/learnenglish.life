@@ -54,13 +54,61 @@ const articleSchema = {
     "name": "LearnEnglish.Life"
   },
   "datePublished": "2025-06-01",
-  "dateModified": "2025-06-01"
+  "dateModified": "2026-04-13"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the most common English mistakes for non-native speakers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common mistakes are: misusing articles (a/an/the), confusing 'make' vs 'do', incorrect preposition use (in/on/at), wrong verb tense (especially present perfect vs past simple), and direct translation from native language. These account for more than half of typical errors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I stop making the same English mistakes repeatedly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep a personal error log. Each time a tutor or AI checker corrects you, write the mistake, the correct version, and one extra example sentence. Review the log weekly. Most learners fix a recurring mistake within 2-3 weeks once they consciously track it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it okay to make grammar mistakes when speaking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, especially at the beginner and intermediate level. Fluency comes from speaking despite errors, not from speaking only when perfect. Native listeners understand imperfect grammar. Focus on communicating clearly first, accuracy second. Accuracy improves naturally with practice and feedback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Grammarly fix all common English mistakes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grammarly catches about 70-80% of typical errors in writing, especially punctuation, spelling, and obvious grammar issues. It struggles with nuance (word choice, register, idiom use) and with spoken English. For real-time speech correction, a human tutor or AI speaking coach works better."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between 'much' and 'many'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 'many' with countable nouns: many books, many friends, many options. Use 'much' with uncountable nouns: much water, much time, much advice. In positive sentences, 'a lot of' works for both and is more natural in casual speech."
+      }
+    }
+  ]
 };
 ---
 
-<Base title="25+ Common English Mistakes and How to Fix Them (2025)" description="Learn the most common English mistakes learners make. Grammar, pronunciation, word usage with correct examples and explanations.">
+<Base title="25+ Common English Mistakes and How to Fix Them (2026)" description="Learn the most common English mistakes learners make. Grammar, pronunciation, word usage with correct examples and explanations.">
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <Header />
   
   <main class="max-w-4xl mx-auto px-4 py-8">
@@ -166,6 +214,33 @@ const articleSchema = {
           <h3 class="font-semibold text-emerald-400">Best English Apps</h3>
           <p class="text-slate-400 text-sm mt-1">Top apps for daily practice</p>
         </a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mt-12 mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 group" open>
+          <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between">What are the most common English mistakes for non-native speakers?<span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span></summary>
+          <p class="text-neutral-300 mt-3 leading-relaxed">The most common mistakes are: misusing articles (a/an/the), confusing "make" vs "do", incorrect preposition use (in/on/at), wrong verb tense (especially present perfect vs past simple), and direct translation from native language. These account for more than half of typical errors.</p>
+        </details>
+        <details class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 group">
+          <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between">How do I stop making the same English mistakes repeatedly?<span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span></summary>
+          <p class="text-neutral-300 mt-3 leading-relaxed">Keep a personal error log. Each time a tutor or AI checker corrects you, write the mistake, the correct version, and one extra example sentence. Review the log weekly. Most learners fix a recurring mistake within 2-3 weeks once they consciously track it.</p>
+        </details>
+        <details class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 group">
+          <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between">Is it okay to make grammar mistakes when speaking?<span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span></summary>
+          <p class="text-neutral-300 mt-3 leading-relaxed">Yes, especially at the beginner and intermediate level. Fluency comes from speaking despite errors, not from speaking only when perfect. Native listeners understand imperfect grammar. Focus on communicating clearly first, accuracy second. Accuracy improves naturally with practice and feedback.</p>
+        </details>
+        <details class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 group">
+          <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between">Does Grammarly fix all common English mistakes?<span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span></summary>
+          <p class="text-neutral-300 mt-3 leading-relaxed">Grammarly catches about 70-80% of typical errors in writing, especially punctuation, spelling, and obvious grammar issues. It struggles with nuance (word choice, register, idiom use) and with spoken English. For real-time speech correction, a human tutor or AI speaking coach works better.</p>
+        </details>
+        <details class="bg-neutral-800 rounded-xl p-5 border border-neutral-700 group">
+          <summary class="text-lg font-semibold text-white cursor-pointer flex items-center justify-between">What is the difference between "much" and "many"?<span class="text-emerald-400 group-open:rotate-180 transition-transform">▼</span></summary>
+          <p class="text-neutral-300 mt-3 leading-relaxed">Use "many" with countable nouns: many books, many friends, many options. Use "much" with uncountable nouns: much water, much time, much advice. In positive sentences, "a lot of" works for both and is more natural in casual speech.</p>
+        </details>
       </div>
     </section>
 
