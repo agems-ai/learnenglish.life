@@ -15,16 +15,6 @@ const games = [
  features: ['Fill-in-the-blank', 'Instant feedback', 'Explanations'],
  },
  {
- id: 'vocabulary',
- title: 'Vocabulary Quiz',
- description: 'Multiple choice questions to test and expand your vocabulary across various topics.',
- icon: '',
- href: '/games/vocabulary/',
- difficulty: 'A1 - C2',
- questions: '50+ questions',
- features: ['Multiple choice', 'Level progression', 'Topics'],
- },
- {
  id: 'wordsearch',
  title: 'Word Search',
  description: 'Find hidden words in the grid. Great for expanding vocabulary and spelling skills.',
@@ -40,7 +30,7 @@ const structuredData = {
  "@context": "https://schema.org",
  "@type": "CollectionPage",
  "name": "English Learning Games | LearnEnglish.Life",
- "description": "Practice English with fun interactive games: Grammar Challenge, Vocabulary Quiz, and Word Search. Free to play!",
+ "description": "Practice English with fun interactive games: Grammar Challenge and Word Search. Free to play!",
  "url": "https://learnenglish.life/games/",
  "mainEntity": {
  "@type": "ItemList",
@@ -56,7 +46,7 @@ const structuredData = {
 
 <Base
  title="English Learning Games | LearnEnglish.Life"
- description="Practice English with fun interactive games: Grammar Challenge, Vocabulary Quiz, and Word Search. Free to play!"
+ description="Practice English with fun interactive games: Grammar Challenge and Word Search. Free to play!"
  canonicalUrl="https://learnenglish.life/games/"
  type="website"
 >
@@ -70,7 +60,7 @@ const structuredData = {
 
  <!-- Hero Section -->
  <section class="bg-gradient-to-b from-green-900/20 to-neutral-950 py-16 px-4">
- <div class="max-w-content mx-auto text-center">
+ <div class="max-w-6xl mx-auto text-center">
  <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">English Learning Games
  </h1>
  <p class="text-xl text-neutral-400 max-w-2xl mx-auto mb-8">Practice your English with fun, interactive games. 
@@ -89,7 +79,7 @@ const structuredData = {
 
  <!-- Games Grid -->
  <section class="py-12 px-4 bg-neutral-950">
- <div class="max-w-content mx-auto">
+ <div class="max-w-6xl mx-auto">
  <div class="grid md:grid-cols-3 gap-6">
  {games.map((game) => (
  <a 
@@ -140,7 +130,7 @@ const structuredData = {
 
  <!-- Why Play Games Section -->
  <section class="py-12 px-4 bg-neutral-900 border-t border-neutral-800">
- <div class="max-w-content mx-auto">
+ <div class="max-w-6xl mx-auto">
  <h2 class="text-2xl font-bold text-white mb-6 text-center">Why Learn English with Games?
  </h2>
  
@@ -178,7 +168,7 @@ const structuredData = {
 
  <!-- Related Resources -->
  <section class="py-12 px-4 bg-neutral-950 border-t border-neutral-800">
- <div class="max-w-content mx-auto">
+ <div class="max-w-6xl mx-auto">
  <h2 class="text-2xl font-bold text-white mb-6">Continue Learning</h2>
  
  <div class="grid md:grid-cols-4 gap-6">
@@ -211,10 +201,10 @@ const structuredData = {
 
  <!-- Ad Zone - Bottom -->
  <section class="py-6 px-4 bg-neutral-900 border-t border-neutral-800">
- <div class="max-w-content mx-auto">
+ <div class="max-w-6xl mx-auto">
  <div class="text-center">
  <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-block">
- <img src="/banners/seeguru-728x90.jpg" alt="See Guru - 3 free English lessons with certified teachers" loading="lazy" class="rounded-lg hover:opacity-90 transition-opacity max-w-full h-auto" />
+ <img src="/banners/seeguru-banner.jpg" alt="See Guru - 3 free English lessons with certified teachers" loading="lazy" class="rounded-lg hover:opacity-90 transition-opacity max-w-full h-auto" />
  </a>
  </div>
  </div>
