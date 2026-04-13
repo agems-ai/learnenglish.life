@@ -27,11 +27,7 @@ const {
 const slotId = getSlotId(slot);
 const isLive = hasSlotId(slot);
 
-// Pick a random See Guru banner variant (1-5) at build time per page
-const bannerVariant = Math.floor(Math.random() * 5) + 1;
-const bannerSrc = format === "rectangle"
-  ? "/banners/seeguru-300x250.jpg"
-  : `/banners/seeguru-banner.jpg`;
+const bannerSrc = "/banners/seeguru-banner.jpg";
 ---
 
 {isLive ? (
