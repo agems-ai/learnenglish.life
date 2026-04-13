@@ -18,11 +18,11 @@ const seeGuru = {
  link: "/go/see-guru",
  bestFor: "Affordable tutors with flexible scheduling",
  pros: [
- "Affordable lessons starting at $5/hour",
- "Strong Asian tutor selection (Chinese, Japanese, Korean)",
+ "Certified human tutors starting at $5/hour",
+ "1-on-1 video lessons via Zoom",
  "Pay-per-lesson model with no subscription required",
- "Trial lessons available for $1-5",
- "Good availability across time zones"
+ "3 free trial lessons, no credit card needed",
+ "Flexible scheduling across time zones"
  ],
  cons: []
 };
@@ -52,14 +52,14 @@ const lingoda = {
 const comparison = [
  { feature: "Starting Price", winner: "a", a: "$5/hr", b: "€12/session" },
  { feature: "Pricing Model", winner: null, a: "Pay per lesson", b: "Subscription" },
- { feature: "Teacher Certification", winner: "b", a: "Basic vetting", b: "Certified teachers" },
- { feature: "Curriculum", winner: "b", a: "Minimal", b: "CEFR-aligned (A1-C2)" },
+ { feature: "Teacher Certification", winner: null, a: "Certified diploma-holding", b: "Certified teachers" },
+ { feature: "Curriculum", winner: "b", a: "Tutor-guided", b: "CEFR-aligned (A1-C2)" },
  { feature: "Class Format", winner: null, a: "One-on-one only", b: "Group + Private" },
- { feature: "Trial Available", winner: "a", a: "Yes ($1-5)", b: "Limited" },
+ { feature: "Trial Available", winner: "a", a: "3 free lessons", b: "Limited" },
  { feature: "Scheduling", winner: null, a: "Book specific tutors", b: "24/7 classes" },
  { feature: "Certificate", winner: "b", a: "No", b: "Yes (course credits)" },
  { feature: "Pay-per-Lesson", winner: "a", a: "Yes", b: "No" },
- { feature: "Asian Tutor Focus", winner: "a", a: "Excellent", b: "Good" }
+ { feature: "Kids Section", winner: "a", a: "Yes", b: "Limited" }
 ];
 
 // Benefits section
@@ -143,10 +143,10 @@ const faqSchema = {
  },
  {
  "@type": "Question",
- "name": "Which platform has better Asian tutor selection?",
+ "name": "Which platform offers more flexible scheduling?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "See Guru has a significantly stronger focus on Asian tutors from China, Japan, and Korea, making it the better choice if you specifically want tutors from these regions. Lingoda has good teacher availability but doesn't specialize in Asian tutors."
+ "text": "See Guru offers more flexibility with pay-per-lesson booking and tutors available across multiple time zones. You can book individual 1-on-1 Zoom lessons without a subscription. Lingoda has 24/7 group classes available but requires a subscription commitment."
  }
  }
  ]
@@ -210,7 +210,7 @@ const breadcrumbSchema = {
  <div class="grid md:grid-cols-2 gap-4">
  <div class="bg-slate-900/60 rounded-lg p-4">
  <h3 class="font-bold text-emerald-400 mb-1">Choose See Guru if:</h3>
- <p class="text-neutral-300 text-sm">You want <strong>flexible, affordable</strong>tutoring with <strong>pay-per-lesson</strong>pricing and prefer tutors from <strong>Asian markets</strong>.</p>
+ <p class="text-neutral-300 text-sm">You want <strong>flexible, affordable</strong> 1-on-1 Zoom tutoring with <strong>pay-per-lesson</strong> pricing and <strong>3 free trial lessons</strong>.</p>
  </div>
  <div class="bg-slate-900/60 rounded-lg p-4">
  <h3 class="font-bold text-blue-400 mb-1">Choose Lingoda if:</h3>
@@ -351,7 +351,7 @@ const breadcrumbSchema = {
  <strong>Lingoda</strong>employs certified, professional language teachers who are trained and vetted. All teachers meet specific qualification requirements, ensuring consistent quality across the platform. The Berlin-based company maintains high standards for instructor selection.
  </p>
  <p class="text-neutral-300 leading-relaxed">
- <strong>See Guru</strong>uses a more basic vetting process for tutors. Quality varies more significantly between teachers. The platform excels at connecting learners with Asian tutors who understand cultural nuances in language use.
+ <strong>See Guru</strong> requires all teachers to hold certified diplomas and teaching credentials. The platform connects learners with certified diploma-holding teachers for 1-on-1 Zoom lessons.
  </p>
  </div>
 
@@ -374,7 +374,7 @@ const breadcrumbSchema = {
  <h3 class="font-bold text-gray-100 mb-3 text-lg">Choose See Guru if:</h3>
  <ul class="text-neutral-300 space-y-2">
  <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>You want pay-per-lesson flexibility</li>
- <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>Asian tutors are important to you</li>
+ <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>Affordable certified tutors matter to you</li>
  <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>You prefer informal conversation practice</li>
  <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>Budget is your primary concern</li>
  <li class="flex items-start"><span class="text-emerald-500 mr-2"></span>You don't need formal certification</li>
@@ -420,9 +420,9 @@ const breadcrumbSchema = {
  </div>
 
  <div>
- <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform has better Asian tutor selection?</h3>
+ <h3 class="text-lg font-semibold text-gray-100 mb-2">Which platform offers more flexible scheduling?</h3>
  <p class="text-neutral-300">
- <strong>See Guru has a significantly stronger focus</strong>on Asian tutors from China, Japan, and Korea, making it the better choice if you specifically want tutors from these regions. Lingoda has good teacher availability but doesn't specialize in Asian tutors.
+ <strong>See Guru offers more flexibility</strong> with pay-per-lesson booking and certified tutors available across multiple time zones. You can book individual 1-on-1 Zoom lessons without a subscription. Lingoda has 24/7 group classes but requires a subscription commitment.
  </p>
  </div>
  </div>
