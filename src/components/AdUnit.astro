@@ -39,7 +39,14 @@ const isLive = hasSlotId(slot);
     </ins>
   </div>
 ) : (
-  <div class={`ad-placeholder ${className}`} style={`display:flex;align-items:center;justify-content:center;min-height:90px;border:1px dashed rgba(255,255,255,0.1);border-radius:8px;margin:1rem 0;${style}`}>
-    <span style="font-size:0.75rem;color:rgba(255,255,255,0.2);">Ad: {slot}</span>
+  <div class={`seeguru-banner ${className}`} style={`margin:1rem 0;${style}`}>
+    <a href="/go/see-guru/" rel="sponsored nofollow" class="block">
+      <img
+        src={["/banners/seeguru-leaderboard.jpg", "/banners/seeguru-inline.jpg", "/banners/seeguru-compare.jpg"][Math.floor(Math.random() * 3)]}
+        alt="See Guru - Learn English 1-on-1 with certified teachers. Try 3 free lessons."
+        loading="lazy"
+        class="w-full rounded-lg hover:opacity-90 transition-opacity"
+      />
+    </a>
   </div>
 )}
