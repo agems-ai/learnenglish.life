@@ -21,8 +21,8 @@ const seeGuru = {
  "Affordable lessons starting at $5/hour",
  "Certified diploma-holding human teachers",
  "Pay-per-lesson model with no subscription required",
- "Trial lessons available for $1-5",
- "Good availability across time zones"
+ "3 free trial lessons, no credit card required",
+ "Kids section and flexible scheduling"
  ],
  cons: []
 };
@@ -55,11 +55,11 @@ const comparison = [
  { feature: "Tutor Selection", winner: "b", a: "Moderate (10,000+)", b: "Large (global)" },
  { feature: "Native English Speakers", winner: "b", a: "Limited selection", b: "All tutors" },
  { feature: "Kids Section", winner: "a", a: "Excellent", b: "Good" },
- { feature: "Trial Available", winner: "a", a: "Yes ($1-5)", b: "Limited" },
+ { feature: "Trial Available", winner: "a", a: "3 free lessons, no card", b: "Limited" },
  { feature: "Scheduling", winner: "a", a: "Flexible booking", b: "On-demand (no booking)" },
  { feature: "Built-in Curriculum", winner: "b", a: "None", b: "Yes" },
  { feature: "Pay-per-Lesson", winner: "a", a: "Yes", b: "No" },
- { feature: "Kid-Friendly Option", winner: "b", a: "No", b: "Yes" }
+ { feature: "Kid-Friendly Option", winner: null, a: "Yes", b: "Yes" }
 ];
 
 // Benefits section
@@ -121,7 +121,7 @@ const faqSchema = {
  "name": "Is See Guru or Cambly better for beginners?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Cambly may be better for beginners due to its built-in curriculum and unlimited practice model. See Guru is better suited for learners who want to choose specific tutors, particularly from Asia, and prefer pay-per-lesson pricing."
+ "text": "Cambly may be better for complete beginners due to its built-in curriculum and unlimited practice model. See Guru is better suited for learners who want affordable 1-on-1 Zoom lessons with certified diploma-holding teachers and prefer pay-per-lesson pricing."
  }
  },
  {
@@ -145,7 +145,7 @@ const faqSchema = {
  "name": "Can I try either platform before committing?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "See Guru offers affordable trial lessons typically priced between $1-5, allowing you to test multiple tutors. Cambly offers a limited trial period with their subscription. See Guru provides more flexibility for testing before commitment."
+ "text": "See Guru offers 3 free trial lessons with no credit card required, allowing you to test multiple certified teachers at zero cost. Cambly offers a limited trial period with their subscription. See Guru provides more flexibility for testing before commitment."
  }
  }
  ]
@@ -276,7 +276,7 @@ const faqSchema = {
  <div class="mb-8">
  <h3 class="text-xl font-bold text-gray-100 mb-3">Tutor Quality and Selection</h3>
  <p class="text-neutral-300 leading-relaxed mb-4">
- <strong>See Guru</strong>has a moderate tutor pool with a diverse pool of certified tutors across time zones. The vetting process is basic, which means quality varies. However, the platform excels at connecting learners with tutors from specific regions who understand cultural nuances.
+ <strong>See Guru</strong>employs certified, diploma-holding human teachers who are vetted by the platform before being allowed to teach. All lessons are 1-on-1 via Zoom, and the platform offers a kids section, flexible scheduling, and 3 free trial lessons with no credit card required.
  </p>
  <p class="text-neutral-300 leading-relaxed">
  <strong>Cambly</strong>guarantees all tutors are native English speakers from North America, UK, Australia, and other English-speaking regions. The platform focuses on conversation practice rather than formal teaching, making it ideal for learners who want to improve their speaking confidence.
@@ -302,7 +302,7 @@ const faqSchema = {
  <div>
  <h3 class="text-lg font-semibold text-gray-100 mb-2">Is See Guru or Cambly better for beginners?</h3>
  <p class="text-neutral-300">
- <strong>Cambly may be better</strong>for beginners due to its built-in curriculum and unlimited practice model. See Guru is better suited for learners who want to choose specific tutors, particularly from Asia, and prefer pay-per-lesson pricing.
+ <strong>Cambly may be better</strong>for complete beginners due to its built-in curriculum and unlimited practice model. See Guru is better suited for learners who want affordable 1-on-1 Zoom lessons with certified diploma-holding teachers and prefer pay-per-lesson pricing.
  </p>
  </div>
 
@@ -323,7 +323,7 @@ const faqSchema = {
  <div>
  <h3 class="text-lg font-semibold text-gray-100 mb-2">Can I try either platform before committing?</h3>
  <p class="text-neutral-300">
- <strong>See Guru offers affordable trial lessons</strong>typically priced between $1-5, allowing you to test multiple tutors. Cambly offers a limited trial period with their subscription. See Guru provides more flexibility for testing before commitment.
+ <strong>See Guru offers 3 free trial lessons</strong>with no credit card required, allowing you to test multiple certified teachers at zero cost. Cambly offers a limited trial period with their subscription. See Guru provides more flexibility for testing before commitment.
  </p>
  </div>
  </div>
