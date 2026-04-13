@@ -5,6 +5,15 @@ import Footer from '../../components/Footer.astro';
 ---
 <Base title="Best English Course for Kids Online: Top 7 Programs Compared (2026)" description="Honest comparison of the best online English courses for kids ages 3 to 15. Real prices, pros, cons, and what actually works.">
   <Header />
+  <div class="max-w-3xl mx-auto px-4 pt-6">
+    <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
+      <a href="/" class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/guides/" class="hover:text-emerald-400">Guides</a>
+      <span class="mx-2">›</span>
+      <span class="text-neutral-400">Best English Course for Kids Online</span>
+    </nav>
+  </div>
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-gray-400">Study Guide · Updated April 2026</span>
@@ -22,7 +31,19 @@ import Footer from '../../components/Footer.astro';
     <p class="text-slate-300 mb-6 leading-relaxed">Finding the right English course for your child is harder than it should be. Some platforms look great on the homepage but deliver boring worksheets. Others are fun but teach almost nothing. And prices range from free to $40 per lesson, with no clear explanation of what you actually get.</p>
     <p class="text-slate-300 mb-8 leading-relaxed">We looked at the most popular online English courses for kids and compared them on what matters: teaching quality, child engagement, safety, price, and flexibility. Here is what we found.</p>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4">How We Evaluated These Courses</h2>
+
+    <!-- Table of Contents -->
+    <nav aria-label="Table of Contents" class="bg-slate-900/50 border border-slate-700 rounded-xl p-5 mb-10" id="toc">
+      <h2 class="text-lg font-bold text-white mb-3">Table of Contents</h2>
+      <ol class="list-decimal list-inside space-y-1.5 text-sm text-slate-200">
+        <li><a href="#how-we-evaluated-these-courses" class="text-emerald-400 hover:text-emerald-300 hover:underline">How We Evaluated These Courses</a></li>
+        <li><a href="#top-7-online-english-courses-for-kids" class="text-emerald-400 hover:text-emerald-300 hover:underline">Top 7 Online English Courses for Kids</a></li>
+        <li><a href="#comparison-table" class="text-emerald-400 hover:text-emerald-300 hover:underline">Comparison Table</a></li>
+        <li><a href="#how-to-choose-the-right-course-for-your-child" class="text-emerald-400 hover:text-emerald-300 hover:underline">How to Choose the Right Course for Your Child</a></li>
+        <li><a href="#common-questions" class="text-emerald-400 hover:text-emerald-300 hover:underline">Common Questions</a></li>
+      </ol>
+    </nav>
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="how-we-evaluated-these-courses">How We Evaluated These Courses</h2>
     <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
       <li>Teaching quality. Are lessons led by qualified teachers or just automated exercises?</li>
       <li>Child engagement. Do kids actually want to keep learning?</li>
@@ -31,7 +52,7 @@ import Footer from '../../components/Footer.astro';
       <li>Value for money. What do you get per dollar compared to alternatives?</li>
     </ul>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4">Top 7 Online English Courses for Kids</h2>
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="top-7-online-english-courses-for-kids">Top 7 Online English Courses for Kids</h2>
 
     <h3 class="text-xl font-bold mt-8 mb-3">1. See Guru. Best Overall</h3>
     <div class="flex items-center mb-4">
@@ -159,7 +180,7 @@ import Footer from '../../components/Footer.astro';
     </ul>
     <p class="text-slate-300 mb-6 leading-relaxed"><strong>What could be better:</strong> Higher price point than competitors. Limited schedule flexibility for group classes. Interface feels dated compared to newer platforms.</p>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4">Comparison Table</h2>
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="comparison-table">Comparison Table</h2>
     <div class="overflow-x-auto mb-8">
       <table class="w-full text-sm text-slate-300 border-collapse">
         <thead>
@@ -225,7 +246,7 @@ import Footer from '../../components/Footer.astro';
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4">How to Choose the Right Course for Your Child</h2>
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="how-to-choose-the-right-course-for-your-child">How to Choose the Right Course for Your Child</h2>
     <p class="text-slate-300 mb-4 leading-relaxed">The best course depends on three things: your child's age, their current English level, and how they learn best.</p>
 
     <h3 class="text-xl font-bold mt-8 mb-3">For ages 3-6: Keep it fun and short</h3>
@@ -237,7 +258,7 @@ import Footer from '../../components/Footer.astro';
     <h3 class="text-xl font-bold mt-8 mb-3">For ages 11-15: Focus on conversation and confidence</h3>
     <p class="text-slate-300 mb-4 leading-relaxed">Teenagers need to practice speaking more than anything else. They already know basic grammar from school. What they lack is confidence and real conversation practice. See Guru and Cambly Kids both emphasize live speaking, which is what matters most at this stage.</p>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4">Common Questions</h2>
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="common-questions">Common Questions</h2>
 
     <h3 class="text-xl font-bold mt-8 mb-3">How many lessons per week does my child need?</h3>
     <p class="text-slate-300 mb-4 leading-relaxed">Two to three lessons per week is the sweet spot for most kids. One lesson is not enough to build momentum. Five lessons is overkill and can lead to burnout. Consistency matters more than volume.</p>
@@ -254,6 +275,26 @@ import Footer from '../../components/Footer.astro';
     <h2 class="text-2xl font-bold mt-10 mb-4">Our Pick</h2>
     <p class="text-slate-300 mb-4 leading-relaxed">For most families, <strong>See Guru</strong> offers the best balance of teaching quality, price, and flexibility. Live 1-on-1 lessons with tutors who specialize in kids, starting at $5/hr, is hard to beat. If you want a curriculum-first approach with certified teachers, Novakid is a strong second choice.</p>
     <p class="text-slate-300 mb-4 leading-relaxed">The most important thing is to start. Kids who begin learning English early have a huge advantage, and the right course makes the process feel natural instead of forced. Try a free trial lesson with any of these platforms and see how your child responds.</p>
+
+    <!-- See Guru CTA -->
+    <div class="bg-gradient-to-br from-emerald-900/40 to-indigo-900/40 border border-emerald-500/40 rounded-2xl p-8 my-10 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Start Your Child’s First English Lesson — Free</h2>
+      <p class="text-lg text-emerald-100 mb-6 max-w-2xl mx-auto">Get 3 free lessons with a certified children’s English tutor on See Guru. No card required.</p>
+      <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg transition-all">
+        Book a Free Lesson →
+      </a>
+    </div>
+
+    <aside class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+      <h2 class="text-lg font-bold text-white mb-4">Related guides &amp; reviews</h2>
+      <ul class="space-y-2 text-base">
+        <li><a href="/guides/best-english-apps-for-kids/" class="text-emerald-400 hover:text-emerald-300">Best English Apps for Kids</a></li>
+        <li><a href="/compare/best-english-learning-apps-for-kids-2026/" class="text-emerald-400 hover:text-emerald-300">Best English Learning Apps for Kids 2026</a></li>
+        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru Review</a></li>
+        <li><a href="/reviews/cambly/" class="text-emerald-400 hover:text-emerald-300">Cambly Review</a></li>
+        <li><a href="/guides/how-to-choose-english-tutor/" class="text-emerald-400 hover:text-emerald-300">How to Choose an English Tutor</a></li>
+      </ul>
+    </aside>
 
   </article>
   <Footer />

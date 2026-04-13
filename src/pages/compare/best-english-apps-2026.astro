@@ -9,6 +9,15 @@ import Footer from '../../components/Footer.astro';
   description="We have tested the top English learning apps for 2026. Whether you want to master grammar, improve your pronunciation, or build vocabulary, here is the best choice for your goals."
 >
   <Header />
+  <div class="max-w-3xl mx-auto px-4 pt-6">
+    <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
+      <a href="/" class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
+      <span class="mx-2">›</span>
+      <span class="text-neutral-400">Best English Apps 2026</span>
+    </nav>
+  </div>
   <article class="max-w-3xl mx-auto px-4 py-12">
     <div class="mb-8">
       <span class="text-sm text-neutral-400">Guide · Updated April 2026</span>
@@ -77,6 +86,16 @@ import Footer from '../../components/Footer.astro';
     <div class="border-t border-neutral-800 pt-6 mt-8">
       <p class="text-sm text-neutral-400 italic">This guide is updated annually. Last updated April 2026. All prices are based on annual subscriptions where available.</p>
     </div>
+    <!-- See Guru CTA -->
+    <div class="bg-gradient-to-br from-emerald-900/40 to-indigo-900/40 border border-emerald-500/40 rounded-2xl p-8 my-12 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Try See Guru — 3 Free Lessons, No Card Required</h2>
+      <p class="text-lg text-emerald-100 mb-6 max-w-2xl mx-auto">Skip the hunt. Get matched with a certified English tutor and start speaking today. No subscription, no credit card, no strings attached.</p>
+      <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-emerald-500/30 transition-all">
+        Start My Free Lesson →
+      </a>
+      <p class="text-xs text-emerald-200/70 mt-4">Trusted by 50,000+ English learners worldwide.</p>
+    </div>
+
   </article>
   <Footer />
 </Base>

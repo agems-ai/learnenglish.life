@@ -57,6 +57,20 @@ const articleSchema = {
 
  <!-- TL;DR -->
  <div class="bg-amber-950/60 border-l-4 border-amber-400 p-4 rounded-r-lg mb-8">
+
+    <!-- Table of Contents -->
+    <nav aria-label="Table of Contents" class="bg-slate-900/50 border border-slate-700 rounded-xl p-5 mb-10" id="toc">
+      <h2 class="text-lg font-bold text-white mb-3">Table of Contents</h2>
+      <ol class="list-decimal list-inside space-y-1.5 text-sm text-slate-200">
+        <li><a href="#key-factors-to-consider" class="text-emerald-400 hover:text-emerald-300 hover:underline">Key Factors to Consider</a></li>
+        <li><a href="#where-to-find-tutors" class="text-emerald-400 hover:text-emerald-300 hover:underline">Where to Find Tutors</a></li>
+        <li><a href="#questions-to-ask-yourself-first" class="text-emerald-400 hover:text-emerald-300 hover:underline">Questions to Ask Yourself First</a></li>
+        <li><a href="#red-flags-to-watch-for" class="text-emerald-400 hover:text-emerald-300 hover:underline">Red Flags to Watch For</a></li>
+        <li><a href="#how-to-evaluate-your-first-lesson" class="text-emerald-400 hover:text-emerald-300 hover:underline">How to Evaluate Your First Lesson</a></li>
+        <li><a href="#ready-to-find-your-tutor" class="text-emerald-400 hover:text-emerald-300 hover:underline">Ready to Find Your Tutor?</a></li>
+        <li><a href="#continue-learning" class="text-emerald-400 hover:text-emerald-300 hover:underline">Continue Learning</a></li>
+      </ol>
+    </nav>
  <h2 class="font-semibold text-amber-200">TL;DR</h2>
  <p class="text-amber-300">The best tutor depends on your budget (community tutors $4-10/hr, pro tutors $15-50/hr), goals (conversation, business, exam prep), and schedule. Always trial 1-2 lessons before committing.</p>
  </div>
@@ -65,7 +79,7 @@ const articleSchema = {
 
  <!-- Key Factors -->
  <section class="mb-10">
- <h2 class="text-2xl font-bold mb-6">Key Factors to Consider</h2>
+ <h2 class="text-2xl font-bold mb-6" id="key-factors-to-consider">Key Factors to Consider</h2>
  <div class="grid md:grid-cols-2 gap-4">
  {factors.map(factor => (
  <div class="bg-slate-900/60 rounded-xl shadow-sm p-6">
@@ -79,7 +93,7 @@ const articleSchema = {
 
  <!-- Platform Comparison -->
  <section class="mb-10">
- <h2 class="text-2xl font-bold mb-6">Where to Find Tutors</h2>
+ <h2 class="text-2xl font-bold mb-6" id="where-to-find-tutors">Where to Find Tutors</h2>
  <div class="overflow-x-auto">
  <table class="w-full border-collapse bg-slate-900/60 rounded-xl shadow-sm">
  <thead>
@@ -112,7 +126,7 @@ const articleSchema = {
 
  <!-- Self-Assessment -->
  <section class="mb-10">
- <h2 class="text-2xl font-bold mb-6">Questions to Ask Yourself First</h2>
+ <h2 class="text-2xl font-bold mb-6" id="questions-to-ask-yourself-first">Questions to Ask Yourself First</h2>
  <div class="bg-slate-900/60 rounded-xl shadow-sm p-6">
  <ul class="space-y-3">
  {questions.map((q, i) => (
@@ -129,7 +143,7 @@ const articleSchema = {
 
  <!-- Red Flags -->
  <section class="mb-10">
- <h2 class="text-2xl font-bold mb-6">Red Flags to Watch For</h2>
+ <h2 class="text-2xl font-bold mb-6" id="red-flags-to-watch-for">Red Flags to Watch For</h2>
  <div class="space-y-3">
  <div class="bg-red-950/60 border-l-4 border-red-400 p-4 rounded-r-lg">
  <h3 class="font-semibold text-red-200">Promises to make you fluent in weeks</h3>
@@ -152,7 +166,7 @@ const articleSchema = {
 
  <!-- How to Evaluate -->
  <section class="mb-10">
- <h2 class="text-2xl font-bold mb-6">How to Evaluate Your First Lesson</h2>
+ <h2 class="text-2xl font-bold mb-6" id="how-to-evaluate-your-first-lesson">How to Evaluate Your First Lesson</h2>
  <div class="grid md:grid-cols-2 gap-4">
  <div class="bg-green-950/60 rounded-xl p-5">
  <h3 class="font-semibold text-green-200 mb-3">Good Signs</h3>
@@ -179,7 +193,7 @@ const articleSchema = {
 
  <!-- CTA -->
  <section class="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl p-6 text-white mb-8">
- <h2 class="text-xl font-bold mb-3">Ready to Find Your Tutor?</h2>
+ <h2 class="text-xl font-bold mb-3" id="ready-to-find-your-tutor">Ready to Find Your Tutor?</h2>
  <p class="text-emerald-100 mb-4">Start with community tutors on iTalki for affordable practice, or browse professional teachers on Preply for structured lessons.</p>
  <div class="flex flex-wrap gap-3">
  <a href="/reviews/italki/" class="bg-slate-900/60 text-emerald-400 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-900/30">Compare iTalki Tutors</a>
@@ -189,7 +203,7 @@ const articleSchema = {
 
  <!-- Related -->
  <section>
- <h2 class="text-xl font-bold mb-4">Continue Learning</h2>
+ <h2 class="text-xl font-bold mb-4" id="continue-learning">Continue Learning</h2>
  <div class="grid md:grid-cols-2 gap-4">
  <a href="/compare/best-english-learning-apps/" class="bg-slate-900/60 rounded-xl shadow-sm p-4 hover:shadow-md transition">
  <h3 class="font-semibold text-emerald-400">Best English Learning Apps</h3>

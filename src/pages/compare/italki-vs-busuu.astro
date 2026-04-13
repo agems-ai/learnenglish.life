@@ -103,6 +103,13 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
   description="Compare iTalki and Busuu side by side. We check pricing, teacher quality, features, lesson types, and cancellation policies to help you choose."
 >
   <Header />
+    <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
+      <a href="/" class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
+      <span class="mx-2">›</span>
+      <span class="text-neutral-400">iTalki vs Busuu</span>
+    </nav>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(comparisonSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -272,6 +279,16 @@ import ContextualCTA from '../../components/ContextualCTA.astro';
     <div class="border-t border-slate-700 pt-6 mt-8">
       <p class="text-sm text-gray-400 italic">This comparison was written by our editorial team. We update these pages regularly as platforms change their pricing and features. Last updated April 2026.</p>
     </div>
+    <!-- See Guru CTA -->
+    <div class="bg-gradient-to-br from-emerald-900/40 to-indigo-900/40 border border-emerald-500/40 rounded-2xl p-8 my-12 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Try See Guru — 3 Free Lessons, No Card Required</h2>
+      <p class="text-lg text-emerald-100 mb-6 max-w-2xl mx-auto">Skip the hunt. Get matched with a certified English tutor and start speaking today. No subscription, no credit card, no strings attached.</p>
+      <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-emerald-500/30 transition-all">
+        Start My Free Lesson →
+      </a>
+      <p class="text-xs text-emerald-200/70 mt-4">Trusted by 50,000+ English learners worldwide.</p>
+    </div>
+
 
     <!-- FTC Affiliate Disclosure -->
     <div class="mt-8 p-4 bg-slate-800 rounded-lg text-sm text-gray-300">

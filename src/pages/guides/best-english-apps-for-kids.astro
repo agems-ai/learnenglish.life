@@ -5,6 +5,15 @@ import Footer from '../../components/Footer.astro';
 ---
 <Base title="Best English Learning Apps for Kids: Top 5 Apps Compared" description="Fun, safe, and effective apps to help your child learn English from ages 2 to 12.">
  <Header />
+  <div class="max-w-3xl mx-auto px-4 pt-6">
+    <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
+      <a href="/" class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">›</span>
+      <a href="/guides/" class="hover:text-emerald-400">Guides</a>
+      <span class="mx-2">›</span>
+      <span class="text-neutral-400">Best English Apps for Kids</span>
+    </nav>
+  </div>
  <article class="max-w-3xl mx-auto px-4 py-12">
  <div class="mb-8">
  <span class="text-sm text-gray-400">Study Guide · Updated June 2025</span>
@@ -22,7 +31,19 @@ import Footer from '../../components/Footer.astro';
  <p class="text-slate-300 mb-6 leading-relaxed">Children learn languages naturally when they're having fun. The right app can make English learning feel like play, not homework. But not all apps are created equal. Some are just games with English words. Others teach real skills.</p>
  <p class="text-slate-300 mb-8 leading-relaxed">We tested the most popular kids' English learning apps. Here's what works.</p>
 
- <h2 class="text-2xl font-bold mt-10 mb-4">How We Tested</h2>
+
+    <!-- Table of Contents -->
+    <nav aria-label="Table of Contents" class="bg-slate-900/50 border border-slate-700 rounded-xl p-5 mb-10" id="toc">
+      <h2 class="text-lg font-bold text-white mb-3">Table of Contents</h2>
+      <ol class="list-decimal list-inside space-y-1.5 text-sm text-slate-200">
+        <li><a href="#how-we-tested" class="text-emerald-400 hover:text-emerald-300 hover:underline">How We Tested</a></li>
+        <li><a href="#top-5-english-learning-apps-for-kids" class="text-emerald-400 hover:text-emerald-300 hover:underline">Top 5 English Learning Apps for Kids</a></li>
+        <li><a href="#comparison-table" class="text-emerald-400 hover:text-emerald-300 hover:underline">Comparison Table</a></li>
+        <li><a href="#tips-for-parents" class="text-emerald-400 hover:text-emerald-300 hover:underline">Tips for Parents</a></li>
+        <li><a href="#final-verdict" class="text-emerald-400 hover:text-emerald-300 hover:underline">Final Verdict</a></li>
+      </ol>
+    </nav>
+ <h2 class="text-2xl font-bold mt-10 mb-4" id="how-we-tested">How We Tested</h2>
  <ul class="list-disc list-inside space-y-2 text-slate-300 mb-6">
  <li>Educational value. does it teach real English?</li>
  <li>Child engagement. do kids want to keep using it?</li>
@@ -31,7 +52,7 @@ import Footer from '../../components/Footer.astro';
  <li>Value for money. worth the subscription?</li>
  </ul>
 
- <h2 class="text-2xl font-bold mt-10 mb-4">Top 5 English Learning Apps for Kids</h2>
+ <h2 class="text-2xl font-bold mt-10 mb-4" id="top-5-english-learning-apps-for-kids">Top 5 English Learning Apps for Kids</h2>
 
  <h3 class="text-xl font-bold mt-8 mb-3">1. Lingokids. Best Overall</h3>
  <div class="flex items-center mb-4">
@@ -122,7 +143,7 @@ import Footer from '../../components/Footer.astro';
  </ul>
  <p class="text-slate-300 mb-6 leading-relaxed"><strong>What could be better:</strong>Narrow focus. only vocabulary, not full language skills. Best used alongside another app.</p>
 
- <h2 class="text-2xl font-bold mt-10 mb-4">Comparison Table</h2>
+ <h2 class="text-2xl font-bold mt-10 mb-4" id="comparison-table">Comparison Table</h2>
  <div class="overflow-x-auto mb-8">
  <table class="w-full border-collapse">
  <thead>
@@ -168,7 +189,7 @@ import Footer from '../../components/Footer.astro';
  </table>
  </div>
 
- <h2 class="text-2xl font-bold mt-10 mb-4">Tips for Parents</h2>
+ <h2 class="text-2xl font-bold mt-10 mb-4" id="tips-for-parents">Tips for Parents</h2>
  <p class="text-slate-300 mb-4 leading-relaxed">Apps are helpful, but they're not a replacement for real interaction. Here's how to get the most from English learning apps:</p>
 
  <div class="bg-blue-900/30 border border-blue-700 rounded-xl p-6 mb-8">
@@ -191,7 +212,7 @@ import Footer from '../../components/Footer.astro';
  </ul>
  </div>
 
- <h2 class="text-2xl font-bold mt-10 mb-4">Final Verdict</h2>
+ <h2 class="text-2xl font-bold mt-10 mb-4" id="final-verdict">Final Verdict</h2>
  <p class="text-slate-300 mb-4 leading-relaxed">For most families, we recommend starting with <strong>Duolingo Kids</strong>or <strong>Lingokids</strong>. Both are engaging, educational, and worth the subscription cost.</p>
  <p class="text-slate-300 mb-4 leading-relaxed">If budget is a concern, <strong>Khan Academy Kids</strong>is an excellent free option. It's not specifically designed for ESL learners, but the reading content is high quality.</p>
  <p class="text-slate-300 mb-8 leading-relaxed">Remember: apps are a tool, not a complete solution. The best results come from combining app learning with real conversations, reading books together, and making English part of your child's daily life.</p>
@@ -202,6 +223,17 @@ import Footer from '../../components/Footer.astro';
  </div>
 
  <p class="text-sm text-gray-400 mt-8">* affiliate disclosure: LearnEnglish.Life may earn a commission when you sign up for recommended services, at no extra cost to you.</p>
+
+    <aside class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+      <h2 class="text-lg font-bold text-white mb-4">Related guides &amp; reviews</h2>
+      <ul class="space-y-2 text-base">
+        <li><a href="/guides/best-english-course-for-kids-online/" class="text-emerald-400 hover:text-emerald-300">Best Online English Courses for Kids</a></li>
+        <li><a href="/compare/best-english-learning-apps-for-kids-2026/" class="text-emerald-400 hover:text-emerald-300">Best Kids’ Apps 2026 Comparison</a></li>
+        <li><a href="/reviews/duolingo/" class="text-emerald-400 hover:text-emerald-300">Duolingo Review</a></li>
+        <li><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300">See Guru Review</a></li>
+        <li><a href="/guides/free-online-english-courses/" class="text-emerald-400 hover:text-emerald-300">Best Free English Courses</a></li>
+      </ul>
+    </aside>
  </article>
  <Footer />
 </Base>
