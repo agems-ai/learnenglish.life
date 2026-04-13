@@ -5,6 +5,6 @@ interface Props {
 }
 const { text = "This post contains affiliate links. If you click and make a purchase, we may receive a commission at no extra cost to you.", variant = 'default' } = Astro.props;
 ---
-<div class={variant === 'compact' ? "text-xs text-neutral-500 mt-4" : "p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg text-sm text-neutral-400 my-6"}>
+<div class={variant === 'compact' ? "text-xs text-neutral-400 mt-4" : "p-4 bg-neutral-800/50 border border-neutral-700 rounded-lg text-sm text-neutral-400 my-6"}>
   <p>{text}</p>
 </div>

@@ -66,7 +66,7 @@ const usersIcon = `<svg class="w-4 h-4 inline" fill="none" stroke="currentColor"
       )}
     </div>
     <div class:list={['text-2xl font-bold', colorClasses[color]]}>
-      {normalizedRating.toFixed(1)}<span class="text-slate-500 text-base font-normal">/5</span>
+      {normalizedRating.toFixed(1)}<span class="text-slate-400 text-base font-normal">/5</span>
     </div>
     {showReviewCount && reviewCountDisplay && (
       <div class="flex items-center gap-2 mt-2 text-sm text-slate-400">
@@ -82,7 +82,7 @@ const usersIcon = `<svg class="w-4 h-4 inline" fill="none" stroke="currentColor"
     <div class="flex items-center gap-2">
       <RatingStars rating={normalizedRating} size="sm" showValue={false} />
       <span class:list={['font-semibold', colorClasses[color]]}>{normalizedRating.toFixed(1)}</span>
-      <span class="text-slate-500 text-sm">/5</span>
+      <span class="text-slate-400 text-sm">/5</span>
     </div>
     {showReviewCount && reviewCountDisplay && (
       <div class="flex items-center gap-1 text-sm text-slate-400">
@@ -95,7 +95,7 @@ const usersIcon = `<svg class="w-4 h-4 inline" fill="none" stroke="currentColor"
         {badge.icon} {badge.text}
       </span>
     )}
-    <div class="flex items-center gap-1 text-xs text-slate-500">
+    <div class="flex items-center gap-1 text-xs text-slate-400">
       <Fragment set:html={verifiedIcon} />
       <span>Verified</span>
     </div>
