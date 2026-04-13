@@ -32,9 +32,7 @@ const OVERRIDES: Record<string, { priority: string; changefreq: string }> = {
   '/contact': { priority: '0.4', changefreq: 'monthly' },
   '/advertise': { priority: '0.4', changefreq: 'monthly' },
   '/privacy': { priority: '0.3', changefreq: 'yearly' },
-  '/privacy-policy': { priority: '0.3', changefreq: 'yearly' },
   '/terms': { priority: '0.3', changefreq: 'yearly' },
-  '/cookies': { priority: '0.3', changefreq: 'yearly' },
   '/cookie-policy': { priority: '0.3', changefreq: 'yearly' },
   '/affiliate-disclosure': { priority: '0.3', changefreq: 'yearly' },
 };
@@ -58,8 +56,7 @@ function defaultPriority(url: string): { priority: string; changefreq: string } 
     url.startsWith('/reviews/') ||
     url.startsWith('/compare/') ||
     url.startsWith('/guides/') ||
-    url.startsWith('/resources/') ||
-    url.startsWith('/study-guide/')
+    url.startsWith('/resources/')
   ) {
     return { priority: '0.8', changefreq: 'monthly' };
   }
@@ -80,8 +77,9 @@ function generateXML(): string {
     .sort()
     .map((url) => {
       const { priority, changefreq } = defaultPriority(url);
+      const loc = url === '' ? `${SITE_URL}/` : `${SITE_URL}${url}/`;
       return `  <url>
-    <loc>${SITE_URL}${url}</loc>
+    <loc>${loc}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>

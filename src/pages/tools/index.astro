@@ -7,39 +7,43 @@ import AdUnit from '../../components/AdUnit.astro';
 const tools = [
  {
  title: "AI Conversation Partner",
- description: "Practice speaking with our AI. Get instant feedback on your English.",
- icon: "",
- status: "Coming Soon",
- href: "#"
+ description: "Practice speaking with ChatGPT. Get instant feedback on your English grammar, vocabulary, and fluency.",
+ status: "Free",
+ href: "https://chatgpt.com/",
+ external: true,
+ cta: "Open ChatGPT"
  },
  {
  title: "Grammar Checker",
- description: "Paste your text and get instant grammar and style suggestions.",
- icon: "️",
- status: "Coming Soon",
- href: "#"
+ description: "Paste your text and get instant grammar, spelling, and style suggestions powered by AI.",
+ status: "Free",
+ href: "https://www.grammarly.com/",
+ external: true,
+ cta: "Open Grammarly"
  },
  {
  title: "Vocabulary Builder",
- description: "Learn new words with spaced repetition flashcards and quizzes.",
- icon: "",
- status: "Coming Soon",
- href: "#"
+ description: "Learn new words with spaced repetition flashcards. Build lasting vocabulary with Anki's proven method.",
+ status: "Free",
+ href: "https://apps.ankiweb.net/",
+ external: true,
+ cta: "Get Anki"
  },
  {
  title: "Pronunciation Coach",
- description: "Record yourself and compare with native speakers.",
- icon: "",
- status: "Coming Soon",
- href: "#"
+ description: "Record yourself, get AI feedback, and compare with native speakers. Improve your accent with ELSA.",
+ status: "Free Trial",
+ href: "/go/elsa-speak/",
+ external: false,
+ cta: "Try ELSA Speak"
  }
 ];
 
 const games = [
- { title: "Grammar Challenge", description: "Test your grammar knowledge", icon: "", href: "#" },
- { title: "Word Match", description: "Match words with definitions", icon: "", href: "#" },
- { title: "Fill in the Blank", description: "Complete sentences correctly", icon: "", href: "#" },
- { title: "Spelling Bee", description: "Spell words correctly", icon: "", href: "#" },
+ { title: "Grammar Challenge", description: "Test your grammar knowledge with 25+ questions", href: "/games/grammar-challenge/" },
+ { title: "Vocabulary Quiz", description: "Multiple choice vocabulary questions for all levels", href: "/games/vocabulary/" },
+ { title: "Word Search", description: "Find hidden words in the grid to build spelling skills", href: "/games/word-search/" },
+ { title: "All Games", description: "Browse all interactive English learning games", href: "/games/" },
 ];
 ---
 <Base title="Free English Learning Tools | LearnEnglish.Life" description="Free interactive tools for English learners, grammar checker, vocabulary builder, pronunciation practice and more. No signup required.">
@@ -62,20 +66,19 @@ const games = [
  <h2 class="text-2xl font-bold text-gray-100 mb-6">AI Learning Tools</h2>
  <div class="grid md:grid-cols-2 gap-6">
  {tools.map(tool => (
- <div class="bg-slate-900/60 rounded-xl p-6 shadow-sm border border-gray-700">
- <div class="flex items-start gap-4">
- <span class="text-4xl">{tool.icon}</span>
+ <div class="bg-slate-900/60 rounded-xl p-6 shadow-sm border border-gray-700 hover:border-emerald-600/50 transition-all">
  <div class="flex-1">
  <div class="flex items-center gap-2 mb-1">
  <h3 class="text-xl font-semibold text-gray-100">{tool.title}</h3>
- <span class="px-2 py-0.5 text-xs font-medium bg-amber-900/40 text-amber-300 rounded-full">
+ <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/40 text-emerald-300 rounded-full">
  {tool.status}
  </span>
  </div>
  <p class="text-slate-300 mb-4">{tool.description}</p>
- <button disabled class="px-4 py-2 bg-gray-300 text-slate-400 rounded-lg cursor-not-allowed">Coming Soon
- </button>
- </div>
+ <a href={tool.href} target={tool.external ? "_blank" : undefined} rel={tool.external ? "noopener" : undefined} class="inline-block px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors">
+ {tool.cta}
+ {tool.external && <span class="ml-1 text-xs">&#8599;</span>}
+ </a>
  </div>
  </div>
  ))}
