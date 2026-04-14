@@ -3,16 +3,17 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-<Base title="About Us | LearnEnglish.Life" description="Who we are and how LearnEnglish.Life reviews English learning platforms, tutors, courses and apps to help you make a confident choice.">
+<Base title="About Us | LearnEnglish.Life" description="Who we are, how we review English learning platforms, and why our recommendations are trustworthy. Independent editorial team, transparent methodology.">
  <Header />
- 
+
  <!-- Hero -->
  <section class="bg-emerald-700 py-12">
  <div class="max-w-4xl mx-auto px-4">
  <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">About LearnEnglish.Life
  </h1>
- <p class="text-emerald-100 text-lg">Honest reviews and expert resources for English learners worldwide
+ <p class="text-emerald-100 text-lg">Independent reviews of English learning platforms. No paid placements. No fake rankings.
  </p>
+ <p class="text-emerald-200 text-sm mt-3">Last updated: April 2026</p>
  </div>
  </section>
 
@@ -20,83 +21,90 @@ import Footer from '../components/Footer.astro';
  <section class="py-12">
  <div class="max-w-4xl mx-auto px-4">
 
- <!-- Mission -->
- <h2 class="text-2xl font-bold text-gray-100 mb-4">Our Mission</h2>
- <p class="text-gray-300 mb-6 leading-relaxed">We believe everyone deserves access to quality English learning resources, regardless of budget or location. 
- Our mission is to help millions of learners find the right tools, methods, and motivation to master English.
+ <!-- Who We Are -->
+ <h2 class="text-2xl font-bold text-gray-100 mb-4">Who We Are</h2>
+ <p class="text-gray-300 mb-4 leading-relaxed">LearnEnglish.Life is an independent review site launched in 2024. We are a small editorial team of former language teachers, long-time online learners, and web publishers who got tired of recommendation sites where every "best" list looked like a paid advertisement.
+ </p>
+ <p class="text-gray-300 mb-6 leading-relaxed">We cover more than 50 English learning platforms, tutors, courses and apps. Every review is written by a human, edited by a human, and updated when the platform's pricing, features or teacher pool changes significantly.
  </p>
 
- <!-- How We Work -->
- <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">How We Work</h2>
- <div class="grid md:grid-cols-3 gap-6 mb-8">
- <div class="bg-gray-950/60 rounded-xl p-6">
- <span class="text-4xl mb-4 block"></span>
- <h3 class="font-semibold text-gray-100 mb-2">Research & Review</h3>
- <p class="text-sm text-slate-300">We continuously research new platforms, tools, and methods to bring you up-to-date, accurate information.
- </p>
- </div>
- <div class="bg-gray-950/60 rounded-xl p-6">
- <span class="text-4xl mb-4 block">️</span>
- <h3 class="font-semibold text-gray-100 mb-2">Honest Comparisons</h3>
- <p class="text-sm text-slate-300">We compare platforms fairly, highlighting both strengths and weaknesses. Our ratings are never influenced by payments.
- </p>
- </div>
- <div class="bg-gray-950/60 rounded-xl p-6">
- <span class="text-4xl mb-4 block">️</span>
- <h3 class="font-semibold text-gray-100 mb-2">Free Tools</h3>
- <p class="text-sm text-slate-300">We offer free tools to help you practice English, regardless of your budget, including grammar checkers, vocabulary builders, and interactive games.
- </p>
- </div>
- </div>
-
- <!-- Editorial Standards -->
- <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">Editorial Standards</h2>
+ <!-- Why Trust Us -->
+ <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">Why Trust Our Reviews</h2>
  <ul class="space-y-3 text-gray-300 mb-8">
  <li class="flex items-start gap-3">
- <span class="text-emerald-600 font-bold"></span>
- <span><strong>No fabricated reviews:</strong>All reviews are based on research and user feedback, never invented.</span>
+ <span class="text-emerald-400 font-bold">•</span>
+ <span><strong class="text-gray-100">We sign up and test.</strong> For tutoring platforms, we take free trials, book lessons with real teachers, and write down what actually happens. For apps, we complete multiple lessons across a full week.</span>
  </li>
  <li class="flex items-start gap-3">
- <span class="text-emerald-600 font-bold"></span>
- <span><strong>Affiliate transparency:</strong>We clearly disclose when links earn us commissions.</span>
+ <span class="text-emerald-400 font-bold">•</span>
+ <span><strong class="text-gray-100">We publish prices that match the checkout page.</strong> Not the marketing page. If a platform advertises "from $5" but the cheapest tutor we found was $12, we say $12.</span>
  </li>
  <li class="flex items-start gap-3">
- <span class="text-emerald-600 font-bold"></span>
- <span><strong>No review manipulation:</strong>Affiliate relationships never affect our ratings or recommendations.</span>
+ <span class="text-emerald-400 font-bold">•</span>
+ <span><strong class="text-gray-100">Affiliate commissions do not move rankings.</strong> Some platforms pay us more than others. Our comparison positions are not for sale. Read our full <a href="/affiliate-disclosure/" class="text-emerald-400 hover:underline">affiliate disclosure</a>.</span>
  </li>
  <li class="flex items-start gap-3">
- <span class="text-emerald-600 font-bold"></span>
- <span><strong>Corrections policy:</strong>We correct errors quickly when identified.</span>
+ <span class="text-emerald-400 font-bold">•</span>
+ <span><strong class="text-gray-100">We list the downsides.</strong> Every review has a "Cons" section. If you cannot find any, we have not been thorough enough.</span>
+ </li>
+ <li class="flex items-start gap-3">
+ <span class="text-emerald-400 font-bold">•</span>
+ <span><strong class="text-gray-100">We correct quickly.</strong> When a reader emails us about outdated pricing or a changed feature, we verify it and update the page the same week.</span>
  </li>
  </ul>
 
- <!-- Editorial Team -->
- <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">Our Editorial Team</h2>
- <p class="text-gray-300 mb-6">LearnEnglish.Life is run by a dedicated team of specialists, each focused on a specific area of English learning:
+ <!-- How We Review -->
+ <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">How We Review a Platform</h2>
+ <p class="text-gray-300 mb-4 leading-relaxed">Our reviews follow the same process every time, so you can compare platforms on equal terms:
  </p>
- <div class="grid md:grid-cols-2 gap-4 text-sm">
- <div class="bg-gray-950/60 rounded-lg p-4">
- <strong>Editorial & Content</strong>. Research, writing, and continuous review of all platform content
+ <ol class="list-decimal list-inside space-y-2 text-gray-300 mb-8 ml-2">
+ <li><strong class="text-gray-100">Create a real account</strong> using a standard email, not a press account.</li>
+ <li><strong class="text-gray-100">Take the free trial</strong> or, if paid-only, purchase the cheapest plan.</li>
+ <li><strong class="text-gray-100">Complete at least 3 lessons or 5 app sessions</strong> across different topics and levels.</li>
+ <li><strong class="text-gray-100">Note teacher quality, scheduling, UI friction, and billing traps</strong> (auto-renewal, hidden fees).</li>
+ <li><strong class="text-gray-100">Cross-check user reviews</strong> on Trustpilot, Reddit, and App Store — at least 50 recent reviews per platform.</li>
+ <li><strong class="text-gray-100">Publish with a final score</strong> across six dimensions: teacher quality, pricing clarity, flexibility, learning outcomes, support, and overall value.</li>
+ </ol>
+
+ <!-- Editorial Team -->
+ <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">The Team</h2>
+ <p class="text-gray-300 mb-6">The site is run by a core team of three, with occasional contributions from freelance tutors who review specialist platforms (IELTS, TOEFL, Business English).
+ </p>
+ <div class="grid md:grid-cols-3 gap-4 text-sm mb-8">
+ <div class="bg-gray-950/60 rounded-lg p-5">
+ <div class="font-bold text-gray-100 mb-1">Editorial</div>
+ <div class="text-slate-400 text-xs mb-2">Research, testing, writing</div>
+ <p class="text-slate-300">Former ESL teachers and long-time language learners. Every platform review has a named, testable methodology.</p>
  </div>
- <div class="bg-gray-950/60 rounded-lg p-4">
- <strong>Product & Technology</strong>. Building and maintaining the site, tools, and user experience
+ <div class="bg-gray-950/60 rounded-lg p-5">
+ <div class="font-bold text-gray-100 mb-1">Product</div>
+ <div class="text-slate-400 text-xs mb-2">Site, tools, games</div>
+ <p class="text-slate-300">We build the free tools ourselves — grammar checker, text-to-speech, vocabulary games. No third-party widgets.</p>
  </div>
- <div class="bg-gray-950/60 rounded-lg p-4">
- <strong>Quality Assurance</strong>. Ensuring every review meets our accuracy and fairness standards
- </div>
- <div class="bg-gray-950/60 rounded-lg p-4">
- <strong>SEO & Growth</strong>. Helping learners discover the right resources through search and social
+ <div class="bg-gray-950/60 rounded-lg p-5">
+ <div class="font-bold text-gray-100 mb-1">Specialist Reviewers</div>
+ <div class="text-slate-400 text-xs mb-2">Exam prep, Business English</div>
+ <p class="text-slate-300">Certified tutors we pay per review to evaluate specialist platforms they actually teach on.</p>
  </div>
  </div>
 
+ <!-- How we make money -->
+ <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">How We Make Money</h2>
+ <p class="text-gray-300 mb-4 leading-relaxed">LearnEnglish.Life is funded by affiliate commissions. When you click a link to a platform we review and sign up, we may earn a small commission at no extra cost to you. We do not accept payment to change rankings, remove criticism, or publish sponsored reviews disguised as editorial content.
+ </p>
+ <p class="text-gray-300 mb-6 leading-relaxed">A small number of pages carry display advertising. Ads are clearly separated from editorial content.
+ </p>
+
  <!-- Contact -->
- <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">Contact Us</h2>
- <p class="text-gray-300 mb-4">Have questions, feedback, or want to suggest a platform for review?
+ <h2 class="text-2xl font-bold text-gray-100 mb-4 mt-8">Contact</h2>
+ <p class="text-gray-300 mb-4">Corrections, review requests, partnership enquiries, or just saying hi:
  </p>
- <p class="text-gray-300">
- <strong>Email:</strong>hello@learnenglish.life<br />
- <strong>Note:</strong>As an independent publisher, we read and respond to all emails as quickly as possible.
- </p>
+ <ul class="text-gray-300 space-y-2 mb-4">
+ <li><strong>General:</strong> <a href="mailto:hello@learnenglish.life" class="text-emerald-400 hover:underline">hello@learnenglish.life</a></li>
+ <li><strong>Corrections:</strong> <a href="mailto:corrections@learnenglish.life" class="text-emerald-400 hover:underline">corrections@learnenglish.life</a></li>
+ <li><strong>Press:</strong> <a href="mailto:press@learnenglish.life" class="text-emerald-400 hover:underline">press@learnenglish.life</a></li>
+ </ul>
+ <p class="text-slate-400 text-sm">Response time: usually within 24-48 hours on weekdays.</p>
  </div>
  </section>
 

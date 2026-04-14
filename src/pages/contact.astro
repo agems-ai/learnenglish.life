@@ -31,7 +31,12 @@ import Footer from '../components/Footer.astro';
  </p>
  </div>
 
- <form class="space-y-6" action="#" method="POST" id="contact-form">
+ <p class="text-sm text-slate-400 mb-4">Prefer email? Write directly to <a href="mailto:hello@learnenglish.life" class="text-emerald-400 hover:underline">hello@learnenglish.life</a> — that is the fastest way to reach us.</p>
+
+ <form class="space-y-6" action="https://formsubmit.co/hello@learnenglish.life" method="POST" id="contact-form">
+ <input type="hidden" name="_subject" value="LearnEnglish.Life contact form" />
+ <input type="hidden" name="_captcha" value="true" />
+ <input type="text" name="_honey" style="display:none" />
  <div>
  <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
  <input 
@@ -192,20 +197,5 @@ import Footer from '../components/Footer.astro';
 
  <Footer />
 
- <script>const form = document.getElementById('contact-form') as HTMLFormElement;
- const successMessage = document.getElementById('form-success');
- 
- if (form && successMessage) {
- form.addEventListener('submit', (e) => {
- e.preventDefault();
- 
- // Show success message (in production, this would send to an API)
- form.style.display = 'none';
- successMessage.classList.remove('hidden');
- 
- // In production, you would send form data to your backend here
- console.log('Form submitted:', new FormData(form));
- });
- }
- </script>
+ <!-- Form posts directly to FormSubmit which forwards to hello@learnenglish.life. No JS handler needed. -->
 </Base>
