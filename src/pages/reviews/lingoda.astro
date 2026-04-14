@@ -37,22 +37,12 @@ const reviewSchema = {
   "datePublished": "2026-04-13"
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life" },
-    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://learnenglish.life/reviews" },
-    { "@type": "ListItem", "position": 3, "name": "Lingoda" }
-  ]
-};
 ---
 
 <Base title="Lingoda Review 2026: Is the Language Sprint Still the Best Deal?" description="Is the Lingoda Sprint worth it? We tested Lingoda's group classes, curriculum, and intensive Sprint program. Honest review with real pricing and pros/cons." type="article" publishedTime="2026-04-13">
 
   <span slot="structured-data">
     <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <ArticleSchema title={review.title} description="Comprehensive Lingoda review covering curriculum, pricing, Sprint challenges, and classroom experience." publishedTime="2026-04-13" />
   </span>
 

@@ -23,20 +23,10 @@ const articleSchema = {
   }
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
-    { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/free-vs-paid-english-resources/" }
-  ]
-};
 ---
 
 <Base title={title} description={description}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <Header />
 
   <article class="bg-neutral-950">

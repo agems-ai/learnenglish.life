@@ -30,16 +30,6 @@ const articleSchema = {
  }
 };
 
-const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
- { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://learnenglish.life/blog/" },
- { "@type": "ListItem", "position": 3, "name": title, "item": "https://learnenglish.life/blog/how-long-to-learn-english/" }
- ]
-};
-
 const cefrHours = [
  { level: "A1", name: "Beginner", hours: "80 to 100", description: "Order food, ask directions, introduce yourself." },
  { level: "A2", name: "Elementary", hours: "180 to 200", description: "Talk about your day, plans, family, simple opinions." },
@@ -52,7 +42,6 @@ const cefrHours = [
 
 <Base title={title} description={description}>
  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
- <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
  <Header />
 
  <article class="bg-neutral-950">

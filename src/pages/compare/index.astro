@@ -30,20 +30,10 @@ const comparisons = Object.entries(modules)
  const sg = seeGuruFirst(a.slug) - seeGuruFirst(b.slug);
  return sg !== 0 ? sg : a.title.localeCompare(b.title);
  });
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://learnenglish.life/" },
-    { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://learnenglish.life/compare/" }
-  ]
-};
-
 ---
 
 <Base title="Compare English Learning Tools | LearnEnglish.Life" description="Compare the best English learning apps, tutoring platforms, and courses. Find the perfect fit for your budget, goals, and learning style.">
  <Header />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
  
  <main class="max-w-6xl mx-auto px-4 py-12">
  <div class="text-center mb-12">
