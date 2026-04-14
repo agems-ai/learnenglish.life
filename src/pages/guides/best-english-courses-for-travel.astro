@@ -2,8 +2,40 @@
 import Base from "../../layouts/Base.astro";
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much English do I need for travel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A solid A2-B1 level is enough for most travel situations: ordering food, checking in at hotels, asking for directions, and handling transport. That's around 1,500 active words and basic past/future tenses. You can reach this level with 3-6 months of daily practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use an app or a tutor for travel English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use both. Apps like Duolingo or Babbel build the core vocabulary. A human tutor on platforms like See Guru or iTalki lets you role-play real travel scenarios (airport, hotel, taxi) so the words stick. Five to ten tutoring sessions before a trip make a real difference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the cheapest way to learn travel English fast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with Duolingo (free) for daily vocabulary drills, then use See Guru's three free trial lessons to practice speaking scenarios. After the trial, lessons start at $5. Total cost for 4 weeks of serious prep: under $40."
+      }
+    }
+  ]
+};
 ---
-<Base title="5 Best English Courses for Travel: Your Ticket to the World" description="Master the essential phrases and confidence you need to navigate any destination with ease.">
+<Base title="5 Best English Courses for Travel in 2026: Your Ticket to the World" description="Master the essential phrases and confidence you need to navigate any destination with ease. Our top picks for travel English in 2026.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <Header />
   <div class="max-w-3xl mx-auto px-4 pt-6">
     <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
@@ -22,48 +54,87 @@ import Footer from '../../components/Footer.astro';
   </div>
 
   <div class="bg-blue-900/30 border border-blue-700/50 rounded-xl p-6 mb-8">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between flex-wrap gap-3">
       <div>
-        <p class="font-bold text-lg">Top Choice</p>
-        <p class="text-3xl font-bold text-blue-700">italki (Travel Specialists)</p>
+        <p class="font-bold text-lg text-blue-200">Top Choice</p>
+        <p class="text-2xl md:text-3xl font-bold text-blue-100">iTalki (Travel Specialists)</p>
       </div>
-      <div class="text-right">
+      <div class="text-left md:text-right">
         <p class="text-sm text-gray-400">Best for</p>
-        <p class="font-semibold text-blue-700">Real-world Practice</p>
+        <p class="font-semibold text-blue-200">Real-world Practice</p>
       </div>
     </div>
   </div>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Why General English Isn't Enough for Travel</h2>
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Why General English Isn't Enough for Travel</h2>
   <p class="text-gray-300 mb-4 leading-relaxed">When you are standing at a train station in London or checking into a hotel in New York, you do not need to know complex grammar rules. You need functional language. Travel English focuses on survival skills: ordering food, asking for directions, handling transport delays, and making small talk with locals.</p>
+  <p class="text-gray-300 mb-4 leading-relaxed">It also requires <strong>listening resilience</strong>. A London cabbie, a New York waiter, and a Sydney Uber driver all speak different versions of English. Travel courses that only expose you to one accent will leave you freezing at the first unfamiliar voice. The best resources mix accents, pace, and register.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">1. italki (Customized Travel Lessons)</h2>
-  <p class="text-gray-300 mb-4 leading-relaxed">The fastest way to prepare for a trip is to role-play with a native speaker. On italki, you can find tutors who specialize in travel English. They can simulate scenarios like clearing customs or reporting a lost passport. This builds the muscle memory you need when you are actually on the road.</p>
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">1. iTalki (Customized Travel Lessons)</h2>
+  <p class="text-gray-300 mb-4 leading-relaxed">The fastest way to prepare for a trip is to role-play with a native speaker. On iTalki, you can find tutors who specialize in travel English. They can simulate scenarios like clearing customs, reporting a lost passport, or handling a rental car dispute. This builds the muscle memory you need when you are actually on the road.</p>
   <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
     <li>Personalized role-play for your specific destination</li>
     <li>Flexible scheduling to fit your pre-trip planning</li>
     <li>Focus on listening to different accents</li>
+    <li>Tutors from the UK, US, Canada, Australia, South Africa</li>
   </ul>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">2. Duolingo (Vocabulary Foundations)</h2>
-  <p class="text-gray-300 mb-4 leading-relaxed">For absolute beginners, Duolingo is a great starting point to build a core vocabulary of travel nouns and verbs. It is free and easy to use during your commute. However, it should be used as a supplement to speaking practice, not a replacement.</p>
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">2. See Guru (Free Trial Before You Buy)</h2>
+  <p class="text-gray-300 mb-4 leading-relaxed">If you want to drill travel scenarios without commitment, <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a> gives you three full free lessons with certified teachers, no credit card required. Perfect for last-minute trip prep: tell the tutor your destination and they'll build the lesson around it. After the trial, lessons start at $5, cheaper than most phrasebooks plus audio add-ons.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">3. Babbel (Dialogue-Based Learning)</h2>
-  <p class="text-gray-300 mb-4 leading-relaxed">Babbel offers specific "Travel" modules that focus on realistic dialogues. The speech recognition tool helps you polish your pronunciation so you are understood by locals the first time you speak.</p>
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">3. Duolingo (Vocabulary Foundations)</h2>
+  <p class="text-gray-300 mb-4 leading-relaxed">For absolute beginners, Duolingo is a great starting point to build a core vocabulary of travel nouns and verbs. It is free and easy to use during your commute. However, it should be used as a supplement to speaking practice, not a replacement — Duolingo alone will not prepare you to order dinner in a noisy London pub.</p>
 
-  <h2 class="text-2xl font-bold mt-10 mb-4">Verdict</h2>
-  <p class="text-gray-300 mb-4 leading-relaxed">Start with Duolingo three months before your trip to build your vocabulary. One month before you leave, book five sessions on italki to practice your speaking. This approach ensures you have both the words and the confidence to use them.</p>
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">4. Babbel (Dialogue-Based Learning)</h2>
+  <p class="text-gray-300 mb-4 leading-relaxed">Babbel offers specific "Travel" modules that focus on realistic dialogues. The speech recognition tool helps you polish your pronunciation so you are understood by locals the first time you speak. The lessons are short (10–15 minutes) and perfect for evening prep sessions.</p>
 
-  <div class="bg-blue-600 rounded-xl p-8 text-white mt-12">
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">5. Rosetta Stone (Immersion Method)</h2>
+  <p class="text-gray-300 mb-6 leading-relaxed">Rosetta Stone's immersion approach is especially effective for travel English because it teaches you to associate words with images instead of translations. When you're actually at the airport, you need to recognize signs and situations instantly, not translate them in your head. Not cheap — expect $12–$16/month — but the lifetime subscription deals are worth watching.</p>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">The 4-Week Pre-Trip Plan</h2>
+  <ol class="list-decimal list-inside space-y-2 text-gray-300 mb-6">
+    <li><strong class="text-white">Week 1:</strong> Duolingo daily (20 min) to rebuild core vocabulary. Watch 2 travel vlogs set in your destination city.</li>
+    <li><strong class="text-white">Week 2:</strong> Switch to Babbel travel modules. Start See Guru free trial — one session on "at the airport."</li>
+    <li><strong class="text-white">Week 3:</strong> Two more See Guru or iTalki sessions, scenario-based (hotel, restaurant, emergency).</li>
+    <li><strong class="text-white">Week 4:</strong> Listening only — podcasts with the destination accent (BBC for UK, NPR for US). Review flash cards.</li>
+  </ol>
+
+  <h2 class="text-2xl font-bold mt-10 mb-4 text-white">Verdict</h2>
+  <p class="text-gray-300 mb-6 leading-relaxed">Start with Duolingo three months before your trip to build your vocabulary. One month before you leave, book five sessions on iTalki or See Guru to practice your speaking. This approach ensures you have both the words and the confidence to use them. If budget matters, See Guru's three free lessons plus $5 pay-per-lesson rate make this the cheapest serious speaking prep available.</p>
+
+  <div class="bg-gradient-to-br from-emerald-900/50 to-teal-900/40 border-2 border-emerald-600/50 rounded-xl p-8 text-white mt-12 text-center">
+    <div class="flex items-center gap-2 justify-center mb-3">
+      <span class="text-yellow-400">★★★★★</span>
+      <span class="text-emerald-300 font-bold">4.8 / 5</span>
+    </div>
     <h3 class="text-2xl font-bold mb-2">Ready to explore the world?</h3>
-    <p class="mb-6">Find a travel English tutor on italki and start practicing for your next adventure.</p>
-    <a href="/reviews/italki/" class="bg-slate-900/60 text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-slate-800 transition-colors">Find a Travel Tutor</a>
+    <p class="mb-6 text-emerald-100">Three free lessons with a certified teacher, no credit card required. Role-play your trip before you even pack.</p>
+    <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-lg font-bold transition-colors">Claim 3 Free Lessons →</a>
+  </div>
+
+  <h2 class="text-2xl font-bold mt-12 mb-4 text-white">Frequently Asked Questions</h2>
+
+  <div class="space-y-4 mb-8">
+    <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-5">
+      <h3 class="text-lg font-bold text-white mb-2">How much English do I need for travel?</h3>
+      <p class="text-gray-300">A solid A2–B1 level is enough for most travel situations — roughly 1,500 active words and basic past/future tenses. You can reach it with 3–6 months of daily practice.</p>
+    </div>
+    <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-5">
+      <h3 class="text-lg font-bold text-white mb-2">App or tutor?</h3>
+      <p class="text-gray-300">Both. Apps build vocabulary; tutors let you role-play real travel scenarios. Five to ten tutoring sessions before a trip make a real difference.</p>
+    </div>
+    <div class="bg-slate-900/60 border border-slate-700 rounded-xl p-5">
+      <h3 class="text-lg font-bold text-white mb-2">Cheapest fast-track?</h3>
+      <p class="text-gray-300">Duolingo free + See Guru's three free trial lessons + $5 pay-per-lesson sessions. Under $40 for a full month of serious prep.</p>
+    </div>
   </div>
 
     <aside class="mt-12 mb-4 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
       <h3 class="text-lg font-bold text-white mb-4">Related guides</h3>
       <ul class="space-y-2 text-base">
         <li><a href="/guides/best-english-course-for-cabin-crew/" class="text-emerald-400 hover:text-emerald-300">Best Course for Cabin Crew</a></li>
+        <li><a href="/guides/best-english-apps-for-beginners/" class="text-emerald-400 hover:text-emerald-300">Best English Apps for Beginners</a></li>
+        <li><a href="/guides/how-to-practice-speaking-alone/" class="text-emerald-400 hover:text-emerald-300">How to Practice Speaking Alone</a></li>
       </ul>
       <p class="mt-5 pt-5 border-t border-slate-700 text-sm text-slate-300">
         Want to test 1 on 1 lessons before paying? <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a> gives 3 free lessons with certified teachers, no card required.

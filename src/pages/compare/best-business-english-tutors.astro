@@ -3,56 +3,157 @@ import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 const title = "7 Best Platforms for Business English Tutors in 2026 | LearnEnglish.Life";
-const description = "Looking for a business English tutor? We've ranked the top 7 platforms based on teacher expertise, business curriculum, and price.";
+const description = "Looking for a business English tutor? We've ranked the top 7 platforms based on teacher expertise, business curriculum, pricing, and real-world usefulness.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best platform for business English in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preply is our top pick for structured business English because its filters let you find tutors with specific industry experience (finance, law, tech). For learners who want to test 1-on-1 tutoring before paying, See Guru offers three free lessons with certified teachers and prices from $5, which is unmatched in the category."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does business English tutoring cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Business English tutoring typically costs between $15 and $60 per hour depending on the platform and tutor credentials. Marketplaces like iTalki and See Guru have the widest price range, with sessions from $5, while specialized corporate providers can cost over $100 per hour."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many lessons do I need to improve business English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most professionals see noticeable improvement after 20 to 30 focused sessions, typically over three to four months at two lessons per week. To prepare for a specific event like a presentation or interview, five to ten targeted sessions are usually enough."
+      }
+    }
+  ]
+};
 ---
 <Base title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <Header />
   <main id="main-content" class="bg-neutral-950 min-h-screen">
-    <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
-      <a href="/" class="hover:text-emerald-400">Home</a>
-      <span class="mx-2">›</span>
-      <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
-      <span class="mx-2">›</span>
-      <span class="text-neutral-400">Best Business English Tutors</span>
-    </nav>
+    <div class="max-w-3xl mx-auto px-4 pt-6">
+      <nav aria-label="Breadcrumb" class="text-sm text-neutral-300 mb-4 flex items-center flex-wrap">
+        <a href="/" class="hover:text-emerald-400">Home</a>
+        <span class="mx-2">›</span>
+        <a href="/compare/" class="hover:text-emerald-400">Comparisons</a>
+        <span class="mx-2">›</span>
+        <span class="text-neutral-400">Best Business English Tutors</span>
+      </nav>
+    </div>
 <article class="max-w-3xl mx-auto px-4 py-12">
   <div class="mb-8">
     <span class="text-sm text-neutral-400 uppercase tracking-widest font-semibold">Guide · Updated April 2026</span>
     <h1 class="text-4xl font-bold mt-2 mb-4">7 Best Platforms for Business English Tutors</h1>
-    <p class="text-xl text-neutral-400">To succeed in the global economy, you need more than just general English. You need the language of business.</p>
+    <p class="text-xl text-neutral-400">To succeed in the global economy, you need more than just general English. You need the language of meetings, negotiations, reports, and presentations.</p>
   </div>
 
-  <div class="space-y-12 mt-12">
+  <!-- Quick answer card -->
+  <div class="bg-emerald-900/30 border border-emerald-700/50 rounded-2xl p-6 mb-10">
+    <h2 class="text-xl font-bold text-emerald-200 mb-3">The Quick Answer</h2>
+    <p class="text-neutral-200 leading-relaxed">
+      For structured business English with industry specialists, pick <strong>Preply</strong>. For the widest range of professional tutors at every price point, pick <strong>iTalki</strong>. To test 1-on-1 tutoring before paying a cent, start with <strong><a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a></strong> — three free lessons with certified teachers, no card required.
+    </p>
+  </div>
+
+  <h2 class="text-2xl font-bold text-white mb-6 mt-4">How we ranked them</h2>
+  <p class="text-neutral-300 mb-4 leading-relaxed">
+    We evaluated each platform on five factors that matter for working professionals: <strong>tutor specialization</strong> (does the platform have teachers with real industry experience?), <strong>pricing flexibility</strong>, <strong>schedule fit for busy weeks</strong>, <strong>lesson structure</strong> (freeform vs curriculum-based), and <strong>trial risk</strong> (how much do you pay before knowing if the tutor is right for you?).
+  </p>
+
+  <div class="space-y-8 mt-12">
     <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
-      <h2 class="text-2xl font-bold text-white mb-4">1. Preply</h2>
-      <p class="text-neutral-300 mb-4">Preply is our top choice for business English due to its specialized search filters. You can find tutors who have backgrounds in finance, law, marketing, or tech.</p>
-      <a href="/reviews/preply/" class="text-emerald-500 hover:underline font-bold">Read Review →</a>
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-2xl font-bold text-white">1. Preply <span class="text-sm font-normal text-emerald-400 ml-2">Best for structured business curriculum</span></h2>
+      </div>
+      <p class="text-neutral-300 mb-3">Preply is our top choice for business English due to its specialized search filters. You can find tutors who have backgrounds in finance, law, marketing, or tech. Many Preply teachers follow a structured business curriculum and will set homework between lessons.</p>
+      <p class="text-neutral-400 text-sm mb-3"><strong>Price:</strong> $10–$50/hour · <strong>Trial:</strong> paid first lesson with refund if you switch teachers</p>
+      <a href="/reviews/preply/" class="text-emerald-500 hover:underline font-bold">Read Preply Review →</a>
     </div>
 
     <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
-      <h2 class="text-2xl font-bold text-white mb-4">2. Verbling</h2>
-      <p class="text-neutral-300 mb-4">Verbling's rigorous teacher screening means you're getting true professionals. Many Verbling tutors offer structured business English curricula.</p>
-      <a href="/reviews/verbling/" class="text-emerald-500 hover:underline font-bold">Read Review →</a>
+      <h2 class="text-2xl font-bold text-white mb-3">2. Verbling <span class="text-sm font-normal text-emerald-400 ml-2">Best for vetted business teachers</span></h2>
+      <p class="text-neutral-300 mb-3">Verbling's rigorous teacher screening means you're getting true professionals. Many Verbling tutors offer structured business English curricula and the built-in video classroom is stable enough for team training sessions.</p>
+      <p class="text-neutral-400 text-sm mb-3"><strong>Price:</strong> $15–$60/hour · <strong>Trial:</strong> one discounted trial lesson</p>
+      <a href="/reviews/verbling/" class="text-emerald-500 hover:underline font-bold">Read Verbling Review →</a>
     </div>
 
     <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
-      <h2 class="text-2xl font-bold text-white mb-4">3. Cambly Business</h2>
-      <p class="text-neutral-300 mb-4">Cambly offers a dedicated "Business" track with lessons focused on presentations, meetings, and negotiations.</p>
-      <a href="/reviews/cambly/" class="text-emerald-500 hover:underline font-bold">Read Review →</a>
+      <h2 class="text-2xl font-bold text-white mb-3">3. Cambly Business <span class="text-sm font-normal text-emerald-400 ml-2">Best for conversation fluency</span></h2>
+      <p class="text-neutral-300 mb-3">Cambly offers a dedicated "Business" track with lessons focused on presentations, meetings, and negotiations. The pay-as-you-go minutes model suits unpredictable work schedules, and you can get on a call with a tutor within seconds.</p>
+      <p class="text-neutral-400 text-sm mb-3"><strong>Price:</strong> $10–$17/hour equivalent · <strong>Trial:</strong> free sign-up, first minute free</p>
+      <a href="/reviews/cambly/" class="text-emerald-500 hover:underline font-bold">Read Cambly Review →</a>
     </div>
 
     <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
-      <h2 class="text-2xl font-bold text-white mb-4">4. iTalki</h2>
-      <p class="text-neutral-300 mb-4">With over 10,000 tutors, iTalki has a massive selection of business English specialists at every price point.</p>
-      <a href="/reviews/italki/" class="text-emerald-500 hover:underline font-bold">Read Review →</a>
+      <h2 class="text-2xl font-bold text-white mb-3">4. iTalki <span class="text-sm font-normal text-emerald-400 ml-2">Best for tutor variety at every price</span></h2>
+      <p class="text-neutral-300 mb-3">With over 10,000 tutors, iTalki has a massive selection of business English specialists at every price point. You can find an ex-corporate trainer for $40/hour or a community tutor with industry experience for $15/hour. Ideal if you want to shop around and compare styles.</p>
+      <p class="text-neutral-400 text-sm mb-3"><strong>Price:</strong> $8–$80/hour · <strong>Trial:</strong> one discounted trial lesson per teacher</p>
+      <a href="/reviews/italki/" class="text-emerald-500 hover:underline font-bold">Read iTalki Review →</a>
+    </div>
+
+    <div class="bg-gradient-to-br from-emerald-950/60 to-teal-950/40 border-2 border-emerald-600/50 rounded-2xl p-8">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="bg-emerald-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">OUR PICK FOR TESTING</span>
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-3">5. See Guru <span class="text-sm font-normal text-emerald-300 ml-2">Best free trial for professionals</span></h2>
+      <p class="text-neutral-200 mb-3">See Guru offers certified, diploma-holding teachers and — uniquely — three full free lessons with no credit card required. That is enough time to try a business English session, see whether the teacher's style fits your work goals, and decide without risk. After the trial, lessons start at $5, which is the lowest rate among quality platforms we have tested.</p>
+      <p class="text-neutral-300 text-sm mb-4"><strong>Price:</strong> $5–$20/lesson · <strong>Trial:</strong> <strong class="text-emerald-300">3 free lessons, no card required</strong></p>
+      <a href="/go/see-guru/" target="_blank" rel="noopener sponsored nofollow" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2.5 px-5 rounded-lg transition-colors mr-3">
+        Try 3 Free Lessons →
+      </a>
+      <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 font-bold">Read Full Review</a>
     </div>
 
     <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
-      <h2 class="text-2xl font-bold text-white mb-4">5. See Guru</h2>
-      <p class="text-neutral-300 mb-4">See Guru offers a more boutique experience with highly qualified teachers and a focus on professional communication.</p>
-      <a href="/reviews/see-guru/" class="text-emerald-500 hover:underline font-bold">Read Review →</a>
+      <h2 class="text-2xl font-bold text-white mb-3">6. Lingoda <span class="text-sm font-normal text-emerald-400 ml-2">Best for group business classes</span></h2>
+      <p class="text-neutral-300 mb-3">Lingoda runs scheduled group and private classes on a strict CEFR-aligned curriculum. Business English is offered as a dedicated track from B1 to C1. Ideal for learners who want the discipline of a class schedule and a certificate at the end.</p>
+      <p class="text-neutral-400 text-sm mb-3"><strong>Price:</strong> $10–$25/class · <strong>Trial:</strong> 7-day trial</p>
+      <a href="/reviews/lingoda/" class="text-emerald-500 hover:underline font-bold">Read Lingoda Review →</a>
+    </div>
+
+    <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
+      <h2 class="text-2xl font-bold text-white mb-3">7. Rocket Languages Business <span class="text-sm font-normal text-emerald-400 ml-2">Best for self-paced fundamentals</span></h2>
+      <p class="text-neutral-300 mb-3">Not a tutor platform but worth mentioning. Rocket Languages offers structured self-study courses that cover the functional vocabulary of meetings, emails, and phone calls. Pair it with a weekly human tutor for the best of both worlds.</p>
+      <p class="text-neutral-400 text-sm mb-3"><strong>Price:</strong> $150 one-time · <strong>Trial:</strong> free lesson preview</p>
+      <a href="/reviews/rocket-languages/" class="text-emerald-500 hover:underline font-bold">Read Rocket Review →</a>
     </div>
   </div>
+
+  <h2 class="text-2xl font-bold text-white mb-4 mt-12">Which platform should you choose?</h2>
+  <ul class="list-disc list-inside space-y-2 text-neutral-300 mb-8">
+    <li><strong class="text-white">If you want to test before paying:</strong> <a href="/reviews/see-guru/" class="text-emerald-400 hover:text-emerald-300 underline">See Guru</a> — three free certified-teacher lessons.</li>
+    <li><strong class="text-white">If you want an industry specialist:</strong> Preply's filters let you pick a former banker, lawyer, or marketer.</li>
+    <li><strong class="text-white">If you need flexibility:</strong> Cambly's on-demand minutes work around chaotic calendars.</li>
+    <li><strong class="text-white">If you want a certificate:</strong> Lingoda's CEFR-aligned business track delivers proof of progress.</li>
+    <li><strong class="text-white">If you have a specific presentation coming up:</strong> book 5–10 sessions on iTalki with a business specialist.</li>
+  </ul>
+
+  <h2 class="text-2xl font-bold text-white mb-4 mt-12">Frequently Asked Questions</h2>
+
+  <div class="space-y-4 mb-8">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+      <h3 class="text-lg font-bold text-white mb-2">How much does business English tutoring cost?</h3>
+      <p class="text-neutral-300">Expect $15–$60 per hour depending on credentials. Marketplaces like iTalki and See Guru have the widest range, with lessons from $5; specialized corporate providers can charge over $100 per hour.</p>
+    </div>
+    <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+      <h3 class="text-lg font-bold text-white mb-2">How many lessons do I need to see results?</h3>
+      <p class="text-neutral-300">Most professionals see noticeable improvement after 20–30 focused sessions across three to four months at two lessons per week. For event-specific prep (an interview, a keynote), five to ten targeted sessions are enough.</p>
+    </div>
+    <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+      <h3 class="text-lg font-bold text-white mb-2">Can I use these platforms for team training?</h3>
+      <p class="text-neutral-300">Lingoda and Verbling support group lessons natively. For team training on iTalki or Preply, book the same tutor across your team — several platforms now offer business accounts with invoicing.</p>
+    </div>
+  </div>
+
     <!-- See Guru CTA -->
     <div class="bg-gradient-to-br from-emerald-900/40 to-indigo-900/40 border border-emerald-500/40 rounded-2xl p-8 my-12 text-center">
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Try See Guru — 3 Free Lessons, No Card Required</h2>
@@ -62,6 +163,15 @@ const description = "Looking for a business English tutor? We've ranked the top 
       </a>
       <p class="text-xs text-emerald-200/70 mt-4">Trusted by 50,000+ English learners worldwide.</p>
     </div>
+
+    <aside class="mt-12 p-6 bg-slate-900/60 border border-slate-700 rounded-xl">
+      <h3 class="text-lg font-bold text-white mb-4">Related guides</h3>
+      <ul class="space-y-2 text-base">
+        <li><a href="/guides/best-business-english-courses/" class="text-emerald-400 hover:text-emerald-300">Best Business English Courses</a></li>
+        <li><a href="/guides/english-tutors-business-professionals/" class="text-emerald-400 hover:text-emerald-300">English Tutors for Business Professionals</a></li>
+        <li><a href="/compare/best-business-english-tutors-online-2026/" class="text-emerald-400 hover:text-emerald-300">Best Business Tutors 2026 (Extended List)</a></li>
+      </ul>
+    </aside>
 
 </article>
   </main>
