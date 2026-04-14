@@ -1,0 +1,61 @@
+---
+---
+<div class="bg-gradient-to-br from-emerald-900 to-neutral-900 border border-emerald-800 rounded-xl p-6 text-center">
+  <div class="mb-4 flex justify-center">
+    <div class="w-16 h-20 bg-emerald-700 rounded shadow-lg flex items-center justify-center border border-emerald-500 relative overflow-hidden">
+      <div class="absolute top-0 w-full h-4 bg-emerald-800 opacity-50"></div>
+      <span class="text-white font-bold text-xs">PDF</span>
+    </div>
+  </div>
+  <h3 class="text-xl font-bold text-white mb-2">
+    Free Guide: Top 10 AI Tools for English
+  </h3>
+  <p class="text-neutral-300 text-sm mb-5">
+    Download our exclusive PDF guide and learn how to practice speaking for free using AI.
+  </p>
+  
+  <form id="lead-magnet-form" class="flex flex-col gap-3">
+    <input 
+      type="email" 
+      name="email"
+      placeholder="Enter your email" 
+      required
+      class="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-2.5 text-white text-sm placeholder-neutral-500 focus:outline-none focus:border-emerald-500 transition-colors"
+    />
+    <button 
+      type="submit" 
+      class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg px-4 py-2.5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+    >
+      Send Me the PDF
+    </button>
+  </form>
+  
+  <div id="lead-magnet-message" class="mt-3 text-sm hidden"></div>
+  
+  <p class="mt-4 text-xs text-neutral-500">
+    We'll also send you our weekly learning tips. No spam.
+  </p>
+</div>
+
+<script>
+  const form = document.getElementById('lead-magnet-form') as HTMLFormElement;
+  const messageDiv = document.getElementById('lead-magnet-message');
+  const submitBtn = form?.querySelector('button');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !messageDiv) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Sending...';
+    
+    // Simulate API call for PDF delivery system
+    setTimeout(() => {
+      form.reset();
+      messageDiv.textContent = '✅ Success! Check your inbox for the PDF.';
+      messageDiv.className = 'mt-3 text-sm text-emerald-400 font-medium';
+      messageDiv.classList.remove('hidden');
+      form.classList.add('hidden');
+    }, 1500);
+  });
+</script>
