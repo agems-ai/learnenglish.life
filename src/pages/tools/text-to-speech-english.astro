@@ -27,6 +27,99 @@ import Footer from '../../components/Footer.astro';
     </div>
   </div>
 
+  <!-- Embedded Free TTS Tool (Web Speech API) -->
+  <div class="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 border border-emerald-700 rounded-xl p-6 mb-10" id="tts-tool">
+    <h2 class="text-2xl font-bold text-white mb-2">Try Text to Speech Right Now (Free, No Signup)</h2>
+    <p class="text-gray-300 mb-4">Type or paste English text below. Choose a voice and accent. Hear it read aloud instantly. No account, no ads, no limits.</p>
+    <textarea
+      id="tts-text"
+      rows="4"
+      class="w-full p-4 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:border-emerald-500 focus:outline-none mb-4"
+      placeholder="Type or paste English text here..."
+    >Hello! This is a free text to speech tool. Type any English sentence and hear it spoken aloud. Perfect for practicing pronunciation and listening skills.</textarea>
+
+    <div class="grid sm:grid-cols-2 gap-3 mb-4">
+      <div>
+        <label for="tts-voice" class="block text-sm font-semibold text-gray-200 mb-1">Voice / Accent</label>
+        <select id="tts-voice" class="w-full p-3 rounded-lg bg-neutral-900 text-white border border-neutral-700 focus:border-emerald-500 focus:outline-none">
+          <option value="">Loading voices...</option>
+        </select>
+      </div>
+      <div>
+        <label for="tts-rate" class="block text-sm font-semibold text-gray-200 mb-1">Speed: <span id="tts-rate-val">1.0x</span></label>
+        <input id="tts-rate" type="range" min="0.5" max="1.5" step="0.1" value="1" class="w-full mt-3" />
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <button id="tts-play" type="button" class="px-6 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-500 transition-colors min-h-[44px]">
+        ▶ Speak
+      </button>
+      <button id="tts-pause" type="button" class="px-6 py-3 bg-neutral-700 text-white font-semibold rounded-lg hover:bg-neutral-600 transition-colors min-h-[44px]">
+        ⏸ Pause
+      </button>
+      <button id="tts-stop" type="button" class="px-6 py-3 bg-neutral-700 text-white font-semibold rounded-lg hover:bg-neutral-600 transition-colors min-h-[44px]">
+        ⏹ Stop
+      </button>
+    </div>
+    <p id="tts-status" class="text-sm text-gray-400 mt-3"></p>
+    <p class="text-xs text-gray-500 mt-4">Uses your browser's built-in Web Speech API. Works offline. Voice quality depends on your device (iOS, Android, and modern desktop browsers include high-quality voices).</p>
+  </div>
+
+  <script is:inline>
+    (function () {
+      if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+      const textEl = document.getElementById('tts-text');
+      const voiceEl = document.getElementById('tts-voice');
+      const rateEl = document.getElementById('tts-rate');
+      const rateVal = document.getElementById('tts-rate-val');
+      const playBtn = document.getElementById('tts-play');
+      const pauseBtn = document.getElementById('tts-pause');
+      const stopBtn = document.getElementById('tts-stop');
+      const statusEl = document.getElementById('tts-status');
+      if (!textEl || !voiceEl || !playBtn) return;
+
+      let voices = [];
+      function loadVoices() {
+        voices = speechSynthesis.getVoices().filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+        if (!voices.length) {
+          voiceEl.innerHTML = '<option value="">No English voices found on this device</option>';
+          return;
+        }
+        voiceEl.innerHTML = voices.map((v, i) => {
+          const accent = v.lang === 'en-US' ? '🇺🇸 US' :
+                         v.lang === 'en-GB' ? '🇬🇧 UK' :
+                         v.lang === 'en-AU' ? '🇦🇺 AU' :
+                         v.lang === 'en-IN' ? '🇮🇳 IN' :
+                         v.lang === 'en-CA' ? '🇨🇦 CA' : v.lang;
+          return '<option value="' + i + '">' + accent + ' - ' + v.name + '</option>';
+        }).join('');
+      }
+      loadVoices();
+      speechSynthesis.onvoiceschanged = loadVoices;
+
+      rateEl.addEventListener('input', () => { rateVal.textContent = parseFloat(rateEl.value).toFixed(1) + 'x'; });
+
+      playBtn.addEventListener('click', () => {
+        if (!textEl.value.trim()) { statusEl.textContent = 'Enter some text first.'; return; }
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(textEl.value);
+        const idx = parseInt(voiceEl.value, 10);
+        if (voices[idx]) u.voice = voices[idx];
+        u.rate = parseFloat(rateEl.value);
+        u.onstart = () => { statusEl.textContent = 'Speaking...'; };
+        u.onend = () => { statusEl.textContent = 'Done. Try changing voice or speed for variety.'; };
+        u.onerror = () => { statusEl.textContent = 'Speech error. Try a different voice.'; };
+        speechSynthesis.speak(u);
+      });
+      pauseBtn.addEventListener('click', () => {
+        if (speechSynthesis.speaking && !speechSynthesis.paused) { speechSynthesis.pause(); statusEl.textContent = 'Paused.'; }
+        else if (speechSynthesis.paused) { speechSynthesis.resume(); statusEl.textContent = 'Resumed.'; }
+      });
+      stopBtn.addEventListener('click', () => { speechSynthesis.cancel(); statusEl.textContent = 'Stopped.'; });
+    })();
+  </script>
+
   <p class="text-gray-300 text-lg leading-relaxed mb-6">Text to speech tools have improved dramatically in the last few years. The robotic, choppy voices of the past have been replaced by systems that sound almost human. For English learners, this matters. You can now hear articles, vocabulary lists, or your own writing read aloud with accurate pronunciation and natural intonation.</p>
   <p class="text-gray-300 text-lg leading-relaxed mb-8">This guide covers the best text to speech options for English learners, how to use them effectively, and what to look for when choosing a tool.</p>
 
