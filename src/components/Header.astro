@@ -27,19 +27,24 @@ const currentPath = Astro.url.pathname;
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-1">
-        {navItems.map(item => (
-          <a
-            href={item.href}
-            class:list={[
-              "px-4 py-2 rounded-lg font-medium transition-colors",
-              currentPath.startsWith(item.href)
-                ? "bg-emerald-900/40 text-emerald-300"
-                : "text-slate-300 hover:bg-slate-800 hover:text-white"
-            ]}
-          >
-            {item.label}
-          </a>
-        ))}
+        {navItems.map(item => {
+          const isLevelTest = item.href === '/tools/english-level-test/';
+          const isActive = currentPath.startsWith(item.href);
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                "px-4 py-2 rounded-lg font-medium transition-colors",
+                isLevelTest && !isActive && "border border-emerald-600 text-emerald-400 hover:bg-emerald-900/40 hover:text-emerald-200",
+                isLevelTest && isActive && "bg-emerald-600 text-white",
+                !isLevelTest && isActive && "bg-emerald-900/40 text-emerald-300",
+                !isLevelTest && !isActive && "text-slate-300 hover:bg-slate-800 hover:text-white"
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
       </nav>
 
       <!-- Right side: Search + CTA -->
