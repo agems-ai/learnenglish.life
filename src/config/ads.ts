@@ -15,7 +15,7 @@ export const AD_CONFIG = {
   // Publisher ID (already confirmed)
   PUBLISHER_ID: "ca-pub-7792548915836467",
 
-  // Ad slot IDs — fill these in from the AdSense dashboard
+  // Ad slot IDs, fill these in from the AdSense dashboard
   // Until filled, the component renders a placeholder
   SLOTS: {
     homepage_leaderboard: "",      // 728x90, below hero

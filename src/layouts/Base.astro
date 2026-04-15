@@ -13,11 +13,11 @@ interface Props {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
-  /** Article schema data — auto-generates Article JSON-LD */
+  /** Article schema data, auto-generates Article JSON-LD */
   articleSchema?: ArticleSchemaData;
-  /** Review schema data — auto-generates Review JSON-LD */
+  /** Review schema data, auto-generates Review JSON-LD */
   reviewSchema?: ReviewSchemaData;
-  /** FAQ schema data — auto-generates FAQPage JSON-LD */
+  /** FAQ schema data, auto-generates FAQPage JSON-LD */
   faqSchema?: FAQSchemaData;
   /** Additional custom JSON-LD schema objects */
   customSchemas?: object[];

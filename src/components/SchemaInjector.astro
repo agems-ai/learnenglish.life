@@ -1,6 +1,6 @@
 ---
 /**
- * SchemaInjector.astro — Automatic JSON-LD schema injection
+ * SchemaInjector.astro, Automatic JSON-LD schema injection
  * 
  * This component is included in Base.astro and generates:
  * 1. Organization schema (every page)
@@ -28,11 +28,11 @@ interface Props {
   pathname: string;
   /** Page title for breadcrumb last item override */
   pageTitle?: string;
-  /** Article schema data — auto-generates Article JSON-LD */
+  /** Article schema data, auto-generates Article JSON-LD */
   article?: ArticleSchemaData;
-  /** Review schema data — auto-generates Review JSON-LD */
+  /** Review schema data, auto-generates Review JSON-LD */
   review?: ReviewSchemaData;
-  /** FAQ schema data — auto-generates FAQPage JSON-LD */
+  /** FAQ schema data, auto-generates FAQPage JSON-LD */
   faq?: FAQSchemaData;
   /** Additional custom schemas (pre-built objects) */
   customSchemas?: object[];
