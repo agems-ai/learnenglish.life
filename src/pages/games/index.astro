@@ -5,207 +5,201 @@ import Footer from '../../components/Footer.astro';
 
 const games = [
  {
- id: 'grammar',
- title: 'Grammar Challenge',
- description: 'Test your grammar with fill-in-the-blank questions covering tenses, articles, prepositions, and more.',
- icon: '',
- href: '/games/grammar/',
- difficulty: 'All Levels',
- questions: '25+ questions',
- features: ['Fill-in-the-blank', 'Instant feedback', 'Explanations'],
+  id: 'level-test',
+  title: 'English Level Test',
+  description: '25 questions across grammar, vocabulary, and expressions. Get your CEFR level from A1 to C2 with tailored next steps.',
+  href: '/tools/english-level-test/',
+  difficulty: 'A1 to C2',
+  length: '25 questions, 10 to 15 min',
+  features: ['CEFR result (A1 to C2)', 'Personalized study plan', 'No signup'],
+  accent: 'from-emerald-600 to-teal-600',
+  badge: 'Start here',
  },
  {
- id: 'wordsearch',
- title: 'Word Search',
- description: 'Find hidden words in the grid. Great for expanding vocabulary and spelling skills.',
- icon: '',
- href: '/games/word-search/',
- difficulty: 'All Levels',
- questions: 'Multiple levels',
- features: ['Grid puzzles', 'Timer mode', 'Mobile friendly'],
+  id: 'grammar',
+  title: 'Grammar Challenge',
+  description: 'Fill-in-the-blank questions on tenses, articles, prepositions, and more. Instant feedback with explanations.',
+  href: '/games/grammar/',
+  difficulty: 'A1 to C1',
+  length: '60+ questions, 4 categories',
+  features: ['Filter by CEFR level', 'Instant explanations', 'Track score and streak'],
+  accent: 'from-blue-600 to-indigo-600',
+ },
+ {
+  id: 'wordsearch',
+  title: 'Word Search',
+  description: 'Find hidden English words in the grid. Builds vocabulary recognition and spelling.',
+  href: '/games/word-search/',
+  difficulty: 'A1 to B1',
+  length: 'Multiple puzzles',
+  features: ['Timer mode', 'Themed word lists', 'Mobile friendly'],
+  accent: 'from-amber-600 to-orange-600',
  },
 ];
 
 const structuredData = {
  "@context": "https://schema.org",
  "@type": "CollectionPage",
- "name": "English Learning Games | LearnEnglish.Life",
- "description": "Practice English with fun interactive games: Grammar Challenge and Word Search. Free to play!",
+ "name": "English Learning Games and Tests | LearnEnglish.Life",
+ "description": "Free interactive English tools: CEFR level test, grammar challenge, and word search. No signup needed.",
  "url": "https://learnenglish.life/games/",
  "mainEntity": {
- "@type": "ItemList",
- "itemListElement": games.map((game, index) => ({
- "@type": "ListItem",
- "position": index + 1,
- "name": game.title,
- "url": `https://learnenglish.life/games/${game.id}/`
- }))
+  "@type": "ItemList",
+  "itemListElement": games.map((game, index) => ({
+   "@type": "ListItem",
+   "position": index + 1,
+   "name": game.title,
+   "url": `https://learnenglish.life${game.href}`
+  }))
  }
 };
 ---
 
 <Base
- title="English Learning Games | LearnEnglish.Life"
- description="Practice English with fun interactive games: Grammar Challenge and Word Search. Free to play!"
+ title="English Learning Games and Level Test | LearnEnglish.Life"
+ description="Free interactive English tools: 25-question CEFR level test (A1 to C2), grammar challenge with 60+ questions, and word search. No signup required."
  canonicalUrl="https://learnenglish.life/games/"
  type="website"
 >
  <Fragment slot="structured-data">
- <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
  </Fragment>
 
- <Fragment slot="header">
  <Header />
- </Fragment>
 
  <!-- Hero Section -->
  <section class="bg-gradient-to-b from-green-900/20 to-neutral-950 py-16 px-4">
- <div class="max-w-6xl mx-auto text-center">
- <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">English Learning Games
- </h1>
- <p class="text-xl text-neutral-400 max-w-2xl mx-auto mb-8">Practice your English with fun, interactive games. 
- Track your progress, learn from mistakes, and improve your skills.
- </p>
- <div class="flex flex-wrap justify-center gap-4 text-sm">
- <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">Free to play
- </span>
- <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">All difficulty levels
- </span>
- <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">Mobile friendly
- </span>
- </div>
- </div>
+  <div class="max-w-6xl mx-auto text-center">
+   <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">English Practice Games</h1>
+   <p class="text-xl text-neutral-400 max-w-2xl mx-auto mb-8">
+    Find your level, test your grammar, build vocabulary. Free, no signup, no ads between questions.
+   </p>
+   <div class="flex flex-wrap justify-center gap-3 text-sm">
+    <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">Free to play</span>
+    <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">All CEFR levels</span>
+    <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full">Mobile friendly</span>
+   </div>
+  </div>
  </section>
 
  <!-- Games Grid -->
  <section class="py-12 px-4 bg-neutral-950">
- <div class="max-w-6xl mx-auto">
- <div class="grid md:grid-cols-3 gap-6">
- {games.map((game) => (
- <a 
- href={game.href} 
- class="bg-neutral-900 rounded-2xl p-6 border border-neutral-800 hover:border-green-500/50 transition-all hover:-translate-y-1 group"
- >
- <div class="text-5xl mb-4">{game.icon}</div>
- <h2 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
- {game.title}
- </h2>
- <p class="text-neutral-400 text-sm mb-4">
- {game.description}
- </p>
- 
- <!-- Game Meta -->
- <div class="flex flex-wrap gap-2 mb-4">
- <span class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded">
- {game.difficulty}
- </span>
- <span class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded">
- {game.questions}
- </span>
- </div>
- 
- <!-- Features -->
- <ul class="space-y-1 mb-4">
- {game.features.map((feature) => (
- <li class="text-sm text-slate-400 flex items-center gap-2">
- <span class="text-green-500"></span>
- {feature}
- </li>
- ))}
- </ul>
- 
- <!-- Play Button -->
- <div class="mt-4">
- <span class="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg font-medium text-sm group-hover:bg-green-500 transition-colors">Play Now
- <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
- </svg>
- </span>
- </div>
- </a>
- ))}
- </div>
- </div>
+  <div class="max-w-6xl mx-auto">
+   <div class="grid md:grid-cols-3 gap-6">
+    {games.map((game) => (
+     <a
+      href={game.href}
+      class="relative bg-neutral-900 rounded-2xl p-6 border border-neutral-800 hover:border-green-500/50 transition-all hover:-translate-y-1 group flex flex-col"
+     >
+      {game.badge && (
+       <span class="absolute -top-3 left-6 px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full uppercase tracking-wider">{game.badge}</span>
+      )}
+
+      <div class={`bg-gradient-to-br ${game.accent} w-12 h-12 rounded-xl mb-4`}></div>
+
+      <h2 class="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
+       {game.title}
+      </h2>
+      <p class="text-neutral-400 text-sm mb-4 flex-grow">
+       {game.description}
+      </p>
+
+      <div class="flex flex-wrap gap-2 mb-4">
+       <span class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded">{game.difficulty}</span>
+       <span class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded">{game.length}</span>
+      </div>
+
+      <ul class="space-y-1 mb-4">
+       {game.features.map((feature) => (
+        <li class="text-sm text-slate-400 flex items-start gap-2">
+         <span class="text-green-500 mt-0.5 flex-shrink-0" aria-hidden="true">✓</span>
+         <span>{feature}</span>
+        </li>
+       ))}
+      </ul>
+
+      <div class="mt-auto">
+       <span class="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg font-medium text-sm group-hover:bg-green-500 transition-colors">
+        {game.id === 'level-test' ? 'Take the test' : 'Play now'}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+       </span>
+      </div>
+     </a>
+    ))}
+   </div>
+  </div>
  </section>
 
- <!-- Why Play Games Section -->
+ <!-- Why Practice with Games Section -->
  <section class="py-12 px-4 bg-neutral-900 border-t border-neutral-800">
- <div class="max-w-6xl mx-auto">
- <h2 class="text-2xl font-bold text-white mb-6 text-center">Why Learn English with Games?
- </h2>
- 
- <div class="grid md:grid-cols-4 gap-6">
- <div class="text-center">
- <h3 class="font-semibold text-white mb-2">Better Retention</h3>
- <p class="text-neutral-400 text-sm">Games make learning memorable by creating emotional connections.
- </p>
- </div>
- 
- <div class="text-center">
- <h3 class="font-semibold text-white mb-2">Instant Feedback</h3>
- <p class="text-neutral-400 text-sm">Learn from mistakes immediately with detailed explanations.
- </p>
- </div>
- 
- <div class="text-center">
- <h3 class="font-semibold text-white mb-2">Track Progress</h3>
- <p class="text-neutral-400 text-sm">See your scores and improvement over time.
- </p>
- </div>
- 
- <div class="text-center">
- <h3 class="font-semibold text-white mb-2">Targeted Practice</h3>
- <p class="text-neutral-400 text-sm">Focus on specific skills like grammar, vocabulary, or spelling.
- </p>
- </div>
- </div>
- </div>
+  <div class="max-w-6xl mx-auto">
+   <h2 class="text-2xl font-bold text-white mb-8 text-center">Why practice this way</h2>
+
+   <div class="grid md:grid-cols-4 gap-6">
+    <div class="text-center">
+     <h3 class="font-semibold text-white mb-2">Better retention</h3>
+     <p class="text-neutral-400 text-sm">Active recall beats passive reading. Every question forces your brain to retrieve, not just recognize.</p>
+    </div>
+
+    <div class="text-center">
+     <h3 class="font-semibold text-white mb-2">Instant feedback</h3>
+     <p class="text-neutral-400 text-sm">Each wrong answer comes with a short explanation, so you leave knowing why.</p>
+    </div>
+
+    <div class="text-center">
+     <h3 class="font-semibold text-white mb-2">Level-matched</h3>
+     <p class="text-neutral-400 text-sm">Start with the CEFR test, then filter grammar questions to your level for focused practice.</p>
+    </div>
+
+    <div class="text-center">
+     <h3 class="font-semibold text-white mb-2">No distractions</h3>
+     <p class="text-neutral-400 text-sm">No streak pressure, no ads mid-session, no login walls. Just the question and the answer.</p>
+    </div>
+   </div>
+  </div>
  </section>
 
  <!-- Related Resources -->
  <section class="py-12 px-4 bg-neutral-950 border-t border-neutral-800">
- <div class="max-w-6xl mx-auto">
- <h2 class="text-2xl font-bold text-white mb-6">Continue Learning</h2>
- 
- <div class="grid md:grid-cols-4 gap-6">
- <a href="/reviews/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
- <div class="text-2xl mb-2">⭐</div>
- <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Platform Reviews</h3>
- <p class="text-slate-400 text-sm">Honest reviews of tutoring platforms</p>
- </a>
- 
- <a href="/guides/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
- <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Study Guides</h3>
- <p class="text-slate-400 text-sm">Grammar, vocabulary, and more</p>
- </a>
- 
- <a href="/compare/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
- <div class="text-2xl mb-2">️</div>
- <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Comparisons</h3>
- <p class="text-slate-400 text-sm">Side-by-side platform comparisons</p>
- </a>
- 
- <a href="/blog/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
- <div class="text-2xl mb-2">️</div>
- <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Blog</h3>
- <p class="text-slate-400 text-sm">Tips and learning strategies</p>
- </a>
- </div>
- </div>
+  <div class="max-w-6xl mx-auto">
+   <h2 class="text-2xl font-bold text-white mb-6">Continue learning</h2>
+
+   <div class="grid md:grid-cols-4 gap-6">
+    <a href="/reviews/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
+     <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Platform Reviews</h3>
+     <p class="text-slate-400 text-sm">Honest reviews of English learning platforms</p>
+    </a>
+
+    <a href="/guides/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
+     <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Study Guides</h3>
+     <p class="text-slate-400 text-sm">Grammar, vocabulary, and exam prep</p>
+    </a>
+
+    <a href="/compare/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
+     <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Comparisons</h3>
+     <p class="text-slate-400 text-sm">Side-by-side platform comparisons</p>
+    </a>
+
+    <a href="/blog/" class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-green-500/50 transition-all group">
+     <h3 class="font-semibold text-white mb-1 group-hover:text-green-400 transition-colors">Blog</h3>
+     <p class="text-slate-400 text-sm">Tips and learning strategies</p>
+    </a>
+   </div>
+  </div>
  </section>
 
  <!-- Ad Zone - Bottom -->
  <section class="py-6 px-4 bg-neutral-900 border-t border-neutral-800">
- <div class="max-w-6xl mx-auto">
- <div class="text-center">
- <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-block">
- <img src="/banners/seeguru-banner.jpg" alt="See Guru - 3 free English lessons with certified teachers" loading="lazy" class="rounded-lg hover:opacity-90 transition-opacity max-w-full h-auto" />
- </a>
- </div>
- </div>
+  <div class="max-w-6xl mx-auto">
+   <div class="text-center">
+    <a href="/go/see-guru/" rel="sponsored nofollow" class="inline-block">
+     <img src="/banners/seeguru-banner.jpg" alt="See Guru: 3 free English lessons with certified teachers" loading="lazy" width="1200" height="300" class="rounded-lg hover:opacity-90 transition-opacity max-w-full h-auto" />
+    </a>
+   </div>
+  </div>
  </section>
 
- <Fragment slot="footer">
  <Footer />
- </Fragment>
 </Base>

@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LevelTest from '../../components/LevelTest';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "English Level Test (CEFR A1 to C2)",
+  "description": "Free 25-question English placement test. Get your CEFR level from A1 to C2 with personalized recommendations on what to study next.",
+  "url": "https://learnenglish.life/tools/english-level-test/",
+  "educationalLevel": "A1, A2, B1, B2, C1, C2",
+  "learningResourceType": "Assessment",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+};
+---
+
+<Base
+  title="Free English Level Test (CEFR A1 to C2) | LearnEnglish.Life"
+  description="Find out your CEFR English level in 10 minutes. 25 questions covering grammar, vocabulary, and expressions. Get tailored study advice for your level."
+  canonicalUrl="https://learnenglish.life/tools/english-level-test/"
+  type="website"
+>
+  <Fragment slot="structured-data">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
+
+  <Header />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-emerald-950/40 to-neutral-950 py-12 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-block px-3 py-1 bg-emerald-900/40 text-emerald-300 text-xs font-semibold rounded-full uppercase tracking-wider mb-4">Free, no signup</div>
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">What's Your English Level?</h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+        A quick 25-question test mapped to the CEFR scale (A1 to C2). Used by schools, employers, and exam boards worldwide. Get your level plus practical next steps.
+      </p>
+    </div>
+  </section>
+
+  <LevelTest client:load />
+
+  <!-- CEFR Reference -->
+  <section class="py-12 px-4 bg-neutral-900 border-t border-neutral-800">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">What CEFR levels mean</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-5">
+          <p class="font-bold text-emerald-400 mb-1">A1 — Beginner</p>
+          <p class="text-sm text-slate-300">Basic phrases, introductions, simple questions.</p>
+        </div>
+        <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-5">
+          <p class="font-bold text-emerald-400 mb-1">A2 — Elementary</p>
+          <p class="text-sm text-slate-300">Routine tasks, familiar topics, short exchanges.</p>
+        </div>
+        <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-5">
+          <p class="font-bold text-emerald-400 mb-1">B1 — Intermediate</p>
+          <p class="text-sm text-slate-300">Travel situations, opinions on familiar subjects.</p>
+        </div>
+        <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-5">
+          <p class="font-bold text-emerald-400 mb-1">B2 — Upper-Intermediate</p>
+          <p class="text-sm text-slate-300">Fluent discussions, abstract topics, detailed writing.</p>
+        </div>
+        <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-5">
+          <p class="font-bold text-emerald-400 mb-1">C1 — Advanced</p>
+          <p class="text-sm text-slate-300">Professional and academic English, complex ideas.</p>
+        </div>
+        <div class="bg-neutral-950 border border-neutral-800 rounded-xl p-5">
+          <p class="font-bold text-emerald-400 mb-1">C2 — Proficient</p>
+          <p class="text-sm text-slate-300">Near-native understanding and expression.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 px-4 bg-neutral-950 border-t border-neutral-800">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-6">Frequently asked</h2>
+      <div class="space-y-4">
+        <details class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+          <summary class="font-semibold text-white cursor-pointer">How accurate is this test?</summary>
+          <p class="text-slate-300 mt-3">It's an informal self-assessment based on grammar and vocabulary patterns typical for each CEFR band. Accuracy is usually within one level of a formal exam. For certification-grade results, take a Cambridge, IELTS, or TOEFL test.</p>
+        </details>
+        <details class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+          <summary class="font-semibold text-white cursor-pointer">Does it test speaking or listening?</summary>
+          <p class="text-slate-300 mt-3">No. This test only covers grammar, vocabulary, and reading. Your speaking and listening levels may be higher or lower than the score you get here. Book a trial lesson with a certified tutor for a proper oral assessment.</p>
+        </details>
+        <details class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+          <summary class="font-semibold text-white cursor-pointer">Can I retake it?</summary>
+          <p class="text-slate-300 mt-3">Yes, as often as you like. For the most honest result, take it when you're rested and without looking up answers.</p>
+        </details>
+        <details class="bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+          <summary class="font-semibold text-white cursor-pointer">What should I do after getting my level?</summary>
+          <p class="text-slate-300 mt-3">Your result screen includes tailored advice and links to guides or tutoring platforms that match your level. The fastest way to climb one level is regular speaking practice with a tutor, not more app time.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

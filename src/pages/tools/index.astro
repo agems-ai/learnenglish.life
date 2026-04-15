@@ -40,9 +40,10 @@ const tools = [
 ];
 
 const games = [
- { title: "Grammar Challenge", description: "Test your grammar knowledge with 25+ questions", href: "/games/grammar/" },
+ { title: "English Level Test", description: "25 questions, get your CEFR level (A1 to C2) in 10 minutes", href: "/tools/english-level-test/" },
+ { title: "Grammar Challenge", description: "60+ fill-in-the-blank questions across 4 categories", href: "/games/grammar/" },
  { title: "Word Search", description: "Find hidden words in the grid to build spelling skills", href: "/games/word-search/" },
- { title: "All Games", description: "Browse all interactive English learning games", href: "/games/" },
+ { title: "All Games", description: "Browse all interactive English learning tools", href: "/games/" },
 ];
 ---
 <Base title="Free English Learning Tools | LearnEnglish.Life" description="Free interactive tools for English learners, grammar checker, vocabulary builder, pronunciation practice and more. No signup required.">
@@ -98,9 +99,8 @@ const games = [
  <h2 class="text-2xl font-bold text-gray-100 mb-6">Interactive Games</h2>
  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
  {games.map(game => (
- <a href={game.href} class="bg-slate-900/60 rounded-xl p-6 shadow-sm border border-gray-700 hover:shadow-md hover:border-emerald-300 transition-all text-center group">
- <span class="text-5xl mb-4 block">{game.icon}</span>
- <h3 class="text-lg font-semibold text-gray-100 mb-1 group-hover:text-emerald-600">
+ <a href={game.href} class="bg-slate-900/60 rounded-xl p-6 shadow-sm border border-gray-700 hover:shadow-md hover:border-emerald-300 transition-all group">
+ <h3 class="text-lg font-semibold text-gray-100 mb-2 group-hover:text-emerald-400">
  {game.title}
  </h3>
  <p class="text-sm text-slate-400">{game.description}</p>
